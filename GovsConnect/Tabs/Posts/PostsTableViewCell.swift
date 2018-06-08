@@ -27,11 +27,31 @@ class PostsTableViewCell: UITableViewCell {
             return self.likeIcon.isSelected ? true : false
         }
     }
+    var isViewed: Bool{
+        set{
+            self.viewIcon.isSelected = newValue ? true : false
+        }
+        get{
+            return self.viewIcon.isSelected ? true : false
+        }
+    }
+    var isCommented: Bool{
+        set{
+            self.commentIcon.isSelected = newValue ? true : false
+        }
+        get{
+            return self.commentIcon.isSelected ? true : false
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_like.png"), for: .normal)
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_liked.png"), for: .selected)
+        self.viewIcon.setImage(#imageLiteral(resourceName: "system_view.png"), for: .normal)
+        self.viewIcon.setImage(#imageLiteral(resourceName: "system_viewed.png"), for: .selected)
+        self.commentIcon.setImage(#imageLiteral(resourceName: "system_comment.png"), for: .normal)
+        self.commentIcon.setImage(#imageLiteral(resourceName: "system_commented.png"), for: .selected)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

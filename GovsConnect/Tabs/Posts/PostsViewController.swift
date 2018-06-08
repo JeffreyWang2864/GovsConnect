@@ -30,7 +30,7 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 29
+        return AppDataManager.shared.postsData.count * 2 - 1
     }
     func tableView (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.item % 2 == 1{
@@ -38,8 +38,19 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
             return cell
             
         }
+        let realIndexPathItem = indexPath.item - Int(indexPath.item / 2)
         let cell = tableView.dequeueReusableCell(withIdentifier: "POSTS_TABLEVIEW_CELL_ID", for: indexPath) as! PostsTableViewCell
-        //cell.postTitle.text = "example"
+        let data = AppDataManager.shared.postsData[realIndexPathItem]
+        cell.authorImage.image = UIImage.init(named: data.authorImageName)
+        cell.authorNameDate.text = data.author + " · " + ""
+        cell.postTitle.text = data.postTitle
+        cell.postDescription.text = "\(data.postContent.prefix(upTo: data.postContent.index(data.postContent.startIndex, offsetBy: min(100, data.postContent.count))))"
+        cell.isLiked = data.isLikedByCurrentUser
+        cell.isCommented = data.isCommentedByCurrentUser
+        cell.isViewed = data.isViewedByCurrentUser
+        cell.likeLabel.text = "\(data.likeCount)"
+        cell.commentLabel.text = "\(data.commentCount)"
+        cell.viewLabel.text = "\(data.viewCount)"
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
