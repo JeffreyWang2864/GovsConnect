@@ -13,12 +13,15 @@ class PostsDetailViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var authorImage: UIImageView!
     @IBOutlet var authorName: UILabel!
-    @IBOutlet var commentInputBox: UITextField!
-    @IBOutlet var commentSendButton: UIButton!
+    @IBOutlet var commentInputBox: UITextView!
+    @IBOutlet var commentingView: UIView!
     var correspondTag: Int = -1
+    var previousOriginY: CGFloat = -1
+    var previousLine: Int = 1
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(<#T##observer: Any##Any#>, selector: <#T##Selector#>, name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: Notification.Name.UIKeyboardWillShow, object: self.view.window)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: Notification.Name.UIKeyboardWillHide, object: self.view.window)
         self.navigationController!.navigationBar.tintColor = UIColor.white
         let rawTitle = AppDataManager.shared.postsData[self.correspondTag].postTitle
         var fixedTitle = rawTitle.prefix(upTo: rawTitle.index(rawTitle.startIndex, offsetBy: min(24, rawTitle.count)))
@@ -26,17 +29,28 @@ class PostsDetailViewController: UIViewController {
             fixedTitle += "..."
         }
         self.navigationController!.navigationBar.topItem!.title = "\(fixedTitle)"
+        AppDataManager.shared.postsData[self.correspondTag].viewCount += 1
+        AppDataManager.shared.postsData[self.correspondTag].isViewedByCurrentUser = true
         self.authorImage.image = UIImage.init(named: AppDataManager.shared.postsData[self.correspondTag].authorImageName)!
         self.authorName.text = AppDataManager.shared.postsData[self.correspondTag].author
-        self.commentInputBox.layer.cornerRadius = 15
-        self.commentInputBox.layer.borderWidth = 1
-        self.commentInputBox.layer.borderColor = APP_THEME_COLOR.cgColor
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib.init(nibName: "PostsDetailBodyTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_DETAIL_BODY_TABLEVIEW_CELL_ID")
         self.tableView.register(UINib.init(nibName: "PostSeparatorTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_SEPARATOR_ID")
         self.tableView.register(UINib.init(nibName: "PostsDetailReplyTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_DETAIL_REPLY_TABLEVIEW_CELL_ID")
-        // Do any additional setup after loading the view.
+        self.commentInputBox.delegate = self
+        self.commentInputBox.layer.cornerRadius = 15
+        self.commentInputBox.layer.borderWidth = 1.5
+        self.commentInputBox.layer.borderColor = APP_THEME_COLOR.cgColor
+        self.commentInputBox.text = "Add your comment..."
+        self.commentInputBox.textColor = .lightGray
+        self.commentInputBox.textContainer.maximumNumberOfLines = 1
+        self.commentInputBox.textContainer.lineBreakMode = .byTruncatingTail
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillShow, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillHide, object: self.view.window)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,11 +64,51 @@ class PostsDetailViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(_ sender: Notification){
-        
+        guard let keyboardSize = sender.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else{
+            return
+        }
+        let keyboardHeight = keyboardSize.cgRectValue.height // keyboard height as CGFloat
+        let posY = self.view.frame.origin.y - (keyboardHeight - 49)
+        if self.view.frame.origin.y < 0{
+            return
+        }
+        self.previousOriginY = self.view.frame.origin.y
+        UIView.animate(withDuration: 0.25, animations: {
+            self.view.frame = CGRect(origin: CGPoint.init(x: self.view.frame.origin.x, y: posY), size: self.view.frame.size)
+        });
+        self.setupKeyboardDismissRecognizer()
+    }
+    
+    func setupKeyboardDismissRecognizer(){
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func dismissKeyboard(){
+        self.view.endEditing(true)
     }
     
     @objc func keyboardWillHide(_ sender: Notification){
-        
+        NSLog("keyboardWillHide")
+        UIView.animate(withDuration: 0.25, animations: {
+            self.view.frame = CGRect(origin: CGPoint.init(x: self.view.frame.origin.x, y: self.previousOriginY), size: self.view.frame.size)
+        });
+    }
+    
+    @IBAction func replyButtonDidClick(_ sender: UIButton){
+        let replyText = self.commentInputBox.text
+        self.commentInputBox.text = ""
+        self.changeCommentBoxHeight(toFit: 1)
+        self.view.endEditing(true)
+        if replyText! == ""{
+            return
+        }
+        AppDataManager.shared.postReplies[self.correspondTag].append(ReplyDataContainer.init("Jeffrey Wang", nil, replyText!, "testing_profile_picture_1.png", 0, false))
+        AppDataManager.shared.postsData[self.correspondTag].commentCount += 1
+        AppDataManager.shared.postsData[self.correspondTag].isCommentedByCurrentUser = true
+        self.tableView.reloadData()
+        let lastIndex = IndexPath.init(row: self.tableView.numberOfRows(inSection: 0) - 1, section: 0)
+        self.tableView.scrollToRow(at: lastIndex, at: .bottom, animated: false)
     }
 }
 
@@ -110,5 +164,45 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
             return 5
         }
         return -1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+extension PostsDetailViewController: UITextViewDelegate{
+    func textViewDidChange(_ textView: UITextView) {
+        let requireLines = numberOfVisibleLines(textView)
+        if self.previousLine != requireLines{
+            self.changeCommentBoxHeight(toFit: requireLines)
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView){
+        if (textView.text == "Add your comment..."){
+            textView.text = ""
+            textView.textColor = .black
+        }
+        textView.becomeFirstResponder()
+        textView.textContainer.maximumNumberOfLines = 10
+        self.changeCommentBoxHeight(toFit: numberOfVisibleLines(textView))
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView){
+        if (textView.text == ""){
+            textView.text = "Add your comment..."
+            textView.textColor = .lightGray
+        }
+        textView.resignFirstResponder()
+    }
+    
+    func changeCommentBoxHeight(toFit lines: Int){
+        let lineHeight = self.commentInputBox.font!.lineHeight
+        let addingHeight = CGFloat(lines - self.previousLine) * lineHeight
+        NSLog("\(addingHeight)")
+        let c = self.commentingView.constraints[0]
+        c.constant += addingHeight
+        self.previousLine = lines
     }
 }

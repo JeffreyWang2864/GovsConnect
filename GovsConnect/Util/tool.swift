@@ -33,10 +33,10 @@ func prettyTimeSince(_ timeInterval: TimeInterval) -> String{
     return "just now"
 }
 
-func numberOfVisibleLines(_ label: UILabel) -> Int {
-    let textSize = CGSize(width: label.frame.size.width, height: CGFloat(Float.infinity))
-    let rHeight = lroundf(Float(label.sizeThatFits(textSize).height))
-    let charSize = lroundf(Float(label.font.lineHeight))
+func numberOfVisibleLines(_ textView: UITextView) -> Int {
+    let textSize = CGSize(width: textView.frame.size.width, height: CGFloat(Float.infinity))
+    let rHeight = lroundf(Float(textView.sizeThatFits(textSize).height))
+    let charSize = lroundf(Float(textView.font!.lineHeight))
     let lineCount = rHeight/charSize
     return lineCount
 }

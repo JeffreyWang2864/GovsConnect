@@ -33,6 +33,8 @@ class PostsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     @objc func refreachNewData(_ sender: UIRefreshControl){
         NSLog("update data")
         self.refreashControl.attributedTitle = NSAttributedString(string: "refreashing", attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: "Helvetica Neue", size: 11)!])
