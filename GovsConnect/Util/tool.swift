@@ -6,7 +6,7 @@
 //  Copyright © 2018 Eagersoft. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 func prettyTimeSince(_ timeInterval: TimeInterval) -> String{
     let tisn = abs(NSInteger(timeInterval))
@@ -31,4 +31,12 @@ func prettyTimeSince(_ timeInterval: TimeInterval) -> String{
         return "\(minutes) \(minutes == 1 ? "minute" : "minutes") ago"
     }
     return "just now"
+}
+
+func numberOfVisibleLines(_ label: UILabel) -> Int {
+    let textSize = CGSize(width: label.frame.size.width, height: CGFloat(Float.infinity))
+    let rHeight = lroundf(Float(label.sizeThatFits(textSize).height))
+    let charSize = lroundf(Float(label.font.lineHeight))
+    let lineCount = rHeight/charSize
+    return lineCount
 }

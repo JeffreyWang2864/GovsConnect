@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseViewController" customModule="GovsConnect" customModuleProvider="target">
             <connections>
-                <outlet property="navigationBarTitle" destination="V9M-VE-Xjb" id="Qjh-OP-qFh"/>
                 <outlet property="postsTabBarItem" destination="PgX-pV-NWs" id="wJU-aJ-CrK"/>
                 <outlet property="tabBar" destination="drI-1m-lVV" id="iaY-cQ-1ut"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -38,32 +37,12 @@
                     </items>
                     <color key="selectedImageTintColor" red="0.75085735880000004" green="0.24221037879999999" blue="0.31417497329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </tabBar>
-                <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37A-AQ-2BG">
-                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="YM7-rt-a6a"/>
-                    </constraints>
-                    <color key="barTintColor" red="0.75686274509803919" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <textAttributes key="titleTextAttributes">
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textAttributes>
-                    <textAttributes key="largeTitleTextAttributes">
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
-                    </textAttributes>
-                    <items>
-                        <navigationItem title="Title" largeTitleDisplayMode="always" id="V9M-VE-Xjb"/>
-                    </items>
-                </navigationBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="drI-1m-lVV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1Z5-29-0l9"/>
-                <constraint firstItem="37A-AQ-2BG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="SaN-vJ-YMs"/>
                 <constraint firstItem="drI-1m-lVV" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="bWF-aB-MkM"/>
-                <constraint firstItem="37A-AQ-2BG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cqQ-MF-u66"/>
                 <constraint firstItem="drI-1m-lVV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kD8-pl-NZP"/>
-                <constraint firstItem="37A-AQ-2BG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lHP-Tl-aoR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>
