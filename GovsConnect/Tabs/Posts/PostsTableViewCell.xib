@@ -21,10 +21,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeffrey Wang · just now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJY-T5-9zf">
-                        <rect key="frame" x="85" y="11" width="179" height="14"/>
+                        <rect key="frame" x="85" y="11" width="142" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="AAx-Dw-bJn"/>
-                            <constraint firstAttribute="width" constant="179" id="rWw-1p-8e8"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,6 +150,7 @@
                     <constraint firstItem="A3b-CO-n9M" firstAttribute="leading" secondItem="Vwh-QU-koa" secondAttribute="trailing" constant="5" id="tCf-Xq-fGw"/>
                     <constraint firstItem="sZ2-CK-4jq" firstAttribute="leading" secondItem="ahB-MK-4Bu" secondAttribute="trailing" constant="5" id="vsf-Um-w0P"/>
                     <constraint firstAttribute="bottom" secondItem="gfJ-I8-xSO" secondAttribute="bottom" constant="2.5" id="xkn-jE-ets"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="sJY-T5-9zf" secondAttribute="trailing" constant="77" id="yA9-L4-wer"/>
                     <constraint firstAttribute="bottom" secondItem="sZ2-CK-4jq" secondAttribute="bottom" constant="0.5" id="yw2-wa-eKG"/>
                     <constraint firstItem="xxx-Mx-g7I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="zBa-YT-Rw6"/>
                 </constraints>

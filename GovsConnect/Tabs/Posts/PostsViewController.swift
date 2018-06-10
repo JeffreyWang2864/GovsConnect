@@ -9,19 +9,45 @@
 import UIKit
 
 class PostsViewController: UIViewController {
+    static let shouldRefreashCellNotificationName = Notification.Name("shouldRefreashCellNotificationName")
     @IBOutlet var mainTableView: UITableView!
+    var refreashControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.shouldRefreashCell(_:)), name: PostsViewController.shouldRefreashCellNotificationName, object: nil)
         self.mainTableView.register(UINib.init(nibName: "PostsTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_CELL_ID")
         self.mainTableView.register(UINib.init(nibName: "PostSeparatorTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_SEPARATOR_ID")
         self.mainTableView.delegate = self
         self.mainTableView.dataSource = self
+        
+        self.mainTableView.refreshControl = self.refreashControl
+        self.refreashControl.addTarget(self, action: #selector(self.refreachNewData(_:)), for: UIControlEvents.valueChanged)
+        self.refreashControl.tintColor = APP_THEME_COLOR
+        self.refreashControl.backgroundColor = APP_BACKGROUND_GREY
+        self.refreashControl.attributedTitle = NSAttributedString(string: "release to refreash", attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: "Helvetica Neue", size: 11)!])
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func refreachNewData(_ sender: UIRefreshControl){
+        NSLog("update data")
+        self.refreashControl.attributedTitle = NSAttributedString(string: "refreashing", attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: "Helvetica Neue", size: 11)!])
+        let newData = PostsDataContainer("Random Person", "testing_profile_picture_1.png", NSDate.init(timeIntervalSinceNow: 0), "There are \(AppDataManager.shared.postsData.count) posts in total!", LOREM_IPSUM_2, 0, 0, 0, false, false, false)
+        AppDataManager.shared.postsData.insert(newData, at: 0)
+        AppDataManager.shared.postReplies.insert(Array<ReplyDataContainer>(), at: 0)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+            self.refreashControl.attributedTitle = NSAttributedString(string: "release to refreash", attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: "Helvetica Neue", size: 11)!])
+            self.mainTableView.reloadData()
+            self.refreashControl.endRefreshing()
+        }
+    }
+    
+    @objc func shouldRefreashCell(_ sender: Notification){
+        self.mainTableView.reloadData()
     }
 }
 
@@ -42,15 +68,16 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "POSTS_TABLEVIEW_CELL_ID", for: indexPath) as! PostsTableViewCell
         let data = AppDataManager.shared.postsData[realIndexPathItem]
         cell.authorImage.image = UIImage.init(named: data.authorImageName)
-        cell.authorNameDate.text = data.author + " · " + ""
+        cell.authorNameDate.text = data.author + " · " + prettyTimeSince(data.postDate.timeIntervalSinceNow)
         cell.postTitle.text = data.postTitle
         cell.postDescription.text = "\(data.postContent.prefix(upTo: data.postContent.index(data.postContent.startIndex, offsetBy: min(100, data.postContent.count))))"
-        cell.isLiked = data.isLikedByCurrentUser
-        cell.isCommented = data.isCommentedByCurrentUser
-        cell.isViewed = data.isViewedByCurrentUser
+        cell.likeIcon.isSelected = data.isLikedByCurrentUser
+        cell.commentIcon.isSelected = data.isCommentedByCurrentUser
+        cell.viewIcon.isSelected = data.isViewedByCurrentUser
         cell.likeLabel.text = "\(data.likeCount)"
         cell.commentLabel.text = "\(data.commentCount)"
         cell.viewLabel.text = "\(data.viewCount)"
+        cell.tag = realIndexPathItem
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,5 +85,10 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
             return 7
         }
         return 134.5
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let corresCell = self.mainTableView.cellForRow(at: indexPath)!
+        NotificationCenter.default.post(name: BaseViewController.presentPostsDetailNotificationName, object: nil, userInfo: ["indexPath": corresCell.tag])
+        corresCell.selectionStyle = .none
     }
 }

@@ -19,30 +19,6 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet var viewIcon: UIButton!
     @IBOutlet var likeIcon: UIButton!
     @IBOutlet var commentIcon: UIButton!
-    var isLiked: Bool{
-        set{
-            self.likeIcon.isSelected = newValue ? true : false
-        }
-        get{
-            return self.likeIcon.isSelected ? true : false
-        }
-    }
-    var isViewed: Bool{
-        set{
-            self.viewIcon.isSelected = newValue ? true : false
-        }
-        get{
-            return self.viewIcon.isSelected ? true : false
-        }
-    }
-    var isCommented: Bool{
-        set{
-            self.commentIcon.isSelected = newValue ? true : false
-        }
-        get{
-            return self.commentIcon.isSelected ? true : false
-        }
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -65,14 +41,23 @@ class PostsTableViewCell: UITableViewCell {
     }
     
     @IBAction func likeButtonDidClick(_ sender: UIButton){
-        if self.isLiked{      //aleady liked
-            self.isLiked = false
+        if self.likeIcon.isSelected{      //aleady liked
+            self.likeIcon.isSelected = false
             NSLog("unliked")
+            AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = false
+            AppDataManager.shared.postsData[self.tag].likeCount -= 1
+            self.likeLabel.text = "\(Int(self.likeLabel.text!)! - 1)"
+            self.reloadInputViews()
             return
         }
-        self.isLiked = true
+        self.likeIcon.isSelected = true
         NSLog("click on like")
+        AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = true
+        AppDataManager.shared.postsData[self.tag].likeCount += 1
+        self.likeLabel.text = "\(Int(self.likeLabel.text!)! + 1)"
     }
+    
+    
     
     @IBAction func commentButtonDidClick(_ sender: UIButton){
         NSLog("click on comment")
