@@ -46,6 +46,7 @@
 		13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EBE00620CA616000A911DE /* testing_profile_picture_1.png */; };
 		13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */; };
 		13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */; };
+		13F4094C20CCF2A200645880 /* system_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094B20CCF2A200645880 /* system_send.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		13EBE00620CA616000A911DE /* testing_profile_picture_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_1.png; sourceTree = "<group>"; };
 		13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailReplyTableViewCell.swift; sourceTree = "<group>"; };
 		13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailReplyTableViewCell.xib; sourceTree = "<group>"; };
+		13F4094B20CCF2A200645880 /* system_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_send.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		13961E0C20CA772F004FFF4B /* System */ = {
 			isa = PBXGroup;
 			children = (
+				13F4094B20CCF2A200645880 /* system_send.png */,
 				13961E1920CA9FB1004FFF4B /* system_commented.png */,
 				13961E0F20CA7766004FFF4B /* system_comment.png */,
 				13961E1020CA7766004FFF4B /* system_like.png */,
@@ -293,6 +296,7 @@
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
 				13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */,
+				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
 				132F818320C8CA1E005D3905 /* BaseViewController.xib in Resources */,
 				132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */,
 				132F818820C8DAB2005D3905 /* PostsViewController.xib in Resources */,

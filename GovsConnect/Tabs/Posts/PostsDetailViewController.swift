@@ -13,11 +13,13 @@ class PostsDetailViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var authorImage: UIImageView!
     @IBOutlet var authorName: UILabel!
+    @IBOutlet var commentInputBox: UITextField!
+    @IBOutlet var commentSendButton: UIButton!
     var correspondTag: Int = -1
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(<#T##observer: Any##Any#>, selector: <#T##Selector#>, name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
         self.navigationController!.navigationBar.tintColor = UIColor.white
-        
         let rawTitle = AppDataManager.shared.postsData[self.correspondTag].postTitle
         var fixedTitle = rawTitle.prefix(upTo: rawTitle.index(rawTitle.startIndex, offsetBy: min(24, rawTitle.count)))
         if fixedTitle.count == 24{
@@ -26,6 +28,9 @@ class PostsDetailViewController: UIViewController {
         self.navigationController!.navigationBar.topItem!.title = "\(fixedTitle)"
         self.authorImage.image = UIImage.init(named: AppDataManager.shared.postsData[self.correspondTag].authorImageName)!
         self.authorName.text = AppDataManager.shared.postsData[self.correspondTag].author
+        self.commentInputBox.layer.cornerRadius = 15
+        self.commentInputBox.layer.borderWidth = 1
+        self.commentInputBox.layer.borderColor = APP_THEME_COLOR.cgColor
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib.init(nibName: "PostsDetailBodyTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_DETAIL_BODY_TABLEVIEW_CELL_ID")
@@ -42,6 +47,14 @@ class PostsDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(Notification(name: PostsViewController.shouldRefreashCellNotificationName))
+    }
+    
+    @objc func keyboardWillShow(_ sender: Notification){
+        
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification){
+        
     }
 }
 
