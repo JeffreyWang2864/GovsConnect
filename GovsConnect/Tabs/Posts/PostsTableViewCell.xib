@@ -122,7 +122,7 @@
                         </constraints>
                         <state key="normal" image="system_view.png"/>
                         <connections>
-                            <action selector="viewButtonDidClick:" destination="KGk-i7-Jjw" eventType="touchDown" id="A3L-2h-v5t"/>
+                            <action selector="viewButtonDidClick:" destination="KGk-i7-Jjw" eventType="touchDown" id="lLm-qg-yt1"/>
                         </connections>
                     </button>
                 </subviews>

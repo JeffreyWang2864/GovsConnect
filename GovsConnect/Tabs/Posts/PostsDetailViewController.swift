@@ -10,6 +10,7 @@ import UIKit
 import CoreText
 
 class PostsDetailViewController: UIViewController {
+    static let startCommentingNotificationName = Notification.Name("startCommentingNotificationName")
     @IBOutlet var tableView: UITableView!
     @IBOutlet var authorImage: UIImageView!
     @IBOutlet var authorName: UILabel!
@@ -22,6 +23,7 @@ class PostsDetailViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: Notification.Name.UIKeyboardWillShow, object: self.view.window)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: Notification.Name.UIKeyboardWillHide, object: self.view.window)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.startCommenting(_:)), name: PostsDetailViewController.startCommentingNotificationName, object: nil)
         self.navigationController!.navigationBar.tintColor = UIColor.white
         let rawTitle = AppDataManager.shared.postsData[self.correspondTag].postTitle
         var fixedTitle = rawTitle.prefix(upTo: rawTitle.index(rawTitle.startIndex, offsetBy: min(24, rawTitle.count)))
@@ -31,13 +33,17 @@ class PostsDetailViewController: UIViewController {
         self.navigationController!.navigationBar.topItem!.title = "\(fixedTitle)"
         AppDataManager.shared.postsData[self.correspondTag].viewCount += 1
         AppDataManager.shared.postsData[self.correspondTag].isViewedByCurrentUser = true
-        self.authorImage.image = UIImage.init(named: AppDataManager.shared.postsData[self.correspondTag].authorImageName)!
-        self.authorName.text = AppDataManager.shared.postsData[self.correspondTag].author
+        self.authorImage.image = UIImage.init(named: AppDataManager.shared.postsData[self.correspondTag].author.profilePictureName)!
+        self.authorName.text = AppDataManager.shared.postsData[self.correspondTag].author.name
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib.init(nibName: "PostsDetailBodyTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_DETAIL_BODY_TABLEVIEW_CELL_ID")
         self.tableView.register(UINib.init(nibName: "PostSeparatorTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_SEPARATOR_ID")
         self.tableView.register(UINib.init(nibName: "PostsDetailReplyTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_DETAIL_REPLY_TABLEVIEW_CELL_ID")
+        let longPressGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressOnView(_:)))
+        longPressGesture.minimumPressDuration = 0.5
+        longPressGesture.delegate = self
+        self.tableView.addGestureRecognizer(longPressGesture)
         self.commentInputBox.delegate = self
         self.commentInputBox.layer.cornerRadius = 15
         self.commentInputBox.layer.borderWidth = 1.5
@@ -46,6 +52,7 @@ class PostsDetailViewController: UIViewController {
         self.commentInputBox.textColor = .lightGray
         self.commentInputBox.textContainer.maximumNumberOfLines = 1
         self.commentInputBox.textContainer.lineBreakMode = .byTruncatingTail
+        self.setupKeyboardDismissRecognizer()
     }
     
     deinit {
@@ -76,7 +83,6 @@ class PostsDetailViewController: UIViewController {
         UIView.animate(withDuration: 0.25, animations: {
             self.view.frame = CGRect(origin: CGPoint.init(x: self.view.frame.origin.x, y: posY), size: self.view.frame.size)
         });
-        self.setupKeyboardDismissRecognizer()
     }
     
     func setupKeyboardDismissRecognizer(){
@@ -95,15 +101,29 @@ class PostsDetailViewController: UIViewController {
         });
     }
     
+    @objc func startCommenting(_ sender: Notification){
+        let replyTo: String? = sender.userInfo?["replyTo"] as? String
+        if replyTo != nil{
+            self.commentInputBox.restorationIdentifier = replyTo!
+        }
+        self.commentInputBox.becomeFirstResponder()
+    }
+    
     @IBAction func replyButtonDidClick(_ sender: UIButton){
         let replyText = self.commentInputBox.text
         self.commentInputBox.text = ""
         self.changeCommentBoxHeight(toFit: 1)
         self.view.endEditing(true)
-        if replyText! == ""{
+        if replyText! == "" || replyText == "Add your comment..."{
             return
         }
-        AppDataManager.shared.postReplies[self.correspondTag].append(ReplyDataContainer.init("Jeffrey Wang", nil, replyText!, "testing_profile_picture_1.png", 0, false))
+        
+        if self.commentInputBox.restorationIdentifier != nil{
+            AppDataManager.shared.postsData[self.correspondTag].replies.append(ReplyDataContainer.init(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!, AppDataManager.shared.users[self.commentInputBox.restorationIdentifier!]!, replyText!, 0, false))
+            self.commentInputBox.restorationIdentifier = nil
+        }else{
+            AppDataManager.shared.postsData[self.correspondTag].replies.append(ReplyDataContainer.init(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!, nil, replyText!, 0, false))
+        }
         AppDataManager.shared.postsData[self.correspondTag].commentCount += 1
         AppDataManager.shared.postsData[self.correspondTag].isCommentedByCurrentUser = true
         self.tableView.reloadData()
@@ -118,7 +138,7 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppDataManager.shared.postReplies[self.correspondTag].count * 2 + 1
+        return AppDataManager.shared.postsData[self.correspondTag].replies.count * 2 + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -146,16 +166,16 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
         let realIndexPathItem = indexPath.item - (indexPath.item / 2) - 1
         let cell = tableView.dequeueReusableCell(withIdentifier: "POSTS_DETAIL_REPLY_TABLEVIEW_CELL_ID", for: indexPath) as! PostsDetailReplyTableViewCell
         cell.correspondTag = (self.correspondTag, realIndexPathItem)
-        let data = AppDataManager.shared.postReplies[self.correspondTag][realIndexPathItem]
+        let data = AppDataManager.shared.postsData[self.correspondTag].replies[realIndexPathItem]
         cell.likeIcon.isSelected = data.isLikedByCurrentUser
         cell.likeCount.text = "\(data.likeCount)"
         if data.receiver != nil{
-            cell.replyHeading.text = "\(data.sender) replies to \(data.receiver!)'s post"
+            cell.replyHeading.text = "\(data.sender.name) replies to \(data.receiver!.name)'s post"
         }else{
-            cell.replyHeading.text = "\(data.sender) replies"
+            cell.replyHeading.text = "\(data.sender.name) replies"
         }
         cell.replyBody.text = data.body
-        cell.replierImage.image = UIImage.init(named: data.authorImageName)!
+        cell.replierImage.image = UIImage.init(named: data.sender.profilePictureName)!
         return cell
     }
     
@@ -173,7 +193,7 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
 
 extension PostsDetailViewController: UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
-        let requireLines = numberOfVisibleLines(textView)
+        let requireLines = min(10, numberOfVisibleLines(textView))
         if self.previousLine != requireLines{
             self.changeCommentBoxHeight(toFit: requireLines)
         }
@@ -185,7 +205,7 @@ extension PostsDetailViewController: UITextViewDelegate{
             textView.textColor = .black
         }
         textView.becomeFirstResponder()
-        textView.textContainer.maximumNumberOfLines = 10
+        textView.textContainer.maximumNumberOfLines = 0
         self.changeCommentBoxHeight(toFit: numberOfVisibleLines(textView))
     }
     
@@ -204,5 +224,37 @@ extension PostsDetailViewController: UITextViewDelegate{
         let c = self.commentingView.constraints[0]
         c.constant += addingHeight
         self.previousLine = lines
+    }
+}
+
+extension PostsDetailViewController: UIGestureRecognizerDelegate{
+    @objc func longPressOnView(_ sender: UILongPressGestureRecognizer){
+        let p = sender.location(in: self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: p)
+        guard indexPath != nil && sender.state == UIGestureRecognizerState.began else{
+            return
+        }
+        guard indexPath?.item != 0 else{
+            return
+        }
+        let realIndexPathItem = indexPath!.item / 2 - 1
+        let selectedRowSenderUID = AppDataManager.shared.postsData[self.correspondTag].replies[realIndexPathItem].sender.uid
+        guard selectedRowSenderUID == AppDataManager.shared.currentPersonID else{
+            return
+        }
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "delete my comment", style: .destructive, handler: { (action) in
+            AppDataManager.shared.postsData[self.correspondTag].replies.remove(at: realIndexPathItem)
+            AppDataManager.shared.postsData[self.correspondTag].commentCount -= 1
+            if !AppDataManager.shared.postsData[self.correspondTag].replies.contains(where: { (item) -> Bool in
+                return item.sender.uid == selectedRowSenderUID ? true : false
+            }){
+                AppDataManager.shared.postsData[self.correspondTag].isCommentedByCurrentUser = false
+            }
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

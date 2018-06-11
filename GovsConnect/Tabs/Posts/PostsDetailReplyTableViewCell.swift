@@ -32,16 +32,22 @@ class PostsDetailReplyTableViewCell: UITableViewCell {
         if self.likeIcon.isSelected{      //aleady liked
             self.likeIcon.isSelected = false
             NSLog("unliked")
-            AppDataManager.shared.postReplies[self.correspondTag.0][self.correspondTag.1].isLikedByCurrentUser = false
-            AppDataManager.shared.postReplies[self.correspondTag.0][self.correspondTag.1].likeCount -= 1
+            
+            
+            AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].isLikedByCurrentUser = false
+            AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].likeCount -= 1
             self.likeCount.text = "\(Int(self.likeCount.text!)! - 1)"
             self.reloadInputViews()
             return
         }
         self.likeIcon.isSelected = true
         NSLog("click on like")
-        AppDataManager.shared.postReplies[self.correspondTag.0][self.correspondTag.1].isLikedByCurrentUser = true
-        AppDataManager.shared.postReplies[self.correspondTag.0][self.correspondTag.1].likeCount += 1
+        AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].isLikedByCurrentUser = true
+        AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].likeCount += 1
         self.likeCount.text = "\(Int(self.likeCount.text!)! + 1)"
+    }
+    
+    @IBAction func replyButtonDidClick(_ sender: UIButton){
+        NotificationCenter.default.post(name: PostsDetailViewController.startCommentingNotificationName, object: nil, userInfo: ["replyTo": "\(AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].sender.uid)"])
     }
 }

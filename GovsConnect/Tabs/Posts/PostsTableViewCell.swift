@@ -37,7 +37,7 @@ class PostsTableViewCell: UITableViewCell {
     }
     
     @IBAction func viewButtonDidClick(_ sender: UIButton){
-        NSLog("click on view")
+        NotificationCenter.default.post(name: BaseViewController.presentPostsDetailNotificationName, object: nil, userInfo: ["indexPath": self.tag])
     }
     
     @IBAction func likeButtonDidClick(_ sender: UIButton){
@@ -57,10 +57,11 @@ class PostsTableViewCell: UITableViewCell {
         self.likeLabel.text = "\(Int(self.likeLabel.text!)! + 1)"
     }
     
-    
-    
     @IBAction func commentButtonDidClick(_ sender: UIButton){
-        NSLog("click on comment")
+        NotificationCenter.default.post(name: BaseViewController.presentPostsDetailNotificationName, object: nil, userInfo: ["indexPath": self.tag])
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+            NotificationCenter.default.post(Notification(name: PostsDetailViewController.startCommentingNotificationName))
+        }
     }
     
 }

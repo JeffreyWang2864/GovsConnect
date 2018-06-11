@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */; };
+		1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */; };
+		1327C1A820CE497A001A300A /* system_reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A720CE497A001A300A /* system_reply.png */; };
 		132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F816A20C8C77C005D3905 /* AppDelegate.swift */; };
 		132F817020C8C77C005D3905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132F816E20C8C77C005D3905 /* Main.storyboard */; };
 		132F817220C8C77C005D3905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 132F817120C8C77C005D3905 /* Assets.xcassets */; };
@@ -50,6 +53,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_jzm.png; sourceTree = "<group>"; };
+		1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_dt.png; sourceTree = "<group>"; };
+		1327C1A720CE497A001A300A /* system_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_reply.png; sourceTree = "<group>"; };
 		132F816720C8C77C005D3905 /* GovsConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovsConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		132F816A20C8C77C005D3905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		132F816F20C8C77C005D3905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,6 +168,8 @@
 		132F819420C90DC1005D3905 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */,
+				1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */,
 				13961E2120CAB455004FFF4B /* testing_profile_picture_2.png */,
 				13961E2220CAB455004FFF4B /* testing_profile_picture_3.jpg */,
 				13961E2320CAB455004FFF4B /* testing_profile_picture_4.png */,
@@ -205,6 +213,7 @@
 				13961E1220CA7766004FFF4B /* system_share.png */,
 				13961E1120CA7766004FFF4B /* system_view.png */,
 				13961E0D20CA7766004FFF4B /* system_viewed.png */,
+				1327C1A720CE497A001A300A /* system_reply.png */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -295,7 +304,9 @@
 				13961E1420CA7766004FFF4B /* system_liked.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
 				132F817520C8C77C005D3905 /* LaunchScreen.storyboard in Resources */,
+				1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */,
 				13961E1820CA7766004FFF4B /* system_share.png in Resources */,
+				1327C1A820CE497A001A300A /* system_reply.png in Resources */,
 				13961E1A20CA9FB1004FFF4B /* system_commented.png in Resources */,
 				13961E2520CAB456004FFF4B /* testing_profile_picture_3.jpg in Resources */,
 				13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */,
@@ -311,6 +322,7 @@
 				132F819E20C90DD0005D3905 /* numberthree.png in Resources */,
 				13961E1720CA7766004FFF4B /* system_view.png in Resources */,
 				132F819B20C90DD0005D3905 /* numberone.png in Resources */,
+				1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */,
 				132F819A20C90DD0005D3905 /* numberfive.png in Resources */,
 				13961E0B20CA6DAC004FFF4B /* PostSeparatorTableViewCell.xib in Resources */,
 				132F817F20C8C952005D3905 /* WelcomeViewController.xib in Resources */,

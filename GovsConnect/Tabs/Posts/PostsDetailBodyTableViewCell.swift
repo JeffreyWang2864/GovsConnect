@@ -36,7 +36,7 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
     }
     
     @IBAction func viewButtonDidClick(_ sender: UIButton){
-        NSLog("click on view")
+        
     }
     
     @IBAction func likeButtonDidClick(_ sender: UIButton){
@@ -56,10 +56,9 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
         self.likeCount.text = "\(Int(self.likeCount.text!)! + 1)"
     }
     
-    
-    
     @IBAction func commentButtonDidClick(_ sender: UIButton){
-        NSLog("click on comment")
+        NSLog("here")
+        NotificationCenter.default.post(Notification(name: PostsDetailViewController.startCommentingNotificationName))
     }
     
 }
