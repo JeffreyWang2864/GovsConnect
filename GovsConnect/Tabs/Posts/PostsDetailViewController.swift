@@ -104,6 +104,12 @@ class PostsDetailViewController: UIViewController {
     @objc func startCommenting(_ sender: Notification){
         let replyTo: String? = sender.userInfo?["replyTo"] as? String
         if replyTo != nil{
+            if replyTo! == AppDataManager.shared.currentPersonID{
+                let alertController = UIAlertController(title: "You cannot reply to your own post.", message: nil, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
             self.commentInputBox.restorationIdentifier = replyTo!
         }
         self.commentInputBox.becomeFirstResponder()
