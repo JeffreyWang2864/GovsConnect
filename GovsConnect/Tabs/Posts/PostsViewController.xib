@@ -22,24 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yNS-J0-L6g">
-                    <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
-                <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcg-Ce-IOu">
-                    <rect key="frame" x="0.0" y="20" width="375" height="56"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="56" id="zIh-6y-981"/>
-                    </constraints>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
             </subviews>
             <constraints>
-                <constraint firstItem="fcg-Ce-IOu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="IYc-w5-Ph9"/>
-                <constraint firstItem="fcg-Ce-IOu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Irg-NY-tcW"/>
                 <constraint firstItem="yNS-J0-L6g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OmH-XD-zKc"/>
-                <constraint firstItem="fcg-Ce-IOu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VpR-0W-YYp"/>
-                <constraint firstItem="yNS-J0-L6g" firstAttribute="top" secondItem="fcg-Ce-IOu" secondAttribute="bottom" id="dO6-Dz-YWj"/>
+                <constraint firstItem="yNS-J0-L6g" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WMd-3Y-PIz"/>
                 <constraint firstItem="yNS-J0-L6g" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="wHv-I9-aqL"/>
                 <constraint firstItem="yNS-J0-L6g" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wp3-QA-0D3"/>
             </constraints>

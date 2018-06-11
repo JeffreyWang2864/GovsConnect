@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         self.setupNotification()
         self.setupView()
-        //self.beginPreparingAnimation()
+        self.beginPreparingAnimation()
     }
     
     func setupNotification(){
