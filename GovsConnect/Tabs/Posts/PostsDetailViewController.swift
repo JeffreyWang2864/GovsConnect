@@ -161,7 +161,7 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
             cell.postTitle.text = data.postTitle
             cell.postBody.text = data.postContent
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "M/d/yyyy, HH:mm a"
+            dateFormatter.dateFormat = "M/d/yyyy, h:m a"
             cell.postDate.text = dateFormatter.string(from: data.postDate as Date)
             return cell
         }
@@ -250,7 +250,7 @@ extension PostsDetailViewController: UIGestureRecognizerDelegate{
         }
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "delete my comment", style: .destructive, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Delete my comment", style: .destructive, handler: { (action) in
             AppDataManager.shared.postsData[self.correspondTag].replies.remove(at: realIndexPathItem)
             AppDataManager.shared.postsData[self.correspondTag].commentCount -= 1
             if !AppDataManager.shared.postsData[self.correspondTag].replies.contains(where: { (item) -> Bool in

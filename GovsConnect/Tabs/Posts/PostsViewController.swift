@@ -111,11 +111,11 @@ extension PostsViewController: UIGestureRecognizerDelegate{
         }
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "delete my post", style: .destructive, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Delete my post", style: .destructive, handler: { (action) in
             AppDataManager.shared.postsData.remove(at: realIndexPathItem)
             self.mainTableView.reloadData()
         }))
-        alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }

@@ -27,6 +27,8 @@
 		132F819E20C90DD0005D3905 /* numberthree.png in Resources */ = {isa = PBXBuildFile; fileRef = 132F819920C90DD0005D3905 /* numberthree.png */; };
 		132F81A620C91FB9005D3905 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F81A420C91FB9005D3905 /* PostsTableViewCell.swift */; };
 		132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132F81A520C91FB9005D3905 /* PostsTableViewCell.xib */; };
+		13321FB920CF7B04000B6C41 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13321FB720CF7B04000B6C41 /* NewPostViewController.swift */; };
+		13321FBA20CF7B04000B6C41 /* NewPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13321FB820CF7B04000B6C41 /* NewPostViewController.xib */; };
 		13961E0A20CA6DAC004FFF4B /* PostSeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13961E0820CA6DAC004FFF4B /* PostSeparatorTableViewCell.swift */; };
 		13961E0B20CA6DAC004FFF4B /* PostSeparatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13961E0920CA6DAC004FFF4B /* PostSeparatorTableViewCell.xib */; };
 		13961E1320CA7766004FFF4B /* system_viewed.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E0D20CA7766004FFF4B /* system_viewed.png */; };
@@ -75,6 +77,8 @@
 		132F819920C90DD0005D3905 /* numberthree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numberthree.png; sourceTree = "<group>"; };
 		132F81A420C91FB9005D3905 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		132F81A520C91FB9005D3905 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
+		13321FB720CF7B04000B6C41 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		13321FB820CF7B04000B6C41 /* NewPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewPostViewController.xib; sourceTree = "<group>"; };
 		13961E0820CA6DAC004FFF4B /* PostSeparatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSeparatorTableViewCell.swift; sourceTree = "<group>"; };
 		13961E0920CA6DAC004FFF4B /* PostSeparatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSeparatorTableViewCell.xib; sourceTree = "<group>"; };
 		13961E0D20CA7766004FFF4B /* system_viewed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_viewed.png; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */,
 				13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */,
 				13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */,
+				13321FB720CF7B04000B6C41 /* NewPostViewController.swift */,
+				13321FB820CF7B04000B6C41 /* NewPostViewController.xib */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 				132F819A20C90DD0005D3905 /* numberfive.png in Resources */,
 				13961E0B20CA6DAC004FFF4B /* PostSeparatorTableViewCell.xib in Resources */,
 				132F817F20C8C952005D3905 /* WelcomeViewController.xib in Resources */,
+				13321FBA20CF7B04000B6C41 /* NewPostViewController.xib in Resources */,
 				132F819D20C90DD0005D3905 /* numbertwo.png in Resources */,
 				13961E1520CA7766004FFF4B /* system_comment.png in Resources */,
 				13961E2620CAB456004FFF4B /* testing_profile_picture_4.png in Resources */,
@@ -343,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13961E0A20CA6DAC004FFF4B /* PostSeparatorTableViewCell.swift in Sources */,
+				13321FB920CF7B04000B6C41 /* NewPostViewController.swift in Sources */,
 				13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,

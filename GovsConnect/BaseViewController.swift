@@ -13,12 +13,13 @@ class BaseViewController: UIViewController {
     @IBOutlet var postsTabBarItem: UITabBarItem!
     static let presentPostsDetailNotificationName = Notification.Name.init("presentPostsDetailNotificationName")
     var postsViewController: PostsViewController?
+    var addPostsViewController: NewPostViewController?
     var defaultNavigationController: UINavigationController?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNotification()
         self.setupView()
-        self.beginPreparingAnimation()
+        //self.beginPreparingAnimation()
     }
     
     func setupNotification(){
@@ -26,6 +27,7 @@ class BaseViewController: UIViewController {
     }
     
     func setupView(){
+        UIApplication.shared.statusBarStyle = .lightContent
         self.postsViewController = PostsViewController(nibName: "PostsViewController", bundle: nil)
         self.defaultNavigationController = UINavigationController(rootViewController: self.postsViewController!)
         self.view.addSubview(self.defaultNavigationController!.view)
@@ -33,9 +35,14 @@ class BaseViewController: UIViewController {
         self.defaultNavigationController!.view.frame = CGRect(x: self.view.bounds.origin.x, y: self.view.bounds.origin.y, width: self.view.bounds.width, height: contentViewHeight)
         self.defaultNavigationController!.navigationBar.barStyle = .default
         self.defaultNavigationController!.navigationBar.barTintColor = APP_THEME_COLOR
+        self.defaultNavigationController!.navigationBar.tintColor = UIColor.white
         self.defaultNavigationController!.navigationBar.isTranslucent = false
         self.defaultNavigationController!.navigationBar.topItem!.title = "Posts"
         self.defaultNavigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: .bold), NSAttributedStringKey.foregroundColor: UIColor.white]
+        let newPostButton = UIBarButtonItem(image: #imageLiteral(resourceName: "system_new_post"), style: .plain, target: nil, action: #selector(self.newPostButtonDidClick(_:)))
+        newPostButton.title = nil
+        self.defaultNavigationController!.navigationBar.topItem!.setRightBarButton(newPostButton, animated: false)
+        
         self.tabBar.selectedItem = self.postsTabBarItem
     }
     
@@ -58,10 +65,6 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     private func setupBasicViewTransation(){
         let transition = CATransition()
         transition.duration = 0.3
@@ -77,6 +80,17 @@ class BaseViewController: UIViewController {
         let detailViewController = PostsDetailViewController(nibName: "PostsDetailViewController", bundle: Bundle.main)
         detailViewController.correspondTag = selectedTag
         self.defaultNavigationController!.pushViewController(detailViewController, animated: false)
+    }
+    
+    @objc func newPostButtonDidClick(_ sender: UINavigationItem){
+        UIApplication.shared.statusBarStyle = .default
+        self.addPostsViewController = NewPostViewController(nibName: "NewPostViewController", bundle: Bundle.main)
+        self.addPostsViewController!.view.frame = CGRect(x: self.view.bounds.origin.x, y: self.view.bounds.origin.y + self.view.bounds.height, width: self.view.bounds.width, height: self.view.bounds.height)
+        self.view.superview!.addSubview(self.addPostsViewController!.view)
+        UIView.animate(withDuration: 0.3){
+            self.addPostsViewController!.view.frame = self.view.bounds
+            UIApplication.shared.statusBarStyle = .`default`
+        }
     }
 }
 
