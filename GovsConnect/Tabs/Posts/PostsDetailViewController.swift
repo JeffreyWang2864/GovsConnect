@@ -163,6 +163,9 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "M/d/yyyy, h:m a"
             cell.postDate.text = dateFormatter.string(from: data.postDate as Date)
+            if data.postImagesName.count > 0{
+                cell.addImagesAtEnd(data.postImagesName)
+            }
             return cell
         }
         if indexPath.item % 2 == 1{

@@ -21,6 +21,8 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
     @IBOutlet var imageStackView: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.imageStackView.distribution = .fillEqually
+        self.imageStackView.spacing = 5
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_like.png"), for: .normal)
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_liked.png"), for: .selected)
         self.viewIcon.setImage(#imageLiteral(resourceName: "system_view.png"), for: .normal)
@@ -31,7 +33,14 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
     }
     
     func addImagesAtEnd(_ names: Array<String>){
-//        let sv = UIStackView(frame: CGRect(x: self.co, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>))
+        let c = self.imageStackView.constraints[0]
+        c.constant = CGFloat(200 * names.count + 1)
+        for name in names{
+            let v = UIImageView()
+            v.image = UIImage(named: name)!
+            v.contentMode = .scaleAspectFit
+            self.imageStackView.addArrangedSubview(v)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
