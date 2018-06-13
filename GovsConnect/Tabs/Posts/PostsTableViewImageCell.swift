@@ -1,37 +1,34 @@
 //
-//  PostsDetailBodyTableViewCell.swift
+//  PostsTableViewCell.swift
 //  GovsConnect
 //
-//  Created by Jeffrey Wang on 2018/6/9.
+//  Created by Jeffrey Wang on 2018/6/7.
 //  Copyright © 2018 Eagersoft. All rights reserved.
 //
 
 import UIKit
 
-class PostsDetailBodyTableViewCell: UITableViewCell {
+class PostsTableViewImageCell: UITableViewCell {
+    @IBOutlet var authorImage: UIImageView!
+    @IBOutlet var authorNameDate: UILabel!
     @IBOutlet var postTitle: UILabel!
-    @IBOutlet var postBody: UILabel!
+    @IBOutlet var postDescription: UILabel!
+    @IBOutlet var viewLabel: UILabel!
+    @IBOutlet var likeLabel: UILabel!
+    @IBOutlet var commentLabel: UILabel!
     @IBOutlet var viewIcon: UIButton!
-    @IBOutlet var viewCount: UILabel!
     @IBOutlet var likeIcon: UIButton!
-    @IBOutlet var likeCount: UILabel!
     @IBOutlet var commentIcon: UIButton!
-    @IBOutlet var commentCount: UILabel!
-    @IBOutlet var postDate: UILabel!
     @IBOutlet var imageStackView: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_like.png"), for: .normal)
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_liked.png"), for: .selected)
         self.viewIcon.setImage(#imageLiteral(resourceName: "system_view.png"), for: .normal)
         self.viewIcon.setImage(#imageLiteral(resourceName: "system_viewed.png"), for: .selected)
         self.commentIcon.setImage(#imageLiteral(resourceName: "system_comment.png"), for: .normal)
         self.commentIcon.setImage(#imageLiteral(resourceName: "system_commented.png"), for: .selected)
-        // Initialization code
-    }
-    
-    func addImagesAtEnd(_ names: Array<String>){
-//        let sv = UIStackView(frame: CGRect(x: self.co, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,7 +38,7 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
     }
     
     @IBAction func viewButtonDidClick(_ sender: UIButton){
-        
+        NotificationCenter.default.post(name: BaseViewController.presentPostsDetailNotificationName, object: nil, userInfo: ["indexPath": self.tag])
     }
     
     @IBAction func likeButtonDidClick(_ sender: UIButton){
@@ -50,20 +47,31 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
             NSLog("unliked")
             AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = false
             AppDataManager.shared.postsData[self.tag].likeCount -= 1
-            self.likeCount.text = "\(Int(self.likeCount.text!)! - 1)"
+            self.likeLabel.text = "\(Int(self.likeLabel.text!)! - 1)"
             self.reloadInputViews()
             return
         }
         self.likeIcon.isSelected = true
-        NSLog("click on like")
         AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = true
         AppDataManager.shared.postsData[self.tag].likeCount += 1
-        self.likeCount.text = "\(Int(self.likeCount.text!)! + 1)"
+        self.likeLabel.text = "\(Int(self.likeLabel.text!)! + 1)"
     }
     
     @IBAction func commentButtonDidClick(_ sender: UIButton){
-        NSLog("here")
-        NotificationCenter.default.post(Notification(name: PostsDetailViewController.startCommentingNotificationName))
+        NotificationCenter.default.post(name: BaseViewController.presentPostsDetailNotificationName, object: nil, userInfo: ["indexPath": self.tag])
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+            NotificationCenter.default.post(Notification(name: PostsDetailViewController.startCommentingNotificationName))
+        }
     }
     
+    func addToView(imageNames: Array<String>){
+        assert(imageNames.count > 0 && imageNames.count < 4)
+        self.imageStackView.spacing = 2
+        self.imageStackView.distribution = .fillEqually
+        for imageName in imageNames{
+            let v = UIImageView()
+            v.image = UIImage.init(named: imageName)
+            self.imageStackView.addArrangedSubview(v)
+        }
+    }
 }

@@ -31,6 +31,9 @@ class AppDataManager{
         self.postsData[0].replies.append(ReplyDataContainer.init(self.users["kevji001"]!, nil, "nice. Android is also avaliable!", 2, false))
         self.postsData[0].replies.append(ReplyDataContainer.init(self.users["dontr001"]!, nil, "make goveror great again!!!", 0, false))
         self.postsData[0].replies.append(ReplyDataContainer.init(self.users["ranpe001"]!, self.users["kevji001"]!, "can I join the developer crew?", 4, false))
+        self.postsData[0].postImagesName.append("testing_picture_2.jpg")
+        self.postsData[0].postImagesName.append("testing_picture_3.jpg")
+        self.postsData[2].postImagesName.append("testing_picture_1.jpg")
     }
 }
 
@@ -50,6 +53,7 @@ class PostsDataContainer{
     let postDate: NSDate
     let postTitle: String
     let postContent: String
+    var postImagesName = Array<String>()
     var viewCount: Int
     var likeCount: Int
     var commentCount: Int

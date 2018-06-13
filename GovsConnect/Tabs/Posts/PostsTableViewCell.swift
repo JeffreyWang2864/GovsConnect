@@ -63,5 +63,4 @@ class PostsTableViewCell: UITableViewCell {
             NotificationCenter.default.post(Notification(name: PostsDetailViewController.startCommentingNotificationName))
         }
     }
-    
 }
