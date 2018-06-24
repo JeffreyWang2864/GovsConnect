@@ -34,8 +34,8 @@
 		13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */; };
 		138D166820D12064005F3425 /* PostsTableViewImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138D166620D12064005F3425 /* PostsTableViewImageCell.xib */; };
 		138D166920D12064005F3425 /* PostsTableViewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D166720D12064005F3425 /* PostsTableViewImageCell.swift */; };
-		13961E0A20CA6DAC004FFF4B /* PostSeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13961E0820CA6DAC004FFF4B /* PostSeparatorTableViewCell.swift */; };
-		13961E0B20CA6DAC004FFF4B /* PostSeparatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13961E0920CA6DAC004FFF4B /* PostSeparatorTableViewCell.xib */; };
+		138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D166A20D16D36005F3425 /* MultiMediaCollectionViewCell.swift */; };
+		138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */; };
 		13961E1320CA7766004FFF4B /* system_viewed.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E0D20CA7766004FFF4B /* system_viewed.png */; };
 		13961E1420CA7766004FFF4B /* system_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E0E20CA7766004FFF4B /* system_liked.png */; };
 		13961E1520CA7766004FFF4B /* system_comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E0F20CA7766004FFF4B /* system_comment.png */; };
@@ -45,9 +45,6 @@
 		13961E1A20CA9FB1004FFF4B /* system_commented.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E1920CA9FB1004FFF4B /* system_commented.png */; };
 		13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13961E1C20CAA9B0004FFF4B /* AppDataManager.swift */; };
 		13961E2020CAB151004FFF4B /* defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13961E1F20CAB151004FFF4B /* defines.swift */; };
-		13961E2420CAB456004FFF4B /* testing_profile_picture_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E2120CAB455004FFF4B /* testing_profile_picture_2.png */; };
-		13961E2520CAB456004FFF4B /* testing_profile_picture_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13961E2220CAB455004FFF4B /* testing_profile_picture_3.jpg */; };
-		13961E2620CAB456004FFF4B /* testing_profile_picture_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E2320CAB455004FFF4B /* testing_profile_picture_4.png */; };
 		13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13961E2920CAC1F3004FFF4B /* tool.swift */; };
 		13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13961E2B20CB5A74004FFF4B /* PostsDetailViewController.swift */; };
 		13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13961E2C20CB5A74004FFF4B /* PostsDetailViewController.xib */; };
@@ -57,9 +54,23 @@
 		13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */; };
 		13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */; };
 		13F4094C20CCF2A200645880 /* system_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094B20CCF2A200645880 /* system_send.png */; };
+		B8C2EC8E928B34CB0A8CC938 /* Pods_GovsConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */; };
+		BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490E520DA22FC00373BBF /* GCBaseTableViewCell.swift */; };
+		BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490E720DA235B00373BBF /* GCBaseViewController.swift */; };
+		BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490E920DA239300373BBF /* GCTabBarViewController.swift */; };
+		BC1490EC20DA240100373BBF /* GCNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490EB20DA240100373BBF /* GCNavigationViewController.swift */; };
+		BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490ED20DA550A00373BBF /* UIView+Ext.swift */; };
+		BC14910620DA657D00373BBF /* testing_profile_picture_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BC14910320DA657C00373BBF /* testing_profile_picture_4.png */; };
+		BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC14910420DA657D00373BBF /* testing_profile_picture_2.png */; };
+		BC14910820DA657D00373BBF /* testing_profile_picture_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC14910520DA657D00373BBF /* testing_profile_picture_3.jpg */; };
+		BC14910A20DB4D9000373BBF /* GCLookUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14910920DB4D9000373BBF /* GCLookUpViewController.swift */; };
+		BC14910C20DB508A00373BBF /* GCDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14910B20DB508A00373BBF /* GCDiscoverViewController.swift */; };
+		BC14910E20DB50A300373BBF /* GCYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14910D20DB50A300373BBF /* GCYouViewController.swift */; };
+		BC14911020DB50CC00373BBF /* GCServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14910F20DB50CC00373BBF /* GCServicesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E2B5E8DAACCCA68B7312709 /* Pods-GovsConnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovsConnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.debug.xcconfig"; sourceTree = "<group>"; };
 		1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_jzm.png; sourceTree = "<group>"; };
 		1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_dt.png; sourceTree = "<group>"; };
 		1327C1A720CE497A001A300A /* system_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_reply.png; sourceTree = "<group>"; };
@@ -89,8 +100,8 @@
 		13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_2.jpg; sourceTree = "<group>"; };
 		138D166620D12064005F3425 /* PostsTableViewImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsTableViewImageCell.xib; sourceTree = "<group>"; };
 		138D166720D12064005F3425 /* PostsTableViewImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewImageCell.swift; sourceTree = "<group>"; };
-		13961E0820CA6DAC004FFF4B /* PostSeparatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSeparatorTableViewCell.swift; sourceTree = "<group>"; };
-		13961E0920CA6DAC004FFF4B /* PostSeparatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSeparatorTableViewCell.xib; sourceTree = "<group>"; };
+		138D166A20D16D36005F3425 /* MultiMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiMediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiMediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		13961E0D20CA7766004FFF4B /* system_viewed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_viewed.png; sourceTree = "<group>"; };
 		13961E0E20CA7766004FFF4B /* system_liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_liked.png; sourceTree = "<group>"; };
 		13961E0F20CA7766004FFF4B /* system_comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_comment.png; sourceTree = "<group>"; };
@@ -100,9 +111,6 @@
 		13961E1920CA9FB1004FFF4B /* system_commented.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_commented.png; sourceTree = "<group>"; };
 		13961E1C20CAA9B0004FFF4B /* AppDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataManager.swift; sourceTree = "<group>"; };
 		13961E1F20CAB151004FFF4B /* defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defines.swift; sourceTree = "<group>"; };
-		13961E2120CAB455004FFF4B /* testing_profile_picture_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testing_profile_picture_2.png; path = GovsConnect/images/Testing/testing_profile_picture_2.png; sourceTree = SOURCE_ROOT; };
-		13961E2220CAB455004FFF4B /* testing_profile_picture_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = testing_profile_picture_3.jpg; path = GovsConnect/images/Testing/testing_profile_picture_3.jpg; sourceTree = SOURCE_ROOT; };
-		13961E2320CAB455004FFF4B /* testing_profile_picture_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testing_profile_picture_4.png; path = GovsConnect/images/Testing/testing_profile_picture_4.png; sourceTree = SOURCE_ROOT; };
 		13961E2920CAC1F3004FFF4B /* tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tool.swift; sourceTree = "<group>"; };
 		13961E2B20CB5A74004FFF4B /* PostsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailViewController.swift; sourceTree = "<group>"; };
 		13961E2C20CB5A74004FFF4B /* PostsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailViewController.xib; sourceTree = "<group>"; };
@@ -112,6 +120,20 @@
 		13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailReplyTableViewCell.swift; sourceTree = "<group>"; };
 		13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailReplyTableViewCell.xib; sourceTree = "<group>"; };
 		13F4094B20CCF2A200645880 /* system_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_send.png; sourceTree = "<group>"; };
+		8F9D974B7CD4FABCEEEF381C /* Pods-GovsConnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovsConnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.release.xcconfig"; sourceTree = "<group>"; };
+		BC1490E520DA22FC00373BBF /* GCBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCBaseTableViewCell.swift; sourceTree = "<group>"; };
+		BC1490E720DA235B00373BBF /* GCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCBaseViewController.swift; sourceTree = "<group>"; };
+		BC1490E920DA239300373BBF /* GCTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCTabBarViewController.swift; sourceTree = "<group>"; };
+		BC1490EB20DA240100373BBF /* GCNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCNavigationViewController.swift; sourceTree = "<group>"; };
+		BC1490ED20DA550A00373BBF /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		BC14910320DA657C00373BBF /* testing_profile_picture_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_4.png; sourceTree = "<group>"; };
+		BC14910420DA657D00373BBF /* testing_profile_picture_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_2.png; sourceTree = "<group>"; };
+		BC14910520DA657D00373BBF /* testing_profile_picture_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_profile_picture_3.jpg; sourceTree = "<group>"; };
+		BC14910920DB4D9000373BBF /* GCLookUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLookUpViewController.swift; sourceTree = "<group>"; };
+		BC14910B20DB508A00373BBF /* GCDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDiscoverViewController.swift; sourceTree = "<group>"; };
+		BC14910D20DB50A300373BBF /* GCYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCYouViewController.swift; sourceTree = "<group>"; };
+		BC14910F20DB50CC00373BBF /* GCServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCServicesViewController.swift; sourceTree = "<group>"; };
+		FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GovsConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8C2EC8E928B34CB0A8CC938 /* Pods_GovsConnect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +153,8 @@
 			children = (
 				132F816920C8C77C005D3905 /* GovsConnect */,
 				132F816820C8C77C005D3905 /* Products */,
+				F73684DB68754775AA398023 /* Pods */,
+				E69AA26B779572AEDB876F1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,11 +169,12 @@
 		132F816920C8C77C005D3905 /* GovsConnect */ = {
 			isa = PBXGroup;
 			children = (
+				BC1490E320DA22BE00373BBF /* Base */,
 				13F4095020CD370900645880 /* GC */,
 				13961E1E20CAB137004FFF4B /* Util */,
 				13961E1B20CAA99C004FFF4B /* Manager */,
-				132F818920C90D8F005D3905 /* images */,
-				132F818420C8DA9B005D3905 /* Tabs */,
+				132F818920C90D8F005D3905 /* Resources */,
+				132F818420C8DA9B005D3905 /* Modules */,
 				132F816A20C8C77C005D3905 /* AppDelegate.swift */,
 				132F818020C8CA1E005D3905 /* BaseViewController.swift */,
 				132F818120C8CA1E005D3905 /* BaseViewController.xib */,
@@ -162,34 +188,38 @@
 			path = GovsConnect;
 			sourceTree = "<group>";
 		};
-		132F818420C8DA9B005D3905 /* Tabs */ = {
+		132F818420C8DA9B005D3905 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				132F819F20C91B98005D3905 /* Posts */,
+				BC1490FF20DA643E00373BBF /* LookUpModule */,
+				BC1490FB20DA642100373BBF /* ServicesModule */,
+				BC1490F720DA640D00373BBF /* DiscoverModule */,
+				BC1490F320DA635E00373BBF /* YouModule */,
+				132F819F20C91B98005D3905 /* PostsModule */,
 			);
-			path = Tabs;
+			path = Modules;
 			sourceTree = "<group>";
 		};
-		132F818920C90D8F005D3905 /* images */ = {
+		132F818920C90D8F005D3905 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				13961E0C20CA772F004FFF4B /* System */,
 				132F819420C90DC1005D3905 /* Testing */,
 			);
-			path = images;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		132F819420C90DC1005D3905 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				BC14910420DA657D00373BBF /* testing_profile_picture_2.png */,
+				BC14910520DA657D00373BBF /* testing_profile_picture_3.jpg */,
+				BC14910320DA657C00373BBF /* testing_profile_picture_4.png */,
 				13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */,
 				13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */,
 				13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */,
 				1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */,
 				1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */,
-				13961E2120CAB455004FFF4B /* testing_profile_picture_2.png */,
-				13961E2220CAB455004FFF4B /* testing_profile_picture_3.jpg */,
-				13961E2320CAB455004FFF4B /* testing_profile_picture_4.png */,
 				13EBE00620CA616000A911DE /* testing_profile_picture_1.png */,
 				132F819520C90DCF005D3905 /* numberfive.png */,
 				132F819720C90DD0005D3905 /* numberfour.png */,
@@ -200,27 +230,14 @@
 			path = Testing;
 			sourceTree = "<group>";
 		};
-		132F819F20C91B98005D3905 /* Posts */ = {
+		132F819F20C91B98005D3905 /* PostsModule */ = {
 			isa = PBXGroup;
 			children = (
-				132F818520C8DAB2005D3905 /* PostsViewController.swift */,
-				132F818620C8DAB2005D3905 /* PostsViewController.xib */,
-				132F81A420C91FB9005D3905 /* PostsTableViewCell.swift */,
-				132F81A520C91FB9005D3905 /* PostsTableViewCell.xib */,
-				138D166720D12064005F3425 /* PostsTableViewImageCell.swift */,
-				138D166620D12064005F3425 /* PostsTableViewImageCell.xib */,
-				13961E0820CA6DAC004FFF4B /* PostSeparatorTableViewCell.swift */,
-				13961E0920CA6DAC004FFF4B /* PostSeparatorTableViewCell.xib */,
-				13961E2B20CB5A74004FFF4B /* PostsDetailViewController.swift */,
-				13961E2C20CB5A74004FFF4B /* PostsDetailViewController.xib */,
-				13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */,
-				13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */,
-				13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */,
-				13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */,
-				13321FB720CF7B04000B6C41 /* NewPostViewController.swift */,
-				13321FB820CF7B04000B6C41 /* NewPostViewController.xib */,
+				BC1490F120DA621A00373BBF /* Controller */,
+				BC1490F020DA621400373BBF /* View */,
+				BC1490EF20DA620C00373BBF /* Model */,
 			);
-			path = Posts;
+			path = PostsModule;
 			sourceTree = "<group>";
 		};
 		13961E0C20CA772F004FFF4B /* System */ = {
@@ -252,6 +269,7 @@
 			children = (
 				13961E1F20CAB151004FFF4B /* defines.swift */,
 				13961E2920CAC1F3004FFF4B /* tool.swift */,
+				BC1490ED20DA550A00373BBF /* UIView+Ext.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -263,6 +281,199 @@
 			path = GC;
 			sourceTree = "<group>";
 		};
+		BC1490E320DA22BE00373BBF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BC1490E520DA22FC00373BBF /* GCBaseTableViewCell.swift */,
+				BC1490E720DA235B00373BBF /* GCBaseViewController.swift */,
+				BC1490E920DA239300373BBF /* GCTabBarViewController.swift */,
+				BC1490EB20DA240100373BBF /* GCNavigationViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BC1490EF20DA620C00373BBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC1490F020DA621400373BBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				138D166A20D16D36005F3425 /* MultiMediaCollectionViewCell.swift */,
+				138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */,
+				13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */,
+				13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */,
+				13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */,
+				13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */,
+				132F81A420C91FB9005D3905 /* PostsTableViewCell.swift */,
+				132F81A520C91FB9005D3905 /* PostsTableViewCell.xib */,
+				138D166720D12064005F3425 /* PostsTableViewImageCell.swift */,
+				138D166620D12064005F3425 /* PostsTableViewImageCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC1490F120DA621A00373BBF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13321FB720CF7B04000B6C41 /* NewPostViewController.swift */,
+				13321FB820CF7B04000B6C41 /* NewPostViewController.xib */,
+				13961E2B20CB5A74004FFF4B /* PostsDetailViewController.swift */,
+				13961E2C20CB5A74004FFF4B /* PostsDetailViewController.xib */,
+				132F818520C8DAB2005D3905 /* PostsViewController.swift */,
+				132F818620C8DAB2005D3905 /* PostsViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC1490F320DA635E00373BBF /* YouModule */ = {
+			isa = PBXGroup;
+			children = (
+				BC1490F420DA635E00373BBF /* Controller */,
+				BC1490F520DA635E00373BBF /* Model */,
+				BC1490F620DA635E00373BBF /* View */,
+			);
+			path = YouModule;
+			sourceTree = "<group>";
+		};
+		BC1490F420DA635E00373BBF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC14910D20DB50A300373BBF /* GCYouViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC1490F520DA635E00373BBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC1490F620DA635E00373BBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC1490F720DA640D00373BBF /* DiscoverModule */ = {
+			isa = PBXGroup;
+			children = (
+				BC1490F820DA640D00373BBF /* Controller */,
+				BC1490F920DA640D00373BBF /* Model */,
+				BC1490FA20DA640D00373BBF /* View */,
+			);
+			path = DiscoverModule;
+			sourceTree = "<group>";
+		};
+		BC1490F820DA640D00373BBF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC14910B20DB508A00373BBF /* GCDiscoverViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC1490F920DA640D00373BBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC1490FA20DA640D00373BBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC1490FB20DA642100373BBF /* ServicesModule */ = {
+			isa = PBXGroup;
+			children = (
+				BC1490FC20DA642100373BBF /* Controller */,
+				BC1490FD20DA642100373BBF /* Model */,
+				BC1490FE20DA642100373BBF /* View */,
+			);
+			path = ServicesModule;
+			sourceTree = "<group>";
+		};
+		BC1490FC20DA642100373BBF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC14910F20DB50CC00373BBF /* GCServicesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC1490FD20DA642100373BBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC1490FE20DA642100373BBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC1490FF20DA643E00373BBF /* LookUpModule */ = {
+			isa = PBXGroup;
+			children = (
+				BC14910020DA643E00373BBF /* Controller */,
+				BC14910120DA643E00373BBF /* Model */,
+				BC14910220DA643E00373BBF /* View */,
+			);
+			path = LookUpModule;
+			sourceTree = "<group>";
+		};
+		BC14910020DA643E00373BBF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC14910920DB4D9000373BBF /* GCLookUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC14910120DA643E00373BBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC14910220DA643E00373BBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E69AA26B779572AEDB876F1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F73684DB68754775AA398023 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E2B5E8DAACCCA68B7312709 /* Pods-GovsConnect.debug.xcconfig */,
+				8F9D974B7CD4FABCEEEF381C /* Pods-GovsConnect.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,9 +481,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 132F817920C8C77C005D3905 /* Build configuration list for PBXNativeTarget "GovsConnect" */;
 			buildPhases = (
+				B2695E944C899B1A2E1BC854 /* [CP] Check Pods Manifest.lock */,
 				132F816320C8C77C005D3905 /* Sources */,
 				132F816420C8C77C005D3905 /* Frameworks */,
 				132F816520C8C77C005D3905 /* Resources */,
+				38202BF62D64E75FE8E155D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,6 +535,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC14910820DA657D00373BBF /* testing_profile_picture_3.jpg in Resources */,
 				13961E1420CA7766004FFF4B /* system_liked.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
 				132F817520C8C77C005D3905 /* LaunchScreen.storyboard in Resources */,
@@ -330,9 +544,7 @@
 				13961E1820CA7766004FFF4B /* system_share.png in Resources */,
 				1327C1A820CE497A001A300A /* system_reply.png in Resources */,
 				13961E1A20CA9FB1004FFF4B /* system_commented.png in Resources */,
-				13961E2520CAB456004FFF4B /* testing_profile_picture_3.jpg in Resources */,
 				13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */,
-				13961E2420CAB456004FFF4B /* testing_profile_picture_2.png in Resources */,
 				13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */,
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
@@ -346,13 +558,14 @@
 				132F819B20C90DD0005D3905 /* numberone.png in Resources */,
 				1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */,
 				132F819A20C90DD0005D3905 /* numberfive.png in Resources */,
-				13961E0B20CA6DAC004FFF4B /* PostSeparatorTableViewCell.xib in Resources */,
 				132F817F20C8C952005D3905 /* WelcomeViewController.xib in Resources */,
 				13321FBA20CF7B04000B6C41 /* NewPostViewController.xib in Resources */,
 				132F819D20C90DD0005D3905 /* numbertwo.png in Resources */,
 				13961E1520CA7766004FFF4B /* system_comment.png in Resources */,
-				13961E2620CAB456004FFF4B /* testing_profile_picture_4.png in Resources */,
+				BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */,
+				138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */,
 				13961E1320CA7766004FFF4B /* system_viewed.png in Resources */,
+				BC14910620DA657D00373BBF /* testing_profile_picture_4.png in Resources */,
 				132F817220C8C77C005D3905 /* Assets.xcassets in Resources */,
 				132F817020C8C77C005D3905 /* Main.storyboard in Resources */,
 				13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */,
@@ -363,25 +576,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38202BF62D64E75FE8E155D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2695E944C899B1A2E1BC854 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GovsConnect-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		132F816320C8C77C005D3905 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13961E0A20CA6DAC004FFF4B /* PostSeparatorTableViewCell.swift in Sources */,
+				BC14910C20DB508A00373BBF /* GCDiscoverViewController.swift in Sources */,
 				13321FB920CF7B04000B6C41 /* NewPostViewController.swift in Sources */,
 				13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */,
 				138D166920D12064005F3425 /* PostsTableViewImageCell.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
+				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
 				132F817E20C8C952005D3905 /* WelcomeViewController.swift in Sources */,
+				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
+				BC14910E20DB50A300373BBF /* GCYouViewController.swift in Sources */,
 				132F81A620C91FB9005D3905 /* PostsTableViewCell.swift in Sources */,
 				132F818220C8CA1E005D3905 /* BaseViewController.swift in Sources */,
+				BC14911020DB50CC00373BBF /* GCServicesViewController.swift in Sources */,
+				BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */,
 				13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */,
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
+				BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */,
 				13961E2020CAB151004FFF4B /* defines.swift in Sources */,
+				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,
+				BC14910A20DB4D9000373BBF /* GCLookUpViewController.swift in Sources */,
+				BC1490EC20DA240100373BBF /* GCNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,31 +777,35 @@
 		};
 		132F817A20C8C77C005D3905 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E2B5E8DAACCCA68B7312709 /* Pods-GovsConnect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SWNM35NBHT;
 				INFOPLIST_FILE = GovsConnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		132F817B20C8C77C005D3905 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F9D974B7CD4FABCEEEF381C /* Pods-GovsConnect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SWNM35NBHT;
 				INFOPLIST_FILE = GovsConnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

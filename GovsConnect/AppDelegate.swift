@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         AppDataManager.shared.setupData()
-        // Override point for customization after application launch.
+        
+
+        //设置window的跟控制器为标签栏控制器
+        self.window = UIWindow.init(frame:UIScreen.main.bounds)
+        let tabbarVc = GCTabBarViewController()
+        self.window?.rootViewController = tabbarVc
+        self.window?.backgroundColor = UIColor.white
+        self.window?.makeKeyAndVisible()
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.enable = true
         return true
     }
 
