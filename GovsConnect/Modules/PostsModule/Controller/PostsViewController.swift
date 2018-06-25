@@ -19,7 +19,6 @@ class PostsViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.shouldRefreashCell(_:)), name: PostsViewController.shouldRefreashCellNotificationName, object: nil)
         
         self.mainTableView.register(UINib.init(nibName: "PostsTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_CELL_ID")
-        self.mainTableView.register(UINib.init(nibName: "PostsTableViewImageCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_IMAGE_CELL_ID")
         
         self.mainTableView.delegate = self
         self.mainTableView.dataSource = self
@@ -85,45 +84,23 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let realIndexPathItem = indexPath.section
-        let data = AppDataManager.shared.postsData[realIndexPathItem]
-        
-        //带图片的cell
-        if data.postImagesName.count > 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "POSTS_TABLEVIEW_IMAGE_CELL_ID", for: indexPath) as! PostsTableViewImageCell
-            cell.authorImage.image = UIImage.init(named: data.author.profilePictureName)
-            cell.authorNameDate.text = data.author.name + " · " + prettyTimeSince(data.postDate.timeIntervalSinceNow)
-            cell.postTitle.text = data.postTitle
-            cell.postDescription.text = "\(data.postContent.prefix(upTo: data.postContent.index(data.postContent.startIndex, offsetBy: min(100, data.postContent.count))))"
-            cell.likeIcon.isSelected = data.isLikedByCurrentUser
-            cell.commentIcon.isSelected = data.isCommentedByCurrentUser
-            cell.viewIcon.isSelected = data.isViewedByCurrentUser
-            cell.likeLabel.text = "\(data.likeCount)"
-            cell.commentLabel.text = "\(data.commentCount)"
-            cell.viewLabel.text = "\(data.viewCount)"
-            if cell.imageStackView.arrangedSubviews.count == 0{
-                cell.addToView(imageNames: data.postImagesName)
-            }
-            cell.tag = realIndexPathItem
-            return cell
-        }else{
-            //不带图片的cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "POSTS_TABLEVIEW_CELL_ID", for: indexPath) as! PostsTableViewCell
-            cell.viewBlock = {
-                let detailViewController = PostsDetailViewController(nibName: "PostsDetailViewController", bundle: Bundle.main)
-                detailViewController.correspondTag = indexPath.section
-                self.navigationController?.pushViewController(detailViewController, animated: true)
-            }
-            cell.commentBlock = {
-                let detailViewController = PostsDetailViewController(nibName: "PostsDetailViewController", bundle: Bundle.main)
-                detailViewController.correspondTag = indexPath.section
-                detailViewController.isComment = true
-                self.navigationController?.pushViewController(detailViewController, animated: true)
-            }
-            cell.data = data
-            cell.tag = realIndexPathItem
-            return cell
+        //let realIndexPathItem = indexPath.section
+        let data = AppDataManager.shared.postsData[indexPath.section]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "POSTS_TABLEVIEW_CELL_ID", for: indexPath) as! PostsTableViewCell
+        cell.data = data
+        cell.tag = indexPath.section
+        cell.viewBlock = {
+            let detailViewController = PostsDetailViewController(nibName: "PostsDetailViewController", bundle: Bundle.main)
+            detailViewController.correspondTag = indexPath.section
+            self.navigationController?.pushViewController(detailViewController, animated: true)
         }
+        cell.commentBlock = {
+            let detailViewController = PostsDetailViewController(nibName: "PostsDetailViewController", bundle: Bundle.main)
+            detailViewController.correspondTag = indexPath.section
+            detailViewController.isComment = true
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -116,7 +116,7 @@ class PostsDetailViewController: GCBaseViewController {
         AppDataManager.shared.postsData[self.correspondTag].commentCount += 1
         AppDataManager.shared.postsData[self.correspondTag].isCommentedByCurrentUser = true
         self.tableView.reloadData()
-        let lastIndex = IndexPath.init(row: self.tableView.numberOfRows(inSection: 0) - 1, section: 0)
+        let lastIndex = IndexPath.init(row: 0, section: self.tableView.numberOfSections - 1)
         self.tableView.scrollToRow(at: lastIndex, at: .bottom, animated: false)
     }
 }
@@ -147,7 +147,7 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "M/d/yyyy, h:m a"
             cell.postDate.text = dateFormatter.string(from: data.postDate as Date)
-            if data.postImagesName.count > 0{
+            if data.postImagesName.count > 0 && cell.imageStackView.arrangedSubviews.count == 0 {
                 cell.addImagesAtEnd(data.postImagesName)
             }
             return cell

@@ -508,6 +508,7 @@
 				TargetAttributes = {
 					132F816620C8C77C005D3905 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};

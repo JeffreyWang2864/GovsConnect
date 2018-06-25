@@ -58,7 +58,6 @@ class PostsTableViewImageCell: UITableViewCell {
     }
     
     @IBAction func commentButtonDidClick(_ sender: UIButton){
-
         
     }
     

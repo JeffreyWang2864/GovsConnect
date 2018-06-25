@@ -18,7 +18,7 @@ class NewPostViewController: UIViewController {
     @IBOutlet var multiMediaCollectionView: UICollectionView!
     @IBOutlet var selectImageButton: UIButton!
     @IBOutlet var takeImageButton: UIButton!
-    var pendingImageNames = Array<(String, String)>()
+    var pendingImages = Array<UIImage>()
     var previousLine = 1
     var imagePickerController = UIImagePickerController()
     override func viewDidLoad() {
@@ -80,7 +80,7 @@ class NewPostViewController: UIViewController {
     }
     
     func updateImageCounterLabel(){
-        let count = self.pendingImageNames.count
+        let count = self.pendingImages.count
         self.imageCounterLabel.text = "\(count)/9"
         if count == 9{
             self.selectImageButton.isEnabled = false
@@ -133,7 +133,15 @@ class NewPostViewController: UIViewController {
     }
     
     @IBAction func takePhotoButtonDidClick(_ sender: UIButton){
-        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            self.imagePickerController.sourceType = .camera
+            self.imagePickerController.allowsEditing = true
+            self.present(self.imagePickerController, animated: true, completion: nil)
+        }else{
+            let alert  = UIAlertController(title: "Camera not found", message: "Unable to find camera on this device", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func choosePhotoButtonDidClick(_ sender: UIButton){
@@ -209,18 +217,12 @@ extension NewPostViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.pendingImageNames.count
+        return self.pendingImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MULTI_MEDIA_COLLECTIONVIEW_CELL_ID", for: indexPath) as! MultiMediaCollectionViewCell
-        if self.pendingImageNames[indexPath.item].0 == "name"{
-            cell.centerImageView.image = UIImage(named: self.pendingImageNames[indexPath.item].1)
-        }else{
-            let url: URL = URL(string: self.pendingImageNames[indexPath.item].1)!
-            let data: Data = try! Data(contentsOf: url)
-            cell.centerImageView.image = UIImage.init(data: data)
-        }
+        cell.centerImageView.image = self.pendingImages[indexPath.item]
         return cell
     }
     
@@ -228,20 +230,34 @@ extension NewPostViewController: UICollectionViewDelegate, UICollectionViewDataS
         NSLog("tab")
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (alert) in
-            self.pendingImageNames.remove(at: indexPath.item)
+            self.pendingImages.remove(at: indexPath.item)
             self.updateImageCounterLabel()
             self.multiMediaCollectionView.reloadData()
         }))
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, targetIndexPathForMoveFromItemAt originalIndexPath: IndexPath, toProposedIndexPath proposedIndexPath: IndexPath) -> IndexPath {
+        NSLog("original: \(originalIndexPath)\n new: \(proposedIndexPath)")
+        return proposedIndexPath
+    }
 }
 
 extension NewPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let chosenImage = info[UIImagePickerControllerImageURL] as! URL
-        self.pendingImageNames.append(("url", "\(chosenImage.absoluteString)"))
+        var chosenImage = UIImage()
+        if self.imagePickerController.sourceType == .camera{
+            chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        }else{
+            chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        }
+        self.pendingImages.append(chosenImage)
         self.multiMediaCollectionView.reloadData()
         self.updateImageCounterLabel()
         self.dismiss(animated: true, completion: nil)

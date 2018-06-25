@@ -7,8 +7,8 @@
 //
 
 import UIKit
-typealias PostsTableViewCellViewBlock = () -> ()     //查看回调
-typealias PostsTableViewCellCommentBlock = () -> ()  //评论回调
+typealias PostsTableViewCellViewBlock = () -> ()
+typealias PostsTableViewCellCommentBlock = () -> ()
 
 class PostsTableViewCell: UITableViewCell {
     @IBOutlet var authorImage: UIImageView!
@@ -21,6 +21,7 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet var viewIcon: UIButton!
     @IBOutlet var likeIcon: UIButton!
     @IBOutlet var commentIcon: UIButton!
+    @IBOutlet var imageStackView: UIStackView!
 
     var viewBlock:PostsTableViewCellViewBlock?
     var commentBlock:PostsTableViewCellCommentBlock?
@@ -36,6 +37,16 @@ class PostsTableViewCell: UITableViewCell {
             self.likeLabel.text = "\(data.likeCount)"
             self.commentLabel.text = "\(data.commentCount)"
             self.viewLabel.text = "\(data.viewCount)"
+            let heightConstraint = self.imageStackView.constraints[0]
+            self.imageStackView.arrangedSubviews.map{
+                $0.removeFromSuperview()
+            }
+            if data.postImagesName.count == 0{
+                heightConstraint.constant = 1
+            }else{
+                heightConstraint.constant = 120
+                self.displayPreviewImages(imageNames: Array<String>(data.postImagesName.prefix(upTo: min(3, data.postImagesName.count))))
+            }
         }
     }
     override func awakeFromNib() {
@@ -46,6 +57,17 @@ class PostsTableViewCell: UITableViewCell {
         self.viewIcon.setImage(#imageLiteral(resourceName: "system_viewed.png"), for: .selected)
         self.commentIcon.setImage(#imageLiteral(resourceName: "system_comment.png"), for: .normal)
         self.commentIcon.setImage(#imageLiteral(resourceName: "system_commented.png"), for: .selected)
+    }
+    
+    func displayPreviewImages(imageNames: Array<String>){
+        assert(imageNames.count > 0 && imageNames.count < 4)
+        self.imageStackView.spacing = 2
+        self.imageStackView.distribution = .fillEqually
+        for imageName in imageNames{
+            let v = UIImageView()
+            v.image = UIImage.init(named: imageName)
+            self.imageStackView.addArrangedSubview(v)
+        }
     }
 
     
