@@ -23,13 +23,6 @@ class NewPostViewController: UIViewController {
     var imagePickerController = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.multiMediaCollectionView.register(UINib.init(nibName: "MultiMediaCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MULTI_MEDIA_COLLECTIONVIEW_CELL_ID")
-        let layout = self.multiMediaCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: 45, height: 45)
-        self.multiMediaCollectionView.delegate = self
-        self.multiMediaCollectionView.dataSource = self
-        self.multiMediaCollectionView.allowsSelection = true
-        self.multiMediaCollectionView.allowsMultipleSelection = false
         self.authorImage.image = UIImage.init(named: AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.profilePictureName)
         self.postButton.layer.backgroundColor = APP_THEME_COLOR.cgColor
         self.postButton.layer.cornerRadius = 13
@@ -46,6 +39,7 @@ class NewPostViewController: UIViewController {
         if AppDataManager.shared.newPostDraft != nil{
             self.postTitleTextBox.text = AppDataManager.shared.newPostDraft!.0
             self.postBodyTextBox.text = AppDataManager.shared.newPostDraft!.1
+            self.pendingImages = AppDataManager.shared.newPostDraft!.2
             AppDataManager.shared.newPostDraft = nil
         }else{
             self.postTitleTextBox.text = "Your Title Here"
@@ -53,13 +47,20 @@ class NewPostViewController: UIViewController {
             self.postTitleTextBox.textColor = UIColor.lightGray
             self.postBodyTextBox.textColor = UIColor.lightGray
         }
+        self.multiMediaCollectionView.register(UINib.init(nibName: "MultiMediaCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MULTI_MEDIA_COLLECTIONVIEW_CELL_ID")
+        let layout = self.multiMediaCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: 45, height: 45)
+        self.multiMediaCollectionView.delegate = self
+        self.multiMediaCollectionView.dataSource = self
+        self.multiMediaCollectionView.allowsSelection = true
+        self.multiMediaCollectionView.allowsMultipleSelection = false
         self.selectImageButton.layer.cornerRadius = 15
         self.takeImageButton.layer.cornerRadius = 15
         self.selectImageButton.clipsToBounds = true
         self.takeImageButton.clipsToBounds = true
         self.imagePickerController.delegate = self
-        //self.setupKeyboardDismissRecognizer()
         self.updateImageCounterLabel()
+        self.setPostButtonState()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -67,13 +68,6 @@ class NewPostViewController: UIViewController {
     }
     
     func goToPreviousView(){
-//        UIView.animate(withDuration: 0.3){
-//            self.view.frame = CGRect(x: self.view.bounds.origin.x, y: self.view.bounds.origin.y + self.view.bounds.height, width: self.view.bounds.width, height: self.view.bounds.height)
-//            UIApplication.shared.statusBarStyle = .lightContent
-//        }
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
-//            self.view.removeFromSuperview()
-//        }
         self.dismiss(animated: true) {
             UIApplication.shared.statusBarStyle = .lightContent
         }
@@ -91,17 +85,25 @@ class NewPostViewController: UIViewController {
         }
     }
     
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-        self.view.addGestureRecognizer(tapRecognizer)
+    func setPostButtonState(){
+        if self.postTitleTextBox.text == "Your Title Here" || self.postBodyTextBox.text == "What's Happening?"{
+            self.postButton.isEnabled = false
+            self.postButton.alpha = 0.6
+            return
+        }
+        if self.postTitleTextBox.text.count <= 0 || self.postTitleTextBox.text.count > 80 || self.postBodyTextBox.text.count <= 0{
+            self.postButton.isEnabled = false
+            self.postButton.alpha = 0.6
+            self.titleCounterLabel.textColor = APP_THEME_COLOR
+            return
+        }
+        self.postButton.isEnabled = true
+        self.postButton.alpha = 1.0
+        self.titleCounterLabel.textColor = UIColor.lightGray
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .`default`
-    }
-    
-    @objc func dismissKeyboard(){
-        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,7 +118,7 @@ class NewPostViewController: UIViewController {
             self.goToPreviousView()
         }))
         alert.addAction(UIAlertAction(title: "Save Draft", style: .default, handler: { (a) in
-            AppDataManager.shared.newPostDraft = (self.postTitleTextBox.text, self.postBodyTextBox.text)
+            AppDataManager.shared.newPostDraft = (self.postTitleTextBox.text, self.postBodyTextBox.text, self.pendingImages)
             self.view.endEditing(true)
             self.goToPreviousView()
         }))
@@ -156,30 +158,12 @@ extension NewPostViewController: UITextViewDelegate{
         if textView === self.postTitleTextBox{
             let curCharCount = textView.text.count
             self.titleCounterLabel.text = "\(curCharCount)/80"
-            if curCharCount > 80 || curCharCount <= 0 || textView.text == "Your Title Here"{
-                self.postButton.isEnabled = false
-                self.postButton.alpha = 0.6
-                self.titleCounterLabel.textColor = APP_THEME_COLOR
-            }else{
-                if self.postBodyTextBox.text.count > 0 && self.postBodyTextBox.text != "What's Happening?"{
-                    self.postButton.isEnabled = true
-                    self.postButton.alpha = 1.0
-                }
-                self.titleCounterLabel.textColor = UIColor.lightGray
-            }
             let requireLines = min(5, numberOfVisibleLines(textView))
             if self.previousLine != requireLines{
                 self.changeCommentBoxHeight(toFit: requireLines)
             }
-        }else{
-            if textView.text.count <= 0{
-                self.postButton.isEnabled = false
-                self.postButton.alpha = 0.6
-            }else{
-                self.postButton.isEnabled = true
-                self.postButton.alpha = 1.0
-            }
         }
+        self.setPostButtonState()
     }
     
     func changeCommentBoxHeight(toFit lines: Int){
@@ -227,7 +211,6 @@ extension NewPostViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        NSLog("tab")
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (alert) in
             self.pendingImages.remove(at: indexPath.item)

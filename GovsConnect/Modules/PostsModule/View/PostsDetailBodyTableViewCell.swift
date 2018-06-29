@@ -35,12 +35,26 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
     func addImagesAtEnd(_ names: Array<String>){
         let c = self.imageStackView.constraints[0]
         c.constant = CGFloat(200 * names.count + 1)
+        var index = 0
         for name in names{
             let v = UIImageView()
+            v.tag = index
+            index += 1
             v.image = UIImage(named: name)!
             v.contentMode = .scaleAspectFit
+            v.isUserInteractionEnabled = true
+            let gr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnImage(_:)))
+            v.addGestureRecognizer(gr)
             self.imageStackView.addArrangedSubview(v)
         }
+    }
+    
+    @objc func didClickOnImage(_ sender: UITapGestureRecognizer){
+        let v = GCImageViewController()
+        v.view.frame = self.window!.rootViewController!.view.bounds
+        self.window!.rootViewController!.present(v, animated: true, completion: nil)
+        let imgD = AppDataManager.shared.postsData[self.tag].postImagesName
+        v.setupPaging(imgD, at: sender.view!.tag)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

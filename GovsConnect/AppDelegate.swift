@@ -26,6 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.enable = true
+        
+        //launch screen animation
+        let welcomeVC = WelcomeViewController()
+        self.window!.rootViewController!.present(welcomeVC, animated: false, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            UIView.animate(withDuration: 0.5, animations: {
+                welcomeVC.view.alpha = 0
+            }) { (completion) in
+                welcomeVC.dismiss(animated: false, completion: nil)
+            }
+        }
         return true
     }
 

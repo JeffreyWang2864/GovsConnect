@@ -63,14 +63,27 @@ class PostsTableViewCell: UITableViewCell {
         assert(imageNames.count > 0 && imageNames.count < 4)
         self.imageStackView.spacing = 2
         self.imageStackView.distribution = .fillEqually
+        var index = 0
         for imageName in imageNames{
             let v = UIImageView()
+            v.tag = index
+            index += 1
             v.image = UIImage.init(named: imageName)
+            v.isUserInteractionEnabled = true
+            let tapGestureRecongnizer = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnImage(_:)))
+            v.addGestureRecognizer(tapGestureRecongnizer)
             self.imageStackView.addArrangedSubview(v)
         }
     }
-
     
+    @objc func didClickOnImage(_ sender: UITapGestureRecognizer){
+        let v = GCImageViewController()
+        v.view.frame = self.window!.rootViewController!.view.bounds
+        self.window!.rootViewController!.present(v, animated: true, completion: nil)
+        let imgD = AppDataManager.shared.postsData[self.tag].postImagesName
+            v.setupPaging(imgD, at: sender.view!.tag)
+    }
+
     //点击查看
     @IBAction func viewButtonDidClick(_ sender: UIButton){
         if((self.viewBlock) != nil){

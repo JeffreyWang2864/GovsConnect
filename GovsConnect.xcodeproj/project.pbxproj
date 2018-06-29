@@ -32,8 +32,6 @@
 		13321FBE20CFDB7F000B6C41 /* testing_picture_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */; };
 		13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */; };
 		13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */; };
-		138D166820D12064005F3425 /* PostsTableViewImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138D166620D12064005F3425 /* PostsTableViewImageCell.xib */; };
-		138D166920D12064005F3425 /* PostsTableViewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D166720D12064005F3425 /* PostsTableViewImageCell.swift */; };
 		138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D166A20D16D36005F3425 /* MultiMediaCollectionViewCell.swift */; };
 		138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */; };
 		13961E1320CA7766004FFF4B /* system_viewed.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E0D20CA7766004FFF4B /* system_viewed.png */; };
@@ -50,6 +48,8 @@
 		13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13961E2C20CB5A74004FFF4B /* PostsDetailViewController.xib */; };
 		13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */; };
 		13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */; };
+		13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CD442E20E490CB001FB934 /* GCImageViewController.swift */; };
+		13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CD442F20E490CB001FB934 /* GCImageViewController.xib */; };
 		13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EBE00620CA616000A911DE /* testing_profile_picture_1.png */; };
 		13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */; };
 		13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */; };
@@ -98,8 +98,6 @@
 		13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_3.jpg; sourceTree = "<group>"; };
 		13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_1.jpg; sourceTree = "<group>"; };
 		13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_2.jpg; sourceTree = "<group>"; };
-		138D166620D12064005F3425 /* PostsTableViewImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsTableViewImageCell.xib; sourceTree = "<group>"; };
-		138D166720D12064005F3425 /* PostsTableViewImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewImageCell.swift; sourceTree = "<group>"; };
 		138D166A20D16D36005F3425 /* MultiMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiMediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiMediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		13961E0D20CA7766004FFF4B /* system_viewed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_viewed.png; sourceTree = "<group>"; };
@@ -116,6 +114,8 @@
 		13961E2C20CB5A74004FFF4B /* PostsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailViewController.xib; sourceTree = "<group>"; };
 		13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailBodyTableViewCell.swift; sourceTree = "<group>"; };
 		13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailBodyTableViewCell.xib; sourceTree = "<group>"; };
+		13CD442E20E490CB001FB934 /* GCImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCImageViewController.swift; sourceTree = "<group>"; };
+		13CD442F20E490CB001FB934 /* GCImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCImageViewController.xib; sourceTree = "<group>"; };
 		13EBE00620CA616000A911DE /* testing_profile_picture_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_1.png; sourceTree = "<group>"; };
 		13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailReplyTableViewCell.swift; sourceTree = "<group>"; };
 		13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailReplyTableViewCell.xib; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				BC1490E320DA22BE00373BBF /* Base */,
-				13F4095020CD370900645880 /* GC */,
+				13CD442D20E48FE4001FB934 /* GC */,
 				13961E1E20CAB137004FFF4B /* Util */,
 				13961E1B20CAA99C004FFF4B /* Manager */,
 				132F818920C90D8F005D3905 /* Resources */,
@@ -274,9 +274,11 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		13F4095020CD370900645880 /* GC */ = {
+		13CD442D20E48FE4001FB934 /* GC */ = {
 			isa = PBXGroup;
 			children = (
+				13CD442E20E490CB001FB934 /* GCImageViewController.swift */,
+				13CD442F20E490CB001FB934 /* GCImageViewController.xib */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -310,8 +312,6 @@
 				13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */,
 				132F81A420C91FB9005D3905 /* PostsTableViewCell.swift */,
 				132F81A520C91FB9005D3905 /* PostsTableViewCell.xib */,
-				138D166720D12064005F3425 /* PostsTableViewImageCell.swift */,
-				138D166620D12064005F3425 /* PostsTableViewImageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -546,6 +546,7 @@
 				1327C1A820CE497A001A300A /* system_reply.png in Resources */,
 				13961E1A20CA9FB1004FFF4B /* system_commented.png in Resources */,
 				13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */,
+				13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */,
 				13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */,
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
@@ -571,7 +572,6 @@
 				132F817020C8C77C005D3905 /* Main.storyboard in Resources */,
 				13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */,
 				13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */,
-				138D166820D12064005F3425 /* PostsTableViewImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,11 +624,11 @@
 				BC14910C20DB508A00373BBF /* GCDiscoverViewController.swift in Sources */,
 				13321FB920CF7B04000B6C41 /* NewPostViewController.swift in Sources */,
 				13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */,
-				138D166920D12064005F3425 /* PostsTableViewImageCell.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
+				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
 				132F817E20C8C952005D3905 /* WelcomeViewController.swift in Sources */,
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
 				BC14910E20DB50A300373BBF /* GCYouViewController.swift in Sources */,

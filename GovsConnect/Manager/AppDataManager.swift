@@ -6,14 +6,14 @@
 //  Copyright © 2018 Eagersoft. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class AppDataManager{
     private init(){}
     public static let shared = AppDataManager()
     var postsData = Array<PostsDataContainer>()
     var users = Dictionary<String, UserDataContainer>()
-    var newPostDraft: (String, String)? = nil
+    var newPostDraft: (String, String, Array<UIImage>)? = nil
     var currentPersonID = "jefwa001"
     public func setupData(){
         self.users["jefwa001"] = UserDataContainer.init("jefwa001", "Jeffrey Wang", "testing_profile_picture_1.png")
