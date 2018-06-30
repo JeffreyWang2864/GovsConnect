@@ -21,8 +21,8 @@ class GCTabBarViewController: UITabBarController {
         self.addChildController(childVc: postVc, title: "Posts", imageName: "", selImage: "")
         
         //发现控制器
-        let disVc = GCDiscoverViewController()
-        self.addChildController(childVc: disVc, title: "disVc", imageName: "", selImage: "")
+        let disVc = DiscoverViewController()
+        self.addChildController(childVc: disVc, title: "Discover", imageName: "", selImage: "")
         
         //服务
         let servicesVc = GCServicesViewController()

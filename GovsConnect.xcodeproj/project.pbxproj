@@ -10,6 +10,11 @@
 		1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */; };
 		1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */; };
 		1327C1A820CE497A001A300A /* system_reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A720CE497A001A300A /* system_reply.png */; };
+		132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B8C0A20E6813300A80F5B /* DiscoverViewController.swift */; };
+		132B8C0D20E6813300A80F5B /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */; };
+		132B8C1020E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B8C0E20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.swift */; };
+		132B8C1120E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132B8C0F20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.xib */; };
+		132B8C1320E7619B00A80F5B /* GCCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B8C1220E7619B00A80F5B /* GCCollectionViewFlowLayout.swift */; };
 		132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F816A20C8C77C005D3905 /* AppDelegate.swift */; };
 		132F817020C8C77C005D3905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132F816E20C8C77C005D3905 /* Main.storyboard */; };
 		132F817220C8C77C005D3905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 132F817120C8C77C005D3905 /* Assets.xcassets */; };
@@ -64,7 +69,6 @@
 		BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC14910420DA657D00373BBF /* testing_profile_picture_2.png */; };
 		BC14910820DA657D00373BBF /* testing_profile_picture_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC14910520DA657D00373BBF /* testing_profile_picture_3.jpg */; };
 		BC14910A20DB4D9000373BBF /* GCLookUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14910920DB4D9000373BBF /* GCLookUpViewController.swift */; };
-		BC14910C20DB508A00373BBF /* GCDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14910B20DB508A00373BBF /* GCDiscoverViewController.swift */; };
 		BC14910E20DB50A300373BBF /* GCYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14910D20DB50A300373BBF /* GCYouViewController.swift */; };
 		BC14911020DB50CC00373BBF /* GCServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14910F20DB50CC00373BBF /* GCServicesViewController.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +78,11 @@
 		1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_jzm.png; sourceTree = "<group>"; };
 		1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_dt.png; sourceTree = "<group>"; };
 		1327C1A720CE497A001A300A /* system_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_reply.png; sourceTree = "<group>"; };
+		132B8C0A20E6813300A80F5B /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverViewController.xib; sourceTree = "<group>"; };
+		132B8C0E20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiscoverViewBasicCollectionViewCell.swift; path = GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewBasicCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		132B8C0F20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DiscoverViewBasicCollectionViewCell.xib; path = GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewBasicCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		132B8C1220E7619B00A80F5B /* GCCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		132F816720C8C77C005D3905 /* GovsConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovsConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		132F816A20C8C77C005D3905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		132F816F20C8C77C005D3905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,7 +139,6 @@
 		BC14910420DA657D00373BBF /* testing_profile_picture_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_2.png; sourceTree = "<group>"; };
 		BC14910520DA657D00373BBF /* testing_profile_picture_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_profile_picture_3.jpg; sourceTree = "<group>"; };
 		BC14910920DB4D9000373BBF /* GCLookUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLookUpViewController.swift; sourceTree = "<group>"; };
-		BC14910B20DB508A00373BBF /* GCDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDiscoverViewController.swift; sourceTree = "<group>"; };
 		BC14910D20DB50A300373BBF /* GCYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCYouViewController.swift; sourceTree = "<group>"; };
 		BC14910F20DB50CC00373BBF /* GCServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCServicesViewController.swift; sourceTree = "<group>"; };
 		FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GovsConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +287,7 @@
 			children = (
 				13CD442E20E490CB001FB934 /* GCImageViewController.swift */,
 				13CD442F20E490CB001FB934 /* GCImageViewController.xib */,
+				132B8C1220E7619B00A80F5B /* GCCollectionViewFlowLayout.swift */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -374,7 +383,8 @@
 		BC1490F820DA640D00373BBF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BC14910B20DB508A00373BBF /* GCDiscoverViewController.swift */,
+				132B8C0A20E6813300A80F5B /* DiscoverViewController.swift */,
+				132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -382,6 +392,8 @@
 		BC1490F920DA640D00373BBF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				132B8C0E20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.swift */,
+				132B8C0F20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -551,6 +563,7 @@
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
 				13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */,
+				132B8C1120E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.xib in Resources */,
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
 				132F818320C8CA1E005D3905 /* BaseViewController.xib in Resources */,
 				132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */,
@@ -561,6 +574,7 @@
 				1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */,
 				132F819A20C90DD0005D3905 /* numberfive.png in Resources */,
 				132F817F20C8C952005D3905 /* WelcomeViewController.xib in Resources */,
+				132B8C0D20E6813300A80F5B /* DiscoverViewController.xib in Resources */,
 				13321FBA20CF7B04000B6C41 /* NewPostViewController.xib in Resources */,
 				132F819D20C90DD0005D3905 /* numbertwo.png in Resources */,
 				13961E1520CA7766004FFF4B /* system_comment.png in Resources */,
@@ -621,7 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC14910C20DB508A00373BBF /* GCDiscoverViewController.swift in Sources */,
+				132B8C1320E7619B00A80F5B /* GCCollectionViewFlowLayout.swift in Sources */,
 				13321FB920CF7B04000B6C41 /* NewPostViewController.swift in Sources */,
 				13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
@@ -629,6 +643,7 @@
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
 				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
+				132B8C1020E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.swift in Sources */,
 				132F817E20C8C952005D3905 /* WelcomeViewController.swift in Sources */,
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
 				BC14910E20DB50A300373BBF /* GCYouViewController.swift in Sources */,
@@ -638,6 +653,7 @@
 				BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */,
 				13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */,
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
+				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
 				BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */,
 				13961E2020CAB151004FFF4B /* defines.swift in Sources */,
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
