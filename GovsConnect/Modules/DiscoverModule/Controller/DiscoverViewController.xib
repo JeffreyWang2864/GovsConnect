@@ -12,8 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiscoverViewController" customModule="GovsConnect" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="36t-T3-Raa" id="ilX-ms-GKC"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="mainView" destination="9qh-Sx-xjO" id="E5d-X6-DNc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="5TU-V0-gEf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,23 +21,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="36t-T3-Raa">
+                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qh-Sx-xjO" customClass="GCWaterfallScrollView" customModule="GovsConnect" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oyq-SX-Wd1">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="36t-T3-Raa" secondAttribute="bottom" id="BuP-Lh-KPH"/>
-                <constraint firstItem="36t-T3-Raa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HFe-FJ-bOF"/>
-                <constraint firstItem="36t-T3-Raa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bua-KZ-eNz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="36t-T3-Raa" secondAttribute="trailing" id="vNJ-TC-nzK"/>
+                <constraint firstItem="9qh-Sx-xjO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3tp-EG-IoV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9qh-Sx-xjO" secondAttribute="trailing" id="cfH-Kn-Z3v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9qh-Sx-xjO" secondAttribute="bottom" id="mak-Zb-hek"/>
+                <constraint firstItem="9qh-Sx-xjO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xbI-2z-vIg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>

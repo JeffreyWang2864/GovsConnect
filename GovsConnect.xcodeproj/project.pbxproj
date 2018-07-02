@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1300879D20E9D22500FD9E18 /* system_more_full_image.png */; };
 		1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */; };
 		1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */; };
 		1327C1A820CE497A001A300A /* system_reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A720CE497A001A300A /* system_reply.png */; };
 		132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B8C0A20E6813300A80F5B /* DiscoverViewController.swift */; };
 		132B8C0D20E6813300A80F5B /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */; };
-		132B8C1020E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B8C0E20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.swift */; };
-		132B8C1120E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132B8C0F20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.xib */; };
-		132B8C1320E7619B00A80F5B /* GCCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B8C1220E7619B00A80F5B /* GCCollectionViewFlowLayout.swift */; };
 		132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F816A20C8C77C005D3905 /* AppDelegate.swift */; };
 		132F817020C8C77C005D3905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132F816E20C8C77C005D3905 /* Main.storyboard */; };
 		132F817220C8C77C005D3905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 132F817120C8C77C005D3905 /* Assets.xcassets */; };
@@ -37,6 +35,11 @@
 		13321FBE20CFDB7F000B6C41 /* testing_picture_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */; };
 		13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */; };
 		13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */; };
+		137D562F20E7BA080088AB30 /* DiscoverBasicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */; };
+		137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */; };
+		137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 137EEBA020E7781100BA2575 /* testing_picture_5.jpg */; };
+		137EEBA420E7781200BA2575 /* testing_picture_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 137EEBA120E7781100BA2575 /* testing_picture_4.jpg */; };
+		137EEBA520E7781200BA2575 /* testing_picture_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 137EEBA220E7781200BA2575 /* testing_picture_6.jpg */; };
 		138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D166A20D16D36005F3425 /* MultiMediaCollectionViewCell.swift */; };
 		138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */; };
 		13961E1320CA7766004FFF4B /* system_viewed.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E0D20CA7766004FFF4B /* system_viewed.png */; };
@@ -75,14 +78,12 @@
 
 /* Begin PBXFileReference section */
 		0E2B5E8DAACCCA68B7312709 /* Pods-GovsConnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovsConnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.debug.xcconfig"; sourceTree = "<group>"; };
+		1300879D20E9D22500FD9E18 /* system_more_full_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_more_full_image.png; sourceTree = "<group>"; };
 		1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_jzm.png; sourceTree = "<group>"; };
 		1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_dt.png; sourceTree = "<group>"; };
 		1327C1A720CE497A001A300A /* system_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_reply.png; sourceTree = "<group>"; };
 		132B8C0A20E6813300A80F5B /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverViewController.xib; sourceTree = "<group>"; };
-		132B8C0E20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiscoverViewBasicCollectionViewCell.swift; path = GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewBasicCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		132B8C0F20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DiscoverViewBasicCollectionViewCell.xib; path = GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewBasicCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		132B8C1220E7619B00A80F5B /* GCCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		132F816720C8C77C005D3905 /* GovsConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovsConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		132F816A20C8C77C005D3905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		132F816F20C8C77C005D3905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +108,11 @@
 		13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_3.jpg; sourceTree = "<group>"; };
 		13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_1.jpg; sourceTree = "<group>"; };
 		13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_2.jpg; sourceTree = "<group>"; };
+		137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBasicCellView.swift; sourceTree = "<group>"; };
+		137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCWaterfallScrollView.swift; sourceTree = "<group>"; };
+		137EEBA020E7781100BA2575 /* testing_picture_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_5.jpg; sourceTree = "<group>"; };
+		137EEBA120E7781100BA2575 /* testing_picture_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_4.jpg; sourceTree = "<group>"; };
+		137EEBA220E7781200BA2575 /* testing_picture_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_6.jpg; sourceTree = "<group>"; };
 		138D166A20D16D36005F3425 /* MultiMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiMediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiMediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		13961E0D20CA7766004FFF4B /* system_viewed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_viewed.png; sourceTree = "<group>"; };
@@ -156,6 +162,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		132B8C1420E768F500A80F5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		132B8C1520E768FC00A80F5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		132F815E20C8C77C005D3905 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +241,9 @@
 		132F819420C90DC1005D3905 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				137EEBA120E7781100BA2575 /* testing_picture_4.jpg */,
+				137EEBA020E7781100BA2575 /* testing_picture_5.jpg */,
+				137EEBA220E7781200BA2575 /* testing_picture_6.jpg */,
 				BC14910420DA657D00373BBF /* testing_profile_picture_2.png */,
 				BC14910520DA657D00373BBF /* testing_profile_picture_3.jpg */,
 				BC14910320DA657C00373BBF /* testing_profile_picture_4.png */,
@@ -260,6 +284,7 @@
 				13961E1120CA7766004FFF4B /* system_view.png */,
 				13961E0D20CA7766004FFF4B /* system_viewed.png */,
 				1327C1A720CE497A001A300A /* system_reply.png */,
+				1300879D20E9D22500FD9E18 /* system_more_full_image.png */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -287,7 +312,7 @@
 			children = (
 				13CD442E20E490CB001FB934 /* GCImageViewController.swift */,
 				13CD442F20E490CB001FB934 /* GCImageViewController.xib */,
-				132B8C1220E7619B00A80F5B /* GCCollectionViewFlowLayout.swift */,
+				137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -373,9 +398,9 @@
 		BC1490F720DA640D00373BBF /* DiscoverModule */ = {
 			isa = PBXGroup;
 			children = (
+				132B8C1520E768FC00A80F5B /* Model */,
+				132B8C1420E768F500A80F5B /* View */,
 				BC1490F820DA640D00373BBF /* Controller */,
-				BC1490F920DA640D00373BBF /* Model */,
-				BC1490FA20DA640D00373BBF /* View */,
 			);
 			path = DiscoverModule;
 			sourceTree = "<group>";
@@ -387,22 +412,6 @@
 				132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		BC1490F920DA640D00373BBF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				132B8C0E20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.swift */,
-				132B8C0F20E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.xib */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BC1490FA20DA640D00373BBF /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		BC1490FB20DA642100373BBF /* ServicesModule */ = {
@@ -498,6 +507,7 @@
 				132F816420C8C77C005D3905 /* Frameworks */,
 				132F816520C8C77C005D3905 /* Resources */,
 				38202BF62D64E75FE8E155D5 /* [CP] Embed Pods Frameworks */,
+				5E9013092DD6F241B5EF5CC2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -548,6 +558,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				137EEBA420E7781200BA2575 /* testing_picture_4.jpg in Resources */,
 				BC14910820DA657D00373BBF /* testing_profile_picture_3.jpg in Resources */,
 				13961E1420CA7766004FFF4B /* system_liked.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
@@ -558,12 +569,14 @@
 				1327C1A820CE497A001A300A /* system_reply.png in Resources */,
 				13961E1A20CA9FB1004FFF4B /* system_commented.png in Resources */,
 				13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */,
+				137EEBA520E7781200BA2575 /* testing_picture_6.jpg in Resources */,
 				13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */,
+				1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */,
 				13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */,
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
+				137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
 				13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */,
-				132B8C1120E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.xib in Resources */,
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
 				132F818320C8CA1E005D3905 /* BaseViewController.xib in Resources */,
 				132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */,
@@ -610,6 +623,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5E9013092DD6F241B5EF5CC2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2695E944C899B1A2E1BC854 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -635,7 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				132B8C1320E7619B00A80F5B /* GCCollectionViewFlowLayout.swift in Sources */,
+				137D562F20E7BA080088AB30 /* DiscoverBasicCellView.swift in Sources */,
 				13321FB920CF7B04000B6C41 /* NewPostViewController.swift in Sources */,
 				13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
@@ -643,7 +671,7 @@
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
 				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
-				132B8C1020E7349E00A80F5B /* DiscoverViewBasicCollectionViewCell.swift in Sources */,
+				137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */,
 				132F817E20C8C952005D3905 /* WelcomeViewController.swift in Sources */,
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
 				BC14910E20DB50A300373BBF /* GCYouViewController.swift in Sources */,

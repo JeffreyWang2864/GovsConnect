@@ -12,6 +12,7 @@ class AppDataManager{
     private init(){}
     public static let shared = AppDataManager()
     var postsData = Array<PostsDataContainer>()
+    var discoverData = Array<DiscoverItemDataContainer>()
     var users = Dictionary<String, UserDataContainer>()
     var newPostDraft: (String, String, Array<UIImage>)? = nil
     var currentPersonID = "jefwa001"
@@ -34,6 +35,10 @@ class AppDataManager{
         self.postsData[0].postImagesName.append("testing_picture_2.jpg")
         self.postsData[0].postImagesName.append("testing_picture_3.jpg")
         self.postsData[2].postImagesName.append("testing_picture_1.jpg")
+        self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
+        self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "History Mistery"))
+        self.discoverData.append(DiscoverItemDataContainer("testing_picture_6.jpg", "Party @ Governor"))
+            self.discoverData.append(DiscoverItemDataContainer("system_more_full_image.png", ""))
     }
 }
 
@@ -87,5 +92,14 @@ class ReplyDataContainer{
         self.body = body
         self.likeCount = likeCount
         self.isLikedByCurrentUser = isLiked
+    }
+}
+
+class DiscoverItemDataContainer{
+    var coverImageName: String
+    var coverTitle: String
+    init(_ coverImageName: String, _ coverTitle: String) {
+        self.coverImageName = coverImageName
+        self.coverTitle = coverTitle
     }
 }
