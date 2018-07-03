@@ -22,17 +22,34 @@ class WeekendDetailViewController: UIViewController {
         self.navigationItem.title = "6/30/2018 - 7/1/2018"
         self.segmentControl.setSegmentItems(["Friday", "Saturday", "Sunday"])
         self.segmentControl.sliderBackgroundColor = APP_THEME_COLOR
+        self.segmentControl.delegate = self
         self.tableView.register(UINib(nibName: "NewTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "NEW_TABLE_VIEW_CELL")
         self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimeStroke), userInfo: nil, repeats: true)
         self.initTimeStroke()
-        self.addEvent(starting: (7, 30), ending: (8, 50), title: "Continental breakfast")
-        self.addEvent(starting: (9, 0), ending: (12, 0), title: "Brunch")
-        self.addEvent(starting: (16, 0), ending: (17, 0), title: "Formal -Phillips Gathering - Pictures")
-        self.addEvent(starting: (17, 15), ending: (23, 15), title: "Prom at Boston Harbor Hotel")
-        self.addEvent(starting: (23, 30), ending: (23, 50), title: "Check out procedures")
+        self.loadEventsToView(animated: true)
+        let lsgr = UISwipeGestureRecognizer(target: self, action: #selector(self.didSwipeLeft(_:)))
+        lsgr.direction = .left
+        let rsgr = UISwipeGestureRecognizer(target: self, action: #selector(self.didSwipeRight(_:)))
+        rsgr.direction = .right
+        self.view.addGestureRecognizer(lsgr)
+        self.view.addGestureRecognizer(rsgr)
+    }
+    
+    @objc func didSwipeLeft(_ sender: UISwipeGestureRecognizer){
+        if self.segmentControl.selectedSegmentIndex + 1 <= 2{
+            self.segmentControl.move(to: self.segmentControl.selectedSegmentIndex + 1)
+        }
+        self.refreashEvents(animated: true)
+    }
+    
+    @objc func didSwipeRight(_ sender: UISwipeGestureRecognizer){
+        if self.segmentControl.selectedSegmentIndex - 1 >= 0{
+            self.segmentControl.move(to: self.segmentControl.selectedSegmentIndex - 1)
+        }
+        self.refreashEvents(animated: true)
     }
 
     func getCurrentTime() -> (hour: Int, minute: Int){
@@ -83,24 +100,69 @@ class WeekendDetailViewController: UIViewController {
         }
     }
     
-    func addEvent(starting startTime: (Int, Int), ending endTime: (Int, Int), title: String){
-        let startY = self.startingYBound + self.getHeightUnit(hour: startTime.0, minute: startTime.1) * 72.5
-        let endY = self.startingYBound + self.getHeightUnit(hour: endTime.0, minute: endTime.1) * 72.5
-        assert(endY > startY)
-        let v = UIView(frame: CGRect(x: 57, y: startY, width: UIScreen.main.bounds.size.width - 107, height: endY - startY))
-        v.backgroundColor = UIColor.init(red: 0.000, green: 0.624, blue: 0.949, alpha: 0.2)
-        v.layer.cornerRadius = 5
-        v.layer.borderWidth = 1
-        v.layer.borderColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 0.5).cgColor
-        let titleLabel = UILabel(frame: CGRect(x: 5, y: 5, width:v.frame.size.width - 10, height: 18))
-        titleLabel.font = UIFont.systemFont(ofSize: 18)
-        titleLabel.text = "\(title)   @   \(startTime.0):\(startTime.1 < 10 ? "0\(startTime.1)" : "\(startTime.1)")"
-        titleLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
-        v.addSubview(titleLabel)
-        self.events.append(v)
-        self.tableView.addSubview(v)
+    func loadEventsToView(animated: Bool){
+        let dayIndex = self.segmentControl.selectedSegmentIndex
+        for data in AppDataManager.shared.discoverWeekendEventData[dayIndex]{
+            let startY = self.startingYBound + self.getHeightUnit(hour: data.startTime.hour, minute: data.startTime.minute) * 72.5
+            let endY = self.startingYBound + self.getHeightUnit(hour: data.endTime.hour, minute: data.endTime.minute) * 72.5
+            assert(endY > startY)
+            let v = UIView(frame: CGRect(x: 57, y: startY, width: UIScreen.main.bounds.size.width - 107, height: endY - startY))
+            v.backgroundColor = UIColor.init(red: 0.000, green: 0.624, blue: 0.949, alpha: 0.2)
+            v.layer.cornerRadius = 5
+            v.layer.borderWidth = 1
+            v.layer.borderColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 0.5).cgColor
+            let startTimeLabel = UILabel(frame: CGRect(x: 5, y: 5, width:v.frame.size.width - 10, height: 18))
+            startTimeLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            startTimeLabel.text = "@ \(data.startTime.hour):\(data.startTime.minute < 10 ? "0\(data.startTime.minute)" : "\(data.startTime.minute)")"
+            startTimeLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
+            let titleLabel = UILabel(frame: CGRect(x: 5, y: 23, width: v.frame.size.width - 10, height: 18 * 3))
+            titleLabel.contentMode = .top
+            titleLabel.numberOfLines = 0
+            titleLabel.font = UIFont.systemFont(ofSize: 18)
+            titleLabel.text = "\(data.title)"
+            titleLabel.sizeToFit()
+            titleLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
+            v.addSubview(startTimeLabel)
+            v.addSubview(titleLabel)
+            v.alpha = animated ? 0 : 1
+            self.events.append(v)
+            self.tableView.addSubview(v)
+        }
+        if animated{
+            UIView.animate(withDuration: 0.25){
+                for event in self.events{
+                    event.alpha = 1
+                }
+            }
+        }
     }
-
+    
+    func removeEventFromView(animated: Bool){
+        if animated{
+            UIView.animate(withDuration: 0.25, animations: {
+                for event in self.events{
+                    event.alpha = 0
+                }
+            }) { (response) in
+                for event in self.events{
+                    event.removeFromSuperview()
+                }
+            }
+        }else{
+            for event in self.events{
+                event.alpha = 0
+                event.removeFromSuperview()
+            }
+        }
+        self.events = []
+    }
+    
+    func refreashEvents(animated: Bool){
+        self.removeEventFromView(animated: animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25){
+            self.loadEventsToView(animated: animated)
+        }
+    }
 }
 
 extension WeekendDetailViewController: UITableViewDelegate, UITableViewDataSource{
@@ -126,5 +188,11 @@ extension WeekendDetailViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 72.5
+    }
+}
+
+extension WeekendDetailViewController: TwicketSegmentedControlDelegate{
+    func didSelect(_ segmentIndex: Int) {
+        self.refreashEvents(animated: true)
     }
 }

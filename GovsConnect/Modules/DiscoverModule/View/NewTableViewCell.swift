@@ -13,6 +13,7 @@ class NewTableViewCell: UITableViewCell {
     @IBOutlet var ampmLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         // Initialization code
     }
 
