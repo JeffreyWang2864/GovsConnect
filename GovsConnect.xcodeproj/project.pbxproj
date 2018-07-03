@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1300879D20E9D22500FD9E18 /* system_more_full_image.png */; };
+		130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */; };
+		130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */; };
 		1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */; };
 		1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */; };
 		1327C1A820CE497A001A300A /* system_reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A720CE497A001A300A /* system_reply.png */; };
@@ -19,8 +21,6 @@
 		132F817520C8C77C005D3905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132F817320C8C77C005D3905 /* LaunchScreen.storyboard */; };
 		132F817E20C8C952005D3905 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F817C20C8C952005D3905 /* WelcomeViewController.swift */; };
 		132F817F20C8C952005D3905 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132F817D20C8C952005D3905 /* WelcomeViewController.xib */; };
-		132F818220C8CA1E005D3905 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F818020C8CA1E005D3905 /* BaseViewController.swift */; };
-		132F818320C8CA1E005D3905 /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132F818120C8CA1E005D3905 /* BaseViewController.xib */; };
 		132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F818520C8DAB2005D3905 /* PostsViewController.swift */; };
 		132F818820C8DAB2005D3905 /* PostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132F818620C8DAB2005D3905 /* PostsViewController.xib */; };
 		132F819A20C90DD0005D3905 /* numberfive.png in Resources */ = {isa = PBXBuildFile; fileRef = 132F819520C90DCF005D3905 /* numberfive.png */; };
@@ -35,6 +35,8 @@
 		13321FBE20CFDB7F000B6C41 /* testing_picture_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */; };
 		13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */; };
 		13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */; };
+		1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357D18520EB7639004CD2EB /* NewTableViewCell.xib */; };
+		1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357D18620EB7639004CD2EB /* NewTableViewCell.swift */; };
 		137D562F20E7BA080088AB30 /* DiscoverBasicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */; };
 		137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */; };
 		137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 137EEBA020E7781100BA2575 /* testing_picture_5.jpg */; };
@@ -79,6 +81,8 @@
 /* Begin PBXFileReference section */
 		0E2B5E8DAACCCA68B7312709 /* Pods-GovsConnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovsConnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.debug.xcconfig"; sourceTree = "<group>"; };
 		1300879D20E9D22500FD9E18 /* system_more_full_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_more_full_image.png; sourceTree = "<group>"; };
+		1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekendDetailViewController.swift; sourceTree = "<group>"; };
+		130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekendDetailViewController.xib; sourceTree = "<group>"; };
 		1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_jzm.png; sourceTree = "<group>"; };
 		1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_dt.png; sourceTree = "<group>"; };
 		1327C1A720CE497A001A300A /* system_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_reply.png; sourceTree = "<group>"; };
@@ -92,8 +96,6 @@
 		132F817620C8C77C005D3905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		132F817C20C8C952005D3905 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		132F817D20C8C952005D3905 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
-		132F818020C8CA1E005D3905 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		132F818120C8CA1E005D3905 /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 		132F818520C8DAB2005D3905 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		132F818620C8DAB2005D3905 /* PostsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
 		132F819520C90DCF005D3905 /* numberfive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numberfive.png; sourceTree = "<group>"; };
@@ -108,6 +110,8 @@
 		13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_3.jpg; sourceTree = "<group>"; };
 		13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_1.jpg; sourceTree = "<group>"; };
 		13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_2.jpg; sourceTree = "<group>"; };
+		1357D18520EB7639004CD2EB /* NewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
+		1357D18620EB7639004CD2EB /* NewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
 		137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBasicCellView.swift; sourceTree = "<group>"; };
 		137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCWaterfallScrollView.swift; sourceTree = "<group>"; };
 		137EEBA020E7781100BA2575 /* testing_picture_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_5.jpg; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 		132B8C1420E768F500A80F5B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1357D18620EB7639004CD2EB /* NewTableViewCell.swift */,
+				1357D18520EB7639004CD2EB /* NewTableViewCell.xib */,
 				137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */,
 			);
 			path = View;
@@ -205,8 +211,6 @@
 				132F818920C90D8F005D3905 /* Resources */,
 				132F818420C8DA9B005D3905 /* Modules */,
 				132F816A20C8C77C005D3905 /* AppDelegate.swift */,
-				132F818020C8CA1E005D3905 /* BaseViewController.swift */,
-				132F818120C8CA1E005D3905 /* BaseViewController.xib */,
 				132F817C20C8C952005D3905 /* WelcomeViewController.swift */,
 				132F817D20C8C952005D3905 /* WelcomeViewController.xib */,
 				132F816E20C8C77C005D3905 /* Main.storyboard */,
@@ -410,6 +414,8 @@
 			children = (
 				132B8C0A20E6813300A80F5B /* DiscoverViewController.swift */,
 				132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */,
+				1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */,
+				130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -578,7 +584,7 @@
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
 				13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */,
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
-				132F818320C8CA1E005D3905 /* BaseViewController.xib in Resources */,
+				1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */,
 				132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */,
 				132F818820C8DAB2005D3905 /* PostsViewController.xib in Resources */,
 				132F819E20C90DD0005D3905 /* numberthree.png in Resources */,
@@ -591,6 +597,7 @@
 				13321FBA20CF7B04000B6C41 /* NewPostViewController.xib in Resources */,
 				132F819D20C90DD0005D3905 /* numbertwo.png in Resources */,
 				13961E1520CA7766004FFF4B /* system_comment.png in Resources */,
+				130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */,
 				BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */,
 				138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */,
 				13961E1320CA7766004FFF4B /* system_viewed.png in Resources */,
@@ -613,10 +620,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/TwicketSegmentedControl/TwicketSegmentedControl.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwicketSegmentedControl.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -676,13 +685,14 @@
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
 				BC14910E20DB50A300373BBF /* GCYouViewController.swift in Sources */,
 				132F81A620C91FB9005D3905 /* PostsTableViewCell.swift in Sources */,
-				132F818220C8CA1E005D3905 /* BaseViewController.swift in Sources */,
 				BC14911020DB50CC00373BBF /* GCServicesViewController.swift in Sources */,
+				130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */,
 				BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */,
 				13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */,
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
 				BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */,
+				1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */,
 				13961E2020CAB151004FFF4B /* defines.swift in Sources */,
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,

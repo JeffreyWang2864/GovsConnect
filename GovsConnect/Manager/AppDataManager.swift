@@ -36,8 +36,8 @@ class AppDataManager{
         self.postsData[0].postImagesName.append("testing_picture_3.jpg")
         self.postsData[2].postImagesName.append("testing_picture_1.jpg")
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
-        self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "History Mistery"))
-        self.discoverData.append(DiscoverItemDataContainer("testing_picture_6.jpg", "Party @ Governor"))
+        self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
+        self.discoverData.append(DiscoverItemDataContainer("testing_picture_6.jpg", "Party @ the Governor's"))
             self.discoverData.append(DiscoverItemDataContainer("system_more_full_image.png", ""))
     }
 }

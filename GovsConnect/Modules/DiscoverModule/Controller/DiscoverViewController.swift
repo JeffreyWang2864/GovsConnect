@@ -27,7 +27,25 @@ class DiscoverViewController: UIViewController {
     }
     
     @objc func didClickOnDiscoverFunction(_ sender: UITapGestureRecognizer){
-        NSLog("\(sender.view!.tag)")
+        switch sender.view!.tag{
+        case 0:
+            // weekend event
+            let vc = WeekendDetailViewController.init(nibName: "WeekendDetailViewController", bundle: Bundle.main)
+            self.navigationController!.pushViewController(vc, animated: true)
+        case 1:
+            //daily bulletin
+            let url = URL(string: "https://www.google.com")!
+            let vc = UIViewController()
+            vc.view.frame = self.view.bounds
+            let webv = UIWebView()
+            vc.view.addSubview(webv)
+            webv.frame = vc.view.bounds
+            self.navigationController!.pushViewController(vc, animated: true)
+            vc.navigationItem.title = "Daily Bulletin"
+            webv.loadRequest(URLRequest(url: url))
+        default:
+            NSLog("\(sender.view!.tag)")
+        }
     }
 }
 

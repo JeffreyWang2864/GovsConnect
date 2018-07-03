@@ -1,16 +1,15 @@
 PODS:
-  - IQKeyboardManagerSwift (6.0.3)
+  - IQKeyboardManagerSwift (5.0.7)
+  - TwicketSegmentedControl (0.1.2)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - IQKeyboardManagerSwift
+  - TwicketSegmentedControl
 
 SPEC CHECKSUMS:
-  IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
+  IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
+  TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
 
-PODFILE CHECKSUM: 94f2a0919b20aa4baca53fe533db0c0f3332aa30
+PODFILE CHECKSUM: 601f2ea7926b40d0e80da79c8a83e39652743d04
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.4.0
