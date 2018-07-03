@@ -60,6 +60,10 @@ class WeekendDetailViewController: UIViewController {
     }
     
     func getHeightUnit(hour: Int, minute: Int) -> CGFloat{
+        var hour = hour
+        if hour == 0{
+            hour = 24
+        }
         var heightUnit: CGFloat = CGFloat(hour) - 1.0 + 0.5 + CGFloat(minute) / 60.0
         if hour == 24 && minute >= 30{
             heightUnit = (CGFloat(minute) - 30.0) / 60.0
@@ -115,11 +119,11 @@ class WeekendDetailViewController: UIViewController {
             startTimeLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
             startTimeLabel.text = "@ \(data.startTime.hour):\(data.startTime.minute < 10 ? "0\(data.startTime.minute)" : "\(data.startTime.minute)")"
             startTimeLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
-            let titleLabel = UILabel(frame: CGRect(x: 5, y: 23, width: v.frame.size.width - 10, height: 18 * 3))
+            let titleLabel = UILabel(frame: CGRect(x: 5, y: 23, width: v.frame.size.width - 10, height: 18))
             titleLabel.contentMode = .top
-            titleLabel.numberOfLines = 0
             titleLabel.font = UIFont.systemFont(ofSize: 18)
             titleLabel.text = "\(data.title)"
+            titleLabel.numberOfLines = 2
             titleLabel.sizeToFit()
             titleLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
             v.addSubview(startTimeLabel)
@@ -159,7 +163,7 @@ class WeekendDetailViewController: UIViewController {
     
     func refreashEvents(animated: Bool){
         self.removeEventFromView(animated: animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
             self.loadEventsToView(animated: animated)
         }
     }

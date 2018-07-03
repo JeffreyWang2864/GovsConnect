@@ -41,6 +41,14 @@ func numberOfVisibleLines(_ textView: UITextView) -> Int {
     return lineCount
 }
 
+func numberOfVisibleLines(_ textView: UILabel) -> Int {
+    let textSize = CGSize(width: textView.frame.size.width, height: CGFloat(Float.infinity))
+    let rHeight = lroundf(Float(textView.sizeThatFits(textSize).height))
+    let charSize = lroundf(Float(textView.font!.lineHeight))
+    let lineCount = rHeight/charSize
+    return lineCount
+}
+
 //16进制转化颜色
 func UIColorFromRGB(rgbValue:Int,alpha:CGFloat) -> UIColor {
     return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0, green: ((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0, blue: ((CGFloat)(rgbValue & 0xFF))/255.0, alpha: alpha)

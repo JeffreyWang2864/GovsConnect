@@ -39,6 +39,7 @@ class AppDataManager{
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_6.jpg", "Party @ the Governor's"))
+        self.discoverData.append(DiscoverItemDataContainer("testing_picture_7.jpg", "Govs Trade"))
             self.discoverData.append(DiscoverItemDataContainer("system_more_full_image.png", ""))
         for _ in (0..<3){
             self.discoverWeekendEventData.append(Array<EventDataContainer>())
@@ -52,7 +53,7 @@ class AppDataManager{
         self.discoverWeekendEventData[2].append(EventDataContainer((9, 00), endTime: (12, 00), title: "Brunch"))
         self.discoverWeekendEventData[2].append(EventDataContainer((16, 00), endTime: (17, 00), title: "Formal -Phillips Gathering - Pictures"))
         self.discoverWeekendEventData[2].append(EventDataContainer((17, 15), endTime: (23, 15), title: "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm"))
-        self.discoverWeekendEventData[2].append(EventDataContainer((23, 30), endTime: (24, 20), title: "Check out procedures; Boarders check in to dorms"))
+        self.discoverWeekendEventData[2].append(EventDataContainer((23, 30), endTime: (24, 29), title: "Check out procedures; Boarders check in to dorms"))
         
     }
 }
