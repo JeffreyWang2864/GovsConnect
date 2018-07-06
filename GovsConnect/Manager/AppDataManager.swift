@@ -38,22 +38,22 @@ class AppDataManager{
         self.postsData[2].postImagesName.append("testing_picture_1.jpg")
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
-        self.discoverData.append(DiscoverItemDataContainer("testing_picture_6.jpg", "Party @ the Governor's"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_7.jpg", "Govs Trade"))
+        self.discoverData.append(DiscoverItemDataContainer("testing_picture_8.jpg", "Rate Your Food"))
             self.discoverData.append(DiscoverItemDataContainer("system_more_full_image.png", ""))
         for _ in (0..<3){
             self.discoverWeekendEventData.append(Array<EventDataContainer>())
         }
-        self.discoverWeekendEventData[0].append(EventDataContainer((7, 45), endTime: (12, 00), title: "AP Microeconomics exam"))
-        self.discoverWeekendEventData[0].append(EventDataContainer((12, 15), endTime: (16, 30), title: "AP MEH exam; AP Latin exam"))
-        self.discoverWeekendEventData[0].append(EventDataContainer((20, 0), endTime: (21, 30), title: "Spring Drama Production in PAC"))
-        self.discoverWeekendEventData[1].append(EventDataContainer((8, 00), endTime: (9, 00), title: "New England Track Championships @ Tabor Academy"))
-        self.discoverWeekendEventData[1].append(EventDataContainer((20, 00), endTime: (21, 30), title: "Spring Drama Production in PAC"))
-        self.discoverWeekendEventData[2].append(EventDataContainer((7, 30), endTime: (8, 57), title: "Continental breakfast"))
-        self.discoverWeekendEventData[2].append(EventDataContainer((9, 00), endTime: (12, 00), title: "Brunch"))
-        self.discoverWeekendEventData[2].append(EventDataContainer((16, 00), endTime: (17, 00), title: "Formal -Phillips Gathering - Pictures"))
-        self.discoverWeekendEventData[2].append(EventDataContainer((17, 15), endTime: (23, 15), title: "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm"))
-        self.discoverWeekendEventData[2].append(EventDataContainer((23, 30), endTime: (24, 29), title: "Check out procedures; Boarders check in to dorms"))
+        self.discoverWeekendEventData[0].append(EventDataContainer((7, 45), endTime: (12, 00), title: "AP Microeconomics exam", "Please make sure to bring at least two pencils to the test room"))
+        self.discoverWeekendEventData[0].append(EventDataContainer((12, 15), endTime: (16, 30), title: "AP MEH exam; AP Latin exam", "Please make sure to bring at least two pencils to the test room"))
+        self.discoverWeekendEventData[0].append(EventDataContainer((20, 0), endTime: (21, 30), title: "Spring Drama Production in PAC", LOREM_IPSUM_1))
+        self.discoverWeekendEventData[1].append(EventDataContainer((8, 00), endTime: (9, 00), title: "New England Track Championships @ Tabor Academy", LOREM_IPSUM_2))
+        self.discoverWeekendEventData[1].append(EventDataContainer((20, 00), endTime: (21, 30), title: "Spring Drama Production in PAC", LOREM_IPSUM_3))
+        self.discoverWeekendEventData[2].append(EventDataContainer((7, 30), endTime: (8, 57), title: "Continental breakfast", "No detail to display"))
+        self.discoverWeekendEventData[2].append(EventDataContainer((9, 00), endTime: (12, 00), title: "Brunch", "No detail to display"))
+        self.discoverWeekendEventData[2].append(EventDataContainer((16, 00), endTime: (17, 00), title: "Formal -Phillips Gathering - Pictures", LOREM_IPSUM_3))
+        self.discoverWeekendEventData[2].append(EventDataContainer((17, 15), endTime: (23, 15), title: "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm", LOREM_IPSUM_2))
+        self.discoverWeekendEventData[2].append(EventDataContainer((23, 30), endTime: (24, 29), title: "Check out procedures; Boarders check in to dorms", LOREM_IPSUM_1))
         
     }
 }
@@ -124,9 +124,21 @@ class EventDataContainer{
     var startTime: (hour: Int, minute: Int)
     var endTime: (hour: Int, minute: Int)
     var title: String
-    init(_ startTime: (hour: Int, minute: Int), endTime: (hour: Int, minute: Int), title: String) {
+    var detail: String
+    //notificationState:
+    //  0: no notification
+    //  1: 1 min
+    //  2: 5 min
+    //  3: 15 min
+    //  4: 1 hour
+    //  5: 2 hour
+    //  6: 5 hour
+    //  7: 1 day
+    var notificationState: Int = 0
+    init(_ startTime: (hour: Int, minute: Int), endTime: (hour: Int, minute: Int), title: String, _ detail: String) {
         self.startTime = startTime
         self.endTime = endTime
         self.title = title
+        self.detail = detail
     }
 }

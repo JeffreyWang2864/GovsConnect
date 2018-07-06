@@ -57,6 +57,12 @@
 		13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13961E2920CAC1F3004FFF4B /* tool.swift */; };
 		13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13961E2B20CB5A74004FFF4B /* PostsDetailViewController.swift */; };
 		13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13961E2C20CB5A74004FFF4B /* PostsDetailViewController.xib */; };
+		139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7220EC7E3F00778CFD /* testing_picture_8.jpg */; };
+		139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EDF7420EC7FA400778CFD /* RateYourFoodViewController.swift */; };
+		139EDF7720EC7FA400778CFD /* RateYourFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */; };
+		139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EDF7820EC87A700778CFD /* EventDetailViewController.swift */; };
+		139EDF7B20EC87A700778CFD /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7920EC87A700778CFD /* EventDetailViewController.xib */; };
+		13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7801220EF690E00926139 /* GCOptionsTableView.swift */; };
 		13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */; };
 		13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */; };
 		13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CD442E20E490CB001FB934 /* GCImageViewController.swift */; };
@@ -133,6 +139,12 @@
 		13961E2920CAC1F3004FFF4B /* tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tool.swift; sourceTree = "<group>"; };
 		13961E2B20CB5A74004FFF4B /* PostsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailViewController.swift; sourceTree = "<group>"; };
 		13961E2C20CB5A74004FFF4B /* PostsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailViewController.xib; sourceTree = "<group>"; };
+		139EDF7220EC7E3F00778CFD /* testing_picture_8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_8.jpg; sourceTree = "<group>"; };
+		139EDF7420EC7FA400778CFD /* RateYourFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateYourFoodViewController.swift; sourceTree = "<group>"; };
+		139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateYourFoodViewController.xib; sourceTree = "<group>"; };
+		139EDF7820EC87A700778CFD /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		139EDF7920EC87A700778CFD /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
+		13A7801220EF690E00926139 /* GCOptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCOptionsTableView.swift; sourceTree = "<group>"; };
 		13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailBodyTableViewCell.swift; sourceTree = "<group>"; };
 		13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailBodyTableViewCell.xib; sourceTree = "<group>"; };
 		13CD442E20E490CB001FB934 /* GCImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCImageViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +259,7 @@
 		132F819420C90DC1005D3905 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				139EDF7220EC7E3F00778CFD /* testing_picture_8.jpg */,
 				137EEBA120E7781100BA2575 /* testing_picture_4.jpg */,
 				137EEBA020E7781100BA2575 /* testing_picture_5.jpg */,
 				137EEBA220E7781200BA2575 /* testing_picture_6.jpg */,
@@ -320,6 +333,7 @@
 				13CD442E20E490CB001FB934 /* GCImageViewController.swift */,
 				13CD442F20E490CB001FB934 /* GCImageViewController.xib */,
 				137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */,
+				13A7801220EF690E00926139 /* GCOptionsTableView.swift */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -419,6 +433,10 @@
 				132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */,
 				1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */,
 				130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */,
+				139EDF7420EC7FA400778CFD /* RateYourFoodViewController.swift */,
+				139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */,
+				139EDF7820EC87A700778CFD /* EventDetailViewController.swift */,
+				139EDF7920EC87A700778CFD /* EventDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -571,6 +589,7 @@
 				BC14910820DA657D00373BBF /* testing_profile_picture_3.jpg in Resources */,
 				13961E1420CA7766004FFF4B /* system_liked.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
+				139EDF7B20EC87A700778CFD /* EventDetailViewController.xib in Resources */,
 				132F817520C8C77C005D3905 /* LaunchScreen.storyboard in Resources */,
 				1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */,
 				13321FBE20CFDB7F000B6C41 /* testing_picture_3.jpg in Resources */,
@@ -579,10 +598,12 @@
 				13961E1A20CA9FB1004FFF4B /* system_commented.png in Resources */,
 				13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */,
 				137EEBA520E7781200BA2575 /* testing_picture_6.jpg in Resources */,
+				139EDF7720EC7FA400778CFD /* RateYourFoodViewController.xib in Resources */,
 				13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */,
 				1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */,
 				13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */,
 				13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */,
+				139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */,
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
 				137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
@@ -682,6 +703,7 @@
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
+				13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */,
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
 				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
 				137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */,
@@ -695,12 +717,14 @@
 				13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */,
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
+				139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */,
 				BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */,
 				1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */,
 				13961E2020CAB151004FFF4B /* defines.swift in Sources */,
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,
 				BC14910A20DB4D9000373BBF /* GCLookUpViewController.swift in Sources */,
+				139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */,
 				BC1490EC20DA240100373BBF /* GCNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

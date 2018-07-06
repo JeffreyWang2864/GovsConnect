@@ -43,7 +43,7 @@ class DiscoverViewController: UIViewController {
             self.navigationController!.pushViewController(vc, animated: true)
             vc.navigationItem.title = "Daily Bulletin"
             webv.loadRequest(URLRequest(url: url))
-        case 3:
+        case 2:
             //govs trade
             let instaUrl = URL(string: "instagram://user?username=govstrade")!
             if UIApplication.shared.canOpenURL(instaUrl){
@@ -63,6 +63,10 @@ class DiscoverViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
+        case 3:
+            //rate your food
+            let vc = RateYourFoodViewController.init(nibName: "RateYourFoodViewController", bundle: Bundle.main)
+            self.navigationController!.pushViewController(vc, animated: true)
         default:
             NSLog("\(sender.view!.tag)")
         }
