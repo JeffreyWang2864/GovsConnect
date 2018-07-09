@@ -108,8 +108,12 @@ class WeekendDetailViewController: UIViewController {
         let dayIndex = self.segmentControl.selectedSegmentIndex
         let currentDayData = AppDataManager.shared.discoverWeekendEventData[dayIndex]
         for i in (0..<currentDayData.count){
-            let startY = self.startingYBound + self.getHeightUnit(hour: currentDayData[i].startTime.hour, minute: currentDayData[i].startTime.minute) * 72.5
-            let endY = self.startingYBound + self.getHeightUnit(hour: currentDayData[i].endTime.hour, minute: currentDayData[i].endTime.minute) * 72.5
+            let calender = Calendar.current
+            let startTime = calender.dateComponents([.hour, .minute], from: currentDayData[i].startTime)
+            let endTime = calender.dateComponents([.hour, .minute], from: currentDayData[i].endTime)
+            NSLog("\(startTime.hour!), \(startTime.minute!), \(endTime.hour!), \(endTime.minute!)")
+            let startY = self.startingYBound + self.getHeightUnit(hour: startTime.hour!, minute: startTime.minute!) * 72.5
+            let endY = self.startingYBound + self.getHeightUnit(hour: endTime.hour!, minute: endTime.minute!) * 72.5
             assert(endY > startY)
             let v = UIView(frame: CGRect(x: 57, y: startY, width: UIScreen.main.bounds.size.width - 107, height: endY - startY))
             v.backgroundColor = UIColor.init(red: 0.000, green: 0.624, blue: 0.949, alpha: 0.2)
@@ -118,7 +122,7 @@ class WeekendDetailViewController: UIViewController {
             v.layer.borderColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 0.5).cgColor
             let startTimeLabel = UILabel(frame: CGRect(x: 5, y: 5, width:v.frame.size.width - 10, height: 18))
             startTimeLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-            startTimeLabel.text = "@ \(currentDayData[i].startTime.hour):\(currentDayData[i].startTime.minute < 10 ? "0\(currentDayData[i].startTime.minute)" : "\(currentDayData[i].startTime.minute)")"
+            startTimeLabel.text = "@ \(startTime.hour!):\(startTime.minute! < 10 ? "0\(startTime.minute!)" : "\(startTime.minute!)")"
             startTimeLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
             let titleLabel = UILabel(frame: CGRect(x: 5, y: 23, width: v.frame.size.width - 10, height: 18))
             titleLabel.contentMode = .top

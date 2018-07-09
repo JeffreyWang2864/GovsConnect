@@ -44,17 +44,25 @@ class AppDataManager{
         for _ in (0..<3){
             self.discoverWeekendEventData.append(Array<EventDataContainer>())
         }
-        self.discoverWeekendEventData[0].append(EventDataContainer((7, 45), endTime: (12, 00), title: "AP Microeconomics exam", "Please make sure to bring at least two pencils to the test room"))
-        self.discoverWeekendEventData[0].append(EventDataContainer((12, 15), endTime: (16, 30), title: "AP MEH exam; AP Latin exam", "Please make sure to bring at least two pencils to the test room"))
-        self.discoverWeekendEventData[0].append(EventDataContainer((20, 0), endTime: (21, 30), title: "Spring Drama Production in PAC", LOREM_IPSUM_1))
-        self.discoverWeekendEventData[1].append(EventDataContainer((8, 00), endTime: (9, 00), title: "New England Track Championships @ Tabor Academy", LOREM_IPSUM_2))
-        self.discoverWeekendEventData[1].append(EventDataContainer((20, 00), endTime: (21, 30), title: "Spring Drama Production in PAC", LOREM_IPSUM_3))
-        self.discoverWeekendEventData[2].append(EventDataContainer((7, 30), endTime: (8, 57), title: "Continental breakfast", "No detail to display"))
-        self.discoverWeekendEventData[2].append(EventDataContainer((9, 00), endTime: (12, 00), title: "Brunch", "No detail to display"))
-        self.discoverWeekendEventData[2].append(EventDataContainer((16, 00), endTime: (17, 00), title: "Formal -Phillips Gathering - Pictures", LOREM_IPSUM_3))
-        self.discoverWeekendEventData[2].append(EventDataContainer((17, 15), endTime: (23, 15), title: "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm", LOREM_IPSUM_2))
-        self.discoverWeekendEventData[2].append(EventDataContainer((23, 30), endTime: (24, 29), title: "Check out procedures; Boarders check in to dorms", LOREM_IPSUM_1))
+        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526629501 - 3600 * 8), Date(timeIntervalSince1970: 1526644801 - 3600 * 8), "AP Microeconomics exam", "Please make sure to bring at least two pencils to the test room"))
+        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526645701 - 3600 * 8), Date(timeIntervalSince1970: 1526661001 - 3600 * 8), "AP MEH exam; AP Latin exam", "Please make sure to bring at least two pencils to the test room"))
+        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526673601 - 3600 * 8), Date(timeIntervalSince1970: 1526679001 - 3600 * 8), "Spring Drama Production in PAC", LOREM_IPSUM_1))
+        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526716801 - 3600 * 8), Date(timeIntervalSince1970: 1526720401 - 3600 * 8), "New England Track Championships @ Tabor Academy", LOREM_IPSUM_2))
+        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526760001 - 3600 * 8), Date(timeIntervalSince1970: 1526765401 - 3600 * 8), "Spring Drama Production in PAC", LOREM_IPSUM_3))
+        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526801401 - 3600 * 8), Date(timeIntervalSince1970: 1526806621 - 3600 * 8), "Continental breakfast", "No detail to display"))
+        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526806801 - 3600 * 8), Date(timeIntervalSince1970: 1526817601 - 3600 * 8), "Brunch", "No detail to display"))
+        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526832001 - 3600 * 8), Date(timeIntervalSince1970: 1526835601 - 3600 * 8), "Formal -Phillips Gathering - Pictures", LOREM_IPSUM_3))
+        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526836501 - 3600 * 8), Date(timeIntervalSince1970: 1526858101 - 3600 * 8), "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm", LOREM_IPSUM_2))
+        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526859001 - 3600 * 8), Date(timeIntervalSince1970: 1526776141 - 3600 * 8), "Check out procedures; Boarders check in to dorms", LOREM_IPSUM_1))
         
+        for day in self.discoverWeekendEventData{
+            for data in day{
+                let calender = Calendar.current
+                let startTime = calender.dateComponents([.hour, .minute], from: data.startTime)
+                let endTime = calender.dateComponents([.hour, .minute], from: data.endTime)
+                NSLog("\(data.title), \(startTime.hour!), \(startTime.minute!), \(endTime.hour!), \(endTime.minute!)")
+            }
+        }
     }
 }
 
@@ -121,8 +129,8 @@ class DiscoverItemDataContainer{
 }
 
 class EventDataContainer{
-    var startTime: (hour: Int, minute: Int)
-    var endTime: (hour: Int, minute: Int)
+    var startTime: Date
+    var endTime: Date
     var title: String
     var detail: String
     //notificationState:
@@ -135,7 +143,7 @@ class EventDataContainer{
     //  6: 5 hour
     //  7: 1 day
     var notificationState: Int = 0
-    init(_ startTime: (hour: Int, minute: Int), endTime: (hour: Int, minute: Int), title: String, _ detail: String) {
+    init(_ startTime: Date, _ endTime: Date, _ title: String, _ detail: String) {
         self.startTime = startTime
         self.endTime = endTime
         self.title = title

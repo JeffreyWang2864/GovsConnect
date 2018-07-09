@@ -33,16 +33,40 @@ func prettyTimeSince(_ timeInterval: TimeInterval) -> String{
     return "just now"
 }
 
-func timeStringFormat(_ date: NSDate,  withWeek: Bool) -> String{
+func prettyTime(to intervalSinceNow: TimeInterval) -> String{
+    if intervalSinceNow <= 0{
+        return "started already"
+    }
+    let tisn = NSInteger(intervalSinceNow)
+    let days = tisn / 86400
+    if days > 0{
+        let months = (days / 30) % 12
+        let years = days / 365
+        if years > 0{
+            return "start in \(years) \(years == 1 ? "year" : "years")"
+        }
+        if months > 0{
+            return "start in \(months) \(months == 1 ? "month" : "months") ago"
+        }
+        return "start in \(days) \(days == 1 ? "day" : "days") ago"
+    }
+    let hours = tisn / 3600
+    if hours > 0{
+        return "start in \(hours) \(hours == 1 ? "hour" : "hours") ago"
+    }
+    return "start in less an hour"
+}
+
+func timeStringFormat(_ date: Date,  withWeek: Bool) -> String{
     let formatter = DateFormatter()
     formatter.dateFormat = "HH:mm, M/d/yyyy"
     var formattedString = formatter.string(from: date as Date)
     if withWeek{
-        let weekString = ["Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.", "Sun."]
+        let weekString = ["Mon. ", "Tue. ", "Wed. ", "Thu. ", "Fri. ", "Sat. ", "Sun. "]
         let calender = NSCalendar.current
         let components = calender.component(.weekday, from: date as Date)
         let commaIndex = formattedString.firstIndex(of: ",")!
-        formattedString.insert(contentsOf: weekString[components - 1], at: commaIndex)
+        formattedString.insert(contentsOf: weekString[components - 1], at: formattedString.index(commaIndex, offsetBy: 2))
     }
     return formattedString
 }
@@ -71,4 +95,3 @@ func UIColorFromRGB(rgbValue:Int,alpha:CGFloat) -> UIColor {
 //屏幕的宽高
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
-
