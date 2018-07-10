@@ -8,6 +8,7 @@
 
 import UIKit
 import EventKit
+import UserNotifications
 
 class EventDetailViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
@@ -17,14 +18,15 @@ class EventDetailViewController: UIViewController {
     @IBOutlet var detailTextView: UITextView!
     @IBOutlet var optionTableView: UITableView!
     var data: EventDataContainer? = nil
+    var alertRequest: UNNotificationRequest? = nil
     let notificationTitles = [["none"], ["before 1 minute", "before 5 minutes", "before 15 minutes", "before 1 hour", "before 2 hours", "before 5 hours", "before a day"]]
     override func viewDidLoad() {
         super.viewDidLoad()
         if self.data != nil{
             self.titleLabel.text = self.data!.title
             self.detailTextView.text = self.data!.detail
-            self.fromLabel.text = timeStringFormat(self.data!.startTime, withWeek: true)
-            self.toLabel.text = timeStringFormat(self.data!.endTime, withWeek: true)
+            self.fromLabel.text = "from \(timeStringFormat(self.data!.startTime, withWeek: true))"
+            self.toLabel.text = "to \(timeStringFormat(self.data!.endTime, withWeek: true))"
             self.untilLabel.text = prettyTime(to: self.data!.startTime.timeIntervalSinceNow)
         }
         self.detailTextView.backgroundColor = APP_BACKGROUND_GREY
@@ -83,11 +85,54 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource{
             vc.didClickAction = {(section: Int, item: Int, newVal: String) -> Bool in
                 let cell = self.optionTableView.cellForRow(at: IndexPath(item: 0, section: 0))
                 cell!.detailTextLabel!.text = newVal
+                if self.alertRequest != nil{
+                    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["EVENT_\(self.data!.title)_ALERT_ID"])
+                    self.alertRequest = nil
+                }
                 if section == 0{
                     self.data!.notificationState = 0
                 }else{
                     self.data!.notificationState = item + 1
-                    
+                    let content = UNMutableNotificationContent()
+                    content.body = "event: \(self.data!.title)"
+                    content.badge = 1
+                    var fireDate = Date()
+                    //notificationState:
+                    //  0: no notification
+                    //  1: 1 min
+                    //  2: 5 min
+                    //  3: 15 min
+                    //  4: 1 hour
+                    //  5: 2 hour
+                    //  6: 5 hour
+                    //  7: 1 day
+                    switch item{
+                    case 0:
+                        fireDate = Date(timeInterval: -60, since: self.data!.startTime)
+                        content.title = "Event is about to begin in 1 minute"
+                    case 1:
+                        fireDate = Date(timeInterval: -60 * 5, since: self.data!.startTime)
+                        content.title = "Event is about to begin in 5 minutes"
+                    case 2:
+                        fireDate = Date(timeInterval: -60 * 15, since: self.data!.startTime)
+                        content.title = "Event is about to begin in 15 minutes"
+                    case 3:
+                        fireDate = Date(timeInterval: -60 * 60, since: self.data!.startTime)
+                        content.title = "Event is about to begin in 1 hour"
+                    case 4:
+                        fireDate = Date(timeInterval: -60 * 120, since: self.data!.startTime)
+                        content.title = "Event is about to begin in 2 hours"
+                    case 5:
+                        fireDate = Date(timeInterval: -60 * 600, since: self.data!.startTime)
+                        content.title = "Event is about to begin in 5 hours"
+                    default:
+                        fireDate = Date(timeInterval: -60 * 60 * 24, since: self.data!.startTime)
+                        content.title = "Event is about to begin in 24 hours"
+                    }
+                    let dateCompenents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: fireDate)
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateCompenents, repeats: false)
+                    self.alertRequest = UNNotificationRequest(identifier: "EVENT_\(self.data!.title)_ALERT_ID", content: content, trigger: trigger)
+                    UNUserNotificationCenter.current().add(self.alertRequest!, withCompletionHandler: nil)
                 }
                 return true
             }

@@ -20,6 +20,5 @@ class GCBaseTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
 }

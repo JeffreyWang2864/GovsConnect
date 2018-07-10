@@ -46,13 +46,13 @@ func prettyTime(to intervalSinceNow: TimeInterval) -> String{
             return "start in \(years) \(years == 1 ? "year" : "years")"
         }
         if months > 0{
-            return "start in \(months) \(months == 1 ? "month" : "months") ago"
+            return "start in \(months) \(months == 1 ? "month" : "months")"
         }
-        return "start in \(days) \(days == 1 ? "day" : "days") ago"
+        return "start in \(days) \(days == 1 ? "day" : "days")"
     }
     let hours = tisn / 3600
     if hours > 0{
-        return "start in \(hours) \(hours == 1 ? "hour" : "hours") ago"
+        return "start in \(hours) \(hours == 1 ? "hour" : "hours")"
     }
     return "start in less an hour"
 }

@@ -44,16 +44,16 @@ class AppDataManager{
         for _ in (0..<3){
             self.discoverWeekendEventData.append(Array<EventDataContainer>())
         }
-        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526629501 - 3600 * 8), Date(timeIntervalSince1970: 1526644801 - 3600 * 8), "AP Microeconomics exam", "Please make sure to bring at least two pencils to the test room"))
-        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526645701 - 3600 * 8), Date(timeIntervalSince1970: 1526661001 - 3600 * 8), "AP MEH exam; AP Latin exam", "Please make sure to bring at least two pencils to the test room"))
-        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526673601 - 3600 * 8), Date(timeIntervalSince1970: 1526679001 - 3600 * 8), "Spring Drama Production in PAC", LOREM_IPSUM_1))
-        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526716801 - 3600 * 8), Date(timeIntervalSince1970: 1526720401 - 3600 * 8), "New England Track Championships @ Tabor Academy", LOREM_IPSUM_2))
-        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526760001 - 3600 * 8), Date(timeIntervalSince1970: 1526765401 - 3600 * 8), "Spring Drama Production in PAC", LOREM_IPSUM_3))
-        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526801401 - 3600 * 8), Date(timeIntervalSince1970: 1526806621 - 3600 * 8), "Continental breakfast", "No detail to display"))
-        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526806801 - 3600 * 8), Date(timeIntervalSince1970: 1526817601 - 3600 * 8), "Brunch", "No detail to display"))
-        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526832001 - 3600 * 8), Date(timeIntervalSince1970: 1526835601 - 3600 * 8), "Formal -Phillips Gathering - Pictures", LOREM_IPSUM_3))
-        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526836501 - 3600 * 8), Date(timeIntervalSince1970: 1526858101 - 3600 * 8), "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm", LOREM_IPSUM_2))
-        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526859001 - 3600 * 8), Date(timeIntervalSince1970: 1526776141 - 3600 * 8), "Check out procedures; Boarders check in to dorms", LOREM_IPSUM_1))
+        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526629501 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526644801 - 3600 * 8 + 86400 * 54), "AP Microeconomics exam", "Please make sure to bring at least two pencils to the test room"))
+        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526645701 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526661001 - 3600 * 8 + 86400 * 54), "AP MEH exam; AP Latin exam", "Please make sure to bring at least two pencils to the test room"))
+        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526673601 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526679001 - 3600 * 8 + 86400 * 54), "Spring Drama Production in PAC", LOREM_IPSUM_1))
+        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526716801 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526720401 - 3600 * 8 + 86400 * 54), "New England Track Championships @ Tabor Academy", LOREM_IPSUM_2))
+        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526760001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526765401 - 3600 * 8 + 86400 * 54), "Spring Drama Production in PAC", LOREM_IPSUM_3))
+        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526801401 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526806621 - 3600 * 8 + 86400 * 54), "Continental breakfast", "No detail to display"))
+        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526806801 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526817601 - 3600 * 8 + 86400 * 54), "Brunch", "No detail to display"))
+        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526832001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526835601 - 3600 * 8 + 86400 * 54), "Formal -Phillips Gathering - Pictures", LOREM_IPSUM_3))
+        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526836501 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526858101 - 3600 * 8 + 86400 * 54), "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm", LOREM_IPSUM_2))
+        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526859001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526776141 - 3600 * 8 + 86400 * 54), "Check out procedures; Boarders check in to dorms", LOREM_IPSUM_1))
         
         for day in self.discoverWeekendEventData{
             for data in day{
