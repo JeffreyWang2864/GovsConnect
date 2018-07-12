@@ -1,15 +1,18 @@
 PODS:
   - IQKeyboardManagerSwift (5.0.7)
+  - TBDropdownMenu (3.0.1)
   - TwicketSegmentedControl (0.1.2)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - TBDropdownMenu
   - TwicketSegmentedControl
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
+  TBDropdownMenu: 249cd68a53289c32c600a292c568428d4f5cd613
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
 
-PODFILE CHECKSUM: 601f2ea7926b40d0e80da79c8a83e39652743d04
+PODFILE CHECKSUM: 740515fb4393c99fc1d0bfe07225bf46b1acdc06
 
 COCOAPODS: 1.4.0

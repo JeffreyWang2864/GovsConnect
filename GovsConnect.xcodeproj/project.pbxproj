@@ -10,6 +10,14 @@
 		1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1300879D20E9D22500FD9E18 /* system_more_full_image.png */; };
 		130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */; };
 		130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */; };
+		130E677320F61756009D3599 /* testing_food_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130E677220F61756009D3599 /* testing_food_1.jpg */; };
+		130E677520F6175E009D3599 /* testing_food_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130E677420F6175E009D3599 /* testing_food_2.jpg */; };
+		130E677720F61765009D3599 /* testing_food_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130E677620F61765009D3599 /* testing_food_3.jpg */; };
+		130E677920F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130E677820F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift */; };
+		13117B7820F7454600E4CD66 /* testing_food_6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 13117B7420F7454600E4CD66 /* testing_food_6.jpeg */; };
+		13117B7920F7454600E4CD66 /* testing_food_5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 13117B7520F7454600E4CD66 /* testing_food_5.jpeg */; };
+		13117B7A20F7454600E4CD66 /* testing_food_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 13117B7620F7454600E4CD66 /* testing_food_7.jpeg */; };
+		13117B7B20F7454600E4CD66 /* testing_food_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13117B7720F7454600E4CD66 /* testing_food_4.jpg */; };
 		1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */; };
 		1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */; };
 		1327C1A820CE497A001A300A /* system_reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A720CE497A001A300A /* system_reply.png */; };
@@ -35,6 +43,9 @@
 		13321FBE20CFDB7F000B6C41 /* testing_picture_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */; };
 		13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */; };
 		13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */; };
+		133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */; };
+		133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */; };
+		133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */; };
 		1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357D18520EB7639004CD2EB /* NewTableViewCell.xib */; };
 		1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357D18620EB7639004CD2EB /* NewTableViewCell.swift */; };
 		13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */; };
@@ -90,6 +101,14 @@
 		1300879D20E9D22500FD9E18 /* system_more_full_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_more_full_image.png; sourceTree = "<group>"; };
 		1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekendDetailViewController.swift; sourceTree = "<group>"; };
 		130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekendDetailViewController.xib; sourceTree = "<group>"; };
+		130E677220F61756009D3599 /* testing_food_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_1.jpg; sourceTree = "<group>"; };
+		130E677420F6175E009D3599 /* testing_food_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_2.jpg; sourceTree = "<group>"; };
+		130E677620F61765009D3599 /* testing_food_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_3.jpg; sourceTree = "<group>"; };
+		130E677820F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDirectionPanGestureRecongnizer.swift; sourceTree = "<group>"; };
+		13117B7420F7454600E4CD66 /* testing_food_6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_6.jpeg; sourceTree = "<group>"; };
+		13117B7520F7454600E4CD66 /* testing_food_5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_5.jpeg; sourceTree = "<group>"; };
+		13117B7620F7454600E4CD66 /* testing_food_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_7.jpeg; sourceTree = "<group>"; };
+		13117B7720F7454600E4CD66 /* testing_food_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_4.jpg; sourceTree = "<group>"; };
 		1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_jzm.png; sourceTree = "<group>"; };
 		1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_dt.png; sourceTree = "<group>"; };
 		1327C1A720CE497A001A300A /* system_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_reply.png; sourceTree = "<group>"; };
@@ -117,6 +136,9 @@
 		13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_3.jpg; sourceTree = "<group>"; };
 		13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_1.jpg; sourceTree = "<group>"; };
 		13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_2.jpg; sourceTree = "<group>"; };
+		133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_drop_down_arrow.png; sourceTree = "<group>"; };
+		133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
+		133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		1357D18520EB7639004CD2EB /* NewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
 		1357D18620EB7639004CD2EB /* NewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
 		13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_7.jpg; sourceTree = "<group>"; };
@@ -187,6 +209,8 @@
 				1357D18620EB7639004CD2EB /* NewTableViewCell.swift */,
 				1357D18520EB7639004CD2EB /* NewTableViewCell.xib */,
 				137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */,
+				133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */,
+				133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,6 +285,13 @@
 		132F819420C90DC1005D3905 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				13117B7720F7454600E4CD66 /* testing_food_4.jpg */,
+				13117B7520F7454600E4CD66 /* testing_food_5.jpeg */,
+				13117B7420F7454600E4CD66 /* testing_food_6.jpeg */,
+				13117B7620F7454600E4CD66 /* testing_food_7.jpeg */,
+				130E677620F61765009D3599 /* testing_food_3.jpg */,
+				130E677420F6175E009D3599 /* testing_food_2.jpg */,
+				130E677220F61756009D3599 /* testing_food_1.jpg */,
 				139EDF7220EC7E3F00778CFD /* testing_picture_8.jpg */,
 				137EEBA120E7781100BA2575 /* testing_picture_4.jpg */,
 				137EEBA020E7781100BA2575 /* testing_picture_5.jpg */,
@@ -297,6 +328,7 @@
 		13961E0C20CA772F004FFF4B /* System */ = {
 			isa = PBXGroup;
 			children = (
+				133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */,
 				13F4094B20CCF2A200645880 /* system_send.png */,
 				13961E1920CA9FB1004FFF4B /* system_commented.png */,
 				13961E0F20CA7766004FFF4B /* system_comment.png */,
@@ -336,6 +368,7 @@
 				13CD442F20E490CB001FB934 /* GCImageViewController.xib */,
 				137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */,
 				13A7801220EF690E00926139 /* GCOptionsTableView.swift */,
+				130E677820F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -593,23 +626,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				137EEBA420E7781200BA2575 /* testing_picture_4.jpg in Resources */,
+				13117B7820F7454600E4CD66 /* testing_food_6.jpeg in Resources */,
 				BC14910820DA657D00373BBF /* testing_profile_picture_3.jpg in Resources */,
 				13961E1420CA7766004FFF4B /* system_liked.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
 				139EDF7B20EC87A700778CFD /* EventDetailViewController.xib in Resources */,
 				132F817520C8C77C005D3905 /* LaunchScreen.storyboard in Resources */,
 				1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */,
+				13117B7A20F7454600E4CD66 /* testing_food_7.jpeg in Resources */,
 				13321FBE20CFDB7F000B6C41 /* testing_picture_3.jpg in Resources */,
 				13961E1820CA7766004FFF4B /* system_share.png in Resources */,
 				1327C1A820CE497A001A300A /* system_reply.png in Resources */,
 				13961E1A20CA9FB1004FFF4B /* system_commented.png in Resources */,
 				13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */,
 				137EEBA520E7781200BA2575 /* testing_picture_6.jpg in Resources */,
+				133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */,
 				139EDF7720EC7FA400778CFD /* RateYourFoodViewController.xib in Resources */,
 				13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */,
 				1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */,
+				130E677720F61765009D3599 /* testing_food_3.jpg in Resources */,
 				13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */,
 				13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */,
+				13117B7920F7454600E4CD66 /* testing_food_5.jpeg in Resources */,
 				139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */,
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
 				137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */,
@@ -622,6 +660,8 @@
 				132F819E20C90DD0005D3905 /* numberthree.png in Resources */,
 				13961E1720CA7766004FFF4B /* system_view.png in Resources */,
 				132F819B20C90DD0005D3905 /* numberone.png in Resources */,
+				130E677520F6175E009D3599 /* testing_food_2.jpg in Resources */,
+				13117B7B20F7454600E4CD66 /* testing_food_4.jpg in Resources */,
 				1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */,
 				132F819A20C90DD0005D3905 /* numberfive.png in Resources */,
 				132F817F20C8C952005D3905 /* WelcomeViewController.xib in Resources */,
@@ -630,9 +670,11 @@
 				132F819D20C90DD0005D3905 /* numbertwo.png in Resources */,
 				13961E1520CA7766004FFF4B /* system_comment.png in Resources */,
 				130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */,
+				130E677320F61756009D3599 /* testing_food_1.jpg in Resources */,
 				BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */,
 				138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */,
 				13961E1320CA7766004FFF4B /* system_viewed.png in Resources */,
+				133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */,
 				BC14910620DA657D00373BBF /* testing_profile_picture_4.png in Resources */,
 				132F817220C8C77C005D3905 /* Assets.xcassets in Resources */,
 				132F817020C8C77C005D3905 /* Main.storyboard in Resources */,
@@ -652,11 +694,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/TBDropdownMenu/TBDropdownMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/TwicketSegmentedControl/TwicketSegmentedControl.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBDropdownMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwicketSegmentedControl.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,10 +754,12 @@
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
+				130E677920F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift in Sources */,
 				13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */,
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
 				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
 				137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */,
+				133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */,
 				132F817E20C8C952005D3905 /* WelcomeViewController.swift in Sources */,
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
 				BC14910E20DB50A300373BBF /* GCYouViewController.swift in Sources */,

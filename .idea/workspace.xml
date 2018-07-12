@@ -2,41 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ae1d010-3fd6-4408-93d6-bb6cda17913c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GovsConnect/GC/GCWaterfallScrollView.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/View/DiscoverBasicCellView.swift" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GovsConnect/GC/GCCollectionViewFlowLayout.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewBasicCollectionViewCell.swift" afterPath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/View/DiscoverViewBasicCollectionViewCell.swift" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewBasicCollectionViewCell.xib" afterPath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/View/DiscoverViewBasicCollectionViewCell.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/View/FoodCollectionViewCell.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/View/FoodCollectionViewCell.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/GovsConnect.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect.xcodeproj/xcuserdata/Excited.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/GovsConnect.xcodeproj/xcuserdata/Excited.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/AppDelegate.swift" afterPath="$PROJECT_DIR$/GovsConnect/AppDelegate.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect.xcworkspace/xcuserdata/Excited.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/GovsConnect.xcworkspace/xcuserdata/Excited.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Manager/AppDataManager.swift" afterPath="$PROJECT_DIR$/GovsConnect/Manager/AppDataManager.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewController.swift" afterPath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewController.xib" afterPath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/RateYourFoodViewController.swift" afterPath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/RateYourFoodViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/RateYourFoodViewController.xib" afterPath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/RateYourFoodViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/View/NewTableViewCell.swift" afterPath="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/View/NewTableViewCell.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQTextView/IQTextView.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQTextView/IQTextView.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/README.md" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManagerSwift/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/Pods-GovsConnect.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/Pods-GovsConnect.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/TwicketSegmentedControl.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/TwicketSegmentedControl.xcscheme" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/xcschememanagement.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/IQKeyboardManagerSwift/Info.plist" afterPath="$PROJECT_DIR$/Pods/Target Support Files/IQKeyboardManagerSwift/Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-acknowledgements.markdown" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-acknowledgements.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-acknowledgements.plist" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-acknowledgements.plist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-resources.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-resources.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.debug.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.release.xcconfig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,19 +40,50 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
               <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="e#154#166#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GCWaterfallScrollView.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GCWaterfallScrollView.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GovsConnect/GC/GCWaterfallScrollView.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
-              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+            <state relative-caret-position="364">
+              <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RateYourFoodViewController.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/RateYourFoodViewController.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-699">
+              <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppDataManager.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GovsConnect/Manager/AppDataManager.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding>
+                <marker date="1531306076782" expanded="true" signature="179:6987" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="704:6985" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="7012:7269" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="7159:7267" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="7295:8291" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="7893:8289" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="8317:8764" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="8589:8762" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="8797:9005" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="8914:9003" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="9031:9545" ph="{...}" />
+                <marker date="1531306076782" expanded="true" signature="9414:9543" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,7 +91,7 @@
       <file leaf-file-name="DiscoverBasicCellView.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/View/DiscoverBasicCellView.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
+            <state relative-caret-position="703">
               <caret line="37" column="15" lean-forward="false" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
               <folding />
             </state>
@@ -90,6 +108,7 @@
       <list>
         <option value="$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewController.swift" />
         <option value="$PROJECT_DIR$/GovsConnect/GC/GCWaterfallScrollView.swift" />
+        <option value="$PROJECT_DIR$/GovsConnect/Manager/AppDataManager.swift" />
       </list>
     </option>
   </component>
@@ -99,7 +118,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -122,7 +141,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,6 +198,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -217,14 +236,16 @@
       <updated>1530344601280</updated>
       <workItem from="1530344603063" duration="385000" />
       <workItem from="1530435515990" duration="1074000" />
+      <workItem from="1531305275269" duration="702000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1459000" />
+    <option name="totallyTimeSpent" value="2161000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21944444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -259,27 +280,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#154#166#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewController.swift">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#154#166#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/View/DiscoverBasicCellView.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
+        <state relative-caret-position="703">
           <caret line="37" column="15" lean-forward="false" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
           <folding />
         </state>
@@ -287,9 +296,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GovsConnect/GC/GCWaterfallScrollView.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
+        <state relative-caret-position="893">
           <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/DiscoverViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/View/DiscoverBasicCellView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="37" column="15" lean-forward="false" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GovsConnect/GC/GCWaterfallScrollView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/DiscoverModule/Controller/RateYourFoodViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-699">
+          <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GovsConnect/Manager/AppDataManager.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <marker date="1531306076782" expanded="true" signature="179:6987" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="704:6985" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="7012:7269" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="7159:7267" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="7295:8291" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="7893:8289" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="8317:8764" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="8589:8762" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="8797:9005" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="8914:9003" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="9031:9545" ph="{...}" />
+            <marker date="1531306076782" expanded="true" signature="9414:9543" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

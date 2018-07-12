@@ -14,6 +14,7 @@ class AppDataManager{
     var postsData = Array<PostsDataContainer>()
     var discoverData = Array<DiscoverItemDataContainer>()
     var discoverWeekendEventData = Array<Array<EventDataContainer>>()
+    var discoverMenu = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
     var users = Dictionary<String, UserDataContainer>()
     var newPostDraft: (String, String, Array<UIImage>)? = nil
     var currentPersonID = "jefwa001"
@@ -54,15 +55,13 @@ class AppDataManager{
         self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526832001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526835601 - 3600 * 8 + 86400 * 54), "Formal -Phillips Gathering - Pictures", LOREM_IPSUM_3))
         self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526836501 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526858101 - 3600 * 8 + 86400 * 54), "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm", LOREM_IPSUM_2))
         self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526859001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526776141 - 3600 * 8 + 86400 * 54), "Check out procedures; Boarders check in to dorms", LOREM_IPSUM_1))
-        
-        for day in self.discoverWeekendEventData{
-            for data in day{
-                let calender = Calendar.current
-                let startTime = calender.dateComponents([.hour, .minute], from: data.startTime)
-                let endTime = calender.dateComponents([.hour, .minute], from: data.endTime)
-                NSLog("\(data.title), \(startTime.hour!), \(startTime.minute!), \(endTime.hour!), \(endTime.minute!)")
-            }
-        }
+        self.discoverMenu[0].append(DiscoverFoodDataContainer("Chicken Fajitas", "testing_food_1.jpg", 0, 0))
+        self.discoverMenu[0].append(DiscoverFoodDataContainer("Garden Burger Grilled Cheese", "testing_food_2.jpg", 0, 0))
+        self.discoverMenu[0].append(DiscoverFoodDataContainer("Sticky Rice & Brown Rice", "testing_food_3.jpg", 0, 0))
+        self.discoverMenu[1].append(DiscoverFoodDataContainer("Chef Carved Roast Beef", "testing_food_4.jpg", 0, 0))
+        self.discoverMenu[1].append(DiscoverFoodDataContainer("Mashed Potatoes", "testing_food_5.jpeg", 0, 0))
+        self.discoverMenu[1].append(DiscoverFoodDataContainer("Roasted Carrots", "testing_food_6.jpeg", 0, 0))
+        self.discoverMenu[1].append(DiscoverFoodDataContainer("Brussel Sprouts", "testing_food_7.jpeg", 0, 0))
     }
 }
 
@@ -148,5 +147,18 @@ class EventDataContainer{
         self.endTime = endTime
         self.title = title
         self.detail = detail
+    }
+}
+
+class DiscoverFoodDataContainer{
+    var title: String
+    var imageName: String
+    var likeCount: Int
+    var dislikeCount: Int
+    init(_ title: String, _ imageName: String, _ likeCount: Int = 0, _ dislikeCount: Int = 0){
+        self.title = title
+        self.imageName = imageName
+        self.likeCount = likeCount
+        self.dislikeCount = dislikeCount
     }
 }
