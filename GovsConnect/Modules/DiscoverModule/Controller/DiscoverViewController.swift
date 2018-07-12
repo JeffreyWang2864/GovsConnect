@@ -67,6 +67,29 @@ class DiscoverViewController: UIViewController {
             //rate your food
             let vc = RateYourFoodViewController.init(nibName: "RateYourFoodViewController", bundle: Bundle.main)
             self.navigationController!.pushViewController(vc, animated: true)
+        case 4:
+            //more
+            let vc = UIViewController()
+            vc.view.frame = self.view.bounds
+            vc.view.backgroundColor = APP_BACKGROUND_ULTRA_GREY
+            vc.navigationItem.title = "More..."
+            let cardBackgroundView = UIView(frame: CGRect(x: 25, y: 25, width: screenWidth - 50, height: vc.view.frame.size.height - 95))
+            cardBackgroundView.backgroundColor = UIColor.white
+            cardBackgroundView.layer.cornerRadius = 20
+            let titleLabel = UILabel(frame: CGRect(x: 10, y: 20, width: screenWidth - 50 - 20, height: 60))
+            titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+            titleLabel.text = "Want to add a new discovery page?"
+            titleLabel.textAlignment = .center
+            titleLabel.numberOfLines = 0
+            let descriptionLabel = UILabel(frame: CGRect(x: 10, y: 90, width: screenWidth - 50 - 20, height: cardBackgroundView.frame.size.height - 90 - 20))
+            descriptionLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+            descriptionLabel.text = "    The Govs Connect crew always encourages users to publish their own discovery page. We promote pages that bring conveniences and benefits to our community. Please contact us without hesitation once you got an idea. However, publishing something public to the entire school should not be taken lightly. A review of your application between faculty and developers is necessary. Accepted applications are supposed to have a high “market requirement”, which can solve issues from (or bring advantages to) the majorities. More importantly, your application must adhere to the school rules. Once you have your idea ready, you may throw your message to the developer email(dev@govs.app). You may also talk with us in person. We cannot wait to hear your idea!"
+            descriptionLabel.numberOfLines = 0
+            descriptionLabel.sizeToFit()
+            cardBackgroundView.addSubview(titleLabel)
+            cardBackgroundView.addSubview(descriptionLabel)
+            vc.view.addSubview(cardBackgroundView)
+            self.navigationController!.pushViewController(vc, animated: true)
         default:
             NSLog("\(sender.view!.tag)")
         }
