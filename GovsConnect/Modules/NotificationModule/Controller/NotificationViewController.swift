@@ -1,14 +1,14 @@
 //
-//  GCLookUpViewController.swift
+//  NotificationViewController.swift
 //  GovsConnect
 //
-//  Created by Spring on 2018/6/21.
-//  Copyright © 2018年 Eagersoft. All rights reserved.
+//  Created by Jeffrey Wang on 2018/7/13.
+//  Copyright © 2018 Eagersoft. All rights reserved.
 //
 
 import UIKit
 
-class GCLookUpViewController: GCBaseViewController {
+class NotificationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,18 +16,13 @@ class GCLookUpViewController: GCBaseViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
+        // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
     */

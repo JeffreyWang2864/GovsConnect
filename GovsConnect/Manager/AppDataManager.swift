@@ -18,13 +18,22 @@ class AppDataManager{
     var users = Dictionary<String, UserDataContainer>()
     var newPostDraft: (String, String, Array<UIImage>)? = nil
     var currentPersonID = "jefwa001"
+    var allStudent = Array<String>()
+    var allFaculty = Array<String>()
+    var allCourse = Array<String>()
+    var allClub = Array<String>()
     public func setupData(){
-        self.users["jefwa001"] = UserDataContainer.init("jefwa001", "Jeffrey Wang", "testing_profile_picture_1.png")
-        self.users["kevji001"] = UserDataContainer.init("kevji001", "Kevin Jiang", "testing_profile_picture_2.png")
-        self.users["haosh001"] = UserDataContainer.init("haosh001", "Haodi Shi", "testing_profile_picture_3.jpg")
-        self.users["zemji001"] = UserDataContainer.init("zemji001", "Zemin Jiang", "testing_profile_picture_jzm.png")
-        self.users["dontr001"] = UserDataContainer.init("dontr001", "Donald Trump", "testing_profile_picture_dt.png")
-        self.users["ranpe001"] = UserDataContainer.init("ranpe001", "Random Person", "testing_profile_picture_4.png")
+        self.users["jefwa001"] = UserDataContainer.init("jefwa001", "Jeffrey Wang", "testing_profile_picture_1.png", .student, .junior, "Beijing, China")
+        self.users["kevji001"] = UserDataContainer.init("kevji001", "Kevin Jiang", "testing_profile_picture_2.png", .student, .junior, "Beijing, China")
+        self.users["haosh001"] = UserDataContainer.init("haosh001", "Haodi Shi", "testing_profile_picture_3.jpg", .student, .junior, "Yunnan, China")
+        self.users["zemji001"] = UserDataContainer.init("zemji001", "Zemin Jiang", "testing_profile_picture_jzm.png", .facalty, .sophomoreEnglish, "Shanghai, China")
+        self.users["dontr001"] = UserDataContainer.init("dontr001", "Donald Trump", "testing_profile_picture_dt.png", .facalty, .juniorEnglish, "USA")
+        self.allStudent.append("jefwa001")
+        self.allStudent.append("kevji001")
+        self.allStudent.append("haosh001")
+        self.allFaculty.append("zemji001")
+        self.allFaculty.append("dontr001")
+        self.users["ranpe001"] = UserDataContainer.init("ranpe001", "Random Person", "testing_profile_picture_4.png", .facalty, .freashmenEnglish, "middle of nowhere")
         self.postsData.append(PostsDataContainer(self.users["jefwa001"]!, NSDate.init(timeIntervalSinceNow: -10), "Govs Connect App is released today!", LOREM_IPSUM_1, 12, 2, 3, false, false, false))
         self.postsData.append(PostsDataContainer(self.users["kevji001"]!, NSDate.init(timeIntervalSinceNow: -100), "Happy New Year Guys!!!", "Here is a video about people's new year resolution. Go Govs!", 15, 10, 0, false, false, false))
         self.postsData.append(PostsDataContainer(self.users["haosh001"]!, NSDate.init(timeIntervalSinceNow: -10000), "New Ideas on the app...We need you!", LOREM_IPSUM_2, 33, 2, 0, false, false, false))
@@ -66,13 +75,33 @@ class AppDataManager{
 }
 
 class UserDataContainer{
+    enum Profession: Int{
+        case student = 3
+        case facalty = 2
+    }
+    enum Department: String{
+        case freashmen = "freashmen"
+        case sophomore = "sophomore"
+        case junior = "junior"
+        case senior = "senior"
+        case freashmenEnglish = "freashmen english"
+        case sophomoreEnglish = "sophomore english"
+        case juniorEnglish = "junior english"
+        case seniorEnglish = "senior english"
+    }
     let uid: String
     let name: String
+    let profession: Profession
+    let department: Department
     var profilePictureName: String
-    init(_ uid: String, _ name: String, _ profilePictureName: String){
+    var fromPlace: String
+    init(_ uid: String, _ name: String, _ profilePictureName: String, _ profession: Profession, _ department: Department, _ fromPlace: String){
         self.uid = uid
         self.name = name
         self.profilePictureName = profilePictureName
+        self.profession = profession
+        self.department = department
+        self.fromPlace = fromPlace
     }
 }
 

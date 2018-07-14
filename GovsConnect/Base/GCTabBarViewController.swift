@@ -24,13 +24,13 @@ class GCTabBarViewController: UITabBarController {
         let disVc = DiscoverViewController()
         self.addChildController(childVc: disVc, title: "Discover", imageName: "", selImage: "")
         
-        //服务
-        let servicesVc = GCServicesViewController()
-        self.addChildController(childVc: servicesVc, title: "Services", imageName: "", selImage: "")
-        
         //lookUp
-        let lookUpVc = GCLookUpViewController()
-        self.addChildController(childVc: lookUpVc, title: "look Up", imageName: "", selImage: "")
+        let lookUpVc = LookupViewController()
+        self.addChildController(childVc: lookUpVc, title: "Look up", imageName: "", selImage: "")
+        
+        //notification
+        let notificationVC = NotificationViewController()
+        self.addChildController(childVc: notificationVC, title: "Notification", imageName: "", selImage: "")
         
         //You
         let youVc = GCYouViewController()
