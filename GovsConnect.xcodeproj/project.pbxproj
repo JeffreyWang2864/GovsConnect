@@ -161,8 +161,8 @@
 		137EEBA220E7781200BA2575 /* testing_picture_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_6.jpg; sourceTree = "<group>"; };
 		138D166A20D16D36005F3425 /* MultiMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiMediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiMediaCollectionViewCell.xib; sourceTree = "<group>"; };
-		138FEEDC20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseDescriptionTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/Controller/CourseDescriptionTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		138FEEDD20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CourseDescriptionTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/Controller/CourseDescriptionTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		138FEEDC20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseDescriptionTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/CourseDescriptionTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		138FEEDD20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CourseDescriptionTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/CourseDescriptionTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		1396070C20F7E3210079CBC4 /* LookupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupViewController.swift; sourceTree = "<group>"; };
 		1396070D20F7E3210079CBC4 /* LookupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookupViewController.xib; sourceTree = "<group>"; };
 		13961E0D20CA7766004FFF4B /* system_viewed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_viewed.png; sourceTree = "<group>"; };
@@ -186,8 +186,8 @@
 		13ADC69D20F32A4300AECFFA /* GovsConnect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GovsConnect.entitlements; sourceTree = "<group>"; };
 		13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailBodyTableViewCell.swift; sourceTree = "<group>"; };
 		13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailBodyTableViewCell.xib; sourceTree = "<group>"; };
-		13C5EA0720F8A143000DC504 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonTableViewCell.swift; path = GovsConnect/GC/PersonTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		13C5EA0820F8A143000DC504 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PersonTableViewCell.xib; path = GovsConnect/GC/PersonTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		13C5EA0720F8A143000DC504 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/PersonTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		13C5EA0820F8A143000DC504 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PersonTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/PersonTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		13CD442E20E490CB001FB934 /* GCImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCImageViewController.swift; sourceTree = "<group>"; };
 		13CD442F20E490CB001FB934 /* GCImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCImageViewController.xib; sourceTree = "<group>"; };
 		13CF4EC920F7C27E00DEE71A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -197,8 +197,8 @@
 		13D389D920FC9C6700330CDD /* system_snapchat_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_snapchat_icon.png; sourceTree = "<group>"; };
 		13D389DC20FCBC7800330CDD /* system_instagram_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_instagram_icon.png; sourceTree = "<group>"; };
 		13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_3.png; sourceTree = "<group>"; };
-		13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDetailTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/Controller/UserDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserDetailTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/Controller/UserDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDetailTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserDetailTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		13EBE00620CA616000A911DE /* testing_profile_picture_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_1.png; sourceTree = "<group>"; };
 		13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailReplyTableViewCell.swift; sourceTree = "<group>"; };
 		13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailReplyTableViewCell.xib; sourceTree = "<group>"; };
@@ -342,9 +342,9 @@
 		132F819F20C91B98005D3905 /* PostsModule */ = {
 			isa = PBXGroup;
 			children = (
+				13F3C4742100B5A200F65E7D /* Model */,
 				BC1490F120DA621A00373BBF /* Controller */,
 				BC1490F020DA621400373BBF /* View */,
-				BC1490EF20DA620C00373BBF /* Model */,
 			);
 			path = PostsModule;
 			sourceTree = "<group>";
@@ -432,6 +432,33 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		13F3C4722100B56D00F65E7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13C5EA0720F8A143000DC504 /* PersonTableViewCell.swift */,
+				13C5EA0820F8A143000DC504 /* PersonTableViewCell.xib */,
+				13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */,
+				13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */,
+				138FEEDC20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift */,
+				138FEEDD20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13F3C4732100B59300F65E7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13F3C4742100B5A200F65E7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BC1490E320DA22BE00373BBF /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,13 +468,6 @@
 				BC1490EB20DA240100373BBF /* GCNavigationViewController.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		BC1490EF20DA620C00373BBF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BC1490F020DA621400373BBF /* View */ = {
@@ -538,9 +558,9 @@
 		BC1490FF20DA643E00373BBF /* LookUpModule */ = {
 			isa = PBXGroup;
 			children = (
+				13F3C4732100B59300F65E7D /* Model */,
+				13F3C4722100B56D00F65E7D /* View */,
 				BC14910020DA643E00373BBF /* Controller */,
-				BC14910120DA643E00373BBF /* Model */,
-				BC14910220DA643E00373BBF /* View */,
 			);
 			path = LookUpModule;
 			sourceTree = "<group>";
@@ -554,26 +574,6 @@
 				13D389D520FC8E9F00330CDD /* UserDetailViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		BC14910120DA643E00373BBF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BC14910220DA643E00373BBF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				13C5EA0720F8A143000DC504 /* PersonTableViewCell.swift */,
-				13C5EA0820F8A143000DC504 /* PersonTableViewCell.xib */,
-				13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */,
-				13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */,
-				138FEEDC20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift */,
-				138FEEDD20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		E69AA26B779572AEDB876F1E /* Frameworks */ = {

@@ -24,6 +24,7 @@ class UserDetailViewController: UIViewController {
             let data = AppDataManager.shared.users[uid]!
             self.userImageView.image = UIImage(named: data.profilePictureName)
             self.userTitleLabel.text = data.name
+            self.navigationItem.title = data.name
             self.userDetailLabel.text = UserDetailViewController.getDescriptionText(data: data)
             self.setBlurViewForBackgroundView(data.profilePictureName)
             self.profession = data.profession
