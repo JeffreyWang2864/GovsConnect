@@ -17,7 +17,7 @@ class PersonTableViewCell: UITableViewCell {
             let userData = AppDataManager.shared.users[self.uid]!
             self.personImage.image = UIImage(named: userData.profilePictureName)
             self.personName.text = userData.name
-            self.personDetail.text = "\(userData.department.rawValue) from \(userData.fromPlace)"
+            self.personDetail.text = UserDetailViewController.getDescriptionText(data: userData)
         }
     }
     override func awakeFromNib() {
@@ -30,5 +30,4 @@ class PersonTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

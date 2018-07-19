@@ -23,17 +23,22 @@ class AppDataManager{
     var allCourse = Array<String>()
     var allClub = Array<String>()
     public func setupData(){
-        self.users["jefwa001"] = UserDataContainer.init("jefwa001", "Jeffrey Wang", "testing_profile_picture_1.png", .student, .junior, "Beijing, China")
-        self.users["kevji001"] = UserDataContainer.init("kevji001", "Kevin Jiang", "testing_profile_picture_2.png", .student, .junior, "Beijing, China")
-        self.users["haosh001"] = UserDataContainer.init("haosh001", "Haodi Shi", "testing_profile_picture_3.jpg", .student, .junior, "Yunnan, China")
-        self.users["zemji001"] = UserDataContainer.init("zemji001", "Zemin Jiang", "testing_profile_picture_jzm.png", .facalty, .sophomoreEnglish, "Shanghai, China")
-        self.users["dontr001"] = UserDataContainer.init("dontr001", "Donald Trump", "testing_profile_picture_dt.png", .facalty, .juniorEnglish, "USA")
+        self.users["jefwa001"] = UserDataContainer.init("jefwa001", "Jeffrey Wang", "testing_profile_picture_1.png", .student, .junior, "Beijing, China", [("jeffrey.wang@govsacademy.org", true), ("jwang.xyz", true), ("8609131120", true), ("Boarder, living in Ingham", true)])
+        self.users["kevji001"] = UserDataContainer.init("kevji001", "Kevin Jiang", "testing_profile_picture_2.png", .student, .junior, "Beijing, China", [("kevin.jiang@govsacademy.org", true), ("", false), ("1234567890", false), ("Boarder, living in Eames", true)])
+        self.users["haosh001"] = UserDataContainer.init("haosh001", "Haodi Shi", "testing_profile_picture_3.png", .student, .junior, "Yunnan, China", [("haodi.shi@govsacademy.org", false), ("", false), ("", false), ("Boarder, living in Perkins", false)])
+        self.users["zemji001"] = UserDataContainer.init("zemji001", "Zemin Jiang", "testing_profile_picture_jzm.png", .facalty, .sophomoreEnglish, "Shanghai, China", [("zemin.jaing@china.gov", true), ("hama.com", true), ("110", true), ("Shanghai Jiaotong University", true)])
+        self.users["dontr001"] = UserDataContainer.init("dontr001", "Donald Trump", "testing_profile_picture_dt.png", .facalty, .juniorEnglish, "USA", [("donald.trump@trump.com", false), ("donaldjtrump.com", true), ("11111111111", true), ("Trump Tower, NY", false)])
+        self.users["ranpe001"] = UserDataContainer.init("ranpe001", "Random Person", "testing_profile_picture_4.png", .student, .senior, "middle of nowhere", [("random.person@govsacademy.org", true), ("", true), ("123422211112", true), ("middle of nowhere", true)])
+        self.users["advan001"] = UserDataContainer.init("advan001", "Advanced Precalculus with an Introduction to Calculus", "testing_profile_picture_4.png", .course, .mathmaticDepartment, "This is a year-long course with two major segments. The first portion of the course is an in-depth examination of ideas such as vectors, matrices, systems of linear and non-linear equations, sequences and series. The second portion of the course introduces students to the major themes of calculus, specifically the limit, the derivative, and the definite integral. This segment is designed to prepare students for a traditional college calculus course.", [("two semesters", true), ("mathmetics", true), ("false", true), ("9, 10, 11, 12", true), ("1", true), ("Science Building 301", true), ("Mr. Wang, Mr. Zhang and Mr. Lee", true)])
+        self.users["unice001"] = UserDataContainer.init("unice001", "Unicef Club", "testing_profile_picture_4.png", .club, .clubDefault, "Governor's official Unicef club", [("Haodi Shi", true), ("Murphy Seminor Room, Frost Library", true), ("Thursday 6:00 PM", true)])
         self.allStudent.append("jefwa001")
         self.allStudent.append("kevji001")
         self.allStudent.append("haosh001")
+        self.allStudent.append("ranpe001")
         self.allFaculty.append("zemji001")
         self.allFaculty.append("dontr001")
-        self.users["ranpe001"] = UserDataContainer.init("ranpe001", "Random Person", "testing_profile_picture_4.png", .facalty, .freashmenEnglish, "middle of nowhere")
+        self.allCourse.append("advan001")
+        self.allClub.append("unice001")
         self.postsData.append(PostsDataContainer(self.users["jefwa001"]!, NSDate.init(timeIntervalSinceNow: -10), "Govs Connect App is released today!", LOREM_IPSUM_1, 12, 2, 3, false, false, false))
         self.postsData.append(PostsDataContainer(self.users["kevji001"]!, NSDate.init(timeIntervalSinceNow: -100), "Happy New Year Guys!!!", "Here is a video about people's new year resolution. Go Govs!", 15, 10, 0, false, false, false))
         self.postsData.append(PostsDataContainer(self.users["haosh001"]!, NSDate.init(timeIntervalSinceNow: -10000), "New Ideas on the app...We need you!", LOREM_IPSUM_2, 33, 2, 0, false, false, false))
@@ -78,6 +83,8 @@ class UserDataContainer{
     enum Profession: Int{
         case student = 3
         case facalty = 2
+        case course = 1
+        case club = 0
     }
     enum Department: String{
         case freashmen = "freashmen"
@@ -88,20 +95,27 @@ class UserDataContainer{
         case sophomoreEnglish = "sophomore english"
         case juniorEnglish = "junior english"
         case seniorEnglish = "senior english"
+        case englishDepartment = "English"
+        case mathmaticDepartment = "Mathmatics"
+        case clubDefault = "student orginization"
     }
     let uid: String
     let name: String
     let profession: Profession
     let department: Department
     var profilePictureName: String
-    var fromPlace: String
-    init(_ uid: String, _ name: String, _ profilePictureName: String, _ profession: Profession, _ department: Department, _ fromPlace: String){
+    var description: String
+    var instagramStr: String? = nil
+    var snapchatStr: String? = nil
+    var information: Array<(str: String, visible: Bool)>
+    init(_ uid: String, _ name: String, _ profilePictureName: String, _ profession: Profession, _ department: Department, _ description: String, _ information: Array<(str: String, visible: Bool)> = Array<(str: String, visible: Bool)>()){
         self.uid = uid
         self.name = name
         self.profilePictureName = profilePictureName
         self.profession = profession
         self.department = department
-        self.fromPlace = fromPlace
+        self.description = description
+        self.information = information
     }
 }
 
