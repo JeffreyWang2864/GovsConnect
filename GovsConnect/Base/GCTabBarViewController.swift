@@ -33,8 +33,8 @@ class GCTabBarViewController: UITabBarController {
         self.addChildController(childVc: notificationVC, title: "Notification", imageName: "", selImage: "")
         
         //You
-        let youVc = GCYouViewController()
-        self.addChildController(childVc: youVc, title: "you", imageName: "", selImage: "")
+        let youVc = YouViewController()
+        self.addChildController(childVc: youVc, title: "You", imageName: "", selImage: "")
     }
 
     func addChildController(childVc:UIViewController, title:String, imageName:String, selImage:String) -> Void {

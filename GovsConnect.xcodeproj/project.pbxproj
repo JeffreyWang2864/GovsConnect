@@ -46,6 +46,8 @@
 		133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */; };
 		133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */; };
 		133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */; };
+		1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4D62101E2CD000C3BF5 /* YouViewController.swift */; };
+		1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1356C4D72101E2CD000C3BF5 /* YouViewController.xib */; };
 		1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357D18520EB7639004CD2EB /* NewTableViewCell.xib */; };
 		1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357D18620EB7639004CD2EB /* NewTableViewCell.swift */; };
 		13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */; };
@@ -105,7 +107,6 @@
 		BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490ED20DA550A00373BBF /* UIView+Ext.swift */; };
 		BC14910620DA657D00373BBF /* testing_profile_picture_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BC14910320DA657C00373BBF /* testing_profile_picture_4.png */; };
 		BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC14910420DA657D00373BBF /* testing_profile_picture_2.png */; };
-		BC14910E20DB50A300373BBF /* GCYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14910D20DB50A300373BBF /* GCYouViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +152,8 @@
 		133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_drop_down_arrow.png; sourceTree = "<group>"; };
 		133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
+		1356C4D62101E2CD000C3BF5 /* YouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouViewController.swift; sourceTree = "<group>"; };
+		1356C4D72101E2CD000C3BF5 /* YouViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YouViewController.xib; sourceTree = "<group>"; };
 		1357D18520EB7639004CD2EB /* NewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
 		1357D18620EB7639004CD2EB /* NewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
 		13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_7.jpg; sourceTree = "<group>"; };
@@ -211,7 +214,6 @@
 		BC1490ED20DA550A00373BBF /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		BC14910320DA657C00373BBF /* testing_profile_picture_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_4.png; sourceTree = "<group>"; };
 		BC14910420DA657D00373BBF /* testing_profile_picture_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_2.png; sourceTree = "<group>"; };
-		BC14910D20DB50A300373BBF /* GCYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCYouViewController.swift; sourceTree = "<group>"; };
 		FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GovsConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -511,7 +513,8 @@
 		BC1490F420DA635E00373BBF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BC14910D20DB50A300373BBF /* GCYouViewController.swift */,
+				1356C4D62101E2CD000C3BF5 /* YouViewController.swift */,
+				1356C4D72101E2CD000C3BF5 /* YouViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 			files = (
 				137EEBA420E7781200BA2575 /* testing_picture_4.jpg in Resources */,
 				13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */,
+				1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */,
 				13117B7820F7454600E4CD66 /* testing_food_6.jpeg in Resources */,
 				13961E1420CA7766004FFF4B /* system_liked.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
@@ -809,7 +813,6 @@
 				132F817E20C8C952005D3905 /* WelcomeViewController.swift in Sources */,
 				13C5EA0920F8A143000DC504 /* PersonTableViewCell.swift in Sources */,
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
-				BC14910E20DB50A300373BBF /* GCYouViewController.swift in Sources */,
 				132F81A620C91FB9005D3905 /* PostsTableViewCell.swift in Sources */,
 				13CF4ECB20F7C27E00DEE71A /* NotificationViewController.swift in Sources */,
 				130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */,
@@ -822,6 +825,7 @@
 				1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */,
 				13961E2020CAB151004FFF4B /* defines.swift in Sources */,
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
+				1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,
 				138FEEDE20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift in Sources */,
 				139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */,

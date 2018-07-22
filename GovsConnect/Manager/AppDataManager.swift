@@ -107,6 +107,7 @@ class UserDataContainer{
     var description: String
     var instagramStr: String? = nil
     var snapchatStr: String? = nil
+    var posts = Array<PostsDataContainer>()
     var information: Array<(str: String, visible: Bool)>
     init(_ uid: String, _ name: String, _ profilePictureName: String, _ profession: Profession, _ department: Department, _ description: String, _ information: Array<(str: String, visible: Bool)> = Array<(str: String, visible: Bool)>()){
         self.uid = uid
@@ -143,6 +144,10 @@ class PostsDataContainer{
         self.isLikedByCurrentUser = isLiked
         self.isViewedByCurrentUser = isViewed
         self.isCommentedByCurrentUser = isCommented
+        self.author.posts.append(self)
+    }
+    deinit {
+        self.author.posts = self.author.posts.filter{$0 !== self}
     }
 }
 
