@@ -9,7 +9,7 @@
 import UIKit
 
 class UserDetailViewController: UIViewController {
-    static let studentLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Email:", .all), ("Website:", .link), ("Phone:", .phoneNumber), ("Address:", .all), ("Credits:", .all), ("Teacher(usually):", .all)]
+    static let studentLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Email:", .all), ("Website:", .link), ("Phone:", .phoneNumber), ("Address:", .all)]
     static let courseLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Length:", .all), ("Catagory:", .all), ("Is required:", .all), ("Grade:", .all), ("Credits:", .all), ("Location:", .all), ("Teacher:", .all)]
     static let clubLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Leader:", .all), ("Location:", .all), ("Activity hour:", .all)]
     @IBOutlet var backgroundView: UIView!
@@ -32,12 +32,6 @@ class UserDetailViewController: UIViewController {
             self.tableView.register(UINib(nibName: "CourseDescriptionTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "COURSE_DESCRIPTION_TABLEVIEW_CELL_ID")
             self.tableView.delegate = self
             self.tableView.dataSource = self
-            if data.instagramStr == nil{
-                self.instagramButton.isEnabled = false
-            }
-            if data.snapchatStr == nil{
-                self.snapchatButton.isEnabled = false
-            }
         }
     }
     var profession: UserDataContainer.Profession!

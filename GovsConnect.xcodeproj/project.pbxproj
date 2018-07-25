@@ -48,6 +48,8 @@
 		133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */; };
 		1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4D62101E2CD000C3BF5 /* YouViewController.swift */; };
 		1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1356C4D72101E2CD000C3BF5 /* YouViewController.xib */; };
+		1356C4DC210599D7000C3BF5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */; };
+		1356C4DD210599D7000C3BF5 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1356C4DB210599D7000C3BF5 /* EditProfileViewController.xib */; };
 		1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357D18520EB7639004CD2EB /* NewTableViewCell.xib */; };
 		1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357D18620EB7639004CD2EB /* NewTableViewCell.swift */; };
 		13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */; };
@@ -99,6 +101,8 @@
 		13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */; };
 		13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */; };
 		13F4094C20CCF2A200645880 /* system_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094B20CCF2A200645880 /* system_send.png */; };
+		13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */; };
+		13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FC0E6D2105CC2B001FA925 /* GCEditableTableViewCell.xib */; };
 		B8C2EC8E928B34CB0A8CC938 /* Pods_GovsConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */; };
 		BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490E520DA22FC00373BBF /* GCBaseTableViewCell.swift */; };
 		BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490E720DA235B00373BBF /* GCBaseViewController.swift */; };
@@ -154,6 +158,8 @@
 		133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		1356C4D62101E2CD000C3BF5 /* YouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouViewController.swift; sourceTree = "<group>"; };
 		1356C4D72101E2CD000C3BF5 /* YouViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YouViewController.xib; sourceTree = "<group>"; };
+		1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		1356C4DB210599D7000C3BF5 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		1357D18520EB7639004CD2EB /* NewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
 		1357D18620EB7639004CD2EB /* NewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
 		13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_7.jpg; sourceTree = "<group>"; };
@@ -206,6 +212,8 @@
 		13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailReplyTableViewCell.swift; sourceTree = "<group>"; };
 		13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailReplyTableViewCell.xib; sourceTree = "<group>"; };
 		13F4094B20CCF2A200645880 /* system_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_send.png; sourceTree = "<group>"; };
+		13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCEditableTableViewCell.swift; sourceTree = "<group>"; };
+		13FC0E6D2105CC2B001FA925 /* GCEditableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCEditableTableViewCell.xib; sourceTree = "<group>"; };
 		8F9D974B7CD4FABCEEEF381C /* Pods-GovsConnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovsConnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.release.xcconfig"; sourceTree = "<group>"; };
 		BC1490E520DA22FC00373BBF /* GCBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCBaseTableViewCell.swift; sourceTree = "<group>"; };
 		BC1490E720DA235B00373BBF /* GCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCBaseViewController.swift; sourceTree = "<group>"; };
@@ -397,6 +405,8 @@
 				137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */,
 				13A7801220EF690E00926139 /* GCOptionsTableView.swift */,
 				130E677820F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift */,
+				13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */,
+				13FC0E6D2105CC2B001FA925 /* GCEditableTableViewCell.xib */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -515,6 +525,8 @@
 			children = (
 				1356C4D62101E2CD000C3BF5 /* YouViewController.swift */,
 				1356C4D72101E2CD000C3BF5 /* YouViewController.xib */,
+				1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */,
+				1356C4DB210599D7000C3BF5 /* EditProfileViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -691,6 +703,7 @@
 				13D389D720FC8E9F00330CDD /* UserDetailViewController.xib in Resources */,
 				13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */,
 				13117B7920F7454600E4CD66 /* testing_food_5.jpeg in Resources */,
+				1356C4DD210599D7000C3BF5 /* EditProfileViewController.xib in Resources */,
 				139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */,
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
 				137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */,
@@ -700,6 +713,7 @@
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
 				1396070F20F7E3210079CBC4 /* LookupViewController.xib in Resources */,
 				1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */,
+				13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */,
 				132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */,
 				132F818820C8DAB2005D3905 /* PostsViewController.xib in Resources */,
 				132F819E20C90DD0005D3905 /* numberthree.png in Resources */,
@@ -804,8 +818,10 @@
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
 				130E677920F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift in Sources */,
+				1356C4DC210599D7000C3BF5 /* EditProfileViewController.swift in Sources */,
 				13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */,
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
+				13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */,
 				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
 				137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */,
 				133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */,

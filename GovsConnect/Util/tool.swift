@@ -87,6 +87,14 @@ func numberOfVisibleLines(_ textView: UILabel) -> Int {
     return lineCount
 }
 
+func btoi(_ n: Bool) -> Int{
+    return n ? 1 : 0
+}
+
+func itob(_ n: Int) -> Bool{
+    return n == 0 ? false : true
+}
+
 //16进制转化颜色
 func UIColorFromRGB(rgbValue:Int,alpha:CGFloat) -> UIColor {
     return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0, green: ((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0, blue: ((CGFloat)(rgbValue & 0xFF))/255.0, alpha: alpha)

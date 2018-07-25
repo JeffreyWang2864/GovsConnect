@@ -68,17 +68,18 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
     }
     
     @IBAction func likeButtonDidClick(_ sender: UIButton){
-        if self.likeIcon.isSelected{      //aleady liked
+        if self.likeIcon.isSelected{
+            //aleady liked
             self.likeIcon.isSelected = false
-            NSLog("unliked")
             AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = false
             AppDataManager.shared.postsData[self.tag].likeCount -= 1
             self.likeCount.text = "\(Int(self.likeCount.text!)! - 1)"
+            //remove liked from user data
             self.reloadInputViews()
             return
         }
         self.likeIcon.isSelected = true
-        NSLog("click on like")
+        //liked
         AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = true
         AppDataManager.shared.postsData[self.tag].likeCount += 1
         self.likeCount.text = "\(Int(self.likeCount.text!)! + 1)"
