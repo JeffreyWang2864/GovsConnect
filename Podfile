@@ -5,4 +5,5 @@ target 'GovsConnect' do
   pod 'IQKeyboardManagerSwift'
   pod 'TwicketSegmentedControl'
   pod 'TBDropdownMenu'
+  pod 'SwiftInstagram'
 end

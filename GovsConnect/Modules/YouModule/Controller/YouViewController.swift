@@ -88,4 +88,17 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            //manage my posts
+            let vc = ManagePostsViewController()
+            vc.view.frame = self.view.bounds
+            self.navigationController!.pushViewController(vc, animated: true)
+        default:
+            fatalError()
+        }
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

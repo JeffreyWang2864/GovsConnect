@@ -77,6 +77,18 @@ class AppDataManager{
         self.discoverMenu[1].append(DiscoverFoodDataContainer("Roasted Carrots", "testing_food_6.jpeg", 0, 0))
         self.discoverMenu[1].append(DiscoverFoodDataContainer("Brussel Sprouts", "testing_food_7.jpeg", 0, 0))
     }
+    
+    func posts(by uid: String) -> (datas: [PostsDataContainer], index: [Int]){
+        var indexes = [Int]()
+        var datas = [PostsDataContainer]()
+        for i in stride(from: 0, to: self.postsData.count, by: 1){
+            if self.postsData[i].author.uid == uid{
+                indexes.append(i)
+                datas.append(self.postsData[i])
+            }
+        }
+        return (datas, indexes)
+    }
 }
 
 class UserDataContainer{
@@ -105,8 +117,6 @@ class UserDataContainer{
     let department: Department
     var profilePictureName: String
     var description: String
-    var instagramStr: String? = nil
-    var snapchatStr: String? = nil
     var posts = Array<PostsDataContainer>()
     var information: Array<(str: String, visible: Bool)>
     init(_ uid: String, _ name: String, _ profilePictureName: String, _ profession: Profession, _ department: Department, _ description: String, _ information: Array<(str: String, visible: Bool)> = Array<(str: String, visible: Bool)>()){

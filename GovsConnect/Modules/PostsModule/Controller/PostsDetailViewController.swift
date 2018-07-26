@@ -9,6 +9,8 @@
 import UIKit
 import CoreText
 
+typealias PostsDetailCompleteBlock = () -> ()
+
 class PostsDetailViewController: GCBaseViewController {
     static let startCommentingNotificationName = Notification.Name("startCommentingNotificationName")
     @IBOutlet var tableView: UITableView!
@@ -16,7 +18,7 @@ class PostsDetailViewController: GCBaseViewController {
     @IBOutlet var authorName: UILabel!
     @IBOutlet var commentInputBox: UITextView!
     @IBOutlet var commentingView: UIView!
-    
+    var postsDetailCompleteBlock: PostsDetailCompleteBlock?
     var isComment:Bool = false  //是否是评论
     var correspondTag: Int = -1
     var previousOriginY: CGFloat = -1
@@ -33,7 +35,6 @@ class PostsDetailViewController: GCBaseViewController {
             fixedTitle += "..."
         }
         self.navigationItem.title = "\(fixedTitle)"
-//        self.navigationController!.navigationBar.topItem!.title = "\(fixedTitle)"
         AppDataManager.shared.postsData[self.correspondTag].viewCount += 1
         AppDataManager.shared.postsData[self.correspondTag].isViewedByCurrentUser = true
         self.authorImage.image = UIImage.init(named: AppDataManager.shared.postsData[self.correspondTag].author.profilePictureName)!
@@ -65,6 +66,9 @@ class PostsDetailViewController: GCBaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(Notification(name: PostsViewController.shouldRefreashCellNotificationName))
+        if self.postsDetailCompleteBlock != nil{
+            self.postsDetailCompleteBlock!()
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

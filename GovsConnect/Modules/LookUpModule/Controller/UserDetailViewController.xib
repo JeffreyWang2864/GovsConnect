@@ -13,8 +13,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDetailViewController" customModule="GovsConnect" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundView" destination="ka0-th-sug" id="ZZv-oC-y8T"/>
-                <outlet property="instagramButton" destination="RUW-EU-RSD" id="tAn-Kx-e6K"/>
-                <outlet property="snapchatButton" destination="XHu-Bt-FsV" id="Dxf-0U-PZ7"/>
                 <outlet property="tableView" destination="40u-Oe-Rag" id="ZVQ-Eo-Ine"/>
                 <outlet property="userDetailLabel" destination="TRG-jX-ywf" id="Zpm-wd-gXz"/>
                 <outlet property="userImageView" destination="eVg-bT-KPf" id="cuK-bs-h81"/>
@@ -51,7 +49,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="40u-Oe-Rag">
-                    <rect key="frame" x="0.0" y="387" width="375" height="280"/>
+                    <rect key="frame" x="0.0" y="333" width="375" height="334"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sophomore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRG-jX-ywf">
@@ -63,49 +61,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vPy-rq-4e1">
-                    <rect key="frame" x="132.5" y="321" width="110" height="48"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUW-EU-RSD">
-                            <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="48" id="Y5h-tJ-IZa"/>
-                                <constraint firstAttribute="height" constant="48" id="fTH-lW-ZTr"/>
-                            </constraints>
-                            <state key="normal" image="system_instagram_icon.png"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-Bt-FsV">
-                            <rect key="frame" x="62" y="0.0" width="48" height="48"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="48" id="Ieh-pL-L5Y"/>
-                                <constraint firstAttribute="width" constant="48" id="dLc-8z-HOv"/>
-                            </constraints>
-                            <state key="normal" image="system_snapchat_icon.png"/>
-                        </button>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="110" id="b5c-Q6-cAV"/>
-                        <constraint firstAttribute="height" constant="48" id="vI3-pT-0vc"/>
-                    </constraints>
-                </stackView>
             </subviews>
             <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="TRG-jX-ywf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2dR-Gs-AR8"/>
-                <constraint firstItem="40u-Oe-Rag" firstAttribute="top" secondItem="vPy-rq-4e1" secondAttribute="bottom" constant="18" id="3Xk-zx-xJn"/>
                 <constraint firstItem="40u-Oe-Rag" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="6M3-GV-P7c"/>
                 <constraint firstItem="TRG-jX-ywf" firstAttribute="top" secondItem="F3T-I6-cdZ" secondAttribute="bottom" constant="6" id="73G-8A-Fhl"/>
+                <constraint firstItem="40u-Oe-Rag" firstAttribute="top" secondItem="TRG-jX-ywf" secondAttribute="bottom" constant="20" id="98H-9z-xqQ"/>
                 <constraint firstItem="eVg-bT-KPf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="138" id="ABq-J0-h2Q"/>
                 <constraint firstItem="40u-Oe-Rag" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="H7E-oH-geC"/>
                 <constraint firstItem="eVg-bT-KPf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="I7i-cf-6s5"/>
                 <constraint firstItem="F3T-I6-cdZ" firstAttribute="top" secondItem="eVg-bT-KPf" secondAttribute="bottom" constant="2" id="NtH-ne-W0S"/>
-                <constraint firstItem="vPy-rq-4e1" firstAttribute="top" secondItem="TRG-jX-ywf" secondAttribute="bottom" constant="8" id="Pra-QN-Kgt"/>
                 <constraint firstItem="ka0-th-sug" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Rtw-pg-Hf8"/>
                 <constraint firstItem="F3T-I6-cdZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="W6D-CO-UzZ"/>
                 <constraint firstItem="ka0-th-sug" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fGE-g1-Dqm"/>
                 <constraint firstItem="40u-Oe-Rag" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gOu-CE-na0"/>
                 <constraint firstItem="ka0-th-sug" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lSj-I7-sUu"/>
-                <constraint firstItem="vPy-rq-4e1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sw5-9Q-z7s"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TRG-jX-ywf" secondAttribute="trailing" id="wG9-dS-kET"/>
                 <constraint firstItem="F3T-I6-cdZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yrP-MS-Dtg"/>
             </constraints>
@@ -114,8 +85,6 @@
         </view>
     </objects>
     <resources>
-        <image name="system_instagram_icon.png" width="128" height="128"/>
-        <image name="system_snapchat_icon.png" width="128" height="129"/>
         <image name="testing_profile_picture_2.png" width="256" height="256"/>
     </resources>
 </document>

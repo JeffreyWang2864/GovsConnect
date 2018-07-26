@@ -97,6 +97,7 @@
 		13D389DF20FDB0EC00330CDD /* testing_profile_picture_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */; };
 		13D389E220FDD62000330CDD /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */; };
 		13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */; };
+		13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E73705210960C4008BE215 /* ManagePostsViewController.swift */; };
 		13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EBE00620CA616000A911DE /* testing_profile_picture_1.png */; };
 		13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */; };
 		13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */; };
@@ -208,6 +209,7 @@
 		13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_3.png; sourceTree = "<group>"; };
 		13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDetailTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserDetailTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		13E73705210960C4008BE215 /* ManagePostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostsViewController.swift; sourceTree = "<group>"; };
 		13EBE00620CA616000A911DE /* testing_profile_picture_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_1.png; sourceTree = "<group>"; };
 		13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailReplyTableViewCell.swift; sourceTree = "<group>"; };
 		13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailReplyTableViewCell.xib; sourceTree = "<group>"; };
@@ -397,6 +399,13 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		13BB273D21086117001C1C3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		13CD442D20E48FE4001FB934 /* GC */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +451,13 @@
 				13CF4ECA20F7C27E00DEE71A /* NotificationViewController.xib */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		13E73707210960CF008BE215 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		13F3C4722100B56D00F65E7D /* View */ = {
@@ -513,9 +529,9 @@
 		BC1490F320DA635E00373BBF /* YouModule */ = {
 			isa = PBXGroup;
 			children = (
+				13E73707210960CF008BE215 /* View */,
+				13BB273D21086117001C1C3F /* Model */,
 				BC1490F420DA635E00373BBF /* Controller */,
-				BC1490F520DA635E00373BBF /* Model */,
-				BC1490F620DA635E00373BBF /* View */,
 			);
 			path = YouModule;
 			sourceTree = "<group>";
@@ -527,22 +543,9 @@
 				1356C4D72101E2CD000C3BF5 /* YouViewController.xib */,
 				1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */,
 				1356C4DB210599D7000C3BF5 /* EditProfileViewController.xib */,
+				13E73705210960C4008BE215 /* ManagePostsViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		BC1490F520DA635E00373BBF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BC1490F620DA635E00373BBF /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		BC1490F720DA640D00373BBF /* DiscoverModule */ = {
@@ -756,12 +759,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftInstagram/SwiftInstagram.framework",
 				"${BUILT_PRODUCTS_DIR}/TBDropdownMenu/TBDropdownMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/TwicketSegmentedControl/TwicketSegmentedControl.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftInstagram.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBDropdownMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwicketSegmentedControl.framework",
 			);
@@ -847,6 +852,7 @@
 				139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */,
 				BC1490EC20DA240100373BBF /* GCNavigationViewController.swift in Sources */,
 				13D389D620FC8E9F00330CDD /* UserDetailViewController.swift in Sources */,
+				13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

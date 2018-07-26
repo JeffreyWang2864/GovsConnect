@@ -9,12 +9,13 @@
 typealias EditProfileCompleteBlock = () -> ()
 
 import UIKit
+import SwiftInstagram
 
 class EditProfileViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var editProfileCompleteBlock: EditProfileCompleteBlock? = nil
     private var endEditingGestureRecongnizer: UITapGestureRecognizer!
-    let labels = ["Instagram", "Snapchat", "Email", "Website", "Phone", "Address"]
+    let labels = ["Email", "Website", "Phone", "Address"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.endEditingGestureRecongnizer = UITapGestureRecognizer(target: self, action: #selector(self.endEditing(_:)))
@@ -52,45 +53,47 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.item == 1 && (indexPath.section == 0 || indexPath.section == 1){
-            //instagram/snapchat connect button
-            let cell = tableView.dequeueReusableCell(withIdentifier: "EDIT_PROFILE_INFORMATIONAL_TABLEVIEW_CELL", for: indexPath)
-            cell.textLabel!.textColor = APP_THEME_COLOR
-            if indexPath.section == 0{
-                //instagram
-                cell.textLabel!.text = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.instagramStr == nil ? "connect to Instagram" : "disconnect"
-            }else{
-                //snapchat
-                cell.textLabel!.text = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.snapchatStr == nil ? "connect to Snapchat" : "disconnect"
-            }
-            return cell
-        }
+//        if indexPath.item == 1 && (indexPath.section == 0 || indexPath.section == 1){
+//            //instagram/snapchat connect button
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "EDIT_PROFILE_INFORMATIONAL_TABLEVIEW_CELL", for: indexPath)
+//            cell.textLabel!.textColor = APP_THEME_COLOR
+//            if indexPath.section == 0{
+//                //instagram
+//                cell.textLabel!.text = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.instagramStr == nil ? "connect to Instagram" : "disconnect"
+//            }else{
+//                //snapchat
+//                cell.textLabel!.text = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.snapchatStr == nil ? "connect to Snapchat" : "disconnect"
+//            }
+//            return cell
+//        }
         if indexPath.item == 1{
             //visibility button
             let cell = UITableViewCell(style: .value1, reuseIdentifier: "EDIT_PROFILE_VISIBILITY_TABLEVIEW_CELL")
             cell.textLabel!.text = "visible to"
-            let visibility = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.information[indexPath.section - 2].visible
+            let visibility = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.information[indexPath.section].visible
             cell.detailTextLabel!.text = visibility ? "everyone" : "just me"
             cell.accessoryType = .disclosureIndicator
             return cell
         }
-        if indexPath.section == 0 || indexPath.section == 1{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "EDIT_PROFILE_INFORMATIONAL_TABLEVIEW_CELL", for: indexPath)
-            cell.textLabel!.textColor = UIColor.black
-            if indexPath.section == 0{
-                //instagram information
-                let info = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.instagramStr
-                cell.textLabel!.text = info == nil ? "not connected": "connected to: \(info!)"
-            }
-            // snapchat information
-            let info = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.snapchatStr
-            cell.textLabel!.text = info == nil ? "not connected": "connected to: \(info!)"
-            return cell
-        }
+//        if indexPath.section == 0 || indexPath.section == 1{
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "EDIT_PROFILE_INFORMATIONAL_TABLEVIEW_CELL", for: indexPath)
+//            cell.textLabel!.textColor = UIColor.black
+//            if indexPath.section == 0{
+//                //instagram information
+//                let info = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.instagramStr
+//                cell.textLabel!.text = info == nil ? "not connected": "connected to: \(info!)"
+//            }
+//            // snapchat information
+//            let info = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.snapchatStr
+//            cell.textLabel!.text = info == nil ? "not connected": "connected to: \(info!)"
+//            return cell
+//        }
         // common information block
+        
+        
         // these information need a specific cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "EDITABLE_TABLEVIEW_CELL", for: indexPath) as! GCEditableTableViewCell
-        cell.textField.text = "\(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.information[indexPath.section - 2].str)"
+        cell.textField.text = "\(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.information[indexPath.section].str)"
         cell.textField.tag = indexPath.section
         cell.textField.delegate = self
         return cell
@@ -101,20 +104,27 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section > 1 && indexPath.item == 1{
+        if indexPath.item == 1{
             //click on visibility setting
             let vc = GCOptionsTableView()
             vc.view.frame = self.view.bounds
             vc.titleForRow = [["just me", "everyone"]]
-            let row = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.information[indexPath.section - 2].visible
+            let row = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.information[indexPath.section].visible
             vc.currentSelection = IndexPath(item: btoi(row), section: 0)
             vc.didClickAction = {(section: Int, item: Int, newVal: String) -> Bool in
-                AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.information[indexPath.section - 2].visible = itob(item)
+                AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.information[indexPath.section].visible = itob(item)
                 let currentCell = self.tableView.cellForRow(at: indexPath)
                 currentCell!.detailTextLabel!.text = newVal
                 return true
             }
             self.navigationController!.pushViewController(vc, animated: true)
+        }else if indexPath.section <= 1 && indexPath.item == 1{
+            let api = Instagram.shared
+            api.login(from: self.navigationController!, withScopes: [.publicContent], success: {
+                NSLog("success")
+            }) { (error) in
+                NSLog("error: \(error.localizedDescription)")
+            }
         }
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -126,6 +136,6 @@ extension EditProfileViewController: UITextFieldDelegate{
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.information[textField.tag - 2].str = textField.text!
+        AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.information[textField.tag].str = textField.text!
     }
 }

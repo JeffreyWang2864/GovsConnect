@@ -17,8 +17,6 @@ class UserDetailViewController: UIViewController {
     @IBOutlet var userTitleLabel: UILabel!
     @IBOutlet var userDetailLabel: UILabel!
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var instagramButton: UIButton!
-    @IBOutlet var snapchatButton: UIButton!
     var uid: String!{
         didSet{
             let data = AppDataManager.shared.users[uid]!
