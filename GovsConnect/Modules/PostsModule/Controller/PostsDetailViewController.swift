@@ -15,6 +15,7 @@ class PostsDetailViewController: GCBaseViewController {
     static let startCommentingNotificationName = Notification.Name("startCommentingNotificationName")
     @IBOutlet var tableView: UITableView!
     @IBOutlet var authorImage: UIImageView!
+    @IBOutlet var authorView: UIView!
     @IBOutlet var authorName: UILabel!
     @IBOutlet var commentInputBox: UITextView!
     @IBOutlet var commentingView: UIView!
@@ -34,7 +35,7 @@ class PostsDetailViewController: GCBaseViewController {
         if fixedTitle.count == 24{
             fixedTitle += "..."
         }
-        self.navigationItem.title = "\(fixedTitle)"
+        self.navigationItem.title = "Post detail"
         AppDataManager.shared.postsData[self.correspondTag].viewCount += 1
         AppDataManager.shared.postsData[self.correspondTag].isViewedByCurrentUser = true
         self.authorImage.image = UIImage.init(named: AppDataManager.shared.postsData[self.correspondTag].author.profilePictureName)!
@@ -61,6 +62,8 @@ class PostsDetailViewController: GCBaseViewController {
         self.commentInputBox.textContainer.maximumNumberOfLines = 1
         self.commentInputBox.textContainer.lineBreakMode = .byTruncatingTail
         self.setupKeyboardDismissRecognizer()
+        let avtgr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnProfile(_:)))
+        self.view.addGestureRecognizer(avtgr)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -123,6 +126,13 @@ class PostsDetailViewController: GCBaseViewController {
         let lastIndex = IndexPath.init(row: 0, section: self.tableView.numberOfSections - 1)
         self.tableView.scrollToRow(at: lastIndex, at: .bottom, animated: false)
     }
+    
+    @objc func didClickOnProfile(_ sender: UITapGestureRecognizer){
+        let vc = UserDetailViewController.init(nibName: "UserDetailViewController", bundle: Bundle.main)
+        vc.view.frame = self.view.bounds
+        vc.uid = AppDataManager.shared.postsData[self.correspondTag].author.uid
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
 }
 
 extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
@@ -168,7 +178,14 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.replyHeading.text = "\(data.sender.name) replies"
             }
             cell.replyBody.text = data.body
-            cell.replierImage.image = UIImage.init(named: data.sender.profilePictureName)!
+            cell.replierImageButton.setImage(UIImage.init(named: data.sender.profilePictureName)!, for: .normal)
+            cell.replierImageButton.setImage(UIImage.init(named: data.sender.profilePictureName)!, for: .selected)
+            cell.authorBlock = {
+                let vc = UserDetailViewController.init(nibName: "UserDetailViewController", bundle: Bundle.main)
+                vc.view.frame = self.view.bounds
+                vc.uid = AppDataManager.shared.postsData[self.correspondTag].replies[realIndexPathItem].sender.uid
+                self.navigationController!.pushViewController(vc, animated: true)
+            }
             return cell
         }
     }

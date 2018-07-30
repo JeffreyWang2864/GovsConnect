@@ -8,13 +8,16 @@
 
 import UIKit
 
+typealias PostsDetailTableViewCellAuthorBlock = () -> ()
+
 class PostsDetailReplyTableViewCell: UITableViewCell {
     @IBOutlet var likeIcon: UIButton!
     @IBOutlet var likeCount: UILabel!
-    @IBOutlet var replierImage: UIImageView!
+    @IBOutlet var replierImageButton: UIButton!
     @IBOutlet var replyHeading: UILabel!
     @IBOutlet var replyBody: UILabel!
     var correspondTag: (Int, Int) = (-1, -1)
+    var authorBlock: PostsDetailTableViewCellAuthorBlock?
     override func awakeFromNib() {
         super.awakeFromNib()
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_like.png"), for: .normal)
@@ -49,5 +52,9 @@ class PostsDetailReplyTableViewCell: UITableViewCell {
     
     @IBAction func replyButtonDidClick(_ sender: UIButton){
         NotificationCenter.default.post(name: PostsDetailViewController.startCommentingNotificationName, object: nil, userInfo: ["replyTo": "\(AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].sender.uid)"])
+    }
+    
+    @IBAction func authorImageDidClick(_ sender: UIImageView){
+        self.authorBlock?()
     }
 }

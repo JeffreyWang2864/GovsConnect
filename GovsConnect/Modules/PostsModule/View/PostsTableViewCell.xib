@@ -47,13 +47,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testing_profile_picture_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="xxx-Mx-g7I">
-                        <rect key="frame" x="16" y="8" width="58" height="58"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="58" id="2dj-4y-Tau"/>
-                            <constraint firstAttribute="height" constant="58" id="MUQ-O4-gVL"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahB-MK-4Bu">
                         <rect key="frame" x="115" y="126" width="25" height="21"/>
                         <constraints>
@@ -130,24 +123,36 @@
                             <constraint firstAttribute="height" constant="1" id="u7Q-df-nHo"/>
                         </constraints>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXi-uG-HTB">
+                        <rect key="frame" x="16" y="19" width="58" height="58"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="58" id="uwX-u1-O1M"/>
+                            <constraint firstAttribute="height" constant="58" id="xxC-gl-8px"/>
+                        </constraints>
+                        <state key="normal" image="testing_profile_picture_1.png"/>
+                        <connections>
+                            <action selector="didClickOnAuthorImage:" destination="KGk-i7-Jjw" eventType="touchDown" id="frw-VE-wAu"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Gk1-to-bQQ" firstAttribute="leading" secondItem="A3b-CO-n9M" secondAttribute="trailing" constant="5" id="2ME-tP-6Tp"/>
                     <constraint firstItem="Vwh-QU-koa" firstAttribute="leading" secondItem="sZ2-CK-4jq" secondAttribute="trailing" constant="5" id="3gg-sG-weu"/>
                     <constraint firstItem="lTR-2s-Spd" firstAttribute="top" secondItem="sJY-T5-9zf" secondAttribute="bottom" constant="40" id="53g-DV-rIv"/>
-                    <constraint firstItem="xxx-Mx-g7I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6V6-dY-A4g"/>
-                    <constraint firstItem="sJY-T5-9zf" firstAttribute="leading" secondItem="xxx-Mx-g7I" secondAttribute="trailing" constant="11" id="6Vn-q7-CIH"/>
                     <constraint firstAttribute="trailing" secondItem="gfJ-I8-xSO" secondAttribute="trailing" constant="2.5" id="7Ra-Cb-D85"/>
                     <constraint firstItem="ktx-Ae-gxM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="71" id="8ZH-vo-ZH9"/>
+                    <constraint firstItem="hfB-vt-uQI" firstAttribute="leading" secondItem="LXi-uG-HTB" secondAttribute="trailing" constant="11" id="8mF-1E-7j7"/>
                     <constraint firstItem="lTR-2s-Spd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="69" id="A79-Rm-0pO"/>
-                    <constraint firstItem="hfB-vt-uQI" firstAttribute="leading" secondItem="xxx-Mx-g7I" secondAttribute="trailing" constant="11" id="CSG-3s-Kf1"/>
                     <constraint firstItem="a93-f3-hKg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="85" id="DhP-5p-pKx"/>
+                    <constraint firstItem="LXi-uG-HTB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Du5-PL-yI7"/>
                     <constraint firstItem="ktx-Ae-gxM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="F1C-Zk-rO7"/>
                     <constraint firstAttribute="bottom" secondItem="Vwh-QU-koa" secondAttribute="bottom" constant="2.5" id="L5x-eC-atc"/>
+                    <constraint firstItem="sJY-T5-9zf" firstAttribute="leading" secondItem="LXi-uG-HTB" secondAttribute="trailing" constant="11" id="Q2y-na-fpo"/>
                     <constraint firstAttribute="bottom" secondItem="A3b-CO-n9M" secondAttribute="bottom" constant="2.5" id="QdG-0M-0oM"/>
                     <constraint firstItem="sJY-T5-9zf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="UWy-Kt-5H2"/>
                     <constraint firstItem="hfB-vt-uQI" firstAttribute="top" secondItem="sJY-T5-9zf" secondAttribute="bottom" constant="1" id="X6G-1U-1av"/>
                     <constraint firstAttribute="bottom" secondItem="a93-f3-hKg" secondAttribute="bottom" constant="0.5" id="Z7U-AS-FLE"/>
+                    <constraint firstItem="LXi-uG-HTB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="aDw-fC-vGI"/>
                     <constraint firstAttribute="trailing" secondItem="gfJ-I8-xSO" secondAttribute="trailing" constant="2.5" id="gTu-6J-G4J"/>
                     <constraint firstItem="hfB-vt-uQI" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="gdW-o4-Jz5"/>
                     <constraint firstAttribute="bottom" secondItem="ahB-MK-4Bu" secondAttribute="bottom" constant="2.5" id="iTw-sc-M6H"/>
@@ -159,13 +164,12 @@
                     <constraint firstAttribute="bottom" secondItem="gfJ-I8-xSO" secondAttribute="bottom" constant="2.5" id="xkn-jE-ets"/>
                     <constraint firstAttribute="trailingMargin" secondItem="sJY-T5-9zf" secondAttribute="trailing" constant="77" id="yA9-L4-wer"/>
                     <constraint firstAttribute="bottom" secondItem="sZ2-CK-4jq" secondAttribute="bottom" constant="0.5" id="yw2-wa-eKG"/>
-                    <constraint firstItem="xxx-Mx-g7I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="zBa-YT-Rw6"/>
                     <constraint firstItem="ktx-Ae-gxM" firstAttribute="top" secondItem="lTR-2s-Spd" secondAttribute="bottom" constant="6" id="zIM-cv-V8c"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="authorImage" destination="xxx-Mx-g7I" id="SOh-8x-6XC"/>
+                <outlet property="authorImageButton" destination="LXi-uG-HTB" id="WGb-3h-mJa"/>
                 <outlet property="authorNameDate" destination="sJY-T5-9zf" id="t8Y-MN-HkI"/>
                 <outlet property="commentIcon" destination="A3b-CO-n9M" id="Tzd-Zn-d8c"/>
                 <outlet property="commentLabel" destination="Gk1-to-bQQ" id="AdH-tt-Tey"/>

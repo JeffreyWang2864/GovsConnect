@@ -9,9 +9,10 @@
 import UIKit
 typealias PostsTableViewCellViewBlock = () -> ()
 typealias PostsTableViewCellCommentBlock = () -> ()
+typealias PostsTableViewCellAuthorBlock = () -> ()
 
 class PostsTableViewCell: UITableViewCell {
-    @IBOutlet var authorImage: UIImageView!
+    @IBOutlet var authorImageButton: UIButton!
     @IBOutlet var authorNameDate: UILabel!
     @IBOutlet var postTitle: UILabel!
     @IBOutlet var postDescription: UILabel!
@@ -23,11 +24,13 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet var commentIcon: UIButton!
     @IBOutlet var imageStackView: UIStackView!
 
-    var viewBlock:PostsTableViewCellViewBlock?
-    var commentBlock:PostsTableViewCellCommentBlock?
+    var viewBlock: PostsTableViewCellViewBlock?
+    var commentBlock: PostsTableViewCellCommentBlock?
+    var authorBlock: PostsTableViewCellAuthorBlock?
     var data:PostsDataContainer!{
         didSet{
-            self.authorImage.image = UIImage.init(named: data.author.profilePictureName)
+            self.authorImageButton.setImage(UIImage.init(named: data.author.profilePictureName), for: .normal)
+            self.authorImageButton.setImage(UIImage.init(named: data.author.profilePictureName), for: .selected)
             self.authorNameDate.text = data.author.name + " · " + prettyTimeSince(data.postDate.timeIntervalSinceNow)
             self.postTitle.text = data.postTitle
             self.postDescription.text = "\(data.postContent.prefix(upTo: data.postContent.index(data.postContent.startIndex, offsetBy: min(100, data.postContent.count))))"
@@ -114,5 +117,9 @@ class PostsTableViewCell: UITableViewCell {
         if(self.commentBlock != nil){
             self.commentBlock?()
         }
+    }
+    
+    @IBAction func didClickOnAuthorImage(_ sender: UIButton){
+        self.authorBlock?()
     }
 }

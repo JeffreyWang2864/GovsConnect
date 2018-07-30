@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECD-Cw-EG9">
-                        <rect key="frame" x="63" y="5" width="252" height="16"/>
+                        <rect key="frame" x="72" y="5" width="243" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="cjc-6B-m5j"/>
                         </constraints>
@@ -30,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6N-UY-7YV">
-                        <rect key="frame" x="63" y="16" width="246" height="41"/>
+                        <rect key="frame" x="72" y="16" width="237" height="41"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="vDb-Yu-jCh"/>
                         </constraints>
@@ -59,13 +58,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vQ4-MQ-nGH">
-                        <rect key="frame" x="5" y="14" width="50" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="EzQ-eD-bha"/>
-                            <constraint firstAttribute="width" constant="50" id="UOc-A1-lwe"/>
-                        </constraints>
-                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLT-Ke-1s3">
                         <rect key="frame" x="114" y="58" width="20" height="20"/>
                         <constraints>
@@ -77,30 +69,40 @@
                             <action selector="replyButtonDidClick:" destination="KGk-i7-Jjw" eventType="touchDown" id="Wbt-pJ-a7D"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1D-J6-Bhf">
+                        <rect key="frame" x="14" y="5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="0xg-Iv-7px"/>
+                            <constraint firstAttribute="width" constant="50" id="hLm-Im-Gnb"/>
+                        </constraints>
+                        <connections>
+                            <action selector="authorImageDidClick:" destination="KGk-i7-Jjw" eventType="touchDown" id="w61-2H-gVY"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="ECD-Cw-EG9" firstAttribute="leading" secondItem="W1D-J6-Bhf" secondAttribute="trailing" constant="8" id="4EH-Ay-S6e"/>
+                    <constraint firstItem="W1D-J6-Bhf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="EfH-qz-KdB"/>
                     <constraint firstAttribute="bottom" secondItem="0zJ-Vh-Zol" secondAttribute="bottom" constant="1.5" id="Gtv-gY-dNF"/>
                     <constraint firstItem="w6N-UY-7YV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="5" id="MdC-7r-Njz"/>
                     <constraint firstAttribute="bottom" secondItem="VLT-Ke-1s3" secondAttribute="bottom" constant="1.5" id="Mpc-E5-Pcw"/>
-                    <constraint firstItem="w6N-UY-7YV" firstAttribute="leading" secondItem="vQ4-MQ-nGH" secondAttribute="trailing" constant="8" id="Qix-3Q-7if"/>
+                    <constraint firstItem="W1D-J6-Bhf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="R9j-yn-tDK"/>
                     <constraint firstItem="ECD-Cw-EG9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="bc0-wA-dcC"/>
                     <constraint firstItem="VLT-Ke-1s3" firstAttribute="leading" secondItem="jC6-vj-dIE" secondAttribute="trailing" constant="3" id="dKX-Va-jv8"/>
                     <constraint firstItem="jC6-vj-dIE" firstAttribute="leading" secondItem="0zJ-Vh-Zol" secondAttribute="trailing" constant="3" id="dtX-Yc-3Dg"/>
                     <constraint firstAttribute="trailing" secondItem="ECD-Cw-EG9" secondAttribute="trailing" constant="5" id="fAp-td-QeQ"/>
-                    <constraint firstItem="ECD-Cw-EG9" firstAttribute="leading" secondItem="vQ4-MQ-nGH" secondAttribute="trailing" constant="8" id="fs8-tD-EA4"/>
-                    <constraint firstItem="0zJ-Vh-Zol" firstAttribute="leading" secondItem="vQ4-MQ-nGH" secondAttribute="trailing" constant="8" id="gfr-ch-Heu"/>
                     <constraint firstItem="w6N-UY-7YV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="l1P-ja-qmd"/>
                     <constraint firstAttribute="bottom" secondItem="jC6-vj-dIE" secondAttribute="bottom" constant="0.5" id="mYx-Ak-dyR"/>
+                    <constraint firstItem="0zJ-Vh-Zol" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="63" id="nIy-A2-0SI"/>
                     <constraint firstItem="0zJ-Vh-Zol" firstAttribute="top" secondItem="w6N-UY-7YV" secondAttribute="bottom" constant="1" id="qHW-2P-fZq"/>
-                    <constraint firstItem="vQ4-MQ-nGH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="udY-l1-PQx"/>
-                    <constraint firstItem="vQ4-MQ-nGH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="yCq-Xw-0Vx"/>
+                    <constraint firstItem="w6N-UY-7YV" firstAttribute="leading" secondItem="W1D-J6-Bhf" secondAttribute="trailing" constant="8" id="x8R-we-q6f"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="likeCount" destination="jC6-vj-dIE" id="Jzh-DM-qPU"/>
                 <outlet property="likeIcon" destination="0zJ-Vh-Zol" id="l22-Pc-KV0"/>
-                <outlet property="replierImage" destination="vQ4-MQ-nGH" id="eBg-Dd-efQ"/>
+                <outlet property="replierImageButton" destination="W1D-J6-Bhf" id="lUP-5e-Chb"/>
                 <outlet property="replyBody" destination="w6N-UY-7YV" id="Sgo-vh-U8m"/>
                 <outlet property="replyHeading" destination="ECD-Cw-EG9" id="uhP-dI-rnD"/>
             </connections>

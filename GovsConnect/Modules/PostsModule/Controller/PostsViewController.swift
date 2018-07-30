@@ -100,6 +100,12 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
             detailViewController.isComment = true
             self.navigationController?.pushViewController(detailViewController, animated: true)
         }
+        cell.authorBlock = {
+            let vc = UserDetailViewController.init(nibName: "UserDetailViewController", bundle: Bundle.main)
+            vc.view.frame = self.view.bounds
+            vc.uid = AppDataManager.shared.postsData[indexPath.section].author.uid
+            self.navigationController!.pushViewController(vc, animated: true)
+        }
         return cell
     }
     
