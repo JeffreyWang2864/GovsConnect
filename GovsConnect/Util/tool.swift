@@ -110,6 +110,12 @@ func UIColorFromRGB(rgbValue:Int,alpha:CGFloat) -> UIColor {
     return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0, green: ((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0, blue: ((CGFloat)(rgbValue & 0xFF))/255.0, alpha: alpha)
 }
 
+func whichDayOfWeekend(_ date: Date) -> Int{
+    let calendar: Calendar = Calendar.current
+     let weekDay = calendar.component(Calendar.Component.weekday, from: date)
+    return weekDay == 1 ? 2 : weekDay - 6
+}
+
 //屏幕的宽高
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height

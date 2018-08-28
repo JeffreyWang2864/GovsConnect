@@ -133,33 +133,36 @@ extension RateYourFoodViewController: DropdownMenuDelegate{
                 }
             }
         case .ended:
+            let food_id = AppDataManager.shared.discoverMenu[self.menuIndex][self.currentIndexPath.item]._id
             if cell.frame.origin.y < self.likeView.bottom{
                 //liked
-                 self.likeView.text = "liked"
-                UIView.animate(withDuration: 0.3){
-                    cell.changeBackToOriginal()
-                    self.dislikeView.alpha = 0.0
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                AppIOManager.shared.foodDataAction(food_id: food_id, method: "plus") { (isSucceed) in
+                    self.likeView.text = "liked"
                     UIView.animate(withDuration: 0.3){
-                        self.likeView.alpha = 0.0
+                        cell.changeBackToOriginal()
+                        self.dislikeView.alpha = 0.0
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                        UIView.animate(withDuration: 0.3){
+                            self.likeView.alpha = 0.0
+                        }
                     }
                 }
-                AppDataManager.shared.discoverMenu[self.menuIndex][self.currentIndexPath.item].likeCount += 1
                 break
             }else if cell.bottom > self.dislikeView.top{
                 //disliked
-                self.dislikeView.text = "disliked"
-                UIView.animate(withDuration: 0.3){
-                    cell.changeBackToOriginal()
-                    self.likeView.alpha = 0.0
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                AppIOManager.shared.foodDataAction(food_id: food_id, method: "minus") { (isSucceed) in
+                    self.dislikeView.text = "disliked"
                     UIView.animate(withDuration: 0.3){
-                        self.dislikeView.alpha = 0.0
+                        cell.changeBackToOriginal()
+                        self.likeView.alpha = 0.0
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                        UIView.animate(withDuration: 0.3){
+                            self.dislikeView.alpha = 0.0
+                        }
                     }
                 }
-                AppDataManager.shared.discoverMenu[self.menuIndex][self.currentIndexPath.item].dislikeCount += 1
                 break
             }
             //none selected

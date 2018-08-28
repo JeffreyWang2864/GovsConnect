@@ -15,8 +15,16 @@ class FoodCollectionViewCell: UICollectionViewCell {
     var indexTag: IndexPath!
     var data: DiscoverFoodDataContainer!{
         didSet{
-            self.imageView.image = UIImage(named: data!.imageName)
-            self.textView.text = data!.title
+            if AppDataManager.shared.imageData[self.data.imageName] == nil{
+                AppIOManager.shared.loadImage(with: self.data.imageName) { (doanloadedData) in
+                    AppDataManager.shared.imageData[self.data.imageName] = doanloadedData
+                    self.imageView.image = UIImage(data: AppDataManager.shared.imageData[self.data.imageName]!)!
+                    self.textView.text = self.data!.title
+                    self.textView.sizeToFit()
+                }
+            }
+            self.imageView.image = UIImage(data: AppDataManager.shared.imageData[self.data.imageName]!)!
+            self.textView.text = self.data!.title
             self.textView.sizeToFit()
         }
     }

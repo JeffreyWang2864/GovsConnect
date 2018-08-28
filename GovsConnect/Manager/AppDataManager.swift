@@ -47,27 +47,11 @@ class AppDataManager{
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_7.jpg", "Govs Trade"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_8.jpg", "Rate Your Food"))
-            self.discoverData.append(DiscoverItemDataContainer("system_more_full_image.png", ""))
+        self.discoverData.append(DiscoverItemDataContainer("system_more_full_image.png", ""))
+        
         for _ in (0..<3){
             self.discoverWeekendEventData.append(Array<EventDataContainer>())
         }
-        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526629501 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526644801 - 3600 * 8 + 86400 * 54), "AP Microeconomics exam", "Please make sure to bring at least two pencils to the test room"))
-        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526645701 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526661001 - 3600 * 8 + 86400 * 54), "AP MEH exam; AP Latin exam", "Please make sure to bring at least two pencils to the test room"))
-        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526673601 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526679001 - 3600 * 8 + 86400 * 54), "Spring Drama Production in PAC", LOREM_IPSUM_1))
-        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526716801 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526720401 - 3600 * 8 + 86400 * 54), "New England Track Championships @ Tabor Academy", LOREM_IPSUM_2))
-        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526760001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526765401 - 3600 * 8 + 86400 * 54), "Spring Drama Production in PAC", LOREM_IPSUM_3))
-        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526801401 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526806621 - 3600 * 8 + 86400 * 54), "Continental breakfast", "No detail to display"))
-        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526806801 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526817601 - 3600 * 8 + 86400 * 54), "Brunch", "No detail to display"))
-        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526832001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526835601 - 3600 * 8 + 86400 * 54), "Formal -Phillips Gathering - Pictures", LOREM_IPSUM_3))
-        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526836501 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526858101 - 3600 * 8 + 86400 * 54), "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm", LOREM_IPSUM_2))
-        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526859001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526776141 - 3600 * 8 + 86400 * 54), "Check out procedures; Boarders check in to dorms", LOREM_IPSUM_1))
-        self.discoverMenu[0].append(DiscoverFoodDataContainer("Chicken Fajitas", "testing_food_1.jpg", 0, 0))
-        self.discoverMenu[0].append(DiscoverFoodDataContainer("Garden Burger Grilled Cheese", "testing_food_2.jpg", 0, 0))
-        self.discoverMenu[0].append(DiscoverFoodDataContainer("Sticky Rice & Brown Rice", "testing_food_3.jpg", 0, 0))
-        self.discoverMenu[1].append(DiscoverFoodDataContainer("Chef Carved Roast Beef", "testing_food_4.jpg", 0, 0))
-        self.discoverMenu[1].append(DiscoverFoodDataContainer("Mashed Potatoes", "testing_food_5.jpeg", 0, 0))
-        self.discoverMenu[1].append(DiscoverFoodDataContainer("Roasted Carrots", "testing_food_6.jpeg", 0, 0))
-        self.discoverMenu[1].append(DiscoverFoodDataContainer("Brussel Sprouts", "testing_food_7.jpeg", 0, 0))
     }
     
     func loadLocalPostData(){
@@ -83,6 +67,29 @@ class AppDataManager{
 //        self.postsData[0].postImagesName.append("testing_picture_2.jpg")
 //        self.postsData[0].postImagesName.append("testing_picture_3.jpg")
 //        self.postsData[2].postImagesName.append("testing_picture_1.jpg")
+        
+        
+        
+        
+        //        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526629501 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526644801 - 3600 * 8 + 86400 * 54), "AP Microeconomics exam", "Please make sure to bring at least two pencils to the test room"))
+        //        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526645701 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526661001 - 3600 * 8 + 86400 * 54), "AP MEH exam; AP Latin exam", "Please make sure to bring at least two pencils to the test room"))
+        //        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526673601 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526679001 - 3600 * 8 + 86400 * 54), "Spring Drama Production in PAC", LOREM_IPSUM_1))
+        //        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526716801 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526720401 - 3600 * 8 + 86400 * 54), "New England Track Championships @ Tabor Academy", LOREM_IPSUM_2))
+        //        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526760001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526765401 - 3600 * 8 + 86400 * 54), "Spring Drama Production in PAC", LOREM_IPSUM_3))
+        //        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526801401 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526806621 - 3600 * 8 + 86400 * 54), "Continental breakfast", "No detail to display"))
+        //        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526806801 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526817601 - 3600 * 8 + 86400 * 54), "Brunch", "No detail to display"))
+        //        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526832001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526835601 - 3600 * 8 + 86400 * 54), "Formal -Phillips Gathering - Pictures", LOREM_IPSUM_3))
+        //        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526836501 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526858101 - 3600 * 8 + 86400 * 54), "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm", LOREM_IPSUM_2))
+        //        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526859001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526776141 - 3600 * 8 + 86400 * 54), "Check out procedures; Boarders check in to dorms", LOREM_IPSUM_1))
+        
+        
+//        self.discoverMenu[0].append(DiscoverFoodDataContainer("Chicken Fajitas", "testing_food_1.jpg", 0, 0))
+//        self.discoverMenu[0].append(DiscoverFoodDataContainer("Garden Burger Grilled Cheese", "testing_food_2.jpg", 0, 0))
+//        self.discoverMenu[0].append(DiscoverFoodDataContainer("Sticky Rice & Brown Rice", "testing_food_3.jpg", 0, 0))
+//        self.discoverMenu[1].append(DiscoverFoodDataContainer("Chef Carved Roast Beef", "testing_food_4.jpg", 0, 0))
+//        self.discoverMenu[1].append(DiscoverFoodDataContainer("Mashed Potatoes", "testing_food_5.jpeg", 0, 0))
+//        self.discoverMenu[1].append(DiscoverFoodDataContainer("Roasted Carrots", "testing_food_6.jpeg", 0, 0))
+//        self.discoverMenu[1].append(DiscoverFoodDataContainer("Brussel Sprouts", "testing_food_7.jpeg", 0, 0))
     }
     
     func loadPostDataFromServerAndUpdateLocalData(){
@@ -90,6 +97,25 @@ class AppDataManager{
         AppIOManager.shared.loadPostData(from: self.postsData.last?._uid ?? 0, to: 300)
     }
     
+    func loadDiscoverDataFromServerAndUpdateLocalData(){
+        assert(AppIOManager.shared.connectionStatus != .none)
+        if AppDataManager.shared.discoverWeekendEventData[0].count +
+            AppDataManager.shared.discoverWeekendEventData[1].count +
+            AppDataManager.shared.discoverWeekendEventData[2].count == 0{
+            AppIOManager.shared.loadWeekendEventData { (isSucceed) in
+                //code here
+            }
+        }
+    }
+    
+    func getTodayFoodInfo(){
+        if AppDataManager.shared.discoverMenu[0].count + AppDataManager.shared.discoverMenu[1].count == 0{
+            AppIOManager.shared.loadFoodData { (isSucceed) in
+                //code here
+            }
+        }
+    }
+
     func posts(by uid: String) -> (datas: [PostsDataContainer], index: [Int]){
         var indexes = [Int]()
         var datas = [PostsDataContainer]()
@@ -239,6 +265,7 @@ class DiscoverFoodDataContainer{
     var imageName: String
     var likeCount: Int
     var dislikeCount: Int
+    var _id = -1
     init(_ title: String, _ imageName: String, _ likeCount: Int = 0, _ dislikeCount: Int = 0){
         self.title = title
         self.imageName = imageName

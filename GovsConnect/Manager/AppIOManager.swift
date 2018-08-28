@@ -27,6 +27,8 @@ class AppIOManager{
             if self.isFirstTimeConnnected{
                 self.isFirstTimeConnnected = false
                 AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
+                AppDataManager.shared.loadDiscoverDataFromServerAndUpdateLocalData()
+                AppDataManager.shared.getTodayFoodInfo()
             }
         }
         reachability.whenUnreachable = { _ in
@@ -245,6 +247,71 @@ class AppIOManager{
                 }
             case .failure(let error):
                 makeMessageViaAlert(title: "like/dislike failed", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func loadWeekendEventData(_ completionHandler: @escaping ReceiveResponseBlock){
+        let urlStr = APP_SERVER_URL_STR + "/discover/weekend_event"
+        request(urlStr).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                let jsonDict = JSON(json)
+                var index = 0
+                while(jsonDict["\(index)"] != JSON.null){
+                    let data = jsonDict["\(index)"]
+                    let start_time_interval = data["start_time"].intValue - (3600 * 8)
+                    let end_time_interval = data["end_time"].intValue - (3600 * 8)
+                    let title = data["title"].stringValue
+                    let detail = data["detail"].stringValue
+                    let event = EventDataContainer(Date(timeIntervalSince1970: TimeInterval(start_time_interval)), Date(timeIntervalSince1970: TimeInterval(end_time_interval)), title, detail)
+                    let whichDay = whichDayOfWeekend(event.startTime)
+                    AppDataManager.shared.discoverWeekendEventData[whichDay].append(event)
+                    index += 1
+                }
+                completionHandler(true)
+            case .failure(let error):
+                makeMessageViaAlert(title: "get weekend_event failed", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func loadFoodData(_ completionHandler: @escaping ReceiveResponseBlock){
+        let urlStr = APP_SERVER_URL_STR + "/discover/food"
+        request(urlStr).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                var index = 0
+                let jsonDict = JSON(json)
+                while jsonDict["\(index)"] != JSON.null{
+                    let data = jsonDict["\(index)"]
+                    let foodName = data["name"].stringValue
+                    let is_lunch = data["is_lunch"].boolValue
+                    let imgStr = data["image_id"].stringValue
+                    let id = data["id"].intValue
+                    let foodData = DiscoverFoodDataContainer(foodName, imgStr)
+                    foodData._id = id
+                    self.loadImage(with: imgStr, { (data) in
+                        AppDataManager.shared.imageData[imgStr] = data
+                    })
+                    AppDataManager.shared.discoverMenu[btoi(!is_lunch)].append(foodData)
+                    index += 1
+                }
+                completionHandler(true)
+            case .failure(let error):
+                makeMessageViaAlert(title: "error when load food", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func foodDataAction(food_id: Int, method: String, _ completionHandler: @escaping ReceiveResponseBlock){
+        let urlStr = APP_SERVER_URL_STR + "/discover/food/id=\(food_id)_method=" + method
+        request(urlStr).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                completionHandler(true)
+            case .failure(let error):
+                makeMessageViaAlert(title: "error when like/dislike food", message: error.localizedDescription)
             }
         }
     }
