@@ -1,23 +1,27 @@
 PODS:
+  - Alamofire (4.6.0)
   - IQKeyboardManagerSwift (5.0.7)
-  - SwiftInstagram (1.1.0):
-    - SwiftInstagram/Core (= 1.1.0)
-  - SwiftInstagram/Core (1.1.0)
+  - ReachabilitySwift (4.1.0)
+  - SwiftyJSON (4.0.0)
   - TBDropdownMenu (3.0.1)
   - TwicketSegmentedControl (0.1.2)
 
 DEPENDENCIES:
+  - Alamofire
   - IQKeyboardManagerSwift
-  - SwiftInstagram
+  - ReachabilitySwift
+  - SwiftyJSON
   - TBDropdownMenu
   - TwicketSegmentedControl
 
 SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
-  SwiftInstagram: 90d5c143d8ebe1c790e06a138b8da3c8f2a9ba16
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TBDropdownMenu: 249cd68a53289c32c600a292c568428d4f5cd613
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
 
-PODFILE CHECKSUM: 54cb47bf47f612a1a821e8ca3f8d68e9bba094d7
+PODFILE CHECKSUM: 4bc2c5d6a786fd6cdaacf6d8fa0166cc31dd1b3d
 
 COCOAPODS: 1.4.0

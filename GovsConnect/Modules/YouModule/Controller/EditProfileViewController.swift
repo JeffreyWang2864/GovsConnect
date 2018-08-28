@@ -9,7 +9,6 @@
 typealias EditProfileCompleteBlock = () -> ()
 
 import UIKit
-import SwiftInstagram
 
 class EditProfileViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
@@ -119,12 +118,7 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource{
             }
             self.navigationController!.pushViewController(vc, animated: true)
         }else if indexPath.section <= 1 && indexPath.item == 1{
-            let api = Instagram.shared
-            api.login(from: self.navigationController!, withScopes: [.publicContent], success: {
-                NSLog("success")
-            }) { (error) in
-                NSLog("error: \(error.localizedDescription)")
-            }
+            NSLog("triggered instagram")
         }
         self.tableView.deselectRow(at: indexPath, animated: true)
     }

@@ -15,10 +15,10 @@ class PostsDetailViewController: GCBaseViewController {
     static let startCommentingNotificationName = Notification.Name("startCommentingNotificationName")
     @IBOutlet var tableView: UITableView!
     @IBOutlet var authorImage: UIImageView!
-    @IBOutlet var authorView: UIView!
     @IBOutlet var authorName: UILabel!
     @IBOutlet var commentInputBox: UITextView!
     @IBOutlet var commentingView: UIView!
+    @IBOutlet var authorView: UIView!
     var postsDetailCompleteBlock: PostsDetailCompleteBlock?
     var isComment:Bool = false  //是否是评论
     var correspondTag: Int = -1
@@ -27,19 +27,10 @@ class PostsDetailViewController: GCBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = APP_BACKGROUND_ULTRA_GREY
         NotificationCenter.default.addObserver(self, selector: #selector(self.startCommenting(_:)), name: PostsDetailViewController.startCommentingNotificationName, object: nil)
         self.navigationController!.navigationBar.tintColor = UIColor.white
-        let rawTitle = AppDataManager.shared.postsData[self.correspondTag].postTitle
-    
-        var fixedTitle = rawTitle.prefix(upTo: rawTitle.index(rawTitle.startIndex, offsetBy: min(24, rawTitle.count)))
-        if fixedTitle.count == 24{
-            fixedTitle += "..."
-        }
         self.navigationItem.title = "Post detail"
-        AppDataManager.shared.postsData[self.correspondTag].viewCount += 1
-        AppDataManager.shared.postsData[self.correspondTag].isViewedByCurrentUser = true
-        self.authorImage.image = UIImage.init(named: AppDataManager.shared.postsData[self.correspondTag].author.profilePictureName)!
-        self.authorName.text = AppDataManager.shared.postsData[self.correspondTag].author.name
         self.tableView.estimatedSectionHeaderHeight = 0
         self.tableView.estimatedSectionFooterHeight = 0
         if #available(iOS 11.0, *) {
@@ -63,7 +54,19 @@ class PostsDetailViewController: GCBaseViewController {
         self.commentInputBox.textContainer.lineBreakMode = .byTruncatingTail
         self.setupKeyboardDismissRecognizer()
         let avtgr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnProfile(_:)))
-        self.view.addGestureRecognizer(avtgr)
+        self.authorView.addGestureRecognizer(avtgr)
+        
+        AppIOManager.shared.loadReplyData(local_post_id: self.correspondTag){ isSucceed in
+            if !AppDataManager.shared.postsData[self.correspondTag].isViewedByCurrentUser{
+                let uid = AppDataManager.shared.postsData[self.correspondTag]._uid
+                AppIOManager.shared.view(at: uid)
+                AppDataManager.shared.postsData[self.correspondTag].isViewedByCurrentUser = true
+                AppDataManager.shared.postsData[self.correspondTag].viewCount += 1
+            }
+            self.authorImage.image = UIImage.init(named: AppDataManager.shared.postsData[self.correspondTag].author.profilePictureName)!
+            self.authorName.text = AppDataManager.shared.postsData[self.correspondTag].author.name
+            self.tableView.reloadData()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -114,17 +117,15 @@ class PostsDetailViewController: GCBaseViewController {
             return
         }
         
-        if self.commentInputBox.restorationIdentifier != nil{
-            AppDataManager.shared.postsData[self.correspondTag].replies.append(ReplyDataContainer.init(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!, AppDataManager.shared.users[self.commentInputBox.restorationIdentifier!]!, replyText!, 0, false))
-            self.commentInputBox.restorationIdentifier = nil
-        }else{
-            AppDataManager.shared.postsData[self.correspondTag].replies.append(ReplyDataContainer.init(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!, nil, replyText!, 0, false))
+        let sender_uid = AppDataManager.shared.currentPersonID
+        let receiver_uid = self.commentInputBox.restorationIdentifier ?? ""
+        self.commentInputBox.restorationIdentifier = nil
+        let postData: Dictionary<String, String> = ["sender_uid": sender_uid, "receiver_uid": receiver_uid, "body": replyText!]
+        AppIOManager.shared.addReply(at: self.correspondTag, postData: postData){ isSucceed in
+            self.tableView.reloadData()
+            let lastIndex = IndexPath.init(row: 0, section: self.tableView.numberOfSections - 1)
+            self.tableView.scrollToRow(at: lastIndex, at: .bottom, animated: false)
         }
-        AppDataManager.shared.postsData[self.correspondTag].commentCount += 1
-        AppDataManager.shared.postsData[self.correspondTag].isCommentedByCurrentUser = true
-        self.tableView.reloadData()
-        let lastIndex = IndexPath.init(row: 0, section: self.tableView.numberOfSections - 1)
-        self.tableView.scrollToRow(at: lastIndex, at: .bottom, animated: false)
     }
     
     @objc func didClickOnProfile(_ sender: UITapGestureRecognizer){
@@ -255,14 +256,10 @@ extension PostsDetailViewController: UIGestureRecognizerDelegate{
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Delete my comment", style: .destructive, handler: { (action) in
-            AppDataManager.shared.postsData[self.correspondTag].replies.remove(at: realIndexPathItem)
-            AppDataManager.shared.postsData[self.correspondTag].commentCount -= 1
-            if !AppDataManager.shared.postsData[self.correspondTag].replies.contains(where: { (item) -> Bool in
-                return item.sender.uid == selectedRowSenderUID ? true : false
-            }){
-                AppDataManager.shared.postsData[self.correspondTag].isCommentedByCurrentUser = false
-            }
-            self.tableView.reloadData()
+            let reply_id = AppDataManager.shared.postsData[self.correspondTag].replies[realIndexPathItem]._uid
+            AppIOManager.shared.delReply(at: self.correspondTag, reply_id: reply_id, { (isSucceed) in
+                self.tableView.reloadData()
+            })
         }))
         alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)

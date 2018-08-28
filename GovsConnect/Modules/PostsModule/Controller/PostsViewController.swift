@@ -10,13 +10,14 @@ import UIKit
 
 class PostsViewController: UIViewController {
     static let shouldRefreashCellNotificationName =  Notification.Name("shouldRefreashCellNotificationName")
+    static let shouldRealRefreashCellNotificationName = Notification.Name("shouldRealRefreashCellNotificationName")
     @IBOutlet var mainTableView: UITableView!
     var refreashControl = UIRefreshControl()
     var longPressGestureRecongnizer = UILongPressGestureRecognizer()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.shouldRefreashCell(_:)), name: PostsViewController.shouldRefreashCellNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.shouldReloadCell(_:)), name: PostsViewController.shouldRefreashCellNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.shouldRefreashCell(_:)), name: PostsViewController.shouldRealRefreashCellNotificationName, object: nil)
         
         self.mainTableView.register(UINib.init(nibName: "PostsTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_CELL_ID")
         
@@ -48,9 +49,10 @@ class PostsViewController: UIViewController {
     
     @objc func refreachNewData(_ sender: UIRefreshControl){
         NSLog("update data")
-        self.refreashControl.attributedTitle = NSAttributedString(string: "refreashing", attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: "Helvetica Neue", size: 11)!])
-        let newData = PostsDataContainer(AppDataManager.shared.users["ranpe001"]!, NSDate.init(timeIntervalSinceNow: 0), "There are \(AppDataManager.shared.postsData.count) posts in total!", LOREM_IPSUM_2, 0, 0, 0, false, false, false)
-        AppDataManager.shared.postsData.insert(newData, at: 0)
+        self.refreashControl.attributedTitle = NSAttributedString(string: AppIOManager.shared.connectionStatus == .none ? "offline mode, cannot refreash" : "refreashing", attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: "Helvetica Neue", size: 11)!])
+        if AppIOManager.shared.connectionStatus != .none{
+            AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             self.refreashControl.attributedTitle = NSAttributedString(string: "release to refreash", attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: "Helvetica Neue", size: 11)!])
             self.mainTableView.reloadData()
@@ -69,8 +71,12 @@ class PostsViewController: UIViewController {
         self.mainTableView.removeGestureRecognizer(self.longPressGestureRecongnizer)
     }
     
-    @objc func shouldRefreashCell(_ sender: Notification){
+    @objc func shouldReloadCell(_ sender: Notification){
         self.mainTableView.reloadData()
+    }
+    
+    @objc func shouldRefreashCell(_ sender: Notification){
+        self.refreachNewData(self.refreashControl)
     }
 }
 
@@ -146,8 +152,11 @@ extension PostsViewController: UIGestureRecognizerDelegate{
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Delete my post", style: .destructive, handler: { (action) in
-            AppDataManager.shared.postsData.remove(at: realIndexPathItem)
-            self.mainTableView.reloadData()
+            
+            let post_id = AppDataManager.shared.postsData[realIndexPathItem]._uid
+            AppIOManager.shared.del_post(post_id: post_id, { (isSucceed) in
+                self.refreachNewData(self.refreashControl)
+            })
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)

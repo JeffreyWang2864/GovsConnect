@@ -127,11 +127,16 @@ class NewPostViewController: UIViewController {
     }
     
     @IBAction func postButtonDidClick(_ sender: UIButton){
-        let newData = PostsDataContainer.init(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!, NSDate.init(timeIntervalSinceNow: 0), self.postTitleTextBox.text, self.postBodyTextBox.text, 0, 0, 0, false, false, false)
-        AppDataManager.shared.postsData.insert(newData, at: 0)
-        self.view.endEditing(true)
-        NotificationCenter.default.post(Notification(name: PostsViewController.shouldRefreashCellNotificationName))
-        self.goToPreviousView()
+        let postData: [String: String] = [
+            "sender_uid": AppDataManager.shared.currentPersonID,
+            "title": self.postTitleTextBox.text,
+            "body": self.postBodyTextBox.text
+            ]
+    
+        AppIOManager.shared.addPost(parameters: postData, images: self.pendingImages) { (isSucceed) in
+            self.goToPreviousView()
+            NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
+        }
     }
     
     @IBAction func takePhotoButtonDidClick(_ sender: UIButton){

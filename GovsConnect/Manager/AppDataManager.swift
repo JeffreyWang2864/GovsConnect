@@ -22,6 +22,7 @@ class AppDataManager{
     var allFaculty = Array<String>()
     var allCourse = Array<String>()
     var allClub = Array<String>()
+    var imageData = Dictionary<String, Data>()
     public func setupData(){
         self.users["jefwa001"] = UserDataContainer.init("jefwa001", "Jeffrey Wang", "testing_profile_picture_1.png", .student, .junior, "Beijing, China", [("jeffrey.wang@govsacademy.org", true), ("jwang.xyz", true), ("8609131120", true), ("Boarder, living in Ingham", true)])
         self.users["kevji001"] = UserDataContainer.init("kevji001", "Kevin Jiang", "testing_profile_picture_2.png", .student, .junior, "Beijing, China", [("kevin.jiang@govsacademy.org", true), ("", false), ("1234567890", false), ("Boarder, living in Eames", true)])
@@ -39,18 +40,9 @@ class AppDataManager{
         self.allFaculty.append("dontr001")
         self.allCourse.append("advan001")
         self.allClub.append("unice001")
-        self.postsData.append(PostsDataContainer(self.users["jefwa001"]!, NSDate.init(timeIntervalSinceNow: -10), "Govs Connect App is released today!", LOREM_IPSUM_1, 12, 2, 3, false, false, false))
-        self.postsData.append(PostsDataContainer(self.users["kevji001"]!, NSDate.init(timeIntervalSinceNow: -100), "Happy New Year Guys!!!", "Here is a video about people's new year resolution. Go Govs!", 15, 10, 0, false, false, false))
-        self.postsData.append(PostsDataContainer(self.users["haosh001"]!, NSDate.init(timeIntervalSinceNow: -10000), "New Ideas on the app...We need you!", LOREM_IPSUM_2, 33, 2, 0, false, false, false))
-        self.postsData.append(PostsDataContainer(self.users["zemji001"]!, NSDate.init(timeIntervalSinceNow: -100000), "Gou Li Guo Jia Sheng Si Yi, Qi Yin Huo Fu Bi Qu Zhi", LOREM_IPSUM_3, 44, 21, 0, false, false, false))
-        self.postsData.append(PostsDataContainer(self.users["dontr001"]!, NSDate.init(timeIntervalSinceNow: -10000000), "Let's all make america great again!", LOREM_IPSUM_1, 45, 0, 0, false, false, false))
-        self.postsData.append(PostsDataContainer(self.users["ranpe001"]!, NSDate.init(timeIntervalSinceNow: -100000000), "Section 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC", LOREM_IPSUM_2, 66, 23, 0, false, false, false))
-        self.postsData[0].replies.append(ReplyDataContainer.init(self.users["kevji001"]!, nil, "nice. Android is also avaliable!", 2, false))
-        self.postsData[0].replies.append(ReplyDataContainer.init(self.users["dontr001"]!, nil, "make goveror great again!!!", 0, false))
-        self.postsData[0].replies.append(ReplyDataContainer.init(self.users["ranpe001"]!, self.users["kevji001"]!, "can I join the developer crew?", 4, false))
-        self.postsData[0].postImagesName.append("testing_picture_2.jpg")
-        self.postsData[0].postImagesName.append("testing_picture_3.jpg")
-        self.postsData[2].postImagesName.append("testing_picture_1.jpg")
+        
+        self.loadLocalPostData()
+        
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_7.jpg", "Govs Trade"))
@@ -78,6 +70,26 @@ class AppDataManager{
         self.discoverMenu[1].append(DiscoverFoodDataContainer("Brussel Sprouts", "testing_food_7.jpeg", 0, 0))
     }
     
+    func loadLocalPostData(){
+//        self.postsData.append(PostsDataContainer(self.users["jefwa001"]!, NSDate.init(timeIntervalSinceNow: -10), "Govs Connect App is released today!", LOREM_IPSUM_1, 12, 2, 3, false, false, false))
+//        self.postsData.append(PostsDataContainer(self.users["kevji001"]!, NSDate.init(timeIntervalSinceNow: -100), "Happy New Year Guys!!!", "Here is a video about people's new year resolution. Go Govs!", 15, 10, 0, false, false, false))
+//        self.postsData.append(PostsDataContainer(self.users["haosh001"]!, NSDate.init(timeIntervalSinceNow: -10000), "New Ideas on the app...We need you!", LOREM_IPSUM_2, 33, 2, 0, false, false, false))
+//        self.postsData.append(PostsDataContainer(self.users["zemji001"]!, NSDate.init(timeIntervalSinceNow: -100000), "Gou Li Guo Jia Sheng Si Yi, Qi Yin Huo Fu Bi Qu Zhi", LOREM_IPSUM_3, 44, 21, 0, false, false, false))
+//        self.postsData.append(PostsDataContainer(self.users["dontr001"]!, NSDate.init(timeIntervalSinceNow: -10000000), "Let's all make america great again!", LOREM_IPSUM_1, 45, 0, 0, false, false, false))
+//        self.postsData.append(PostsDataContainer(self.users["ranpe001"]!, NSDate.init(timeIntervalSinceNow: -100000000), "Section 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC", LOREM_IPSUM_2, 66, 23, 0, false, false, false))
+//        self.postsData[0].replies.append(ReplyDataContainer.init(self.users["kevji001"]!, nil, "nice. Android is also avaliable!", 2, false))
+//        self.postsData[0].replies.append(ReplyDataContainer.init(self.users["dontr001"]!, nil, "make goveror great again!!!", 0, false))
+//        self.postsData[0].replies.append(ReplyDataContainer.init(self.users["ranpe001"]!, self.users["kevji001"]!, "can I join the developer crew?", 4, false))
+//        self.postsData[0].postImagesName.append("testing_picture_2.jpg")
+//        self.postsData[0].postImagesName.append("testing_picture_3.jpg")
+//        self.postsData[2].postImagesName.append("testing_picture_1.jpg")
+    }
+    
+    func loadPostDataFromServerAndUpdateLocalData(){
+        assert(AppIOManager.shared.connectionStatus != .none)
+        AppIOManager.shared.loadPostData(from: self.postsData.last?._uid ?? 0, to: 300)
+    }
+    
     func posts(by uid: String) -> (datas: [PostsDataContainer], index: [Int]){
         var indexes = [Int]()
         var datas = [PostsDataContainer]()
@@ -88,6 +100,16 @@ class AppDataManager{
             }
         }
         return (datas, indexes)
+    }
+    
+    func insertPostByUid(_ element: PostsDataContainer){
+        for i in stride(from: 0, to: self.postsData.count, by: 1){
+            if self.postsData[i]._uid < element._uid{
+                self.postsData.insert(element, at: i)
+                return
+            }
+        }
+        self.postsData.append(element)
     }
 }
 
@@ -131,6 +153,8 @@ class UserDataContainer{
 }
 
 class PostsDataContainer{
+    var _uid: Int = -1
+    var isHide: Bool = false
     let author: UserDataContainer
     let postDate: NSDate
     let postTitle: String
@@ -162,11 +186,13 @@ class PostsDataContainer{
 }
 
 class ReplyDataContainer{
+    var _uid: Int = -1
     let sender: UserDataContainer
     let receiver: UserDataContainer?
     let body: String
     var likeCount: Int
     var isLikedByCurrentUser: Bool
+    var is_hide = false
     init(_ sender: UserDataContainer, _ receiver: UserDataContainer?, _ body: String, _ likeCount: Int, _ isLiked: Bool){
         self.sender = sender
         self.receiver = receiver

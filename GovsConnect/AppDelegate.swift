@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        AppDataManager.shared.setupData()
+        AppIOManager.shared.establishConnection()
         self.registerForPushNotifications()
-
+        AppDataManager.shared.setupData()
         //设置window的跟控制器为标签栏控制器
         self.window = UIWindow.init(frame:UIScreen.main.bounds)
         let tabbarVc = GCTabBarViewController()

@@ -18,3 +18,5 @@ let APP_THEME_COLOR = UIColor(red: 0.757, green: 0.243, blue: 0.314, alpha: 1.0)
 let APP_BACKGROUND_GREY = UIColor(red: 0.937, green: 0.937, blue: 0.957, alpha: 1.0)
 
 let APP_BACKGROUND_ULTRA_GREY = UIColor(red: 0.976, green: 0.976, blue: 0.976, alpha: 1.0)
+
+let APP_SERVER_URL_STR = "http://127.0.0.1:8000"

@@ -48,7 +48,7 @@ class PostsTableViewCell: UITableViewCell {
                 heightConstraint.constant = 1
             }else{
                 heightConstraint.constant = 120
-                self.displayPreviewImages(imageNames: Array<String>(data.postImagesName.prefix(upTo: min(3, data.postImagesName.count))))
+                self.displayPreviewImages(imageNames: Array<String>(data.postImagesName))
             }
         }
     }
@@ -63,7 +63,6 @@ class PostsTableViewCell: UITableViewCell {
     }
     
     func displayPreviewImages(imageNames: Array<String>){
-        assert(imageNames.count > 0 && imageNames.count < 4)
         self.imageStackView.spacing = 2
         self.imageStackView.distribution = .fillEqually
         var index = 0
@@ -71,11 +70,24 @@ class PostsTableViewCell: UITableViewCell {
             let v = UIImageView()
             v.tag = index
             index += 1
-            v.image = UIImage.init(named: imageName)
-            v.isUserInteractionEnabled = true
-            let tapGestureRecongnizer = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnImage(_:)))
-            v.addGestureRecognizer(tapGestureRecongnizer)
-            self.imageStackView.addArrangedSubview(v)
+            if index < 3{
+                self.imageStackView.addArrangedSubview(v)
+            }
+            if AppDataManager.shared.imageData[imageName] == nil{
+                AppIOManager.shared.loadImage(with: imageName) { (data) in
+                    AppDataManager.shared.imageData[imageName] = data
+                    v.image = UIImage(data: AppDataManager.shared.imageData[imageName]!)!
+                    v.isUserInteractionEnabled = true
+                    let tapGestureRecongnizer = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnImage(_:)))
+                    v.addGestureRecognizer(tapGestureRecongnizer)
+                }
+            }else{
+                v.image = UIImage(data: AppDataManager.shared.imageData[imageName]!)!
+                v.isUserInteractionEnabled = true
+                let tapGestureRecongnizer = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnImage(_:)))
+                v.addGestureRecognizer(tapGestureRecongnizer)
+            }
+            
         }
     }
     
@@ -97,19 +109,24 @@ class PostsTableViewCell: UITableViewCell {
     //点击喜欢
     @IBAction func likeButtonDidClick(_ sender: UIButton){
         if self.likeIcon.isSelected{      //aleady liked
-            self.likeIcon.isSelected = false
-            NSLog("unliked")
-            AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = false
-            AppDataManager.shared.postsData[self.tag].likeCount -= 1
-            self.likeLabel.text = "\(Int(self.likeLabel.text!)! - 1)"
-            self.reloadInputViews()
+            
+            AppIOManager.shared.like(at: AppDataManager.shared.postsData[self.tag]._uid, method: "minus"){ isSucceed in
+                makeMessageViaAlert(title: "Success", message: "minus one on like")
+                self.likeIcon.isSelected = false
+                AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = false
+                AppDataManager.shared.postsData[self.tag].likeCount -= 1
+                self.likeLabel.text = "\(Int(self.likeLabel.text!)! - 1)"
+                self.reloadInputViews()
+            }
             return
         }
-        self.likeIcon.isSelected = true
-        NSLog("click on like")
-        AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = true
-        AppDataManager.shared.postsData[self.tag].likeCount += 1
-        self.likeLabel.text = "\(Int(self.likeLabel.text!)! + 1)"
+        
+        AppIOManager.shared.like(at: AppDataManager.shared.postsData[self.tag]._uid, method: "plus"){ isSucceed in
+            self.likeIcon.isSelected = true
+            AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = true
+            AppDataManager.shared.postsData[self.tag].likeCount += 1
+            self.likeLabel.text = "\(Int(self.likeLabel.text!)! + 1)"
+        }
     }
     
     //点击评论

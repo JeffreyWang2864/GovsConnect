@@ -95,6 +95,16 @@ func itob(_ n: Int) -> Bool{
     return n == 0 ? false : true
 }
 
+func makeMessageViaAlert(title: String, message: String){
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+    UIApplication.shared.keyWindow!.rootViewController!.present(alert, animated: true, completion: nil)
+}
+
+func random0to10000() -> Int{
+    return Int(CGFloat(Float(arc4random()) / Float(UINT32_MAX)) * 10000)
+}
+
 //16进制转化颜色
 func UIColorFromRGB(rgbValue:Int,alpha:CGFloat) -> UIColor {
     return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0, green: ((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0, blue: ((CGFloat)(rgbValue & 0xFF))/255.0, alpha: alpha)

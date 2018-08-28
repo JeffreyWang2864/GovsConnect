@@ -33,21 +33,26 @@ class PostsDetailReplyTableViewCell: UITableViewCell {
     
     @IBAction func likeButtonDidClick(_ sender: UIButton){
         if self.likeIcon.isSelected{      //aleady liked
-            self.likeIcon.isSelected = false
-            NSLog("unliked")
-            
-            
-            AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].isLikedByCurrentUser = false
-            AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].likeCount -= 1
-            self.likeCount.text = "\(Int(self.likeCount.text!)! - 1)"
-            self.reloadInputViews()
+            let reply_id = AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1]._uid
+            AppIOManager.shared.dislikeReply(local_post_id: self.correspondTag.0, reply_id: reply_id) { (isSucceed) in
+                makeMessageViaAlert(title: "minus one like on reply", message: "successfully minus one like on reply")
+                self.likeIcon.isSelected = false
+                AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].isLikedByCurrentUser = false
+                AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].likeCount -= 1
+                self.likeCount.text = "\(Int(self.likeCount.text!)! - 1)"
+                self.reloadInputViews()
+            }
             return
         }
-        self.likeIcon.isSelected = true
-        NSLog("click on like")
-        AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].isLikedByCurrentUser = true
-        AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].likeCount += 1
-        self.likeCount.text = "\(Int(self.likeCount.text!)! + 1)"
+        let reply_id = AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1]._uid
+        AppIOManager.shared.likeReply(local_post_id: self.correspondTag.0, reply_id: reply_id) { (isSucceed) in
+            makeMessageViaAlert(title: "plus one like on reply", message: "successfully plus one like on reply")
+            self.likeIcon.isSelected = true
+            AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].isLikedByCurrentUser = true
+            AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].likeCount += 1
+            self.likeCount.text = "\(Int(self.likeCount.text!)! + 1)"
+            self.reloadInputViews()
+        }
     }
     
     @IBAction func replyButtonDidClick(_ sender: UIButton){

@@ -120,9 +120,12 @@ extension ManagePostsViewController: UIGestureRecognizerDelegate{
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Delete my post", style: .destructive, handler: { (action) in
-            AppDataManager.shared.postsData.remove(at: realIndexPathItem)
-            self.setupTableViewData()
-            self.tableView.reloadData()
+            let post_id = AppDataManager.shared.postsData[realIndexPathItem]._uid
+            AppIOManager.shared.del_post(post_id: post_id, { (isSucceed) in
+                NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
+                self.setupTableViewData()
+                self.tableView.reloadData()
+            })
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)

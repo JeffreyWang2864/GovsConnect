@@ -40,7 +40,7 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
             let v = UIImageView()
             v.tag = index
             index += 1
-            v.image = UIImage(named: name)!
+            v.image = UIImage(data: AppDataManager.shared.imageData[name]!)!
             v.contentMode = .scaleAspectFit
             v.isUserInteractionEnabled = true
             let gr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnImage(_:)))
@@ -68,21 +68,25 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
     }
     
     @IBAction func likeButtonDidClick(_ sender: UIButton){
-        if self.likeIcon.isSelected{
-            //aleady liked
-            self.likeIcon.isSelected = false
-            AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = false
-            AppDataManager.shared.postsData[self.tag].likeCount -= 1
-            self.likeCount.text = "\(Int(self.likeCount.text!)! - 1)"
-            //remove liked from user data
-            self.reloadInputViews()
+        if self.likeIcon.isSelected{      //aleady liked
+            
+            AppIOManager.shared.like(at: AppDataManager.shared.postsData[self.tag]._uid, method: "minus"){ isSucceed in
+                makeMessageViaAlert(title: "Success", message: "minus one on like")
+                self.likeIcon.isSelected = false
+                AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = false
+                AppDataManager.shared.postsData[self.tag].likeCount -= 1
+                self.likeCount.text = "\(Int(self.likeCount.text!)! - 1)"
+                self.reloadInputViews()
+            }
             return
         }
-        self.likeIcon.isSelected = true
-        //liked
-        AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = true
-        AppDataManager.shared.postsData[self.tag].likeCount += 1
-        self.likeCount.text = "\(Int(self.likeCount.text!)! + 1)"
+        
+        AppIOManager.shared.like(at: AppDataManager.shared.postsData[self.tag]._uid, method: "plus"){ isSucceed in
+            self.likeIcon.isSelected = true
+            AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = true
+            AppDataManager.shared.postsData[self.tag].likeCount += 1
+            self.likeCount.text = "\(Int(self.likeCount.text!)! + 1)"
+        }
     }
     
     @IBAction func commentButtonDidClick(_ sender: UIButton){
