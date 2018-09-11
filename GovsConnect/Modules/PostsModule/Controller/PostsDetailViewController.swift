@@ -63,7 +63,11 @@ class PostsDetailViewController: GCBaseViewController {
                 AppDataManager.shared.postsData[self.correspondTag].isViewedByCurrentUser = true
                 AppDataManager.shared.postsData[self.correspondTag].viewCount += 1
             }
-            self.authorImage.image = UIImage.init(named: AppDataManager.shared.postsData[self.correspondTag].author.profilePictureName)!
+            let dataIndex = AppDataManager.shared.postsData[self.correspondTag].author.uid
+            let imgData = AppDataManager.shared.profileImageData[dataIndex]!
+            self.authorImage.image = UIImage.init(data: imgData)!
+            self.authorImage.clipsToBounds = true
+            self.authorImage.layer.cornerRadius = self.authorImage.width / 2
             self.authorName.text = AppDataManager.shared.postsData[self.correspondTag].author.name
             self.tableView.reloadData()
         }
@@ -179,8 +183,11 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.replyHeading.text = "\(data.sender.name) replies"
             }
             cell.replyBody.text = data.body
-            cell.replierImageButton.setImage(UIImage.init(named: data.sender.profilePictureName)!, for: .normal)
-            cell.replierImageButton.setImage(UIImage.init(named: data.sender.profilePictureName)!, for: .selected)
+            let imgData = AppDataManager.shared.profileImageData[data.sender.uid]!
+            cell.replierImageButton.setImage(UIImage.init(data: imgData)!, for: .normal)
+            cell.replierImageButton.setImage(UIImage.init(data: imgData)!, for: .selected)
+            cell.replierImageButton.clipsToBounds = true
+            cell.replierImageButton.layer.cornerRadius = cell.replierImageButton.width / 2
             cell.authorBlock = {
                 let vc = UserDetailViewController.init(nibName: "UserDetailViewController", bundle: Bundle.main)
                 vc.view.frame = self.view.bounds

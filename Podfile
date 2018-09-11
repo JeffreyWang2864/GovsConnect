@@ -8,4 +8,5 @@ target 'GovsConnect' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'ReachabilitySwift'
+  pod 'RSKImageCropper'
 end

@@ -29,8 +29,11 @@ class PostsTableViewCell: UITableViewCell {
     var authorBlock: PostsTableViewCellAuthorBlock?
     var data:PostsDataContainer!{
         didSet{
-            self.authorImageButton.setImage(UIImage.init(named: data.author.profilePictureName), for: .normal)
-            self.authorImageButton.setImage(UIImage.init(named: data.author.profilePictureName), for: .selected)
+            let imgData = AppDataManager.shared.profileImageData[self.data.author.uid]!
+            self.authorImageButton.setImage(UIImage.init(data: imgData)!, for: .normal)
+            self.authorImageButton.setImage(UIImage.init(data: imgData)!, for: .selected)
+            self.authorImageButton.clipsToBounds = true
+            self.authorImageButton.layer.cornerRadius = self.authorImageButton.width / 2
             self.authorNameDate.text = data.author.name + " · " + prettyTimeSince(data.postDate.timeIntervalSinceNow)
             self.postTitle.text = data.postTitle
             self.postDescription.text = "\(data.postContent.prefix(upTo: data.postContent.index(data.postContent.startIndex, offsetBy: min(100, data.postContent.count))))"

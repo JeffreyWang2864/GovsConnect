@@ -16,7 +16,13 @@ typealias ReceiveResponseBlock = (Bool) -> ()
 
 class AppIOManager{
     private init(){}
+    var isLogedIn: Bool{
+        get{
+            return AppDataManager.shared.currentPersonID != ""
+        }
+    }
     static public let shared = AppIOManager()
+    static public let loginActionNotificationName = Notification.Name.init("loginActionNotificationName")
     var connectionStatus: Reachability.Connection!
     var isFirstTimeConnnected = true
     func establishConnection(){
@@ -26,9 +32,10 @@ class AppIOManager{
             AppIOManager.shared.connectionStatus = response.connection
             if self.isFirstTimeConnnected{
                 self.isFirstTimeConnnected = false
-                AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
+                if self.isLogedIn{
+                    AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
+                }
                 AppDataManager.shared.loadDiscoverDataFromServerAndUpdateLocalData()
-                AppDataManager.shared.getTodayFoodInfo()
             }
         }
         reachability.whenUnreachable = { _ in
@@ -47,6 +54,18 @@ class AppIOManager{
     
     func loadImage(with id: String, _ completionHandler: @escaping (Data) -> ()){
         let urlStr = APP_SERVER_URL_STR + "/assets/image/" + id
+        request(urlStr).responseData { (response) in
+            switch response.result{
+            case .success(let data):
+                completionHandler(data)
+            case .failure(let error):
+                makeMessageViaAlert(title: "download image failed", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func loadProfileImage(with id: String, _ completionHandler: @escaping (Data) -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/assets/profile_image/" + id
         request(urlStr).responseData { (response) in
             switch response.result{
             case .success(let data):
@@ -260,7 +279,7 @@ class AppIOManager{
                 var index = 0
                 while(jsonDict["\(index)"] != JSON.null){
                     let data = jsonDict["\(index)"]
-                    let start_time_interval = data["start_time"].intValue - (3600 * 8)
+                    let start_time_interval = data["start_time"].intValue
                     let end_time_interval = data["end_time"].intValue - (3600 * 8)
                     let title = data["title"].stringValue
                     let detail = data["detail"].stringValue
@@ -312,6 +331,82 @@ class AppIOManager{
                 completionHandler(true)
             case .failure(let error):
                 makeMessageViaAlert(title: "error when like/dislike food", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func updateProfileImage(){
+        var uploadData = Dictionary<String, AnyObject>()
+        var epoch = 0
+        for(uid, userData) in AppDataManager.shared.users{
+            if userData.profession == .club || userData.profession == .course{
+                continue
+            }
+            uploadData["\(epoch)"] = "\(uid)_\(userData.profilePictureName)" as AnyObject
+            epoch += 1
+        }
+        let urlStr = APP_SERVER_URL_STR + "/assets/user_image_get/"
+        request(urlStr, method: .post, parameters: uploadData, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                let jsonData = JSON(json)
+                epoch = 0
+                while jsonData["\(epoch)"] != JSON.null{
+                    let curData = jsonData["\(epoch)"]
+                    let uid = curData["uid"].stringValue
+                    let index = curData["index"].stringValue
+                    let id = curData["id"].stringValue
+                    AppIOManager.shared.loadProfileImage(with: id, { (data) in
+                        AppDataManager.shared.profileImageData[uid] = data
+                    })
+                    AppDataManager.shared.users[uid]!.profilePictureName = index
+                    epoch += 1
+                }
+            case .failure(let error):
+                makeMessageViaAlert(title: "error when updating profile images", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func changeProfileImage(newImage: UIImage, _ completionHandler: @escaping ReceiveResponseBlock){
+        let urlStr = APP_SERVER_URL_STR + "/assets/user_image_change/"
+        upload(multipartFormData: { (multipartFormData) in
+            let imgData = UIImageJPEGRepresentation(newImage, 0.2)!
+            let fileName = "\(Int(NSDate.init(timeIntervalSinceNow: 0).timeIntervalSince1970))" + ".\(random0to10000())"
+            multipartFormData.append(imgData, withName: fileName, fileName: fileName + ".jpg", mimeType: "image/jpg")
+            multipartFormData.append( AppDataManager.shared.currentPersonID.data(using: String.Encoding.utf8)!, withName: "uid")
+        }, to: urlStr) { (result) in
+            switch result{
+            case .success(let upload, _, _):
+                upload.uploadProgress(closure: { (progress) in
+                    print("Upload Progress: \(progress.fractionCompleted)")
+                })
+                
+                upload.responseJSON { response in
+                    completionHandler(true)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getLogin(email: String, _ completionHandler: @escaping (String?, String?) -> Void){
+        let urlStr = APP_SERVER_URL_STR + "/assets/login/"
+        request(urlStr, method: .post, parameters: ["email": email] as [String: AnyObject], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                let jsonDict = JSON(json)
+                let isPassed = jsonDict["pass"].boolValue
+                var password: String? = nil
+                var uid: String? = nil
+                if isPassed{
+                    password = jsonDict["password"].stringValue
+                    uid = jsonDict["uid"].stringValue
+                }
+                completionHandler(password, uid)
+            case .failure(let error):
+                makeMessageViaAlert(title: "get passwd failed", message: error.localizedDescription)
             }
         }
     }

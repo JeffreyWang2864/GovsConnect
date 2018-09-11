@@ -116,6 +116,14 @@ func whichDayOfWeekend(_ date: Date) -> Int{
     return weekDay == 1 ? 2 : weekDay - 6
 }
 
+func isValidEmail(_ enteredEmail: String) -> Bool {
+    let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+    return emailPredicate.evaluate(with: enteredEmail)
+}
+
 //屏幕的宽高
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
+
+typealias CommonVoidBlockType = () -> ()

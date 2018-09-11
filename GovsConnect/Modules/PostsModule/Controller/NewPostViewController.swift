@@ -23,7 +23,11 @@ class NewPostViewController: UIViewController {
     var imagePickerController = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.authorImage.image = UIImage.init(named: AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.profilePictureName)
+        let imgIndex = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.uid
+        let imgData = AppDataManager.shared.profileImageData[imgIndex]!
+        self.authorImage.image = UIImage.init(data: imgData)
+        self.authorImage.clipsToBounds = true
+        self.authorImage.layer.cornerRadius = self.authorImage.width / 2
         self.postButton.layer.backgroundColor = APP_THEME_COLOR.cgColor
         self.postButton.layer.cornerRadius = 13
         self.postButton.tintColor = UIColor.white

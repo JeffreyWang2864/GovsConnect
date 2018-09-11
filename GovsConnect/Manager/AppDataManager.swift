@@ -23,13 +23,27 @@ class AppDataManager{
     var allCourse = Array<String>()
     var allClub = Array<String>()
     var imageData = Dictionary<String, Data>()
+    var profileImageData = Dictionary<String, Data>()
     public func setupData(){
-        self.users["jefwa001"] = UserDataContainer.init("jefwa001", "Jeffrey Wang", "testing_profile_picture_1.png", .student, .junior, "Beijing, China", [("jeffrey.wang@govsacademy.org", true), ("jwang.xyz", true), ("8609131120", true), ("Boarder, living in Ingham", true)])
-        self.users["kevji001"] = UserDataContainer.init("kevji001", "Kevin Jiang", "testing_profile_picture_2.png", .student, .junior, "Beijing, China", [("kevin.jiang@govsacademy.org", true), ("", false), ("1234567890", false), ("Boarder, living in Eames", true)])
-        self.users["haosh001"] = UserDataContainer.init("haosh001", "Haodi Shi", "testing_profile_picture_3.png", .student, .junior, "Yunnan, China", [("haodi.shi@govsacademy.org", false), ("", false), ("", false), ("Boarder, living in Perkins", false)])
-        self.users["zemji001"] = UserDataContainer.init("zemji001", "Zemin Jiang", "testing_profile_picture_jzm.png", .facalty, .sophomoreEnglish, "Shanghai, China", [("zemin.jaing@china.gov", true), ("hama.com", true), ("110", true), ("Shanghai Jiaotong University", true)])
-        self.users["dontr001"] = UserDataContainer.init("dontr001", "Donald Trump", "testing_profile_picture_dt.png", .facalty, .juniorEnglish, "USA", [("donald.trump@trump.com", false), ("donaldjtrump.com", true), ("11111111111", true), ("Trump Tower, NY", false)])
-        self.users["ranpe001"] = UserDataContainer.init("ranpe001", "Random Person", "testing_profile_picture_4.png", .student, .senior, "middle of nowhere", [("random.person@govsacademy.org", true), ("", true), ("123422211112", true), ("middle of nowhere", true)])
+        let ss = ["testing_profile_picture_1.png", "testing_profile_picture_2.png", "testing_profile_picture_3.png", "testing_profile_picture_jzm.png", "testing_profile_picture_dt.png", "testing_profile_picture_4.png"]
+        let uids = ["jefwa001",
+            "kevji001",
+            "haosh001",
+            "zemji001",
+            "dontr001",
+            "ranpe001",
+        ]
+        for i in stride(from: 0, to: ss.count, by: 1){
+            let data = UIImagePNGRepresentation(UIImage.init(named: ss[i])!)!
+            AppDataManager.shared.profileImageData[uids[i]] = data
+        }
+        
+        self.users["jefwa001"] = UserDataContainer.init("jefwa001", "Jeffrey Wang", "0", .student, .junior, "Beijing, China", [("jeffrey.wang@govsacademy.org", true)])
+        self.users["kevji001"] = UserDataContainer.init("kevji001", "Kevin Jiang", "0", .student, .junior, "Beijing, China", [("kevin.jiang@govsacademy.org", true)])
+        self.users["haosh001"] = UserDataContainer.init("haosh001", "Haodi Shi", "0", .student, .junior, "Yunnan, China", [("haodi.shi@govsacademy.org", true)])
+        self.users["zemji001"] = UserDataContainer.init("zemji001", "Zemin Jiang", "0", .facalty, .sophomoreEnglish, "Shanghai, China", [("zemin.jaing@china.gov", true)])
+        self.users["dontr001"] = UserDataContainer.init("dontr001", "Donald Trump", "0", .facalty, .juniorEnglish, "USA", [("donald.trump@trump.com", true)])
+        self.users["ranpe001"] = UserDataContainer.init("ranpe001", "Random Person", "0", .student, .senior, "middle of nowhere", [("random.person@govsacademy.org", true)])
         self.users["advan001"] = UserDataContainer.init("advan001", "Advanced Precalculus with an Introduction to Calculus", "testing_profile_picture_4.png", .course, .mathmaticDepartment, "This is a year-long course with two major segments. The first portion of the course is an in-depth examination of ideas such as vectors, matrices, systems of linear and non-linear equations, sequences and series. The second portion of the course introduces students to the major themes of calculus, specifically the limit, the derivative, and the definite integral. This segment is designed to prepare students for a traditional college calculus course.", [("two semesters", true), ("mathmetics", true), ("false", true), ("9, 10, 11, 12", true), ("1", true), ("Science Building 301", true), ("Mr. Wang, Mr. Zhang and Mr. Lee", true)])
         self.users["unice001"] = UserDataContainer.init("unice001", "Unicef Club", "testing_profile_picture_4.png", .club, .clubDefault, "Governor's official Unicef club", [("Haodi Shi", true), ("Murphy Seminor Room, Frost Library", true), ("Thursday 6:00 PM", true)])
         self.allStudent.append("jefwa001")
@@ -106,9 +120,6 @@ class AppDataManager{
                 //code here
             }
         }
-    }
-    
-    func getTodayFoodInfo(){
         if AppDataManager.shared.discoverMenu[0].count + AppDataManager.shared.discoverMenu[1].count == 0{
             AppIOManager.shared.loadFoodData { (isSucceed) in
                 //code here

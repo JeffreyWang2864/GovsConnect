@@ -15,7 +15,14 @@ class PersonTableViewCell: UITableViewCell {
     var uid: String!{
         didSet{
             let userData = AppDataManager.shared.users[self.uid]!
-            self.personImage.image = UIImage(named: userData.profilePictureName)
+            if userData.profession == .club || userData.profession == .course{
+                self.personImage.image = UIImage.init(named: userData.profilePictureName)!
+            }else{
+                let imgData = AppDataManager.shared.profileImageData[userData.uid]!
+                self.personImage.image = UIImage.init(data: imgData)!
+            }
+            self.personImage.clipsToBounds = true
+            self.personImage.layer.cornerRadius = self.personImage.width / 2
             self.personName.text = userData.name
             self.personDetail.text = UserDetailViewController.getDescriptionText(data: userData)
         }

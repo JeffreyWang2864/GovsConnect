@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.6.0)
   - IQKeyboardManagerSwift (5.0.7)
   - ReachabilitySwift (4.1.0)
+  - RSKImageCropper (2.0.0)
   - SwiftyJSON (4.0.0)
   - TBDropdownMenu (3.0.1)
   - TwicketSegmentedControl (0.1.2)
@@ -10,6 +11,7 @@ DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
   - ReachabilitySwift
+  - RSKImageCropper
   - SwiftyJSON
   - TBDropdownMenu
   - TwicketSegmentedControl
@@ -18,10 +20,11 @@ SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  RSKImageCropper: d9a1acbc0600bf8decc8f0d21895872c99a9e4cf
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TBDropdownMenu: 249cd68a53289c32c600a292c568428d4f5cd613
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
 
-PODFILE CHECKSUM: 4bc2c5d6a786fd6cdaacf6d8fa0166cc31dd1b3d
+PODFILE CHECKSUM: 1ce3651c8e830236c7d13c3a39b0dca7ce718cda
 
 COCOAPODS: 1.4.0

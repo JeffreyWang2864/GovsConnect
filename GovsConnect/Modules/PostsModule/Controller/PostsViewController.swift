@@ -12,21 +12,20 @@ class PostsViewController: UIViewController {
     static let shouldRefreashCellNotificationName =  Notification.Name("shouldRefreashCellNotificationName")
     static let shouldRealRefreashCellNotificationName = Notification.Name("shouldRealRefreashCellNotificationName")
     @IBOutlet var mainTableView: UITableView!
+    var loginViewController: GCLoginRequireViewController?
     var refreashControl = UIRefreshControl()
     var longPressGestureRecongnizer = UILongPressGestureRecognizer()
+    var newPostButton = UIBarButtonItem()
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.shouldReloadCell(_:)), name: PostsViewController.shouldRefreashCellNotificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.shouldRefreashCell(_:)), name: PostsViewController.shouldRealRefreashCellNotificationName, object: nil)
-        
         self.mainTableView.register(UINib.init(nibName: "PostsTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_CELL_ID")
-        
         self.mainTableView.delegate = self
         self.mainTableView.dataSource = self
         self.mainTableView.estimatedRowHeight = 0
         self.mainTableView.estimatedSectionHeaderHeight = 0
         self.mainTableView.estimatedSectionFooterHeight = 0
-
         self.mainTableView.refreshControl = self.refreashControl
         self.addLongPressGestureRecongnizer()
         self.refreashControl.addTarget(self, action: #selector(self.refreachNewData(_:)), for: UIControlEvents.valueChanged)
@@ -34,10 +33,22 @@ class PostsViewController: UIViewController {
         self.refreashControl.backgroundColor = APP_BACKGROUND_GREY
         self.refreashControl.attributedTitle = NSAttributedString(string: "release to refreash", attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: "Helvetica Neue", size: 11)!])
         self.navigationItem.title = "Posts"
-        let newPostButton = UIBarButtonItem.init(image: #imageLiteral(resourceName: "system_new_post"), style: .plain, target: self, action: #selector(newPostButtonDidClick))
-        self.navigationController?.navigationBar.topItem?.setRightBarButton(newPostButton, animated: false)
-        
+        self.newPostButton = UIBarButtonItem.init(image: #imageLiteral(resourceName: "system_new_post"), style: .plain, target: self, action: #selector(newPostButtonDidClick))
+        self.navigationController?.navigationBar.topItem?.setRightBarButton(self.newPostButton, animated: false)
+        self.newPostButton.isEnabled = false
         UIApplication.shared.statusBarStyle = .lightContent
+        self.loginViewController = GCLoginRequireViewController.init(nibName: "GCLoginRequireViewController", bundle: Bundle.main)
+        self.loginViewController!.view.frame = self.view.bounds
+        if !AppIOManager.shared.isLogedIn{
+            self.view.addSubview(self.loginViewController!.view)
+            return
+        }
+        self.newPostButton.isEnabled = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.becomeFirstResponder()
     }
     
     @objc func newPostButtonDidClick(){
@@ -52,6 +63,7 @@ class PostsViewController: UIViewController {
         self.refreashControl.attributedTitle = NSAttributedString(string: AppIOManager.shared.connectionStatus == .none ? "offline mode, cannot refreash" : "refreashing", attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: "Helvetica Neue", size: 11)!])
         if AppIOManager.shared.connectionStatus != .none{
             AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
+            AppIOManager.shared.updateProfileImage()
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             self.refreashControl.attributedTitle = NSAttributedString(string: "release to refreash", attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: "Helvetica Neue", size: 11)!])
@@ -69,6 +81,24 @@ class PostsViewController: UIViewController {
     
     func removeLongPressGestureRecongnizer(){
         self.mainTableView.removeGestureRecognizer(self.longPressGestureRecongnizer)
+    }
+    
+    @objc func loginAction(_ sender: Notification){
+        if AppIOManager.shared.isLogedIn{
+            if self.loginViewController!.loginView != nil{
+                self.loginViewController!.loginView!.dismiss(animated: true) {
+                    self.loginViewController!.view.removeFromSuperview()
+                }
+            }else{
+                self.loginViewController!.view.removeFromSuperview()
+            }
+            self.refreachNewData(self.refreashControl)
+            self.newPostButton.isEnabled = true
+            return
+        }
+        //log out
+        self.view.addSubview(self.loginViewController!.view)
+        self.loginViewController!.view.frame = self.view.bounds
     }
     
     @objc func shouldReloadCell(_ sender: Notification){

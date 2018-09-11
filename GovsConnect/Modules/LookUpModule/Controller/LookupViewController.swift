@@ -17,6 +17,7 @@ class LookupViewController: UIViewController {
     var currentProfession = UserDataContainer.Profession.student
     var alphabeticalOrderDataSource = Array<String>()
     var filterWord: String? = nil
+    var loginViewController: GCLoginRequireViewController?
     private var endEditingGestureRecongnizer: UITapGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +37,36 @@ class LookupViewController: UIViewController {
         self.view.addGestureRecognizer(lgr)
         self.view.addGestureRecognizer(rgr)
         self.searchBar.delegate = self
+        self.loginViewController = GCLoginRequireViewController.init(nibName: "GCLoginRequireViewController", bundle: Bundle.main)
+        self.loginViewController!.view.frame = self.view.bounds
+        if !AppIOManager.shared.isLogedIn{
+            self.view.addSubview(self.loginViewController!.view)
+            return
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+    }
+    
+    @objc func loginAction(_ sender: Notification){
+        if AppIOManager.shared.isLogedIn{
+            if self.loginViewController!.loginView != nil{
+                self.loginViewController!.loginView!.dismiss(animated: true) {
+                    self.loginViewController!.view.removeFromSuperview()
+                }
+            }else{
+                self.loginViewController!.view.removeFromSuperview()
+            }
+        }
+        //log out
+        self.view.addSubview(self.loginViewController!.view)
+        self.loginViewController!.view.frame = self.view.bounds
     }
     
     @objc func didSwipeLeft(_ sender: UISwipeGestureRecognizer){

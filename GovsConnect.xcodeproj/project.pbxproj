@@ -100,9 +100,16 @@
 		13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */; };
 		13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E73705210960C4008BE215 /* ManagePostsViewController.swift */; };
 		13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EBE00620CA616000A911DE /* testing_profile_picture_1.png */; };
+		13EED9D52136121B00427E5E /* GCLoginRequireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */; };
+		13EED9D62136121B00427E5E /* GCLoginRequireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EED9D42136121B00427E5E /* GCLoginRequireViewController.xib */; };
+		13EED9D821362F3200427E5E /* system_login_require.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EED9D721362F3100427E5E /* system_login_require.png */; };
+		13EED9DB2136EA1D00427E5E /* GCLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EED9D92136EA1D00427E5E /* GCLoginViewController.swift */; };
+		13EED9DC2136EA1D00427E5E /* GCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EED9DA2136EA1D00427E5E /* GCLoginViewController.xib */; };
 		13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */; };
 		13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */; };
 		13F4094C20CCF2A200645880 /* system_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094B20CCF2A200645880 /* system_send.png */; };
+		13F805C8213B469C00AE93F0 /* NewEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F805C6213B469C00AE93F0 /* NewEditProfileViewController.swift */; };
+		13F805C9213B469C00AE93F0 /* NewEditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F805C7213B469C00AE93F0 /* NewEditProfileViewController.xib */; };
 		13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */; };
 		13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FC0E6D2105CC2B001FA925 /* GCEditableTableViewCell.xib */; };
 		B8C2EC8E928B34CB0A8CC938 /* Pods_GovsConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */; };
@@ -213,9 +220,16 @@
 		13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserDetailTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		13E73705210960C4008BE215 /* ManagePostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostsViewController.swift; sourceTree = "<group>"; };
 		13EBE00620CA616000A911DE /* testing_profile_picture_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_1.png; sourceTree = "<group>"; };
+		13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLoginRequireViewController.swift; sourceTree = "<group>"; };
+		13EED9D42136121B00427E5E /* GCLoginRequireViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCLoginRequireViewController.xib; sourceTree = "<group>"; };
+		13EED9D721362F3100427E5E /* system_login_require.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_login_require.png; sourceTree = "<group>"; };
+		13EED9D92136EA1D00427E5E /* GCLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLoginViewController.swift; sourceTree = "<group>"; };
+		13EED9DA2136EA1D00427E5E /* GCLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCLoginViewController.xib; sourceTree = "<group>"; };
 		13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailReplyTableViewCell.swift; sourceTree = "<group>"; };
 		13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailReplyTableViewCell.xib; sourceTree = "<group>"; };
 		13F4094B20CCF2A200645880 /* system_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_send.png; sourceTree = "<group>"; };
+		13F805C6213B469C00AE93F0 /* NewEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditProfileViewController.swift; sourceTree = "<group>"; };
+		13F805C7213B469C00AE93F0 /* NewEditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewEditProfileViewController.xib; sourceTree = "<group>"; };
 		13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCEditableTableViewCell.swift; sourceTree = "<group>"; };
 		13FC0E6D2105CC2B001FA925 /* GCEditableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCEditableTableViewCell.xib; sourceTree = "<group>"; };
 		8F9D974B7CD4FABCEEEF381C /* Pods-GovsConnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovsConnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.release.xcconfig"; sourceTree = "<group>"; };
@@ -366,6 +380,7 @@
 		13961E0C20CA772F004FFF4B /* System */ = {
 			isa = PBXGroup;
 			children = (
+				13EED9D721362F3100427E5E /* system_login_require.png */,
 				13D389D920FC9C6700330CDD /* system_snapchat_icon.png */,
 				133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */,
 				13F4094B20CCF2A200645880 /* system_send.png */,
@@ -419,6 +434,10 @@
 				130E677820F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift */,
 				13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */,
 				13FC0E6D2105CC2B001FA925 /* GCEditableTableViewCell.xib */,
+				13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */,
+				13EED9D42136121B00427E5E /* GCLoginRequireViewController.xib */,
+				13EED9D92136EA1D00427E5E /* GCLoginViewController.swift */,
+				13EED9DA2136EA1D00427E5E /* GCLoginViewController.xib */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -547,6 +566,8 @@
 				1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */,
 				1356C4DB210599D7000C3BF5 /* EditProfileViewController.xib */,
 				13E73705210960C4008BE215 /* ManagePostsViewController.swift */,
+				13F805C6213B469C00AE93F0 /* NewEditProfileViewController.swift */,
+				13F805C7213B469C00AE93F0 /* NewEditProfileViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -686,6 +707,8 @@
 				13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */,
 				1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */,
 				13117B7820F7454600E4CD66 /* testing_food_6.jpeg in Resources */,
+				13F805C9213B469C00AE93F0 /* NewEditProfileViewController.xib in Resources */,
+				13EED9D821362F3200427E5E /* system_login_require.png in Resources */,
 				13961E1420CA7766004FFF4B /* system_liked.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
 				139EDF7B20EC87A700778CFD /* EventDetailViewController.xib in Resources */,
@@ -714,6 +737,7 @@
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
 				137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
+				13EED9DC2136EA1D00427E5E /* GCLoginViewController.xib in Resources */,
 				13D389DD20FCBC7800330CDD /* system_instagram_icon.png in Resources */,
 				13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */,
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
@@ -721,6 +745,7 @@
 				1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */,
 				13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */,
 				132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */,
+				13EED9D62136121B00427E5E /* GCLoginRequireViewController.xib in Resources */,
 				132F818820C8DAB2005D3905 /* PostsViewController.xib in Resources */,
 				132F819E20C90DD0005D3905 /* numberthree.png in Resources */,
 				13961E1720CA7766004FFF4B /* system_view.png in Resources */,
@@ -763,6 +788,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TBDropdownMenu/TBDropdownMenu.framework",
@@ -772,6 +798,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBDropdownMenu.framework",
@@ -823,9 +850,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1381C0F6211BFD360013BCF3 /* AppIOManager.swift in Sources */,
+				13F805C8213B469C00AE93F0 /* NewEditProfileViewController.swift in Sources */,
 				137D562F20E7BA080088AB30 /* DiscoverBasicCellView.swift in Sources */,
 				1396070E20F7E3210079CBC4 /* LookupViewController.swift in Sources */,
 				13321FB920CF7B04000B6C41 /* NewPostViewController.swift in Sources */,
+				13EED9D52136121B00427E5E /* GCLoginRequireViewController.swift in Sources */,
 				13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,
@@ -853,6 +882,7 @@
 				BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */,
 				1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */,
 				13961E2020CAB151004FFF4B /* defines.swift in Sources */,
+				13EED9DB2136EA1D00427E5E /* GCLoginViewController.swift in Sources */,
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
 				1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,

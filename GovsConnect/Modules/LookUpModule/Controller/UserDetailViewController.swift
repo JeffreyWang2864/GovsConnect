@@ -20,11 +20,11 @@ class UserDetailViewController: UIViewController {
     var uid: String!{
         didSet{
             let data = AppDataManager.shared.users[uid]!
-            self.userImageView.image = UIImage(named: data.profilePictureName)
+            self.userImageView.clipsToBounds = true
+            self.userImageView.layer.cornerRadius = self.userImageView.width / 2
             self.userTitleLabel.text = data.name
             self.navigationItem.title = data.name
             self.userDetailLabel.text = UserDetailViewController.getDescriptionText(data: data)
-            self.setBlurViewForBackgroundView(data.profilePictureName)
             self.profession = data.profession
             self.tableView.register(UINib(nibName: "UserDetailTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "USER_DETAIL_TABLEVIEW_CELL_ID")
             self.tableView.register(UINib(nibName: "CourseDescriptionTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "COURSE_DESCRIPTION_TABLEVIEW_CELL_ID")
@@ -42,10 +42,29 @@ class UserDetailViewController: UIViewController {
         self.tableView.separatorStyle = .none
     }
     
-    private func setBlurViewForBackgroundView(_ imageName: String) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let data = AppDataManager.shared.users[uid]!
+        
+        if data.profession == .club || data.profession == .course{
+            self.userImageView.image = UIImage.init(named: data.profilePictureName)!
+        }else{
+            let imgData = AppDataManager.shared.profileImageData[data.uid]!
+            self.userImageView.image = UIImage.init(data: imgData)!
+        }
+        self.setBlurViewForBackgroundView(data)
+    }
+    
+    private func setBlurViewForBackgroundView(_ dataObj: UserDataContainer) {
         let blurEffect = UIBlurEffect(style: .regular)
         let blurView = UIVisualEffectView(effect: blurEffect)
-        let imageView = UIImageView(image: UIImage(named: imageName))
+        let imageView = UIImageView()
+        if AppDataManager.shared.profileImageData[dataObj.uid] == nil{
+            imageView.image = UIImage(named: dataObj.profilePictureName)
+        }else{
+            let imgData = AppDataManager.shared.profileImageData[dataObj.uid]
+            imageView.image = UIImage.init(data: imgData!)!
+        }
         imageView.frame = CGRect(x: self.backgroundView.top, y: self.backgroundView.left, width: screenWidth, height: self.backgroundView.height)
         blurView.frame = CGRect(x: self.backgroundView.top, y: self.backgroundView.left, width: screenWidth, height: self.backgroundView.height)
         imageView.contentMode = .center

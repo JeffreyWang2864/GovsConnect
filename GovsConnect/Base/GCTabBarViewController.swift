@@ -18,6 +18,7 @@ class GCTabBarViewController: UITabBarController {
         
         //给标签栏控制器添加子控制器
         let postVc = PostsViewController(nibName: "PostsViewController", bundle: nil)
+        NotificationCenter.default.addObserver(postVc, selector: #selector(postVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
         self.addChildController(childVc: postVc, title: "Posts", imageName: "", selImage: "")
         
         //发现控制器
@@ -26,6 +27,7 @@ class GCTabBarViewController: UITabBarController {
         
         //lookUp
         let lookUpVc = LookupViewController()
+        NotificationCenter.default.addObserver(lookUpVc, selector: #selector(lookUpVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
         self.addChildController(childVc: lookUpVc, title: "Look up", imageName: "", selImage: "")
         
         //notification
@@ -34,6 +36,7 @@ class GCTabBarViewController: UITabBarController {
         
         //You
         let youVc = YouViewController()
+        NotificationCenter.default.addObserver(youVc, selector: #selector(youVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
         self.addChildController(childVc: youVc, title: "You", imageName: "", selImage: "")
     }
 
