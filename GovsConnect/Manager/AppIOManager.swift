@@ -24,6 +24,7 @@ class AppIOManager{
     static public let shared = AppIOManager()
     static public let loginActionNotificationName = Notification.Name.init("loginActionNotificationName")
     var connectionStatus: Reachability.Connection!
+    var deviceToken: String? =  nil
     var isFirstTimeConnnected = true
     func establishConnection(){
         let reachability = Reachability()!
@@ -279,8 +280,8 @@ class AppIOManager{
                 var index = 0
                 while(jsonDict["\(index)"] != JSON.null){
                     let data = jsonDict["\(index)"]
-                    let start_time_interval = data["start_time"].intValue
-                    let end_time_interval = data["end_time"].intValue - (3600 * 8)
+                    let start_time_interval = data["start_time"].intValue - (3600 * 4)
+                    let end_time_interval = data["end_time"].intValue - (3600 * 4)
                     let title = data["title"].stringValue
                     let detail = data["detail"].stringValue
                     let event = EventDataContainer(Date(timeIntervalSince1970: TimeInterval(start_time_interval)), Date(timeIntervalSince1970: TimeInterval(end_time_interval)), title, detail)
@@ -407,6 +408,19 @@ class AppIOManager{
                 completionHandler(password, uid)
             case .failure(let error):
                 makeMessageViaAlert(title: "get passwd failed", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func loginSuccessful(){
+        let urlStr = APP_SERVER_URL_STR + "/assets/login_successful/"
+        let postData = ["access_token": AppIOManager.shared.deviceToken ?? "233", "uid": AppDataManager.shared.currentPersonID]
+        request(urlStr, method: .post, parameters: postData as [String: AnyObject], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                NSLog("successfully upload device token")
+            case .failure(let error):
+                makeMessageViaAlert(title: "failed to upload device token to the server", message: error.localizedDescription)
             }
         }
     }

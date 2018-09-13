@@ -53,15 +53,19 @@ class YouViewController: UIViewController {
     
     @objc func loginAction(_ sender: Notification){
         if AppIOManager.shared.isLogedIn{
+            guard self.loginViewController != nil else{
+                return
+            }
             if self.loginViewController!.loginView != nil{
-                self.loginViewController!.loginView!.dismiss(animated: true) {
-                    self.loginViewController!.view.removeFromSuperview()
+                self.loginViewController!.loginView!.dismiss(animated: false) {
+                    //code
                 }
-            }else{
-                self.loginViewController!.view.removeFromSuperview()
             }
             let data = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!
             self.authorName.text = data.name
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.loginViewController!.view.removeFromSuperview()
+            }
         }
         //log out
         self.view.addSubview(self.loginViewController!.view)

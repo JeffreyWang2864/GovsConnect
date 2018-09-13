@@ -17,7 +17,7 @@ class AppDataManager{
     var discoverMenu = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
     var users = Dictionary<String, UserDataContainer>()
     var newPostDraft: (String, String, Array<UIImage>)? = nil
-    var currentPersonID = "jefwa001"
+    var currentPersonID = ""
     var allStudent = Array<String>()
     var allFaculty = Array<String>()
     var allCourse = Array<String>()

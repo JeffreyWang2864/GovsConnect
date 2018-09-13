@@ -23,7 +23,9 @@ class GCLoginRequireViewController: UIViewController {
     }
     
     @IBAction func loginButtonDidClick(){
-        self.loginView = GCLoginViewController.init(nibName: "GCLoginViewController", bundle: Bundle.main)
+        if self.loginView == nil{
+             self.loginView = GCLoginViewController.init(nibName: "GCLoginViewController", bundle: Bundle.main)
+        }
         self.loginView!.view.frame = self.view.bounds
         self.present(self.loginView!, animated: true) {
             //code here

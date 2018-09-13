@@ -86,19 +86,21 @@ class PostsViewController: UIViewController {
     @objc func loginAction(_ sender: Notification){
         if AppIOManager.shared.isLogedIn{
             if self.loginViewController!.loginView != nil{
-                self.loginViewController!.loginView!.dismiss(animated: true) {
-                    self.loginViewController!.view.removeFromSuperview()
+                self.loginViewController!.loginView!.dismiss(animated: false) {
+                   //code
                 }
-            }else{
-                self.loginViewController!.view.removeFromSuperview()
             }
             self.refreachNewData(self.refreashControl)
             self.newPostButton.isEnabled = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.loginViewController!.view.removeFromSuperview()
+            }
             return
         }
         //log out
         self.view.addSubview(self.loginViewController!.view)
         self.loginViewController!.view.frame = self.view.bounds
+        self.newPostButton.isEnabled = false
     }
     
     @objc func shouldReloadCell(_ sender: Notification){

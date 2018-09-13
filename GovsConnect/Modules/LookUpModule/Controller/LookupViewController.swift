@@ -56,11 +56,15 @@ class LookupViewController: UIViewController {
     
     @objc func loginAction(_ sender: Notification){
         if AppIOManager.shared.isLogedIn{
+            guard self.loginViewController != nil else{
+                return
+            }
             if self.loginViewController!.loginView != nil{
-                self.loginViewController!.loginView!.dismiss(animated: true) {
-                    self.loginViewController!.view.removeFromSuperview()
+                self.loginViewController!.loginView!.dismiss(animated: false) {
+                    //code here
                 }
-            }else{
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.loginViewController!.view.removeFromSuperview()
             }
         }

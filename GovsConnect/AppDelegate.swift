@@ -71,11 +71,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let token = tokenParts.joined()
-        print("Device Token: \(token)")
+        AppIOManager.shared.deviceToken = token
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Failed to register: \(error)")
+        makeMessageViaAlert(title: "Failed to register remote notification", message: error.localizedDescription)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        let alertMessage = userInfo["alert"] as! String
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
