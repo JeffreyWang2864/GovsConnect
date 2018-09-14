@@ -169,10 +169,10 @@ class AppIOManager{
     
     func addReply(at local_post_id: Int, postData: Dictionary<String, String>, _ completionHandler: @escaping ReceiveResponseBlock){
         let post_id = AppDataManager.shared.postsData[local_post_id]._uid
-        let urlStr = APP_SERVER_URL_STR + "/post/\(post_id)/add_reply"
-        let json = "?sender_uid=\(postData["sender_uid"]!)&receiver_uid=\(postData["receiver_uid"]!)&body=\(postData["body"]!.serializable())"
-        NSLog(urlStr + json)
-        request(urlStr + json).responseJSON { (response) in
+        let urlStr = APP_SERVER_URL_STR + "/post/add_reply/"
+        var postData = postData
+        postData["post_id"] = "\(post_id)"
+        request(urlStr, method: .post, parameters: postData as Dictionary<String, AnyObject>, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result{
             case .success(let json):
                 self.__loadReplyData(JSON(json), local_post_id)
@@ -425,6 +425,19 @@ class AppIOManager{
                 NSLog("successfully upload device token")
             case .failure(let error):
                 makeMessageViaAlert(title: "failed to upload device token to the server", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func logOut(_ completionHandler: @escaping ReceiveResponseBlock){
+        let urlStr = APP_SERVER_URL_STR + "/assets/logout/"
+        let postData = ["uid": AppDataManager.shared.currentPersonID]
+        request(urlStr, method: .post, parameters: postData as [String: AnyObject], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                completionHandler(true)
+            case .failure(let error):
+                makeMessageViaAlert(title: "failed to log out", message: error.localizedDescription)
             }
         }
     }

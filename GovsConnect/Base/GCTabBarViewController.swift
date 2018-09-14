@@ -55,5 +55,4 @@ class GCTabBarViewController: UITabBarController {
         super.didReceiveMemoryWarning()
 
     }
-
 }

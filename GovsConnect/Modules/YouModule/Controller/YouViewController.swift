@@ -149,10 +149,11 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
             //log out
             let alert = UIAlertController(title: "By clicking \"Log out\" below, you will not be able to view, post, reply, or like any post as \(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.name), and you will not have the access to the \"Look up\" section.", message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { (alert) in
-                assert(AppDataManager.shared.currentPersonID != "")
-                AppDataManager.shared.currentPersonID = ""
-                NotificationCenter.default.post(Notification(name: AppIOManager.loginActionNotificationName))
-                
+                AppIOManager.shared.logOut(){ isSuccessful -> Void in
+                    assert(AppDataManager.shared.currentPersonID != "")
+                    AppDataManager.shared.currentPersonID = ""
+                    NotificationCenter.default.post(Notification(name: AppIOManager.loginActionNotificationName))
+                }
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (alert) in
                 //code

@@ -29,16 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //launch screen animation
         let welcomeVC = WelcomeViewController()
-        self.window!.rootViewController = welcomeVC
+        self.window!.rootViewController!.view.addSubview(welcomeVC.view)
         welcomeVC.view.frame = UIScreen.main.bounds
-        self.window!.makeKeyAndVisible()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             UIView.animate(withDuration: 0.5, animations: {
                 welcomeVC.view.alpha = 0
             }) { (completion) in
                 welcomeVC.dismiss(animated: false, completion: nil)
-                self.window!.rootViewController = tabbarVc
-                self.window!.makeKeyAndVisible()
+                welcomeVC.view.removeFromSuperview()
             }
         }
 

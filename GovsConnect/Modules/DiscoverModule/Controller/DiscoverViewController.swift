@@ -34,7 +34,7 @@ class DiscoverViewController: UIViewController {
             self.navigationController!.pushViewController(vc, animated: true)
         case 1:
             //daily bulletin
-            let url = URL(string: "https://www.google.com")!
+            let url = URL(string: "https://docs.google.com/document/d/1cZ7nb44a26OWvgOJWlY0CklBrDaPb248wJ9ozgXROKI/edit")!
             let vc = UIViewController()
             vc.view.frame = self.view.bounds
             let webv = UIWebView()

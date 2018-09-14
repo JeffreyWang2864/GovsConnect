@@ -60,7 +60,13 @@ extension GCImageViewController: UICollectionViewDelegate, UICollectionViewDataS
         item.scrollView.showsHorizontalScrollIndicator = false
         item.scrollView.contentMode = .scaleAspectFit
         item.scrollView.delegate = item
-        item.imageView = UIImageView(image: UIImage(data: AppDataManager.shared.imageData[self.imagesName[indexPath.item]]!)!)
+        let imgData = AppDataManager.shared.imageData[self.imagesName[indexPath.item]]
+        if imgData == nil{
+            item.imageView = UIImageView()
+        }else{
+            //not nil
+            item.imageView = UIImageView(image: UIImage(data: imgData!)!)
+        }
         item.imageView.clipsToBounds = false
         item.imageView.contentMode = .scaleAspectFit
         item.scrollView.addSubview(item.imageView)
