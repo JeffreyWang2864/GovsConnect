@@ -15,20 +15,19 @@ class GCTabBarViewController: UITabBarController {
 
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColorFromRGB(rgbValue: 0xBABABA, alpha: 1)], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:APP_THEME_COLOR], for: .selected)
-        
         //给标签栏控制器添加子控制器
         let postVc = PostsViewController(nibName: "PostsViewController", bundle: nil)
         NotificationCenter.default.addObserver(postVc, selector: #selector(postVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
-        self.addChildController(childVc: postVc, title: "Posts", imageName: "", selImage: "")
+        self.addChildController(childVc: postVc, title: "Posts", normalImg: #imageLiteral(resourceName: "system_normal_post"), selectedImg: #imageLiteral(resourceName: "system_selected_post"))
         
         //发现控制器
         let disVc = DiscoverViewController()
-        self.addChildController(childVc: disVc, title: "Discover", imageName: "", selImage: "")
+        self.addChildController(childVc: disVc, title: "Discover", normalImg: #imageLiteral(resourceName: "system_normal_discover"), selectedImg: #imageLiteral(resourceName: "system_selected_discover"))
         
         //lookUp
         let lookUpVc = LookupViewController()
         NotificationCenter.default.addObserver(lookUpVc, selector: #selector(lookUpVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
-        self.addChildController(childVc: lookUpVc, title: "Look up", imageName: "", selImage: "")
+        self.addChildController(childVc: lookUpVc, title: "Look up", normalImg: #imageLiteral(resourceName: "system_normal_lookup"), selectedImg: #imageLiteral(resourceName: "system_selected_lookup"))
         
         //notification
 //        let notificationVC = NotificationViewController()
@@ -37,13 +36,13 @@ class GCTabBarViewController: UITabBarController {
         //You
         let youVc = YouViewController()
         NotificationCenter.default.addObserver(youVc, selector: #selector(youVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
-        self.addChildController(childVc: youVc, title: "You", imageName: "", selImage: "")
+        self.addChildController(childVc: youVc, title: "You", normalImg: #imageLiteral(resourceName: "system_normal_you"), selectedImg: #imageLiteral(resourceName: "system_selected_you"))
     }
 
-    func addChildController(childVc:UIViewController, title:String, imageName:String, selImage:String) -> Void {
+    func addChildController(childVc: UIViewController, title: String, normalImg: UIImage, selectedImg: UIImage) -> Void {
         childVc.title = title
-        childVc.tabBarItem.image = UIImage.init(named: imageName)
-        childVc.tabBarItem.selectedImage = UIImage.init(named: selImage)?.withRenderingMode(.alwaysOriginal)
+        childVc.tabBarItem.image = normalImg
+        childVc.tabBarItem.selectedImage = selectedImg.withRenderingMode(.alwaysOriginal)
         let nav = GCNavigationViewController.init(rootViewController: childVc)
         nav.navigationBar.barStyle = .default
         nav.navigationBar.barTintColor = APP_THEME_COLOR
