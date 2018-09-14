@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 func prettyTimeSince(_ timeInterval: TimeInterval) -> String{
     let tisn = abs(NSInteger(timeInterval))
@@ -120,6 +121,21 @@ func isValidEmail(_ enteredEmail: String) -> Bool {
     let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
     return emailPredicate.evaluate(with: enteredEmail)
+}
+
+func saveEventToCalender(_ title: String, _ startDate: Date, _ endDate: Date, _ note: String){
+    let eventStore = EKEventStore()
+    let event: EKEvent = EKEvent(eventStore: eventStore)
+    event.title = title
+    event.startDate = startDate
+    event.endDate = endDate
+    event.notes = note
+    event.calendar = eventStore.defaultCalendarForNewEvents
+    do {
+        try eventStore.save(event, span: EKSpan.thisEvent)
+    } catch let error as NSError {
+        makeMessageViaAlert(title: "Failed to save event", message: error.localizedDescription)
+    }
 }
 
 //屏幕的宽高

@@ -31,8 +31,8 @@ class GCTabBarViewController: UITabBarController {
         self.addChildController(childVc: lookUpVc, title: "Look up", imageName: "", selImage: "")
         
         //notification
-        let notificationVC = NotificationViewController()
-        self.addChildController(childVc: notificationVC, title: "Notification", imageName: "", selImage: "")
+//        let notificationVC = NotificationViewController()
+//        self.addChildController(childVc: notificationVC, title: "Notification", imageName: "", selImage: "")
         
         //You
         let youVc = YouViewController()

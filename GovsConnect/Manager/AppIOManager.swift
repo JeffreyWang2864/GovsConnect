@@ -280,8 +280,8 @@ class AppIOManager{
                 var index = 0
                 while(jsonDict["\(index)"] != JSON.null){
                     let data = jsonDict["\(index)"]
-                    let start_time_interval = data["start_time"].intValue - (3600 * 4)
-                    let end_time_interval = data["end_time"].intValue - (3600 * 4)
+                    let start_time_interval = data["start_time"].intValue + (3600 * 4)
+                    let end_time_interval = data["end_time"].intValue + (3600 * 4)
                     let title = data["title"].stringValue
                     let detail = data["detail"].stringValue
                     let event = EventDataContainer(Date(timeIntervalSince1970: TimeInterval(start_time_interval)), Date(timeIntervalSince1970: TimeInterval(end_time_interval)), title, detail)
@@ -414,7 +414,11 @@ class AppIOManager{
     
     func loginSuccessful(){
         let urlStr = APP_SERVER_URL_STR + "/assets/login_successful/"
-        let postData = ["access_token": AppIOManager.shared.deviceToken ?? "233", "uid": AppDataManager.shared.currentPersonID]
+        guard AppIOManager.shared.deviceToken != nil else{
+            //running on an simulator
+            return
+        }
+        let postData = ["access_token": AppIOManager.shared.deviceToken!, "uid": AppDataManager.shared.currentPersonID]
         request(urlStr, method: .post, parameters: postData as [String: AnyObject], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result{
             case .success(let json):

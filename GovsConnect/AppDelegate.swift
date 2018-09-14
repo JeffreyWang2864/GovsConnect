@@ -27,6 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         IQKeyboardManager.sharedManager().enable = true
+//        let remoteNotifications = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification]
+//        if remoteNotifications != nil{
+//           let dict = remoteNotifications as! Dictionary<String, Any>
+//            let aps = dict["aps"] as! Dictionary<String, Any>
+//            let alertMessage = aps["alert"] as! String
+//            let newRemoteNotificationElement = RemoteNotificationContainer(alertMessage, 0)
+//            AppDataManager.shared.remoteNotificationData.insert(newRemoteNotificationElement, at: 0)
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//                NotificationCenter.default.post(Notification.init(name: NotificationViewController.didReceivedNotificationName))
+//            }
+//        }
         //launch screen animation
 //        let welcomeVC = WelcomeViewController()
 //        self.window!.rootViewController!.present(welcomeVC, animated: false, completion: nil)
@@ -79,12 +90,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        let alertMessage = userInfo["alert"] as! String
+        print(userInfo)
+//        let apsDict = userInfo["aps"] as! Dictionary<String, AnyObject>
+//        let alertMessage = apsDict["alert"] as! String
+//        let newRemoteNotificationElement = RemoteNotificationContainer(alertMessage, 0)
+//        AppDataManager.shared.remoteNotificationData.insert(newRemoteNotificationElement, at: 0)
+//        NotificationCenter.default.post(Notification.init(name: NotificationViewController.didReceivedNotificationName))
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {

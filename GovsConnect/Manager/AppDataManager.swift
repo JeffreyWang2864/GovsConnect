@@ -24,6 +24,7 @@ class AppDataManager{
     var allClub = Array<String>()
     var imageData = Dictionary<String, Data>()
     var profileImageData = Dictionary<String, Data>()
+    var remoteNotificationData = Array<RemoteNotificationContainer>()
     public func setupData(){
         let ss = ["testing_profile_picture_1.png", "testing_profile_picture_2.png", "testing_profile_picture_3.png", "testing_profile_picture_jzm.png", "testing_profile_picture_dt.png", "testing_profile_picture_4.png"]
         let uids = ["jefwa001",
@@ -282,5 +283,14 @@ class DiscoverFoodDataContainer{
         self.imageName = imageName
         self.likeCount = likeCount
         self.dislikeCount = dislikeCount
+    }
+}
+
+class RemoteNotificationContainer{
+    var alertMessage: String
+    var receivedTimeInterval: TimeInterval
+    init(_ message: String, _ receivedTimeInterval: TimeInterval){
+        self.alertMessage = message
+        self.receivedTimeInterval = receivedTimeInterval
     }
 }
