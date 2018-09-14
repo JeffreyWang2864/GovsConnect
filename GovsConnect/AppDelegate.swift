@@ -24,9 +24,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabbarVc = GCTabBarViewController()
         self.window?.rootViewController = tabbarVc
         self.window?.backgroundColor = UIColor.white
-        self.window?.makeKeyAndVisible()
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         IQKeyboardManager.sharedManager().enable = true
+        
+        //launch screen animation
+        let welcomeVC = WelcomeViewController()
+        self.window!.rootViewController = welcomeVC
+        welcomeVC.view.frame = UIScreen.main.bounds
+        self.window!.makeKeyAndVisible()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            UIView.animate(withDuration: 0.5, animations: {
+                welcomeVC.view.alpha = 0
+            }) { (completion) in
+                welcomeVC.dismiss(animated: false, completion: nil)
+                self.window!.rootViewController = tabbarVc
+                self.window!.makeKeyAndVisible()
+            }
+        }
+
+        
+        
+        
 //        let remoteNotifications = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification]
 //        if remoteNotifications != nil{
 //           let dict = remoteNotifications as! Dictionary<String, Any>
@@ -36,16 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            AppDataManager.shared.remoteNotificationData.insert(newRemoteNotificationElement, at: 0)
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 //                NotificationCenter.default.post(Notification.init(name: NotificationViewController.didReceivedNotificationName))
-//            }
-//        }
-        //launch screen animation
-//        let welcomeVC = WelcomeViewController()
-//        self.window!.rootViewController!.present(welcomeVC, animated: false, completion: nil)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-//            UIView.animate(withDuration: 0.5, animations: {
-//                welcomeVC.view.alpha = 0
-//            }) { (completion) in
-//                welcomeVC.dismiss(animated: false, completion: nil)
 //            }
 //        }
         return true
