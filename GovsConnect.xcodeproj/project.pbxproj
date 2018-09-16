@@ -87,6 +87,18 @@
 		13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7801220EF690E00926139 /* GCOptionsTableView.swift */; };
 		13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */; };
 		13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */; };
+		13C2565B214C653F00EFCBCF /* GovsConnect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13C25659214C653F00EFCBCF /* GovsConnect.xcdatamodeld */; };
+		13C2565D214C68F700EFCBCF /* AppPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2565C214C68F700EFCBCF /* AppPersistenceManager.swift */; };
+		13C25663214C6BFC00EFCBCF /* Setting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C25661214C6BFC00EFCBCF /* Setting+CoreDataProperties.swift */; };
+		13C25664214C6BFC00EFCBCF /* Setting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C25662214C6BFC00EFCBCF /* Setting+CoreDataClass.swift */; };
+		13C2566B214C8BE500EFCBCF /* ImageData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C25667214C8BE500EFCBCF /* ImageData+CoreDataClass.swift */; };
+		13C2566C214C8BE500EFCBCF /* ImageData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C25668214C8BE500EFCBCF /* ImageData+CoreDataProperties.swift */; };
+		13C2566D214C8BE500EFCBCF /* ProfileImageData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C25669214C8BE500EFCBCF /* ProfileImageData+CoreDataClass.swift */; };
+		13C2566E214C8BE500EFCBCF /* ProfileImageData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2566A214C8BE500EFCBCF /* ProfileImageData+CoreDataProperties.swift */; };
+		13C25673214DE2AC00EFCBCF /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2566F214DE2AC00EFCBCF /* Comment+CoreDataClass.swift */; };
+		13C25674214DE2AC00EFCBCF /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C25670214DE2AC00EFCBCF /* Comment+CoreDataProperties.swift */; };
+		13C25679214E0F5F00EFCBCF /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C25677214E0F5F00EFCBCF /* Post+CoreDataClass.swift */; };
+		13C2567A214E0F5F00EFCBCF /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C25678214E0F5F00EFCBCF /* Post+CoreDataProperties.swift */; };
 		13C5EA0920F8A143000DC504 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C5EA0720F8A143000DC504 /* PersonTableViewCell.swift */; };
 		13C5EA0A20F8A143000DC504 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C5EA0820F8A143000DC504 /* PersonTableViewCell.xib */; };
 		13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CD442E20E490CB001FB934 /* GCImageViewController.swift */; };
@@ -209,6 +221,18 @@
 		13ADC69D20F32A4300AECFFA /* GovsConnect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GovsConnect.entitlements; sourceTree = "<group>"; };
 		13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailBodyTableViewCell.swift; sourceTree = "<group>"; };
 		13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailBodyTableViewCell.xib; sourceTree = "<group>"; };
+		13C2565A214C653F00EFCBCF /* GovsConnect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GovsConnect.xcdatamodel; sourceTree = "<group>"; };
+		13C2565C214C68F700EFCBCF /* AppPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPersistenceManager.swift; sourceTree = "<group>"; };
+		13C25661214C6BFC00EFCBCF /* Setting+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Setting+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		13C25662214C6BFC00EFCBCF /* Setting+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Setting+CoreDataClass.swift"; sourceTree = "<group>"; };
+		13C25667214C8BE500EFCBCF /* ImageData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		13C25668214C8BE500EFCBCF /* ImageData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		13C25669214C8BE500EFCBCF /* ProfileImageData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileImageData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		13C2566A214C8BE500EFCBCF /* ProfileImageData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileImageData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		13C2566F214DE2AC00EFCBCF /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		13C25670214DE2AC00EFCBCF /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		13C25677214E0F5F00EFCBCF /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
+		13C25678214E0F5F00EFCBCF /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		13C5EA0720F8A143000DC504 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/PersonTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		13C5EA0820F8A143000DC504 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PersonTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/PersonTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		13CD442E20E490CB001FB934 /* GCImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCImageViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +323,8 @@
 		132F816920C8C77C005D3905 /* GovsConnect */ = {
 			isa = PBXGroup;
 			children = (
+				13C25660214C6BED00EFCBCF /* Entities */,
+				13C25659214C653F00EFCBCF /* GovsConnect.xcdatamodeld */,
 				13ADC69D20F32A4300AECFFA /* GovsConnect.entitlements */,
 				BC1490E320DA22BE00373BBF /* Base */,
 				13CD442D20E48FE4001FB934 /* GC */,
@@ -407,6 +433,7 @@
 			children = (
 				13961E1C20CAA9B0004FFF4B /* AppDataManager.swift */,
 				1381C0F5211BFD360013BCF3 /* AppIOManager.swift */,
+				13C2565C214C68F700EFCBCF /* AppPersistenceManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -426,6 +453,23 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		13C25660214C6BED00EFCBCF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				13C25677214E0F5F00EFCBCF /* Post+CoreDataClass.swift */,
+				13C25678214E0F5F00EFCBCF /* Post+CoreDataProperties.swift */,
+				13C2566F214DE2AC00EFCBCF /* Comment+CoreDataClass.swift */,
+				13C25670214DE2AC00EFCBCF /* Comment+CoreDataProperties.swift */,
+				13C25667214C8BE500EFCBCF /* ImageData+CoreDataClass.swift */,
+				13C25668214C8BE500EFCBCF /* ImageData+CoreDataProperties.swift */,
+				13C25669214C8BE500EFCBCF /* ProfileImageData+CoreDataClass.swift */,
+				13C2566A214C8BE500EFCBCF /* ProfileImageData+CoreDataProperties.swift */,
+				13C25662214C6BFC00EFCBCF /* Setting+CoreDataClass.swift */,
+				13C25661214C6BFC00EFCBCF /* Setting+CoreDataProperties.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		13CD442D20E48FE4001FB934 /* GC */ = {
@@ -856,19 +900,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C25663214C6BFC00EFCBCF /* Setting+CoreDataProperties.swift in Sources */,
 				1381C0F6211BFD360013BCF3 /* AppIOManager.swift in Sources */,
+				13C2565B214C653F00EFCBCF /* GovsConnect.xcdatamodeld in Sources */,
 				13F805C8213B469C00AE93F0 /* NewEditProfileViewController.swift in Sources */,
 				137D562F20E7BA080088AB30 /* DiscoverBasicCellView.swift in Sources */,
 				1396070E20F7E3210079CBC4 /* LookupViewController.swift in Sources */,
 				13321FB920CF7B04000B6C41 /* NewPostViewController.swift in Sources */,
 				13EED9D52136121B00427E5E /* GCLoginRequireViewController.swift in Sources */,
 				13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */,
+				13C2566E214C8BE500EFCBCF /* ProfileImageData+CoreDataProperties.swift in Sources */,
+				13C2565D214C68F700EFCBCF /* AppPersistenceManager.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
 				130E677920F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift in Sources */,
 				1356C4DC210599D7000C3BF5 /* EditProfileViewController.swift in Sources */,
 				13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */,
+				13C25673214DE2AC00EFCBCF /* Comment+CoreDataClass.swift in Sources */,
+				13C2567A214E0F5F00EFCBCF /* Post+CoreDataProperties.swift in Sources */,
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
 				13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */,
 				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
@@ -886,19 +936,25 @@
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
 				139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */,
+				13C25664214C6BFC00EFCBCF /* Setting+CoreDataClass.swift in Sources */,
 				BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */,
 				1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */,
 				13961E2020CAB151004FFF4B /* defines.swift in Sources */,
 				13EED9DB2136EA1D00427E5E /* GCLoginViewController.swift in Sources */,
+				13C25674214DE2AC00EFCBCF /* Comment+CoreDataProperties.swift in Sources */,
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
 				1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,
+				13C2566B214C8BE500EFCBCF /* ImageData+CoreDataClass.swift in Sources */,
 				138FEEDE20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift in Sources */,
 				135EB208214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift in Sources */,
 				139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */,
 				BC1490EC20DA240100373BBF /* GCNavigationViewController.swift in Sources */,
+				13C25679214E0F5F00EFCBCF /* Post+CoreDataClass.swift in Sources */,
 				13D389D620FC8E9F00330CDD /* UserDetailViewController.swift in Sources */,
 				13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */,
+				13C2566C214C8BE500EFCBCF /* ImageData+CoreDataProperties.swift in Sources */,
+				13C2566D214C8BE500EFCBCF /* ProfileImageData+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1089,6 +1145,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		13C25659214C653F00EFCBCF /* GovsConnect.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				13C2565A214C653F00EFCBCF /* GovsConnect.xcdatamodel */,
+			);
+			currentVersion = 13C2565A214C653F00EFCBCF /* GovsConnect.xcdatamodel */;
+			path = GovsConnect.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 132F815F20C8C77C005D3905 /* Project object */;
 }

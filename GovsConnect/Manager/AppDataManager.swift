@@ -17,7 +17,11 @@ class AppDataManager{
     var discoverMenu = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
     var users = Dictionary<String, UserDataContainer>()
     var newPostDraft: (String, String, Array<UIImage>)? = nil
-    var currentPersonID = ""
+    var currentPersonID = ""{
+        didSet{
+            AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "currentPersonID"), newVal: self.currentPersonID, forKey: "value")
+        }
+    }
     var allStudent = Array<String>()
     var allFaculty = Array<String>()
     var allCourse = Array<String>()
@@ -25,7 +29,41 @@ class AppDataManager{
     var imageData = Dictionary<String, Data>()
     var profileImageData = Dictionary<String, Data>()
     var remoteNotificationData = Array<RemoteNotificationContainer>()
+    
+    func isFirstTimeRunningApplication() -> Bool{
+        let r = AppPersistenceManager.shared.fetchObject(with: .setting)
+        if r.count == 0{
+            return true
+        }
+        return false
+    }
+    
+    func setUpDataForFirstTimeRun(){
+        AppPersistenceManager.shared.saveObject(to: .setting, with: ["currentPersonID", ""])
+    }
+    
     public func setupData(){
+        if self.isFirstTimeRunningApplication(){
+            self.setUpDataForFirstTimeRun()
+        }
+        let settingData = AppPersistenceManager.shared.fetchObject(with: .setting) as! Array<Setting>
+        for d in settingData{
+            switch d.key!{
+            case "currentPersonID":
+                AppDataManager.shared.currentPersonID = d.value!
+            default:
+                fatalError()
+            }
+        }
+        let imageData = AppPersistenceManager.shared.fetchObject(with: .imageData) as! Array<ImageData>
+        for d in imageData{
+            AppDataManager.shared.imageData[d.key!] = Data.init(referencing: d.data!)
+        }
+        let profileImageData = AppPersistenceManager.shared.fetchObject(with: .profileImageData) as! Array<ProfileImageData>
+        for d in profileImageData{
+            AppDataManager.shared.profileImageData[d.key!] = Data.init(referencing: d.data!)
+        }
+        
         let ss = ["testing_profile_picture_1.png", "testing_profile_picture_2.png", "testing_profile_picture_3.png", "testing_profile_picture_jzm.png", "testing_profile_picture_dt.png", "testing_profile_picture_4.png"]
         let uids = ["jefwa001",
             "kevji001",
@@ -35,6 +73,9 @@ class AppDataManager{
             "ranpe001",
         ]
         for i in stride(from: 0, to: ss.count, by: 1){
+            if AppDataManager.shared.profileImageData[uids[i]] != nil{
+                continue
+            }
             let data = UIImagePNGRepresentation(UIImage.init(named: ss[i])!)!
             AppDataManager.shared.profileImageData[uids[i]] = data
         }
@@ -56,8 +97,6 @@ class AppDataManager{
         self.allCourse.append("advan001")
         self.allClub.append("unice001")
         
-        self.loadLocalPostData()
-        
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_7.jpg", "Govs Trade"))
@@ -70,41 +109,30 @@ class AppDataManager{
     }
     
     func loadLocalPostData(){
-//        self.postsData.append(PostsDataContainer(self.users["jefwa001"]!, NSDate.init(timeIntervalSinceNow: -10), "Govs Connect App is released today!", LOREM_IPSUM_1, 12, 2, 3, false, false, false))
-//        self.postsData.append(PostsDataContainer(self.users["kevji001"]!, NSDate.init(timeIntervalSinceNow: -100), "Happy New Year Guys!!!", "Here is a video about people's new year resolution. Go Govs!", 15, 10, 0, false, false, false))
-//        self.postsData.append(PostsDataContainer(self.users["haosh001"]!, NSDate.init(timeIntervalSinceNow: -10000), "New Ideas on the app...We need you!", LOREM_IPSUM_2, 33, 2, 0, false, false, false))
-//        self.postsData.append(PostsDataContainer(self.users["zemji001"]!, NSDate.init(timeIntervalSinceNow: -100000), "Gou Li Guo Jia Sheng Si Yi, Qi Yin Huo Fu Bi Qu Zhi", LOREM_IPSUM_3, 44, 21, 0, false, false, false))
-//        self.postsData.append(PostsDataContainer(self.users["dontr001"]!, NSDate.init(timeIntervalSinceNow: -10000000), "Let's all make america great again!", LOREM_IPSUM_1, 45, 0, 0, false, false, false))
-//        self.postsData.append(PostsDataContainer(self.users["ranpe001"]!, NSDate.init(timeIntervalSinceNow: -100000000), "Section 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC", LOREM_IPSUM_2, 66, 23, 0, false, false, false))
-//        self.postsData[0].replies.append(ReplyDataContainer.init(self.users["kevji001"]!, nil, "nice. Android is also avaliable!", 2, false))
-//        self.postsData[0].replies.append(ReplyDataContainer.init(self.users["dontr001"]!, nil, "make goveror great again!!!", 0, false))
-//        self.postsData[0].replies.append(ReplyDataContainer.init(self.users["ranpe001"]!, self.users["kevji001"]!, "can I join the developer crew?", 4, false))
-//        self.postsData[0].postImagesName.append("testing_picture_2.jpg")
-//        self.postsData[0].postImagesName.append("testing_picture_3.jpg")
-//        self.postsData[2].postImagesName.append("testing_picture_1.jpg")
-        
-        
-        
-        
-        //        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526629501 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526644801 - 3600 * 8 + 86400 * 54), "AP Microeconomics exam", "Please make sure to bring at least two pencils to the test room"))
-        //        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526645701 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526661001 - 3600 * 8 + 86400 * 54), "AP MEH exam; AP Latin exam", "Please make sure to bring at least two pencils to the test room"))
-        //        self.discoverWeekendEventData[0].append(EventDataContainer(Date(timeIntervalSince1970: 1526673601 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526679001 - 3600 * 8 + 86400 * 54), "Spring Drama Production in PAC", LOREM_IPSUM_1))
-        //        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526716801 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526720401 - 3600 * 8 + 86400 * 54), "New England Track Championships @ Tabor Academy", LOREM_IPSUM_2))
-        //        self.discoverWeekendEventData[1].append(EventDataContainer(Date(timeIntervalSince1970: 1526760001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526765401 - 3600 * 8 + 86400 * 54), "Spring Drama Production in PAC", LOREM_IPSUM_3))
-        //        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526801401 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526806621 - 3600 * 8 + 86400 * 54), "Continental breakfast", "No detail to display"))
-        //        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526806801 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526817601 - 3600 * 8 + 86400 * 54), "Brunch", "No detail to display"))
-        //        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526832001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526835601 - 3600 * 8 + 86400 * 54), "Formal -Phillips Gathering - Pictures", LOREM_IPSUM_3))
-        //        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526836501 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526858101 - 3600 * 8 + 86400 * 54), "Depart for Boston Harbor Hotel; Arrive back to Govs at 11:15 pm", LOREM_IPSUM_2))
-        //        self.discoverWeekendEventData[2].append(EventDataContainer(Date(timeIntervalSince1970: 1526859001 - 3600 * 8 + 86400 * 54), Date(timeIntervalSince1970: 1526776141 - 3600 * 8 + 86400 * 54), "Check out procedures; Boarders check in to dorms", LOREM_IPSUM_1))
-        
-        
-//        self.discoverMenu[0].append(DiscoverFoodDataContainer("Chicken Fajitas", "testing_food_1.jpg", 0, 0))
-//        self.discoverMenu[0].append(DiscoverFoodDataContainer("Garden Burger Grilled Cheese", "testing_food_2.jpg", 0, 0))
-//        self.discoverMenu[0].append(DiscoverFoodDataContainer("Sticky Rice & Brown Rice", "testing_food_3.jpg", 0, 0))
-//        self.discoverMenu[1].append(DiscoverFoodDataContainer("Chef Carved Roast Beef", "testing_food_4.jpg", 0, 0))
-//        self.discoverMenu[1].append(DiscoverFoodDataContainer("Mashed Potatoes", "testing_food_5.jpeg", 0, 0))
-//        self.discoverMenu[1].append(DiscoverFoodDataContainer("Roasted Carrots", "testing_food_6.jpeg", 0, 0))
-//        self.discoverMenu[1].append(DiscoverFoodDataContainer("Brussel Sprouts", "testing_food_7.jpeg", 0, 0))
+        let allLocalCommentData = AppPersistenceManager.shared.fetchObject(with: .comment) as! Array<Comment>
+        var commentFinder = Dictionary<String, ReplyDataContainer>()
+        for d in allLocalCommentData{
+            let c = ReplyDataContainer(AppDataManager.shared.users[d.sender_uid!]!, AppDataManager.shared.users[d.receiver_uid!], d.body!, Int(d.like_count), d.is_liked)
+            c._uid = Int(d.id!)!
+            commentFinder[d.id!] = c
+        }
+        let allLocalPostData = AppPersistenceManager.shared.fetchObject(with: .post) as! Array<Post>
+        for d in allLocalPostData{
+            let c = PostsDataContainer(AppDataManager.shared.users[d.author_uid!]!, d.post_time!, d.title!, d.content!, Int(d.post_view_count), Int(d.post_like_count), Int(d.post_comment_count), d.is_viewed, d.is_liked, false)
+            for commentId in d.comment_by_id!.split(separator: "/"){
+                let newComment = commentFinder["\(commentId)"]
+                guard newComment != nil else{
+                    continue
+                }
+                c.replies.append(newComment!)
+            }
+            c._uid = Int(d.id!)!
+            for image_url in d.post_image_url!.split(separator: "/"){
+                c.postImagesName.append("\(image_url)")
+            }
+            AppDataManager.shared.insertPostByUid(c)
+        }
+        NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRefreashCellNotificationName))
     }
     
     func loadPostDataFromServerAndUpdateLocalData(){
@@ -187,6 +215,10 @@ class UserDataContainer{
         self.department = department
         self.description = description
         self.information = information
+    }
+    
+    func saveData(){
+        
     }
 }
 

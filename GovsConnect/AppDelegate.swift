@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         AppIOManager.shared.establishConnection()
-        self.registerForPushNotifications()
         AppDataManager.shared.setupData()
+        self.registerForPushNotifications()
         //设置window的跟控制器为标签栏控制器
         self.window = UIWindow.init(frame:UIScreen.main.bounds)
         let tabbarVc = GCTabBarViewController()
@@ -125,6 +125,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // Saves changes in the application's managed object context before the application terminates.
+        AppPersistenceManager.shared.saveContext()
     }
 }
 

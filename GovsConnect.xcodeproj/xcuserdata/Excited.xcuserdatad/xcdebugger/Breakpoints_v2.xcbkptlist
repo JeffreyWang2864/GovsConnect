@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GovsConnect/Manager/AppDataManager.swift"
-            timestampString = "558643452.1122561"
+            timestampString = "558772317.433484"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "setupData()"
             landmarkType = "7">
          </BreakpointContent>

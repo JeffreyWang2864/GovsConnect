@@ -40,7 +40,7 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
             let v = UIImageView()
             v.tag = index
             index += 1
-            v.image = UIImage(data: AppDataManager.shared.imageData[name]!)!
+            v.image = UIImage(data: AppDataManager.shared.imageData[name] ?? Data())
             v.contentMode = .scaleAspectFit
             v.isUserInteractionEnabled = true
             let gr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnImage(_:)))

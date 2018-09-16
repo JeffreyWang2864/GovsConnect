@@ -23,28 +23,31 @@ class AppIOManager{
     }
     static public let shared = AppIOManager()
     static public let loginActionNotificationName = Notification.Name.init("loginActionNotificationName")
-    var connectionStatus: Reachability.Connection!
+    var connectionStatus: Reachability.Connection = .none
     var deviceToken: String? =  nil
     var isFirstTimeConnnected = true
     func establishConnection(){
         let reachability = Reachability()!
         reachability.whenReachable = { response in
-            NSLog("\(response.connection)")
             AppIOManager.shared.connectionStatus = response.connection
             if self.isFirstTimeConnnected{
                 self.isFirstTimeConnnected = false
-                if self.isLogedIn{
-                    AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
-                }
+                
+            }
+            if self.isLogedIn{
+                AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
                 AppDataManager.shared.loadDiscoverDataFromServerAndUpdateLocalData()
             }
         }
         reachability.whenUnreachable = { _ in
-            AppIOManager.shared.connectionStatus = .none
-            NSLog("unreachable")
-            if AppIOManager.shared.connectionStatus == .none{
-                makeMessageViaAlert(title: "You are in offline mode", message: "Your device is not connecting to the Internet. Loading local data")
+             makeMessageViaAlert(title: "You are in offline mode", message: "Your device is not connecting to the Internet. Loading local data")
+            if AppIOManager.shared.connectionStatus == .wifi || AppIOManager.shared.connectionStatus == .cellular{
+                AppIOManager.shared.connectionStatus = .none
+                //switch from wifi/cellular to none
+                return
             }
+            // app inited with no connection to internet
+            AppDataManager.shared.loadLocalPostData()
         }
         do {
             try reachability.startNotifier()
@@ -54,10 +57,14 @@ class AppIOManager{
     }
     
     func loadImage(with id: String, _ completionHandler: @escaping (Data) -> ()){
+        guard AppDataManager.shared.imageData[id] == nil else{
+            return
+        }
         let urlStr = APP_SERVER_URL_STR + "/assets/image/" + id
         request(urlStr).responseData { (response) in
             switch response.result{
             case .success(let data):
+                AppPersistenceManager.shared.saveObject(to: .imageData, with: [id, data])
                 completionHandler(data)
             case .failure(let error):
                 makeMessageViaAlert(title: "download image failed", message: error.localizedDescription)
@@ -132,6 +139,24 @@ class AppIOManager{
                     }
                     container._uid = id
                     index += 1
+//                    let ifheif = AppPersistenceManager.shared.fetchObject(with: .post) as! Array<Post>
+//                    for iefhje in ifheif{
+//                        NSLog("\(iefhje.id!)")
+//                    }
+                    let apsres = AppPersistenceManager.shared.filterObject(of: .post, with: NSPredicate(format: "id == %@", "\(id)")) as! Array<Post>
+                    assert(apsres.count <= 2)
+                    if apsres.count == 1{
+                        let obj = apsres[0]
+                        obj.is_liked = isLiked
+                        obj.is_viewed = isViewed
+                        obj.post_comment_count = Int16(reply_count)
+                        obj.post_like_count = Int16(like_count)
+                        obj.post_view_count = Int16(view_count)
+                        try!AppPersistenceManager.shared.context.save()
+                    }else{
+                        AppPersistenceManager.shared.saveObject(to: .post, with: [data["author_uid"].stringValue, true, title, content, post_time, data["post_image_url"].stringValue, isLiked, Int16(like_count), isViewed, Int16(view_count), Int16(reply_count), id, ""])
+                    }
+                    NSLog("saved one to post, \(id)")
                     AppDataManager.shared.insertPostByUid(container)
                 }
                 NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRefreashCellNotificationName))
@@ -233,6 +258,7 @@ class AppIOManager{
     
     private func __loadReplyData(_ jsonDict: JSON, _ local_post_id: Int){
         var index = 0
+        var comments_by_id = ""
         AppDataManager.shared.postsData[local_post_id].replies = []
         while jsonDict["\(index)"] != JSON.null{
             let data = jsonDict["\(index)"]
@@ -244,9 +270,21 @@ class AppIOManager{
             let id = data["id"].int!
             let container = ReplyDataContainer(AppDataManager.shared.users[sender_uid]!, AppDataManager.shared.users[receiver_uid], body, like_count, is_liked)
             container._uid = id
+            let commentPreses = AppPersistenceManager.shared.filterObject(of: .comment, with: NSPredicate(format: "id == %@", "\(id)"))!
+            assert(commentPreses.count <= 1)
+            if commentPreses.count == 1{
+                AppPersistenceManager.shared.deleteObject(of: .comment, with: commentPreses[0])
+            }
+            AppPersistenceManager.shared.saveObject(to: .comment, with: [String(id), sender_uid, receiver_uid, body, like_count, is_liked])
+            comments_by_id += "\(id)/"
             AppDataManager.shared.postsData[local_post_id].replies.append(container)
             index += 1
         }
+        let ppores = AppPersistenceManager.shared.filterObject(of: .post, with: NSPredicate(format: "id == %@", "\(AppDataManager.shared.postsData[local_post_id]._uid)")) as! Array<Post>
+        assert(ppores.count == 1)
+        let postPersistanceObject = ppores[0]
+        postPersistanceObject.comment_by_id = comments_by_id
+        try! AppPersistenceManager.shared.context.save()
     }
     
     func view(at post_id: Int){
@@ -359,6 +397,9 @@ class AppIOManager{
                     let id = curData["id"].stringValue
                     AppIOManager.shared.loadProfileImage(with: id, { (data) in
                         AppDataManager.shared.profileImageData[uid] = data
+                        if !AppPersistenceManager.shared.updateObject(of: .profileImageData, with: NSPredicate(format: "key == %@", uid), newVal: data, forKey: "data"){
+                            AppPersistenceManager.shared.saveObject(to: .profileImageData, with: [uid, data])
+                        }
                     })
                     AppDataManager.shared.users[uid]!.profilePictureName = index
                     epoch += 1
