@@ -89,10 +89,13 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource{
                     UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["EVENT_\(self.data!.title)_ALERT_ID"])
                     self.alertRequest = nil
                 }
+                let eventInCoreData = AppPersistenceManager.shared.filterObject(of: .event, with: NSPredicate(format: "title == %@", self.data!.title))![0] as! Event
                 if section == 0{
                     self.data!.notificationState = 0
+                    eventInCoreData.notificationState = 0
                 }else{
                     self.data!.notificationState = item + 1
+                    eventInCoreData.notificationState = Int16(item + 1)
                     let content = UNMutableNotificationContent()
                     content.body = "event: \(self.data!.title)"
                     content.badge = 1
@@ -134,6 +137,7 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource{
                     self.alertRequest = UNNotificationRequest(identifier: "EVENT_\(self.data!.title)_ALERT_ID", content: content, trigger: trigger)
                     UNUserNotificationCenter.current().add(self.alertRequest!, withCompletionHandler: nil)
                 }
+                try! AppPersistenceManager.shared.context.save()
                 return true
             }
             self.navigationController!.pushViewController(vc, animated: true)

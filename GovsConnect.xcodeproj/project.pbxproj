@@ -55,6 +55,8 @@
 		135EB208214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EB206214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift */; };
 		135EB209214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135EB207214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib */; };
 		13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */; };
+		1377AB6B214EDA510015172C /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB69214EDA510015172C /* Event+CoreDataClass.swift */; };
+		1377AB6C214EDA510015172C /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB6A214EDA510015172C /* Event+CoreDataProperties.swift */; };
 		137D562F20E7BA080088AB30 /* DiscoverBasicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */; };
 		137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */; };
 		137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 137EEBA020E7781100BA2575 /* testing_picture_5.jpg */; };
@@ -188,6 +190,8 @@
 		135EB206214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		135EB207214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageNotificationTableViewCell.xib; sourceTree = "<group>"; };
 		13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_7.jpg; sourceTree = "<group>"; };
+		1377AB69214EDA510015172C /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1377AB6A214EDA510015172C /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBasicCellView.swift; sourceTree = "<group>"; };
 		137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCWaterfallScrollView.swift; sourceTree = "<group>"; };
 		137EEBA020E7781100BA2575 /* testing_picture_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_5.jpg; sourceTree = "<group>"; };
@@ -458,6 +462,8 @@
 		13C25660214C6BED00EFCBCF /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				1377AB69214EDA510015172C /* Event+CoreDataClass.swift */,
+				1377AB6A214EDA510015172C /* Event+CoreDataProperties.swift */,
 				13C25677214E0F5F00EFCBCF /* Post+CoreDataClass.swift */,
 				13C25678214E0F5F00EFCBCF /* Post+CoreDataProperties.swift */,
 				13C2566F214DE2AC00EFCBCF /* Comment+CoreDataClass.swift */,
@@ -723,6 +729,9 @@
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -930,6 +939,7 @@
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
 				132F81A620C91FB9005D3905 /* PostsTableViewCell.swift in Sources */,
 				13CF4ECB20F7C27E00DEE71A /* NotificationViewController.swift in Sources */,
+				1377AB6C214EDA510015172C /* Event+CoreDataProperties.swift in Sources */,
 				130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */,
 				BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */,
 				13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */,
@@ -950,6 +960,7 @@
 				135EB208214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift in Sources */,
 				139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */,
 				BC1490EC20DA240100373BBF /* GCNavigationViewController.swift in Sources */,
+				1377AB6B214EDA510015172C /* Event+CoreDataClass.swift in Sources */,
 				13C25679214E0F5F00EFCBCF /* Post+CoreDataClass.swift in Sources */,
 				13D389D620FC8E9F00330CDD /* UserDetailViewController.swift in Sources */,
 				13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */,

@@ -65,6 +65,12 @@ class DiscoverViewController: UIViewController {
             }
         case 3:
             //rate your food
+            guard AppIOManager.shared.connectionStatus != .none else{
+                let alert = UIAlertController(title: "Sorry, you cannot rate foods on offline mode:(", message: "Your device is not connecting to the Internet.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.navigationController!.present(alert, animated: true, completion: nil)
+                return
+            }
             let vc = RateYourFoodViewController.init(nibName: "RateYourFoodViewController", bundle: Bundle.main)
             self.navigationController!.pushViewController(vc, animated: true)
         case 4:

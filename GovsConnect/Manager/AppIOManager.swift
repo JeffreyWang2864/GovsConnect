@@ -316,6 +316,9 @@ class AppIOManager{
             case .success(let json):
                 let jsonDict = JSON(json)
                 var index = 0
+                AppDataManager.shared.discoverWeekendEventData[0] = []
+                AppDataManager.shared.discoverWeekendEventData[1] = []
+                AppDataManager.shared.discoverWeekendEventData[2] = []
                 while(jsonDict["\(index)"] != JSON.null){
                     let data = jsonDict["\(index)"]
                     let start_time_interval = data["start_time"].intValue + (3600 * 4)
@@ -325,6 +328,7 @@ class AppIOManager{
                     let event = EventDataContainer(Date(timeIntervalSince1970: TimeInterval(start_time_interval)), Date(timeIntervalSince1970: TimeInterval(end_time_interval)), title, detail)
                     let whichDay = whichDayOfWeekend(event.startTime)
                     AppDataManager.shared.discoverWeekendEventData[whichDay].append(event)
+                    AppPersistenceManager.shared.saveObject(to: .event, with: [event.startTime, event.endTime, event.title, event.detail, event.notificationState])
                     index += 1
                 }
                 completionHandler(true)
@@ -341,6 +345,8 @@ class AppIOManager{
             case .success(let json):
                 var index = 0
                 let jsonDict = JSON(json)
+                AppDataManager.shared.discoverMenu[0] = []
+                AppDataManager.shared.discoverMenu[1] = []
                 while jsonDict["\(index)"] != JSON.null{
                     let data = jsonDict["\(index)"]
                     let foodName = data["name"].stringValue

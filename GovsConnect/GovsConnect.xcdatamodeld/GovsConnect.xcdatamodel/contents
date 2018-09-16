@@ -8,6 +8,13 @@
         <attribute name="receiver_uid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sender_uid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Event" representedClassName=".Event" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="notificationState" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="ImageData" representedClassName=".ImageData" syncable="YES">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,10 +43,11 @@
         <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Setting" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="ImageData" positionX="-54" positionY="9" width="128" height="75"/>
-        <element name="ProfileImageData" positionX="-36" positionY="27" width="128" height="75"/>
-        <element name="Post" positionX="-18" positionY="45" width="128" height="240"/>
         <element name="Comment" positionX="0" positionY="144" width="128" height="135"/>
+        <element name="Event" positionX="-27" positionY="108" width="128" height="120"/>
+        <element name="ImageData" positionX="-54" positionY="9" width="128" height="75"/>
+        <element name="Post" positionX="-18" positionY="45" width="128" height="240"/>
+        <element name="ProfileImageData" positionX="-36" positionY="27" width="128" height="75"/>
+        <element name="Setting" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

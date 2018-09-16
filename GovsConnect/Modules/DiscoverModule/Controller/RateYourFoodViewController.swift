@@ -20,6 +20,7 @@ class RateYourFoodViewController: UIViewController{
     var currentIndexPath: IndexPath = IndexPath(row: 0, section: 0)
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "system_reload"), style: .plain, target: self, action: #selector(self.didClickOnReload))
         self.titleLabel = UILabel()
         self.titleLabel.textAlignment = .center
         self.titleLabel.text = "lunch/brunch"
@@ -68,6 +69,17 @@ class RateYourFoodViewController: UIViewController{
     @objc private func didClickOnTitle(_ sender: UITapGestureRecognizer) {
         self.menuView.showMenu()
         self.arrowImageViewRotatePi()
+    }
+    
+    @objc func didClickOnReload(){
+        guard AppIOManager.shared.connectionStatus != .none else{
+            makeMessageViaAlert(title: "Cannot reload on offline mode", message: "Your device is not connecting to the Internet.")
+            return
+        }
+        AppIOManager.shared.loadFoodData { (isSucceed) in
+            self.collectionView.reloadData()
+            self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        }
     }
     
     func arrowImageViewRotatePi(in interval: TimeInterval = 0.25){

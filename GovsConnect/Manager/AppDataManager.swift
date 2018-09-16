@@ -106,6 +106,14 @@ class AppDataManager{
         for _ in (0..<3){
             self.discoverWeekendEventData.append(Array<EventDataContainer>())
         }
+        
+        let eventsData = AppPersistenceManager.shared.fetchObject(with: .event) as! Array<Event>
+        for d in eventsData{
+            let event = EventDataContainer(d.startTime! as Date, d.endTime! as Date, d.title!, d.detail!)
+            event.notificationState = Int(d.notificationState)
+            let whichDay = whichDayOfWeekend(event.startTime)
+            AppDataManager.shared.discoverWeekendEventData[whichDay].append(event)
+        }
     }
     
     func loadLocalPostData(){
@@ -146,7 +154,7 @@ class AppDataManager{
             AppDataManager.shared.discoverWeekendEventData[1].count +
             AppDataManager.shared.discoverWeekendEventData[2].count == 0{
             AppIOManager.shared.loadWeekendEventData { (isSucceed) in
-                //code here
+                
             }
         }
         if AppDataManager.shared.discoverMenu[0].count + AppDataManager.shared.discoverMenu[1].count == 0{

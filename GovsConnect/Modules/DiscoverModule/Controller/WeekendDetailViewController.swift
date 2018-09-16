@@ -19,7 +19,8 @@ class WeekendDetailViewController: UIViewController {
     var events = Array<UIView>()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "6/30/2018 - 7/1/2018"
+        self.navigationItem.title = "\(dayStringFormat(AppDataManager.shared.discoverWeekendEventData[0][0].startTime)) - \(dayStringFormat(AppDataManager.shared.discoverWeekendEventData[2][0].startTime))"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "system_reload"), style: .plain, target: self, action: #selector(self.didClickOnReload))
         self.segmentControl.setSegmentItems(["Friday", "Saturday", "Sunday"])
         self.segmentControl.sliderBackgroundColor = APP_THEME_COLOR
         self.segmentControl.delegate = self
@@ -38,6 +39,11 @@ class WeekendDetailViewController: UIViewController {
         self.view.addGestureRecognizer(rsgr)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.removeEventFromView(animated: animated)
+    }
+    
     @objc func didSwipeLeft(_ sender: UISwipeGestureRecognizer){
         if self.segmentControl.selectedSegmentIndex + 1 <= 2{
             self.segmentControl.move(to: self.segmentControl.selectedSegmentIndex + 1)
@@ -48,6 +54,21 @@ class WeekendDetailViewController: UIViewController {
     @objc func didSwipeRight(_ sender: UISwipeGestureRecognizer){
         if self.segmentControl.selectedSegmentIndex - 1 >= 0{
             self.segmentControl.move(to: self.segmentControl.selectedSegmentIndex - 1)
+        }
+        self.refreashEvents(animated: true)
+    }
+    
+    @objc func didClickOnReload(){
+        guard AppIOManager.shared.connectionStatus != .none else{
+            makeMessageViaAlert(title: "Cannot reload on offline mode", message: "Your device is not connecting to the Internet.")
+            return
+        }
+        let allEvents = AppPersistenceManager.shared.fetchObject(with: .event)
+        for event in allEvents{
+            AppPersistenceManager.shared.deleteObject(of: .event, with: event)
+        }
+        AppIOManager.shared.loadWeekendEventData { (isSucceed) in
+            //code
         }
         self.refreashEvents(animated: true)
     }

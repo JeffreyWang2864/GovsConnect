@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        self.handleLaunchOption(launchOptions)
         AppIOManager.shared.establishConnection()
         AppDataManager.shared.setupData()
         self.registerForPushNotifications()
@@ -39,22 +40,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 welcomeVC.view.removeFromSuperview()
             }
         }
-
-        
-        
-        
-//        let remoteNotifications = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification]
-//        if remoteNotifications != nil{
-//           let dict = remoteNotifications as! Dictionary<String, Any>
-//            let aps = dict["aps"] as! Dictionary<String, Any>
-//            let alertMessage = aps["alert"] as! String
-//            let newRemoteNotificationElement = RemoteNotificationContainer(alertMessage, 0)
-//            AppDataManager.shared.remoteNotificationData.insert(newRemoteNotificationElement, at: 0)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                NotificationCenter.default.post(Notification.init(name: NotificationViewController.didReceivedNotificationName))
-//            }
-//        }
         return true
+    }
+    
+    func handleLaunchOption(_ launchOptions: [UIApplicationLaunchOptionsKey: Any]?){
+        let remoteNotifications = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification]
+        if remoteNotifications != nil{
+            let dict = remoteNotifications as! Dictionary<String, Any>
+            let aps = dict["aps"] as! Dictionary<String, Any>
+            let alertMessage = aps["alert"] as! String
+            switch alertMessage{
+            case "Weekend events for the new week is available. Check it out!":
+                let allEvents = AppPersistenceManager.shared.fetchObject(with: .event)
+                for event in allEvents{
+                    AppPersistenceManager.shared.deleteObject(of: .event, with: event)
+                }
+            default:
+                break
+            }
+        }
     }
     
     func registerForPushNotifications() {
@@ -94,20 +98,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         makeMessageViaAlert(title: "Failed to register remote notification", message: error.localizedDescription)
     }
-    
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        print(userInfo)
-//        let apsDict = userInfo["aps"] as! Dictionary<String, AnyObject>
-//        let alertMessage = apsDict["alert"] as! String
-//        let newRemoteNotificationElement = RemoteNotificationContainer(alertMessage, 0)
-//        AppDataManager.shared.remoteNotificationData.insert(newRemoteNotificationElement, at: 0)
-//        NotificationCenter.default.post(Notification.init(name: NotificationViewController.didReceivedNotificationName))
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        NSLog("\(userInfo)")
+        let apsDict = userInfo["aps"] as! Dictionary<String, AnyObject>
+        let alertMessage = apsDict["alert"] as! String
+        if alertMessage == "Weekend events for the new week is available. Check it out!"{
+            let allEvents = AppPersistenceManager.shared.fetchObject(with: .event)
+            for event in allEvents{
+                AppPersistenceManager.shared.deleteObject(of: .event, with: event)
+            }
+            if application.applicationState != .inactive{
+                AppIOManager.shared.loadWeekendEventData { (isSucceed) in
+                    //code
+                }
+            }
+            completionHandler(.newData)
+            return
+        }
+        completionHandler(.noData)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -121,6 +135,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

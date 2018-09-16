@@ -72,6 +72,13 @@ func timeStringFormat(_ date: Date,  withWeek: Bool) -> String{
     return formattedString
 }
 
+func dayStringFormat(_ date: Date) -> String{
+    let formatter = DateFormatter()
+    formatter.dateFormat = "M/d/yyyy"
+    let formattedString = formatter.string(from: date as Date)
+    return formattedString
+}
+
 func numberOfVisibleLines(_ textView: UITextView) -> Int {
     let textSize = CGSize(width: textView.frame.size.width, height: CGFloat(Float.infinity))
     let rHeight = lroundf(Float(textView.sizeThatFits(textSize).height))

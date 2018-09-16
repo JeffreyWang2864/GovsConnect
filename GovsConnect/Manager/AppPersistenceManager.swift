@@ -16,6 +16,7 @@ class AppPersistenceManager{
         case profileImageData = "ProfileImageData"
         case post = "Post"
         case comment = "Comment"
+        case event = "Event"
     }
     public static let shared = AppPersistenceManager()
     var context: NSManagedObjectContext
@@ -80,6 +81,13 @@ class AppPersistenceManager{
             manager.setValue("\(items[3])", forKey: "body")
             manager.setValue(Int16(items[4] as! Int), forKey: "like_count")
             manager.setValue(items[5] as! Bool, forKey: "is_liked")
+        case .event:
+            assert(items.count == 5)
+            manager.setValue(items[0] as! NSDate, forKey: "startTime")
+            manager.setValue(items[1] as! NSDate, forKey: "endTime")
+            manager.setValue("\(items[2])", forKey: "title")
+            manager.setValue("\(items[3])", forKey: "detail")
+            manager.setValue(Int16(items[4] as! Int), forKey: "notificationState")
         }
         try! self.context.save()
     }
@@ -100,6 +108,9 @@ class AppPersistenceManager{
             return items
         case .comment:
             let items = try! self.context.fetch(Comment.fetchRequest())
+            return items
+        case .event:
+            let items = try! self.context.fetch(Event.fetchRequest())
             return items
         }
     }
@@ -128,6 +139,11 @@ class AppPersistenceManager{
             return res
         case .comment:
             let fetchRequest: NSFetchRequest<Comment> = Comment.fetchRequest()
+            fetchRequest.predicate = predicate
+            let res = try? self.context.fetch(fetchRequest)
+            return res
+        case .event:
+            let fetchRequest: NSFetchRequest<Event> = Event.fetchRequest()
             fetchRequest.predicate = predicate
             let res = try? self.context.fetch(fetchRequest)
             return res
@@ -178,7 +194,9 @@ class AppPersistenceManager{
         case .post:
             fatalError("update not supported for post")
         case .comment:
-            fatalError("update not supported for post")
+            fatalError("update not supported for comment")
+        case .event:
+            fatalError("update not supported for event")
         }
     }
     
@@ -198,6 +216,9 @@ class AppPersistenceManager{
             try! self.context.save()
         case .comment:
             self.context.delete(item as! Comment)
+            try! self.context.save()
+        case .event:
+            self.context.delete(item as! Event)
             try! self.context.save()
         }
     }
