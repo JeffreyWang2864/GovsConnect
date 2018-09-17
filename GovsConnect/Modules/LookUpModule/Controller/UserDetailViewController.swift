@@ -40,6 +40,12 @@ class UserDetailViewController: UIViewController {
         super.viewDidLoad()
         self.tableView.backgroundColor = APP_BACKGROUND_ULTRA_GREY
         self.tableView.separatorStyle = .none
+        if PHONE_TYPE == .iphone5{
+            self.backgroundView.constraints[0].constant = 150
+            self.backgroundView.height = 150
+            self.view.constraints[4].constant = 95
+            self.userTitleLabel.font = UIFont.systemFont(ofSize: 19, weight: .bold)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

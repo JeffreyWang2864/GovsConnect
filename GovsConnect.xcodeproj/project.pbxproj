@@ -61,6 +61,7 @@
 		1377AB70214F4AAA0015172C /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1377AB6E214F4AAA0015172C /* SettingViewController.xib */; };
 		1377AB73214F4CE20015172C /* GCButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB71214F4CE20015172C /* GCButtonTableViewCell.swift */; };
 		1377AB74214F4CE20015172C /* GCButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1377AB72214F4CE20015172C /* GCButtonTableViewCell.xib */; };
+		1377AB76214F7BB80015172C /* GCPhoneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB75214F7BB80015172C /* GCPhoneType.swift */; };
 		137D562F20E7BA080088AB30 /* DiscoverBasicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */; };
 		137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */; };
 		137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 137EEBA020E7781100BA2575 /* testing_picture_5.jpg */; };
@@ -200,6 +201,7 @@
 		1377AB6E214F4AAA0015172C /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		1377AB71214F4CE20015172C /* GCButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCButtonTableViewCell.swift; sourceTree = "<group>"; };
 		1377AB72214F4CE20015172C /* GCButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCButtonTableViewCell.xib; sourceTree = "<group>"; };
+		1377AB75214F7BB80015172C /* GCPhoneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCPhoneType.swift; sourceTree = "<group>"; };
 		137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBasicCellView.swift; sourceTree = "<group>"; };
 		137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCWaterfallScrollView.swift; sourceTree = "<group>"; };
 		137EEBA020E7781100BA2575 /* testing_picture_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_5.jpg; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 				13EED9DA2136EA1D00427E5E /* GCLoginViewController.xib */,
 				1377AB71214F4CE20015172C /* GCButtonTableViewCell.swift */,
 				1377AB72214F4CE20015172C /* GCButtonTableViewCell.xib */,
+				1377AB75214F7BB80015172C /* GCPhoneType.swift */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -969,6 +972,7 @@
 				13EED9DB2136EA1D00427E5E /* GCLoginViewController.swift in Sources */,
 				13C25674214DE2AC00EFCBCF /* Comment+CoreDataProperties.swift in Sources */,
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
+				1377AB76214F7BB80015172C /* GCPhoneType.swift in Sources */,
 				1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,
 				13C2566B214C8BE500EFCBCF /* ImageData+CoreDataClass.swift in Sources */,

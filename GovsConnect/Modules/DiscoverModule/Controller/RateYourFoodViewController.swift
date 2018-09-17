@@ -55,7 +55,19 @@ class RateYourFoodViewController: UIViewController{
         self.likeView.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         self.likeView.textAlignment = .center
         self.likeView.textColor = UIColor.white
-        self.dislikeView = UILabel(frame: CGRect(x: 0, y: self.view.frame.size.height - 35, width: screenWidth, height: 40))
+        let dislikeViewY: CGFloat = {
+            switch PHONE_TYPE{
+            case .iphone5:
+                return self.view.frame.size.height - 200
+            case .iphone6:
+                return self.view.frame.size.height - 103
+            case .iphone6plus:
+                return self.view.frame.size.height - 35
+            case .iphonex:
+                return self.view.frame.size.height - 15
+            }
+        }()
+        self.dislikeView = UILabel(frame: CGRect(x: 0, y: dislikeViewY, width: screenWidth, height: 40))
         self.dislikeView.backgroundColor = UIColor.red
         self.dislikeView.layer.cornerRadius = 15
         self.dislikeView.alpha = 0.0

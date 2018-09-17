@@ -16,6 +16,10 @@ class UserDetailTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.fakeSeparator.backgroundColor = APP_BACKGROUND_ULTRA_GREY
         // Initialization code
+        if PHONE_TYPE == .iphone5{
+            self.titleTextView.font = UIFont.systemFont(ofSize: 12)
+            self.detailTextView.font = UIFont.systemFont(ofSize: 12)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

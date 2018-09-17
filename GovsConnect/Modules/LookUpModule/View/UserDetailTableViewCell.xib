@@ -20,16 +20,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Student" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoJ-6c-PHd">
-                        <rect key="frame" x="6" y="4" width="120" height="33"/>
+                        <rect key="frame" x="6" y="4" width="100" height="33"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="GZf-hK-606"/>
+                            <constraint firstAttribute="width" constant="100" id="GZf-hK-606"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Lorem ipsum" translatesAutoresizingMaskIntoConstraints="NO" id="gTp-83-fqb">
-                        <rect key="frame" x="134" y="4" width="176" height="33"/>
+                        <rect key="frame" x="114" y="4" width="196" height="33"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

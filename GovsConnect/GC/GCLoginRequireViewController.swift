@@ -14,8 +14,17 @@ class GCLoginRequireViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let c = self.view.constraints[0]
+        if PHONE_TYPE == .iphone5{
+            c.constant = 40
+            self.imageView.constraints[0].constant = 92
+            self.imageView.constraints[1].constant = 92
+            self.imageView.layer.cornerRadius = 92 / 2
+        }
         self.view.backgroundColor = APP_BACKGROUND_GREY
-        self.imageView.layer.cornerRadius = self.imageView.frame.width / 2
+        if PHONE_TYPE != .iphone5{
+            self.imageView.layer.cornerRadius = self.imageView.frame.width / 2
+        }
         self.imageView.clipsToBounds = true
         self.imageView.layer.borderColor = APP_THEME_COLOR.cgColor
         self.imageView.layer.borderWidth = 2

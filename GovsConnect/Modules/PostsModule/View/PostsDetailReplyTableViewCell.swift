@@ -20,6 +20,9 @@ class PostsDetailReplyTableViewCell: UITableViewCell {
     var authorBlock: PostsDetailTableViewCellAuthorBlock?
     override func awakeFromNib() {
         super.awakeFromNib()
+        if PHONE_TYPE == .iphone5{
+            self.replyHeading.font = UIFont.systemFont(ofSize: 12)
+        }
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_like.png"), for: .normal)
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_liked.png"), for: .selected)
         // Initialization code

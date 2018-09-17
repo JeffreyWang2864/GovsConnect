@@ -22,3 +22,19 @@ let APP_BACKGROUND_ULTRA_GREY = UIColor(red: 0.976, green: 0.976, blue: 0.976, a
 let APP_SERVER_URL_STR = "http://govs.app:8000"
 
 let PREDICATE_NAME_CONTAIN = "name contains[c] %@"
+
+let PHONE_TYPE: GCPhoneType = {
+    assert(UIDevice().userInterfaceIdiom == .phone)
+    switch UIScreen.main.nativeBounds.height {
+    case 1136:
+        return .iphone5
+    case 1334:
+        return .iphone6
+    case 1920, 2208:
+        return .iphone6plus
+    case 2436:
+        return .iphonex
+    default:
+        fatalError()
+    }
+}()

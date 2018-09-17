@@ -79,7 +79,45 @@ class DiscoverViewController: UIViewController {
             vc.view.frame = self.view.bounds
             vc.view.backgroundColor = APP_BACKGROUND_ULTRA_GREY
             vc.navigationItem.title = "More..."
-            let cardBackgroundView = UIView(frame: CGRect(x: 25, y: 25, width: screenWidth - 50, height: vc.view.frame.size.height - 95))
+            
+            let cardBackgroundWidthOffset: CGFloat = {
+                switch PHONE_TYPE{
+                case .iphone5:
+                    return 60
+                case .iphone6:
+                    return 60
+                case .iphone6plus:
+                    return 50
+                case .iphonex:
+                    return 50
+                }
+            }()
+            let cardBackgroundHeightOffset: CGFloat = {
+                switch PHONE_TYPE{
+                case .iphone5:
+                    return 45
+                case .iphone6:
+                    return 95
+                case .iphone6plus:
+                    return 95
+                case .iphonex:
+                    return 95
+                }
+            }()
+            let cardBackgroundFontSize: CGFloat = {
+                switch PHONE_TYPE{
+                case .iphone5:
+                    return 14
+                case .iphone6:
+                    return 16
+                case .iphone6plus:
+                    return 18
+                case .iphonex:
+                    return 18
+                }
+            }()
+            
+            let cardBackgroundView = UIView(frame: CGRect(x: 25, y: 25, width: screenWidth - cardBackgroundWidthOffset, height: vc.view.frame.size.height - cardBackgroundHeightOffset))
             cardBackgroundView.backgroundColor = UIColor.white
             cardBackgroundView.layer.cornerRadius = 20
             let titleLabel = UILabel(frame: CGRect(x: 10, y: 20, width: screenWidth - 50 - 20, height: 60))
@@ -87,8 +125,9 @@ class DiscoverViewController: UIViewController {
             titleLabel.text = "Want to add a new discovery page?"
             titleLabel.textAlignment = .center
             titleLabel.numberOfLines = 0
+            
             let descriptionLabel = UILabel(frame: CGRect(x: 10, y: 90, width: screenWidth - 50 - 20, height: cardBackgroundView.frame.size.height - 90 - 20))
-            descriptionLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+            descriptionLabel.font = UIFont.systemFont(ofSize: cardBackgroundFontSize, weight: .regular)
             descriptionLabel.text = "    The Govs Connect crew always encourages users to publish their own discovery page. We promote pages that bring conveniences and benefits to our community. Please contact us without hesitation once you got an idea. However, publishing something public to the entire school should not be taken lightly. A review of your application between faculty and developers is necessary. Accepted applications are supposed to have a high “market requirement”, which can solve issues from (or bring advantages to) the majorities. More importantly, your application must adhere to the school rules. Once you have your idea ready, you may throw your message to the developer email(dev@govs.app). You may also talk with us in person. We cannot wait to hear your idea!"
             descriptionLabel.numberOfLines = 0
             descriptionLabel.sizeToFit()
