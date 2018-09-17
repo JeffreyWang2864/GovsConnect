@@ -97,7 +97,27 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
         if indexPath.section == 1{
             let alert = UIAlertController(title: "clear local data confirmation", message: "By clicking \"Clear local data\" below, all image and string caches will be erased. This may free some disk space on your device, but those caches may be redownloaded from the server again at the next time you launch this app.", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Clear local data", style: .destructive, handler: { (action) in
-                //code
+                let allPostData = AppPersistenceManager.shared.fetchObject(with: .post)
+                allPostData.map{
+                    AppPersistenceManager.shared.deleteObject(of: .post, with: $0)
+                }
+                let allImageData = AppPersistenceManager.shared.fetchObject(with: .imageData)
+                allImageData.map{
+                    AppPersistenceManager.shared.deleteObject(of: .imageData, with: $0)
+                }
+                let allProfileImageData = AppPersistenceManager.shared.fetchObject(with: .profileImageData)
+                allProfileImageData.map{
+                    AppPersistenceManager.shared.deleteObject(of: .profileImageData, with: $0)
+                }
+                let allCommentData = AppPersistenceManager.shared.fetchObject(with: .comment)
+                allCommentData.map{
+                    AppPersistenceManager.shared.deleteObject(of: .comment, with: $0)
+                }
+                let allEventData = AppPersistenceManager.shared.fetchObject(with: .event)
+                allEventData.map{
+                    AppPersistenceManager.shared.deleteObject(of: .event, with: $0)
+                }
+                makeMessageViaAlert(title: "Clear local data successful", message: "")
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.navigationController!.present(alert, animated: true, completion: nil)

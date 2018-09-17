@@ -150,6 +150,12 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
             let vc = SettingViewController()
             vc.view.frame = self.view.bounds
             self.navigationController!.pushViewController(vc, animated: true)
+        case 2:
+            //about govs connect
+            makeMessageViaAlert(title: "Page not available for alpha version", message: "\"about govs connect\" page is not available for alpha version")
+        case 3:
+            //give us feedback
+            makeMessageViaAlert(title: "Page not available for alpha version", message: "\"give us feedback\" page is not available for alpha version")
         case 4:
             //log out
             let alert = UIAlertController(title: "By clicking \"Log out\" below, you will not be able to view, post, reply, or like any post as \(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.name), and you will not have the access to the \"Look up\" section.", message: nil, preferredStyle: .actionSheet)
