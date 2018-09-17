@@ -44,6 +44,13 @@ class WeekendDetailViewController: UIViewController {
         self.removeEventFromView(animated: animated)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if self.events.count == 0{
+            self.loadEventsToView(animated: animated)
+        }
+    }
+    
     @objc func didSwipeLeft(_ sender: UISwipeGestureRecognizer){
         if self.segmentControl.selectedSegmentIndex + 1 <= 2{
             self.segmentControl.move(to: self.segmentControl.selectedSegmentIndex + 1)

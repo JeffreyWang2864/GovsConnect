@@ -29,7 +29,7 @@ class AppDataManager{
     var imageData = Dictionary<String, Data>()
     var profileImageData = Dictionary<String, Data>()
     var remoteNotificationData = Array<RemoteNotificationContainer>()
-    
+    var currentUserSetting = Dictionary<String, Bool>()
     func isFirstTimeRunningApplication() -> Bool{
         let r = AppPersistenceManager.shared.fetchObject(with: .setting)
         if r.count == 0{
@@ -40,6 +40,10 @@ class AppDataManager{
     
     func setUpDataForFirstTimeRun(){
         AppPersistenceManager.shared.saveObject(to: .setting, with: ["currentPersonID", ""])
+        AppPersistenceManager.shared.saveObject(to: .setting, with: ["someone posts", "false"])
+        AppPersistenceManager.shared.saveObject(to: .setting, with: ["someone replied my comment", "true"])
+        AppPersistenceManager.shared.saveObject(to: .setting, with: ["someone replied my post", "true"])
+        AppPersistenceManager.shared.saveObject(to: .setting, with: ["someone liked my post", "true"])
     }
     
     public func setupData(){
@@ -51,6 +55,14 @@ class AppDataManager{
             switch d.key!{
             case "currentPersonID":
                 AppDataManager.shared.currentPersonID = d.value!
+            case "someone posts":
+                AppDataManager.shared.currentUserSetting["someone posts"] = Bool(d.value!)!
+            case "someone replied my comment":
+                AppDataManager.shared.currentUserSetting["someone replied my comment"] = Bool(d.value!)!
+            case "someone replied my post":
+                AppDataManager.shared.currentUserSetting["someone replied my post"] = Bool(d.value!)!
+            case "someone liked my post":
+                AppDataManager.shared.currentUserSetting["someone liked my post"] = Bool(d.value!)!
             default:
                 fatalError()
             }

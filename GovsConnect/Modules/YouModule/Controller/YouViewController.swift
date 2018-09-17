@@ -145,6 +145,11 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
             let vc = ManagePostsViewController()
             vc.view.frame = self.view.bounds
             self.navigationController!.pushViewController(vc, animated: true)
+        case 1:
+            //setting
+            let vc = SettingViewController()
+            vc.view.frame = self.view.bounds
+            self.navigationController!.pushViewController(vc, animated: true)
         case 4:
             //log out
             let alert = UIAlertController(title: "By clicking \"Log out\" below, you will not be able to view, post, reply, or like any post as \(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.name), and you will not have the access to the \"Look up\" section.", message: nil, preferredStyle: .actionSheet)

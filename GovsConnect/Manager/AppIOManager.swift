@@ -32,11 +32,10 @@ class AppIOManager{
             AppIOManager.shared.connectionStatus = response.connection
             if self.isFirstTimeConnnected{
                 self.isFirstTimeConnnected = false
-                
+                AppDataManager.shared.loadDiscoverDataFromServerAndUpdateLocalData()
             }
             if self.isLogedIn{
                 AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
-                AppDataManager.shared.loadDiscoverDataFromServerAndUpdateLocalData()
             }
         }
         reachability.whenUnreachable = { _ in
@@ -469,9 +468,36 @@ class AppIOManager{
         request(urlStr, method: .post, parameters: postData as [String: AnyObject], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result{
             case .success(let json):
-                NSLog("successfully upload device token")
+                let jsonDict = JSON(json)
+                AppDataManager.shared.currentUserSetting["someone posts"] = jsonDict["someone posts"].boolValue
+                AppDataManager.shared.currentUserSetting["someone replied my comment"] = jsonDict["someone replied my comment"].boolValue
+                AppDataManager.shared.currentUserSetting["someone replied my post"] = jsonDict["someone replied my post"].boolValue
+                AppDataManager.shared.currentUserSetting["someone liked my post"] = jsonDict["someone liked my post"].boolValue
+                assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone posts"), newVal: jsonDict["someone posts"].stringValue, forKey: "value"))
+                assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone replied my comment"), newVal: jsonDict["someone replied my comment"].stringValue, forKey: "value"))
+                assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone replied my post"), newVal: jsonDict["someone replied my post"].stringValue, forKey: "value"))
+                assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone liked my post"), newVal: jsonDict["someone liked my post"].stringValue, forKey: "value"))
             case .failure(let error):
                 makeMessageViaAlert(title: "failed to upload device token to the server", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func userChangeSetting(_ completionHandler: @escaping ReceiveResponseBlock){
+        let urlStr = APP_SERVER_URL_STR + "/assets/user_change_setting/"
+        let postData: Dictionary<String, AnyObject> = [
+            "uid": AppDataManager.shared.currentPersonID as AnyObject,
+            "someone posts": AppDataManager.shared.currentUserSetting["someone posts"] as AnyObject,
+            "someone liked my post": AppDataManager.shared.currentUserSetting["someone liked my post"] as AnyObject,
+            "someone replied my post": AppDataManager.shared.currentUserSetting["someone replied my post"] as AnyObject,
+            "someone replied my comment": AppDataManager.shared.currentUserSetting["someone replied my comment"] as AnyObject
+        ]
+        request(urlStr, method: .post, parameters: postData, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                completionHandler(true)
+            case .failure(let error):
+                makeMessageViaAlert(title: "make change on user setting failed", message: error.localizedDescription)
             }
         }
     }

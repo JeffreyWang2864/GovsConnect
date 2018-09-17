@@ -57,6 +57,10 @@
 		13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */; };
 		1377AB6B214EDA510015172C /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB69214EDA510015172C /* Event+CoreDataClass.swift */; };
 		1377AB6C214EDA510015172C /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB6A214EDA510015172C /* Event+CoreDataProperties.swift */; };
+		1377AB6F214F4AAA0015172C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB6D214F4AAA0015172C /* SettingViewController.swift */; };
+		1377AB70214F4AAA0015172C /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1377AB6E214F4AAA0015172C /* SettingViewController.xib */; };
+		1377AB73214F4CE20015172C /* GCButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB71214F4CE20015172C /* GCButtonTableViewCell.swift */; };
+		1377AB74214F4CE20015172C /* GCButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1377AB72214F4CE20015172C /* GCButtonTableViewCell.xib */; };
 		137D562F20E7BA080088AB30 /* DiscoverBasicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */; };
 		137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */; };
 		137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 137EEBA020E7781100BA2575 /* testing_picture_5.jpg */; };
@@ -192,6 +196,10 @@
 		13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_7.jpg; sourceTree = "<group>"; };
 		1377AB69214EDA510015172C /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1377AB6A214EDA510015172C /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1377AB6D214F4AAA0015172C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		1377AB6E214F4AAA0015172C /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		1377AB71214F4CE20015172C /* GCButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCButtonTableViewCell.swift; sourceTree = "<group>"; };
+		1377AB72214F4CE20015172C /* GCButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCButtonTableViewCell.xib; sourceTree = "<group>"; };
 		137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBasicCellView.swift; sourceTree = "<group>"; };
 		137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCWaterfallScrollView.swift; sourceTree = "<group>"; };
 		137EEBA020E7781100BA2575 /* testing_picture_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_5.jpg; sourceTree = "<group>"; };
@@ -492,6 +500,8 @@
 				13EED9D42136121B00427E5E /* GCLoginRequireViewController.xib */,
 				13EED9D92136EA1D00427E5E /* GCLoginViewController.swift */,
 				13EED9DA2136EA1D00427E5E /* GCLoginViewController.xib */,
+				1377AB71214F4CE20015172C /* GCButtonTableViewCell.swift */,
+				1377AB72214F4CE20015172C /* GCButtonTableViewCell.xib */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -624,6 +634,8 @@
 				13E73705210960C4008BE215 /* ManagePostsViewController.swift */,
 				13F805C6213B469C00AE93F0 /* NewEditProfileViewController.swift */,
 				13F805C7213B469C00AE93F0 /* NewEditProfileViewController.xib */,
+				1377AB6D214F4AAA0015172C /* SettingViewController.swift */,
+				1377AB6E214F4AAA0015172C /* SettingViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -817,6 +829,7 @@
 				138FEEDF20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib in Resources */,
 				132F819A20C90DD0005D3905 /* numberfive.png in Resources */,
 				132F817F20C8C952005D3905 /* WelcomeViewController.xib in Resources */,
+				1377AB70214F4AAA0015172C /* SettingViewController.xib in Resources */,
 				132B8C0D20E6813300A80F5B /* DiscoverViewController.xib in Resources */,
 				13321FBA20CF7B04000B6C41 /* NewPostViewController.xib in Resources */,
 				132F819D20C90DD0005D3905 /* numbertwo.png in Resources */,
@@ -827,6 +840,7 @@
 				138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */,
 				13961E1320CA7766004FFF4B /* system_viewed.png in Resources */,
 				13D389DF20FDB0EC00330CDD /* testing_profile_picture_3.png in Resources */,
+				1377AB74214F4CE20015172C /* GCButtonTableViewCell.xib in Resources */,
 				133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */,
 				BC14910620DA657D00373BBF /* testing_profile_picture_4.png in Resources */,
 				132F817220C8C77C005D3905 /* Assets.xcassets in Resources */,
@@ -938,6 +952,7 @@
 				13C5EA0920F8A143000DC504 /* PersonTableViewCell.swift in Sources */,
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
 				132F81A620C91FB9005D3905 /* PostsTableViewCell.swift in Sources */,
+				1377AB6F214F4AAA0015172C /* SettingViewController.swift in Sources */,
 				13CF4ECB20F7C27E00DEE71A /* NotificationViewController.swift in Sources */,
 				1377AB6C214EDA510015172C /* Event+CoreDataProperties.swift in Sources */,
 				130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */,
@@ -946,6 +961,7 @@
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
 				139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */,
+				1377AB73214F4CE20015172C /* GCButtonTableViewCell.swift in Sources */,
 				13C25664214C6BFC00EFCBCF /* Setting+CoreDataClass.swift in Sources */,
 				BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */,
 				1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */,
