@@ -66,7 +66,7 @@ func timeStringFormat(_ date: Date,  withWeek: Bool) -> String{
         let weekString = ["Mon. ", "Tue. ", "Wed. ", "Thu. ", "Fri. ", "Sat. ", "Sun. "]
         let calender = NSCalendar.current
         let components = calender.component(.weekday, from: date as Date)
-        let commaIndex = formattedString.firstIndex(of: ",")!
+        let commaIndex = formattedString.index(of: ",")!
         formattedString.insert(contentsOf: weekString[components - 1], at: formattedString.index(commaIndex, offsetBy: 2))
     }
     return formattedString
@@ -144,6 +144,8 @@ func saveEventToCalender(_ title: String, _ startDate: Date, _ endDate: Date, _ 
         makeMessageViaAlert(title: "Failed to save event", message: error.localizedDescription)
     }
 }
+
+var secondsFromGMT: Int { return TimeZone.current.secondsFromGMT() }
 
 //屏幕的宽高
 let screenWidth = UIScreen.main.bounds.width
