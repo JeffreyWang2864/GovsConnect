@@ -90,6 +90,8 @@ class DiscoverViewController: UIViewController {
                     return 50
                 case .iphonex:
                     return 50
+                case .iphonexsmax:
+                    return 50
                 }
             }()
             let cardBackgroundHeightOffset: CGFloat = {
@@ -102,6 +104,8 @@ class DiscoverViewController: UIViewController {
                     return 95
                 case .iphonex:
                     return 95
+                case .iphonexsmax:
+                    return 95
                 }
             }()
             let cardBackgroundFontSize: CGFloat = {
@@ -113,6 +117,8 @@ class DiscoverViewController: UIViewController {
                 case .iphone6plus:
                     return 18
                 case .iphonex:
+                    return 18
+                case .iphonexsmax:
                     return 18
                 }
             }()
