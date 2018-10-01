@@ -79,7 +79,7 @@ class PostsTableViewCell: UITableViewCell {
             if AppDataManager.shared.imageData[imageName] == nil{
                 AppIOManager.shared.loadImage(with: imageName) { (data) in
                     AppDataManager.shared.imageData[imageName] = data
-                    v.image = UIImage(data: AppDataManager.shared.imageData[imageName]!)!
+                    v.image = UIImage(data: AppDataManager.shared.imageData[imageName]!)
                     v.isUserInteractionEnabled = true
                     let tapGestureRecongnizer = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnImage(_:)))
                     v.addGestureRecognizer(tapGestureRecongnizer)

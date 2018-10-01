@@ -23,6 +23,7 @@ class FoodCollectionViewCell: UICollectionViewCell {
                     self.textView.sizeToFit()
                 }
             }
+            let a = AppDataManager.shared
             self.imageView.image = UIImage(data: AppDataManager.shared.imageData[self.data.imageName]!)!
             self.textView.text = self.data!.title
             self.textView.sizeToFit()

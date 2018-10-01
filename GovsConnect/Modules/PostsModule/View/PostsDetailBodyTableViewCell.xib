@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,13 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="355.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QV3-c7-GM5">
-                        <rect key="frame" x="6" y="73" width="308" height="238"/>
-                        <string key="text">This is example no-media content. This is example no-media content. This is example no-media content. This is example no-media content. This is example no-media content. This is example no-media content. This is example no-media content. This is example no-media content. This is example no-media content.</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voj-gq-cNd">
                         <rect key="frame" x="5" y="329.5" width="25" height="25"/>
                         <constraints>
@@ -114,22 +107,29 @@
                             <constraint firstAttribute="height" constant="1" id="UcQ-ys-res"/>
                         </constraints>
                     </stackView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPJ-4q-1t0">
+                        <rect key="frame" x="17" y="73" width="286" height="244"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" calendarEvent="YES"/>
+                    </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="QV3-c7-GM5" firstAttribute="top" secondItem="LCB-R2-ozB" secondAttribute="bottom" constant="6" id="0mO-NK-Gcg"/>
                     <constraint firstItem="rE3-cb-9gf" firstAttribute="leading" secondItem="Gf7-x0-Sws" secondAttribute="trailing" constant="1" id="1DS-zi-Iwg"/>
                     <constraint firstItem="hvN-LJ-m9m" firstAttribute="leading" secondItem="oqs-I8-XYz" secondAttribute="trailing" constant="2" id="1Qy-Of-uen"/>
                     <constraint firstAttribute="bottom" secondItem="oqs-I8-XYz" secondAttribute="bottom" constant="1.5" id="44T-VH-Lm8"/>
                     <constraint firstItem="LCB-R2-ozB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="4Xn-sa-xDv"/>
-                    <constraint firstItem="nnN-hr-4Ur" firstAttribute="top" secondItem="QV3-c7-GM5" secondAttribute="bottom" constant="12" id="D0F-e0-xc8"/>
+                    <constraint firstItem="nnN-hr-4Ur" firstAttribute="top" secondItem="tPJ-4q-1t0" secondAttribute="bottom" constant="6" id="7LU-qb-8aa"/>
                     <constraint firstAttribute="trailing" secondItem="LCB-R2-ozB" secondAttribute="trailing" constant="6" id="EYB-eA-GPP"/>
                     <constraint firstAttribute="bottom" secondItem="3tZ-B5-VW8" secondAttribute="bottom" constant="2" id="J9i-m8-3VT"/>
-                    <constraint firstAttribute="trailing" secondItem="QV3-c7-GM5" secondAttribute="trailing" constant="6" id="JeL-E7-wuU"/>
                     <constraint firstAttribute="trailing" secondItem="nnN-hr-4Ur" secondAttribute="trailing" constant="6" id="K4i-XI-cvO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="tPJ-4q-1t0" secondAttribute="trailing" constant="1" id="M9g-Ir-5bc"/>
                     <constraint firstItem="LCB-R2-ozB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Odk-hX-J7S"/>
                     <constraint firstItem="voj-gq-cNd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Qhd-YX-Dma"/>
                     <constraint firstItem="oqs-I8-XYz" firstAttribute="leading" secondItem="3tZ-B5-VW8" secondAttribute="trailing" constant="2" id="c3y-eZ-AMJ"/>
-                    <constraint firstItem="QV3-c7-GM5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="epU-yk-paK"/>
+                    <constraint firstItem="tPJ-4q-1t0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="1" id="ccg-a2-Q1t"/>
                     <constraint firstAttribute="bottom" secondItem="voj-gq-cNd" secondAttribute="bottom" constant="1" id="fGU-U6-a7j"/>
                     <constraint firstItem="voj-gq-cNd" firstAttribute="top" secondItem="nnN-hr-4Ur" secondAttribute="bottom" constant="5.5" id="fQQ-85-Qow"/>
                     <constraint firstItem="nnN-hr-4Ur" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="fvZ-wT-v1w"/>
@@ -137,6 +137,7 @@
                     <constraint firstAttribute="trailing" secondItem="TSE-t3-0jQ" secondAttribute="trailing" constant="6" id="kde-hQ-IY3"/>
                     <constraint firstAttribute="bottom" secondItem="TSE-t3-0jQ" secondAttribute="bottom" constant="2" id="o4W-R1-qyq"/>
                     <constraint firstAttribute="bottom" secondItem="hvN-LJ-m9m" secondAttribute="bottom" constant="2" id="oxu-Qb-fbC"/>
+                    <constraint firstItem="tPJ-4q-1t0" firstAttribute="top" secondItem="LCB-R2-ozB" secondAttribute="bottom" constant="6" id="qNB-ma-5gV"/>
                     <constraint firstAttribute="bottom" secondItem="rE3-cb-9gf" secondAttribute="bottom" id="r39-Tz-kT0"/>
                     <constraint firstAttribute="bottom" secondItem="Gf7-x0-Sws" secondAttribute="bottom" constant="2" id="tBZ-JP-0vq"/>
                     <constraint firstItem="3tZ-B5-VW8" firstAttribute="leading" secondItem="rE3-cb-9gf" secondAttribute="trailing" constant="2" id="v9B-5t-GDo"/>
@@ -149,7 +150,7 @@
                 <outlet property="imageStackView" destination="nnN-hr-4Ur" id="Lmi-B9-Xe0"/>
                 <outlet property="likeCount" destination="3tZ-B5-VW8" id="3Sl-pd-b3F"/>
                 <outlet property="likeIcon" destination="rE3-cb-9gf" id="wbj-h6-PjG"/>
-                <outlet property="postBody" destination="QV3-c7-GM5" id="DBv-LN-IJY"/>
+                <outlet property="postBody" destination="tPJ-4q-1t0" id="hh2-c9-9sR"/>
                 <outlet property="postDate" destination="TSE-t3-0jQ" id="ygM-k7-GOt"/>
                 <outlet property="postTitle" destination="LCB-R2-ozB" id="G9U-Up-JTM"/>
                 <outlet property="viewCount" destination="Gf7-x0-Sws" id="4HM-0I-KVL"/>

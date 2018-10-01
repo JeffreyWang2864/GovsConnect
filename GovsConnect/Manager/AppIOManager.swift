@@ -320,8 +320,8 @@ class AppIOManager{
                 AppDataManager.shared.discoverWeekendEventData[2] = []
                 while(jsonDict["\(index)"] != JSON.null){
                     let data = jsonDict["\(index)"]
-                    let start_time_interval = data["start_time"].intValue + secondsFromGMT
-                    let end_time_interval = data["end_time"].intValue + secondsFromGMT
+                    let start_time_interval = data["start_time"].intValue - secondsFromGMT
+                    let end_time_interval = data["end_time"].intValue - secondsFromGMT
                     let title = data["title"].stringValue
                     let detail = data["detail"].stringValue
                     let event = EventDataContainer(Date(timeIntervalSince1970: TimeInterval(start_time_interval)), Date(timeIntervalSince1970: TimeInterval(end_time_interval)), title, detail)

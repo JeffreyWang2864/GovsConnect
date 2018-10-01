@@ -10,7 +10,7 @@ import UIKit
 
 class PostsDetailBodyTableViewCell: UITableViewCell {
     @IBOutlet var postTitle: UILabel!
-    @IBOutlet var postBody: UILabel!
+    @IBOutlet var postBody: UITextView!
     @IBOutlet var viewIcon: UIButton!
     @IBOutlet var viewCount: UILabel!
     @IBOutlet var likeIcon: UIButton!

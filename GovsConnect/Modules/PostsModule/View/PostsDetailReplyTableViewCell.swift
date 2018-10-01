@@ -15,7 +15,7 @@ class PostsDetailReplyTableViewCell: UITableViewCell {
     @IBOutlet var likeCount: UILabel!
     @IBOutlet var replierImageButton: UIButton!
     @IBOutlet var replyHeading: UILabel!
-    @IBOutlet var replyBody: UILabel!
+    @IBOutlet var replyBody: UITextView!
     var correspondTag: (Int, Int) = (-1, -1)
     var authorBlock: PostsDetailTableViewCellAuthorBlock?
     override func awakeFromNib() {

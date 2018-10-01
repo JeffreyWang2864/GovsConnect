@@ -95,6 +95,18 @@ func numberOfVisibleLines(_ textView: UILabel) -> Int {
     return lineCount
 }
 
+func suitableHeight(for textView: UITextView, fixedWidth: CGFloat) -> CGFloat{
+    let size = CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude)
+    let constraint = textView.sizeThatFits(size)
+    return constraint.height
+}
+
+func suitableHeight(for label: UILabel, fixedWidth: CGFloat) -> CGFloat{
+    let size = CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude)
+    let constraint = label.sizeThatFits(size)
+    return constraint.height
+}
+
 func btoi(_ n: Bool) -> Int{
     return n ? 1 : 0
 }
@@ -144,8 +156,6 @@ func saveEventToCalender(_ title: String, _ startDate: Date, _ endDate: Date, _ 
         makeMessageViaAlert(title: "Failed to save event", message: error.localizedDescription)
     }
 }
-
-var secondsFromGMT: Int { return TimeZone.current.secondsFromGMT() }
 
 //屏幕的宽高
 let screenWidth = UIScreen.main.bounds.width

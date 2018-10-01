@@ -65,6 +65,8 @@ class RateYourFoodViewController: UIViewController{
                 return self.view.frame.size.height - 35
             case .iphonex:
                 return self.view.frame.size.height - 15
+            case .iphonexsmax:
+                return self.view.frame.size.height - 15
             }
         }()
         self.dislikeView = UILabel(frame: CGRect(x: 0, y: dislikeViewY, width: screenWidth, height: 40))

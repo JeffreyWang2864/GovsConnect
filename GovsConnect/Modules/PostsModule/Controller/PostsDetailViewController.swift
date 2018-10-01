@@ -162,7 +162,9 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
             cell.commentCount.text = "\(data.commentCount)"
             cell.viewCount.text = "\(data.viewCount)"
             cell.postTitle.text = data.postTitle
+            cell.postTitle.constraints[0].constant = suitableHeight(for: cell.postTitle, fixedWidth: cell.postTitle.width)
             cell.postBody.text = data.postContent
+            cell.postBody.sizeToFit()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "M/d/yyyy, h:m a"
             cell.postDate.text = dateFormatter.string(from: data.postDate as Date)
@@ -183,6 +185,7 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.replyHeading.text = "\(data.sender.name) replies"
             }
             cell.replyBody.text = data.body
+            cell.replyBody.sizeToFit()
             let imgData = AppDataManager.shared.profileImageData[data.sender.uid]!
             cell.replierImageButton.setImage(UIImage.init(data: imgData)!, for: .normal)
             cell.replierImageButton.setImage(UIImage.init(data: imgData)!, for: .selected)
@@ -196,6 +199,25 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
             }
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0{
+            let data = AppDataManager.shared.postsData[self.correspondTag]
+            let tv = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth - 12, height: 50))
+            tv.text = data.postTitle
+            tv.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            let bv = UITextView(frame: CGRect(x: 0, y: 0, width: screenWidth - 12 - 40, height: 200))
+            bv.text = data.postContent
+            bv.font = UIFont.systemFont(ofSize: 16)
+            return 59 + suitableHeight(for: tv, fixedWidth: tv.width) + suitableHeight(for: bv, fixedWidth: bv.width) + CGFloat(data.postImagesName.count * 200)
+        }
+        let realIndexPathItem = indexPath.section - 1
+        let data = AppDataManager.shared.postsData[self.correspondTag].replies[realIndexPathItem]
+        let bv = UITextView(frame: CGRect(x: 0, y: 0, width: screenWidth - 50 - 8 - 5, height: 50))
+        bv.text = data.body
+        bv.font = UIFont.systemFont(ofSize: 14)
+        return 40.5 + suitableHeight(for: bv, fixedWidth: bv.width)
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

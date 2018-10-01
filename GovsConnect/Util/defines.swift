@@ -25,6 +25,7 @@ let PREDICATE_NAME_CONTAIN = "name contains[c] %@"
 
 let PHONE_TYPE: GCPhoneType = {
     assert(UIDevice().userInterfaceIdiom == .phone)
+    let height = UIScreen.main.nativeBounds.height
     switch UIScreen.main.nativeBounds.height {
     case 1136:
         return .iphone5
@@ -34,7 +35,13 @@ let PHONE_TYPE: GCPhoneType = {
         return .iphone6plus
     case 2436:
         return .iphonex
+    case 2688:
+        return .iphonexsmax
     default:
         fatalError()
     }
 }()
+
+var secondsFromGMT: Int {
+    return TimeZone.current.secondsFromGMT()
+}
