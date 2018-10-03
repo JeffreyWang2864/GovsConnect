@@ -64,6 +64,11 @@ class LookupViewController: UIViewController {
                     //code here
                 }
             }
+            if self.loginViewController!.isThatYouView != nil{
+                self.loginViewController!.isThatYouView!.dismiss(animated: false) {
+                    //code
+                }
+            }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.loginViewController!.view.removeFromSuperview()
             }

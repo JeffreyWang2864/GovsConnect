@@ -86,7 +86,7 @@ class DiscoverViewController: UIViewController {
                     return 60
                 case .iphone6:
                     return 60
-                case .iphone6plus:
+                case .iphone6plus, .iphonexr:
                     return 50
                 case .iphonex:
                     return 50
@@ -100,7 +100,7 @@ class DiscoverViewController: UIViewController {
                     return 45
                 case .iphone6:
                     return 95
-                case .iphone6plus:
+                case .iphone6plus, .iphonexr:
                     return 95
                 case .iphonex:
                     return 95
@@ -114,7 +114,7 @@ class DiscoverViewController: UIViewController {
                     return 14
                 case .iphone6:
                     return 16
-                case .iphone6plus:
+                case .iphone6plus, .iphonexr:
                     return 18
                 case .iphonex:
                     return 18

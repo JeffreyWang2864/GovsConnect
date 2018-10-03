@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class YouViewController: UIViewController {
     @IBOutlet var authorImageView: UIImageView!
@@ -58,6 +59,11 @@ class YouViewController: UIViewController {
             }
             if self.loginViewController!.loginView != nil{
                 self.loginViewController!.loginView!.dismiss(animated: false) {
+                    //code
+                }
+            }
+            if self.loginViewController!.isThatYouView != nil{
+                self.loginViewController!.isThatYouView!.dismiss(animated: false) {
                     //code
                 }
             }
@@ -161,6 +167,7 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
             let alert = UIAlertController(title: "By clicking \"Log out\" below, you will not be able to view, post, reply, or like any post as \(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.name), and you will not have the access to the \"Look up\" section.", message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { (alert) in
                 AppIOManager.shared.logOut(){ isSuccessful -> Void in
+                    GIDSignIn.sharedInstance().signOut()
                     assert(AppDataManager.shared.currentPersonID != "")
                     AppDataManager.shared.currentPersonID = ""
                     NotificationCenter.default.post(Notification(name: AppIOManager.loginActionNotificationName))

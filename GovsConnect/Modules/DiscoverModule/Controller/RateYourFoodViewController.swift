@@ -61,7 +61,7 @@ class RateYourFoodViewController: UIViewController{
                 return self.view.frame.size.height - 200
             case .iphone6:
                 return self.view.frame.size.height - 103
-            case .iphone6plus:
+            case .iphone6plus, .iphonexr:
                 return self.view.frame.size.height - 35
             case .iphonex:
                 return self.view.frame.size.height - 15

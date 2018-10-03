@@ -90,6 +90,11 @@ class PostsViewController: UIViewController {
                    //code
                 }
             }
+            if self.loginViewController!.isThatYouView != nil{
+                self.loginViewController!.isThatYouView!.dismiss(animated: false) {
+                    //code
+                }
+            }
             self.refreachNewData(self.refreashControl)
             self.newPostButton.isEnabled = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {

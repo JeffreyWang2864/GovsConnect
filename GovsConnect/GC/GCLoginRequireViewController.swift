@@ -10,10 +10,13 @@ import UIKit
 
 class GCLoginRequireViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
-    var loginView: GCLoginViewController? = nil
+    static let displayIsThatYouNotificationName = Notification.Name("displayIsThatYouNotificationName")
+    var loginView: GCGoogleLoginViewController? = nil
+    var isThatYouView: IsThisYouViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.presentIsThisYouView(_:)), name: GCLoginRequireViewController.displayIsThatYouNotificationName, object: nil)
         let c = self.view.constraints[0]
         if PHONE_TYPE == .iphone5{
             c.constant = 40
@@ -33,10 +36,22 @@ class GCLoginRequireViewController: UIViewController {
     
     @IBAction func loginButtonDidClick(){
         if self.loginView == nil{
-             self.loginView = GCLoginViewController.init(nibName: "GCLoginViewController", bundle: Bundle.main)
+             self.loginView = GCGoogleLoginViewController.init(nibName: "GCGoogleLoginViewController", bundle: Bundle.main)
         }
         self.loginView!.view.frame = self.view.bounds
         self.present(self.loginView!, animated: true) {
+            //code here
+        }
+    }
+    
+    @objc func presentIsThisYouView(_ sender: Notification){
+        let uid = sender.userInfo!["uid"] as! String
+        if self.isThatYouView == nil{
+            self.isThatYouView = IsThisYouViewController.init(nibName: "IsThisYouViewController", bundle: Bundle.main)
+        }
+        self.isThatYouView!.view.frame = self.view.bounds
+        self.isThatYouView!.uid = uid
+        self.present(self.isThatYouView!, animated: true) {
             //code here
         }
     }

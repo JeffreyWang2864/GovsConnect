@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9D0A2884A2E6C8241DD0E751E9DCADAB'
-               BlueprintName = 'TwicketSegmentedControl'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'TwicketSegmentedControl.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0AC27CE9B78E727AFF05969B9521B7BC"
+               BlueprintName = "TwicketSegmentedControl"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "TwicketSegmentedControl.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

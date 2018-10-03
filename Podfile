@@ -9,4 +9,5 @@ target 'GovsConnect' do
   pod 'SwiftyJSON'
   pod 'ReachabilitySwift'
   pod 'RSKImageCropper'
+  pod 'Google/SignIn'
 end

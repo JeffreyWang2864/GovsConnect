@@ -458,6 +458,20 @@ class AppIOManager{
         }
     }
     
+    func getAccessCodeStatus(accessCode: String, _ completionHandler: @escaping (Bool) -> Void, _ failureHandler: @escaping () -> Void){
+        let urlStr = APP_SERVER_URL_STR + "/assets/login/"
+        request(urlStr, method: .post, parameters: ["access_code": accessCode] as Dictionary<String, AnyObject>, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                let jsonDict = JSON(json)
+                let isPassed = jsonDict["pass"].boolValue
+                completionHandler(isPassed)
+            case .failure(let error):
+                makeMessageViaAlert(title: "get access code status failed", message: error.localizedDescription)
+            }
+        }
+    }
+    
     func loginSuccessful(){
         let urlStr = APP_SERVER_URL_STR + "/assets/login_successful/"
         guard AppIOManager.shared.deviceToken != nil else{

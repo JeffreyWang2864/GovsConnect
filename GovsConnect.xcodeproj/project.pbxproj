@@ -126,6 +126,11 @@
 		13EED9D821362F3200427E5E /* system_login_require.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EED9D721362F3100427E5E /* system_login_require.png */; };
 		13EED9DB2136EA1D00427E5E /* GCLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EED9D92136EA1D00427E5E /* GCLoginViewController.swift */; };
 		13EED9DC2136EA1D00427E5E /* GCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EED9DA2136EA1D00427E5E /* GCLoginViewController.xib */; };
+		13F02C8B2162CCA600660E95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13F02C8A2162CCA600660E95 /* GoogleService-Info.plist */; };
+		13F02C8E2162DB4500660E95 /* GCGoogleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F02C8C2162DB4500660E95 /* GCGoogleLoginViewController.swift */; };
+		13F02C8F2162DB4500660E95 /* GCGoogleLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F02C8D2162DB4500660E95 /* GCGoogleLoginViewController.xib */; };
+		13F02C9221630F1500660E95 /* IsThisYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F02C9021630F1500660E95 /* IsThisYouViewController.swift */; };
+		13F02C9321630F1500660E95 /* IsThisYouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F02C9121630F1500660E95 /* IsThisYouViewController.xib */; };
 		13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */; };
 		13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */; };
 		13F4094C20CCF2A200645880 /* system_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094B20CCF2A200645880 /* system_send.png */; };
@@ -267,6 +272,11 @@
 		13EED9D721362F3100427E5E /* system_login_require.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_login_require.png; sourceTree = "<group>"; };
 		13EED9D92136EA1D00427E5E /* GCLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLoginViewController.swift; sourceTree = "<group>"; };
 		13EED9DA2136EA1D00427E5E /* GCLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCLoginViewController.xib; sourceTree = "<group>"; };
+		13F02C8A2162CCA600660E95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		13F02C8C2162DB4500660E95 /* GCGoogleLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCGoogleLoginViewController.swift; sourceTree = "<group>"; };
+		13F02C8D2162DB4500660E95 /* GCGoogleLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCGoogleLoginViewController.xib; sourceTree = "<group>"; };
+		13F02C9021630F1500660E95 /* IsThisYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsThisYouViewController.swift; sourceTree = "<group>"; };
+		13F02C9121630F1500660E95 /* IsThisYouViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IsThisYouViewController.xib; sourceTree = "<group>"; };
 		13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailReplyTableViewCell.swift; sourceTree = "<group>"; };
 		13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailReplyTableViewCell.xib; sourceTree = "<group>"; };
 		13F4094B20CCF2A200645880 /* system_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_send.png; sourceTree = "<group>"; };
@@ -352,6 +362,7 @@
 				132F816E20C8C77C005D3905 /* Main.storyboard */,
 				132F817120C8C77C005D3905 /* Assets.xcassets */,
 				132F817320C8C77C005D3905 /* LaunchScreen.storyboard */,
+				13F02C8A2162CCA600660E95 /* GoogleService-Info.plist */,
 				132F817620C8C77C005D3905 /* Info.plist */,
 			);
 			path = GovsConnect;
@@ -505,6 +516,10 @@
 				1377AB71214F4CE20015172C /* GCButtonTableViewCell.swift */,
 				1377AB72214F4CE20015172C /* GCButtonTableViewCell.xib */,
 				1377AB75214F7BB80015172C /* GCPhoneType.swift */,
+				13F02C8C2162DB4500660E95 /* GCGoogleLoginViewController.swift */,
+				13F02C8D2162DB4500660E95 /* GCGoogleLoginViewController.xib */,
+				13F02C9021630F1500660E95 /* IsThisYouViewController.swift */,
+				13F02C9121630F1500660E95 /* IsThisYouViewController.xib */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -817,9 +832,11 @@
 				13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */,
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
 				1396070F20F7E3210079CBC4 /* LookupViewController.xib in Resources */,
+				13F02C9321630F1500660E95 /* IsThisYouViewController.xib in Resources */,
 				1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */,
 				13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */,
 				132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */,
+				13F02C8B2162CCA600660E95 /* GoogleService-Info.plist in Resources */,
 				13EED9D62136121B00427E5E /* GCLoginRequireViewController.xib in Resources */,
 				132F818820C8DAB2005D3905 /* PostsViewController.xib in Resources */,
 				132F819E20C90DD0005D3905 /* numberthree.png in Resources */,
@@ -846,6 +863,7 @@
 				1377AB74214F4CE20015172C /* GCButtonTableViewCell.xib in Resources */,
 				133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */,
 				BC14910620DA657D00373BBF /* testing_profile_picture_4.png in Resources */,
+				13F02C8F2162DB4500660E95 /* GCGoogleLoginViewController.xib in Resources */,
 				132F817220C8C77C005D3905 /* Assets.xcassets in Resources */,
 				132F817020C8C77C005D3905 /* Main.storyboard in Resources */,
 				13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */,
@@ -864,6 +882,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
@@ -874,6 +895,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
@@ -892,9 +916,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -937,6 +964,7 @@
 				13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */,
 				13C2566E214C8BE500EFCBCF /* ProfileImageData+CoreDataProperties.swift in Sources */,
 				13C2565D214C68F700EFCBCF /* AppPersistenceManager.swift in Sources */,
+				13F02C8E2162DB4500660E95 /* GCGoogleLoginViewController.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
@@ -955,6 +983,7 @@
 				13C5EA0920F8A143000DC504 /* PersonTableViewCell.swift in Sources */,
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
 				132F81A620C91FB9005D3905 /* PostsTableViewCell.swift in Sources */,
+				13F02C9221630F1500660E95 /* IsThisYouViewController.swift in Sources */,
 				1377AB6F214F4AAA0015172C /* SettingViewController.swift in Sources */,
 				13CF4ECB20F7C27E00DEE71A /* NotificationViewController.swift in Sources */,
 				1377AB6C214EDA510015172C /* Event+CoreDataProperties.swift in Sources */,

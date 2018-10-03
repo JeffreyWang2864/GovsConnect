@@ -197,6 +197,23 @@ class AppDataManager{
         }
         self.postsData.append(element)
     }
+    
+    func findUserBy(email: String) -> String?{
+        var res = AppDataManager.shared.allStudent.filter { (uid) -> Bool in
+            return AppDataManager.shared.users[uid]!.information[0].str == email
+        }
+        if res.count == 0{
+            res.append(
+                AppDataManager.shared.allFaculty.filter { (uid) -> Bool in
+                return AppDataManager.shared.users[uid]!.information[0].str == email
+                }[0])
+        }
+        assert(res.count < 2)
+        if res.count == 1{
+            return res[0]
+        }
+        return nil
+    }
 }
 
 class UserDataContainer{

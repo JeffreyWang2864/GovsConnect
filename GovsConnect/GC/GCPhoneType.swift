@@ -14,6 +14,7 @@ enum GCPhoneType{
     case iphone6plus
     case iphonex
     case iphonexsmax
+    case iphonexr
 }
 
 
