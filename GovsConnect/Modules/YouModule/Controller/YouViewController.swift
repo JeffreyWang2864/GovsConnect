@@ -149,6 +149,7 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
         case 0:
             //manage my posts
             let vc = ManagePostsViewController()
+            vc.uid = AppDataManager.shared.currentPersonID
             vc.view.frame = self.view.bounds
             self.navigationController!.pushViewController(vc, animated: true)
         case 1:

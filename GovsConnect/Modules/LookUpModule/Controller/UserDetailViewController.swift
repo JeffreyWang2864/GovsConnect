@@ -28,6 +28,7 @@ class UserDetailViewController: UIViewController {
             self.profession = data.profession
             self.tableView.register(UINib(nibName: "UserDetailTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "USER_DETAIL_TABLEVIEW_CELL_ID")
             self.tableView.register(UINib(nibName: "CourseDescriptionTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "COURSE_DESCRIPTION_TABLEVIEW_CELL_ID")
+            self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BUTTON_TABLEVIEW_CELL_ID")
             self.tableView.delegate = self
             self.tableView.dataSource = self
         }
@@ -99,7 +100,10 @@ class UserDetailViewController: UIViewController {
 extension UserDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         guard self.allowedInformation.count == 0 else{
-            return self.allowedInformation.count
+            if self.profession == .course{
+                return self.allowedInformation.count
+            }
+            return self.allowedInformation.count + 1
         }
         self.information = AppDataManager.shared.users[self.uid]!.information
         for i in stride(from: 0, to: self.information.count, by: 1){
@@ -107,10 +111,13 @@ extension UserDetailViewController: UITableViewDelegate, UITableViewDataSource{
                 self.allowedInformation.append(i)
             }
         }
+        //count + 1 because:
+        //    course needs an extra cell to display the course information.
+        //    students, faculty, and club need an extra cell to display a button.
         if self.profession == .course{
-            return self.allowedInformation.count + 1
+            return self.allowedInformation.count
         }
-        return self.allowedInformation.count
+        return self.allowedInformation.count + 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,6 +127,8 @@ extension UserDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if self.profession == .course && indexPath.section == 0{
             return 200
+        }else if self.profession != .course && indexPath.section == self.allowedInformation.count{
+            return 40
         }
         return 50.5
     }
@@ -128,6 +137,12 @@ extension UserDetailViewController: UITableViewDelegate, UITableViewDataSource{
         if self.profession == .course && indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "COURSE_DESCRIPTION_TABLEVIEW_CELL_ID", for: indexPath) as! CourseDescriptionTableViewCell
             cell.uid = self.uid
+            return cell
+        }else if self.profession != .course && indexPath.section == self.allowedInformation.count{
+            //last cell for student, falcuty and club
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BUTTON_TABLEVIEW_CELL_ID", for: indexPath)
+            cell.textLabel!.text = "see \(self.navigationItem.title!)'s all posts"
+            cell.textLabel!.textColor = APP_THEME_COLOR
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "USER_DETAIL_TABLEVIEW_CELL_ID", for: indexPath) as! UserDetailTableViewCell
@@ -153,5 +168,12 @@ extension UserDetailViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        if self.profession != .course && indexPath.section == self.allowedInformation.count{
+            //clicked on display one's information button
+            let vc = ManagePostsViewController()
+            vc.uid = self.uid
+            vc.view.frame = self.view.bounds
+            self.navigationController!.pushViewController(vc, animated: true)
+        }
     }
 }

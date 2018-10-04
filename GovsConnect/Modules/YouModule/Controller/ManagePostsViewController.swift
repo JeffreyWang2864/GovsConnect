@@ -13,13 +13,18 @@ class ManagePostsViewController: UIViewController {
     var curUserPostsData: [PostsDataContainer]!
     var curUserPostsIndex: [Int]!
     var longPressGestureRecongnizer = UILongPressGestureRecognizer()
+    var uid: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Manage my posts"
+        if self.uid! == AppDataManager.shared.currentPersonID{
+            self.navigationItem.title = "Manage my posts"
+            self.addLongPressGestureRecongnizer()
+        }else{
+            self.navigationItem.title = "\(AppDataManager.shared.users[self.uid!]!.name)'s all posts"
+        }
         self.setupTableViewData()
         self.tableView = UITableView(frame: self.view.frame, style: .plain)
         self.view.addSubview(self.tableView)
-        self.addLongPressGestureRecongnizer()
         self.tableView.register(UINib(nibName: "PostsTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_CELL_ID")
         self.tableView.separatorStyle = .none
         self.tableView.delegate = self
@@ -27,7 +32,7 @@ class ManagePostsViewController: UIViewController {
     }
     
     private func setupTableViewData(){
-        let ret = AppDataManager.shared.posts(by: AppDataManager.shared.currentPersonID)
+        let ret = AppDataManager.shared.posts(by: self.uid!)
         self.curUserPostsData = ret.datas
         self.curUserPostsIndex = ret.index
     }
