@@ -47,6 +47,12 @@
 		133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */; };
 		133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */; };
 		13540E9721645ABE005204FC /* GCSportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9621645ABE005204FC /* GCSportType.swift */; };
+		13540E99216673A3005204FC /* system_discover_links.png in Resources */ = {isa = PBXBuildFile; fileRef = 13540E98216673A3005204FC /* system_discover_links.png */; };
+		13540E9C216673D6005204FC /* LinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9A216673D6005204FC /* LinksViewController.swift */; };
+		13540E9D216673D6005204FC /* LinksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13540E9B216673D6005204FC /* LinksViewController.xib */; };
+		13540EA021667524005204FC /* LinksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9E21667524005204FC /* LinksCollectionViewCell.swift */; };
+		13540EA121667524005204FC /* LinksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13540E9F21667524005204FC /* LinksCollectionViewCell.xib */; };
+		13540EA321667720005204FC /* GCLinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540EA221667720005204FC /* GCLinkType.swift */; };
 		1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4D62101E2CD000C3BF5 /* YouViewController.swift */; };
 		1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1356C4D72101E2CD000C3BF5 /* YouViewController.xib */; };
 		1356C4DC210599D7000C3BF5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */; };
@@ -111,12 +117,15 @@
 		13C5EA0A20F8A143000DC504 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C5EA0820F8A143000DC504 /* PersonTableViewCell.xib */; };
 		13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CD442E20E490CB001FB934 /* GCImageViewController.swift */; };
 		13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CD442F20E490CB001FB934 /* GCImageViewController.xib */; };
+		13CD9F222166935600EAFE3D /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CD9F202166935600EAFE3D /* LinksTableViewCell.swift */; };
+		13CD9F232166935600EAFE3D /* LinksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F212166935600EAFE3D /* LinksTableViewCell.xib */; };
+		13CD9F2721669B0A00EAFE3D /* system_instagram_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F2421669B0900EAFE3D /* system_instagram_icon.png */; };
+		13CD9F2821669B0A00EAFE3D /* system_website_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F2521669B0A00EAFE3D /* system_website_icon.png */; };
+		13CD9F2921669B0A00EAFE3D /* system_snapchat_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F2621669B0A00EAFE3D /* system_snapchat_icon.png */; };
 		13CF4ECB20F7C27E00DEE71A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF4EC920F7C27E00DEE71A /* NotificationViewController.swift */; };
 		13CF4ECC20F7C27E00DEE71A /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CF4ECA20F7C27E00DEE71A /* NotificationViewController.xib */; };
 		13D389D620FC8E9F00330CDD /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D389D420FC8E9F00330CDD /* UserDetailViewController.swift */; };
 		13D389D720FC8E9F00330CDD /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D389D520FC8E9F00330CDD /* UserDetailViewController.xib */; };
-		13D389DB20FC9C6700330CDD /* system_snapchat_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D389D920FC9C6700330CDD /* system_snapchat_icon.png */; };
-		13D389DD20FCBC7800330CDD /* system_instagram_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D389DC20FCBC7800330CDD /* system_instagram_icon.png */; };
 		13D389DF20FDB0EC00330CDD /* testing_profile_picture_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */; };
 		13D389E220FDD62000330CDD /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */; };
 		13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */; };
@@ -193,6 +202,12 @@
 		133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		13540E9621645ABE005204FC /* GCSportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSportType.swift; sourceTree = "<group>"; };
+		13540E98216673A3005204FC /* system_discover_links.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_links.png; sourceTree = "<group>"; };
+		13540E9A216673D6005204FC /* LinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewController.swift; sourceTree = "<group>"; };
+		13540E9B216673D6005204FC /* LinksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinksViewController.xib; sourceTree = "<group>"; };
+		13540E9E21667524005204FC /* LinksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksCollectionViewCell.swift; sourceTree = "<group>"; };
+		13540E9F21667524005204FC /* LinksCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinksCollectionViewCell.xib; sourceTree = "<group>"; };
+		13540EA221667720005204FC /* GCLinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLinkType.swift; sourceTree = "<group>"; };
 		1356C4D62101E2CD000C3BF5 /* YouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouViewController.swift; sourceTree = "<group>"; };
 		1356C4D72101E2CD000C3BF5 /* YouViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YouViewController.xib; sourceTree = "<group>"; };
 		1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -258,12 +273,15 @@
 		13C5EA0820F8A143000DC504 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PersonTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/PersonTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		13CD442E20E490CB001FB934 /* GCImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCImageViewController.swift; sourceTree = "<group>"; };
 		13CD442F20E490CB001FB934 /* GCImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCImageViewController.xib; sourceTree = "<group>"; };
+		13CD9F202166935600EAFE3D /* LinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksTableViewCell.swift; sourceTree = "<group>"; };
+		13CD9F212166935600EAFE3D /* LinksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinksTableViewCell.xib; sourceTree = "<group>"; };
+		13CD9F2421669B0900EAFE3D /* system_instagram_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_instagram_icon.png; sourceTree = "<group>"; };
+		13CD9F2521669B0A00EAFE3D /* system_website_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_website_icon.png; sourceTree = "<group>"; };
+		13CD9F2621669B0A00EAFE3D /* system_snapchat_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_snapchat_icon.png; sourceTree = "<group>"; };
 		13CF4EC920F7C27E00DEE71A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		13CF4ECA20F7C27E00DEE71A /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		13D389D420FC8E9F00330CDD /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		13D389D520FC8E9F00330CDD /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
-		13D389D920FC9C6700330CDD /* system_snapchat_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_snapchat_icon.png; sourceTree = "<group>"; };
-		13D389DC20FCBC7800330CDD /* system_instagram_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_instagram_icon.png; sourceTree = "<group>"; };
 		13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_3.png; sourceTree = "<group>"; };
 		13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDetailTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserDetailTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -317,6 +335,10 @@
 				137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */,
 				133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */,
 				133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */,
+				13540E9E21667524005204FC /* LinksCollectionViewCell.swift */,
+				13540E9F21667524005204FC /* LinksCollectionViewCell.xib */,
+				13CD9F202166935600EAFE3D /* LinksTableViewCell.swift */,
+				13CD9F212166935600EAFE3D /* LinksTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -437,8 +459,11 @@
 		13961E0C20CA772F004FFF4B /* System */ = {
 			isa = PBXGroup;
 			children = (
+				13CD9F2421669B0900EAFE3D /* system_instagram_icon.png */,
+				13CD9F2621669B0A00EAFE3D /* system_snapchat_icon.png */,
+				13CD9F2521669B0A00EAFE3D /* system_website_icon.png */,
+				13540E98216673A3005204FC /* system_discover_links.png */,
 				13EED9D721362F3100427E5E /* system_login_require.png */,
-				13D389D920FC9C6700330CDD /* system_snapchat_icon.png */,
 				133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */,
 				13F4094B20CCF2A200645880 /* system_send.png */,
 				13961E1920CA9FB1004FFF4B /* system_commented.png */,
@@ -450,7 +475,6 @@
 				13961E0D20CA7766004FFF4B /* system_viewed.png */,
 				1327C1A720CE497A001A300A /* system_reply.png */,
 				1300879D20E9D22500FD9E18 /* system_more_full_image.png */,
-				13D389DC20FCBC7800330CDD /* system_instagram_icon.png */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -523,6 +547,7 @@
 				13F02C9021630F1500660E95 /* IsThisYouViewController.swift */,
 				13F02C9121630F1500660E95 /* IsThisYouViewController.xib */,
 				13540E9621645ABE005204FC /* GCSportType.swift */,
+				13540EA221667720005204FC /* GCLinkType.swift */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -682,6 +707,8 @@
 				139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */,
 				139EDF7820EC87A700778CFD /* EventDetailViewController.swift */,
 				139EDF7920EC87A700778CFD /* EventDetailViewController.xib */,
+				13540E9A216673D6005204FC /* LinksViewController.swift */,
+				13540E9B216673D6005204FC /* LinksViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -797,6 +824,7 @@
 			files = (
 				137EEBA420E7781200BA2575 /* testing_picture_4.jpg in Resources */,
 				13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */,
+				13540E9D216673D6005204FC /* LinksViewController.xib in Resources */,
 				1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */,
 				13117B7820F7454600E4CD66 /* testing_food_6.jpeg in Resources */,
 				13F805C9213B469C00AE93F0 /* NewEditProfileViewController.xib in Resources */,
@@ -828,13 +856,16 @@
 				1356C4DD210599D7000C3BF5 /* EditProfileViewController.xib in Resources */,
 				139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */,
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
+				13CD9F2921669B0A00EAFE3D /* system_snapchat_icon.png in Resources */,
 				137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
 				13EED9DC2136EA1D00427E5E /* GCLoginViewController.xib in Resources */,
-				13D389DD20FCBC7800330CDD /* system_instagram_icon.png in Resources */,
 				13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */,
+				13CD9F232166935600EAFE3D /* LinksTableViewCell.xib in Resources */,
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
 				1396070F20F7E3210079CBC4 /* LookupViewController.xib in Resources */,
+				13CD9F2821669B0A00EAFE3D /* system_website_icon.png in Resources */,
+				13540EA121667524005204FC /* LinksCollectionViewCell.xib in Resources */,
 				13F02C9321630F1500660E95 /* IsThisYouViewController.xib in Resources */,
 				1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */,
 				13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */,
@@ -845,10 +876,10 @@
 				132F819E20C90DD0005D3905 /* numberthree.png in Resources */,
 				13961E1720CA7766004FFF4B /* system_view.png in Resources */,
 				132F819B20C90DD0005D3905 /* numberone.png in Resources */,
+				13CD9F2721669B0A00EAFE3D /* system_instagram_icon.png in Resources */,
 				130E677520F6175E009D3599 /* testing_food_2.jpg in Resources */,
 				13117B7B20F7454600E4CD66 /* testing_food_4.jpg in Resources */,
 				1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */,
-				13D389DB20FC9C6700330CDD /* system_snapchat_icon.png in Resources */,
 				138FEEDF20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib in Resources */,
 				132F819A20C90DD0005D3905 /* numberfive.png in Resources */,
 				132F817F20C8C952005D3905 /* WelcomeViewController.xib in Resources */,
@@ -861,6 +892,7 @@
 				130E677320F61756009D3599 /* testing_food_1.jpg in Resources */,
 				BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */,
 				138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */,
+				13540E99216673A3005204FC /* system_discover_links.png in Resources */,
 				13961E1320CA7766004FFF4B /* system_viewed.png in Resources */,
 				13D389DF20FDB0EC00330CDD /* testing_profile_picture_3.png in Resources */,
 				1377AB74214F4CE20015172C /* GCButtonTableViewCell.xib in Resources */,
@@ -969,6 +1001,7 @@
 				13C2565D214C68F700EFCBCF /* AppPersistenceManager.swift in Sources */,
 				13F02C8E2162DB4500660E95 /* GCGoogleLoginViewController.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
+				13540EA021667524005204FC /* LinksCollectionViewCell.swift in Sources */,
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
 				130E677920F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift in Sources */,
@@ -982,6 +1015,7 @@
 				137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */,
 				133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */,
 				13D389E220FDD62000330CDD /* UserDetailTableViewCell.swift in Sources */,
+				13540EA321667720005204FC /* GCLinkType.swift in Sources */,
 				132F817E20C8C952005D3905 /* WelcomeViewController.swift in Sources */,
 				13C5EA0920F8A143000DC504 /* PersonTableViewCell.swift in Sources */,
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
@@ -1008,6 +1042,8 @@
 				1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,
 				13C2566B214C8BE500EFCBCF /* ImageData+CoreDataClass.swift in Sources */,
+				13540E9C216673D6005204FC /* LinksViewController.swift in Sources */,
+				13CD9F222166935600EAFE3D /* LinksTableViewCell.swift in Sources */,
 				138FEEDE20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift in Sources */,
 				135EB208214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift in Sources */,
 				139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */,

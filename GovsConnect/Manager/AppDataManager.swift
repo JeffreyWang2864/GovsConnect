@@ -14,7 +14,8 @@ class AppDataManager{
     var postsData = Array<PostsDataContainer>()
     var discoverData = Array<DiscoverItemDataContainer>()
     var discoverWeekendEventData = Array<Array<EventDataContainer>>()
-    var discoverMenu = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
+    var discoverMenuData = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
+    var discoverLinksData = Array<DiscoverLinksDataCountainer>()
     var users = Dictionary<String, UserDataContainer>()
     var newPostDraft: (String, String, Array<UIImage>)? = nil
     var currentPersonID = ""{
@@ -111,13 +112,17 @@ class AppDataManager{
         
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
-        self.discoverData.append(DiscoverItemDataContainer("testing_picture_7.jpg", "Govs Trade"))
+        self.discoverData.append(DiscoverItemDataContainer("system_discover_links.png", "Links"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_8.jpg", "Rate Your Food"))
         self.discoverData.append(DiscoverItemDataContainer("system_more_full_image.png", ""))
         
         for _ in (0..<3){
             self.discoverWeekendEventData.append(Array<EventDataContainer>())
         }
+        self.discoverLinksData.append(DiscoverLinksDataCountainer(.website, "Veracross", "Your homework, grade, and everything.", "https://portals.veracross.com/gda/student"))
+        self.discoverLinksData.append(DiscoverLinksDataCountainer(.website, "The Governor's Academy", "School's official website.", "https://www.thegovernorsacademy.org/"))
+        self.discoverLinksData.append(DiscoverLinksDataCountainer(.snapchat, "Govs Event", "Know about what's going on at Govs.", "https://www.snapchat.com/add/govsevents"))
+        self.discoverLinksData.append(DiscoverLinksDataCountainer(.instagram, "Govs Trade", "A student organized trading platform which applies to all graders.", "itms-apps://itunes.apple.com/us/app/instagram/id389801252?mt=8"))
         
         let eventsData = AppPersistenceManager.shared.fetchObject(with: .event) as! Array<Event>
         for d in eventsData{
@@ -169,7 +174,7 @@ class AppDataManager{
                 
             }
         }
-        if AppDataManager.shared.discoverMenu[0].count + AppDataManager.shared.discoverMenu[1].count == 0{
+        if AppDataManager.shared.discoverMenuData[0].count + AppDataManager.shared.discoverMenuData[1].count == 0{
             AppIOManager.shared.loadFoodData { (isSucceed) in
                 //code here
             }
@@ -390,5 +395,19 @@ class DiscoverMatchDataContainer{
         self.homeScore = homeScore
         self.awayScore = awayScore
         self.isUpdateComplete = isUpdateComplete
+    }
+}
+
+class DiscoverLinksDataCountainer{
+    let linkType: GCLinkType
+    let title: String
+    let description: String
+    let link: String
+    
+    init(_ linkType: GCLinkType, _ title: String, _ description: String, _ link: String){
+        self.linkType = linkType
+        self.title = title
+        self.description = description
+        self.link = link
     }
 }

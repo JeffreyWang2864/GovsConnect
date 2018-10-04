@@ -361,8 +361,8 @@ class AppIOManager{
             case .success(let json):
                 var index = 0
                 let jsonDict = JSON(json)
-                AppDataManager.shared.discoverMenu[0] = []
-                AppDataManager.shared.discoverMenu[1] = []
+                AppDataManager.shared.discoverMenuData[0] = []
+                AppDataManager.shared.discoverMenuData[1] = []
                 while jsonDict["\(index)"] != JSON.null{
                     let data = jsonDict["\(index)"]
                     let foodName = data["name"].stringValue
@@ -374,7 +374,7 @@ class AppIOManager{
                     self.loadImage(with: imgStr, { (data) in
                         AppDataManager.shared.imageData[imgStr] = data
                     })
-                    AppDataManager.shared.discoverMenu[btoi(!is_lunch)].append(foodData)
+                    AppDataManager.shared.discoverMenuData[btoi(!is_lunch)].append(foodData)
                     index += 1
                 }
                 completionHandler(true)

@@ -44,25 +44,10 @@ class DiscoverViewController: UIViewController {
             vc.navigationItem.title = "Daily Bulletin"
             webv.loadRequest(URLRequest(url: url))
         case 2:
-            //govs trade
-            let instaUrl = URL(string: "instagram://user?username=govstrade")!
-            if UIApplication.shared.canOpenURL(instaUrl){
-                UIApplication.shared.open(instaUrl, options: [:], completionHandler: nil)
-            }else{
-                let alert = UIAlertController(title: "Instagram app not found", message: "We are trying to direct you to the Govs Trade Instagram Page, but it seems you don't have Instagram on your device.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Download Instagram", style: .default, handler: { (alertAction) in
-                    let instaAppUrl = URL(string: "itms-apps://itunes.apple.com/us/app/instagram/id389801252?mt=8")!
-                    if UIApplication.shared.canOpenURL(instaAppUrl){
-                        UIApplication.shared.open(instaAppUrl, options: [:], completionHandler: nil)
-                    }else{
-                        let a = UIAlertController(title: "Unable to open Instagram on App Store", message: nil, preferredStyle: .alert)
-                        a.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                        self.present(a, animated: true, completion: nil)
-                    }
-                }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
+            //links
+            let vc = LinksViewController.init(nibName: "LinksViewController", bundle: Bundle.main)
+            vc.view.frame = self.view.bounds
+            self.navigationController!.pushViewController(vc, animated: true)
         case 3:
             //rate your food
             guard AppIOManager.shared.connectionStatus != .none else{

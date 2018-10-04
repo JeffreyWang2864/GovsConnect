@@ -159,7 +159,7 @@ extension RateYourFoodViewController: DropdownMenuDelegate{
                 }
             }
         case .ended:
-            let food_id = AppDataManager.shared.discoverMenu[self.menuIndex][self.currentIndexPath.item]._id
+            let food_id = AppDataManager.shared.discoverMenuData[self.menuIndex][self.currentIndexPath.item]._id
             if cell.frame.origin.y < self.likeView.bottom{
                 //liked
                 AppIOManager.shared.foodDataAction(food_id: food_id, method: "plus") { (isSucceed) in
@@ -209,12 +209,12 @@ extension RateYourFoodViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AppDataManager.shared.discoverMenu[self.menuIndex].count
+        return AppDataManager.shared.discoverMenuData[self.menuIndex].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FOOD_COLLECTION_VIEW_CELL", for: indexPath) as! FoodCollectionViewCell
-        let data = AppDataManager.shared.discoverMenu[self.menuIndex][indexPath.item]
+        let data = AppDataManager.shared.discoverMenuData[self.menuIndex][indexPath.item]
         cell.indexTag = indexPath
         cell.data = data
         let pgr = GCDirectionPanGestureRecongnizer(direction: .vertical, target: self, action: #selector(self.didLongPressOnCell(_:)))
