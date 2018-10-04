@@ -363,3 +363,32 @@ class RemoteNotificationContainer{
         self.receivedTimeInterval = receivedTimeInterval
     }
 }
+
+class DiscoverMatchDataContainer{
+    let _uid: Int
+    let catagory: GCSportType
+    let team: GCSportTeamType
+    let startTime: Date
+    var isHome: Bool{
+        get{
+            return self.homeTeam == "The Governor's Academy"
+        }
+    }
+    let homeTeam: String
+    let awayTeam: String
+    let homeScore: Int
+    let awayScore: Int
+    var isUpdateComplete: Bool
+    
+    init(_ _uid: Int, _ catagory: GCSportType, _ team: GCSportTeamType, _ startTime: Date, _ homeTeam: String, _ awayTeam: String, _ homeScore: Int, _ awayScore: Int, _ isUpdateComplete: Bool){
+        self._uid = _uid
+        self.catagory = catagory
+        self.team = team
+        self.startTime = startTime
+        self.homeTeam = homeTeam
+        self.awayTeam = awayTeam
+        self.homeScore = homeScore
+        self.awayScore = awayScore
+        self.isUpdateComplete = isUpdateComplete
+    }
+}

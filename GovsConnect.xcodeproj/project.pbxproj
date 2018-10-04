@@ -46,6 +46,7 @@
 		133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */; };
 		133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */; };
 		133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */; };
+		13540E9721645ABE005204FC /* GCSportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9621645ABE005204FC /* GCSportType.swift */; };
 		1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4D62101E2CD000C3BF5 /* YouViewController.swift */; };
 		1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1356C4D72101E2CD000C3BF5 /* YouViewController.xib */; };
 		1356C4DC210599D7000C3BF5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */; };
@@ -191,6 +192,7 @@
 		133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_drop_down_arrow.png; sourceTree = "<group>"; };
 		133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
+		13540E9621645ABE005204FC /* GCSportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSportType.swift; sourceTree = "<group>"; };
 		1356C4D62101E2CD000C3BF5 /* YouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouViewController.swift; sourceTree = "<group>"; };
 		1356C4D72101E2CD000C3BF5 /* YouViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YouViewController.xib; sourceTree = "<group>"; };
 		1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 				13F02C8D2162DB4500660E95 /* GCGoogleLoginViewController.xib */,
 				13F02C9021630F1500660E95 /* IsThisYouViewController.swift */,
 				13F02C9121630F1500660E95 /* IsThisYouViewController.xib */,
+				13540E9621645ABE005204FC /* GCSportType.swift */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -1013,6 +1016,7 @@
 				13C25679214E0F5F00EFCBCF /* Post+CoreDataClass.swift in Sources */,
 				13D389D620FC8E9F00330CDD /* UserDetailViewController.swift in Sources */,
 				13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */,
+				13540E9721645ABE005204FC /* GCSportType.swift in Sources */,
 				13C2566C214C8BE500EFCBCF /* ImageData+CoreDataProperties.swift in Sources */,
 				13C2566D214C8BE500EFCBCF /* ProfileImageData+CoreDataClass.swift in Sources */,
 			);
@@ -1093,7 +1097,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Debug;
 		};

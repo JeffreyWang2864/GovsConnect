@@ -14,16 +14,46 @@ class GCImageViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
     var imagesName = Array<String>()
+    var loadFullImageButton = UIButton(frame: CGRect(x: screenWidth / 2 - 70, y: screenHeight - 60, width: 140, height: 20))
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
         let tgr = UISwipeGestureRecognizer(target: self, action: #selector(self.dismissExtraInformation(_:)))
         tgr.direction = .down
         self.collectionView.addGestureRecognizer(tgr)
+        self.loadFullImageButton.layer.cornerRadius = 5
+        self.loadFullImageButton.layer.borderColor = UIColor.white.cgColor
+        self.loadFullImageButton.layer.borderWidth = 1
+        self.loadFullImageButton.clipsToBounds = true
+        self.loadFullImageButton.setTitleColor(UIColor.white, for: .normal)
+        self.loadFullImageButton.setTitle("Load full image", for: .normal)
+        self.loadFullImageButton.setTitle("Loading", for: .selected)
+        self.loadFullImageButton.titleLabel!.font = UIFont.systemFont(ofSize: 14)
+        self.loadFullImageButton.backgroundColor = UIColor.black
+        self.loadFullImageButton.addTarget(self, action: #selector(self.loadFullImageButtonDidClick(_:)), for: .touchDown)
+        self.view.addSubview(loadFullImageButton)
     }
     
     @objc func dismissExtraInformation(_ sender: UISwipeGestureRecognizer){
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func loadFullImageButtonDidClick(_ sender: UIButton){
+        let curPage = self.pageControl.currentPage
+        let imgID = self.imagesName[curPage]
+        AppIOManager.shared.loadFullImage(with: imgID, { (data) in
+            //completion handler
+            AppDataManager.shared.imageData[imgID] = data
+            let indexPath = IndexPath(item: curPage, section: 0)
+            let curCell = self.collectionView.cellForItem(at: indexPath) as! GCImageViewCell
+            curCell.imageView.image = UIImage(data: AppDataManager.shared.imageData[imgID]!)
+            self.collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+            self.loadFullImageButton.alpha = 0
+        }){
+            //error handler
+            self.loadFullImageButton.isSelected = false
+            self.loadFullImageButton.alpha = 0.7
+        }
     }
     
     func setupPaging(_ imagesData: Array<String>, at index: Int){
@@ -35,8 +65,20 @@ class GCImageViewController: UIViewController {
         self.collectionView.isPagingEnabled = true
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
             self.collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .right, animated: false)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                let cell = self.collectionView.cellForItem(at: IndexPath(item: self.pageControl.currentPage, section: 0)) as! GCImageViewCell
+                cell.scrollViewDidZoom(cell.scrollView)
+                if cell.imageView.image!.size.width == 300{
+                    //can load full image
+                    self.loadFullImageButton.alpha = 0.7
+                    self.loadFullImageButton.isSelected = false
+                }else{
+                    //full image is already loaded
+                    self.loadFullImageButton.alpha = 0
+                }
+            }
         }
     }
 }
@@ -108,6 +150,18 @@ extension GCImageViewController: UICollectionViewDelegate, UICollectionViewDataS
             self.pageControl.currentPage -= 1
         }else if velocity.x > 0 && self.pageControl.currentPage != self.pageControl.numberOfPages - 1{
             self.pageControl.currentPage += 1
+        }
+        let cell = self.collectionView.cellForItem(at: IndexPath(item: self.pageControl.currentPage, section: 0)) as? GCImageViewCell
+        if cell != nil{
+            cell!.scrollViewDidZoom(cell!.scrollView)
+            if cell!.imageView.image!.size.width == 300{
+                //can load full image
+                self.loadFullImageButton.alpha = 0.7
+                self.loadFullImageButton.isSelected = false
+            }else{
+                //full image is already loaded
+                self.loadFullImageButton.alpha = 0
+            }
         }
     }
 }

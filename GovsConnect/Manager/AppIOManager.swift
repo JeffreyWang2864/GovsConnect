@@ -71,6 +71,23 @@ class AppIOManager{
         }
     }
     
+    func loadFullImage(with id: String, _ completionHandler: @escaping (Data) -> (), errorHandler: @escaping () -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/assets/image_full/" + id
+        request(urlStr).responseData { (response) in
+            switch response.result{
+            case .success(let data):
+                let filteredObj = AppPersistenceManager.shared.filterObject(of: .imageData, with: NSPredicate(format: "key == %@", "\(id)"))!
+                assert(filteredObj.count == 1)
+                AppPersistenceManager.shared.deleteObject(of: .imageData, with: filteredObj[0])
+                AppPersistenceManager.shared.saveObject(to: .imageData, with: [id, data])
+                completionHandler(data)
+            case .failure(let error):
+                makeMessageViaAlert(title: "download full image failed", message: error.localizedDescription)
+                errorHandler()
+            }
+        }
+    }
+    
     func loadProfileImage(with id: String, _ completionHandler: @escaping (Data) -> ()){
         let urlStr = APP_SERVER_URL_STR + "/assets/profile_image/" + id
         request(urlStr).responseData { (response) in
