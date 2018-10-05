@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import MessageUI
 
 class YouViewController: UIViewController {
     @IBOutlet var authorImageView: UIImageView!
@@ -159,10 +160,21 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
             self.navigationController!.pushViewController(vc, animated: true)
         case 2:
             //about govs connect
-            makeMessageViaAlert(title: "Page not available for alpha version", message: "\"about govs connect\" page is not available for alpha version")
+            let vc = AboutGovsConnectViewController.init(nibName: "AboutGovsConnectViewController", bundle: Bundle.main)
+            vc.view.frame = self.view.bounds
+            self.navigationController!.pushViewController(vc, animated: true)
         case 3:
             //give us feedback
-            makeMessageViaAlert(title: "Page not available for alpha version", message: "\"give us feedback\" page is not available for alpha version")
+            if MFMailComposeViewController.canSendMail(){
+                let feedbackVC = MFMailComposeViewController()
+                feedbackVC.mailComposeDelegate = self
+                feedbackVC.setToRecipients(["wang@eagersoft.net"])
+                feedbackVC.setSubject("Feedback on on [\(PHONE_TYPE) iOS]")
+                feedbackVC.setMessageBody("Hi developers,", isHTML: false)
+                self.present(feedbackVC, animated: true, completion: nil)
+            }else{
+                makeMessageViaAlert(title: "Cannot send mail", message: "Your device is unable to send email")
+            }
         case 4:
             //log out
             let alert = UIAlertController(title: "By clicking \"Log out\" below, you will not be able to view, post, reply, or like any post as \(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.name), and you will not have the access to the \"Look up\" section.", message: nil, preferredStyle: .actionSheet)
@@ -182,5 +194,11 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
             fatalError()
         }
         self.tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension YouViewController: MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        makeMessageViaAlert(title: "Thank you", message: "Your mail has been sent")
     }
 }

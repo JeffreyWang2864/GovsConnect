@@ -11,8 +11,6 @@ import UIKit
 class PostsDetailBodyTableViewCell: UITableViewCell {
     @IBOutlet var postTitle: UILabel!
     @IBOutlet var postBody: UITextView!
-    @IBOutlet var viewIcon: UIButton!
-    @IBOutlet var viewCount: UILabel!
     @IBOutlet var likeIcon: UIButton!
     @IBOutlet var likeCount: UILabel!
     @IBOutlet var commentIcon: UIButton!
@@ -25,8 +23,6 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
         self.imageStackView.spacing = 5
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_like.png"), for: .normal)
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_liked.png"), for: .selected)
-        self.viewIcon.setImage(#imageLiteral(resourceName: "system_view.png"), for: .normal)
-        self.viewIcon.setImage(#imageLiteral(resourceName: "system_viewed.png"), for: .selected)
         self.commentIcon.setImage(#imageLiteral(resourceName: "system_comment.png"), for: .normal)
         self.commentIcon.setImage(#imageLiteral(resourceName: "system_commented.png"), for: .selected)
         // Initialization code

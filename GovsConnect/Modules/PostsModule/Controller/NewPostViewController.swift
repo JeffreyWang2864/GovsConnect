@@ -146,7 +146,7 @@ class NewPostViewController: UIViewController {
     @IBAction func takePhotoButtonDidClick(_ sender: UIButton){
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             self.imagePickerController.sourceType = .camera
-            self.imagePickerController.allowsEditing = true
+            self.imagePickerController.allowsEditing = false
             self.present(self.imagePickerController, animated: true, completion: nil)
         }else{
             let alert  = UIAlertController(title: "Camera not found", message: "Unable to find camera on this device", preferredStyle: .alert)
@@ -245,7 +245,7 @@ extension NewPostViewController: UIImagePickerControllerDelegate, UINavigationCo
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         var chosenImage = UIImage()
         if self.imagePickerController.sourceType == .camera{
-            chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
+            chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         }else{
             chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         }

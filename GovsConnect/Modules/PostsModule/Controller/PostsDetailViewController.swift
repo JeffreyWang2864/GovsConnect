@@ -157,10 +157,10 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
             cell.tag = self.correspondTag
             cell.likeIcon.isSelected = data.isLikedByCurrentUser
             cell.commentIcon.isSelected = data.isCommentedByCurrentUser
-            cell.viewIcon.isSelected = data.isViewedByCurrentUser
+            //cell.viewIcon.isSelected = data.isViewedByCurrentUser
             cell.likeCount.text = "\(data.likeCount)"
             cell.commentCount.text = "\(data.commentCount)"
-            cell.viewCount.text = "\(data.viewCount)"
+            //cell.viewCount.text = "\(data.viewCount)"
             cell.postTitle.text = data.postTitle
             cell.postTitle.constraints[0].constant = suitableHeight(for: cell.postTitle, fixedWidth: cell.postTitle.width)
             cell.postBody.text = data.postContent

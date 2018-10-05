@@ -31,7 +31,7 @@ class LinksTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = APP_BACKGROUND_GREY
+        self.backgroundColor = APP_BACKGROUND_ULTRA_GREY
         self.layer.cornerRadius = 15
         self.clipsToBounds = true
         self.linkButton.layer.cornerRadius = 15

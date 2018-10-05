@@ -18,8 +18,10 @@ class GCImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        let tgr = UISwipeGestureRecognizer(target: self, action: #selector(self.dismissExtraInformation(_:)))
-        tgr.direction = .down
+        let sgr = UISwipeGestureRecognizer(target: self, action: #selector(self.dismissExtraInformation(_:)))
+        sgr.direction = .down
+        let tgr = UITapGestureRecognizer(target: self, action: #selector(self.dismissExtraInformation(_:)))
+        self.collectionView.addGestureRecognizer(sgr)
         self.collectionView.addGestureRecognizer(tgr)
         self.loadFullImageButton.layer.cornerRadius = 5
         self.loadFullImageButton.layer.borderColor = UIColor.white.cgColor
@@ -45,8 +47,7 @@ class GCImageViewController: UIViewController {
             //completion handler
             AppDataManager.shared.imageData[imgID] = data
             let indexPath = IndexPath(item: curPage, section: 0)
-            let curCell = self.collectionView.cellForItem(at: indexPath) as! GCImageViewCell
-            curCell.imageView.image = UIImage(data: AppDataManager.shared.imageData[imgID]!)
+            self.collectionView.reloadData()
             self.collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
             self.loadFullImageButton.alpha = 0
         }){
@@ -69,7 +70,6 @@ class GCImageViewController: UIViewController {
             self.collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .right, animated: false)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
                 let cell = self.collectionView.cellForItem(at: IndexPath(item: self.pageControl.currentPage, section: 0)) as! GCImageViewCell
-                cell.scrollViewDidZoom(cell.scrollView)
                 if cell.imageView.image!.size.width == 300{
                     //can load full image
                     self.loadFullImageButton.alpha = 0.7

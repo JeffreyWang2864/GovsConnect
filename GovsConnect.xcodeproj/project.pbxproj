@@ -122,6 +122,23 @@
 		13CD9F2721669B0A00EAFE3D /* system_instagram_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F2421669B0900EAFE3D /* system_instagram_icon.png */; };
 		13CD9F2821669B0A00EAFE3D /* system_website_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F2521669B0A00EAFE3D /* system_website_icon.png */; };
 		13CD9F2921669B0A00EAFE3D /* system_snapchat_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F2621669B0A00EAFE3D /* system_snapchat_icon.png */; };
+		13CD9F2C2166B37700EAFE3D /* AboutGovsConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CD9F2A2166B37700EAFE3D /* AboutGovsConnectViewController.swift */; };
+		13CD9F2D2166B37700EAFE3D /* AboutGovsConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F2B2166B37700EAFE3D /* AboutGovsConnectViewController.xib */; };
+		13CD9F3E2166B82500EAFE3D /* govs_connect_app_logo_76@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F2F2166B82400EAFE3D /* govs_connect_app_logo_76@1x.png */; };
+		13CD9F3F2166B82500EAFE3D /* govs_connect_app_logo_76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F302166B82400EAFE3D /* govs_connect_app_logo_76@2x.png */; };
+		13CD9F402166B82500EAFE3D /* govs_connect_app_logo_40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F312166B82400EAFE3D /* govs_connect_app_logo_40@3x.png */; };
+		13CD9F412166B82500EAFE3D /* govs_connect_app_logo_40@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F322166B82400EAFE3D /* govs_connect_app_logo_40@1x.png */; };
+		13CD9F422166B82500EAFE3D /* govs_connect_app_logo_20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F332166B82400EAFE3D /* govs_connect_app_logo_20@3x.png */; };
+		13CD9F432166B82500EAFE3D /* govs_connect_app_logo_29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F342166B82500EAFE3D /* govs_connect_app_logo_29@2x.png */; };
+		13CD9F442166B82500EAFE3D /* govs_connect_app_logo_60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F352166B82500EAFE3D /* govs_connect_app_logo_60@3x.png */; };
+		13CD9F452166B82500EAFE3D /* govs_connect_app_logo_20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F362166B82500EAFE3D /* govs_connect_app_logo_20@2x.png */; };
+		13CD9F462166B82500EAFE3D /* govs_connect_app_logo_1024@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F372166B82500EAFE3D /* govs_connect_app_logo_1024@1x.png */; };
+		13CD9F472166B82500EAFE3D /* govs_connect_app_logo_40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F382166B82500EAFE3D /* govs_connect_app_logo_40@2x.png */; };
+		13CD9F482166B82500EAFE3D /* govs_connect_app_logo_83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F392166B82500EAFE3D /* govs_connect_app_logo_83.5@2x.png */; };
+		13CD9F492166B82500EAFE3D /* govs_connect_app_logo_60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F3A2166B82500EAFE3D /* govs_connect_app_logo_60@2x.png */; };
+		13CD9F4A2166B82500EAFE3D /* govs_connect_app_logo_29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F3B2166B82500EAFE3D /* govs_connect_app_logo_29@3x.png */; };
+		13CD9F4B2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F3C2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png */; };
+		13CD9F4C2166B82500EAFE3D /* govs_connect_app_logo_20@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F3D2166B82500EAFE3D /* govs_connect_app_logo_20@1x.png */; };
 		13CF4ECB20F7C27E00DEE71A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF4EC920F7C27E00DEE71A /* NotificationViewController.swift */; };
 		13CF4ECC20F7C27E00DEE71A /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CF4ECA20F7C27E00DEE71A /* NotificationViewController.xib */; };
 		13D389D620FC8E9F00330CDD /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D389D420FC8E9F00330CDD /* UserDetailViewController.swift */; };
@@ -278,6 +295,23 @@
 		13CD9F2421669B0900EAFE3D /* system_instagram_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_instagram_icon.png; sourceTree = "<group>"; };
 		13CD9F2521669B0A00EAFE3D /* system_website_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_website_icon.png; sourceTree = "<group>"; };
 		13CD9F2621669B0A00EAFE3D /* system_snapchat_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_snapchat_icon.png; sourceTree = "<group>"; };
+		13CD9F2A2166B37700EAFE3D /* AboutGovsConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGovsConnectViewController.swift; sourceTree = "<group>"; };
+		13CD9F2B2166B37700EAFE3D /* AboutGovsConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutGovsConnectViewController.xib; sourceTree = "<group>"; };
+		13CD9F2F2166B82400EAFE3D /* govs_connect_app_logo_76@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_76@1x.png"; sourceTree = "<group>"; };
+		13CD9F302166B82400EAFE3D /* govs_connect_app_logo_76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_76@2x.png"; sourceTree = "<group>"; };
+		13CD9F312166B82400EAFE3D /* govs_connect_app_logo_40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_40@3x.png"; sourceTree = "<group>"; };
+		13CD9F322166B82400EAFE3D /* govs_connect_app_logo_40@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_40@1x.png"; sourceTree = "<group>"; };
+		13CD9F332166B82400EAFE3D /* govs_connect_app_logo_20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_20@3x.png"; sourceTree = "<group>"; };
+		13CD9F342166B82500EAFE3D /* govs_connect_app_logo_29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_29@2x.png"; sourceTree = "<group>"; };
+		13CD9F352166B82500EAFE3D /* govs_connect_app_logo_60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_60@3x.png"; sourceTree = "<group>"; };
+		13CD9F362166B82500EAFE3D /* govs_connect_app_logo_20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_20@2x.png"; sourceTree = "<group>"; };
+		13CD9F372166B82500EAFE3D /* govs_connect_app_logo_1024@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_1024@1x.png"; sourceTree = "<group>"; };
+		13CD9F382166B82500EAFE3D /* govs_connect_app_logo_40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_40@2x.png"; sourceTree = "<group>"; };
+		13CD9F392166B82500EAFE3D /* govs_connect_app_logo_83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_83.5@2x.png"; sourceTree = "<group>"; };
+		13CD9F3A2166B82500EAFE3D /* govs_connect_app_logo_60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_60@2x.png"; sourceTree = "<group>"; };
+		13CD9F3B2166B82500EAFE3D /* govs_connect_app_logo_29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_29@3x.png"; sourceTree = "<group>"; };
+		13CD9F3C2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_29@1x.png"; sourceTree = "<group>"; };
+		13CD9F3D2166B82500EAFE3D /* govs_connect_app_logo_20@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_20@1x.png"; sourceTree = "<group>"; };
 		13CF4EC920F7C27E00DEE71A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		13CF4ECA20F7C27E00DEE71A /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		13D389D420FC8E9F00330CDD /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
@@ -459,6 +493,7 @@
 		13961E0C20CA772F004FFF4B /* System */ = {
 			isa = PBXGroup;
 			children = (
+				13CD9F2E2166B7F600EAFE3D /* AppIcon */,
 				13CD9F2421669B0900EAFE3D /* system_instagram_icon.png */,
 				13CD9F2621669B0A00EAFE3D /* system_snapchat_icon.png */,
 				13CD9F2521669B0A00EAFE3D /* system_website_icon.png */,
@@ -550,6 +585,28 @@
 				13540EA221667720005204FC /* GCLinkType.swift */,
 			);
 			path = GC;
+			sourceTree = "<group>";
+		};
+		13CD9F2E2166B7F600EAFE3D /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				13CD9F3D2166B82500EAFE3D /* govs_connect_app_logo_20@1x.png */,
+				13CD9F362166B82500EAFE3D /* govs_connect_app_logo_20@2x.png */,
+				13CD9F332166B82400EAFE3D /* govs_connect_app_logo_20@3x.png */,
+				13CD9F3C2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png */,
+				13CD9F342166B82500EAFE3D /* govs_connect_app_logo_29@2x.png */,
+				13CD9F3B2166B82500EAFE3D /* govs_connect_app_logo_29@3x.png */,
+				13CD9F322166B82400EAFE3D /* govs_connect_app_logo_40@1x.png */,
+				13CD9F382166B82500EAFE3D /* govs_connect_app_logo_40@2x.png */,
+				13CD9F312166B82400EAFE3D /* govs_connect_app_logo_40@3x.png */,
+				13CD9F3A2166B82500EAFE3D /* govs_connect_app_logo_60@2x.png */,
+				13CD9F352166B82500EAFE3D /* govs_connect_app_logo_60@3x.png */,
+				13CD9F2F2166B82400EAFE3D /* govs_connect_app_logo_76@1x.png */,
+				13CD9F302166B82400EAFE3D /* govs_connect_app_logo_76@2x.png */,
+				13CD9F392166B82500EAFE3D /* govs_connect_app_logo_83.5@2x.png */,
+				13CD9F372166B82500EAFE3D /* govs_connect_app_logo_1024@1x.png */,
+			);
+			path = AppIcon;
 			sourceTree = "<group>";
 		};
 		13CF4EC520F7C24600DEE71A /* NotificationModule */ = {
@@ -682,6 +739,8 @@
 				13F805C7213B469C00AE93F0 /* NewEditProfileViewController.xib */,
 				1377AB6D214F4AAA0015172C /* SettingViewController.swift */,
 				1377AB6E214F4AAA0015172C /* SettingViewController.xib */,
+				13CD9F2A2166B37700EAFE3D /* AboutGovsConnectViewController.swift */,
+				13CD9F2B2166B37700EAFE3D /* AboutGovsConnectViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -824,6 +883,9 @@
 			files = (
 				137EEBA420E7781200BA2575 /* testing_picture_4.jpg in Resources */,
 				13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */,
+				13CD9F2D2166B37700EAFE3D /* AboutGovsConnectViewController.xib in Resources */,
+				13CD9F492166B82500EAFE3D /* govs_connect_app_logo_60@2x.png in Resources */,
+				13CD9F422166B82500EAFE3D /* govs_connect_app_logo_20@3x.png in Resources */,
 				13540E9D216673D6005204FC /* LinksViewController.xib in Resources */,
 				1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */,
 				13117B7820F7454600E4CD66 /* testing_food_6.jpeg in Resources */,
@@ -835,32 +897,40 @@
 				132F817520C8C77C005D3905 /* LaunchScreen.storyboard in Resources */,
 				1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */,
 				13117B7A20F7454600E4CD66 /* testing_food_7.jpeg in Resources */,
+				13CD9F442166B82500EAFE3D /* govs_connect_app_logo_60@3x.png in Resources */,
 				13321FBE20CFDB7F000B6C41 /* testing_picture_3.jpg in Resources */,
 				13961E1820CA7766004FFF4B /* system_share.png in Resources */,
 				1327C1A820CE497A001A300A /* system_reply.png in Resources */,
 				13961E1A20CA9FB1004FFF4B /* system_commented.png in Resources */,
 				13CF4ECC20F7C27E00DEE71A /* NotificationViewController.xib in Resources */,
 				13C5EA0A20F8A143000DC504 /* PersonTableViewCell.xib in Resources */,
+				13CD9F3F2166B82500EAFE3D /* govs_connect_app_logo_76@2x.png in Resources */,
 				13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */,
 				137EEBA520E7781200BA2575 /* testing_picture_6.jpg in Resources */,
 				133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */,
 				139EDF7720EC7FA400778CFD /* RateYourFoodViewController.xib in Resources */,
 				13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */,
+				13CD9F4B2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png in Resources */,
 				1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */,
 				130E677720F61765009D3599 /* testing_food_3.jpg in Resources */,
 				13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */,
+				13CD9F402166B82500EAFE3D /* govs_connect_app_logo_40@3x.png in Resources */,
 				13D389D720FC8E9F00330CDD /* UserDetailViewController.xib in Resources */,
 				13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */,
 				135EB209214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib in Resources */,
+				13CD9F472166B82500EAFE3D /* govs_connect_app_logo_40@2x.png in Resources */,
+				13CD9F482166B82500EAFE3D /* govs_connect_app_logo_83.5@2x.png in Resources */,
 				13117B7920F7454600E4CD66 /* testing_food_5.jpeg in Resources */,
 				1356C4DD210599D7000C3BF5 /* EditProfileViewController.xib in Resources */,
 				139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */,
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
 				13CD9F2921669B0A00EAFE3D /* system_snapchat_icon.png in Resources */,
 				137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */,
+				13CD9F4A2166B82500EAFE3D /* govs_connect_app_logo_29@3x.png in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
 				13EED9DC2136EA1D00427E5E /* GCLoginViewController.xib in Resources */,
 				13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */,
+				13CD9F462166B82500EAFE3D /* govs_connect_app_logo_1024@1x.png in Resources */,
 				13CD9F232166935600EAFE3D /* LinksTableViewCell.xib in Resources */,
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
 				1396070F20F7E3210079CBC4 /* LookupViewController.xib in Resources */,
@@ -871,10 +941,12 @@
 				13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */,
 				132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */,
 				13F02C8B2162CCA600660E95 /* GoogleService-Info.plist in Resources */,
+				13CD9F412166B82500EAFE3D /* govs_connect_app_logo_40@1x.png in Resources */,
 				13EED9D62136121B00427E5E /* GCLoginRequireViewController.xib in Resources */,
 				132F818820C8DAB2005D3905 /* PostsViewController.xib in Resources */,
 				132F819E20C90DD0005D3905 /* numberthree.png in Resources */,
 				13961E1720CA7766004FFF4B /* system_view.png in Resources */,
+				13CD9F4C2166B82500EAFE3D /* govs_connect_app_logo_20@1x.png in Resources */,
 				132F819B20C90DD0005D3905 /* numberone.png in Resources */,
 				13CD9F2721669B0A00EAFE3D /* system_instagram_icon.png in Resources */,
 				130E677520F6175E009D3599 /* testing_food_2.jpg in Resources */,
@@ -887,12 +959,15 @@
 				132B8C0D20E6813300A80F5B /* DiscoverViewController.xib in Resources */,
 				13321FBA20CF7B04000B6C41 /* NewPostViewController.xib in Resources */,
 				132F819D20C90DD0005D3905 /* numbertwo.png in Resources */,
+				13CD9F432166B82500EAFE3D /* govs_connect_app_logo_29@2x.png in Resources */,
 				13961E1520CA7766004FFF4B /* system_comment.png in Resources */,
 				130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */,
 				130E677320F61756009D3599 /* testing_food_1.jpg in Resources */,
+				13CD9F3E2166B82500EAFE3D /* govs_connect_app_logo_76@1x.png in Resources */,
 				BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */,
 				138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */,
 				13540E99216673A3005204FC /* system_discover_links.png in Resources */,
+				13CD9F452166B82500EAFE3D /* govs_connect_app_logo_20@2x.png in Resources */,
 				13961E1320CA7766004FFF4B /* system_viewed.png in Resources */,
 				13D389DF20FDB0EC00330CDD /* testing_profile_picture_3.png in Resources */,
 				1377AB74214F4CE20015172C /* GCButtonTableViewCell.xib in Resources */,
@@ -990,6 +1065,7 @@
 			files = (
 				13C25663214C6BFC00EFCBCF /* Setting+CoreDataProperties.swift in Sources */,
 				1381C0F6211BFD360013BCF3 /* AppIOManager.swift in Sources */,
+				13CD9F2C2166B37700EAFE3D /* AboutGovsConnectViewController.swift in Sources */,
 				13C2565B214C653F00EFCBCF /* GovsConnect.xcdatamodeld in Sources */,
 				13F805C8213B469C00AE93F0 /* NewEditProfileViewController.swift in Sources */,
 				137D562F20E7BA080088AB30 /* DiscoverBasicCellView.swift in Sources */,
@@ -1182,8 +1258,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

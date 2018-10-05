@@ -154,9 +154,9 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if AppDataManager.shared.postsData[indexPath.section].postImagesName.count > 0{
-            return 267.5
+            return 272.5
         }
-        return 134.5
+        return 139.5
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

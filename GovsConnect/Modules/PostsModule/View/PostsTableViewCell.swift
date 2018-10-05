@@ -16,14 +16,11 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet var authorNameDate: UILabel!
     @IBOutlet var postTitle: UILabel!
     @IBOutlet var postDescription: UILabel!
-    @IBOutlet var viewLabel: UILabel!
     @IBOutlet var likeLabel: UILabel!
     @IBOutlet var commentLabel: UILabel!
-    @IBOutlet var viewIcon: UIButton!
     @IBOutlet var likeIcon: UIButton!
     @IBOutlet var commentIcon: UIButton!
     @IBOutlet var imageStackView: UIStackView!
-
     var viewBlock: PostsTableViewCellViewBlock?
     var commentBlock: PostsTableViewCellCommentBlock?
     var authorBlock: PostsTableViewCellAuthorBlock?
@@ -39,10 +36,10 @@ class PostsTableViewCell: UITableViewCell {
             self.postDescription.text = "\(data.postContent.prefix(upTo: data.postContent.index(data.postContent.startIndex, offsetBy: min(100, data.postContent.count))))"
             self.likeIcon.isSelected = data.isLikedByCurrentUser
             self.commentIcon.isSelected = data.isCommentedByCurrentUser
-            self.viewIcon.isSelected = data.isViewedByCurrentUser
+            //self.viewIcon.isSelected = data.isViewedByCurrentUser
             self.likeLabel.text = "\(data.likeCount)"
             self.commentLabel.text = "\(data.commentCount)"
-            self.viewLabel.text = "\(data.viewCount)"
+            //self.viewLabel.text = "\(data.viewCount)"
             let heightConstraint = self.imageStackView.constraints[0]
             self.imageStackView.arrangedSubviews.map{
                 $0.removeFromSuperview()
@@ -59,10 +56,11 @@ class PostsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_like.png"), for: .normal)
         self.likeIcon.setImage(#imageLiteral(resourceName: "system_liked.png"), for: .selected)
-        self.viewIcon.setImage(#imageLiteral(resourceName: "system_view.png"), for: .normal)
-        self.viewIcon.setImage(#imageLiteral(resourceName: "system_viewed.png"), for: .selected)
         self.commentIcon.setImage(#imageLiteral(resourceName: "system_comment.png"), for: .normal)
         self.commentIcon.setImage(#imageLiteral(resourceName: "system_commented.png"), for: .selected)
+        let dtr = UITapGestureRecognizer(target: self, action: #selector(self.didDoubleTap(_:)))
+        dtr.numberOfTapsRequired = 2
+        self.addGestureRecognizer(dtr)
     }
     
     func displayPreviewImages(imageNames: Array<String>){
@@ -71,6 +69,8 @@ class PostsTableViewCell: UITableViewCell {
         var index = 0
         for imageName in imageNames{
             let v = UIImageView()
+            v.contentMode = .scaleAspectFill
+            v.clipsToBounds = true
             v.tag = index
             index += 1
             if index < 3{
@@ -92,6 +92,10 @@ class PostsTableViewCell: UITableViewCell {
             }
             
         }
+    }
+    
+    @objc func didDoubleTap(_ sender: UIGestureRecognizer){
+        self.likeButtonDidClick(self.likeIcon)
     }
     
     @objc func didClickOnImage(_ sender: UITapGestureRecognizer){
