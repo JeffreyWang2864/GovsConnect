@@ -48,9 +48,6 @@ class IsThisYouViewController: UIViewController {
     }
 
     @IBAction func confirmButtonDidClick(_ sender: UIButton){
-        AppDataManager.shared.currentPersonID = self.uid!
-        AppIOManager.shared.loginSuccessful()
-        NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
         let alert = UIAlertController(title: nil, message: "Logging you in...", preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
@@ -58,10 +55,18 @@ class IsThisYouViewController: UIViewController {
         loadingIndicator.startAnimating();
         alert.view.addSubview(loadingIndicator)
         self.present(alert, animated: true, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            alert.dismiss(animated: true, completion: {
-                NotificationCenter.default.post(Notification(name: AppIOManager.loginActionNotificationName))
-            })
+        AppDataManager.shared.currentPersonID = self.uid!
+        AppIOManager.shared.loginSuccessful({
+            NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                alert.dismiss(animated: true, completion: {
+                    NotificationCenter.default.post(Notification(name: AppIOManager.loginActionNotificationName))
+                })
+            }
+        }) { (errStr) in
+            alert.dismiss(animated: true){
+                makeMessageViaAlert(title: "Error when logging you in", message: errStr)
+            }
         }
     }
     

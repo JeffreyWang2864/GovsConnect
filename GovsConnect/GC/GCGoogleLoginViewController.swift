@@ -89,14 +89,19 @@ class GCGoogleLoginViewController: UIViewController{
         self.present(alert, animated: true, completion: nil)
         AppIOManager.shared.getAccessCodeStatus(accessCode: self.accessCodeTextField.text!, { (isPassed) in
             if isPassed{
-                AppDataManager.shared.currentPersonID = "ranpe001"
-                AppIOManager.shared.loginSuccessful()
-                NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
                 alert.title = "Logging you in as Guest..."
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    alert.dismiss(animated: true, completion: {
-                        NotificationCenter.default.post(Notification(name: AppIOManager.loginActionNotificationName))
-                    })
+                AppDataManager.shared.currentPersonID = "ranpe001"
+                AppIOManager.shared.loginSuccessful({
+                    NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        alert.dismiss(animated: true, completion: {
+                            NotificationCenter.default.post(Notification(name: AppIOManager.loginActionNotificationName))
+                        })
+                    }
+                }) { (errStr) in
+                    alert.dismiss(animated: true){
+                        makeMessageViaAlert(title: "Error when logging you in", message: errStr)
+                    }
                 }
             }else{
                 alert.dismiss(animated: false, completion: {

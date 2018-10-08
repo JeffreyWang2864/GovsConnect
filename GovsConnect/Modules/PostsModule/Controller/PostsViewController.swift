@@ -53,7 +53,38 @@ class PostsViewController: UIViewController {
     
     @objc func newPostButtonDidClick(){
         let postVc = NewPostViewController(nibName: "NewPostViewController", bundle: nil)
-        self.navigationController?.present(postVc, animated: true, completion: {
+        if AppDataManager.shared.currentUserConnections.count > 0{
+            //user have connected to some organiation
+            let alertOptionHandler = { (index: Int) in
+                { (action: UIAlertAction!) -> Void in
+                    let uid = AppDataManager.shared.currentUserConnections[index]
+                    postVc.sender_uid = uid
+                    self.navigationController!.present(postVc, animated: true, completion: {
+                        UIApplication.shared.statusBarStyle = .default
+                    })
+                }
+            }
+            let optionsAlert = UIAlertController(title: "Post as", message: nil, preferredStyle: .actionSheet)
+            for i in stride(from: 0, to: AppDataManager.shared.currentUserConnections.count, by: 1){
+                let cur_org_id = AppDataManager.shared.currentUserConnections[i]
+                let action = UIAlertAction(title: AppDataManager.shared.users[cur_org_id]!.name, style: .default, handler: alertOptionHandler(i))
+                optionsAlert.addAction(action)
+            }
+            let curUsername = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.name
+            optionsAlert.addAction(UIAlertAction(title: curUsername, style: .default, handler: { (alert) in
+                postVc.sender_uid = AppDataManager.shared.currentPersonID
+                self.navigationController!.present(postVc, animated: true, completion: {
+                    UIApplication.shared.statusBarStyle = .default
+                })
+            }))
+            optionsAlert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+            self.navigationController!.present(optionsAlert, animated: true) {
+                //code
+            }
+            return
+        }
+        postVc.sender_uid = AppDataManager.shared.currentPersonID
+        self.navigationController!.present(postVc, animated: true, completion: {
             UIApplication.shared.statusBarStyle = .default
         })
     }
@@ -183,7 +214,7 @@ extension PostsViewController: UIGestureRecognizerDelegate{
         }
         let realIndexPathItem = indexPath!.section
         let selectedRowSenderUID = AppDataManager.shared.postsData[realIndexPathItem].author.uid
-        guard selectedRowSenderUID == AppDataManager.shared.currentPersonID else{
+        guard selectedRowSenderUID == AppDataManager.shared.currentPersonID || AppDataManager.shared.currentUserConnections.contains(selectedRowSenderUID) else{
             return
         }
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)

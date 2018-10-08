@@ -489,13 +489,13 @@ class AppIOManager{
         }
     }
     
-    func loginSuccessful(){
+    func loginSuccessful( _ completionHandler: @escaping () -> Void, _ errorHandler: @escaping (String) ->Void){
         let urlStr = APP_SERVER_URL_STR + "/assets/login_successful/"
-        guard AppIOManager.shared.deviceToken != nil else{
-            //running on an simulator
-            return
-        }
-        let postData = ["access_token": AppIOManager.shared.deviceToken!, "uid": AppDataManager.shared.currentPersonID]
+//        guard AppIOManager.shared.deviceToken != nil else{
+//            //running on an simulator
+//            return
+//        }
+        let postData = ["access_token": AppIOManager.shared.deviceToken ?? "", "uid": AppDataManager.shared.currentPersonID]
         request(urlStr, method: .post, parameters: postData as [String: AnyObject], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result{
             case .success(let json):
@@ -504,12 +504,18 @@ class AppIOManager{
                 AppDataManager.shared.currentUserSetting["someone replied my comment"] = jsonDict["someone replied my comment"].boolValue
                 AppDataManager.shared.currentUserSetting["someone replied my post"] = jsonDict["someone replied my post"].boolValue
                 AppDataManager.shared.currentUserSetting["someone liked my post"] = jsonDict["someone liked my post"].boolValue
+                let organizationStr = jsonDict["organization"].stringValue
+                AppDataManager.shared.currentUserConnections = []
+                for item in organizationStr.split(separator: "/"){
+                    AppDataManager.shared.currentUserConnections.append("\(item)")
+                }
                 assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone posts"), newVal: jsonDict["someone posts"].stringValue, forKey: "value"))
                 assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone replied my comment"), newVal: jsonDict["someone replied my comment"].stringValue, forKey: "value"))
                 assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone replied my post"), newVal: jsonDict["someone replied my post"].stringValue, forKey: "value"))
                 assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone liked my post"), newVal: jsonDict["someone liked my post"].stringValue, forKey: "value"))
+                completionHandler()
             case .failure(let error):
-                makeMessageViaAlert(title: "failed to upload device token to the server", message: error.localizedDescription)
+                errorHandler(error.localizedDescription)
             }
         }
     }
@@ -542,6 +548,40 @@ class AppIOManager{
                 completionHandler(true)
             case .failure(let error):
                 makeMessageViaAlert(title: "failed to log out", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func connectToOrganization(passphrase: String, _ completionHandler: @escaping (Bool, String?) -> Void, _ errorHandler: @escaping (String) -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/post/connect_to_organization"
+        let postData = ["passphrase": passphrase, "uid": AppDataManager.shared.currentPersonID]
+        request(urlStr, method: .post, parameters: postData as [String: AnyObject], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                let jsonDict = JSON(json)
+                let pass = jsonDict["pass"].boolValue
+                if pass{
+                    completionHandler(pass, jsonDict["uid"].stringValue)
+                }else{
+                    completionHandler(pass, nil)
+                }
+            case .failure(let error):
+                errorHandler(error.localizedDescription)
+            }
+        }
+    }
+    
+    func disconnectToOrganization(org: String, _ completionHandler: @escaping (Bool) -> Void, _ errorHandler: @escaping (String) ->Void){
+        let urlStr = APP_SERVER_URL_STR + "/post/disconnect_to_organization"
+        let postData = ["org_uid": org, "query_uid": AppDataManager.shared.currentPersonID]
+        request(urlStr, method: .post, parameters: postData as [String: AnyObject], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                let jsonDict = JSON(json)
+                let pass = jsonDict["pass"].boolValue
+                completionHandler(pass)
+            case .failure(let error):
+                errorHandler(error.localizedDescription)
             }
         }
     }

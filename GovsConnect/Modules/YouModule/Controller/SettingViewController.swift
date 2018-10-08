@@ -14,6 +14,7 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Setting"
         self.tableView.register(UINib(nibName: "GCButtonTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "GC_BUTTON_TABLEVIEW_CELL")
+        self.tableView.register(UINib.init(nibName: "ConnectClubTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "CONNECT_CLUB_TABLEVIEW_CELL_ID")
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SETTINGVIEW_TABLEVIEW_CELL")
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -32,11 +33,14 @@ class SettingViewController: UIViewController {
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
+            return 1
+        }
+        if section == 1{
             return 4
         }
         return 1
@@ -44,6 +48,10 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CONNECT_CLUB_TABLEVIEW_CELL_ID", for: indexPath)
+            return cell
+        }
+        if indexPath.section == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "GC_BUTTON_TABLEVIEW_CELL", for: indexPath) as! GCButtonTableViewCell
             switch indexPath.item{
             case 0:
@@ -87,6 +95,9 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
+            return "connections"
+        }
+        if section == 1{
             return "notify me when:"
         }
         return "actions"
@@ -94,7 +105,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 1{
+        if indexPath.section == 2{
             let alert = UIAlertController(title: "clear local data confirmation", message: "By clicking \"Clear local data\" below, all image and string caches will be erased. This may free some disk space on your device, but those caches may be redownloaded from the server again at the next time you launch this app.", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Clear local data", style: .destructive, handler: { (action) in
                 let allPostData = AppPersistenceManager.shared.fetchObject(with: .post)

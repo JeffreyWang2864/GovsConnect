@@ -21,9 +21,10 @@ class NewPostViewController: UIViewController {
     var pendingImages = Array<UIImage>()
     var previousLine = 1
     var imagePickerController = UIImagePickerController()
+    var sender_uid: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imgIndex = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.uid
+        let imgIndex = self.sender_uid!
         let imgData = AppDataManager.shared.profileImageData[imgIndex]!
         self.authorImage.image = UIImage.init(data: imgData)
         self.authorImage.clipsToBounds = true
@@ -132,7 +133,7 @@ class NewPostViewController: UIViewController {
     
     @IBAction func postButtonDidClick(_ sender: UIButton){
         let postData: [String: String] = [
-            "sender_uid": AppDataManager.shared.currentPersonID,
+            "sender_uid": self.sender_uid!,
             "title": self.postTitleTextBox.text,
             "body": self.postBodyTextBox.text
             ]

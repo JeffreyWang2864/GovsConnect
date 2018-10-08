@@ -148,15 +148,16 @@ class WeekendDetailViewController: UIViewController {
             v.layer.cornerRadius = 5
             v.layer.borderWidth = 1
             v.layer.borderColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 0.5).cgColor
-            let startTimeLabel = UILabel(frame: CGRect(x: 5, y: 5, width:v.frame.size.width - 10, height: 18))
-            startTimeLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            let startTimeLabel = UILabel(frame: CGRect(x: 5, y: 5, width:v.frame.size.width - 10, height: 13))
+            startTimeLabel.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
             startTimeLabel.text = "@ \(startTime.hour!):\(startTime.minute! < 10 ? "0\(startTime.minute!)" : "\(startTime.minute!)")"
             startTimeLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
-            let titleLabel = UILabel(frame: CGRect(x: 5, y: 23, width: v.frame.size.width - 10, height: 18))
+            let titleLabel = UILabel(frame: CGRect(x: 5, y: 17, width: v.frame.size.width - 10, height: 15))
             titleLabel.contentMode = .top
-            titleLabel.font = UIFont.systemFont(ofSize: 18)
+            titleLabel.font = UIFont.systemFont(ofSize: 14)
             titleLabel.text = "\(currentDayData[i].title)"
-            titleLabel.numberOfLines = 2
+            titleLabel.clipsToBounds = true
+            titleLabel.numberOfLines = 0
             titleLabel.sizeToFit()
             titleLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
             v.addSubview(startTimeLabel)

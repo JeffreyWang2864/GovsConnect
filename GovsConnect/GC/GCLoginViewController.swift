@@ -97,7 +97,7 @@ class GCLoginViewController: UIViewController {
         }
         //password is correct
         AppDataManager.shared.currentPersonID = self.currentCombination.uid
-        AppIOManager.shared.loginSuccessful()
+        //AppIOManager.shared.loginSuccessful()
         NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
         NotificationCenter.default.post(Notification(name: AppIOManager.loginActionNotificationName))
     }

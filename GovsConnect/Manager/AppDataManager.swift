@@ -31,6 +31,7 @@ class AppDataManager{
     var profileImageData = Dictionary<String, Data>()
     var remoteNotificationData = Array<RemoteNotificationContainer>()
     var currentUserSetting = Dictionary<String, Bool>()
+    var currentUserConnections = Array<String>()
     func isFirstTimeRunningApplication() -> Bool{
         let r = AppPersistenceManager.shared.fetchObject(with: .setting)
         if r.count == 0{
@@ -77,13 +78,14 @@ class AppDataManager{
             AppDataManager.shared.profileImageData[d.key!] = Data.init(referencing: d.data!)
         }
         
-        let ss = ["testing_profile_picture_1.png", "testing_profile_picture_2.png", "testing_profile_picture_3.png", "testing_profile_picture_jzm.png", "testing_profile_picture_dt.png", "testing_profile_picture_4.png"]
+        let ss = ["testing_profile_picture_1.png", "testing_profile_picture_2.png", "testing_profile_picture_3.png", "testing_profile_picture_jzm.png", "testing_profile_picture_dt.png", "testing_profile_picture_4.png", "testing_profile_picture_4.png"]
         let uids = ["jefwa001",
             "kevji001",
             "haosh001",
             "zemji001",
             "dontr001",
             "ranpe001",
+            "unice001",
         ]
         for i in stride(from: 0, to: ss.count, by: 1){
             if AppDataManager.shared.profileImageData[uids[i]] != nil{

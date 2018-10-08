@@ -79,6 +79,8 @@
 		138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */; };
 		138FEEDE20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FEEDC20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift */; };
 		138FEEDF20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138FEEDD20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib */; };
+		1390DA8F21681686004D1A50 /* ConnectClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1390DA8D21681686004D1A50 /* ConnectClubTableViewCell.swift */; };
+		1390DA9021681686004D1A50 /* ConnectClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1390DA8E21681686004D1A50 /* ConnectClubTableViewCell.xib */; };
 		1396070E20F7E3210079CBC4 /* LookupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1396070C20F7E3210079CBC4 /* LookupViewController.swift */; };
 		1396070F20F7E3210079CBC4 /* LookupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1396070D20F7E3210079CBC4 /* LookupViewController.xib */; };
 		13961E1320CA7766004FFF4B /* system_viewed.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E0D20CA7766004FFF4B /* system_viewed.png */; };
@@ -251,6 +253,8 @@
 		138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiMediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		138FEEDC20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseDescriptionTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/CourseDescriptionTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		138FEEDD20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CourseDescriptionTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/CourseDescriptionTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		1390DA8D21681686004D1A50 /* ConnectClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectClubTableViewCell.swift; sourceTree = "<group>"; };
+		1390DA8E21681686004D1A50 /* ConnectClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectClubTableViewCell.xib; sourceTree = "<group>"; };
 		1396070C20F7E3210079CBC4 /* LookupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupViewController.swift; sourceTree = "<group>"; };
 		1396070D20F7E3210079CBC4 /* LookupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookupViewController.xib; sourceTree = "<group>"; };
 		13961E0D20CA7766004FFF4B /* system_viewed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_viewed.png; sourceTree = "<group>"; };
@@ -647,6 +651,8 @@
 		13E73707210960CF008BE215 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1390DA8D21681686004D1A50 /* ConnectClubTableViewCell.swift */,
+				1390DA8E21681686004D1A50 /* ConnectClubTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -969,6 +975,7 @@
 				13540E99216673A3005204FC /* system_discover_links.png in Resources */,
 				13CD9F452166B82500EAFE3D /* govs_connect_app_logo_20@2x.png in Resources */,
 				13961E1320CA7766004FFF4B /* system_viewed.png in Resources */,
+				1390DA9021681686004D1A50 /* ConnectClubTableViewCell.xib in Resources */,
 				13D389DF20FDB0EC00330CDD /* testing_profile_picture_3.png in Resources */,
 				1377AB74214F4CE20015172C /* GCButtonTableViewCell.xib in Resources */,
 				133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */,
@@ -1102,6 +1109,7 @@
 				1377AB6C214EDA510015172C /* Event+CoreDataProperties.swift in Sources */,
 				130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */,
 				BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */,
+				1390DA8F21681686004D1A50 /* ConnectClubTableViewCell.swift in Sources */,
 				13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */,
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,

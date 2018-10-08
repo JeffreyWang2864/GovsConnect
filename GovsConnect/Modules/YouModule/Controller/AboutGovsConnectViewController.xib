@@ -63,12 +63,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xko-wE-clS">
-                    <rect key="frame" x="124" y="505" width="127" height="24"/>
+                    <rect key="frame" x="122.5" y="505" width="130" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="127" id="RRR-dy-Wyp"/>
+                        <constraint firstAttribute="width" constant="130" id="RRR-dy-Wyp"/>
                         <constraint firstAttribute="height" constant="24" id="i4i-fQ-OsN"/>
                     </constraints>
-                    <state key="normal" title="Term and Services"/>
+                    <state key="normal" title="terms and services"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOi-en-RhE">
                     <rect key="frame" x="140" y="529" width="95" height="24"/>
@@ -76,7 +76,7 @@
                         <constraint firstAttribute="width" constant="95" id="gMb-Uh-5Jx"/>
                         <constraint firstAttribute="height" constant="24" id="hjo-4g-qF5"/>
                     </constraints>
-                    <state key="normal" title="Privacy Policy"/>
+                    <state key="normal" title="privacy policy"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46W-ha-B4Q">
                     <rect key="frame" x="76" y="553" width="223" height="24"/>
@@ -84,7 +84,7 @@
                         <constraint firstAttribute="height" constant="24" id="NyC-kU-mJh"/>
                         <constraint firstAttribute="width" constant="223" id="iWD-Pl-FO2"/>
                     </constraints>
-                    <state key="normal" title="Govs Connect Official Website"/>
+                    <state key="normal" title="Govs Connect official website"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBq-Pd-w8K">
                     <rect key="frame" x="76" y="577" width="223" height="24"/>
@@ -92,7 +92,7 @@
                         <constraint firstAttribute="height" constant="24" id="UEZ-0u-8wc"/>
                         <constraint firstAttribute="width" constant="223" id="yJW-mm-HLB"/>
                     </constraints>
-                    <state key="normal" title="Rate Govs Connect"/>
+                    <state key="normal" title="rate Govs Connect"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="designed by the Govs Connect Club @2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2AX-bD-PHS">
                     <rect key="frame" x="64.5" y="631" width="246" height="13"/>

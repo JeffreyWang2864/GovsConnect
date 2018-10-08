@@ -199,6 +199,8 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
 
 extension YouViewController: MFMailComposeViewControllerDelegate{
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        makeMessageViaAlert(title: "Thank you", message: "Your mail has been sent")
+        controller.dismiss(animated: true) {
+            makeMessageViaAlert(title: "Thank you", message: "Your mail has been sent")
+        }
     }
 }
