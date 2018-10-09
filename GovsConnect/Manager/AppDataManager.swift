@@ -76,6 +76,9 @@ class AppDataManager{
                 fatalError()
             }
         }
+        if AppDataManager.shared.currentPersonID == ""{
+            AppDataManager.shared.currentUserConnections = []
+        }
         let imageData = AppPersistenceManager.shared.fetchObject(with: .imageData) as! Array<ImageData>
         for d in imageData{
             AppDataManager.shared.imageData[d.key!] = Data.init(referencing: d.data!)

@@ -45,7 +45,9 @@ class ManagePostsViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRealRefreashCellNotificationName))
+        if self.isMovingFromParentViewController{
+            NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRealRefreashCellNotificationName))
+        }
     }
     
     private func setupTableViewData(){
