@@ -47,3 +47,5 @@ let PHONE_TYPE: GCPhoneType = {
 var secondsFromGMT: Int {
     return TimeZone.current.secondsFromGMT()
 }
+
+let NUMBER_OF_POST_PER_LOAD = 10

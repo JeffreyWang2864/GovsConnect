@@ -29,6 +29,11 @@ class SettingViewController: UIViewController {
             assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone liked my post"), newVal: "\(AppDataManager.shared.currentUserSetting["someone liked my post"]!)", forKey: "value"))
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
 }
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource{

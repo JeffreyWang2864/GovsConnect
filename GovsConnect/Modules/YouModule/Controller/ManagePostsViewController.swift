@@ -16,6 +16,13 @@ class ManagePostsViewController: UIViewController {
     var uid: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard AppIOManager.shared.connectionStatus != .none else{
+            //offline mode
+            self.dismiss(animated: true) {
+                makeMessageViaAlert(title: "You can't view a person's all post under offline mode", message: "")
+            }
+            return
+        }
         if self.uid! == AppDataManager.shared.currentPersonID{
             self.navigationItem.title = "Manage my posts"
             self.addLongPressGestureRecongnizer()
@@ -27,11 +34,23 @@ class ManagePostsViewController: UIViewController {
         self.view.addSubview(self.tableView)
         self.tableView.register(UINib(nibName: "PostsTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_CELL_ID")
         self.tableView.separatorStyle = .none
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        AppIOManager.shared.loadPostData(by: self.uid!, {
+            //success handler
+            self.setupTableViewData()
+        }) { (errStr) in
+            //error handler
+            makeMessageViaAlert(title: "Error when loading post data", message: errStr)
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRealRefreashCellNotificationName))
     }
     
     private func setupTableViewData(){
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         let ret = AppDataManager.shared.posts(by: self.uid!)
         self.curUserPostsData = ret.datas
         self.curUserPostsIndex = ret.index

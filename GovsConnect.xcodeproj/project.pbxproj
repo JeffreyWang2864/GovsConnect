@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13007BB9216C189900ECB59F /* BottomActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13007BB7216C189900ECB59F /* BottomActionTableViewCell.swift */; };
+		13007BBA216C189900ECB59F /* BottomActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13007BB8216C189900ECB59F /* BottomActionTableViewCell.xib */; };
 		1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1300879D20E9D22500FD9E18 /* system_more_full_image.png */; };
 		130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */; };
 		130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */; };
@@ -179,6 +181,8 @@
 
 /* Begin PBXFileReference section */
 		0E2B5E8DAACCCA68B7312709 /* Pods-GovsConnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovsConnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.debug.xcconfig"; sourceTree = "<group>"; };
+		13007BB7216C189900ECB59F /* BottomActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionTableViewCell.swift; sourceTree = "<group>"; };
+		13007BB8216C189900ECB59F /* BottomActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomActionTableViewCell.xib; sourceTree = "<group>"; };
 		1300879D20E9D22500FD9E18 /* system_more_full_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_more_full_image.png; sourceTree = "<group>"; };
 		1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekendDetailViewController.swift; sourceTree = "<group>"; };
 		130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekendDetailViewController.xib; sourceTree = "<group>"; };
@@ -706,6 +710,8 @@
 				13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */,
 				132F81A420C91FB9005D3905 /* PostsTableViewCell.swift */,
 				132F81A520C91FB9005D3905 /* PostsTableViewCell.xib */,
+				13007BB7216C189900ECB59F /* BottomActionTableViewCell.swift */,
+				13007BB8216C189900ECB59F /* BottomActionTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -927,6 +933,7 @@
 				13CD9F472166B82500EAFE3D /* govs_connect_app_logo_40@2x.png in Resources */,
 				13CD9F482166B82500EAFE3D /* govs_connect_app_logo_83.5@2x.png in Resources */,
 				13117B7920F7454600E4CD66 /* testing_food_5.jpeg in Resources */,
+				13007BBA216C189900ECB59F /* BottomActionTableViewCell.xib in Resources */,
 				1356C4DD210599D7000C3BF5 /* EditProfileViewController.xib in Resources */,
 				139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */,
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
@@ -1114,6 +1121,7 @@
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
 				139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */,
+				13007BB9216C189900ECB59F /* BottomActionTableViewCell.swift in Sources */,
 				1377AB73214F4CE20015172C /* GCButtonTableViewCell.swift in Sources */,
 				13C25664214C6BFC00EFCBCF /* Setting+CoreDataClass.swift in Sources */,
 				BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */,

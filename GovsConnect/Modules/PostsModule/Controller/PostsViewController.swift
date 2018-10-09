@@ -16,11 +16,13 @@ class PostsViewController: UIViewController {
     var refreashControl = UIRefreshControl()
     var longPressGestureRecongnizer = UILongPressGestureRecognizer()
     var newPostButton = UIBarButtonItem()
+    var loadDataLock = true
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.shouldReloadCell(_:)), name: PostsViewController.shouldRefreashCellNotificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.shouldRefreashCell(_:)), name: PostsViewController.shouldRealRefreashCellNotificationName, object: nil)
         self.mainTableView.register(UINib.init(nibName: "PostsTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_CELL_ID")
+        self.mainTableView.register(UINib.init(nibName: "BottomActionTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "BOTTOM_ACTION_TABLEVIEW_CELL_ID")
         self.mainTableView.delegate = self
         self.mainTableView.dataSource = self
         self.mainTableView.estimatedRowHeight = 0
@@ -146,11 +148,44 @@ class PostsViewController: UIViewController {
     @objc func shouldRefreashCell(_ sender: Notification){
         self.refreachNewData(self.refreashControl)
     }
+    
+    func updatePost(curIndex: IndexPath){
+        guard self.loadDataLock else{
+            return
+        }
+        self.loadDataLock = false
+        let alert = UIAlertController(title: nil, message: "Fetching new posts...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        alert.view.addSubview(loadingIndicator)
+        self.present(alert, animated: true, completion: nil)
+        let post_id = AppDataManager.shared.postsData[curIndex.section]._uid
+        AppIOManager.shared.loadNextPostData(from: post_id, {
+            //completion handler
+            self.mainTableView.reloadData()
+            self.mainTableView.scrollToRow(at: curIndex, at: .top, animated: false)
+            alert.dismiss(animated: true, completion: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                    self.loadDataLock = true
+                }
+            })
+        }) { (errStr) in
+            //error handler
+            alert.dismiss(animated: true, completion: {
+                makeMessageViaAlert(title: "Error when loading post data", message: errStr)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                    self.loadDataLock = true
+                }
+            })
+        }
+    }
 }
 
 extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-         return AppDataManager.shared.postsData.count
+         return AppDataManager.shared.postsData.count + 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -158,6 +193,14 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == AppDataManager.shared.postsData.count{
+            //bottom button
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BOTTOM_ACTION_TABLEVIEW_CELL_ID", for: indexPath) as! BottomActionTableViewCell
+            cell.buttonDidClickBlock = self.updatePost
+            cell.indexPath = indexPath
+            cell.setButtonActivity()
+            return cell
+        }
         //let realIndexPathItem = indexPath.section
         let data = AppDataManager.shared.postsData[indexPath.section]
         let cell = tableView.dequeueReusableCell(withIdentifier: "POSTS_TABLEVIEW_CELL_ID", for: indexPath) as! PostsTableViewCell
@@ -184,6 +227,10 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == AppDataManager.shared.postsData.count{
+            //bottom button
+            return 70
+        }
         if AppDataManager.shared.postsData[indexPath.section].postImagesName.count > 0{
             return 272.5
         }
@@ -198,6 +245,11 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == AppDataManager.shared.postsData.count{
+            //bottom button
+            self.mainTableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
         let realIndexPathItem = indexPath.section
         let detailViewController = PostsDetailViewController(nibName: "PostsDetailViewController", bundle: Bundle.main)
         detailViewController.correspondTag = realIndexPathItem

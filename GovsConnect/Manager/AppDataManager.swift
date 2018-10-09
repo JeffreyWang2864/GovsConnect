@@ -46,6 +46,7 @@ class AppDataManager{
         AppPersistenceManager.shared.saveObject(to: .setting, with: ["someone replied my comment", "true"])
         AppPersistenceManager.shared.saveObject(to: .setting, with: ["someone replied my post", "true"])
         AppPersistenceManager.shared.saveObject(to: .setting, with: ["someone liked my post", "true"])
+        AppPersistenceManager.shared.saveObject(to: .setting, with: ["organization", ""])
     }
     
     public func setupData(){
@@ -65,6 +66,12 @@ class AppDataManager{
                 AppDataManager.shared.currentUserSetting["someone replied my post"] = Bool(d.value!)!
             case "someone liked my post":
                 AppDataManager.shared.currentUserSetting["someone liked my post"] = Bool(d.value!)!
+            case "organization":
+                let organizationStr = "\(d.value!)"
+                AppDataManager.shared.currentUserConnections = []
+                for org_str in organizationStr.split(separator: "/"){
+                    AppDataManager.shared.currentUserConnections.append("\(org_str)")
+                }
             default:
                 fatalError()
             }
@@ -164,7 +171,12 @@ class AppDataManager{
     
     func loadPostDataFromServerAndUpdateLocalData(){
         assert(AppIOManager.shared.connectionStatus != .none)
-        AppIOManager.shared.loadPostData(from: self.postsData.last?._uid ?? 0, to: 300)
+        AppIOManager.shared.loadNewestPost({
+            NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRefreashCellNotificationName))
+        }) { (errStr) in
+            makeMessageViaAlert(title: "Error when fetching newest data", message: errStr)
+        }
+        //AppIOManager.shared.loadPostData(from: self.postsData.last?._uid ?? 0, to: NUMBER_OF_POST_PER_LOAD)
     }
     
     func loadDiscoverDataFromServerAndUpdateLocalData(){

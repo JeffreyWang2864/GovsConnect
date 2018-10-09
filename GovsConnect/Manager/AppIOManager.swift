@@ -128,14 +128,72 @@ class AppIOManager{
         }
     }
     
-    func loadPostData(from: Int, to: Int){
-        NSLog(APP_SERVER_URL_STR + "/post/uid=\(AppDataManager.shared.currentPersonID)from\(from)to\(to)")
-        request(APP_SERVER_URL_STR + "/post/uid=\(AppDataManager.shared.currentPersonID)from\(from)to\(to)").responseJSON { (response) in
-            switch response.result{
+//    func loadPostData(from: Int, to: Int){
+//        NSLog(APP_SERVER_URL_STR + "/post/uid=\(AppDataManager.shared.currentPersonID)from\(from)to\(to)")
+//        request(APP_SERVER_URL_STR + "/post/uid=\(AppDataManager.shared.currentPersonID)from\(from)to\(to)").responseJSON { (response) in
+//            switch response.result{
+//            case .success(let json):
+//                let jsonDict = JSON(json)
+//                var index = 0
+//                AppDataManager.shared.postsData = []
+//                while jsonDict["\(index)"] != JSON.null{
+//                    let data = jsonDict["\(index)"]
+//                    let author = AppDataManager.shared.users[data["author_uid"].stringValue]
+//                    let title = data["title"].stringValue
+//                    let content = data["content"].stringValue
+//                    let post_time = NSDate(timeIntervalSince1970: TimeInterval(data["post_time"].int!))
+//                    let postImageUrls = data["post_image_url"].stringValue.split(separator: "/")
+//                    let like_count = data["like_count"].int!
+//                    let view_count = data["view_count"].int!
+//                    let reply_count = data["reply_count"].int!
+//                    let isLiked = data["is_liked"].bool!
+//                    let isViewed = data["is_viewed"].bool!
+//                    let id = data["id"].int!
+//                    let container = PostsDataContainer.init(author!, post_time, title, content, view_count, like_count, reply_count, isViewed, isLiked, false)
+//                    for image_url in postImageUrls{
+//                        container.postImagesName.append("\(image_url)")
+//                    }
+//                    container._uid = id
+//                    index += 1
+////                    let ifheif = AppPersistenceManager.shared.fetchObject(with: .post) as! Array<Post>
+////                    for iefhje in ifheif{
+////                        NSLog("\(iefhje.id!)")
+////                    }
+//                    let apsres = AppPersistenceManager.shared.filterObject(of: .post, with: NSPredicate(format: "id == %@", "\(id)")) as! Array<Post>
+//                    assert(apsres.count <= 2)
+//                    if apsres.count == 1{
+//                        let obj = apsres[0]
+//                        obj.is_liked = isLiked
+//                        obj.is_viewed = isViewed
+//                        obj.post_comment_count = Int16(reply_count)
+//                        obj.post_like_count = Int16(like_count)
+//                        obj.post_view_count = Int16(view_count)
+//                        try!AppPersistenceManager.shared.context.save()
+//                    }else{
+//                        AppPersistenceManager.shared.saveObject(to: .post, with: [data["author_uid"].stringValue, true, title, content, post_time, data["post_image_url"].stringValue, isLiked, Int16(like_count), isViewed, Int16(view_count), Int16(reply_count), id, ""])
+//                    }
+//                    NSLog("saved one to post, \(id)")
+//                    AppDataManager.shared.insertPostByUid(container)
+//                }
+//                NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRefreashCellNotificationName))
+//            case .failure(let error):
+//                makeMessageViaAlert(title: "Error when loading Post data from server", message: "\(error)")
+//            }
+//        }
+//    }
+    
+    func loadNewestPost(_ completionHandler: @escaping () -> (), _ errorHandler: @escaping (String) -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/post/uid=\(AppDataManager.shared.currentPersonID)"
+        request(urlStr).responseJSON { (response) in
+            switch(response.result){
             case .success(let json):
                 let jsonDict = JSON(json)
                 var index = 0
                 AppDataManager.shared.postsData = []
+                let objs = AppPersistenceManager.shared.fetchObject(with: .post)
+                for obj in objs{
+                    AppPersistenceManager.shared.deleteObject(of: .post, with: obj)
+                }
                 while jsonDict["\(index)"] != JSON.null{
                     let data = jsonDict["\(index)"]
                     let author = AppDataManager.shared.users[data["author_uid"].stringValue]
@@ -155,10 +213,6 @@ class AppIOManager{
                     }
                     container._uid = id
                     index += 1
-//                    let ifheif = AppPersistenceManager.shared.fetchObject(with: .post) as! Array<Post>
-//                    for iefhje in ifheif{
-//                        NSLog("\(iefhje.id!)")
-//                    }
                     let apsres = AppPersistenceManager.shared.filterObject(of: .post, with: NSPredicate(format: "id == %@", "\(id)")) as! Array<Post>
                     assert(apsres.count <= 2)
                     if apsres.count == 1{
@@ -172,12 +226,101 @@ class AppIOManager{
                     }else{
                         AppPersistenceManager.shared.saveObject(to: .post, with: [data["author_uid"].stringValue, true, title, content, post_time, data["post_image_url"].stringValue, isLiked, Int16(like_count), isViewed, Int16(view_count), Int16(reply_count), id, ""])
                     }
-                    NSLog("saved one to post, \(id)")
+                    //NSLog("saved one to post, \(id)")
                     AppDataManager.shared.insertPostByUid(container)
                 }
-                NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRefreashCellNotificationName))
+                completionHandler()
             case .failure(let error):
-                makeMessageViaAlert(title: "Error when loading Post data from server", message: "\(error)")
+                errorHandler(error.localizedDescription)
+            }
+        }
+    }
+    
+    func loadNextPostData(from right: Int, _ completionHandler: @escaping () -> (), _ errorHandler: @escaping (String) -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/post/uid=\(AppDataManager.shared.currentPersonID)_from\(right)"
+        request(urlStr).responseJSON { (response) in
+            switch(response.result){
+            case .success(let json):
+                let jsonDict = JSON(json)
+                var index = 0
+                while jsonDict["\(index)"] != JSON.null{
+                    let data = jsonDict["\(index)"]
+                    let author = AppDataManager.shared.users[data["author_uid"].stringValue]
+                    let title = data["title"].stringValue
+                    let content = data["content"].stringValue
+                    let post_time = NSDate(timeIntervalSince1970: TimeInterval(data["post_time"].int!))
+                    let postImageUrls = data["post_image_url"].stringValue.split(separator: "/")
+                    let like_count = data["like_count"].int!
+                    let view_count = data["view_count"].int!
+                    let reply_count = data["reply_count"].int!
+                    let isLiked = data["is_liked"].bool!
+                    let isViewed = data["is_viewed"].bool!
+                    let id = data["id"].int!
+                    let container = PostsDataContainer.init(author!, post_time, title, content, view_count, like_count, reply_count, isViewed, isLiked, false)
+                    for image_url in postImageUrls{
+                        container.postImagesName.append("\(image_url)")
+                    }
+                    container._uid = id
+                    index += 1
+                    let apsres = AppPersistenceManager.shared.filterObject(of: .post, with: NSPredicate(format: "id == %@", "\(id)")) as! Array<Post>
+                    assert(apsres.count <= 2)
+                    if apsres.count == 1{
+                        let obj = apsres[0]
+                        obj.is_liked = isLiked
+                        obj.is_viewed = isViewed
+                        obj.post_comment_count = Int16(reply_count)
+                        obj.post_like_count = Int16(like_count)
+                        obj.post_view_count = Int16(view_count)
+                        try!AppPersistenceManager.shared.context.save()
+                    }else{
+                        AppPersistenceManager.shared.saveObject(to: .post, with: [data["author_uid"].stringValue, true, title, content, post_time, data["post_image_url"].stringValue, isLiked, Int16(like_count), isViewed, Int16(view_count), Int16(reply_count), id, ""])
+                    }
+                    //NSLog("saved one to post, \(id)")
+                    AppDataManager.shared.insertPostByUid(container)
+                    
+                }
+                completionHandler()
+            case .failure(let error):
+                errorHandler(error.localizedDescription)
+            }
+        }
+    }
+    
+    func loadPostData(by uid: String, _ completionHandler: @escaping () -> (), _ errorHandler: @escaping (String) -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/post/uid=\(AppDataManager.shared.currentPersonID)_by=\(uid)"
+        request(urlStr).responseJSON { (response) in
+            switch(response.result){
+            case .success(let json):
+                let jsonDict = JSON(json)
+                var index = 0
+                while jsonDict["\(index)"] != JSON.null{
+                    let data = jsonDict["\(index)"]
+                    let author = AppDataManager.shared.users[data["author_uid"].stringValue]
+                    let title = data["title"].stringValue
+                    let content = data["content"].stringValue
+                    let post_time = NSDate(timeIntervalSince1970: TimeInterval(data["post_time"].int!))
+                    let postImageUrls = data["post_image_url"].stringValue.split(separator: "/")
+                    let like_count = data["like_count"].int!
+                    let view_count = data["view_count"].int!
+                    let reply_count = data["reply_count"].int!
+                    let isLiked = data["is_liked"].bool!
+                    let isViewed = data["is_viewed"].bool!
+                    let id = data["id"].int!
+                    let container = PostsDataContainer.init(author!, post_time, title, content, view_count, like_count, reply_count, isViewed, isLiked, false)
+                    for image_url in postImageUrls{
+                        container.postImagesName.append("\(image_url)")
+                    }
+                    container._uid = id
+                    index += 1
+                    if !AppDataManager.shared.postsData.contains(where: { (data) -> Bool in
+                        return data._uid == container._uid
+                    }){
+                        AppDataManager.shared.insertPostByUid(container)
+                    }
+                }
+                completionHandler()
+            case .failure(let error):
+                errorHandler(error.localizedDescription)
             }
         }
     }
@@ -297,10 +440,11 @@ class AppIOManager{
             index += 1
         }
         let ppores = AppPersistenceManager.shared.filterObject(of: .post, with: NSPredicate(format: "id == %@", "\(AppDataManager.shared.postsData[local_post_id]._uid)")) as! Array<Post>
-        assert(ppores.count == 1)
-        let postPersistanceObject = ppores[0]
-        postPersistanceObject.comment_by_id = comments_by_id
-        try! AppPersistenceManager.shared.context.save()
+        if ppores.count == 1{
+            let postPersistanceObject = ppores[0]
+            postPersistanceObject.comment_by_id = comments_by_id
+            try! AppPersistenceManager.shared.context.save()
+        }
     }
     
     func view(at post_id: Int){
@@ -513,6 +657,7 @@ class AppIOManager{
                 assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone replied my comment"), newVal: jsonDict["someone replied my comment"].stringValue, forKey: "value"))
                 assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone replied my post"), newVal: jsonDict["someone replied my post"].stringValue, forKey: "value"))
                 assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone liked my post"), newVal: jsonDict["someone liked my post"].stringValue, forKey: "value"))
+                assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "organization"), newVal: jsonDict["organization"].stringValue, forKey: "value"))
                 completionHandler()
             case .failure(let error):
                 errorHandler(error.localizedDescription)
