@@ -56,6 +56,7 @@ class ManagePostsViewController: UIViewController {
         let ret = AppDataManager.shared.posts(by: self.uid!)
         self.curUserPostsData = ret.datas
         self.curUserPostsIndex = ret.index
+        self.tableView.reloadData()
     }
     
     func addLongPressGestureRecongnizer(){

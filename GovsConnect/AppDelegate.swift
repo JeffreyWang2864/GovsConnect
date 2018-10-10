@@ -48,21 +48,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func handleLaunchOption(_ launchOptions: [UIApplicationLaunchOptionsKey: Any]?){
-        let remoteNotifications = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification]
-        if remoteNotifications != nil{
-            let dict = remoteNotifications as! Dictionary<String, Any>
-            let aps = dict["aps"] as! Dictionary<String, Any>
-            let alertMessage = aps["alert"] as! String
-            switch alertMessage{
-            case "Weekend events for the new week is available. Check it out!":
-                let allEvents = AppPersistenceManager.shared.fetchObject(with: .event)
-                for event in allEvents{
-                    AppPersistenceManager.shared.deleteObject(of: .event, with: event)
-                }
-            default:
-                break
-            }
-        }
+//        let remoteNotifications = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification]
+//        if remoteNotifications != nil{
+//            let dict = remoteNotifications as! Dictionary<String, Any>
+//            let aps = dict["aps"] as! Dictionary<String, Any>
+//            let alertMessage = aps["alert"] as! String
+//            switch alertMessage{
+//            case "Weekend events for the new week is available. Check it out!":
+//                let allEvents = AppPersistenceManager.shared.fetchObject(with: .event)
+//                for event in allEvents{
+//                    AppPersistenceManager.shared.deleteObject(of: .event, with: event)
+//                }
+//            default:
+//                break
+//            }
+//        }
     }
     
     func registerForPushNotifications() {

@@ -88,7 +88,7 @@ class AppDataManager{
             AppDataManager.shared.profileImageData[d.key!] = Data.init(referencing: d.data!)
         }
         
-        let ss = ["testing_profile_picture_1.png", "testing_profile_picture_2.png", "testing_profile_picture_3.png", "testing_profile_picture_jzm.png", "testing_profile_picture_dt.png", "testing_profile_picture_4.png", "testing_profile_picture_4.png"]
+        let ss = ["testing_profile_picture_1.png", "testing_profile_picture_2.png", "testing_profile_picture_3.png", "testing_profile_picture_jzm.png", "testing_profile_picture_dt.png", "testing_profile_picture_4.png", "testing_profile_picture_4.png", "testing_profile_picture_4.png"]
         let uids = ["jefwa001",
             "kevji001",
             "haosh001",
@@ -96,6 +96,7 @@ class AppDataManager{
             "dontr001",
             "ranpe001",
             "unice001",
+            "haofa001",
         ]
         for i in stride(from: 0, to: ss.count, by: 1){
             if AppDataManager.shared.profileImageData[uids[i]] != nil{
@@ -111,12 +112,14 @@ class AppDataManager{
         self.users["zemji001"] = UserDataContainer.init("zemji001", "Zemin Jiang", "0", .facalty, .sophomoreEnglish, "Shanghai, China", [("zemin.jaing@china.gov", true)])
         self.users["dontr001"] = UserDataContainer.init("dontr001", "Donald Trump", "0", .facalty, .juniorEnglish, "USA", [("donald.trump@trump.com", true)])
         self.users["ranpe001"] = UserDataContainer.init("ranpe001", "Random Person", "0", .student, .senior, "middle of nowhere", [("random.person@govsacademy.org", true)])
+        self.users["haofa001"] = UserDataContainer.init("haofa001", "David Fan", "0", .student, .senior, "Shenzhen, China", [("haoyang.fan@govsacademy.org", true)])
         self.users["advan001"] = UserDataContainer.init("advan001", "Advanced Precalculus with an Introduction to Calculus", "testing_profile_picture_4.png", .course, .mathmaticDepartment, "", [("This is a year-long course with two major segments. The first portion of the course is an in-depth examination of ideas such as vectors, matrices, systems of linear and non-linear equations, sequences and series. The second portion of the course introduces students to the major themes of calculus, specifically the limit, the derivative, and the definite integral. This segment is designed to prepare students for a traditional college calculus course.", true), ("two semesters", true), ("mathmetics", true), ("false", true), ("9, 10, 11, 12", true), ("1", true), ("Science Building 301", true), ("Mr. Wang, Mr. Zhang and Mr. Lee", true)])
         self.users["unice001"] = UserDataContainer.init("unice001", "Unicef Club", "testing_profile_picture_4.png", .club, .clubDefault, "Governor's official Unicef club", [("Miki Takahashi and Taylor Xie", true), ("Geoff Brace and Jade Qian", true), ("Murphy Seminor Room, Frost Library", true), ("Thursday 6:00 PM", true), ("We partner up with UNICEF USA, and by collecting funds through various events throughout the year, we aim to further contribute as UNICEF high school sector. Informing Govs about what the world's most vulnerable children are going through is also our core objective.", true), ("Dedication. From the fact that our members are chosen through applications, it shows how we value the contribution of every members.\nIn comparison to the minorities who lack resources for living, UNICEF makes us realize how we are the other minority, being able to go through privileged life at boarding school. We have to be aware of where we stand in this society as well as to think of what we can do to help the others.", true)])
         self.allStudent.append("jefwa001")
         self.allStudent.append("kevji001")
         self.allStudent.append("haosh001")
         self.allStudent.append("ranpe001")
+        self.allStudent.append("haofa001")
         self.allFaculty.append("zemji001")
         self.allFaculty.append("dontr001")
         self.allCourse.append("advan001")
@@ -184,6 +187,10 @@ class AppDataManager{
     
     func loadDiscoverDataFromServerAndUpdateLocalData(){
         assert(AppIOManager.shared.connectionStatus != .none)
+        let allEvents = AppPersistenceManager.shared.fetchObject(with: .event)
+        for event in allEvents{
+            AppPersistenceManager.shared.deleteObject(of: .event, with: event)
+        }
         if AppDataManager.shared.discoverWeekendEventData[0].count +
             AppDataManager.shared.discoverWeekendEventData[1].count +
             AppDataManager.shared.discoverWeekendEventData[2].count == 0{
