@@ -9,9 +9,9 @@
 import UIKit
 
 class UserDetailViewController: UIViewController {
-    static let studentLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Email:", .all), ("Website:", .link), ("Phone:", .phoneNumber), ("Address:", .all)]
-    static let courseLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Length:", .all), ("Catagory:", .all), ("Is required:", .all), ("Grade:", .all), ("Credits:", .all), ("Location:", .all), ("Teacher:", .all)]
-    static let clubLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Leader:", .all), ("Location:", .all), ("Activity hour:", .all)]
+    static let studentLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Email", .all), ("Website", .link), ("Phone", .phoneNumber), ("Address", .all)]
+    static let courseLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Course description", .all), ("Length", .all), ("Catagory", .all), ("Is required", .all), ("Grade", .all), ("Credits", .all), ("Location", .all), ("Teacher", .all)]
+    static let clubLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Leader", .all), ("Advisor", .all), ("Location", .all), ("Activity hour", .all),  ("Mission", .all),  ("Strengths and Contribution to Govs", .all)]
     @IBOutlet var backgroundView: UIView!
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userTitleLabel: UILabel!
@@ -26,7 +26,8 @@ class UserDetailViewController: UIViewController {
             self.navigationItem.title = data.name
             self.userDetailLabel.text = UserDetailViewController.getDescriptionText(data: data)
             self.profession = data.profession
-            self.tableView.register(UINib(nibName: "UserDetailTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "USER_DETAIL_TABLEVIEW_CELL_ID")
+            //self.tableView.register(UINib(nibName: "UserDetailTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "USER_DETAIL_TABLEVIEW_CELL_ID")
+            self.tableView.register(UINib.init(nibName: "NewUserDetailTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "NEW_USER_DETAIL_TABLEVIEW_CELL_ID")
             self.tableView.register(UINib(nibName: "CourseDescriptionTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "COURSE_DESCRIPTION_TABLEVIEW_CELL_ID")
             self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BUTTON_TABLEVIEW_CELL_ID")
             self.tableView.delegate = self
@@ -124,45 +125,38 @@ extension UserDetailViewController: UITableViewDelegate, UITableViewDataSource{
         return 1
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if self.profession == .course && indexPath.section == 0{
-            return 200
-        }else if self.profession != .course && indexPath.section == self.allowedInformation.count{
-            return 40
-        }
-        return 50.5
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if self.profession == .course && indexPath.section == 0{
+//            return 200
+//        }else if self.profession != .course && indexPath.section == self.allowedInformation.count{
+//            return 40
+//        }
+//        return 50.5
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.profession == .course && indexPath.section == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "COURSE_DESCRIPTION_TABLEVIEW_CELL_ID", for: indexPath) as! CourseDescriptionTableViewCell
-            cell.uid = self.uid
-            return cell
-        }else if self.profession != .course && indexPath.section == self.allowedInformation.count{
+        if self.profession != .course && indexPath.section == self.allowedInformation.count{
             //last cell for student, falcuty and club
             let cell = tableView.dequeueReusableCell(withIdentifier: "BUTTON_TABLEVIEW_CELL_ID", for: indexPath)
             cell.textLabel!.text = "see \(self.navigationItem.title!)'s all posts"
             cell.textLabel!.textColor = APP_THEME_COLOR
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "USER_DETAIL_TABLEVIEW_CELL_ID", for: indexPath) as! UserDetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NEW_USER_DETAIL_TABLEVIEW_CELL_ID", for: indexPath) as! NewUserDetailTableViewCell
+        
+        let detialString = self.information[self.allowedInformation[indexPath.section]].str
         switch self.profession {
         case .student?, .facalty?:
-            cell.titleTextView.text = UserDetailViewController.studentLabels[self.allowedInformation[indexPath.section]].str
-             cell.detailTextView.dataDetectorTypes = UserDetailViewController.studentLabels[self.allowedInformation[indexPath.section]].type
+            
+            cell.setText(title: UserDetailViewController.studentLabels[self.allowedInformation[indexPath.section]].str, detail: detialString)
         case .course?:
-            cell.titleTextView.text = UserDetailViewController.courseLabels[self.allowedInformation[indexPath.section]].str
-            cell.detailTextView.dataDetectorTypes = UserDetailViewController.courseLabels[self.allowedInformation[indexPath.section]].type
+            cell.setText(title: UserDetailViewController.courseLabels[self.allowedInformation[indexPath.section]].str, detail: detialString)
 
         case .club?:
-            cell.titleTextView.text = UserDetailViewController.clubLabels[self.allowedInformation[indexPath.section]].str
-            cell.detailTextView.dataDetectorTypes = UserDetailViewController.clubLabels[self.allowedInformation[indexPath.section]].type
+            cell.setText(title: UserDetailViewController.clubLabels[self.allowedInformation[indexPath.section]].str, detail: detialString)
         default:
             fatalError()
         }
-        cell.titleTextView.sizeToFit()
-        cell.detailTextView.sizeToFit()
-        cell.detailTextView.text = self.information[self.allowedInformation[indexPath.section]].str
         return cell
     }
     

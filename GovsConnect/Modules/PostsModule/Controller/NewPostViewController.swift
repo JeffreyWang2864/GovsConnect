@@ -137,10 +137,24 @@ class NewPostViewController: UIViewController {
             "title": self.postTitleTextBox.text,
             "body": self.postBodyTextBox.text
             ]
-    
-        AppIOManager.shared.addPost(parameters: postData, images: self.pendingImages) { (isSucceed) in
-            self.goToPreviousView()
+        
+        let alert = UIAlertController(title: nil, message: "posting...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        alert.view.addSubview(loadingIndicator)
+        self.present(alert, animated: true, completion: nil)
+        
+        AppIOManager.shared.addPost(parameters: postData, images: self.pendingImages, { (isSucceed) in
             NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                alert.dismiss(animated: true, completion: {
+                    self.goToPreviousView()
+                })
+            }
+        }) { (errStr) in
+            makeMessageViaAlert(title: "Error when loading data", message: errStr)
         }
     }
     

@@ -100,7 +100,7 @@ class AppIOManager{
         }
     }
     
-    func addPost(parameters: [String: String], images: [UIImage], _ completionHandler: @escaping ReceiveResponseBlock){
+    func addPost(parameters: [String: String], images: [UIImage], _ completionHandler: @escaping ReceiveResponseBlock, _ errorHandler: @escaping (String) -> ()){
         
         let urlStr = APP_SERVER_URL_STR + "/assets/image/add"
         upload(multipartFormData: { (multipartFormData) in
@@ -123,7 +123,7 @@ class AppIOManager{
                    completionHandler(true)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                errorHandler(error.localizedDescription)
             }
         }
     }

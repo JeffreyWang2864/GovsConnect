@@ -150,6 +150,9 @@
 		13D389DF20FDB0EC00330CDD /* testing_profile_picture_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */; };
 		13D389E220FDD62000330CDD /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */; };
 		13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */; };
+		13DDA968216D054A00916139 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DDA967216D054A00916139 /* String+Ext.swift */; };
+		13DDA96B216D06C300916139 /* NewUserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DDA969216D06C300916139 /* NewUserDetailTableViewCell.swift */; };
+		13DDA96C216D06C300916139 /* NewUserDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DDA96A216D06C300916139 /* NewUserDetailTableViewCell.xib */; };
 		13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E73705210960C4008BE215 /* ManagePostsViewController.swift */; };
 		13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EBE00620CA616000A911DE /* testing_profile_picture_1.png */; };
 		13EED9D52136121B00427E5E /* GCLoginRequireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */; };
@@ -327,6 +330,9 @@
 		13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_3.png; sourceTree = "<group>"; };
 		13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDetailTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserDetailTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		13DDA967216D054A00916139 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		13DDA969216D06C300916139 /* NewUserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserDetailTableViewCell.swift; sourceTree = "<group>"; };
+		13DDA96A216D06C300916139 /* NewUserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewUserDetailTableViewCell.xib; sourceTree = "<group>"; };
 		13E73705210960C4008BE215 /* ManagePostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostsViewController.swift; sourceTree = "<group>"; };
 		13EBE00620CA616000A911DE /* testing_profile_picture_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_1.png; sourceTree = "<group>"; };
 		13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLoginRequireViewController.swift; sourceTree = "<group>"; };
@@ -538,6 +544,7 @@
 				13961E1F20CAB151004FFF4B /* defines.swift */,
 				13961E2920CAC1F3004FFF4B /* tool.swift */,
 				BC1490ED20DA550A00373BBF /* UIView+Ext.swift */,
+				13DDA967216D054A00916139 /* String+Ext.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -670,6 +677,8 @@
 				13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */,
 				138FEEDC20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift */,
 				138FEEDD20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib */,
+				13DDA969216D06C300916139 /* NewUserDetailTableViewCell.swift */,
+				13DDA96A216D06C300916139 /* NewUserDetailTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -895,6 +904,7 @@
 			files = (
 				137EEBA420E7781200BA2575 /* testing_picture_4.jpg in Resources */,
 				13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */,
+				13DDA96C216D06C300916139 /* NewUserDetailTableViewCell.xib in Resources */,
 				13CD9F2D2166B37700EAFE3D /* AboutGovsConnectViewController.xib in Resources */,
 				13CD9F492166B82500EAFE3D /* govs_connect_app_logo_60@2x.png in Resources */,
 				13CD9F422166B82500EAFE3D /* govs_connect_app_logo_20@3x.png in Resources */,
@@ -1097,6 +1107,7 @@
 				130E677920F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift in Sources */,
 				1356C4DC210599D7000C3BF5 /* EditProfileViewController.swift in Sources */,
 				13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */,
+				13DDA96B216D06C300916139 /* NewUserDetailTableViewCell.swift in Sources */,
 				13C25673214DE2AC00EFCBCF /* Comment+CoreDataClass.swift in Sources */,
 				13C2567A214E0F5F00EFCBCF /* Post+CoreDataProperties.swift in Sources */,
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
@@ -1117,6 +1128,7 @@
 				130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */,
 				BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */,
 				1390DA8F21681686004D1A50 /* ConnectClubTableViewCell.swift in Sources */,
+				13DDA968216D054A00916139 /* String+Ext.swift in Sources */,
 				13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */,
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
