@@ -64,6 +64,7 @@ class GCGoogleLoginViewController: UIViewController{
     }
     
     @objc func textFieldDidChange(_ sender: UITextField){
+        self.interactionLabel.text = ""
         self.verifyButton.isEnabled = sender.text == "" ? false : true
     }
     
@@ -87,10 +88,11 @@ class GCGoogleLoginViewController: UIViewController{
         loadingIndicator.startAnimating();
         alert.view.addSubview(loadingIndicator)
         self.present(alert, animated: true, completion: nil)
-        AppIOManager.shared.getAccessCodeStatus(accessCode: self.accessCodeTextField.text!, { (isPassed) in
+        AppIOManager.shared.getAccessCodeStatus(accessCode: self.accessCodeTextField.text!, { (isPassed, uid) in
             if isPassed{
-                alert.title = "Logging you in as Guest..."
-                AppDataManager.shared.currentPersonID = "ranpe001"
+                AppDataManager.shared.currentPersonID = uid!
+                let username = AppDataManager.shared.users[uid!]!.name
+                alert.title = "Logging you in as \(username)..."
                 AppIOManager.shared.loginSuccessful({
                     NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

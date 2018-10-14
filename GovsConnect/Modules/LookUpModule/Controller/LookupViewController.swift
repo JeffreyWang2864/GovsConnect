@@ -118,6 +118,8 @@ class LookupViewController: UIViewController {
             self.alphabeticalOrderDataSource = AppDataManager.shared.allClub.sorted(){
                 return AppDataManager.shared.users[$0]!.name < AppDataManager.shared.users[$1]!.name
             }
+        case .admin:
+            fatalError()
         }
         let filter = self.filterWord
         if filter != nil{

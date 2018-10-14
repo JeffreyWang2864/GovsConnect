@@ -94,6 +94,8 @@ class UserDetailViewController: UIViewController {
             return "\(userData.department.rawValue) department"
         case .club:
             return userData.description
+        case .admin:
+            return userData.description
         }
     }
 }
@@ -147,13 +149,13 @@ extension UserDetailViewController: UITableViewDelegate, UITableViewDataSource{
         let detialString = self.information[self.allowedInformation[indexPath.section]].str
         switch self.profession {
         case .student?, .facalty?:
-            
             cell.setText(title: UserDetailViewController.studentLabels[self.allowedInformation[indexPath.section]].str, detail: detialString)
         case .course?:
             cell.setText(title: UserDetailViewController.courseLabels[self.allowedInformation[indexPath.section]].str, detail: detialString)
-
         case .club?:
             cell.setText(title: UserDetailViewController.clubLabels[self.allowedInformation[indexPath.section]].str, detail: detialString)
+        case .admin?:
+            cell.setText(title: "no title", detail: "no detail")
         default:
             fatalError()
         }

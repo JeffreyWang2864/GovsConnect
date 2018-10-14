@@ -113,6 +113,7 @@ class PostsDetailViewController: GCBaseViewController {
     }
     
     @IBAction func replyButtonDidClick(_ sender: UIButton){
+
         let replyText = self.commentInputBox.text
         self.commentInputBox.text = ""
         self.changeCommentBoxHeight(toFit: 1)
@@ -122,6 +123,12 @@ class PostsDetailViewController: GCBaseViewController {
         }
         guard AppIOManager.shared.connectionStatus != .none else{
             makeMessageViaAlert(title: "Cannot add reply while offline", message: "Please try again when you are connected to the Internet")
+            return
+        }
+        
+        if AppDataManager.shared.currentPersonID == "ranpe001"{
+            //guest
+            makeMessageViaAlert(title: "Cannot comment as guest", message: "")
             return
         }
         

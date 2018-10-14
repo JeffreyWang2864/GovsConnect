@@ -115,6 +115,13 @@ class PostsTableViewCell: UITableViewCell {
     
     //点击喜欢
     @IBAction func likeButtonDidClick(_ sender: UIButton){
+        
+        if AppDataManager.shared.currentPersonID == "ranpe001"{
+            //guest
+            makeMessageViaAlert(title: "Cannot like as guest", message: "")
+            return
+        }
+        
         if self.likeIcon.isSelected{      //aleady liked
             
             AppIOManager.shared.like(at: AppDataManager.shared.postsData[self.tag]._uid, method: "minus"){ isSucceed in

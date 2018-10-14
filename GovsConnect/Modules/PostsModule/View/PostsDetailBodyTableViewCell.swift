@@ -64,10 +64,16 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
     }
     
     @IBAction func likeButtonDidClick(_ sender: UIButton){
+        
+        if AppDataManager.shared.currentPersonID == "ranpe001"{
+            //guest
+            makeMessageViaAlert(title: "Cannot like as guest", message: "")
+            return
+        }
+        
         if self.likeIcon.isSelected{      //aleady liked
             
             AppIOManager.shared.like(at: AppDataManager.shared.postsData[self.tag]._uid, method: "minus"){ isSucceed in
-                makeMessageViaAlert(title: "Success", message: "minus one on like")
                 self.likeIcon.isSelected = false
                 AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = false
                 AppDataManager.shared.postsData[self.tag].likeCount -= 1
@@ -82,6 +88,22 @@ class PostsDetailBodyTableViewCell: UITableViewCell {
             AppDataManager.shared.postsData[self.tag].isLikedByCurrentUser = true
             AppDataManager.shared.postsData[self.tag].likeCount += 1
             self.likeCount.text = "\(Int(self.likeCount.text!)! + 1)"
+            self.likeAnimation()
+        }
+    }
+    
+    func likeAnimation(){
+        let bigLikeImageV = UIImageView(frame: CGRect(x: self.left + self.width / 2 - 20, y: self.height / 2 - 20, width: 40, height: 40))
+        bigLikeImageV.contentMode = .scaleAspectFill
+        bigLikeImageV.image = UIImage.init(named: "system_like.png")!
+        self.addSubview(bigLikeImageV)
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.2, options: .allowUserInteraction, animations: {
+            bigLikeImageV.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
+            bigLikeImageV.alpha = 1.0
+        }) { finished in
+            bigLikeImageV.alpha = 0.0
+            bigLikeImageV.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            bigLikeImageV.removeFromSuperview()
         }
     }
     

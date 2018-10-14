@@ -100,6 +100,12 @@ class YouViewController: UIViewController {
             return
         }
         
+        if AppDataManager.shared.currentPersonID == "ranpe001"{
+            //guest
+            makeMessageViaAlert(title: "Cannot edit your profile as guest", message: "")
+            return
+        }
+        
         let vc = NewEditProfileViewController()
         vc.view.frame = self.view.bounds
         vc.data = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!
@@ -153,12 +159,22 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
         switch indexPath.section {
         case 0:
             //manage my posts
+            if AppDataManager.shared.currentPersonID == "ranpe001"{
+                //guest
+                makeMessageViaAlert(title: "Cannot manage your posts as guest", message: "")
+                break
+            }
             let vc = ManagePostsViewController()
             vc.uid = AppDataManager.shared.currentPersonID
             vc.view.frame = self.view.bounds
             self.navigationController!.pushViewController(vc, animated: true)
         case 1:
             //setting
+            if AppDataManager.shared.currentPersonID == "ranpe001"{
+                //guest
+                makeMessageViaAlert(title: "Cannot change setting as guest", message: "")
+                break
+            }
             guard AppIOManager.shared.connectionStatus != .none else{
                 makeMessageViaAlert(title: "Cannot edit account while offline", message: "Please try again when you are connected to the Internet")
                 return

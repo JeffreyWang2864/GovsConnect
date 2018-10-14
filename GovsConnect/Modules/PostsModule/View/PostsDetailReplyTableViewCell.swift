@@ -38,7 +38,6 @@ class PostsDetailReplyTableViewCell: UITableViewCell {
         if self.likeIcon.isSelected{      //aleady liked
             let reply_id = AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1]._uid
             AppIOManager.shared.dislikeReply(local_post_id: self.correspondTag.0, reply_id: reply_id) { (isSucceed) in
-                makeMessageViaAlert(title: "minus one like on reply", message: "successfully minus one like on reply")
                 self.likeIcon.isSelected = false
                 AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].isLikedByCurrentUser = false
                 AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].likeCount -= 1
@@ -55,6 +54,22 @@ class PostsDetailReplyTableViewCell: UITableViewCell {
             AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].likeCount += 1
             self.likeCount.text = "\(Int(self.likeCount.text!)! + 1)"
             self.reloadInputViews()
+            self.likeAnimation()
+        }
+    }
+    
+    func likeAnimation(){
+        let bigLikeImageV = UIImageView(frame: CGRect(x: self.left + self.width / 2 - 20, y: self.height / 2 - 20, width: 40, height: 40))
+        bigLikeImageV.contentMode = .scaleAspectFill
+        bigLikeImageV.image = UIImage.init(named: "system_like.png")!
+        self.addSubview(bigLikeImageV)
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.2, options: .allowUserInteraction, animations: {
+            bigLikeImageV.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
+            bigLikeImageV.alpha = 1.0
+        }) { finished in
+            bigLikeImageV.alpha = 0.0
+            bigLikeImageV.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            bigLikeImageV.removeFromSuperview()
         }
     }
     

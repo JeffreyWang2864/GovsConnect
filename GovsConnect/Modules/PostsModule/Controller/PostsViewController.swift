@@ -54,6 +54,11 @@ class PostsViewController: UIViewController {
     }
     
     @objc func newPostButtonDidClick(){
+        if AppDataManager.shared.currentPersonID == "ranpe001"{
+            //guest
+            makeMessageViaAlert(title: "Cannot post as guest", message: "")
+            return
+        }
         let postVc = NewPostViewController(nibName: "NewPostViewController", bundle: nil)
         if AppDataManager.shared.currentUserConnections.count > 0{
             //user have connected to some organiation
