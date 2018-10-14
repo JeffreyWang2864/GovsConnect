@@ -95,7 +95,10 @@ class YouViewController: UIViewController {
 //            self.userDetailVC.tableView.reloadData()
 //        }
 //        self.navigationController!.pushViewController(vc, animated: true)
-        
+        guard AppIOManager.shared.connectionStatus != .none else{
+            makeMessageViaAlert(title: "Cannot edit profile while offline", message: "Please try again when you are connected to the Internet")
+            return
+        }
         
         let vc = NewEditProfileViewController()
         vc.view.frame = self.view.bounds
@@ -146,6 +149,7 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.section {
         case 0:
             //manage my posts
@@ -155,6 +159,10 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
             self.navigationController!.pushViewController(vc, animated: true)
         case 1:
             //setting
+            guard AppIOManager.shared.connectionStatus != .none else{
+                makeMessageViaAlert(title: "Cannot edit account while offline", message: "Please try again when you are connected to the Internet")
+                return
+            }
             let vc = SettingViewController()
             vc.view.frame = self.view.bounds
             self.navigationController!.pushViewController(vc, animated: true)
@@ -177,7 +185,7 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
             }
         case 4:
             //log out
-            let alert = UIAlertController(title: "By clicking \"Log out\" below, you will not be able to view, post, reply, or like any post as \(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.name), and you will not have the access to the \"Look up\" section.", message: nil, preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: "By clicking \"Log out\" below, you will not be able to view, post, reply, or like any post as  \(AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!.name), and you will not have the access to the \"Look up\" section.", message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { (alert) in
                 AppIOManager.shared.logOut(){ isSuccessful -> Void in
                     GIDSignIn.sharedInstance().signOut()
@@ -193,7 +201,6 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
         default:
             fatalError()
         }
-        self.tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

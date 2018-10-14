@@ -25,5 +25,12 @@ class AboutGovsConnectViewController: UIViewController {
         self.officialWebsiteButton.setTitleColor(APP_THEME_COLOR, for: .normal)
         self.rateButton.setTitleColor(APP_THEME_COLOR, for: .normal)
         // Do any additional setup after loading the view.
+        
+        switch PHONE_TYPE{
+        case .iphone5:
+            self.view.constraints[2].constant = 30
+        default:
+            self.view.constraints[2].constant = 100
+        }
     }
 }

@@ -35,7 +35,11 @@ class AppIOManager{
                 AppDataManager.shared.loadDiscoverDataFromServerAndUpdateLocalData()
             }
             if self.isLogedIn{
-                AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
+                AppIOManager.shared.loginSuccessful({
+                    AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
+                }, { (errStr) in
+                    makeMessageViaAlert(title: "Unable to log you in", message: errStr)
+                })
             }
         }
         reachability.whenUnreachable = { _ in
@@ -346,6 +350,9 @@ class AppIOManager{
                 self.__loadReplyData(JSON(json), local_post_id)
                 completionHandler(true)
             case .failure(let error):
+                guard AppIOManager.shared.connectionStatus != .none else{
+                    return
+                }
                 makeMessageViaAlert(title: "Error when loading Reply at post \(post_id) data from server", message: "\(error.localizedDescription)")
             }
         }

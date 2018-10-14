@@ -393,7 +393,21 @@ class RemoteNotificationContainer{
     }
 }
 
-class DiscoverMatchDataContainer{
+class DiscoverLinksDataCountainer{
+    let linkType: GCLinkType
+    let title: String
+    let description: String
+    let link: String
+    
+    init(_ linkType: GCLinkType, _ title: String, _ description: String, _ link: String){
+        self.linkType = linkType
+        self.title = title
+        self.description = description
+        self.link = link
+    }
+}
+
+class DiscoverMatchDataContainer: NSObject {
     let _uid: Int
     let catagory: GCSportType
     let team: GCSportTeamType
@@ -408,8 +422,9 @@ class DiscoverMatchDataContainer{
     let homeScore: Int
     let awayScore: Int
     var isUpdateComplete: Bool
-    
-    init(_ _uid: Int, _ catagory: GCSportType, _ team: GCSportTeamType, _ startTime: Date, _ homeTeam: String, _ awayTeam: String, _ homeScore: Int, _ awayScore: Int, _ isUpdateComplete: Bool){
+    init(_ _uid: Int, _ catagory: GCSportType, _ team: GCSportTeamType, _ startTime
+        : Date, _ homeTeam: String, _ awayTeam: String, _ homeScore: Int, _ awayScore: Int,
+                _ isUpdateComplete: Bool){
         self._uid = _uid
         self.catagory = catagory
         self.team = team
@@ -419,19 +434,5 @@ class DiscoverMatchDataContainer{
         self.homeScore = homeScore
         self.awayScore = awayScore
         self.isUpdateComplete = isUpdateComplete
-    }
-}
-
-class DiscoverLinksDataCountainer{
-    let linkType: GCLinkType
-    let title: String
-    let description: String
-    let link: String
-    
-    init(_ linkType: GCLinkType, _ title: String, _ description: String, _ link: String){
-        self.linkType = linkType
-        self.title = title
-        self.description = description
-        self.link = link
     }
 }

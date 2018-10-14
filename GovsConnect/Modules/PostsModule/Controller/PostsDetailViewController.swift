@@ -120,6 +120,10 @@ class PostsDetailViewController: GCBaseViewController {
         if replyText! == "" || replyText == "Add your comment..."{
             return
         }
+        guard AppIOManager.shared.connectionStatus != .none else{
+            makeMessageViaAlert(title: "Cannot add reply while offline", message: "Please try again when you are connected to the Internet")
+            return
+        }
         
         let sender_uid = AppDataManager.shared.currentPersonID
         let receiver_uid = self.commentInputBox.restorationIdentifier ?? ""

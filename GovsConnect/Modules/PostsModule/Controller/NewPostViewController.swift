@@ -132,6 +132,15 @@ class NewPostViewController: UIViewController {
     }
     
     @IBAction func postButtonDidClick(_ sender: UIButton){
+        
+        guard AppIOManager.shared.connectionStatus != .none else{
+            let alert = UIAlertController(title: "Cannot post while offline", message: "Please try again when you are connected to the Internet", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        
         let postData: [String: String] = [
             "sender_uid": self.sender_uid!,
             "title": self.postTitleTextBox.text,
@@ -154,7 +163,9 @@ class NewPostViewController: UIViewController {
                 })
             }
         }) { (errStr) in
-            makeMessageViaAlert(title: "Error when loading data", message: errStr)
+            alert.dismiss(animated: true, completion: {
+                makeMessageViaAlert(title: "Error when posting", message: errStr)
+            })
         }
     }
     

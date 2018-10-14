@@ -7,20 +7,20 @@
 //
 
 import Foundation
-
-enum GCSportType: Int{
-    case football = 0
-    case soccer = 1
-    case volleyball = 2
-    case basketball = 3
-    case hockey = 4
-    case baseballSoftball = 5
-    case lacrosse = 6
-    case tennis = 7
-    case other = 8
+//
+enum GCSportType : String{
+    case football = "Football"
+    case soccer = "Soccer"
+    case volleyball = "Volleyball"
+    case basketball = "Basketball"
+    case hockey = "Hockey"
+    case baseballSoftball = "Baseball / Softball"
+    case lacrosse = "Lacrosse"
+    case tennis = "Tennis"
+    case other = "Other"
 }
-
-enum GCSportTeamType: String{
+//
+enum GCSportTeamType : String{
     case crossCountryBV = "Cross Country Boys Varsity"
     case crossCountryBJV = "Cross Country Boys Junior Varsity"
     case crossCountryGV = "Cross Country Girls Varsity"

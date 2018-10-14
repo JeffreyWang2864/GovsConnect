@@ -42,6 +42,11 @@ class EventDetailViewController: UIViewController {
         self.optionTableView.delegate = self
         self.optionTableView.dataSource = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.detailTextView.setContentOffset(.zero, animated: true)
+    }
 }
 
 extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource{
