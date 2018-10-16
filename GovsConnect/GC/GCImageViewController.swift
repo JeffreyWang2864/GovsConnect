@@ -68,14 +68,13 @@ class GCImageViewController: UIViewController {
         self.collectionView.dataSource = self
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
             self.collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .right, animated: false)
-            let curCell = self.collectionView.cellForItem(at: IndexPath(row: index, section: 0)) as! GCImageViewCell
-            curCell.scrollViewDidZoom(curCell.scrollView)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
                 let cell = self.collectionView.cellForItem(at: IndexPath(item: self.pageControl.currentPage, section: 0)) as! GCImageViewCell
                 if cell.imageView.image!.size.width == 300{
                     //can load full image
                     self.loadFullImageButton.alpha = 0.7
                     self.loadFullImageButton.isSelected = false
+                    cell.scrollViewDidZoom(cell.scrollView)
                 }else{
                     //full image is already loaded
                     self.loadFullImageButton.alpha = 0

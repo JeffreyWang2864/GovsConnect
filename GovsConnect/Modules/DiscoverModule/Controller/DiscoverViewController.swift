@@ -12,6 +12,7 @@ class DiscoverViewController: UIViewController {
     @IBOutlet var mainView: GCWaterfallScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.statusBarStyle = .lightContent
         self.mainView.frame = self.view.bounds
         self.mainView.cellHeight = UIScreen.main.bounds.size.height / 7 * 3
         for i in stride(from: 0, to: AppDataManager.shared.discoverData.count, by: 1) {

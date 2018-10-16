@@ -38,7 +38,6 @@ class PostsViewController: UIViewController {
         self.newPostButton = UIBarButtonItem.init(image: #imageLiteral(resourceName: "system_new_post"), style: .plain, target: self, action: #selector(newPostButtonDidClick))
         self.navigationController?.navigationBar.topItem?.setRightBarButton(self.newPostButton, animated: false)
         self.newPostButton.isEnabled = false
-        UIApplication.shared.statusBarStyle = .lightContent
         self.loginViewController = GCLoginRequireViewController.init(nibName: "GCLoginRequireViewController", bundle: Bundle.main)
         self.loginViewController!.view.frame = self.view.bounds
         if !AppIOManager.shared.isLogedIn{
@@ -123,6 +122,9 @@ class PostsViewController: UIViewController {
     
     @objc func loginAction(_ sender: Notification){
         if AppIOManager.shared.isLogedIn{
+            guard self.loginViewController != nil else{
+                return
+            }
             if self.loginViewController!.loginView != nil{
                 self.loginViewController!.loginView!.dismiss(animated: false) {
                    //code
