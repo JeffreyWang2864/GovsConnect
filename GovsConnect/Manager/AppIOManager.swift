@@ -28,6 +28,7 @@ class AppIOManager{
     var isFirstTimeConnnected = true
     func establishConnection(){
         let reachability = Reachability()!
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.nnnnn(_:)), name: Notification.Name.reachabilityChanged, object: reachability)
         reachability.whenReachable = { response in
             AppIOManager.shared.connectionStatus = response.connection
             if self.isFirstTimeConnnected{
@@ -50,6 +51,7 @@ class AppIOManager{
                 return
             }
             // app inited with no connection to internet
+            AppIOManager.shared.connectionStatus = .none
             AppDataManager.shared.loadLocalPostData()
         }
         do {
@@ -58,6 +60,15 @@ class AppIOManager{
             print("Unable to start notifier")
         }
     }
+    
+//    @objc func nnnnn(_ notification: Notification){
+//        let reachbility = notification.object as! Reachability
+//        if reachbility.connection == .wifi{
+//            makeMessageViaAlert(title: "wifi", message: "")
+//        }else if reachbility.connection == .none{
+//            makeMessageViaAlert(title: "none", message: "")
+//        }
+//    }
     
     func loadImage(with id: String, _ completionHandler: @escaping (Data) -> ()){
         guard AppDataManager.shared.imageData[id] == nil else{
@@ -329,14 +340,14 @@ class AppIOManager{
         }
     }
     
-    func del_post(post_id: Int, _ completionHandler: @escaping ReceiveResponseBlock){
+    func del_post(post_id: Int, _ completionHandler: @escaping ReceiveResponseBlock, _ errorHandler: @escaping (String) -> Void){
         let urlStr = APP_SERVER_URL_STR + "/post/del_\(post_id)_uid=" + AppDataManager.shared.currentPersonID
         request(urlStr).responseJSON { (response) in
             switch response.result{
             case .success(let json):
                 completionHandler(true)
             case .failure(let error):
-                makeMessageViaAlert(title: "error when deleting data", message: error.localizedDescription)
+                errorHandler(error.localizedDescription)
             }
         }
     }

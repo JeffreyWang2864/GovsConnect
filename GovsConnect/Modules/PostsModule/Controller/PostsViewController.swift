@@ -279,8 +279,10 @@ extension PostsViewController: UIGestureRecognizerDelegate{
         alert.addAction(UIAlertAction(title: "Delete my post", style: .destructive, handler: { (action) in
             
             let post_id = AppDataManager.shared.postsData[realIndexPathItem]._uid
-            AppIOManager.shared.del_post(post_id: post_id, { (isSucceed) in
+            AppIOManager.shared.del_post(post_id: post_id, { (isPassed) in
                 self.refreachNewData(self.refreashControl)
+            }, { (errStr) in
+                makeMessageViaAlert(title: "Error when deleting data", message: errStr)
             })
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

@@ -48,7 +48,6 @@ class PostsDetailReplyTableViewCell: UITableViewCell {
         }
         let reply_id = AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1]._uid
         AppIOManager.shared.likeReply(local_post_id: self.correspondTag.0, reply_id: reply_id) { (isSucceed) in
-            makeMessageViaAlert(title: "plus one like on reply", message: "successfully plus one like on reply")
             self.likeIcon.isSelected = true
             AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].isLikedByCurrentUser = true
             AppDataManager.shared.postsData[self.correspondTag.0].replies[self.correspondTag.1].likeCount += 1
@@ -59,10 +58,12 @@ class PostsDetailReplyTableViewCell: UITableViewCell {
     }
     
     func likeAnimation(){
-        let bigLikeImageV = UIImageView(frame: CGRect(x: self.left + self.width / 2 - 20, y: self.height / 2 - 20, width: 40, height: 40))
+        let bigLikeImageV = UIImageView(frame: CGRect(x: self.left + self.width / 2 - 10, y: self.height / 2 - 10, width: 20, height: 20))
         bigLikeImageV.contentMode = .scaleAspectFill
         bigLikeImageV.image = UIImage.init(named: "system_like.png")!
         self.addSubview(bigLikeImageV)
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
         UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.2, options: .allowUserInteraction, animations: {
             bigLikeImageV.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
             bigLikeImageV.alpha = 1.0

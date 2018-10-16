@@ -149,6 +149,8 @@ class PostsTableViewCell: UITableViewCell {
         bigLikeImageV.contentMode = .scaleAspectFill
         bigLikeImageV.image = UIImage.init(named: "system_like.png")!
         self.addSubview(bigLikeImageV)
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
         UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.2, options: .allowUserInteraction, animations: {
             bigLikeImageV.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
             bigLikeImageV.alpha = 1.0

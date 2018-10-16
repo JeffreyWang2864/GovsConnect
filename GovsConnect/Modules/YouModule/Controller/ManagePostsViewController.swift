@@ -23,23 +23,20 @@ class ManagePostsViewController: UIViewController {
             }
             return
         }
-        if self.uid! == AppDataManager.shared.currentPersonID{
-            self.navigationItem.title = "Manage my posts"
-            self.addLongPressGestureRecongnizer()
-        }else{
-            self.navigationItem.title = "\(AppDataManager.shared.users[self.uid!]!.name)'s all posts"
-        }
         self.setupTableViewData()
         self.tableView = UITableView(frame: self.view.frame, style: .plain)
         self.view.addSubview(self.tableView)
         self.tableView.register(UINib(nibName: "PostsTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "POSTS_TABLEVIEW_CELL_ID")
         self.tableView.separatorStyle = .none
-        AppIOManager.shared.loadPostData(by: self.uid!, {
-            //success handler
-            self.setupTableViewData()
-        }) { (errStr) in
-            //error handler
-            makeMessageViaAlert(title: "Error when loading post data", message: errStr)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if self.uid! == AppDataManager.shared.currentPersonID || AppDataManager.shared.currentUserConnections.contains(self.uid!){
+            self.navigationItem.title = "Manage my posts"
+            self.addLongPressGestureRecongnizer()
+        }else{
+            self.navigationItem.title = "\(AppDataManager.shared.users[self.uid!]!.name)'s all posts"
         }
     }
     
@@ -48,15 +45,22 @@ class ManagePostsViewController: UIViewController {
         if self.isMovingFromParentViewController{
             NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRealRefreashCellNotificationName))
         }
+        self.removeLongPressGestureRecongnizer()
     }
     
     private func setupTableViewData(){
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        let ret = AppDataManager.shared.posts(by: self.uid!)
-        self.curUserPostsData = ret.datas
-        self.curUserPostsIndex = ret.index
-        self.tableView.reloadData()
+        AppIOManager.shared.loadPostData(by: self.uid!, {
+            //success handler
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
+            let ret = AppDataManager.shared.posts(by: self.uid!)
+            self.curUserPostsData = ret.datas
+            self.curUserPostsIndex = ret.index
+            self.tableView.reloadData()
+        }) { (errStr) in
+            //error handler
+            makeMessageViaAlert(title: "Error when loading post data", message: errStr)
+        }
     }
     
     func addLongPressGestureRecongnizer(){
@@ -148,10 +152,29 @@ extension ManagePostsViewController: UIGestureRecognizerDelegate{
         
         alert.addAction(UIAlertAction(title: "Delete my post", style: .destructive, handler: { (action) in
             let post_id = AppDataManager.shared.postsData[realIndexPathItem]._uid
-            AppIOManager.shared.del_post(post_id: post_id, { (isSucceed) in
+            let alert = UIAlertController(title: nil, message: "deleting", preferredStyle: .alert)
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            loadingIndicator.startAnimating();
+            alert.view.addSubview(loadingIndicator)
+            self.present(alert, animated: true, completion: nil)
+            AppIOManager.shared.del_post(post_id: post_id, { (isPassed) in
+                //code
                 NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
-                self.setupTableViewData()
-                self.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                    self.setupTableViewData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                        self.tableView.reloadData()
+                        alert.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }, { (errStr) in
+                alert.dismiss(animated: true){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        makeMessageViaAlert(title: "Error when deleting data", message: errStr)
+                    }
+                }
             })
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
