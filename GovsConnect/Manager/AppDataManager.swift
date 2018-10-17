@@ -129,9 +129,9 @@ class AppDataManager{
         self.allClub.append("unice001")
         
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
-        self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
-        self.discoverData.append(DiscoverItemDataContainer("system_discover_links.png", "Links"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_8.jpg", "Dining Hall Menu"))
+        self.discoverData.append(DiscoverItemDataContainer("system_discover_links.png", "Links"))
+        self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
         self.discoverData.append(DiscoverItemDataContainer("system_more_full_image.png", ""))
         
         for _ in (0..<3){

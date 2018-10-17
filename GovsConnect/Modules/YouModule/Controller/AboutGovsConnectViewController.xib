@@ -63,12 +63,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xko-wE-clS">
-                    <rect key="frame" x="122.5" y="505" width="130" height="24"/>
+                    <rect key="frame" x="128" y="505" width="119" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="130" id="RRR-dy-Wyp"/>
+                        <constraint firstAttribute="width" constant="119" id="RRR-dy-Wyp"/>
                         <constraint firstAttribute="height" constant="24" id="i4i-fQ-OsN"/>
                     </constraints>
-                    <state key="normal" title="terms and services"/>
+                    <state key="normal" title="terms of services"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOi-en-RhE">
                     <rect key="frame" x="140" y="529" width="95" height="24"/>

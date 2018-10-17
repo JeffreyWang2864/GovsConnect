@@ -34,6 +34,21 @@ class DiscoverViewController: UIViewController {
             let vc = WeekendDetailViewController.init(nibName: "WeekendDetailViewController", bundle: Bundle.main)
             self.navigationController!.pushViewController(vc, animated: true)
         case 1:
+            //rate your food
+            guard AppIOManager.shared.connectionStatus != .none else{
+                let alert = UIAlertController(title: "Sorry, you cannot rate foods on offline mode:(", message: "Your device is not connecting to the Internet.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.navigationController!.present(alert, animated: true, completion: nil)
+                return
+            }
+            let vc = RateYourFoodViewController.init(nibName: "RateYourFoodViewController", bundle: Bundle.main)
+            self.navigationController!.pushViewController(vc, animated: true)
+        case 2:
+            //links
+            let vc = LinksViewController.init(nibName: "LinksViewController", bundle: Bundle.main)
+            vc.view.frame = self.view.bounds
+            self.navigationController!.pushViewController(vc, animated: true)
+        case 3:
             //daily bulletin
             let url = URL(string: "https://docs.google.com/document/d/1cZ7nb44a26OWvgOJWlY0CklBrDaPb248wJ9ozgXROKI/edit")!
             let vc = UIViewController()
@@ -44,21 +59,6 @@ class DiscoverViewController: UIViewController {
             self.navigationController!.pushViewController(vc, animated: true)
             vc.navigationItem.title = "Daily Bulletin"
             webv.loadRequest(URLRequest(url: url))
-        case 2:
-            //links
-            let vc = LinksViewController.init(nibName: "LinksViewController", bundle: Bundle.main)
-            vc.view.frame = self.view.bounds
-            self.navigationController!.pushViewController(vc, animated: true)
-        case 3:
-            //rate your food
-            guard AppIOManager.shared.connectionStatus != .none else{
-                let alert = UIAlertController(title: "Sorry, you cannot rate foods on offline mode:(", message: "Your device is not connecting to the Internet.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                self.navigationController!.present(alert, animated: true, completion: nil)
-                return
-            }
-            let vc = RateYourFoodViewController.init(nibName: "RateYourFoodViewController", bundle: Bundle.main)
-            self.navigationController!.pushViewController(vc, animated: true)
         case 4:
             //more
             let vc = UIViewController()
