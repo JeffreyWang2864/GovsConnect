@@ -121,8 +121,8 @@ func makeMessageViaAlert(title: String, message: String){
     UIApplication.shared.keyWindow!.rootViewController!.present(alert, animated: true, completion: nil)
 }
 
-func random0to10000() -> Int{
-    return Int(CGFloat(Float(arc4random()) / Float(UINT32_MAX)) * 10000)
+func random0to1000() -> Int{
+    return Int(CGFloat(Float(arc4random()) / Float(UINT32_MAX)) * 1000)
 }
 
 //16进制转化颜色

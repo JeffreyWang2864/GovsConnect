@@ -140,7 +140,7 @@ class AppDataManager{
         self.discoverLinksData.append(DiscoverLinksDataCountainer(.website, "Veracross", "Your homework, grade, and everything.", "https://portals.veracross.com/gda/student"))
         self.discoverLinksData.append(DiscoverLinksDataCountainer(.website, "The Governor's Academy", "School's official website.", "https://www.thegovernorsacademy.org/"))
         self.discoverLinksData.append(DiscoverLinksDataCountainer(.snapchat, "Govs Event", "Know about what's going on at Govs.", "https://www.snapchat.com/add/govsevents"))
-        self.discoverLinksData.append(DiscoverLinksDataCountainer(.instagram, "Govs Trade", "A student organized trading platform which applies to all graders.", "itms-apps://itunes.apple.com/us/app/instagram/id389801252?mt=8"))
+        self.discoverLinksData.append(DiscoverLinksDataCountainer(.instagram, "Govs Trade", "A student organized trading platform which applies to all graders.", "instagram://user?username=govstrade"))
         
         let eventsData = AppPersistenceManager.shared.fetchObject(with: .event) as! Array<Event>
         for d in eventsData{

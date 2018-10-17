@@ -121,7 +121,7 @@ class AppIOManager{
         upload(multipartFormData: { (multipartFormData) in
             for image in images{
                 let ir = UIImageJPEGRepresentation(image, 0.5)!
-                let fileName = "\(Int(NSDate.init(timeIntervalSinceNow: 0).timeIntervalSince1970))" + ".\(random0to10000())"
+                let fileName = "\(Int(NSDate.init(timeIntervalSinceNow: 0).timeIntervalSince1970))" + ".\(random0to1000()).\(random0to1000())"
                 multipartFormData.append(ir, withName: fileName, fileName: fileName + ".jpg", mimeType: "image/jpg")
             }
             for(key, value) in parameters{
@@ -598,7 +598,7 @@ class AppIOManager{
         let urlStr = APP_SERVER_URL_STR + "/assets/user_image_change/"
         upload(multipartFormData: { (multipartFormData) in
             let imgData = UIImageJPEGRepresentation(newImage, 0.2)!
-            let fileName = "\(Int(NSDate.init(timeIntervalSinceNow: 0).timeIntervalSince1970))" + ".\(random0to10000())"
+            let fileName = "\(Int(NSDate.init(timeIntervalSinceNow: 0).timeIntervalSince1970))" + ".\(random0to1000()).\(random0to1000())"
             multipartFormData.append(imgData, withName: fileName, fileName: fileName + ".jpg", mimeType: "image/jpg")
             multipartFormData.append( AppDataManager.shared.currentPersonID.data(using: String.Encoding.utf8)!, withName: "uid")
         }, to: urlStr) { (result) in

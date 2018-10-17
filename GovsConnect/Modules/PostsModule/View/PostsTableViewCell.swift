@@ -101,9 +101,11 @@ class PostsTableViewCell: UITableViewCell {
     @objc func didClickOnImage(_ sender: UITapGestureRecognizer){
         let v = GCImageViewController()
         v.view.frame = self.window!.rootViewController!.view.bounds
-        self.window!.rootViewController!.present(v, animated: true, completion: nil)
+        self.window!.rootViewController!.present(v, animated: true){
+            NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRefreashCellNotificationName))
+        }
         let imgD = AppDataManager.shared.postsData[self.tag].postImagesName
-            v.setupPaging(imgD, at: sender.view!.tag)
+        v.setupPaging(imgD, at: sender.view!.tag)
     }
 
     //点击查看
