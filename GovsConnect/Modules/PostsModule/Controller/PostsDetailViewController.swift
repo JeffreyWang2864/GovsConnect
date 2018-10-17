@@ -228,7 +228,7 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
         let bv = UITextView(frame: CGRect(x: 0, y: 0, width: screenWidth - 50 - 8 - 5, height: 50))
         bv.text = data.body
         bv.font = UIFont.systemFont(ofSize: 14)
-        return 40.5 + suitableHeight(for: bv, fixedWidth: bv.width)
+        return 40.5 + suitableHeight(for: bv, fixedWidth: bv.width) + 22
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

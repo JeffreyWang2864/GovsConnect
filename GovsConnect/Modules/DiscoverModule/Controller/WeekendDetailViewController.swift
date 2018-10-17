@@ -51,6 +51,17 @@ class WeekendDetailViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        print(self.tableView.contentSize.height)
+        let timeStrokePoint = CGPoint(x: self.timeStrokeView.left, y: min(self.tableView.contentSize.height - 20, self.timeStrokeView.top + screenHeight / 3))
+        let indexPath = self.tableView.indexPathForRow(at: timeStrokePoint)
+        guard indexPath != nil else{
+            return
+        }
+        self.tableView.scrollToRow(at: indexPath!, at: .middle, animated: true)
+    }
+    
     @objc func didSwipeLeft(_ sender: UISwipeGestureRecognizer){
         if self.segmentControl.selectedSegmentIndex + 1 <= 2{
             self.segmentControl.move(to: self.segmentControl.selectedSegmentIndex + 1)
