@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CSV
 
 class AppDataManager{
     private init(){}
@@ -88,45 +89,58 @@ class AppDataManager{
             AppDataManager.shared.profileImageData[d.key!] = Data.init(referencing: d.data!)
         }
         
-        let ss = ["testing_profile_picture_1.png", "testing_profile_picture_2.png", "testing_profile_picture_3.png", "testing_profile_picture_jzm.png", "testing_profile_picture_dt.png", "testing_profile_picture_4.png", "testing_profile_picture_4.png", "testing_profile_picture_4.png",
-            "testing_profile_picture_4.png",
-                  ]
-        let uids = ["jefwa001",
-            "kevji001",
-            "haosh001",
-            "zemji001",
-            "dontr001",
-            "ranpe001",
-            "unice001",
-            "haofa001",
-            "admin001"
-        ]
-        for i in stride(from: 0, to: ss.count, by: 1){
-            if AppDataManager.shared.profileImageData[uids[i]] != nil{
+        let allStudent = self.loadStudentData()
+        //0: uid
+        //1: last name
+        //2: first name
+        //3: grade
+        //4: state
+        //5: email
+        let allClubs = self.loadClubData()
+        //0: uid
+        //1: club name
+        //2: club head
+        //3: club advisor
+        //4: hour
+        //5: location
+        //6: mission
+        //7: goal
+        
+        var uids = Array<String>()
+        for student in allStudent{
+            uids.append(student[0])
+        }
+        for club in allClubs{
+            uids.append(club[0])
+        }
+        uids.append("zemji001")
+        uids.append("dontr001")
+        uids.append("ranpe001")
+        uids.append("admin001")
+        for uid in uids{
+            if AppDataManager.shared.profileImageData[uid] != nil{
                 continue
             }
-            let data = UIImagePNGRepresentation(UIImage.init(named: ss[i])!)!
-            AppDataManager.shared.profileImageData[uids[i]] = data
+            let imgName = "red_" + "\(uid.uppercased()[1])" + ".png"
+            let data = UIImagePNGRepresentation(UIImage.init(named: imgName)!)!
+            AppDataManager.shared.profileImageData[uid] = data
         }
         
-        self.users["jefwa001"] = UserDataContainer.init("jefwa001", "Jeffrey Wang", "0", .student, .junior, "Beijing, China", [("jeffrey.wang@govsacademy.org", true)])
-        self.users["kevji001"] = UserDataContainer.init("kevji001", "Kevin Jiang", "0", .student, .junior, "Beijing, China", [("kevin.jiang@govsacademy.org", true)])
-        self.users["haosh001"] = UserDataContainer.init("haosh001", "Haodi Shi", "0", .student, .junior, "Yunnan, China", [("haodi.shi@govsacademy.org", true)])
+        for student in allStudent{
+            self.users[student[0]] = UserDataContainer.init(student[0], student[2] + " " + student[1], "0", .student, UserDataContainer.Department(rawValue: student[3])!, student[4] == "" ? "unknown" : student[4], [(student[5], true)])
+            self.allStudent.append(student[0])
+        }
+        for club in allClubs{
+            self.users[club[0]] = UserDataContainer.init(club[0], club[1], "0", .club, .clubDefault, "Governor's official " + club[1], [(club[2], true), (club[3], true), (club[4], true), (club[5], true), (club[6], true), (club[7], true)])
+            self.allClub.append(club[0])
+        }
         self.users["zemji001"] = UserDataContainer.init("zemji001", "Zemin Jiang", "0", .facalty, .sophomoreEnglish, "Shanghai, China", [("zemin.jaing@china.gov", true)])
         self.users["dontr001"] = UserDataContainer.init("dontr001", "Donald Trump", "0", .facalty, .juniorEnglish, "USA", [("donald.trump@trump.com", true)])
-        self.users["haofa001"] = UserDataContainer.init("haofa001", "David Fan", "0", .student, .senior, "Shenzhen, China", [("haoyang.fan@govsacademy.org", true)])
-        self.users["advan001"] = UserDataContainer.init("advan001", "Advanced Precalculus with an Introduction to Calculus", "testing_profile_picture_4.png", .course, .mathmaticDepartment, "", [("This is a year-long course with two major segments. The first portion of the course is an in-depth examination of ideas such as vectors, matrices, systems of linear and non-linear equations, sequences and series. The second portion of the course introduces students to the major themes of calculus, specifically the limit, the derivative, and the definite integral. This segment is designed to prepare students for a traditional college calculus course.", true), ("two semesters", true), ("mathmetics", true), ("false", true), ("9, 10, 11, 12", true), ("1", true), ("Science Building 301", true), ("Mr. Wang, Mr. Zhang and Mr. Lee", true)])
-        self.users["unice001"] = UserDataContainer.init("unice001", "Unicef Club", "testing_profile_picture_4.png", .club, .clubDefault, "Governor's official Unicef club", [("Miki Takahashi and Taylor Xie", true), ("Geoff Brace and Jade Qian", true), ("Murphy Seminor Room, Frost Library", true), ("Thursday 6:00 PM", true), ("We partner up with UNICEF USA, and by collecting funds through various events throughout the year, we aim to further contribute as UNICEF high school sector. Informing Govs about what the world's most vulnerable children are going through is also our core objective.", true), ("Dedication. From the fact that our members are chosen through applications, it shows how we value the contribution of every members.\nIn comparison to the minorities who lack resources for living, UNICEF makes us realize how we are the other minority, being able to go through privileged life at boarding school. We have to be aware of where we stand in this society as well as to think of what we can do to help the others.", true)])
         self.users["ranpe001"] = UserDataContainer.init("ranpe001", "Guest", "0", .admin, .senior, "Guest of the Governor's Academy App", [])
         self.users["admin001"] = UserDataContainer.init("admin001", "Admin", "0", .admin, .senior, "Admin of the Governor's Academy App", [])
-        self.allStudent.append("jefwa001")
-        self.allStudent.append("kevji001")
-        self.allStudent.append("haosh001")
-        self.allStudent.append("haofa001")
+        self.loadCourseData()
         self.allFaculty.append("zemji001")
         self.allFaculty.append("dontr001")
-        self.allCourse.append("advan001")
-        self.allClub.append("unice001")
         
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_8.jpg", "Dining Hall Menu"))
@@ -140,7 +154,7 @@ class AppDataManager{
         self.discoverLinksData.append(DiscoverLinksDataCountainer(.website, "Veracross", "Your homework, grade, and everything.", "https://portals.veracross.com/gda/student"))
         self.discoverLinksData.append(DiscoverLinksDataCountainer(.website, "The Governor's Academy", "School's official website.", "https://www.thegovernorsacademy.org/"))
         self.discoverLinksData.append(DiscoverLinksDataCountainer(.snapchat, "Govs Event", "Know about what's going on at Govs.", "https://www.snapchat.com/add/govsevents"))
-        self.discoverLinksData.append(DiscoverLinksDataCountainer(.instagram, "Govs Trade", "A student organized trading platform which applies to all graders.", "instagram://user?username=govstrade"))
+//        self.discoverLinksData.append(DiscoverLinksDataCountainer(.instagram, "Govs Trade", "A student organized trading platform which applies to all graders.", "instagram://user?username=govstrade"))
         
         let eventsData = AppPersistenceManager.shared.fetchObject(with: .event) as! Array<Event>
         for d in eventsData{
@@ -149,6 +163,45 @@ class AppDataManager{
             let whichDay = whichDayOfWeekend(event.startTime)
             AppDataManager.shared.discoverWeekendEventData[whichDay].append(event)
         }
+    }
+    
+    private func loadCourseData(){
+        let data = self.readDataFromCSV(fileName: "courseData", fileType: "csv")
+        //data = cleanRows(file: data!)
+        let csvRows = try! CSV.init(string: data!)
+        while let row = csvRows.next(){
+            let cur_uid = row[0]
+            let cur_department_rawValue = row[1]
+            let cur_class_name = row[2]
+            let cur_length = row[3]
+            let cur_is_required = row[4].lowercased()
+            let cur_availibility = row[5]
+            let cur_description = cur_class_name + ": " + row[6]
+            let cur_profile_image_name = "blue_" + cur_uid.prefix(1).uppercased() + ".png"
+            let cur_department = UserDataContainer.Department(rawValue: cur_department_rawValue)!
+            self.users[cur_uid] = UserDataContainer.init(cur_uid, cur_class_name, cur_profile_image_name, .course, cur_department, cur_description, [(cur_description, true), (cur_length, true), (cur_department_rawValue, true), (cur_is_required, true), (cur_availibility, true),])
+            self.allCourse.append(cur_uid)
+        }
+    }
+    
+    private func loadStudentData() -> [[String]]{
+        let data = self.readDataFromCSV(fileName: "allStudents", fileType: "csv")
+        var res = Array<Array<String>>()
+        let csvRows = try! CSV.init(string: data!)
+         while let row = csvRows.next(){
+            res.append(row)
+        }
+        return res
+    }
+    
+    private func loadClubData() -> [[String]]{
+        let data = self.readDataFromCSV(fileName: "allClubs", fileType: "csv")
+        var res = Array<Array<String>>()
+        let csvRows = try! CSV.init(string: data!)
+        while let row = csvRows.next(){
+            res.append(row)
+        }
+        return res
     }
     
     func loadLocalPostData(){
@@ -257,16 +310,20 @@ class UserDataContainer{
         case club = 0
     }
     enum Department: String{
-        case freashmen = "freashmen"
+        case freshman = "freshman"
         case sophomore = "sophomore"
         case junior = "junior"
         case senior = "senior"
-        case freashmenEnglish = "freashmen english"
+        case freshmanEnglish = "freshman english"
         case sophomoreEnglish = "sophomore english"
         case juniorEnglish = "junior english"
         case seniorEnglish = "senior english"
         case englishDepartment = "English"
-        case mathmaticDepartment = "Mathmatics"
+        case mathmaticDepartment = "Mathematics"
+        case historyAndSocialStudyDepartment = "History and Social Studies"
+        case foreignLanguageDepartment = "Foreign Language"
+        case scienceDepartment = "Science"
+        case fineArtsDepartment = "Fine Arts"
         case clubDefault = "student orginization"
     }
     let uid: String
@@ -438,5 +495,29 @@ class DiscoverMatchDataContainer: NSObject {
         self.homeScore = homeScore
         self.awayScore = awayScore
         self.isUpdateComplete = isUpdateComplete
+    }
+}
+
+extension AppDataManager{
+    private func readDataFromCSV(fileName:String, fileType: String)-> String!{
+        guard let filepath = Bundle.main.path(forResource: fileName, ofType: fileType)
+            else {
+                return nil
+        }
+        do {
+            var contents = try String(contentsOfFile: filepath, encoding: .utf8)
+            contents = cleanRows(file: contents)
+            return contents
+        } catch {
+            print("File Read Error for file \(filepath)")
+            return nil
+        }
+    }
+    
+    private func cleanRows(file:String)->String{
+        var cleanFile = file
+        cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
+        cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")
+        return cleanFile
     }
 }

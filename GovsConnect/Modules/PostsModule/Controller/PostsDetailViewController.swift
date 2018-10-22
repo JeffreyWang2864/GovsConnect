@@ -290,16 +290,55 @@ extension PostsDetailViewController: UIGestureRecognizerDelegate{
         }
         let realIndexPathItem = indexPath!.section - 1
         let selectedRowSenderUID = AppDataManager.shared.postsData[self.correspondTag].replies[realIndexPathItem].sender.uid
-        guard selectedRowSenderUID == AppDataManager.shared.currentPersonID else{
-            return
-        }
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Delete my comment", style: .destructive, handler: { (action) in
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        if selectedRowSenderUID == AppDataManager.shared.currentPersonID{
+            //need to add delete my post action
+            alert.addAction(UIAlertAction(title: "Delete my comment", style: .destructive, handler: { (action) in
+                let reply_id = AppDataManager.shared.postsData[self.correspondTag].replies[realIndexPathItem]._uid
+                AppIOManager.shared.delReply(at: self.correspondTag, reply_id: reply_id, { (isSucceed) in
+                    self.tableView.reloadData()
+                })
+            }))
+        }
+        
+        alert.addAction(UIAlertAction(title: "Report this reply", style: .default, handler: { (alert) in
+            //report the post
             let reply_id = AppDataManager.shared.postsData[self.correspondTag].replies[realIndexPathItem]._uid
-            AppIOManager.shared.delReply(at: self.correspondTag, reply_id: reply_id, { (isSucceed) in
-                self.tableView.reloadData()
+            let specificAlert = UIAlertController(title: "Report this reply", message: "Please specify the reason", preferredStyle: .alert)
+            specificAlert.addTextField(configurationHandler: { (textField) in
+                textField.placeholder = "reason"
+                textField.keyboardType = .asciiCapable
             })
+            specificAlert.addAction(UIAlertAction(title: "report", style: .default, handler: { (alert) in
+                //click on report
+                let reportingAlert = UIAlertController(title: nil, message: "reporting...", preferredStyle: .alert)
+                let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+                loadingIndicator.hidesWhenStopped = true
+                loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+                loadingIndicator.startAnimating();
+                reportingAlert.view.addSubview(loadingIndicator)
+                self.present(reportingAlert, animated: true, completion: nil)
+                var postData = [String: AnyObject]()
+                postData["is_post"] = false as AnyObject
+                postData["target_id"] = reply_id as AnyObject
+                postData["title"] = AppDataManager.shared.postsData[self.correspondTag].replies[realIndexPathItem].body.prefix(50) as AnyObject
+                postData["reason"] = specificAlert.textFields![0].text! as AnyObject
+                postData["reporter"] = AppDataManager.shared.currentPersonID as AnyObject
+                AppIOManager.shared.report(postData: postData, {
+                    //completion handler
+                    reportingAlert.dismiss(animated: true){
+                        makeMessageViaAlert(title: "The report was successful", message: "")
+                    }
+                }, { (errStr) in
+                    //error handler
+                    reportingAlert.dismiss(animated: true){
+                        makeMessageViaAlert(title: "Error while reporting", message: errStr)
+                    }
+                })
+            }))
+            specificAlert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+            self.navigationController!.present(specificAlert, animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)

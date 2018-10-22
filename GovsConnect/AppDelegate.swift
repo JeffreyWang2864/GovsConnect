@@ -163,7 +163,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let userId = user.userID// For client-side use only!
             let idToken = user.authentication.idToken // Safe to send to the server
             let fullName = user.profile.name
-            let email = user.profile.email!
+            let email = user.profile.email!.lowercased()
             guard email.suffix(from: email.firstIndex(of: "@")!) == "@govsacademy.org" else{
                 makeMessageViaAlert(title: "Please login with a Govs email", message: "The login was successful, but please login with your Governor's Academy email(*@govsacademy.org).")
                 GIDSignIn.sharedInstance().signOut()

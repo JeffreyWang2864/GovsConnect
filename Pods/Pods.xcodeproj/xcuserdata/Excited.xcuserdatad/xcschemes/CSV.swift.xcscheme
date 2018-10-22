@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E731474EF7AF3CF0E47AF60A9D4FC57D"
-               BuildableName = "Pods_GovsConnect.framework"
-               BlueprintName = "Pods-GovsConnect"
+               BlueprintIdentifier = "91B96E9BA46525BB774B90C16F7EDBE5"
+               BuildableName = "CSV.framework"
+               BlueprintName = "CSV.swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E731474EF7AF3CF0E47AF60A9D4FC57D"
-            BuildableName = "Pods_GovsConnect.framework"
-            BlueprintName = "Pods-GovsConnect"
+            BlueprintIdentifier = "91B96E9BA46525BB774B90C16F7EDBE5"
+            BuildableName = "CSV.framework"
+            BlueprintName = "CSV.swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

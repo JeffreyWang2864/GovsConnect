@@ -160,6 +160,7 @@ class NewPostViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                 alert.dismiss(animated: true, completion: {
                     self.goToPreviousView()
+                    makeMessageViaAlert(title: "pending", message: "In order to create a harmonious environment, your post will be reviewed by an administrator. Your post will be released to the public once the administrator approved.")
                 })
             }
         }) { (errStr) in

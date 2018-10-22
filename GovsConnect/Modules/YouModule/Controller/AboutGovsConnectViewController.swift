@@ -33,4 +33,23 @@ class AboutGovsConnectViewController: UIViewController {
             self.view.constraints[2].constant = 100
         }
     }
+    
+    @IBAction func termAndServiceButtonDidClick(_ button: UIButton){
+        
+    }
+    
+    @IBAction func privacyPolicyButtonDidClick(_ button: UIButton){
+        
+    }
+    
+    @IBAction func officialWebsiteButtonDidClick(_ button: UIButton){
+        
+    }
+    
+    @IBAction func rateAppButtonDidClick(_ button: UIButton){
+        let url = URL(string: "itms-apps:itunes.apple.com/us/app/apple-store/id\(APP_ID)?mt=8&action=write-review")!
+        if UIApplication.shared.canOpenURL(url){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }

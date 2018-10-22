@@ -751,4 +751,16 @@ class AppIOManager{
             }
         }
     }
+    
+    func report(postData: [String: AnyObject], _ completionHandler: @escaping () -> (), _ errorHandler: @escaping (String) -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/post/report"
+        request(urlStr, method: .post, parameters: postData, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                completionHandler()
+            case .failure(let error):
+                errorHandler(error.localizedDescription)
+            }
+        }
+    }
 }

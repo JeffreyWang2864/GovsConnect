@@ -11,7 +11,7 @@ import UIKit
 class UserDetailViewController: UIViewController {
     static let studentLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Email", .all), ("Website", .link), ("Phone", .phoneNumber), ("Address", .all)]
     static let courseLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Course description", .all), ("Length", .all), ("Catagory", .all), ("Is required", .all), ("Grade", .all), ("Credits", .all), ("Location", .all), ("Teacher", .all)]
-    static let clubLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Leader", .all), ("Advisor", .all), ("Location", .all), ("Activity hour", .all),  ("Mission", .all),  ("Strengths and Contribution to Govs", .all)]
+    static let clubLabels: Array<(str: String, type: UIDataDetectorTypes)> = [("Leader", .all), ("Advisor", .all), ("Activity hour", .all), ("Location", .all),  ("Mission", .all),  ("Strengths and Contribution to Govs", .all)]
     @IBOutlet var backgroundView: UIView!
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userTitleLabel: UILabel!
@@ -54,7 +54,7 @@ class UserDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         let data = AppDataManager.shared.users[uid]!
         
-        if data.profession == .club || data.profession == .course{
+        if data.profession == .course{
             self.userImageView.image = UIImage.init(named: data.profilePictureName)!
         }else{
             let imgData = AppDataManager.shared.profileImageData[data.uid]!

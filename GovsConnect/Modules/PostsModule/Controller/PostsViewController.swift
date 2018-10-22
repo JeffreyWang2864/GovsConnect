@@ -168,6 +168,30 @@ class PostsViewController: UIViewController {
         loadingIndicator.startAnimating();
         alert.view.addSubview(loadingIndicator)
         self.present(alert, animated: true, completion: nil)
+        
+        //if only the load button is displayed, fetch newest post
+        if curIndex.section == -1{
+            AppIOManager.shared.loadNewestPost({
+                //completion
+                self.mainTableView.reloadData()
+                alert.dismiss(animated: true, completion: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                        self.loadDataLock = true
+                    }
+                })
+            }) { (errStr) in
+                //err handler
+                alert.dismiss(animated: true, completion: {
+                    makeMessageViaAlert(title: "Error when loading post data", message: errStr)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                        self.loadDataLock = true
+                    }
+                })
+            }
+            return
+        }
+        
+        //if there is post, load net post
         let post_id = AppDataManager.shared.postsData[curIndex.section]._uid
         AppIOManager.shared.loadNextPostData(from: post_id, {
             //completion handler
@@ -273,19 +297,57 @@ extension PostsViewController: UIGestureRecognizerDelegate{
         }
         let realIndexPathItem = indexPath!.section
         let selectedRowSenderUID = AppDataManager.shared.postsData[realIndexPathItem].author.uid
-        guard selectedRowSenderUID == AppDataManager.shared.currentPersonID || AppDataManager.shared.currentUserConnections.contains(selectedRowSenderUID) else{
-            return
-        }
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Delete my post", style: .destructive, handler: { (action) in
-            
+        if selectedRowSenderUID == AppDataManager.shared.currentPersonID || AppDataManager.shared.currentUserConnections.contains(selectedRowSenderUID){
+            alert.addAction(UIAlertAction(title: "Delete my post", style: .destructive, handler: { (action) in
+                
+                let post_id = AppDataManager.shared.postsData[realIndexPathItem]._uid
+                AppIOManager.shared.del_post(post_id: post_id, { (isPassed) in
+                    self.refreachNewData(self.refreashControl)
+                }, { (errStr) in
+                    makeMessageViaAlert(title: "Error when deleting data", message: errStr)
+                })
+            }))
+        }
+
+        alert.addAction(UIAlertAction(title: "Report this post", style: .default, handler: { (alert) in
+            //report the post
             let post_id = AppDataManager.shared.postsData[realIndexPathItem]._uid
-            AppIOManager.shared.del_post(post_id: post_id, { (isPassed) in
-                self.refreachNewData(self.refreashControl)
-            }, { (errStr) in
-                makeMessageViaAlert(title: "Error when deleting data", message: errStr)
+            let specificAlert = UIAlertController(title: "Report this post", message: "Please specify the reason", preferredStyle: .alert)
+            specificAlert.addTextField(configurationHandler: { (textField) in
+                textField.placeholder = "reason"
+                textField.keyboardType = .asciiCapable
             })
+            specificAlert.addAction(UIAlertAction(title: "report", style: .default, handler: { (alert) in
+                //click on report
+                let reportingAlert = UIAlertController(title: nil, message: "reporting...", preferredStyle: .alert)
+                let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+                loadingIndicator.hidesWhenStopped = true
+                loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+                loadingIndicator.startAnimating();
+                reportingAlert.view.addSubview(loadingIndicator)
+                self.present(reportingAlert, animated: true, completion: nil)
+                var postData = [String: AnyObject]()
+                postData["is_post"] = true as AnyObject
+                postData["target_id"] = post_id as AnyObject
+                postData["title"] = AppDataManager.shared.postsData[realIndexPathItem].postTitle.prefix(50) as AnyObject
+                postData["reason"] = specificAlert.textFields![0].text! as AnyObject
+                postData["reporter"] = AppDataManager.shared.currentPersonID as AnyObject
+                AppIOManager.shared.report(postData: postData, {
+                    //completion handler
+                    reportingAlert.dismiss(animated: true){
+                        makeMessageViaAlert(title: "The report was successful", message: "")
+                    }
+                }, { (errStr) in
+                    //error handler
+                    reportingAlert.dismiss(animated: true){
+                        makeMessageViaAlert(title: "Error while reporting", message: errStr)
+                    }
+                })
+            }))
+            specificAlert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+            self.navigationController!.present(specificAlert, animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)

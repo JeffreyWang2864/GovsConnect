@@ -69,6 +69,9 @@
                         <constraint firstAttribute="height" constant="24" id="i4i-fQ-OsN"/>
                     </constraints>
                     <state key="normal" title="terms of services"/>
+                    <connections>
+                        <action selector="termAndServiceButtonDidClick:" destination="-1" eventType="touchDown" id="CKN-BB-NY2"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOi-en-RhE">
                     <rect key="frame" x="140" y="529" width="95" height="24"/>
@@ -77,6 +80,9 @@
                         <constraint firstAttribute="height" constant="24" id="hjo-4g-qF5"/>
                     </constraints>
                     <state key="normal" title="privacy policy"/>
+                    <connections>
+                        <action selector="privacyPolicyButtonDidClick:" destination="-1" eventType="touchDown" id="SIY-OG-93a"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46W-ha-B4Q">
                     <rect key="frame" x="76" y="553" width="223" height="24"/>
@@ -85,6 +91,9 @@
                         <constraint firstAttribute="width" constant="223" id="iWD-Pl-FO2"/>
                     </constraints>
                     <state key="normal" title="Govs Connect official website"/>
+                    <connections>
+                        <action selector="officialWebsiteButtonDidClick:" destination="-1" eventType="touchDown" id="uft-Kc-1Gw"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBq-Pd-w8K">
                     <rect key="frame" x="76" y="577" width="223" height="24"/>
@@ -93,6 +102,9 @@
                         <constraint firstAttribute="width" constant="223" id="yJW-mm-HLB"/>
                     </constraints>
                     <state key="normal" title="rate Govs Connect"/>
+                    <connections>
+                        <action selector="rateAppButtonDidClick:" destination="-1" eventType="touchDown" id="5xx-Yr-fMC"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="designed by the Govs Connect Club @2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2AX-bD-PHS">
                     <rect key="frame" x="64.5" y="631" width="246" height="13"/>

@@ -15,7 +15,7 @@ class PersonTableViewCell: UITableViewCell {
     var uid: String!{
         didSet{
             let userData = AppDataManager.shared.users[self.uid]!
-            if userData.profession == .club || userData.profession == .course{
+            if userData.profession == .course{
                 self.personImage.image = UIImage.init(named: userData.profilePictureName)!
             }else{
                 let imgData = AppDataManager.shared.profileImageData[userData.uid]!

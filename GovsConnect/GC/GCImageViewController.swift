@@ -33,6 +33,12 @@ class GCImageViewController: UIViewController {
         self.loadFullImageButton.titleLabel!.font = UIFont.systemFont(ofSize: 14)
         self.loadFullImageButton.backgroundColor = UIColor.black
         self.loadFullImageButton.addTarget(self, action: #selector(self.loadFullImageButtonDidClick(_:)), for: .touchDown)
+        switch PHONE_TYPE {
+        case .iphonexsmax:
+            self.loadFullImageButton.y = screenHeight - 85
+        default:
+            break
+        }
         self.view.addSubview(loadFullImageButton)
     }
     
