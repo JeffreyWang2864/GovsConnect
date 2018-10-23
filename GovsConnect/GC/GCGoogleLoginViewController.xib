@@ -15,6 +15,7 @@
                 <outlet property="accessCodeTextField" destination="twb-6Z-4UQ" id="gYM-3c-Qeo"/>
                 <outlet property="googleLoginButton" destination="aVu-4T-3YO" id="4dA-Gw-zAd"/>
                 <outlet property="interactionLabel" destination="CPI-J9-gBn" id="FjH-38-mEy"/>
+                <outlet property="userConsentTextView" destination="tn8-W0-tsp" id="eDo-LQ-qYx"/>
                 <outlet property="verifyButton" destination="piB-ay-hqr" id="7ZP-sx-YEZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -99,6 +100,17 @@
                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="By login, you agree with our terms of services and privacy policy" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tn8-W0-tsp">
+                    <rect key="frame" x="75" y="602" width="225" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="AKr-KZ-X13"/>
+                        <constraint firstAttribute="width" constant="225" id="OmF-dq-Wgv"/>
+                    </constraints>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -112,9 +124,11 @@
                 <constraint firstItem="8DN-Yq-sav" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ixo-WJ-JnW"/>
                 <constraint firstItem="XQr-JH-W9v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LQ2-AY-sVG"/>
                 <constraint firstItem="CPI-J9-gBn" firstAttribute="top" secondItem="twb-6Z-4UQ" secondAttribute="bottom" constant="2" id="Rf0-7B-rHT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tn8-W0-tsp" secondAttribute="bottom" constant="20" id="U2t-b9-f2w"/>
                 <constraint firstItem="twb-6Z-4UQ" firstAttribute="top" secondItem="aVu-4T-3YO" secondAttribute="bottom" constant="30" id="Wp4-Ky-dXf"/>
                 <constraint firstItem="aVu-4T-3YO" firstAttribute="top" secondItem="XQr-JH-W9v" secondAttribute="bottom" constant="35" id="dGk-DD-kWQ"/>
                 <constraint firstItem="piB-ay-hqr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="k4V-sN-Y5O"/>
+                <constraint firstItem="tn8-W0-tsp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lWF-lb-22h"/>
                 <constraint firstItem="Acq-vg-IiP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="rJA-Fh-B77"/>
                 <constraint firstItem="piB-ay-hqr" firstAttribute="top" secondItem="CPI-J9-gBn" secondAttribute="bottom" constant="5" id="z9d-Wy-TPc"/>
             </constraints>

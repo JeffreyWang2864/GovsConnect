@@ -24,6 +24,7 @@ class PostsDetailViewController: GCBaseViewController {
     var correspondTag: Int = -1
     var previousOriginY: CGFloat = -1
     var previousLine: Int = 1
+    var curTitle: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -182,6 +183,7 @@ extension PostsDetailViewController: UITableViewDelegate, UITableViewDataSource{
             if data.postImagesName.count > 0 && cell.imageStackView.arrangedSubviews.count == 0 {
                 cell.addImagesAtEnd(data.postImagesName)
             }
+            self.curTitle = data.postTitle
             return cell
         }else{
             let realIndexPathItem = indexPath.section - 1

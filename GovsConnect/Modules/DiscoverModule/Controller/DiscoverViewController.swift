@@ -41,7 +41,9 @@ class DiscoverViewController: UIViewController {
                 self.navigationController!.present(alert, animated: true, completion: nil)
                 return
             }
-            let vc = RateYourFoodViewController.init(nibName: "RateYourFoodViewController", bundle: Bundle.main)
+//            let vc = RateYourFoodViewController.init(nibName: "RateYourFoodViewController", bundle: Bundle.main)
+//            self.navigationController!.pushViewController(vc, animated: true)
+            let vc = NewFoodViewController.init(nibName: "NewFoodViewController", bundle: Bundle.main)
             self.navigationController!.pushViewController(vc, animated: true)
         case 2:
             //links

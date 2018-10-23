@@ -48,6 +48,13 @@ class ManagePostsViewController: UIViewController {
         self.removeLongPressGestureRecongnizer()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParentViewController{
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
     private func setupTableViewData(){
         AppIOManager.shared.loadPostData(by: self.uid!, {
             //success handler

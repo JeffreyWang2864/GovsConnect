@@ -15,6 +15,7 @@ class GCGoogleLoginViewController: UIViewController{
     @IBOutlet var accessCodeTextField: UITextField!
     @IBOutlet var interactionLabel: UILabel!
     @IBOutlet var verifyButton: UIButton!
+    @IBOutlet var userConsentTextView: UITextView!
     var signInError: NSError?
     private var keyboardDismisser: UITapGestureRecognizer?
     override func viewDidLoad() {
@@ -33,6 +34,23 @@ class GCGoogleLoginViewController: UIViewController{
         self.verifyButton.setTitleColor(UIColor.gray, for: .disabled)
         self.verifyButton.isEnabled = self.accessCodeTextField.text == "" ? false : true
         // Do any additional setup after loading the view.
+        let attributedString = NSMutableAttributedString(string: "by login, you agree with our terms of services and privacy policy")
+        let termsOfServiceLinkAttributes = [
+            NSAttributedStringKey.link: URL(string: "https://www.eagersoft.net/govs-connect-terms-of-services")!,
+            NSAttributedStringKey.font: UIFont(name: "Helvetica", size: 12.0)!,
+            NSAttributedStringKey.foregroundColor: APP_THEME_COLOR
+            ] as [NSAttributedStringKey : Any]
+        let privacyPolicyLinkAttributes = [
+            NSAttributedStringKey.link: URL(string: "https://www.eagersoft.net/govs-connect-privacy-policy")!,
+            NSAttributedStringKey.font: UIFont(name: "Helvetica", size: 12.0)!,
+            NSAttributedStringKey.foregroundColor: APP_THEME_COLOR
+            ] as [NSAttributedStringKey : Any]
+        attributedString.setAttributes(termsOfServiceLinkAttributes, range: NSRange(location: 29, length: 17))
+        attributedString.setAttributes(privacyPolicyLinkAttributes, range: NSMakeRange(51, 14))
+        self.userConsentTextView.attributedText = attributedString
+        self.userConsentTextView.backgroundColor = UIColor.clear
+        self.userConsentTextView.textColor = UIColor.lightGray
+        self.userConsentTextView.textAlignment = .center
     }
     
     override func viewWillDisappear(_ animated: Bool) {

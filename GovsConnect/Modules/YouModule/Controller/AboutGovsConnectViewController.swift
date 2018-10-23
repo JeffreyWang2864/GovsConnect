@@ -35,15 +35,24 @@ class AboutGovsConnectViewController: UIViewController {
     }
     
     @IBAction func termAndServiceButtonDidClick(_ button: UIButton){
-        
+        let url = URL(string: "https://www.eagersoft.net/govs-connect-terms-of-services")!
+        if UIApplication.shared.canOpenURL(url){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     @IBAction func privacyPolicyButtonDidClick(_ button: UIButton){
-        
+        let url = URL(string: "https://www.eagersoft.net/govs-connect-privacy-policy")!
+        if UIApplication.shared.canOpenURL(url){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     @IBAction func officialWebsiteButtonDidClick(_ button: UIButton){
-        
+        let url = URL(string: "https://www.eagersoft.net/govs-connect")!
+        if UIApplication.shared.canOpenURL(url){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     @IBAction func rateAppButtonDidClick(_ button: UIButton){

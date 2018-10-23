@@ -57,6 +57,12 @@
 		13540EA321667720005204FC /* GCLinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540EA221667720005204FC /* GCLinkType.swift */; };
 		1355B8A3217CC925006E103D /* allStudents.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8A2217CC925006E103D /* allStudents.csv */; };
 		1355B8A5217D1BD0006E103D /* allClubs.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8A4217D1BD0006E103D /* allClubs.csv */; };
+		1355B8A8217E92ED006E103D /* NewFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1355B8A6217E92ED006E103D /* NewFoodViewController.swift */; };
+		1355B8A9217E92ED006E103D /* NewFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8A7217E92ED006E103D /* NewFoodViewController.xib */; };
+		1355B8AC217E930D006E103D /* NewFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1355B8AA217E930D006E103D /* NewFoodTableViewCell.swift */; };
+		1355B8AD217E930D006E103D /* NewFoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8AB217E930D006E103D /* NewFoodTableViewCell.xib */; };
+		1355B8B0217E9F29006E103D /* system_discover_food_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8AE217E9F28006E103D /* system_discover_food_like.png */; };
+		1355B8B1217E9F29006E103D /* system_discover_food_dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8AF217E9F29006E103D /* system_discover_food_dislike.png */; };
 		1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4D62101E2CD000C3BF5 /* YouViewController.swift */; };
 		1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1356C4D72101E2CD000C3BF5 /* YouViewController.xib */; };
 		1356C4DC210599D7000C3BF5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */; };
@@ -303,6 +309,12 @@
 		13540EA221667720005204FC /* GCLinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLinkType.swift; sourceTree = "<group>"; };
 		1355B8A2217CC925006E103D /* allStudents.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allStudents.csv; sourceTree = "<group>"; };
 		1355B8A4217D1BD0006E103D /* allClubs.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allClubs.csv; sourceTree = "<group>"; };
+		1355B8A6217E92ED006E103D /* NewFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFoodViewController.swift; sourceTree = "<group>"; };
+		1355B8A7217E92ED006E103D /* NewFoodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewFoodViewController.xib; sourceTree = "<group>"; };
+		1355B8AA217E930D006E103D /* NewFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFoodTableViewCell.swift; sourceTree = "<group>"; };
+		1355B8AB217E930D006E103D /* NewFoodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewFoodTableViewCell.xib; sourceTree = "<group>"; };
+		1355B8AE217E9F28006E103D /* system_discover_food_like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_food_like.png; sourceTree = "<group>"; };
+		1355B8AF217E9F29006E103D /* system_discover_food_dislike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_food_dislike.png; sourceTree = "<group>"; };
 		1356C4D62101E2CD000C3BF5 /* YouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouViewController.swift; sourceTree = "<group>"; };
 		1356C4D72101E2CD000C3BF5 /* YouViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YouViewController.xib; sourceTree = "<group>"; };
 		1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -528,6 +540,8 @@
 				13E5DE2D216FAED5007560C3 /* SportHomeHeadBrowseAllCell.swift */,
 				13E5DE2F216FAEF5007560C3 /* SportClassifyTableViewCell.swift */,
 				13E5DE31216FAF11007560C3 /* SportDetailTableViewCell.swift */,
+				1355B8AA217E930D006E103D /* NewFoodTableViewCell.swift */,
+				1355B8AB217E930D006E103D /* NewFoodTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -650,6 +664,8 @@
 		13961E0C20CA772F004FFF4B /* System */ = {
 			isa = PBXGroup;
 			children = (
+				1355B8AF217E9F29006E103D /* system_discover_food_dislike.png */,
+				1355B8AE217E9F28006E103D /* system_discover_food_like.png */,
 				13CD9F2E2166B7F600EAFE3D /* AppIcon */,
 				13CD9F2421669B0900EAFE3D /* system_instagram_icon.png */,
 				13CD9F2621669B0A00EAFE3D /* system_snapchat_icon.png */,
@@ -1007,6 +1023,8 @@
 				13E5DE1F216FA78F007560C3 /* SportHomeViewController.swift */,
 				13E5DE21216FA7C6007560C3 /* SportClassifyViewController.swift */,
 				13E5DE23216FA7E2007560C3 /* SportDetailViewController.swift */,
+				1355B8A6217E92ED006E103D /* NewFoodViewController.swift */,
+				1355B8A7217E92ED006E103D /* NewFoodViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1168,6 +1186,7 @@
 				133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */,
 				139EDF7720EC7FA400778CFD /* RateYourFoodViewController.xib in Resources */,
 				1399FC37217A0CD1009F926F /* red_C.png in Resources */,
+				1355B8AD217E930D006E103D /* NewFoodTableViewCell.xib in Resources */,
 				13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */,
 				13CD9F4B2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png in Resources */,
 				1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */,
@@ -1198,6 +1217,7 @@
 				13CD9F462166B82500EAFE3D /* govs_connect_app_logo_1024@1x.png in Resources */,
 				13CD9F232166935600EAFE3D /* LinksTableViewCell.xib in Resources */,
 				1399FC14217A0CD1009F926F /* blue_S.png in Resources */,
+				1355B8B1217E9F29006E103D /* system_discover_food_dislike.png in Resources */,
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
 				1399FC23217A0CD1009F926F /* blue_O.png in Resources */,
 				1399FC1F217A0CD1009F926F /* blue_T.png in Resources */,
@@ -1213,6 +1233,7 @@
 				1355B8A5217D1BD0006E103D /* allClubs.csv in Resources */,
 				132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */,
 				1399FC3F217A0CD1009F926F /* red_G.png in Resources */,
+				1355B8B0217E9F29006E103D /* system_discover_food_like.png in Resources */,
 				13F02C8B2162CCA600660E95 /* GoogleService-Info.plist in Resources */,
 				13CD9F412166B82500EAFE3D /* govs_connect_app_logo_40@1x.png in Resources */,
 				13EED9D62136121B00427E5E /* GCLoginRequireViewController.xib in Resources */,
@@ -1247,6 +1268,7 @@
 				13961E1520CA7766004FFF4B /* system_comment.png in Resources */,
 				1399FC24217A0CD1009F926F /* blue_V.png in Resources */,
 				130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */,
+				1355B8A9217E92ED006E103D /* NewFoodViewController.xib in Resources */,
 				130E677320F61756009D3599 /* testing_food_1.jpg in Resources */,
 				13CD9F3E2166B82500EAFE3D /* govs_connect_app_logo_76@1x.png in Resources */,
 				BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */,
@@ -1394,6 +1416,7 @@
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
 				13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */,
 				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
+				1355B8AC217E930D006E103D /* NewFoodTableViewCell.swift in Sources */,
 				137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */,
 				133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */,
 				13D389E220FDD62000330CDD /* UserDetailTableViewCell.swift in Sources */,
@@ -1427,6 +1450,7 @@
 				13C25674214DE2AC00EFCBCF /* Comment+CoreDataProperties.swift in Sources */,
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
 				1377AB76214F7BB80015172C /* GCPhoneType.swift in Sources */,
+				1355B8A8217E92ED006E103D /* NewFoodViewController.swift in Sources */,
 				1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,
 				13C2566B214C8BE500EFCBCF /* ImageData+CoreDataClass.swift in Sources */,

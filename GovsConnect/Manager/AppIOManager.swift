@@ -529,13 +529,12 @@ class AppIOManager{
                     let data = jsonDict["\(index)"]
                     let foodName = data["name"].stringValue
                     let is_lunch = data["is_lunch"].boolValue
-                    let imgStr = data["image_id"].stringValue
                     let id = data["id"].intValue
-                    let foodData = DiscoverFoodDataContainer(foodName, imgStr)
+                    let foodData = DiscoverFoodDataContainer(foodName, "")
                     foodData._id = id
-                    self.loadImage(with: imgStr, { (data) in
-                        AppDataManager.shared.imageData[imgStr] = data
-                    })
+//                    self.loadImage(with: imgStr, { (data) in
+//                        AppDataManager.shared.imageData[imgStr] = data
+//                    })
                     AppDataManager.shared.discoverMenuData[btoi(!is_lunch)].append(foodData)
                     index += 1
                 }
@@ -597,7 +596,7 @@ class AppIOManager{
     func changeProfileImage(newImage: UIImage, _ completionHandler: @escaping ReceiveResponseBlock){
         let urlStr = APP_SERVER_URL_STR + "/assets/user_image_change/"
         upload(multipartFormData: { (multipartFormData) in
-            let imgData = UIImageJPEGRepresentation(newImage, 0.2)!
+            let imgData = UIImageJPEGRepresentation(newImage, 0.1)!
             let fileName = "\(Int(NSDate.init(timeIntervalSinceNow: 0).timeIntervalSince1970))" + ".\(random0to1000()).\(random0to1000())"
             multipartFormData.append(imgData, withName: fileName, fileName: fileName + ".jpg", mimeType: "image/jpg")
             multipartFormData.append( AppDataManager.shared.currentPersonID.data(using: String.Encoding.utf8)!, withName: "uid")
