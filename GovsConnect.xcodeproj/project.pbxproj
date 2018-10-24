@@ -241,6 +241,8 @@
 		13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */; };
 		13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */; };
 		13F4094C20CCF2A200645880 /* system_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F4094B20CCF2A200645880 /* system_send.png */; };
+		13F52D4621801DCB00D5A424 /* allFaculty.csv in Resources */ = {isa = PBXBuildFile; fileRef = 13F52D4521801DCB00D5A424 /* allFaculty.csv */; };
+		13F52D482180270F00D5A424 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F52D472180270F00D5A424 /* UIImage+Ext.swift */; };
 		13F805C8213B469C00AE93F0 /* NewEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F805C6213B469C00AE93F0 /* NewEditProfileViewController.swift */; };
 		13F805C9213B469C00AE93F0 /* NewEditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F805C7213B469C00AE93F0 /* NewEditProfileViewController.xib */; };
 		13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */; };
@@ -494,6 +496,8 @@
 		13F4094720CCE03700645880 /* PostsDetailReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailReplyTableViewCell.swift; sourceTree = "<group>"; };
 		13F4094820CCE03700645880 /* PostsDetailReplyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailReplyTableViewCell.xib; sourceTree = "<group>"; };
 		13F4094B20CCF2A200645880 /* system_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_send.png; sourceTree = "<group>"; };
+		13F52D4521801DCB00D5A424 /* allFaculty.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allFaculty.csv; sourceTree = "<group>"; };
+		13F52D472180270F00D5A424 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		13F805C6213B469C00AE93F0 /* NewEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditProfileViewController.swift; sourceTree = "<group>"; };
 		13F805C7213B469C00AE93F0 /* NewEditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewEditProfileViewController.xib; sourceTree = "<group>"; };
 		13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCEditableTableViewCell.swift; sourceTree = "<group>"; };
@@ -706,6 +710,7 @@
 				13961E2920CAC1F3004FFF4B /* tool.swift */,
 				BC1490ED20DA550A00373BBF /* UIView+Ext.swift */,
 				13DDA967216D054A00916139 /* String+Ext.swift */,
+				13F52D472180270F00D5A424 /* UIImage+Ext.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -776,6 +781,7 @@
 				1399FC41217A34F3009F926F /* courseData.csv */,
 				1355B8A2217CC925006E103D /* allStudents.csv */,
 				1355B8A4217D1BD0006E103D /* allClubs.csv */,
+				13F52D4521801DCB00D5A424 /* allFaculty.csv */,
 			);
 			path = TextData;
 			sourceTree = "<group>";
@@ -1155,6 +1161,7 @@
 				13117B7820F7454600E4CD66 /* testing_food_6.jpeg in Resources */,
 				13F805C9213B469C00AE93F0 /* NewEditProfileViewController.xib in Resources */,
 				1399FC33217A0CD1009F926F /* red_R.png in Resources */,
+				13F52D4621801DCB00D5A424 /* allFaculty.csv in Resources */,
 				13EED9D821362F3200427E5E /* system_login_require.png in Resources */,
 				13961E1420CA7766004FFF4B /* system_liked.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
@@ -1456,6 +1463,7 @@
 				13C2566B214C8BE500EFCBCF /* ImageData+CoreDataClass.swift in Sources */,
 				13540E9C216673D6005204FC /* LinksViewController.swift in Sources */,
 				13CD9F222166935600EAFE3D /* LinksTableViewCell.swift in Sources */,
+				13F52D482180270F00D5A424 /* UIImage+Ext.swift in Sources */,
 				138FEEDE20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift in Sources */,
 				135EB208214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift in Sources */,
 				139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */,

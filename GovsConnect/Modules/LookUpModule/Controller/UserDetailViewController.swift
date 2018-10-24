@@ -89,7 +89,7 @@ class UserDetailViewController: UIViewController {
             return "\(userData.department.rawValue) from \(userData.description)"
             
         case .facalty:
-            return "\(userData.department.rawValue) teacher from \(userData.description)"
+            return userData.description
         case .course:
             return "\(userData.department.rawValue) department"
         case .club:

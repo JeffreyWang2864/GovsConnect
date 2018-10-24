@@ -105,6 +105,11 @@ class AppDataManager{
         //5: location
         //6: mission
         //7: goal
+        let allFaculty = self.loadFacultyData()
+        //0: uid
+        //1: name
+        //2: description
+        //3: email
         
         var uids = Array<String>()
         for student in allStudent{
@@ -113,8 +118,9 @@ class AppDataManager{
         for club in allClubs{
             uids.append(club[0])
         }
-        uids.append("zemji001")
-        uids.append("dontr001")
+        for faculty in allFaculty{
+            uids.append(faculty[0])
+        }
         uids.append("ranpe001")
         uids.append("admin001")
         for uid in uids{
@@ -134,13 +140,13 @@ class AppDataManager{
             self.users[club[0]] = UserDataContainer.init(club[0], club[1], "0", .club, .clubDefault, "Governor's official " + club[1], [(club[2], true), (club[3], true), (club[4], true), (club[5], true), (club[6], true), (club[7], true)])
             self.allClub.append(club[0])
         }
-        self.users["zemji001"] = UserDataContainer.init("zemji001", "Zemin Jiang", "0", .facalty, .sophomoreEnglish, "Shanghai, China", [("zemin.jaing@china.gov", true)])
-        self.users["dontr001"] = UserDataContainer.init("dontr001", "Donald Trump", "0", .facalty, .juniorEnglish, "USA", [("donald.trump@trump.com", true)])
+        for faculty in allFaculty{
+            self.users[faculty[0]] = UserDataContainer.init(faculty[0], faculty[1], "0", .facalty, .juniorEnglish, faculty[2], [(faculty[3], true)])
+            self.allFaculty.append(faculty[0])
+        }
         self.users["ranpe001"] = UserDataContainer.init("ranpe001", "Guest", "0", .admin, .senior, "Guest of the Governor's Academy App", [])
         self.users["admin001"] = UserDataContainer.init("admin001", "Admin", "0", .admin, .senior, "Admin of the Governor's Academy App", [])
         self.loadCourseData()
-        self.allFaculty.append("zemji001")
-        self.allFaculty.append("dontr001")
         
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_8.jpg", "Dining Hall Menu"))
@@ -196,6 +202,16 @@ class AppDataManager{
     
     private func loadClubData() -> [[String]]{
         let data = self.readDataFromCSV(fileName: "allClubs", fileType: "csv")
+        var res = Array<Array<String>>()
+        let csvRows = try! CSV.init(string: data!)
+        while let row = csvRows.next(){
+            res.append(row)
+        }
+        return res
+    }
+    
+    private func loadFacultyData() -> [[String]]{
+        let data = self.readDataFromCSV(fileName: "allFaculty", fileType: "csv")
         var res = Array<Array<String>>()
         let csvRows = try! CSV.init(string: data!)
         while let row = csvRows.next(){

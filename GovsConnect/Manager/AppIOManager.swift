@@ -596,7 +596,8 @@ class AppIOManager{
     func changeProfileImage(newImage: UIImage, _ completionHandler: @escaping ReceiveResponseBlock){
         let urlStr = APP_SERVER_URL_STR + "/assets/user_image_change/"
         upload(multipartFormData: { (multipartFormData) in
-            let imgData = UIImageJPEGRepresentation(newImage, 0.1)!
+            let imageCompressed = newImage.resized(toWidth: 100)!
+            let imgData = UIImageJPEGRepresentation(imageCompressed, 0.75)!
             let fileName = "\(Int(NSDate.init(timeIntervalSinceNow: 0).timeIntervalSince1970))" + ".\(random0to1000()).\(random0to1000())"
             multipartFormData.append(imgData, withName: fileName, fileName: fileName + ".jpg", mimeType: "image/jpg")
             multipartFormData.append( AppDataManager.shared.currentPersonID.data(using: String.Encoding.utf8)!, withName: "uid")

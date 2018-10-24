@@ -110,9 +110,7 @@ class YouViewController: UIViewController {
         vc.view.frame = self.view.bounds
         vc.data = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!
         vc.didChangeProfileBlock = {
-            NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
-
-            vc.presentOneSecondLoading {
+            vc.presentThreeSecondsLoadingAndUpdate {
                 let _ = self.navigationController!.popViewController(animated: true)
             }
         }
