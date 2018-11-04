@@ -56,9 +56,46 @@ class IsThisYouViewController: UIViewController {
         alert.view.addSubview(loadingIndicator)
         self.present(alert, animated: true, completion: nil)
         AppDataManager.shared.currentPersonID = self.uid!
-        AppIOManager.shared.loginSuccessful({
+        AppIOManager.shared.loginSuccessful({(isAgreeToTerms: Bool) in
+            if !isAgreeToTerms{
+                alert.dismiss(animated: true, completion: {
+                    let termsAlert = UIAlertController(title: "Important things before posting", message: "The posting function of Govs Connect allows everyone to freely post and instantly share ideas with the entire Govs community. However, some contents are not allowed to be presented on the platform, including but not limited to: terrorism, violence, pornography and etc. Also, your posts and replies must follow the school rules. Please be nice to each others. To proceed using our service, please tap \"I agree\" below.", preferredStyle: .alert)
+                    termsAlert.addAction(UIAlertAction(title: "Screw you, I don't agree", style: .default, handler: { (alertAction) in
+                        //don't agree action
+                        self.cancelButtonDidClick(self.cancelButton)
+                    }))
+                    termsAlert.addAction(UIAlertAction(title: "I agree", style: .cancel, handler: { (alertAction) in
+                        //agree action
+                        let alertAgain = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+                        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+                        loadingIndicator.hidesWhenStopped = true
+                        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+                        loadingIndicator.startAnimating();
+                        alertAgain.view.addSubview(loadingIndicator)
+                        self.present(alertAgain, animated: true, completion: nil)
+                        AppIOManager.shared.userAgree(uid: AppDataManager.shared.currentPersonID, {
+                            //completion handler
+                           NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                alertAgain.dismiss(animated: true, completion: {
+                                    NotificationCenter.default.post(Notification(name: AppIOManager.loginActionNotificationName))
+                                })
+                            }
+                        }, { (errStr) in
+                            //error handler
+                            alertAgain.dismiss(animated: true, completion: {
+                                let errorAlert = UIAlertController(title: "Error when agreeing with services", message: errStr, preferredStyle: .alert)
+                                errorAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                                self.present(errorAlert, animated: true, completion: nil)
+                            })
+                        })
+                    }))
+                    self.present(termsAlert, animated: true, completion: nil)
+                })
+                return
+            }
             NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 alert.dismiss(animated: true, completion: {
                     NotificationCenter.default.post(Notification(name: AppIOManager.loginActionNotificationName))
                 })

@@ -92,9 +92,11 @@ class RateYourFoodViewController: UIViewController{
             makeMessageViaAlert(title: "Cannot reload on offline mode", message: "Your device is not connecting to the Internet.")
             return
         }
-        AppIOManager.shared.loadFoodData { (isSucceed) in
+        AppIOManager.shared.loadFoodData({ (isSucceed) in
             self.collectionView.reloadData()
             self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        }) { (errStr) in
+            makeMessageViaAlert(title: "Error when loading food data", message: errStr)
         }
     }
     

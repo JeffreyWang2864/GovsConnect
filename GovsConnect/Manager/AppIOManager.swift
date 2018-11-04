@@ -36,7 +36,7 @@ class AppIOManager{
                 AppDataManager.shared.loadDiscoverDataFromServerAndUpdateLocalData()
             }
             if self.isLogedIn{
-                AppIOManager.shared.loginSuccessful({
+                AppIOManager.shared.loginSuccessful({(isAgreeToTerms: Bool) in
                     AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
                 }, { (errStr) in
                     makeMessageViaAlert(title: "Unable to log you in", message: errStr)
@@ -516,7 +516,7 @@ class AppIOManager{
         }
     }
     
-    func loadFoodData(_ completionHandler: @escaping ReceiveResponseBlock){
+    func loadFoodData(_ completionHandler: @escaping ReceiveResponseBlock, _ errorHandler: @escaping (String) -> ()){
         let urlStr = APP_SERVER_URL_STR + "/discover/food"
         request(urlStr).responseJSON { (response) in
             switch response.result{
@@ -540,7 +540,7 @@ class AppIOManager{
                 }
                 completionHandler(true)
             case .failure(let error):
-                makeMessageViaAlert(title: "error when load food", message: error.localizedDescription)
+                errorHandler(error.localizedDescription)
             }
         }
     }
@@ -654,7 +654,7 @@ class AppIOManager{
         }
     }
     
-    func loginSuccessful( _ completionHandler: @escaping () -> Void, _ errorHandler: @escaping (String) ->Void){
+    func loginSuccessful( _ completionHandler: @escaping (Bool) -> Void, _ errorHandler: @escaping (String) ->Void){
         let urlStr = APP_SERVER_URL_STR + "/assets/login_successful/"
 //        guard AppIOManager.shared.deviceToken != nil else{
 //            //running on an simulator
@@ -670,6 +670,7 @@ class AppIOManager{
                 AppDataManager.shared.currentUserSetting["someone replied my post"] = jsonDict["someone replied my post"].boolValue
                 AppDataManager.shared.currentUserSetting["someone liked my post"] = jsonDict["someone liked my post"].boolValue
                 let organizationStr = jsonDict["organization"].stringValue
+                let isAgreeToTerms = jsonDict["is agree to terms"].boolValue
                 AppDataManager.shared.currentUserConnections = []
                 for item in organizationStr.split(separator: "/"){
                     AppDataManager.shared.currentUserConnections.append("\(item)")
@@ -678,8 +679,10 @@ class AppIOManager{
                 assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone replied my comment"), newVal: jsonDict["someone replied my comment"].stringValue, forKey: "value"))
                 assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone replied my post"), newVal: jsonDict["someone replied my post"].stringValue, forKey: "value"))
                 assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "someone liked my post"), newVal: jsonDict["someone liked my post"].stringValue, forKey: "value"))
-                assert(AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "organization"), newVal: jsonDict["organization"].stringValue, forKey: "value"))
-                completionHandler()
+                if !AppPersistenceManager.shared.updateObject(of: .setting, with: NSPredicate(format: "key == %@", "organization"), newVal: jsonDict["organization"].stringValue, forKey: "value"){
+                    AppPersistenceManager.shared.saveObject(to: .setting, with: ["organization", jsonDict["organization"].stringValue])
+                }
+                completionHandler(isAgreeToTerms)
             case .failure(let error):
                 errorHandler(error.localizedDescription)
             }
@@ -755,6 +758,18 @@ class AppIOManager{
     func report(postData: [String: AnyObject], _ completionHandler: @escaping () -> (), _ errorHandler: @escaping (String) -> ()){
         let urlStr = APP_SERVER_URL_STR + "/post/report"
         request(urlStr, method: .post, parameters: postData, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                completionHandler()
+            case .failure(let error):
+                errorHandler(error.localizedDescription)
+            }
+        }
+    }
+    
+    func userAgree(uid: String, _ completionHandler: @escaping () -> (), _ errorHandler: @escaping (String) -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/assets/user_agree/"
+        request(urlStr, method: .post, parameters: ["uid": uid] as Dictionary<String, AnyObject>, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result{
             case .success(let json):
                 completionHandler()

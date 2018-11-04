@@ -270,11 +270,11 @@ class AppDataManager{
                 
             }
         }
-        if AppDataManager.shared.discoverMenuData[0].count + AppDataManager.shared.discoverMenuData[1].count == 0{
-            AppIOManager.shared.loadFoodData { (isSucceed) in
-                //code here
-            }
-        }
+//        if AppDataManager.shared.discoverMenuData[0].count + AppDataManager.shared.discoverMenuData[1].count == 0{
+//            AppIOManager.shared.loadFoodData { (isSucceed) in
+//                //code here
+//            }
+//        }
     }
 
     func posts(by uid: String) -> (datas: [PostsDataContainer], index: [Int]){

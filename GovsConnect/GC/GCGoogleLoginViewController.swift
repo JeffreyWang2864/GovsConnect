@@ -60,6 +60,16 @@ class GCGoogleLoginViewController: UIViewController{
         self.verifyButton.isEnabled = false
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIApplication.shared.statusBarStyle = .default
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
     func addKeyboardDismisser(){
         guard self.keyboardDismisser == nil else {
             return
@@ -111,7 +121,7 @@ class GCGoogleLoginViewController: UIViewController{
                 AppDataManager.shared.currentPersonID = uid!
                 let username = AppDataManager.shared.users[uid!]!.name
                 alert.title = "Logging you in as \(username)..."
-                AppIOManager.shared.loginSuccessful({
+                AppIOManager.shared.loginSuccessful({(isAgreeToTerms: Bool) in
                     NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         alert.dismiss(animated: true, completion: {

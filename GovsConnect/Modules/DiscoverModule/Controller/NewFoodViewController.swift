@@ -18,9 +18,16 @@ class NewFoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTitleView()
-        self.tableView.register(UINib.init(nibName: "NewFoodTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "NEW_FOOD_TABLEVIEW_CELL_ID")
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        AppIOManager.shared.loadFoodData({ (isSucceed) in
+            //success handler
+            self.tableView.register(UINib.init(nibName: "NewFoodTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "NEW_FOOD_TABLEVIEW_CELL_ID")
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
+            self.tableView.reloadData()
+        }) { (errStr) in
+            //err handler
+            makeMessageViaAlert(title: "Error when loading food data", message: errStr)
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -59,8 +66,10 @@ class NewFoodViewController: UIViewController {
             makeMessageViaAlert(title: "Cannot reload on offline mode", message: "Your device is not connecting to the Internet.")
             return
         }
-        AppIOManager.shared.loadFoodData { (isSucceed) in
+        AppIOManager.shared.loadFoodData({ (isSucceed) in
             self.tableView.reloadData()
+        }) { (errStr) in
+            makeMessageViaAlert(title: "Error when loading food data", message: errStr)
         }
     }
     
