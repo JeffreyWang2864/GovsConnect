@@ -55,13 +55,13 @@ class IsThisYouViewController: UIViewController {
         loadingIndicator.startAnimating();
         alert.view.addSubview(loadingIndicator)
         self.present(alert, animated: true, completion: nil)
-        AppDataManager.shared.currentPersonID = self.uid!
-        AppIOManager.shared.loginSuccessful({(isAgreeToTerms: Bool) in
+        AppIOManager.shared.loginSuccessful(target_uid: self.uid!, {(isAgreeToTerms: Bool) in
             if !isAgreeToTerms{
                 alert.dismiss(animated: true, completion: {
                     let termsAlert = UIAlertController(title: "Important things before posting", message: "The posting function of Govs Connect allows everyone to freely post and instantly share ideas with the entire Govs community. However, some contents are not allowed to be presented on the platform, including but not limited to: terrorism, violence, pornography and etc. Also, your posts and replies must follow the school rules. Please be nice to each others. To proceed using our service, please tap \"I agree\" below.", preferredStyle: .alert)
                     termsAlert.addAction(UIAlertAction(title: "Screw you, I don't agree", style: .default, handler: { (alertAction) in
                         //don't agree action
+                        AppDataManager.shared.currentPersonID = ""
                         self.cancelButtonDidClick(self.cancelButton)
                     }))
                     termsAlert.addAction(UIAlertAction(title: "I agree", style: .cancel, handler: { (alertAction) in
@@ -94,6 +94,7 @@ class IsThisYouViewController: UIViewController {
                 })
                 return
             }
+            AppDataManager.shared.currentPersonID = self.uid!
             NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 alert.dismiss(animated: true, completion: {
@@ -102,7 +103,9 @@ class IsThisYouViewController: UIViewController {
             }
         }) { (errStr) in
             alert.dismiss(animated: true){
-                makeMessageViaAlert(title: "Error when logging you in", message: errStr)
+                let errorAlert = UIAlertController(title: "Error when logging you in", message: errStr, preferredStyle: .alert)
+                errorAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.present(errorAlert, animated: true, completion: nil)
             }
         }
     }

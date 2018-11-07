@@ -118,10 +118,9 @@ class GCGoogleLoginViewController: UIViewController{
         self.present(alert, animated: true, completion: nil)
         AppIOManager.shared.getAccessCodeStatus(accessCode: self.accessCodeTextField.text!, { (isPassed, uid) in
             if isPassed{
-                AppDataManager.shared.currentPersonID = uid!
                 let username = AppDataManager.shared.users[uid!]!.name
                 alert.title = "Logging you in as \(username)..."
-                AppIOManager.shared.loginSuccessful({(isAgreeToTerms: Bool) in
+                AppIOManager.shared.loginSuccessful(target_uid: uid!, {(isAgreeToTerms: Bool) in
                     NotificationCenter.default.post(Notification(name: PostsViewController.shouldRealRefreashCellNotificationName))
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         alert.dismiss(animated: true, completion: {

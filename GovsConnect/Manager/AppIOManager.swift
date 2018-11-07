@@ -36,7 +36,7 @@ class AppIOManager{
                 AppDataManager.shared.loadDiscoverDataFromServerAndUpdateLocalData()
             }
             if self.isLogedIn{
-                AppIOManager.shared.loginSuccessful({(isAgreeToTerms: Bool) in
+                AppIOManager.shared.loginSuccessful(target_uid: AppDataManager.shared.currentPersonID, {(isAgreeToTerms: Bool) in
                     AppDataManager.shared.loadPostDataFromServerAndUpdateLocalData()
                 }, { (errStr) in
                     makeMessageViaAlert(title: "Unable to log you in", message: errStr)
@@ -654,16 +654,17 @@ class AppIOManager{
         }
     }
     
-    func loginSuccessful( _ completionHandler: @escaping (Bool) -> Void, _ errorHandler: @escaping (String) ->Void){
+    func loginSuccessful(target_uid: String, _ completionHandler: @escaping (Bool) -> Void, _ errorHandler: @escaping (String) ->Void){
         let urlStr = APP_SERVER_URL_STR + "/assets/login_successful/"
 //        guard AppIOManager.shared.deviceToken != nil else{
 //            //running on an simulator
 //            return
 //        }
-        let postData = ["access_token": AppIOManager.shared.deviceToken ?? "", "uid": AppDataManager.shared.currentPersonID]
+        let postData = ["access_token": AppIOManager.shared.deviceToken ?? "", "uid": target_uid]
         request(urlStr, method: .post, parameters: postData as [String: AnyObject], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result{
             case .success(let json):
+                AppDataManager.shared.currentPersonID = target_uid
                 let jsonDict = JSON(json)
                 AppDataManager.shared.currentUserSetting["someone posts"] = jsonDict["someone posts"].boolValue
                 AppDataManager.shared.currentUserSetting["someone replied my comment"] = jsonDict["someone replied my comment"].boolValue
