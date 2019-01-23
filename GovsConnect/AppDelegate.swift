@@ -113,9 +113,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 AppPersistenceManager.shared.deleteObject(of: .event, with: event)
             }
             if application.applicationState != .inactive{
-                AppIOManager.shared.loadWeekendEventData { (isSucceed) in
-                    //code
-                }
+
             }
             completionHandler(.newData)
             return

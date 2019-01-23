@@ -69,6 +69,8 @@
 		1356C4DD210599D7000C3BF5 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1356C4DB210599D7000C3BF5 /* EditProfileViewController.xib */; };
 		1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357D18520EB7639004CD2EB /* NewTableViewCell.xib */; };
 		1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357D18620EB7639004CD2EB /* NewTableViewCell.swift */; };
+		135E830921F77090009DCCA1 /* ModifiedScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E830721F77090009DCCA1 /* ModifiedScheduleViewController.swift */; };
+		135E830A21F77090009DCCA1 /* ModifiedScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135E830821F77090009DCCA1 /* ModifiedScheduleViewController.xib */; };
 		135EB208214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EB206214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift */; };
 		135EB209214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135EB207214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib */; };
 		13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */; };
@@ -206,6 +208,8 @@
 		13CD9F4C2166B82500EAFE3D /* govs_connect_app_logo_20@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CD9F3D2166B82500EAFE3D /* govs_connect_app_logo_20@1x.png */; };
 		13CF4ECB20F7C27E00DEE71A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF4EC920F7C27E00DEE71A /* NotificationViewController.swift */; };
 		13CF4ECC20F7C27E00DEE71A /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CF4ECA20F7C27E00DEE71A /* NotificationViewController.xib */; };
+		13CFAE5121F7F2FD006C790C /* testing_picture_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CFAE4F21F7F2FD006C790C /* testing_picture_10.png */; };
+		13CFAE5221F7F2FD006C790C /* testing_picture_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CFAE5021F7F2FD006C790C /* testing_picture_9.png */; };
 		13D389D620FC8E9F00330CDD /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D389D420FC8E9F00330CDD /* UserDetailViewController.swift */; };
 		13D389D720FC8E9F00330CDD /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D389D520FC8E9F00330CDD /* UserDetailViewController.xib */; };
 		13D389DF20FDB0EC00330CDD /* testing_profile_picture_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */; };
@@ -323,6 +327,8 @@
 		1356C4DB210599D7000C3BF5 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		1357D18520EB7639004CD2EB /* NewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
 		1357D18620EB7639004CD2EB /* NewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
+		135E830721F77090009DCCA1 /* ModifiedScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedScheduleViewController.swift; sourceTree = "<group>"; };
+		135E830821F77090009DCCA1 /* ModifiedScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifiedScheduleViewController.xib; sourceTree = "<group>"; };
 		135EB206214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		135EB207214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageNotificationTableViewCell.xib; sourceTree = "<group>"; };
 		13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_7.jpg; sourceTree = "<group>"; };
@@ -461,6 +467,8 @@
 		13CD9F3D2166B82500EAFE3D /* govs_connect_app_logo_20@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "govs_connect_app_logo_20@1x.png"; sourceTree = "<group>"; };
 		13CF4EC920F7C27E00DEE71A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		13CF4ECA20F7C27E00DEE71A /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
+		13CFAE4F21F7F2FD006C790C /* testing_picture_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_picture_10.png; sourceTree = "<group>"; };
+		13CFAE5021F7F2FD006C790C /* testing_picture_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_picture_9.png; sourceTree = "<group>"; };
 		13D389D420FC8E9F00330CDD /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		13D389D520FC8E9F00330CDD /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_3.png; sourceTree = "<group>"; };
@@ -637,6 +645,8 @@
 				137EEBA120E7781100BA2575 /* testing_picture_4.jpg */,
 				137EEBA020E7781100BA2575 /* testing_picture_5.jpg */,
 				137EEBA220E7781200BA2575 /* testing_picture_6.jpg */,
+				13CFAE5021F7F2FD006C790C /* testing_picture_9.png */,
+				13CFAE4F21F7F2FD006C790C /* testing_picture_10.png */,
 				13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */,
 				BC14910420DA657D00373BBF /* testing_profile_picture_2.png */,
 				BC14910320DA657C00373BBF /* testing_profile_picture_4.png */,
@@ -1031,6 +1041,8 @@
 				13E5DE23216FA7E2007560C3 /* SportDetailViewController.swift */,
 				1355B8A6217E92ED006E103D /* NewFoodViewController.swift */,
 				1355B8A7217E92ED006E103D /* NewFoodViewController.xib */,
+				135E830721F77090009DCCA1 /* ModifiedScheduleViewController.swift */,
+				135E830821F77090009DCCA1 /* ModifiedScheduleViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1169,6 +1181,7 @@
 				132F817520C8C77C005D3905 /* LaunchScreen.storyboard in Resources */,
 				1399FC2F217A0CD1009F926F /* blue_C.png in Resources */,
 				1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */,
+				13CFAE5221F7F2FD006C790C /* testing_picture_9.png in Resources */,
 				1355B8A3217CC925006E103D /* allStudents.csv in Resources */,
 				13117B7A20F7454600E4CD66 /* testing_food_7.jpeg in Resources */,
 				1399FC0E217A0CD1009F926F /* blue_A.png in Resources */,
@@ -1232,6 +1245,7 @@
 				1399FC39217A0CD1009F926F /* blue_M.png in Resources */,
 				13E5DE36216FFB51007560C3 /* system_discover_sports.png in Resources */,
 				1399FC16217A0CD1009F926F /* blue_X.png in Resources */,
+				135E830A21F77090009DCCA1 /* ModifiedScheduleViewController.xib in Resources */,
 				13CD9F2821669B0A00EAFE3D /* system_website_icon.png in Resources */,
 				13540EA121667524005204FC /* LinksCollectionViewCell.xib in Resources */,
 				13F02C9321630F1500660E95 /* IsThisYouViewController.xib in Resources */,
@@ -1281,6 +1295,7 @@
 				BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */,
 				1399FC27217A0CD1009F926F /* red_P.png in Resources */,
 				1399FC0C217A0CD1009F926F /* blue_N.png in Resources */,
+				13CFAE5121F7F2FD006C790C /* testing_picture_10.png in Resources */,
 				138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */,
 				1399FC31217A0CD1009F926F /* blue_F.png in Resources */,
 				1399FC12217A0CD1009F926F /* blue_W.png in Resources */,
@@ -1457,6 +1472,7 @@
 				13C25674214DE2AC00EFCBCF /* Comment+CoreDataProperties.swift in Sources */,
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
 				1377AB76214F7BB80015172C /* GCPhoneType.swift in Sources */,
+				135E830921F77090009DCCA1 /* ModifiedScheduleViewController.swift in Sources */,
 				1355B8A8217E92ED006E103D /* NewFoodViewController.swift in Sources */,
 				1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,

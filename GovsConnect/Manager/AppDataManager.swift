@@ -15,6 +15,7 @@ class AppDataManager{
     var postsData = Array<PostsDataContainer>()
     var discoverData = Array<DiscoverItemDataContainer>()
     var discoverWeekendEventData = Array<Array<EventDataContainer>>()
+    var discoverModifiedScheduleData = Array<EventDataContainer>()
     var discoverMenuData = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
     var discoverLinksData = Array<DiscoverLinksDataCountainer>()
     var users = Dictionary<String, UserDataContainer>()
@@ -148,7 +149,8 @@ class AppDataManager{
         self.users["admin001"] = UserDataContainer.init("admin001", "Admin", "0", .admin, .senior, "Admin of the Governor's Academy App", [])
         self.loadCourseData()
         
-        self.discoverData.append(DiscoverItemDataContainer("testing_picture_4.jpg", "Weekend Events"))
+        self.discoverData.append(DiscoverItemDataContainer("testing_picture_9.png", "Weekend Events"))
+        self.discoverData.append(DiscoverItemDataContainer("testing_picture_10.png", "Modified Schedule"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_8.jpg", "Dining Hall Menu"))
         self.discoverData.append(DiscoverItemDataContainer("system_discover_links.png", "Links"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
@@ -266,10 +268,13 @@ class AppDataManager{
         if AppDataManager.shared.discoverWeekendEventData[0].count +
             AppDataManager.shared.discoverWeekendEventData[1].count +
             AppDataManager.shared.discoverWeekendEventData[2].count == 0{
-            AppIOManager.shared.loadWeekendEventData { (isSucceed) in
-                
+            AppIOManager.shared.loadWeekendEventData({ (isSucceed) in
+                //success handler
+            }) { (errStr) in
+                makeMessageViaAlert(title: "Error when loading weekend event", message: errStr)
             }
         }
+    
 //        if AppDataManager.shared.discoverMenuData[0].count + AppDataManager.shared.discoverMenuData[1].count == 0{
 //            AppIOManager.shared.loadFoodData { (isSucceed) in
 //                //code here

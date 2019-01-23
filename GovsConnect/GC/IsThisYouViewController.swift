@@ -59,7 +59,7 @@ class IsThisYouViewController: UIViewController {
             if !isAgreeToTerms{
                 alert.dismiss(animated: true, completion: {
                     let termsAlert = UIAlertController(title: "Important things before posting", message: "The posting function of Govs Connect allows everyone to freely post and instantly share ideas with the entire Govs community. However, some contents are not allowed to be presented on the platform, including but not limited to: terrorism, violence, pornography and etc. Also, your posts and replies must follow the school rules. Please be nice to each others. To proceed using our service, please tap \"I agree\" below.", preferredStyle: .alert)
-                    termsAlert.addAction(UIAlertAction(title: "Screw you, I don't agree", style: .default, handler: { (alertAction) in
+                    termsAlert.addAction(UIAlertAction(title: "I don't agree", style: .default, handler: { (alertAction) in
                         //don't agree action
                         AppDataManager.shared.currentPersonID = ""
                         self.cancelButtonDidClick(self.cancelButton)

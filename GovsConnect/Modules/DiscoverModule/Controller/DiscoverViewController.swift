@@ -31,9 +31,50 @@ class DiscoverViewController: UIViewController {
         switch sender.view!.tag{
         case 0:
             // weekend event
-            let vc = WeekendDetailViewController.init(nibName: "WeekendDetailViewController", bundle: Bundle.main)
-            self.navigationController!.pushViewController(vc, animated: true)
+            let alert = UIAlertController(title: nil, message: "Loading...", preferredStyle: .alert)
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            loadingIndicator.startAnimating();
+            alert.view.addSubview(loadingIndicator)
+            self.present(alert, animated: true, completion: nil)
+            AppIOManager.shared.loadWeekendEventData({ (isSucceed) in
+                alert.dismiss(animated: true){
+                    let vc = WeekendDetailViewController.init(nibName: "WeekendDetailViewController", bundle: Bundle.main)
+                    self.navigationController!.pushViewController(vc, animated: true)
+                }
+            }) { (errStr) in
+                alert.dismiss(animated: true){
+                    makeMessageViaAlert(title: "Failed when loading weekend event", message: errStr)
+                }
+            }
         case 1:
+            // modified shedule
+            
+            let alert = UIAlertController(title: nil, message: "Loading...", preferredStyle: .alert)
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            loadingIndicator.startAnimating();
+            alert.view.addSubview(loadingIndicator)
+            self.present(alert, animated: true, completion: nil)
+            
+            AppIOManager.shared.loadModifiedScheduleData({ (isSucceed) in
+                //success handler
+                alert.dismiss(animated: true){
+                    if AppDataManager.shared.discoverModifiedScheduleData.count == 0{
+                        makeMessageViaAlert(title: "The schedule is normal today", message: "")
+                    }else{
+                        let vc = ModifiedScheduleViewController.init(nibName: "ModifiedScheduleViewController", bundle: Bundle.main)
+                        self.navigationController!.pushViewController(vc, animated: true)
+                    }
+                }
+            }) { (errStr) in
+                alert.dismiss(animated: true){
+                    makeMessageViaAlert(title: "Fail to load modified schedule data", message: errStr)
+                }
+            }
+        case 2:
             //rate your food
             guard AppIOManager.shared.connectionStatus != .none else{
                 let alert = UIAlertController(title: "Sorry, you cannot rate foods on offline mode:(", message: "Your device is not connecting to the Internet.", preferredStyle: .alert)
@@ -45,12 +86,12 @@ class DiscoverViewController: UIViewController {
 //            self.navigationController!.pushViewController(vc, animated: true)
             let vc = NewFoodViewController.init(nibName: "NewFoodViewController", bundle: Bundle.main)
             self.navigationController!.pushViewController(vc, animated: true)
-        case 2:
+        case 3:
             //links
             let vc = LinksViewController.init(nibName: "LinksViewController", bundle: Bundle.main)
             vc.view.frame = self.view.bounds
             self.navigationController!.pushViewController(vc, animated: true)
-        case 3:
+        case 4:
             //daily bulletin
             let url = URL(string: "https://docs.google.com/document/d/1cZ7nb44a26OWvgOJWlY0CklBrDaPb248wJ9ozgXROKI/edit")!
             let vc = UIViewController()
@@ -61,7 +102,7 @@ class DiscoverViewController: UIViewController {
             self.navigationController!.pushViewController(vc, animated: true)
             vc.navigationItem.title = "Daily Bulletin"
             webv.loadRequest(URLRequest(url: url))
-        case 4:
+        case 5:
             //more
             let vc = UIViewController()
             vc.view.frame = self.view.bounds

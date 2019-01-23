@@ -1,17 +1,18 @@
 //
-//  WeekendDetailViewController.swift
+//  ModifiedScheduleViewController.swift
 //  GovsConnect
 //
-//  Created by Jeffrey Wang on 2018/7/2.
-//  Copyright © 2018 Eagersoft. All rights reserved.
+//  Created by Jeffrey Wang on 2019/1/22.
+//  Copyright © 2019 Eagersoft. All rights reserved.
 //
 
 import UIKit
-import TwicketSegmentedControl
+import UserNotifications
 
-class WeekendDetailViewController: UIViewController {
-    @IBOutlet var segmentControl: TwicketSegmentedControl!
+class ModifiedScheduleViewController: UIViewController {
+    @IBOutlet var notifyMeButton: UIButton!
     @IBOutlet var tableView: UITableView!
+    var alertRequest: UNNotificationRequest? = nil
     var timeStrokeView = UIView()
     var timeLabel = UILabel()
     var lastCurrentMinute: Int = -1
@@ -19,24 +20,29 @@ class WeekendDetailViewController: UIViewController {
     var events = Array<UIView>()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "\(dayStringFormat(AppDataManager.shared.discoverWeekendEventData[0][0].startTime)) - \(dayStringFormat(AppDataManager.shared.discoverWeekendEventData[2][0].startTime))"
+        self.notifyMeButton.layer.cornerRadius = 5
+        self.notifyMeButton.layer.borderWidth = 1
+        self.notifyMeButton.layer.borderColor = APP_THEME_COLOR.cgColor
+        self.notifyMeButton.clipsToBounds = true
+        self.notifyMeButton.backgroundColor = UIColor.white
+        self.notifyMeButton.setTitleColor(APP_THEME_COLOR, for: .normal)
+        switch PHONE_TYPE{
+        case .iphone5:
+            self.notifyMeButton.titleLabel!.font = UIFont.systemFont(ofSize: 11)
+        case .iphone6, .iphonex, .iphonexr:
+            self.notifyMeButton.titleLabel!.font = UIFont.systemFont(ofSize: 13)
+        default:
+            self.notifyMeButton.titleLabel!.font = UIFont.systemFont(ofSize: 15)
+        }
+        self.navigationItem.title = dayStringFormat(Date(timeIntervalSinceNow: 0))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "system_reload"), style: .plain, target: self, action: #selector(self.didClickOnReload))
-        self.segmentControl.setSegmentItems(["Friday", "Saturday", "Sunday"])
-        self.segmentControl.sliderBackgroundColor = APP_THEME_COLOR
-        self.segmentControl.delegate = self
         self.tableView.register(UINib(nibName: "NewTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "NEW_TABLE_VIEW_CELL")
         self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimeStroke), userInfo: nil, repeats: true)
         self.initTimeStroke()
-        self.loadEventsToView(animated: true)
-        let lsgr = UISwipeGestureRecognizer(target: self, action: #selector(self.didSwipeLeft(_:)))
-        lsgr.direction = .left
-        let rsgr = UISwipeGestureRecognizer(target: self, action: #selector(self.didSwipeRight(_:)))
-        rsgr.direction = .right
-        self.view.addGestureRecognizer(lsgr)
-        self.view.addGestureRecognizer(rsgr)
+        self.loadScheduleToView(animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,7 +53,7 @@ class WeekendDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if self.events.count == 0{
-            self.loadEventsToView(animated: animated)
+            self.loadScheduleToView(animated: animated)
         }
     }
     
@@ -62,37 +68,18 @@ class WeekendDetailViewController: UIViewController {
         self.tableView.scrollToRow(at: indexPath!, at: .middle, animated: true)
     }
     
-    @objc func didSwipeLeft(_ sender: UISwipeGestureRecognizer){
-        if self.segmentControl.selectedSegmentIndex + 1 <= 2{
-            self.segmentControl.move(to: self.segmentControl.selectedSegmentIndex + 1)
-        }
-        self.refreashEvents(animated: true)
-    }
-    
-    @objc func didSwipeRight(_ sender: UISwipeGestureRecognizer){
-        if self.segmentControl.selectedSegmentIndex - 1 >= 0{
-            self.segmentControl.move(to: self.segmentControl.selectedSegmentIndex - 1)
-        }
-        self.refreashEvents(animated: true)
-    }
-    
     @objc func didClickOnReload(){
         guard AppIOManager.shared.connectionStatus != .none else{
             makeMessageViaAlert(title: "Cannot reload on offline mode", message: "Your device is not connecting to the Internet.")
             return
         }
-        let allEvents = AppPersistenceManager.shared.fetchObject(with: .event)
-        for event in allEvents{
-            AppPersistenceManager.shared.deleteObject(of: .event, with: event)
-        }
-        AppIOManager.shared.loadWeekendEventData({ (isSucceed) in
+        AppIOManager.shared.loadModifiedScheduleData({ (isSucceed) in
             self.refreashEvents(animated: true)
         }) { (errStr) in
-            makeMessageViaAlert(title: "Error when loading weekend event", message: errStr)
+            makeMessageViaAlert(title: "Error when reloading modified schedule data", message: errStr)
         }
-        
     }
-
+    
     func getCurrentTime() -> (hour: Int, minute: Int){
         let currentTime = Date(timeIntervalSinceNow: 0)
         let calendar = Calendar.current
@@ -145,14 +132,12 @@ class WeekendDetailViewController: UIViewController {
         }
     }
     
-    func loadEventsToView(animated: Bool){
-        let dayIndex = self.segmentControl.selectedSegmentIndex
-        let currentDayData = AppDataManager.shared.discoverWeekendEventData[dayIndex]
+    func loadScheduleToView(animated: Bool){
+        let currentDayData = AppDataManager.shared.discoverModifiedScheduleData
         for i in (0..<currentDayData.count){
             let calender = Calendar.current
             let startTime = calender.dateComponents([.hour, .minute], from: currentDayData[i].startTime)
             let endTime = calender.dateComponents([.hour, .minute], from: currentDayData[i].endTime)
-            NSLog("\(startTime.hour!), \(startTime.minute!), \(endTime.hour!), \(endTime.minute!)")
             let startY = self.startingYBound + self.getHeightUnit(hour: startTime.hour!, minute: startTime.minute!) * 72.5
             let endY = self.startingYBound + self.getHeightUnit(hour: endTime.hour!, minute: endTime.minute!) * 72.5
             assert(endY > startY)
@@ -160,10 +145,13 @@ class WeekendDetailViewController: UIViewController {
             v.backgroundColor = UIColor.init(red: 0.000, green: 0.624, blue: 0.949, alpha: 0.2)
             v.layer.cornerRadius = 5
             v.layer.borderWidth = 1
-            v.layer.borderColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 0.5).cgColor
+            v.layer.borderColor =  UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 0.5).cgColor
             let startTimeLabel = UILabel(frame: CGRect(x: 5, y: 5, width:v.frame.size.width - 10, height: 13))
             startTimeLabel.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-            startTimeLabel.text = "@ \(startTime.hour!):\(startTime.minute! < 10 ? "0\(startTime.minute!)" : "\(startTime.minute!)")"
+            var timeString = "@ \(startTime.hour!):\(startTime.minute! < 10 ? "0\(startTime.minute!)" : "\(startTime.minute!)")"
+            timeString += " - "
+            timeString += "\(endTime.hour!):\(endTime.minute! < 10 ? "0\(endTime.minute!)" : "\(endTime.minute!)")"
+            startTimeLabel.text = timeString
             startTimeLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
             let titleLabel = UILabel(frame: CGRect(x: 5, y: 17, width: v.frame.size.width - 10, height: 15))
             titleLabel.contentMode = .top
@@ -176,9 +164,6 @@ class WeekendDetailViewController: UIViewController {
             v.addSubview(startTimeLabel)
             v.addSubview(titleLabel)
             v.alpha = animated ? 0 : 1
-            v.tag = self.segmentControl.selectedSegmentIndex * 100 + i
-            let tgr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnEvent(_:)))
-            v.addGestureRecognizer(tgr)
             self.events.append(v)
             self.tableView.addSubview(v)
         }
@@ -189,12 +174,6 @@ class WeekendDetailViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    @objc func didClickOnEvent(_ sender: UITapGestureRecognizer){
-        let vc = EventDetailViewController.init(nibName: "EventDetailViewController", bundle: Bundle.main)
-        vc.data = AppDataManager.shared.discoverWeekendEventData[sender.view!.tag / 100][sender.view!.tag % 100]
-        self.navigationController!.pushViewController(vc, animated: true)
     }
     
     func removeEventFromView(animated: Bool){
@@ -220,12 +199,12 @@ class WeekendDetailViewController: UIViewController {
     func refreashEvents(animated: Bool){
         self.removeEventFromView(animated: animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
-            self.loadEventsToView(animated: animated)
+            self.loadScheduleToView(animated: animated)
         }
     }
 }
 
-extension WeekendDetailViewController: UITableViewDelegate, UITableViewDataSource{
+extension ModifiedScheduleViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -249,10 +228,30 @@ extension WeekendDetailViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 72.5
     }
-}
-
-extension WeekendDetailViewController: TwicketSegmentedControlDelegate{
-    func didSelect(_ segmentIndex: Int) {
-        self.refreashEvents(animated: true)
+    
+    private func setupNotification(){
+        for event in AppDataManager.shared.discoverModifiedScheduleData{
+             let content = UNMutableNotificationContent()
+            content.body = ""
+            content.badge = 1
+            let fireDate = Date.init(timeInterval: -60 * 5, since: event.startTime)
+            content.title = "\(event.title) begins in 5 minutes."
+            let dateCompenents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: fireDate)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateCompenents, repeats: false)
+            self.alertRequest = UNNotificationRequest(identifier: "MODIFIED_SCHEDULE_\(event.title)_ALERT_ID", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["MODIFIED_SCHEDULE_\(event.title)_ALERT_ID"])
+            UNUserNotificationCenter.current().add(self.alertRequest!, withCompletionHandler: nil)
+        }
+        makeMessageViaAlert(title: "success", message: "I will notify you 5 minutes early before any event starts")
+    }
+    
+    @IBAction func didClickOnNotifyMeButton(_ sender: UIButton){
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            guard settings.authorizationStatus == .authorized else {
+                makeMessageViaAlert(title: "Setup notification failed", message: "Please enable the app notification")
+                return
+            }
+            self.setupNotification()
+        }
     }
 }

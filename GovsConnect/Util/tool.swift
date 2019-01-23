@@ -157,6 +157,28 @@ func saveEventToCalender(_ title: String, _ startDate: Date, _ endDate: Date, _ 
     }
 }
 
+func getScheduleBlockColor(with title: String, alpha: CGFloat) -> UIColor{
+    if title.contains("PA"){
+        return UIColorFromRGB(rgbValue: 0xFF9510, alpha: alpha)
+    }
+    if title.contains("A") || title.contains("B"){
+        return UIColorFromRGB(rgbValue: 0xF54C34, alpha: alpha)
+    }
+    if title.contains("C"){
+        return UIColorFromRGB(rgbValue: 0xBFFD0D, alpha: alpha)
+    }
+    if title.contains("D"){
+        return UIColorFromRGB(rgbValue: 0x17FC13, alpha: alpha)
+    }
+    if title.contains("E"){
+        return UIColorFromRGB(rgbValue: 0xFFF20D, alpha: alpha)
+    }
+    if title.contains("F"){
+        return UIColorFromRGB(rgbValue: 0x37B1F6, alpha: alpha)
+    }
+    return UIColorFromRGB(rgbValue: 0x6F49E4, alpha: alpha)
+}
+
 //屏幕的宽高
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height

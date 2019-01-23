@@ -487,7 +487,7 @@ class AppIOManager{
         }
     }
     
-    func loadWeekendEventData(_ completionHandler: @escaping ReceiveResponseBlock){
+    func loadWeekendEventData(_ completionHandler: @escaping ReceiveResponseBlock, _ errorHandler: @escaping (String) -> ()){
         let urlStr = APP_SERVER_URL_STR + "/discover/weekend_event"
         request(urlStr).responseJSON { (response) in
             switch response.result{
@@ -512,6 +512,30 @@ class AppIOManager{
                 completionHandler(true)
             case .failure(let error):
                 makeMessageViaAlert(title: "get weekend_event failed", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func loadModifiedScheduleData(_ completionHandler: @escaping ReceiveResponseBlock, _ errorHandler: @escaping (String) -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/discover/modified_schedule"
+        request(urlStr).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                let jsonDict = JSON(json)
+                var index = 0
+                AppDataManager.shared.discoverModifiedScheduleData = []
+                while(jsonDict["\(index)"] != JSON.null){
+                    let data = jsonDict["\(index)"]
+                    let start_time_interval = data["start_time"].intValue - secondsFromGMT
+                    let end_time_interval = data["end_time"].intValue - secondsFromGMT
+                    let title = data["title"].stringValue
+                    let event = EventDataContainer(Date(timeIntervalSince1970: TimeInterval(start_time_interval)), Date(timeIntervalSince1970: TimeInterval(end_time_interval)), title, "")
+                    AppDataManager.shared.discoverModifiedScheduleData.append(event)
+                    index += 1
+                }
+                completionHandler(true)
+            case .failure(let error):
+                errorHandler(error.localizedDescription)
             }
         }
     }
