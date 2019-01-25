@@ -157,7 +157,7 @@ class DiscoverViewController: UIViewController {
             cardBackgroundView.layer.cornerRadius = 20
             let titleLabel = UILabel(frame: CGRect(x: 10, y: 20, width: screenWidth - 50 - 20, height: 60))
             titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-            titleLabel.text = "Want to add a new discovery page?"
+            titleLabel.text = "Want to add a new discover page?"
             titleLabel.textAlignment = .center
             titleLabel.numberOfLines = 0
             

@@ -63,7 +63,7 @@ func timeStringFormat(_ date: Date,  withWeek: Bool) -> String{
     formatter.dateFormat = "HH:mm, M/d/yyyy"
     var formattedString = formatter.string(from: date as Date)
     if withWeek{
-        let weekString = ["Mon. ", "Tue. ", "Wed. ", "Thu. ", "Fri. ", "Sat. ", "Sun. "]
+        let weekString = ["Sun. ", "Mon. ", "Tue. ", "Wed. ", "Thu. ", "Fri. ", "Sat. "]
         let calender = NSCalendar.current
         let components = calender.component(.weekday, from: date as Date)
         let commaIndex = formattedString.index(of: ",")!

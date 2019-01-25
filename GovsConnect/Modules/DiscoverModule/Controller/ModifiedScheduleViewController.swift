@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import SwiftyGif
 
 class ModifiedScheduleViewController: UIViewController {
     @IBOutlet var notifyMeButton: UIButton!
@@ -66,6 +67,49 @@ class ModifiedScheduleViewController: UIViewController {
             return
         }
         self.tableView.scrollToRow(at: indexPath!, at: .middle, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            let predicate = NSPredicate(format: "key == %@", "did see widget")
+            let res = AppPersistenceManager.shared.filterObject(of: .setting, with: predicate) as! Array<Setting>
+            if res.count == 0{
+                //did see widget not created yet
+                self.displayDidSeeWidget()
+                AppPersistenceManager.shared.saveObject(to: .setting, with: ["did see widget", "true"])
+            }else if res[0].value! == "false"{
+                //did see widget created, but didn't see
+                self.displayDidSeeWidget()
+                AppPersistenceManager.shared.updateObject(of: .setting, with: predicate, newVal: "true", forKey: "value")
+            }
+        }
+    }
+    
+    func displayDidSeeWidget(){
+        let askWidgetAlertController = UIAlertController(title: "Do you know Govs Connect also has a widget?", message: "Without unlocking your phone, the widget allows you check the modified schedule even faster.", preferredStyle: .alert)
+        let gif = UIImage.init(gifName: "govs-connect-widget-tutorial.gif")
+        let gifView = UIImageView.init(gifImage: gif, loopCount: -1)
+        gifView.frame = CGRect(x: 48, y: 135, width: 150, height: 270)
+        askWidgetAlertController.view.addSubview(gifView)
+        let height = NSLayoutConstraint(item: askWidgetAlertController.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 500)
+        let width = NSLayoutConstraint(item: askWidgetAlertController.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+        askWidgetAlertController.view.addConstraint(height)
+        askWidgetAlertController.view.addConstraint(width)
+        askWidgetAlertController.addAction(UIAlertAction(title: "Tell me how to enable it", style: .default, handler: { (alert) in
+            //completion handler
+            let url = URL(string: "https://support.apple.com/en-us/HT207122")!
+            let vc = UIViewController()
+            vc.view.frame = self.view.bounds
+            let webv = UIWebView()
+            vc.view.addSubview(webv)
+            webv.frame = vc.view.bounds
+            self.navigationController!.pushViewController(vc, animated: true)
+            vc.navigationItem.title = "How to enable widget"
+            webv.loadRequest(URLRequest(url: url))
+        }))
+        askWidgetAlertController.addAction(UIAlertAction(title: "Okay, Thank you", style: .cancel, handler: { (alert) in
+            //completion handler
+        }))
+        self.navigationController!.present(askWidgetAlertController, animated: true, completion: {
+            //completion handler
+        })
     }
     
     @objc func didClickOnReload(){

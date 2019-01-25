@@ -11,4 +11,12 @@ target 'GovsConnect' do
   pod 'RSKImageCropper'
   pod 'Google/SignIn'
   pod 'CSV.swift'
+  pod 'SwiftyGif'
+end
+
+target 'ScheduleWidget' do
+  use_frameworks!
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'ReachabilitySwift'
 end

@@ -48,6 +48,7 @@
 		133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */; };
 		133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */; };
 		133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */; };
+		134C194621FA4CE700469E3C /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C194421FA4CE700469E3C /* NewTableViewCell.swift */; };
 		13540E9721645ABE005204FC /* GCSportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9621645ABE005204FC /* GCSportType.swift */; };
 		13540E99216673A3005204FC /* system_discover_links.png in Resources */ = {isa = PBXBuildFile; fileRef = 13540E98216673A3005204FC /* system_discover_links.png */; };
 		13540E9C216673D6005204FC /* LinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9A216673D6005204FC /* LinksViewController.swift */; };
@@ -166,6 +167,9 @@
 		139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EDF7820EC87A700778CFD /* EventDetailViewController.swift */; };
 		139EDF7B20EC87A700778CFD /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7920EC87A700778CFD /* EventDetailViewController.xib */; };
 		13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7801220EF690E00926139 /* GCOptionsTableView.swift */; };
+		13ABADDA21FA520A00885398 /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134C194521FA4CE700469E3C /* NewTableViewCell.xib */; };
+		13ABADDC21FABF3000885398 /* govs-connect-widget-tutorial.gif in Resources */ = {isa = PBXBuildFile; fileRef = 13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */; };
+		13B6C8FF21F9F914004EC5C0 /* GCPhoneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6C8FE21F9F914004EC5C0 /* GCPhoneType.swift */; };
 		13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */; };
 		13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */; };
 		13C2565B214C653F00EFCBCF /* GovsConnect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13C25659214C653F00EFCBCF /* GovsConnect.xcdatamodeld */; };
@@ -230,6 +234,15 @@
 		13E5DE30216FAEF5007560C3 /* SportClassifyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE2F216FAEF5007560C3 /* SportClassifyTableViewCell.swift */; };
 		13E5DE32216FAF11007560C3 /* SportDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE31216FAF11007560C3 /* SportDetailTableViewCell.swift */; };
 		13E5DE36216FFB51007560C3 /* system_discover_sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E5DE35216FFB51007560C3 /* system_discover_sports.png */; };
+		13E6740321F94F32005B4BB6 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E6740221F94F32005B4BB6 /* NotificationCenter.framework */; };
+		13E6740621F94F32005B4BB6 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6740521F94F32005B4BB6 /* TodayViewController.swift */; };
+		13E6740D21F94F32005B4BB6 /* ScheduleWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13E6740121F94F32005B4BB6 /* ScheduleWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		13E6741321F94FAD005B4BB6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E6740721F94F32005B4BB6 /* MainInterface.storyboard */; };
+		13E6741A21F956A1005B4BB6 /* ScheduleWidgetIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6741921F956A1005B4BB6 /* ScheduleWidgetIOManager.swift */; };
+		13E6741D21F95796005B4BB6 /* defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6741C21F95796005B4BB6 /* defines.swift */; };
+		13E6741F21F957D4005B4BB6 /* tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6741E21F957D4005B4BB6 /* tool.swift */; };
+		13E6742121F95831005B4BB6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6742021F95831005B4BB6 /* UIView+Ext.swift */; };
+		13E6742321F9588A005B4BB6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6742221F9588A005B4BB6 /* String+Ext.swift */; };
 		13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E73705210960C4008BE215 /* ManagePostsViewController.swift */; };
 		13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EBE00620CA616000A911DE /* testing_profile_picture_1.png */; };
 		13EED9D52136121B00427E5E /* GCLoginRequireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */; };
@@ -251,6 +264,7 @@
 		13F805C9213B469C00AE93F0 /* NewEditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F805C7213B469C00AE93F0 /* NewEditProfileViewController.xib */; };
 		13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */; };
 		13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FC0E6D2105CC2B001FA925 /* GCEditableTableViewCell.xib */; };
+		A30C606D9C14CEEF14C6B579 /* Pods_ScheduleWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8EE475E74E116933FCBAB4 /* Pods_ScheduleWidget.framework */; };
 		B8C2EC8E928B34CB0A8CC938 /* Pods_GovsConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */; };
 		BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490E520DA22FC00373BBF /* GCBaseTableViewCell.swift */; };
 		BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490E720DA235B00373BBF /* GCBaseViewController.swift */; };
@@ -260,6 +274,30 @@
 		BC14910620DA657D00373BBF /* testing_profile_picture_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BC14910320DA657C00373BBF /* testing_profile_picture_4.png */; };
 		BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC14910420DA657D00373BBF /* testing_profile_picture_2.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13E6740B21F94F32005B4BB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 132F815F20C8C77C005D3905 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13E6740021F94F32005B4BB6;
+			remoteInfo = ScheduleWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		13E6741121F94F33005B4BB6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				13E6740D21F94F32005B4BB6 /* ScheduleWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E2B5E8DAACCCA68B7312709 /* Pods-GovsConnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovsConnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.debug.xcconfig"; sourceTree = "<group>"; };
@@ -306,6 +344,8 @@
 		133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_drop_down_arrow.png; sourceTree = "<group>"; };
 		133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
+		134C194421FA4CE700469E3C /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
+		134C194521FA4CE700469E3C /* NewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
 		13540E9621645ABE005204FC /* GCSportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSportType.swift; sourceTree = "<group>"; };
 		13540E98216673A3005204FC /* system_discover_links.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_links.png; sourceTree = "<group>"; };
 		13540E9A216673D6005204FC /* LinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewController.swift; sourceTree = "<group>"; };
@@ -424,7 +464,9 @@
 		139EDF7820EC87A700778CFD /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		139EDF7920EC87A700778CFD /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		13A7801220EF690E00926139 /* GCOptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCOptionsTableView.swift; sourceTree = "<group>"; };
+		13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "govs-connect-widget-tutorial.gif"; sourceTree = "<group>"; };
 		13ADC69D20F32A4300AECFFA /* GovsConnect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GovsConnect.entitlements; sourceTree = "<group>"; };
+		13B6C8FE21F9F914004EC5C0 /* GCPhoneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCPhoneType.swift; sourceTree = "<group>"; };
 		13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailBodyTableViewCell.swift; sourceTree = "<group>"; };
 		13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailBodyTableViewCell.xib; sourceTree = "<group>"; };
 		13C2565A214C653F00EFCBCF /* GovsConnect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GovsConnect.xcdatamodel; sourceTree = "<group>"; };
@@ -474,6 +516,7 @@
 		13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_3.png; sourceTree = "<group>"; };
 		13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDetailTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserDetailTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		13D918E46A6263F09EF102D7 /* Pods-ScheduleWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleWidget/Pods-ScheduleWidget.release.xcconfig"; sourceTree = "<group>"; };
 		13D99EE421729B45007CFBFE /* system_like_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_like_white.png; sourceTree = "<group>"; };
 		13DDA967216D054A00916139 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		13DDA969216D06C300916139 /* NewUserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -489,6 +532,16 @@
 		13E5DE2F216FAEF5007560C3 /* SportClassifyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportClassifyTableViewCell.swift; sourceTree = "<group>"; };
 		13E5DE31216FAF11007560C3 /* SportDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportDetailTableViewCell.swift; sourceTree = "<group>"; };
 		13E5DE35216FFB51007560C3 /* system_discover_sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_sports.png; sourceTree = "<group>"; };
+		13E6740121F94F32005B4BB6 /* ScheduleWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScheduleWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E6740221F94F32005B4BB6 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		13E6740521F94F32005B4BB6 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = /Users/Excited/Desktop/GovsConnect/ScheduleWidget/TodayViewController.swift; sourceTree = "<absolute>"; };
+		13E6740821F94F32005B4BB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		13E6740A21F94F32005B4BB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13E6741921F956A1005B4BB6 /* ScheduleWidgetIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleWidgetIOManager.swift; path = ../ScheduleWidgetIOManager.swift; sourceTree = "<group>"; };
+		13E6741C21F95796005B4BB6 /* defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defines.swift; sourceTree = "<group>"; };
+		13E6741E21F957D4005B4BB6 /* tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tool.swift; sourceTree = "<group>"; };
+		13E6742021F95831005B4BB6 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		13E6742221F9588A005B4BB6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		13E73705210960C4008BE215 /* ManagePostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostsViewController.swift; sourceTree = "<group>"; };
 		13EBE00620CA616000A911DE /* testing_profile_picture_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_1.png; sourceTree = "<group>"; };
 		13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLoginRequireViewController.swift; sourceTree = "<group>"; };
@@ -518,6 +571,8 @@
 		BC1490ED20DA550A00373BBF /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		BC14910320DA657C00373BBF /* testing_profile_picture_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_4.png; sourceTree = "<group>"; };
 		BC14910420DA657D00373BBF /* testing_profile_picture_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_2.png; sourceTree = "<group>"; };
+		ECBB3E294D88AAB305B5375C /* Pods-ScheduleWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleWidget/Pods-ScheduleWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		ED8EE475E74E116933FCBAB4 /* Pods_ScheduleWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GovsConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -527,6 +582,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8C2EC8E928B34CB0A8CC938 /* Pods_GovsConnect.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13E673FE21F94F32005B4BB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E6740321F94F32005B4BB6 /* NotificationCenter.framework in Frameworks */,
+				A30C606D9C14CEEF14C6B579 /* Pods_ScheduleWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +633,7 @@
 			isa = PBXGroup;
 			children = (
 				132F816920C8C77C005D3905 /* GovsConnect */,
+				13E6740421F94F32005B4BB6 /* ScheduleWidget */,
 				132F816820C8C77C005D3905 /* Products */,
 				F73684DB68754775AA398023 /* Pods */,
 				E69AA26B779572AEDB876F1E /* Frameworks */,
@@ -579,6 +644,7 @@
 			isa = PBXGroup;
 			children = (
 				132F816720C8C77C005D3905 /* GovsConnect.app */,
+				13E6740121F94F32005B4BB6 /* ScheduleWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -633,6 +699,7 @@
 		132F819420C90DC1005D3905 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */,
 				13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */,
 				13117B7720F7454600E4CD66 /* testing_food_4.jpg */,
 				13117B7520F7454600E4CD66 /* testing_food_5.jpeg */,
@@ -906,6 +973,33 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		13E6740421F94F32005B4BB6 /* ScheduleWidget */ = {
+			isa = PBXGroup;
+			children = (
+				134C194421FA4CE700469E3C /* NewTableViewCell.swift */,
+				134C194521FA4CE700469E3C /* NewTableViewCell.xib */,
+				13E6741B21F9578C005B4BB6 /* Utils */,
+				13E6740521F94F32005B4BB6 /* TodayViewController.swift */,
+				13E6740721F94F32005B4BB6 /* MainInterface.storyboard */,
+				13E6740A21F94F32005B4BB6 /* Info.plist */,
+			);
+			name = ScheduleWidget;
+			path = /Users/Excited/Desktop/GovsConnect/ScheduleWidget;
+			sourceTree = "<absolute>";
+		};
+		13E6741B21F9578C005B4BB6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				13E6741921F956A1005B4BB6 /* ScheduleWidgetIOManager.swift */,
+				13E6741C21F95796005B4BB6 /* defines.swift */,
+				13E6741E21F957D4005B4BB6 /* tool.swift */,
+				13E6742021F95831005B4BB6 /* UIView+Ext.swift */,
+				13E6742221F9588A005B4BB6 /* String+Ext.swift */,
+				13B6C8FE21F9F914004EC5C0 /* GCPhoneType.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		13E73707210960CF008BE215 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1072,6 +1166,8 @@
 			isa = PBXGroup;
 			children = (
 				FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */,
+				13E6740221F94F32005B4BB6 /* NotificationCenter.framework */,
+				ED8EE475E74E116933FCBAB4 /* Pods_ScheduleWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1081,6 +1177,8 @@
 			children = (
 				0E2B5E8DAACCCA68B7312709 /* Pods-GovsConnect.debug.xcconfig */,
 				8F9D974B7CD4FABCEEEF381C /* Pods-GovsConnect.release.xcconfig */,
+				ECBB3E294D88AAB305B5375C /* Pods-ScheduleWidget.debug.xcconfig */,
+				13D918E46A6263F09EF102D7 /* Pods-ScheduleWidget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1098,15 +1196,35 @@
 				132F816520C8C77C005D3905 /* Resources */,
 				38202BF62D64E75FE8E155D5 /* [CP] Embed Pods Frameworks */,
 				5E9013092DD6F241B5EF5CC2 /* [CP] Copy Pods Resources */,
+				13E6741121F94F33005B4BB6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				13E6740C21F94F32005B4BB6 /* PBXTargetDependency */,
 			);
 			name = GovsConnect;
 			productName = GovsConnect;
 			productReference = 132F816720C8C77C005D3905 /* GovsConnect.app */;
 			productType = "com.apple.product-type.application";
+		};
+		13E6740021F94F32005B4BB6 /* ScheduleWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13E6741021F94F32005B4BB6 /* Build configuration list for PBXNativeTarget "ScheduleWidget" */;
+			buildPhases = (
+				B0395409136765043E0DDB50 /* [CP] Check Pods Manifest.lock */,
+				13E673FD21F94F32005B4BB6 /* Sources */,
+				13E673FE21F94F32005B4BB6 /* Frameworks */,
+				13E673FF21F94F32005B4BB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScheduleWidget;
+			productName = ScheduleWidget;
+			productReference = 13E6740121F94F32005B4BB6 /* ScheduleWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -1114,7 +1232,7 @@
 		132F815F20C8C77C005D3905 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Eagersoft;
 				TargetAttributes = {
@@ -1130,6 +1248,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					13E6740021F94F32005B4BB6 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1147,6 +1269,7 @@
 			projectRoot = "";
 			targets = (
 				132F816620C8C77C005D3905 /* GovsConnect */,
+				13E6740021F94F32005B4BB6 /* ScheduleWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -1192,6 +1315,7 @@
 				1327C1A820CE497A001A300A /* system_reply.png in Resources */,
 				1399FC21217A0CD1009F926F /* red_H.png in Resources */,
 				1399FC2E217A0CD1009F926F /* blue_R.png in Resources */,
+				13ABADDC21FABF3000885398 /* govs-connect-widget-tutorial.gif in Resources */,
 				1399FC1E217A0CD1009F926F /* red_Z.png in Resources */,
 				13961E1A20CA9FB1004FFF4B /* system_commented.png in Resources */,
 				1399FC20217A0CD1009F926F /* blue_U.png in Resources */,
@@ -1324,6 +1448,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		13E673FF21F94F32005B4BB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13ABADDA21FA520A00885398 /* NewTableViewCell.xib in Resources */,
+				13E6741321F94FAD005B4BB6 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1342,6 +1475,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TBDropdownMenu/TBDropdownMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/TwicketSegmentedControl/TwicketSegmentedControl.framework",
@@ -1356,6 +1490,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBDropdownMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwicketSegmentedControl.framework",
@@ -1381,6 +1516,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0395409136765043E0DDB50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScheduleWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B2695E944C899B1A2E1BC854 /* [CP] Check Pods Manifest.lock */ = {
@@ -1497,7 +1654,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		13E673FD21F94F32005B4BB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E6741F21F957D4005B4BB6 /* tool.swift in Sources */,
+				13E6742321F9588A005B4BB6 /* String+Ext.swift in Sources */,
+				13E6741A21F956A1005B4BB6 /* ScheduleWidgetIOManager.swift in Sources */,
+				13E6742121F95831005B4BB6 /* UIView+Ext.swift in Sources */,
+				13E6740621F94F32005B4BB6 /* TodayViewController.swift in Sources */,
+				13E6741D21F95796005B4BB6 /* defines.swift in Sources */,
+				134C194621FA4CE700469E3C /* NewTableViewCell.swift in Sources */,
+				13B6C8FF21F9F914004EC5C0 /* GCPhoneType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		13E6740C21F94F32005B4BB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13E6740021F94F32005B4BB6 /* ScheduleWidget */;
+			targetProxy = 13E6740B21F94F32005B4BB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		132F816E20C8C77C005D3905 /* Main.storyboard */ = {
@@ -1515,6 +1695,15 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
+		};
+		13E6740721F94F32005B4BB6 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13E6740821F94F32005B4BB6 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			path = /Users/Excited/Desktop/GovsConnect/ScheduleWidget;
+			sourceTree = "<absolute>";
 		};
 /* End PBXVariantGroup section */
 
@@ -1630,6 +1819,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E2B5E8DAACCCA68B7312709 /* Pods-GovsConnect.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GovsConnect/GovsConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1648,6 +1838,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F9D974B7CD4FABCEEEF381C /* Pods-GovsConnect.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GovsConnect/GovsConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1660,6 +1851,49 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		13E6740E21F94F32005B4BB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECBB3E294D88AAB305B5375C /* Pods-ScheduleWidget.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SWNM35NBHT;
+				INFOPLIST_FILE = ScheduleWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect.ScheduleWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		13E6740F21F94F32005B4BB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D918E46A6263F09EF102D7 /* Pods-ScheduleWidget.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SWNM35NBHT;
+				INFOPLIST_FILE = ScheduleWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect.ScheduleWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1680,6 +1914,15 @@
 			buildConfigurations = (
 				132F817A20C8C77C005D3905 /* Debug */,
 				132F817B20C8C77C005D3905 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13E6741021F94F32005B4BB6 /* Build configuration list for PBXNativeTarget "ScheduleWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13E6740E21F94F32005B4BB6 /* Debug */,
+				13E6740F21F94F32005B4BB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

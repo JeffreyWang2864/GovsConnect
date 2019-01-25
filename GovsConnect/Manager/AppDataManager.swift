@@ -49,6 +49,7 @@ class AppDataManager{
         AppPersistenceManager.shared.saveObject(to: .setting, with: ["someone replied my post", "true"])
         AppPersistenceManager.shared.saveObject(to: .setting, with: ["someone liked my post", "true"])
         AppPersistenceManager.shared.saveObject(to: .setting, with: ["organization", ""])
+        AppPersistenceManager.shared.saveObject(to: .setting, with: ["did see widget", "false"])
     }
     
     public func setupData(){
@@ -74,6 +75,8 @@ class AppDataManager{
                 for org_str in organizationStr.split(separator: "/"){
                     AppDataManager.shared.currentUserConnections.append("\(org_str)")
                 }
+            case "did see widget":
+                break
             default:
                 fatalError()
             }
