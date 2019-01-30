@@ -50,6 +50,7 @@ class AppDataManager{
         AppPersistenceManager.shared.saveObject(to: .setting, with: ["someone liked my post", "true"])
         AppPersistenceManager.shared.saveObject(to: .setting, with: ["organization", ""])
         AppPersistenceManager.shared.saveObject(to: .setting, with: ["did see widget", "false"])
+        AppPersistenceManager.shared.saveObject(to: .setting, with: ["dining hall menu tutorial", "false"])
     }
     
     public func setupData(){
@@ -75,7 +76,7 @@ class AppDataManager{
                 for org_str in organizationStr.split(separator: "/"){
                     AppDataManager.shared.currentUserConnections.append("\(org_str)")
                 }
-            case "did see widget":
+            case "did see widget", "dining hall menu tutorial":
                 break
             default:
                 fatalError()
@@ -156,15 +157,14 @@ class AppDataManager{
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_10.png", "Modified Schedule"))
         self.discoverData.append(DiscoverItemDataContainer("testing_picture_8.jpg", "Dining Hall Menu"))
         self.discoverData.append(DiscoverItemDataContainer("system_discover_links.png", "Links"))
-        self.discoverData.append(DiscoverItemDataContainer("testing_picture_5.jpg", "Daily Bulletin"))
         self.discoverData.append(DiscoverItemDataContainer("system_more_full_image.png", ""))
         
         for _ in (0..<3){
             self.discoverWeekendEventData.append(Array<EventDataContainer>())
         }
-        self.discoverLinksData.append(DiscoverLinksDataCountainer(.website, "Veracross", "Your homework, grade, and everything.", "https://portals.veracross.com/gda/student"))
-        self.discoverLinksData.append(DiscoverLinksDataCountainer(.website, "The Governor's Academy", "School's official website.", "https://www.thegovernorsacademy.org/"))
-        self.discoverLinksData.append(DiscoverLinksDataCountainer(.snapchat, "Govs Event", "Know about what's going on at Govs.", "https://www.snapchat.com/add/govsevents"))
+//        self.discoverLinksData.append(DiscoverLinksDataCountainer(.website, "Veracross", "Your homework, grade, and everything.", "https://portals.veracross.com/gda/student"))
+//        self.discoverLinksData.append(DiscoverLinksDataCountainer(.website, "The Governor's Academy", "School's official website.", "https://www.thegovernorsacademy.org/"))
+//        self.discoverLinksData.append(DiscoverLinksDataCountainer(.snapchat, "Govs Event", "Know about what's going on at Govs.", "https://www.snapchat.com/add/govsevents"))
 //        self.discoverLinksData.append(DiscoverLinksDataCountainer(.instagram, "Govs Trade", "A student organized trading platform which applies to all graders.", "instagram://user?username=govstrade"))
         
         let eventsData = AppPersistenceManager.shared.fetchObject(with: .event) as! Array<Event>

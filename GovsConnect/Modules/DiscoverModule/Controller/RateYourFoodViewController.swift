@@ -80,6 +80,8 @@ class RateYourFoodViewController: UIViewController{
         self.dislikeView.textColor = UIColor.white
         self.view.addSubview(self.likeView)
         self.view.addSubview(self.dislikeView)
+        
+        
     }
     
     @objc private func didClickOnTitle(_ sender: UITapGestureRecognizer) {

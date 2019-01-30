@@ -88,21 +88,25 @@ class DiscoverViewController: UIViewController {
             self.navigationController!.pushViewController(vc, animated: true)
         case 3:
             //links
-            let vc = LinksViewController.init(nibName: "LinksViewController", bundle: Bundle.main)
-            vc.view.frame = self.view.bounds
-            self.navigationController!.pushViewController(vc, animated: true)
+            let alert = UIAlertController(title: nil, message: "Loading...", preferredStyle: .alert)
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            loadingIndicator.startAnimating();
+            alert.view.addSubview(loadingIndicator)
+            self.present(alert, animated: true, completion: nil)
+            AppIOManager.shared.loadLinkData({ (isSucceed) in
+                alert.dismiss(animated: true){
+                    let vc = LinksViewController.init(nibName: "LinksViewController", bundle: Bundle.main)
+                    vc.view.frame = self.view.bounds
+                    self.navigationController!.pushViewController(vc, animated: true)
+                }
+            }) { (errStr) in
+                alert.dismiss(animated: true){
+                    makeMessageViaAlert(title: "Failed when loading links", message: errStr)
+                }
+            }
         case 4:
-            //daily bulletin
-            let url = URL(string: "https://docs.google.com/document/d/1cZ7nb44a26OWvgOJWlY0CklBrDaPb248wJ9ozgXROKI/edit")!
-            let vc = UIViewController()
-            vc.view.frame = self.view.bounds
-            let webv = UIWebView()
-            vc.view.addSubview(webv)
-            webv.frame = vc.view.bounds
-            self.navigationController!.pushViewController(vc, animated: true)
-            vc.navigationItem.title = "Daily Bulletin"
-            webv.loadRequest(URLRequest(url: url))
-        case 5:
             //more
             let vc = UIViewController()
             vc.view.frame = self.view.bounds

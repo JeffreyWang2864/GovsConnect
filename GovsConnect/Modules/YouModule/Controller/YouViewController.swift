@@ -193,9 +193,9 @@ extension YouViewController: UITableViewDelegate, UITableViewDataSource{
             if MFMailComposeViewController.canSendMail(){
                 let feedbackVC = MFMailComposeViewController()
                 feedbackVC.mailComposeDelegate = self
-                feedbackVC.setToRecipients(["wang@eagersoft.net"])
+                feedbackVC.setToRecipients(["jeffrey.wang@govsacademy.org"])
                 feedbackVC.setSubject("Feedback on on [\(PHONE_TYPE) iOS]")
-                feedbackVC.setMessageBody("Hi developers,", isHTML: false)
+                feedbackVC.setMessageBody("Hi,", isHTML: false)
                 self.present(feedbackVC, animated: true, completion: nil)
             }else{
                 makeMessageViaAlert(title: "Cannot send mail", message: "Your device is unable to send email")

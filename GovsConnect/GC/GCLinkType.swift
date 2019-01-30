@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum GCLinkType{
-    case instagram
-    case snapchat
-    case website
+enum GCLinkType: String{
+    case instagram = "instagram"
+    case snapchat = "snapchat"
+    case website = "website"
 }

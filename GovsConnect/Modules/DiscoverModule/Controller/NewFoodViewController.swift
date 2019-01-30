@@ -28,7 +28,40 @@ class NewFoodViewController: UIViewController {
             //err handler
             makeMessageViaAlert(title: "Error when loading food data", message: errStr)
         }
+        self.tableView.allowsSelection = false
         // Do any additional setup after loading the view.
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            let predicate = NSPredicate(format: "key == %@", "dining hall menu tutorial")
+            let res = AppPersistenceManager.shared.filterObject(of: .setting, with: predicate) as! Array<Setting>
+            if res.count == 0{
+                //dining hall menu tutorial not created yet
+                self.displayDidSeeWidget()
+                AppPersistenceManager.shared.saveObject(to: .setting, with: ["dining hall menu tutorial", "true"])
+            }else if res[0].value! == "false"{
+                //dining hall menu tutorial created, but didn't see
+                self.displayDidSeeWidget()
+                AppPersistenceManager.shared.updateObject(of: .setting, with: predicate, newVal: "true", forKey: "value")
+            }
+        }
+    }
+    
+    private func displayDidSeeWidget(){
+        let askWidgetAlertController = UIAlertController(title: "Tutorial", message: "You can double tap to like a food", preferredStyle: .alert)
+        let gif = UIImage.init(gifName: "govs-connect-menu-tutorial.gif")
+        let gifView = UIImageView.init(gifImage: gif, loopCount: -1)
+        gifView.frame = CGRect(x: 30, y: 63, width: 220, height: 140)
+        askWidgetAlertController.view.addSubview(gifView)
+        let height = NSLayoutConstraint(item: askWidgetAlertController.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+        let width = NSLayoutConstraint(item: askWidgetAlertController.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 280)
+        askWidgetAlertController.view.addConstraint(height)
+        askWidgetAlertController.view.addConstraint(width)
+        askWidgetAlertController.addAction(UIAlertAction(title: "Got it! Thanks.", style: .cancel, handler: { (alert) in
+            //completion handler
+        }))
+        self.navigationController!.present(askWidgetAlertController, animated: true, completion: {
+            //completion handler
+        })
     }
     
     private func setupTitleView(){
@@ -89,9 +122,9 @@ extension NewFoodViewController: UITableViewDelegate, UITableViewDataSource{
         return AppDataManager.shared.discoverMenuData[self.menuIndex].count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 60
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NEW_FOOD_TABLEVIEW_CELL_ID", for: indexPath) as! NewFoodTableViewCell

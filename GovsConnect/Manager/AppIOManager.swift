@@ -581,6 +581,31 @@ class AppIOManager{
         }
     }
     
+    func loadLinkData(_ completionHandler: @escaping ReceiveResponseBlock, _ errorHandler: @escaping (String) -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/discover/link"
+        request(urlStr).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                var index = 0
+                let jsonDict = JSON(json)
+                AppDataManager.shared.discoverLinksData = []
+                while jsonDict["\(index)"] != JSON.null{
+                    let data = jsonDict["\(index)"]
+                    let title = data["title"].stringValue
+                    let description = data["description"].stringValue
+                    let url = data["url"].stringValue
+                    let url_type = data["url_type"].stringValue
+                    let linkData = DiscoverLinksDataCountainer(GCLinkType(rawValue: url_type)!, title, description, url)
+                    AppDataManager.shared.discoverLinksData.append(linkData)
+                    index += 1
+                }
+                completionHandler(true)
+            case .failure(let error):
+                errorHandler(error.localizedDescription)
+            }
+        }
+    }
+    
     func updateProfileImage(){
         var uploadData = Dictionary<String, AnyObject>()
         var epoch = 0
