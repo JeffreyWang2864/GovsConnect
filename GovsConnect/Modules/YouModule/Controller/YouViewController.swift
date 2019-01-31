@@ -48,9 +48,14 @@ class YouViewController: UIViewController {
         guard AppDataManager.shared.currentPersonID != "" else{
             return
         }
-        let data = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!
-        let imgData = AppDataManager.shared.profileImageData[data.uid]!
-        self.authorImageView.image = UIImage.init(data: imgData)!
+        if AppIOManager.shared.connectionStatus != .none{
+            AppIOManager.shared.updateProfileImage()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+            let data = AppDataManager.shared.users[AppDataManager.shared.currentPersonID]!
+            let imgData = AppDataManager.shared.profileImageData[data.uid]!
+            self.authorImageView.image = UIImage.init(data: imgData)!
+        }
     }
     
     @objc func loginAction(_ sender: Notification){
