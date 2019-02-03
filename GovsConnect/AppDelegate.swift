@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let welcomeVC = WelcomeViewController()
         self.window!.rootViewController!.view.addSubview(welcomeVC.view)
         welcomeVC.view.frame = UIScreen.main.bounds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             UIView.animate(withDuration: 0.5, animations: {
                 welcomeVC.view.alpha = 0
             }) { (completion) in
@@ -97,6 +97,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         let token = tokenParts.joined()
         AppIOManager.shared.deviceToken = token
+        if token != ""{
+            AppIOManager.shared.createSession(with: token)
+        }
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

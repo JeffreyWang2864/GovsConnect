@@ -13,7 +13,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.welcomeLabel.alpha = 0
-        UIView.animate(withDuration: 1.5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.welcomeLabel.alpha = 1
             }, completion: { (returnFlag) in
                 UIView.animate(withDuration: 1.5){

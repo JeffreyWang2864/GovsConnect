@@ -11,6 +11,7 @@ import TBDropdownMenu
 
 class NewFoodViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var informationLabel: UILabel!
     var titleLabel = UILabel()
     var arrowImageView = UIImageView(image: UIImage(named: "system_drop_down_arrow.png")!)
     var menuView: DropdownMenu!
@@ -18,6 +19,8 @@ class NewFoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTitleView()
+        self.informationLabel.textColor = APP_THEME_COLOR
+        self.informationLabel.text = "menu for: \(dayStringFormat(Date.init(timeIntervalSinceNow: 0)))"
         AppIOManager.shared.loadFoodData({ (isSucceed) in
             //success handler
             self.tableView.register(UINib.init(nibName: "NewFoodTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "NEW_FOOD_TABLEVIEW_CELL_ID")
@@ -84,7 +87,15 @@ class NewFoodViewController: UIViewController {
         self.navigationItem.titleView = fatherTitleView
         let menuItem1 = DropdownItem(title: "lunch/brunch")
         let menuItem2 = DropdownItem(title: "dinner")
-        self.menuView = DropdownMenu(navigationController: self.navigationController!, items: [menuItem1, menuItem2], selectedRow: 0)
+        let todayCalendar = Calendar.current
+        let currentHour = todayCalendar.component(.hour, from: Date.init(timeIntervalSinceNow: 0))
+        if currentHour >= 14{
+            self.titleLabel.text = "dinner"
+            self.menuIndex = 1
+            self.menuView = DropdownMenu(navigationController: self.navigationController!, items: [menuItem1, menuItem2], selectedRow: 1)
+        }else{
+            self.menuView = DropdownMenu(navigationController: self.navigationController!, items: [menuItem1, menuItem2], selectedRow: 0)
+        }
         self.menuView.highlightColor = APP_THEME_COLOR
         self.menuView.delegate = self
     }

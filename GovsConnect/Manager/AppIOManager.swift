@@ -70,6 +70,22 @@ class AppIOManager{
 //        }
 //    }
     
+    func createSession(with deviceToken: String){
+        var uploadData = Dictionary<String, Any>()
+        let urlStr = APP_SERVER_URL_STR + "/assets/session/"
+        uploadData["access_token"] = deviceToken as Any
+        request(urlStr, method: .post, parameters: uploadData, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                //success
+                break
+            case .failure(let error):
+                //upload session id failed
+                break
+            }
+        }
+    }
+    
     func loadImage(with id: String, _ completionHandler: @escaping (Data) -> ()){
         guard AppDataManager.shared.imageData[id] == nil else{
             return

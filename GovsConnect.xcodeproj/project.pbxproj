@@ -679,6 +679,7 @@
 		132F818420C8DA9B005D3905 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				138FC0D02204ED2A00429B70 /* SportsModule */,
 				13CF4EC520F7C24600DEE71A /* NotificationModule */,
 				BC1490FF20DA643E00373BBF /* LookUpModule */,
 				BC1490F720DA640D00373BBF /* DiscoverModule */,
@@ -743,6 +744,37 @@
 				BC1490F020DA621400373BBF /* View */,
 			);
 			path = PostsModule;
+			sourceTree = "<group>";
+		};
+		138FC0D02204ED2A00429B70 /* SportsModule */ = {
+			isa = PBXGroup;
+			children = (
+				138FC0D32204ED5A00429B70 /* Controller */,
+				138FC0D22204ED5000429B70 /* View */,
+				138FC0D12204ED4200429B70 /* Model */,
+			);
+			path = SportsModule;
+			sourceTree = "<group>";
+		};
+		138FC0D12204ED4200429B70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		138FC0D22204ED5000429B70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		138FC0D32204ED5A00429B70 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		13961E0C20CA772F004FFF4B /* System */ = {

@@ -53,7 +53,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         assert(ScheduleWidgetIOManager.shared.data.count == 0)
         self.view.backgroundColor = UIColor.white
         let l = UILabel(frame: self.view.bounds)
-        l.text = "The schedule for today (\(timeStringFormat(Date.init(timeIntervalSinceNow: 0), withWeek: false))) is normal :)"
+        l.text = "The schedule for today (\(dayStringFormat(Date.init(timeIntervalSinceNow: 0)))) is normal :)"
         l.numberOfLines = 0
         l.textAlignment = .center
         self.view.addSubview(l)

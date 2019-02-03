@@ -15,6 +15,7 @@ class WeekendDetailViewController: UIViewController {
     var timeStrokeView = UIView()
     var timeLabel = UILabel()
     var lastCurrentMinute: Int = -1
+    var lastCurrentHour: Int = -1
     var startingYBound: CGFloat = 0
     var events = Array<UIView>()
     override func viewDidLoad() {
@@ -24,6 +25,14 @@ class WeekendDetailViewController: UIViewController {
         self.segmentControl.setSegmentItems(["Friday", "Saturday", "Sunday"])
         self.segmentControl.sliderBackgroundColor = APP_THEME_COLOR
         self.segmentControl.delegate = self
+        let todayCalender = NSCalendar.current
+        let todatComponents = todayCalender.component(.weekday, from: Date.init(timeIntervalSinceNow: 0))
+        //1 sunday, 7 saturday
+        if todatComponents == 7{
+            self.segmentControl.move(to: 1)
+        }else if todatComponents == 1{
+            self.segmentControl.move(to: 2)
+        }
         self.tableView.register(UINib(nibName: "NewTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "NEW_TABLE_VIEW_CELL")
         self.tableView.separatorStyle = .none
         self.tableView.delegate = self
@@ -53,13 +62,20 @@ class WeekendDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        print(self.tableView.contentSize.height)
-        let timeStrokePoint = CGPoint(x: self.timeStrokeView.left, y: min(self.tableView.contentSize.height - 20, self.timeStrokeView.top + screenHeight / 3))
-        let indexPath = self.tableView.indexPathForRow(at: timeStrokePoint)
-        guard indexPath != nil else{
-            return
+        let currentTime = getCurrentTime()
+        if self.lastCurrentHour != currentTime.hour || (self.lastCurrentHour == 0 && self.lastCurrentMinute == 30){
+            self.lastCurrentHour = currentTime.hour
+            if self.lastCurrentHour == 0 && self.lastCurrentMinute < 30{
+                //still bottom
+                self.tableView.scrollToRow(at: IndexPath.init(item: 23, section: 0), at: .bottom, animated: true)
+            }else if self.lastCurrentHour == 0 && self.lastCurrentMinute > 30{
+                //top
+                self.tableView.scrollToRow(at: IndexPath.init(item: 0, section: 0), at: .top, animated: true)
+            }else{
+                //regular
+                self.tableView.scrollToRow(at: IndexPath.init(item: self.lastCurrentHour, section: 0), at: .middle, animated: true)
+            }
         }
-        self.tableView.scrollToRow(at: indexPath!, at: .middle, animated: true)
     }
     
     @objc func didSwipeLeft(_ sender: UISwipeGestureRecognizer){
@@ -152,7 +168,6 @@ class WeekendDetailViewController: UIViewController {
             let calender = Calendar.current
             let startTime = calender.dateComponents([.hour, .minute], from: currentDayData[i].startTime)
             let endTime = calender.dateComponents([.hour, .minute], from: currentDayData[i].endTime)
-            NSLog("\(startTime.hour!), \(startTime.minute!), \(endTime.hour!), \(endTime.minute!)")
             let startY = self.startingYBound + self.getHeightUnit(hour: startTime.hour!, minute: startTime.minute!) * 72.5
             let endY = self.startingYBound + self.getHeightUnit(hour: endTime.hour!, minute: endTime.minute!) * 72.5
             assert(endY > startY)
@@ -165,16 +180,30 @@ class WeekendDetailViewController: UIViewController {
             startTimeLabel.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
             startTimeLabel.text = "@ \(startTime.hour!):\(startTime.minute! < 10 ? "0\(startTime.minute!)" : "\(startTime.minute!)")"
             startTimeLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
-            let titleLabel = UILabel(frame: CGRect(x: 5, y: 17, width: v.frame.size.width - 10, height: 15))
-            titleLabel.contentMode = .top
-            titleLabel.font = UIFont.systemFont(ofSize: 14)
-            titleLabel.text = "\(currentDayData[i].title)"
-            titleLabel.clipsToBounds = true
-            titleLabel.numberOfLines = 0
-            titleLabel.sizeToFit()
-            titleLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
-            v.addSubview(startTimeLabel)
-            v.addSubview(titleLabel)
+            if currentDayData[i].endTime.timeIntervalSinceNow - currentDayData[i].startTime.timeIntervalSinceNow < 1740{
+                //event is less than 29 minutes
+                let titleLabel = UILabel(frame: CGRect(x: 60, y: 2, width: v.frame.size.width - 70, height: 15))
+                titleLabel.clipsToBounds = true
+                titleLabel.numberOfLines = 1
+                titleLabel.contentMode = .top
+                titleLabel.font = UIFont.systemFont(ofSize: 14)
+                titleLabel.text = "\(currentDayData[i].title)"
+                titleLabel.lineBreakMode = .byTruncatingMiddle
+                titleLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
+                v.addSubview(startTimeLabel)
+                v.addSubview(titleLabel)
+            }else{
+                let titleLabel = UILabel(frame: CGRect(x: 5, y: 17, width: v.frame.size.width - 10, height: 15))
+                titleLabel.contentMode = .top
+                titleLabel.font = UIFont.systemFont(ofSize: 14)
+                titleLabel.text = "\(currentDayData[i].title)"
+                titleLabel.clipsToBounds = true
+                titleLabel.numberOfLines = 0
+                titleLabel.sizeToFit()
+                titleLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
+                v.addSubview(startTimeLabel)
+                v.addSubview(titleLabel)
+            }
             v.alpha = animated ? 0 : 1
             v.tag = self.segmentControl.selectedSegmentIndex * 100 + i
             let tgr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnEvent(_:)))
