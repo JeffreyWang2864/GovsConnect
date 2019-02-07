@@ -14,6 +14,7 @@ class AboutGovsConnectViewController: UIViewController {
     @IBOutlet var privacyPolicyButton: UIButton!
     @IBOutlet var officialWebsiteButton: UIButton!
     @IBOutlet var rateButton: UIButton!
+    @IBOutlet var fuckingVersion: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "About"
@@ -24,6 +25,7 @@ class AboutGovsConnectViewController: UIViewController {
         self.privacyPolicyButton.setTitleColor(APP_THEME_COLOR, for: .normal)
         self.officialWebsiteButton.setTitleColor(APP_THEME_COLOR, for: .normal)
         self.rateButton.setTitleColor(APP_THEME_COLOR, for: .normal)
+        self.fuckingVersion.text = APP_CURRENT_VERSION
         // Do any additional setup after loading the view.
         
         switch PHONE_TYPE{

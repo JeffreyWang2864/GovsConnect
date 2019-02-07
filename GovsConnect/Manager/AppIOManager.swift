@@ -74,6 +74,7 @@ class AppIOManager{
         var uploadData = Dictionary<String, Any>()
         let urlStr = APP_SERVER_URL_STR + "/assets/session/"
         uploadData["access_token"] = deviceToken as Any
+        uploadData["from_version"] = APP_CURRENT_VERSION as Any
         request(urlStr, method: .post, parameters: uploadData, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result{
             case .success(let json):
@@ -519,7 +520,9 @@ class AppIOManager{
                     let end_time_interval = data["end_time"].intValue - secondsFromGMT
                     let title = data["title"].stringValue
                     let detail = data["detail"].stringValue
+                    let real_end_time_interval = data["real_end_time"].intValue - secondsFromGMT
                     let event = EventDataContainer(Date(timeIntervalSince1970: TimeInterval(start_time_interval)), Date(timeIntervalSince1970: TimeInterval(end_time_interval)), title, detail)
+                    event.realEndTime = Date.init(timeIntervalSince1970: TimeInterval(real_end_time_interval))
                     let whichDay = whichDayOfWeekend(event.startTime)
                     AppDataManager.shared.discoverWeekendEventData[whichDay].append(event)
                     AppPersistenceManager.shared.saveObject(to: .event, with: [event.startTime, event.endTime, event.title, event.detail, event.notificationState])
@@ -533,7 +536,7 @@ class AppIOManager{
     }
     
     func loadModifiedScheduleData(_ completionHandler: @escaping ReceiveResponseBlock, _ errorHandler: @escaping (String) -> ()){
-        let urlStr = APP_SERVER_URL_STR + "/discover/modified_schedule"
+        let urlStr = APP_SERVER_URL_STR + "/discover/modified_schedule_from_app"
         request(urlStr).responseJSON { (response) in
             switch response.result{
             case .success(let json):

@@ -162,6 +162,10 @@
 		1399FC3E217A0CD1009F926F /* blue_E.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC0A217A0CD1009F926F /* blue_E.png */; };
 		1399FC3F217A0CD1009F926F /* red_G.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC0B217A0CD1009F926F /* red_G.png */; };
 		1399FC42217A34F3009F926F /* courseData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC41217A34F3009F926F /* courseData.csv */; };
+		139A0BEF2207920500557DCC /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139A0BED2207920500557DCC /* SportsViewController.swift */; };
+		139A0BF02207920500557DCC /* SportsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139A0BEE2207920500557DCC /* SportsViewController.xib */; };
+		139A0BF32207927000557DCC /* MatchCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139A0BF12207927000557DCC /* MatchCardCollectionViewCell.swift */; };
+		139A0BF42207927000557DCC /* MatchCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139A0BF22207927000557DCC /* MatchCardCollectionViewCell.xib */; };
 		139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7220EC7E3F00778CFD /* testing_picture_8.jpg */; };
 		139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EDF7420EC7FA400778CFD /* RateYourFoodViewController.swift */; };
 		139EDF7720EC7FA400778CFD /* RateYourFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */; };
@@ -171,6 +175,7 @@
 		13ABADDA21FA520A00885398 /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134C194521FA4CE700469E3C /* NewTableViewCell.xib */; };
 		13ABADDC21FABF3000885398 /* govs-connect-widget-tutorial.gif in Resources */ = {isa = PBXBuildFile; fileRef = 13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */; };
 		13B6C8FF21F9F914004EC5C0 /* GCPhoneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6C8FE21F9F914004EC5C0 /* GCPhoneType.swift */; };
+		13BA25EC220BBF51003502E1 /* system_youtube_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13BA25EB220BBF50003502E1 /* system_youtube_icon.png */; };
 		13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */; };
 		13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */; };
 		13C2565B214C653F00EFCBCF /* GovsConnect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13C25659214C653F00EFCBCF /* GovsConnect.xcdatamodeld */; };
@@ -460,6 +465,10 @@
 		1399FC0A217A0CD1009F926F /* blue_E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_E.png; path = GovsConnect/Resources/avatars/blue_E.png; sourceTree = SOURCE_ROOT; };
 		1399FC0B217A0CD1009F926F /* red_G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_G.png; path = GovsConnect/Resources/avatars/red_G.png; sourceTree = SOURCE_ROOT; };
 		1399FC41217A34F3009F926F /* courseData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = courseData.csv; sourceTree = "<group>"; };
+		139A0BED2207920500557DCC /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
+		139A0BEE2207920500557DCC /* SportsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsViewController.xib; sourceTree = "<group>"; };
+		139A0BF12207927000557DCC /* MatchCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		139A0BF22207927000557DCC /* MatchCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		139EDF7220EC7E3F00778CFD /* testing_picture_8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_8.jpg; sourceTree = "<group>"; };
 		139EDF7420EC7FA400778CFD /* RateYourFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateYourFoodViewController.swift; sourceTree = "<group>"; };
 		139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateYourFoodViewController.xib; sourceTree = "<group>"; };
@@ -469,6 +478,7 @@
 		13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "govs-connect-widget-tutorial.gif"; sourceTree = "<group>"; };
 		13ADC69D20F32A4300AECFFA /* GovsConnect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GovsConnect.entitlements; sourceTree = "<group>"; };
 		13B6C8FE21F9F914004EC5C0 /* GCPhoneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCPhoneType.swift; sourceTree = "<group>"; };
+		13BA25EB220BBF50003502E1 /* system_youtube_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_youtube_icon.png; sourceTree = "<group>"; };
 		13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailBodyTableViewCell.swift; sourceTree = "<group>"; };
 		13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailBodyTableViewCell.xib; sourceTree = "<group>"; };
 		13C2565A214C653F00EFCBCF /* GovsConnect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GovsConnect.xcdatamodel; sourceTree = "<group>"; };
@@ -766,6 +776,8 @@
 		138FC0D22204ED5000429B70 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				139A0BF12207927000557DCC /* MatchCardCollectionViewCell.swift */,
+				139A0BF22207927000557DCC /* MatchCardCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -773,6 +785,8 @@
 		138FC0D32204ED5A00429B70 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				139A0BED2207920500557DCC /* SportsViewController.swift */,
+				139A0BEE2207920500557DCC /* SportsViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -780,6 +794,7 @@
 		13961E0C20CA772F004FFF4B /* System */ = {
 			isa = PBXGroup;
 			children = (
+				13BA25EB220BBF50003502E1 /* system_youtube_icon.png */,
 				1355B8AF217E9F29006E103D /* system_discover_food_dislike.png */,
 				1355B8AE217E9F28006E103D /* system_discover_food_like.png */,
 				13CD9F2E2166B7F600EAFE3D /* AppIcon */,
@@ -1333,6 +1348,7 @@
 				1399FC33217A0CD1009F926F /* red_R.png in Resources */,
 				13F52D4621801DCB00D5A424 /* allFaculty.csv in Resources */,
 				13EED9D821362F3200427E5E /* system_login_require.png in Resources */,
+				139A0BF02207920500557DCC /* SportsViewController.xib in Resources */,
 				13961E1420CA7766004FFF4B /* system_liked.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
 				139EDF7B20EC87A700778CFD /* EventDetailViewController.xib in Resources */,
@@ -1427,6 +1443,7 @@
 				132F819B20C90DD0005D3905 /* numberone.png in Resources */,
 				13CD9F2721669B0A00EAFE3D /* system_instagram_icon.png in Resources */,
 				130E677520F6175E009D3599 /* testing_food_2.jpg in Resources */,
+				139A0BF42207927000557DCC /* MatchCardCollectionViewCell.xib in Resources */,
 				13117B7B20F7454600E4CD66 /* testing_food_4.jpg in Resources */,
 				1399FC25217A0CD1009F926F /* red_E.png in Resources */,
 				1399FC38217A0CD1009F926F /* red_V.png in Resources */,
@@ -1477,6 +1494,7 @@
 				132F817220C8C77C005D3905 /* Assets.xcassets in Resources */,
 				132F817020C8C77C005D3905 /* Main.storyboard in Resources */,
 				13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */,
+				13BA25EC220BBF51003502E1 /* system_youtube_icon.png in Resources */,
 				1399FC13217A0CD1009F926F /* blue_B.png in Resources */,
 				1399FC1A217A0CD1009F926F /* blue_J.png in Resources */,
 				13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */,
@@ -1655,6 +1673,7 @@
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
 				139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */,
 				13007BB9216C189900ECB59F /* BottomActionTableViewCell.swift in Sources */,
+				139A0BEF2207920500557DCC /* SportsViewController.swift in Sources */,
 				1377AB73214F4CE20015172C /* GCButtonTableViewCell.swift in Sources */,
 				13C25664214C6BFC00EFCBCF /* Setting+CoreDataClass.swift in Sources */,
 				BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */,
@@ -1662,6 +1681,7 @@
 				13E5DE20216FA78F007560C3 /* SportHomeViewController.swift in Sources */,
 				13961E2020CAB151004FFF4B /* defines.swift in Sources */,
 				13EED9DB2136EA1D00427E5E /* GCLoginViewController.swift in Sources */,
+				139A0BF32207927000557DCC /* MatchCardCollectionViewCell.swift in Sources */,
 				13C25674214DE2AC00EFCBCF /* Comment+CoreDataProperties.swift in Sources */,
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
 				1377AB76214F7BB80015172C /* GCPhoneType.swift in Sources */,

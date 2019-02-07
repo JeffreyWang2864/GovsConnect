@@ -23,7 +23,12 @@ class LinksTableViewCell: UITableViewCell {
             case .snapchat:
                 self.linkButton.setImage(UIImage.init(named: "system_snapchat_icon.png")!, for: .normal)
             case .website:
-                self.linkButton.setImage(UIImage.init(named: "system_website_icon.png")!, for: .normal)
+                if data!.link.contains("youtu"){
+                    //is a youtube video
+                    self.linkButton.setImage(UIImage.init(named: "system_youtube_icon.png")!, for: .normal)
+                }else{
+                    self.linkButton.setImage(UIImage.init(named: "system_website_icon.png")!, for: .normal)
+                }
             }
         }
     }

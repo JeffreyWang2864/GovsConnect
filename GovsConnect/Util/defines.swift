@@ -21,6 +21,8 @@ let APP_BACKGROUND_ULTRA_GREY = UIColor(red: 0.976, green: 0.976, blue: 0.976, a
 
 let APP_SERVER_URL_STR = "https://govs.app"
 
+let APP_CURRENT_VERSION = "1.2.4"
+
 let PREDICATE_NAME_CONTAIN = "name contains[c] %@"
 
 let PHONE_TYPE: GCPhoneType = {

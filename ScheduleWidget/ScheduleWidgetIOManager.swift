@@ -39,7 +39,7 @@ class ScheduleWidgetIOManager{
     }
     
     func loadModifiedScheduleData(_ completionHandler: @escaping () -> (), _ errorHandler: @escaping (String) -> ()){
-        let urlStr = APP_SERVER_URL_STR + "/discover/modified_schedule"
+        let urlStr = APP_SERVER_URL_STR + "/discover/modified_schedule_from_widget"
         request(urlStr).responseJSON { (response) in
             switch response.result{
             case .success(let json):

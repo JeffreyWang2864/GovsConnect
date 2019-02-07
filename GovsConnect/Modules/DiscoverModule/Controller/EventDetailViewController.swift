@@ -26,7 +26,7 @@ class EventDetailViewController: UIViewController {
             self.titleLabel.text = self.data!.title
             self.detailTextView.text = self.data!.detail
             self.fromLabel.text = "from \(timeStringFormat(self.data!.startTime, withWeek: true))"
-            self.toLabel.text = "to \(timeStringFormat(self.data!.endTime, withWeek: true))"
+            self.toLabel.text = "to \(timeStringFormat(self.data!.realEndTime, withWeek: true))"
             self.untilLabel.text = prettyTime(to: self.data!.startTime.timeIntervalSinceNow)
         }
         self.detailTextView.backgroundColor = APP_BACKGROUND_GREY

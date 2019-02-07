@@ -435,6 +435,7 @@ class DiscoverItemDataContainer{
 class EventDataContainer{
     var startTime: Date
     var endTime: Date
+    var realEndTime: Date
     var title: String
     var detail: String
     //notificationState:
@@ -450,6 +451,7 @@ class EventDataContainer{
     init(_ startTime: Date, _ endTime: Date, _ title: String, _ detail: String) {
         self.startTime = startTime
         self.endTime = endTime
+        self.realEndTime = endTime
         self.title = title
         self.detail = detail
     }

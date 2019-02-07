@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutGovsConnectViewController" customModule="GovsConnect" customModuleProvider="target">
             <connections>
+                <outlet property="fuckingVersion" destination="Gii-Eb-BrI" id="b0i-AG-TIA"/>
                 <outlet property="logoImageView" destination="Sar-JE-EFt" id="RKk-VU-sNH"/>
                 <outlet property="officialWebsiteButton" destination="46W-ha-B4Q" id="02Z-gI-JWZ"/>
                 <outlet property="privacyPolicyButton" destination="fOi-en-RhE" id="mXg-1L-I2F"/>

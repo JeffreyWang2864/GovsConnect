@@ -12,6 +12,7 @@ import TwicketSegmentedControl
 class WeekendDetailViewController: UIViewController {
     @IBOutlet var segmentControl: TwicketSegmentedControl!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var eventFuckingOldLabel: UILabel!
     var timeStrokeView = UIView()
     var timeLabel = UILabel()
     var lastCurrentMinute: Int = -1
@@ -32,6 +33,13 @@ class WeekendDetailViewController: UIViewController {
             self.segmentControl.move(to: 1)
         }else if todatComponents == 1{
             self.segmentControl.move(to: 2)
+        }
+        let todayTimeInterval = Date.init(timeIntervalSinceNow: 0).timeIntervalSince1970
+        let lastEventTimeInterval = AppDataManager.shared.discoverWeekendEventData[2][0].startTime.timeIntervalSince1970
+        if todayTimeInterval > lastEventTimeInterval && todatComponents != 1{
+            //old weekend event
+            self.eventFuckingOldLabel.textColor = APP_THEME_COLOR
+            self.eventFuckingOldLabel.text = "*** These are events from the past week. ***"
         }
         self.tableView.register(UINib(nibName: "NewTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "NEW_TABLE_VIEW_CELL")
         self.tableView.separatorStyle = .none
@@ -168,6 +176,7 @@ class WeekendDetailViewController: UIViewController {
             let calender = Calendar.current
             let startTime = calender.dateComponents([.hour, .minute], from: currentDayData[i].startTime)
             let endTime = calender.dateComponents([.hour, .minute], from: currentDayData[i].endTime)
+            let realEndTime = calender.dateComponents([.hour, .minute], from: currentDayData[i].realEndTime)
             let startY = self.startingYBound + self.getHeightUnit(hour: startTime.hour!, minute: startTime.minute!) * 72.5
             let endY = self.startingYBound + self.getHeightUnit(hour: endTime.hour!, minute: endTime.minute!) * 72.5
             assert(endY > startY)
@@ -178,11 +187,14 @@ class WeekendDetailViewController: UIViewController {
             v.layer.borderColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 0.5).cgColor
             let startTimeLabel = UILabel(frame: CGRect(x: 5, y: 5, width:v.frame.size.width - 10, height: 13))
             startTimeLabel.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-            startTimeLabel.text = "@ \(startTime.hour!):\(startTime.minute! < 10 ? "0\(startTime.minute!)" : "\(startTime.minute!)")"
+            var startTimeLabelText = "@ \(startTime.hour!):\(startTime.minute! < 10 ? "0\(startTime.minute!)" : "\(startTime.minute!)")"
+            startTimeLabelText += " - "
+            startTimeLabelText += "@ \(realEndTime.hour!):\(realEndTime.minute! < 10 ? "0\(realEndTime.minute!)" : "\(realEndTime.minute!)")"
+            startTimeLabel.text = startTimeLabelText
             startTimeLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
             if currentDayData[i].endTime.timeIntervalSinceNow - currentDayData[i].startTime.timeIntervalSinceNow < 1740{
                 //event is less than 29 minutes
-                let titleLabel = UILabel(frame: CGRect(x: 60, y: 2, width: v.frame.size.width - 70, height: 15))
+                let titleLabel = UILabel(frame: CGRect(x: 125, y: 2, width: v.frame.size.width - 70, height: 15))
                 titleLabel.clipsToBounds = true
                 titleLabel.numberOfLines = 1
                 titleLabel.contentMode = .top
