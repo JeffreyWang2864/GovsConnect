@@ -40,7 +40,7 @@ class UserDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundColor = APP_BACKGROUND_ULTRA_GREY
+        self.tableView.backgroundColor = APP_BACKGROUND_LIGHT_GREY
         self.tableView.separatorStyle = .none
         if PHONE_TYPE == .iphone5{
             self.backgroundView.constraints[0].constant = 150

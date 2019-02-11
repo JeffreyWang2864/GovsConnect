@@ -37,7 +37,7 @@ class DiscoverBasicCellView: UIView{
         self.mainImageView.frame = CGRect(x: spaceToBound, y: spaceToBound, width: self.frame.size.width - spaceToBound * 2, height: self.frame.size.height - spaceToBound * 2 - titleViewHeight)
         self.addSubview(self.titleView)
         self.addSubview(self.mainImageView)
-        self.layer.backgroundColor = APP_BACKGROUND_ULTRA_GREY.cgColor
+        self.layer.backgroundColor = APP_BACKGROUND_LIGHT_GREY.cgColor
         self.layer.cornerRadius = 15
     }
 }

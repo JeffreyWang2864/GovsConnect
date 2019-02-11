@@ -26,10 +26,10 @@ class GCTabBarViewController: UITabBarController {
 //        self.addChildController(childVc: postVc, title: "Posts", normalImg: #imageLiteral(resourceName: "system_normal_post"), selectedImg: #imageLiteral(resourceName: "system_selected_post"))
         
         
-//        //sports
-//        let sportsVc = SportsViewController(nibName: "SportsViewController", bundle: nil)
-//        NotificationCenter.default.addObserver(sportsVc, selector: #selector(sportsVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
-//        self.addChildController(childVc: sportsVc, title: "Sports", normalImg: #imageLiteral(resourceName: "system_normal_post"), selectedImg: #imageLiteral(resourceName: "system_selected_post"))
+        //sports
+        let sportsVc = SportsViewController(nibName: "SportsViewController", bundle: nil)
+        NotificationCenter.default.addObserver(sportsVc, selector: #selector(sportsVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
+        self.addChildController(childVc: sportsVc, title: "Sports", normalImg: #imageLiteral(resourceName: "system_normal_post"), selectedImg: #imageLiteral(resourceName: "system_selected_post"))
         
         
         //lookUp

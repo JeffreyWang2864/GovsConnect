@@ -24,7 +24,7 @@ class CourseDescriptionTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.fakeFooterView.backgroundColor = APP_BACKGROUND_ULTRA_GREY
+        self.fakeFooterView.backgroundColor = APP_BACKGROUND_LIGHT_GREY
         // Initialization code
     }
 

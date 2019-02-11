@@ -20,7 +20,7 @@ class ConnectClubTableViewCell: UITableViewCell {
         self.disconnectButton.setTitleColor(APP_THEME_COLOR, for: .normal)
         self.disconnectButton.addTarget(self, action: #selector(self.disconnectButtonDidClick(_:)), for: .touchDown)
         self.collectionView.clipsToBounds = true
-        self.collectionView.backgroundColor = APP_BACKGROUND_ULTRA_GREY
+        self.collectionView.backgroundColor = APP_BACKGROUND_LIGHT_GREY
         self.collectionView.layer.cornerRadius = 10
         self.collectionView.register(UINib.init(nibName: "MultiMediaCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MULTI_MEDIA_COLLECTIONVIEW_CELL_ID")
         self.collectionView.delegate = self

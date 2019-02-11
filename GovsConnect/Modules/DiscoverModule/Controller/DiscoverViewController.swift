@@ -110,7 +110,7 @@ class DiscoverViewController: UIViewController {
             //more
             let vc = UIViewController()
             vc.view.frame = self.view.bounds
-            vc.view.backgroundColor = APP_BACKGROUND_ULTRA_GREY
+            vc.view.backgroundColor = APP_BACKGROUND_LIGHT_GREY
             vc.navigationItem.title = "More..."
             
             let cardBackgroundWidthOffset: CGFloat = {

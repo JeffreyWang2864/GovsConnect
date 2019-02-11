@@ -30,7 +30,7 @@ class LinksCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = APP_BACKGROUND_ULTRA_GREY
+        self.backgroundColor = APP_BACKGROUND_LIGHT_GREY
         self.layer.cornerRadius = 15
         self.clipsToBounds = true
         self.linkButton.layer.cornerRadius = 15

@@ -28,7 +28,7 @@ class PostsDetailViewController: GCBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = APP_BACKGROUND_ULTRA_GREY
+        self.view.backgroundColor = APP_BACKGROUND_LIGHT_GREY
         NotificationCenter.default.addObserver(self, selector: #selector(self.startCommenting(_:)), name: PostsDetailViewController.startCommentingNotificationName, object: nil)
         self.navigationController!.navigationBar.tintColor = UIColor.white
         self.navigationItem.title = "Post detail"

@@ -12,6 +12,11 @@
 		1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1300879D20E9D22500FD9E18 /* system_more_full_image.png */; };
 		130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */; };
 		130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */; };
+		130694B9220E27F000D88A90 /* tennis_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 130694B8220E27EF00D88A90 /* tennis_test.png */; };
+		130694BB220E40E300D88A90 /* governor_logo_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130694BA220E40E200D88A90 /* governor_logo_test.jpg */; };
+		130694BD220E40EC00D88A90 /* tabor_logo_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130694BC220E40EC00D88A90 /* tabor_logo_test.jpg */; };
+		130694C0220E788400D88A90 /* MatchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130694BE220E788400D88A90 /* MatchDetailTableViewCell.swift */; };
+		130694C1220E788400D88A90 /* MatchDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130694BF220E788400D88A90 /* MatchDetailTableViewCell.xib */; };
 		130E677320F61756009D3599 /* testing_food_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130E677220F61756009D3599 /* testing_food_1.jpg */; };
 		130E677520F6175E009D3599 /* testing_food_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130E677420F6175E009D3599 /* testing_food_2.jpg */; };
 		130E677720F61765009D3599 /* testing_food_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130E677620F61765009D3599 /* testing_food_3.jpg */; };
@@ -83,6 +88,13 @@
 		1377AB73214F4CE20015172C /* GCButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB71214F4CE20015172C /* GCButtonTableViewCell.swift */; };
 		1377AB74214F4CE20015172C /* GCButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1377AB72214F4CE20015172C /* GCButtonTableViewCell.xib */; };
 		1377AB76214F7BB80015172C /* GCPhoneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB75214F7BB80015172C /* GCPhoneType.swift */; };
+		137BD1D52210C11C008A501D /* MatchLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137BD1D32210C11C008A501D /* MatchLocationTableViewCell.swift */; };
+		137BD1D62210C11C008A501D /* MatchLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137BD1D42210C11C008A501D /* MatchLocationTableViewCell.xib */; };
+		137BD1D82210CBD5008A501D /* GCArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137BD1D72210CBD5008A501D /* GCArtwork.swift */; };
+		137BD1DA2210CFFF008A501D /* GCAnimatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137BD1D92210CFFF008A501D /* GCAnimatedCell.swift */; };
+		137BD1DC2210E2FB008A501D /* GCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137BD1DB2210E2FB008A501D /* GCColor.swift */; };
+		137BD1E12210EF03008A501D /* MatchDirectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137BD1DF2210EF03008A501D /* MatchDirectionTableViewCell.swift */; };
+		137BD1E22210EF03008A501D /* MatchDirectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137BD1E02210EF03008A501D /* MatchDirectionTableViewCell.xib */; };
 		137D562F20E7BA080088AB30 /* DiscoverBasicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */; };
 		137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */; };
 		137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 137EEBA020E7781100BA2575 /* testing_picture_5.jpg */; };
@@ -312,6 +324,11 @@
 		1300879D20E9D22500FD9E18 /* system_more_full_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_more_full_image.png; sourceTree = "<group>"; };
 		1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekendDetailViewController.swift; sourceTree = "<group>"; };
 		130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekendDetailViewController.xib; sourceTree = "<group>"; };
+		130694B8220E27EF00D88A90 /* tennis_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tennis_test.png; sourceTree = "<group>"; };
+		130694BA220E40E200D88A90 /* governor_logo_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = governor_logo_test.jpg; sourceTree = "<group>"; };
+		130694BC220E40EC00D88A90 /* tabor_logo_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tabor_logo_test.jpg; sourceTree = "<group>"; };
+		130694BE220E788400D88A90 /* MatchDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailTableViewCell.swift; sourceTree = "<group>"; };
+		130694BF220E788400D88A90 /* MatchDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchDetailTableViewCell.xib; sourceTree = "<group>"; };
 		130E677220F61756009D3599 /* testing_food_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_1.jpg; sourceTree = "<group>"; };
 		130E677420F6175E009D3599 /* testing_food_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_2.jpg; sourceTree = "<group>"; };
 		130E677620F61765009D3599 /* testing_food_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_3.jpg; sourceTree = "<group>"; };
@@ -386,6 +403,13 @@
 		1377AB71214F4CE20015172C /* GCButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCButtonTableViewCell.swift; sourceTree = "<group>"; };
 		1377AB72214F4CE20015172C /* GCButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCButtonTableViewCell.xib; sourceTree = "<group>"; };
 		1377AB75214F7BB80015172C /* GCPhoneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCPhoneType.swift; sourceTree = "<group>"; };
+		137BD1D32210C11C008A501D /* MatchLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchLocationTableViewCell.swift; sourceTree = "<group>"; };
+		137BD1D42210C11C008A501D /* MatchLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchLocationTableViewCell.xib; sourceTree = "<group>"; };
+		137BD1D72210CBD5008A501D /* GCArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCArtwork.swift; sourceTree = "<group>"; };
+		137BD1D92210CFFF008A501D /* GCAnimatedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCAnimatedCell.swift; sourceTree = "<group>"; };
+		137BD1DB2210E2FB008A501D /* GCColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCColor.swift; sourceTree = "<group>"; };
+		137BD1DF2210EF03008A501D /* MatchDirectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDirectionTableViewCell.swift; sourceTree = "<group>"; };
+		137BD1E02210EF03008A501D /* MatchDirectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchDirectionTableViewCell.xib; sourceTree = "<group>"; };
 		137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBasicCellView.swift; sourceTree = "<group>"; };
 		137D563020E8A3B80088AB30 /* GCWaterfallScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCWaterfallScrollView.swift; sourceTree = "<group>"; };
 		137EEBA020E7781100BA2575 /* testing_picture_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_5.jpg; sourceTree = "<group>"; };
@@ -712,7 +736,10 @@
 		132F819420C90DC1005D3905 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				130694BA220E40E200D88A90 /* governor_logo_test.jpg */,
+				130694B8220E27EF00D88A90 /* tennis_test.png */,
 				1316FD91220144770036373B /* govs-connect-menu-tutorial.gif */,
+				130694BC220E40EC00D88A90 /* tabor_logo_test.jpg */,
 				13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */,
 				13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */,
 				13117B7720F7454600E4CD66 /* testing_food_4.jpg */,
@@ -778,6 +805,12 @@
 			children = (
 				139A0BF12207927000557DCC /* MatchCardCollectionViewCell.swift */,
 				139A0BF22207927000557DCC /* MatchCardCollectionViewCell.xib */,
+				130694BE220E788400D88A90 /* MatchDetailTableViewCell.swift */,
+				130694BF220E788400D88A90 /* MatchDetailTableViewCell.xib */,
+				137BD1D32210C11C008A501D /* MatchLocationTableViewCell.swift */,
+				137BD1D42210C11C008A501D /* MatchLocationTableViewCell.xib */,
+				137BD1DF2210EF03008A501D /* MatchDirectionTableViewCell.swift */,
+				137BD1E02210EF03008A501D /* MatchDirectionTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -962,6 +995,9 @@
 				13F02C9121630F1500660E95 /* IsThisYouViewController.xib */,
 				13540E9621645ABE005204FC /* GCSportType.swift */,
 				13540EA221667720005204FC /* GCLinkType.swift */,
+				137BD1D72210CBD5008A501D /* GCArtwork.swift */,
+				137BD1D92210CFFF008A501D /* GCAnimatedCell.swift */,
+				137BD1DB2210E2FB008A501D /* GCColor.swift */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -1383,12 +1419,15 @@
 				1399FC37217A0CD1009F926F /* red_C.png in Resources */,
 				1355B8AD217E930D006E103D /* NewFoodTableViewCell.xib in Resources */,
 				13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */,
+				130694C1220E788400D88A90 /* MatchDetailTableViewCell.xib in Resources */,
+				130694BB220E40E300D88A90 /* governor_logo_test.jpg in Resources */,
 				13CD9F4B2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png in Resources */,
 				1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */,
 				130E677720F61765009D3599 /* testing_food_3.jpg in Resources */,
 				13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */,
 				13CD9F402166B82500EAFE3D /* govs_connect_app_logo_40@3x.png in Resources */,
 				1399FC2D217A0CD1009F926F /* red_X.png in Resources */,
+				130694BD220E40EC00D88A90 /* tabor_logo_test.jpg in Resources */,
 				13D389D720FC8E9F00330CDD /* UserDetailViewController.xib in Resources */,
 				13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */,
 				135EB209214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib in Resources */,
@@ -1407,6 +1446,7 @@
 				1399FC35217A0CD1009F926F /* red_J.png in Resources */,
 				13CD9F4A2166B82500EAFE3D /* govs_connect_app_logo_29@3x.png in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
+				137BD1E22210EF03008A501D /* MatchDirectionTableViewCell.xib in Resources */,
 				13EED9DC2136EA1D00427E5E /* GCLoginViewController.xib in Resources */,
 				13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */,
 				13CD9F462166B82500EAFE3D /* govs_connect_app_logo_1024@1x.png in Resources */,
@@ -1415,6 +1455,7 @@
 				1355B8B1217E9F29006E103D /* system_discover_food_dislike.png in Resources */,
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
 				1399FC23217A0CD1009F926F /* blue_O.png in Resources */,
+				137BD1D62210C11C008A501D /* MatchLocationTableViewCell.xib in Resources */,
 				1399FC1F217A0CD1009F926F /* blue_T.png in Resources */,
 				1396070F20F7E3210079CBC4 /* LookupViewController.xib in Resources */,
 				1399FC39217A0CD1009F926F /* blue_M.png in Resources */,
@@ -1433,6 +1474,7 @@
 				13F02C8B2162CCA600660E95 /* GoogleService-Info.plist in Resources */,
 				13CD9F412166B82500EAFE3D /* govs_connect_app_logo_40@1x.png in Resources */,
 				13EED9D62136121B00427E5E /* GCLoginRequireViewController.xib in Resources */,
+				130694B9220E27F000D88A90 /* tennis_test.png in Resources */,
 				132F818820C8DAB2005D3905 /* PostsViewController.xib in Resources */,
 				1399FC2C217A0CD1009F926F /* red_D.png in Resources */,
 				1399FC0D217A0CD1009F926F /* red_M.png in Resources */,
@@ -1619,6 +1661,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				137BD1DC2210E2FB008A501D /* GCColor.swift in Sources */,
+				137BD1DA2210CFFF008A501D /* GCAnimatedCell.swift in Sources */,
 				13C25663214C6BFC00EFCBCF /* Setting+CoreDataProperties.swift in Sources */,
 				1381C0F6211BFD360013BCF3 /* AppIOManager.swift in Sources */,
 				13E5DE26216FAE21007560C3 /* SportHomeHeadTableViewCell.swift in Sources */,
@@ -1662,11 +1706,13 @@
 				13F02C9221630F1500660E95 /* IsThisYouViewController.swift in Sources */,
 				1377AB6F214F4AAA0015172C /* SettingViewController.swift in Sources */,
 				13CF4ECB20F7C27E00DEE71A /* NotificationViewController.swift in Sources */,
+				137BD1E12210EF03008A501D /* MatchDirectionTableViewCell.swift in Sources */,
 				1377AB6C214EDA510015172C /* Event+CoreDataProperties.swift in Sources */,
 				130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */,
 				13E5DE30216FAEF5007560C3 /* SportClassifyTableViewCell.swift in Sources */,
 				BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */,
 				1390DA8F21681686004D1A50 /* ConnectClubTableViewCell.swift in Sources */,
+				130694C0220E788400D88A90 /* MatchDetailTableViewCell.swift in Sources */,
 				13DDA968216D054A00916139 /* String+Ext.swift in Sources */,
 				13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */,
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
@@ -1701,7 +1747,9 @@
 				13E5DE32216FAF11007560C3 /* SportDetailTableViewCell.swift in Sources */,
 				1377AB6B214EDA510015172C /* Event+CoreDataClass.swift in Sources */,
 				13C25679214E0F5F00EFCBCF /* Post+CoreDataClass.swift in Sources */,
+				137BD1D82210CBD5008A501D /* GCArtwork.swift in Sources */,
 				13D389D620FC8E9F00330CDD /* UserDetailViewController.swift in Sources */,
+				137BD1D52210C11C008A501D /* MatchLocationTableViewCell.swift in Sources */,
 				13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */,
 				13540E9721645ABE005204FC /* GCSportType.swift in Sources */,
 				13C2566C214C8BE500EFCBCF /* ImageData+CoreDataProperties.swift in Sources */,

@@ -136,6 +136,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        if AppIOManager.shared.deviceToken != nil && AppIOManager.shared.deviceToken! != ""{
+            AppIOManager.shared.createSession(with: AppIOManager.shared.deviceToken!)
+        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

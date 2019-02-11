@@ -27,7 +27,7 @@ class YouViewController: UIViewController {
         self.authorImageView.clipsToBounds = true
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "YOU_SETTING_TABLEVIEW_CELL")
         self.authorName.numberOfLines = 0
-        self.tableView.backgroundColor = APP_BACKGROUND_ULTRA_GREY
+        self.tableView.backgroundColor = APP_BACKGROUND_LIGHT_GREY
         self.tableView.delegate = self
         self.tableView.dataSource = self
         let tgr = UITapGestureRecognizer(target: self, action: #selector(self.goToMyProfile(_:)))

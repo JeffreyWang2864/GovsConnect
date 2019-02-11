@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BsD-1G-g73">
-                    <rect key="frame" x="0.0" y="47" width="375" height="620"/>
+                    <rect key="frame" x="0.0" y="40" width="375" height="627"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H50-pD-4E0">
                         <size key="itemSize" width="50" height="50"/>
@@ -31,24 +31,13 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="046-UL-wBe">
-                    <rect key="frame" x="143.5" y="22" width="88" height="23"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="23" id="f6M-zf-56F"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="BsD-1G-g73" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="JPY-eH-fqb"/>
                 <constraint firstItem="BsD-1G-g73" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bdR-2c-dUZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BsD-1G-g73" secondAttribute="bottom" id="cDB-yh-8FU"/>
-                <constraint firstItem="BsD-1G-g73" firstAttribute="top" secondItem="046-UL-wBe" secondAttribute="bottom" constant="2" id="hRt-92-6Ea"/>
-                <constraint firstItem="046-UL-wBe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ltB-iu-OE1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BsD-1G-g73" secondAttribute="trailing" id="sqM-HC-FAg"/>
-                <constraint firstItem="046-UL-wBe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="2" id="z24-Az-3pm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>

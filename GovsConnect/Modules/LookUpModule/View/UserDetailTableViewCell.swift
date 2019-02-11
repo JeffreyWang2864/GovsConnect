@@ -14,7 +14,7 @@ class UserDetailTableViewCell: UITableViewCell {
     @IBOutlet var fakeSeparator: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.fakeSeparator.backgroundColor = APP_BACKGROUND_ULTRA_GREY
+        self.fakeSeparator.backgroundColor = APP_BACKGROUND_LIGHT_GREY
         // Initialization code
         if PHONE_TYPE == .iphone5{
             self.titleTextView.font = UIFont.systemFont(ofSize: 12)

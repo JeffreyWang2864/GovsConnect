@@ -43,7 +43,7 @@ class RateYourFoodViewController: UIViewController{
         self.menuView.highlightColor = APP_THEME_COLOR
         self.menuView.delegate = self
         self.collectionView.register(UINib(nibName: "FoodCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "FOOD_COLLECTION_VIEW_CELL")
-        self.collectionView.backgroundColor = APP_BACKGROUND_ULTRA_GREY
+        self.collectionView.backgroundColor = APP_BACKGROUND_LIGHT_GREY
         self.collectionView.showsVerticalScrollIndicator = false
         self.collectionView.showsHorizontalScrollIndicator = false
         self.collectionView.isPagingEnabled = true
