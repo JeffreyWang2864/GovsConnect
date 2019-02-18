@@ -56,8 +56,8 @@ class WeekendDetailViewController: UIViewController {
         self.view.addGestureRecognizer(rsgr)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         self.removeEventFromView(animated: animated)
     }
     

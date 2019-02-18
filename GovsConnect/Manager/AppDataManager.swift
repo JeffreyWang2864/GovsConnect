@@ -16,9 +16,11 @@ class AppDataManager{
     var discoverData = Array<DiscoverItemDataContainer>()
     var discoverWeekendEventData = Array<Array<EventDataContainer>>()
     var discoverModifiedScheduleData = Array<EventDataContainer>()
+    var discoverModifiedScheduleTitle = String()
     var discoverMenuData = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
     var discoverLinksData = Array<DiscoverLinksDataCountainer>()
     var users = Dictionary<String, UserDataContainer>()
+    var sportsGameData = Array<Array<SportsGame>>()
     var newPostDraft: (String, String, Array<UIImage>)? = nil
     var currentPersonID = ""{
         didSet{
@@ -174,6 +176,14 @@ class AppDataManager{
             let whichDay = whichDayOfWeekend(event.startTime)
             AppDataManager.shared.discoverWeekendEventData[whichDay].append(event)
         }
+        
+        //fake game data
+        for _ in (0..<5){
+            self.sportsGameData.append(Array<SportsGame>())
+        }
+        self.sportsGameData[0].append(SportsGame.init(0, .hockey, .hockeyBV, Date.init(timeIntervalSinceNow: -200000), "The Governor's Academy", "Pingree School", 16, 3))
+        self.sportsGameData[1].append(SportsGame.init(1, .tennis, .tennisBV, Date.init(timeIntervalSinceNow: -100000), "The Governor's Academy", "Tabor Academy", 8, 7))
+        self.sportsGameData[1].append(SportsGame.init(2, .baseballSoftball, .baseballBV, Date.init(timeIntervalSinceNow: -50000), "Milton Academy", "The Governor's Academy", 16, 3))
     }
     
     private func loadCourseData(){
@@ -491,36 +501,6 @@ class DiscoverLinksDataCountainer{
         self.title = title
         self.description = description
         self.link = link
-    }
-}
-
-class DiscoverMatchDataContainer: NSObject {
-    let _uid: Int
-    let catagory: GCSportType
-    let team: GCSportTeamType
-    let startTime: Date
-    var isHome: Bool{
-        get{
-            return self.homeTeam == "The Governor's Academy"
-        }
-    }
-    let homeTeam: String
-    let awayTeam: String
-    let homeScore: Int
-    let awayScore: Int
-    var isUpdateComplete: Bool
-    init(_ _uid: Int, _ catagory: GCSportType, _ team: GCSportTeamType, _ startTime
-        : Date, _ homeTeam: String, _ awayTeam: String, _ homeScore: Int, _ awayScore: Int,
-                _ isUpdateComplete: Bool){
-        self._uid = _uid
-        self.catagory = catagory
-        self.team = team
-        self.startTime = startTime
-        self.homeTeam = homeTeam
-        self.awayTeam = awayTeam
-        self.homeScore = homeScore
-        self.awayScore = awayScore
-        self.isUpdateComplete = isUpdateComplete
     }
 }
 

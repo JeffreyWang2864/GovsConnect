@@ -11,7 +11,7 @@ import UIKit
 class MatchDirectionTableViewCell: UITableViewCell, GCAnimatedCell {
     @IBOutlet var directionButton: UIButton!
     
-    var data: UIColor?{
+    var data: SportsGame?{
         didSet{
             let firstLabel = UILabel()
             firstLabel.backgroundColor = UIColorFromRGB(rgbValue: 0x006FFF, alpha: 1.0)

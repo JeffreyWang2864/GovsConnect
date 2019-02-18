@@ -12,6 +12,7 @@ import SwiftyGif
 
 class ModifiedScheduleViewController: UIViewController {
     @IBOutlet var notifyMeButton: UIButton!
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     var alertRequest: UNNotificationRequest? = nil
     var timeStrokeView = UIView()
@@ -35,7 +36,7 @@ class ModifiedScheduleViewController: UIViewController {
         default:
             self.notifyMeButton.titleLabel!.font = UIFont.systemFont(ofSize: 15)
         }
-        self.navigationItem.title = dayStringFormat(Date(timeIntervalSinceNow: 0))
+        self.navigationItem.title = "Modified Schedule"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "system_reload"), style: .plain, target: self, action: #selector(self.didClickOnReload))
         self.tableView.register(UINib(nibName: "NewTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "NEW_TABLE_VIEW_CELL")
         self.tableView.separatorStyle = .none
@@ -44,10 +45,13 @@ class ModifiedScheduleViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimeStroke), userInfo: nil, repeats: true)
         self.initTimeStroke()
         self.loadScheduleToView(animated: true)
+        self.titleLabel.textColor = UIColor.black
+        self.titleLabel.text = AppDataManager.shared.discoverModifiedScheduleTitle
+        
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         self.removeEventFromView(animated: animated)
     }
     

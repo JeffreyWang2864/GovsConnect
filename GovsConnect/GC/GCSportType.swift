@@ -18,6 +18,7 @@ enum GCSportType : String{
     case lacrosse = "Lacrosse"
     case tennis = "Tennis"
     case other = "Other"
+    case `default` = "__default__"
 }
 //
 enum GCSportTeamType : String{

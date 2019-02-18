@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - CalendarDateRangePickerViewController (0.1.0)
   - CSV.swift (2.1.0)
   - FirebaseAnalytics (3.9.0):
     - FirebaseCore (~> 3.6)
@@ -37,6 +38,7 @@ PODS:
   - GTMSessionFetcher/Full (1.1.13):
     - GTMSessionFetcher/Core (= 1.1.13)
   - IQKeyboardManagerSwift (5.0.7)
+  - PinterestSegment (1.2.0)
   - ReachabilitySwift (4.1.0)
   - RSKImageCropper (2.0.0)
   - SwiftyGif (4.0.0)
@@ -46,9 +48,11 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CalendarDateRangePickerViewController
   - CSV.swift
   - Google/SignIn
   - IQKeyboardManagerSwift
+  - PinterestSegment
   - ReachabilitySwift
   - RSKImageCropper
   - SwiftyGif
@@ -59,6 +63,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - CalendarDateRangePickerViewController
     - CSV.swift
     - FirebaseAnalytics
     - FirebaseCore
@@ -69,6 +74,7 @@ SPEC REPOS:
     - GTMOAuth2
     - GTMSessionFetcher
     - IQKeyboardManagerSwift
+    - PinterestSegment
     - ReachabilitySwift
     - RSKImageCropper
     - SwiftyGif
@@ -78,6 +84,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  CalendarDateRangePickerViewController: 9e82a36a21ad7338f4e21a314469bfabe1f738fb
   CSV.swift: a24fb11c17875523783fe963592762ff163ef8ea
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
@@ -88,6 +95,7 @@ SPEC CHECKSUMS:
   GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
   GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
+  PinterestSegment: d589fce6c62141466b9f36ea8ab0a16fde9ac8f4
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   RSKImageCropper: d9a1acbc0600bf8decc8f0d21895872c99a9e4cf
   SwiftyGif: 14c0e2dddb1b51da4919b68f7ad97a1c45785460
@@ -95,6 +103,6 @@ SPEC CHECKSUMS:
   TBDropdownMenu: 249cd68a53289c32c600a292c568428d4f5cd613
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
 
-PODFILE CHECKSUM: 0fafa11fbee5cfdebed1091d07df4c4f66ed350f
+PODFILE CHECKSUM: 65c4909e4da01d92163916c1b5475a00227706a0
 
 COCOAPODS: 1.5.3

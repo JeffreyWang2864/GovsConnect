@@ -17,14 +17,14 @@ class MatchDetailTableViewCell: UITableViewCell, GCAnimatedCell {
     @IBOutlet var homeTeamScore: UILabel!
     @IBOutlet var awayTeamScore: UILabel!
     
-    var data: Int?{
+    var data: SportsGame?{
         didSet{
-            self.homeTeamIcon.image = UIImage.init(named: "governor_logo_test.jpg")
-            self.awayTeamIcon.image = UIImage.init(named: "tabor_logo_test.jpg")
-            self.homeTeamLabel.text = "The Governor's Academy"
-            self.awayTeamLabel.text = "Tabor Academy"
-            self.homeTeamScore.text = "88"
-            self.awayTeamScore.text = "12"
+            self.homeTeamIcon.image = UIImage.init(named: SPORTS_TEAM_ICON[self.data!.homeTeam]!)!
+            self.awayTeamIcon.image = UIImage.init(named: SPORTS_TEAM_ICON[self.data!.awayTeam]!)!
+            self.homeTeamLabel.text = self.data!.homeTeam
+            self.awayTeamLabel.text = self.data!.awayTeam
+            self.homeTeamScore.text = self.data!.homeScore == -1 ? "-" : "\(self.data!.homeScore)"
+            self.awayTeamScore.text = self.data!.awayScore == -1 ? "-" : "\(self.data!.awayScore)"
         }
     }
     override func awakeFromNib() {

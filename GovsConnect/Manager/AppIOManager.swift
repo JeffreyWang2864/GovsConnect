@@ -543,6 +543,9 @@ class AppIOManager{
                 let jsonDict = JSON(json)
                 var index = 0
                 AppDataManager.shared.discoverModifiedScheduleData = []
+                if jsonDict["modified_schedule"] != JSON.null{
+                    AppDataManager.shared.discoverModifiedScheduleTitle = jsonDict["modified_schedule"].stringValue
+                }
                 while(jsonDict["\(index)"] != JSON.null){
                     let data = jsonDict["\(index)"]
                     let start_time_interval = data["start_time"].intValue - secondsFromGMT

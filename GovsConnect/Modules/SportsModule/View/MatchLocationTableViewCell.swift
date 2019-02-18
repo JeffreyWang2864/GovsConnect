@@ -14,12 +14,12 @@ class MatchLocationTableViewCell: UITableViewCell, GCAnimatedCell {
     var artwork: GCArtwork?
     @IBOutlet var resetMapViewButton: UIButton!
     
-    var data: UIColor?{
+    var data: SportsGame?{
         didSet{
-            let govsLocation = CLLocation(latitude: 42.750087300000004, longitude: -70.9022764416293)
-            let govsCoordRegion = MKCoordinateRegionMakeWithDistance(govsLocation.coordinate, 1000, 1000)
-            self.mapView.setRegion(govsCoordRegion, animated: false)
-            self.artwork = GCArtwork.init("The Governor's Academy", "school", govsLocation.coordinate)
+            let location = SPORTS_LOCATION[self.data!.homeTeam]!
+            let coordRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
+            self.mapView.setRegion(coordRegion, animated: false)
+            self.artwork = GCArtwork.init(self.data!.homeTeam, "school", location.coordinate)
             self.mapView.addAnnotation(self.artwork!)
             self.resetMapViewButton.backgroundColor = UIColorFromRGB(rgbValue: 0x006FFF, alpha: 1.0)
         }

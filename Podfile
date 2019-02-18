@@ -12,6 +12,8 @@ target 'GovsConnect' do
   pod 'Google/SignIn'
   pod 'CSV.swift'
   pod 'SwiftyGif'
+  pod 'PinterestSegment'
+  pod 'CalendarDateRangePickerViewController'
 end
 
 target 'ScheduleWidget' do

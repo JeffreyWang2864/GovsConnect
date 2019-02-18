@@ -26,6 +26,7 @@
 		13117B7A20F7454600E4CD66 /* testing_food_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 13117B7620F7454600E4CD66 /* testing_food_7.jpeg */; };
 		13117B7B20F7454600E4CD66 /* testing_food_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13117B7720F7454600E4CD66 /* testing_food_4.jpg */; };
 		1316FD92220144770036373B /* govs-connect-menu-tutorial.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1316FD91220144770036373B /* govs-connect-menu-tutorial.gif */; };
+		131AFCC7221477A800186C62 /* SportsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131AFCC6221477A800186C62 /* SportsPanelView.swift */; };
 		1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */; };
 		1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */; };
 		1327C1A820CE497A001A300A /* system_reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A720CE497A001A300A /* system_reply.png */; };
@@ -55,6 +56,8 @@
 		133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */; };
 		133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */; };
 		134C194621FA4CE700469E3C /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C194421FA4CE700469E3C /* NewTableViewCell.swift */; };
+		134EA0FC221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134EA0FA221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.swift */; };
+		134EA0FD221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134EA0FB221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.xib */; };
 		13540E9721645ABE005204FC /* GCSportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9621645ABE005204FC /* GCSportType.swift */; };
 		13540E99216673A3005204FC /* system_discover_links.png in Resources */ = {isa = PBXBuildFile; fileRef = 13540E98216673A3005204FC /* system_discover_links.png */; };
 		13540E9C216673D6005204FC /* LinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9A216673D6005204FC /* LinksViewController.swift */; };
@@ -81,6 +84,11 @@
 		135EB208214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EB206214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift */; };
 		135EB209214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135EB207214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib */; };
 		13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */; };
+		136E0C3622172338003F475D /* pingree_logo_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 136E0C3522172338003F475D /* pingree_logo_test.jpg */; };
+		136E0C382217248A003F475D /* hockey_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 136E0C372217248A003F475D /* hockey_test.png */; };
+		136E0C3B22173EBF003F475D /* MatchNoDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136E0C3922173EBF003F475D /* MatchNoDataCollectionViewCell.swift */; };
+		136E0C3C22173EBF003F475D /* MatchNoDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136E0C3A22173EBF003F475D /* MatchNoDataCollectionViewCell.xib */; };
+		136E0C3E221745FE003F475D /* system_cry_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 136E0C3D221745FE003F475D /* system_cry_face.png */; };
 		1377AB6B214EDA510015172C /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB69214EDA510015172C /* Event+CoreDataClass.swift */; };
 		1377AB6C214EDA510015172C /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB6A214EDA510015172C /* Event+CoreDataProperties.swift */; };
 		1377AB6F214F4AAA0015172C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377AB6D214F4AAA0015172C /* SettingViewController.swift */; };
@@ -101,6 +109,12 @@
 		137EEBA420E7781200BA2575 /* testing_picture_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 137EEBA120E7781100BA2575 /* testing_picture_4.jpg */; };
 		137EEBA520E7781200BA2575 /* testing_picture_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 137EEBA220E7781200BA2575 /* testing_picture_6.jpg */; };
 		1381C0F6211BFD360013BCF3 /* AppIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1381C0F5211BFD360013BCF3 /* AppIOManager.swift */; };
+		138347F2221128C1005A3C67 /* SportsGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138347F1221128C1005A3C67 /* SportsGame.swift */; };
+		138347F422112928005A3C67 /* SportsGameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138347F322112928005A3C67 /* SportsGameResult.swift */; };
+		138347F622112D32005A3C67 /* SportsGameStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138347F522112D32005A3C67 /* SportsGameStyle.swift */; };
+		138347F8221131F8005A3C67 /* milton_logo_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 138347F7221131F8005A3C67 /* milton_logo_test.jpg */; };
+		138347FA2211326B005A3C67 /* GCSportsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138347F92211326B005A3C67 /* GCSportsDictionary.swift */; };
+		138347FC2211398A005A3C67 /* baseball_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 138347FB2211398A005A3C67 /* baseball_test.png */; };
 		138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D166A20D16D36005F3425 /* MultiMediaCollectionViewCell.swift */; };
 		138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */; };
 		138FEEDE20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FEEDC20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift */; };
@@ -183,6 +197,11 @@
 		139EDF7720EC7FA400778CFD /* RateYourFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */; };
 		139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EDF7820EC87A700778CFD /* EventDetailViewController.swift */; };
 		139EDF7B20EC87A700778CFD /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7920EC87A700778CFD /* EventDetailViewController.xib */; };
+		13A6BA93221A0C9000E6D28A /* system_sports_see_result.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A6BA8F221A0C8F00E6D28A /* system_sports_see_result.png */; };
+		13A6BA94221A0C9000E6D28A /* system_sports_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A6BA90221A0C8F00E6D28A /* system_sports_video.png */; };
+		13A6BA95221A0C9000E6D28A /* system_sports_browse_by_category.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A6BA91221A0C8F00E6D28A /* system_sports_browse_by_category.png */; };
+		13A6BA96221A0C9000E6D28A /* system_sports_select_date.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A6BA92221A0C9000E6D28A /* system_sports_select_date.png */; };
+		13A6BA9A221A12CD00E6D28A /* GCCenteredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A6BA99221A12CD00E6D28A /* GCCenteredButton.swift */; };
 		13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7801220EF690E00926139 /* GCOptionsTableView.swift */; };
 		13ABADDA21FA520A00885398 /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134C194521FA4CE700469E3C /* NewTableViewCell.xib */; };
 		13ABADDC21FABF3000885398 /* govs-connect-widget-tutorial.gif in Resources */ = {isa = PBXBuildFile; fileRef = 13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */; };
@@ -241,16 +260,6 @@
 		13DDA968216D054A00916139 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DDA967216D054A00916139 /* String+Ext.swift */; };
 		13DDA96B216D06C300916139 /* NewUserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DDA969216D06C300916139 /* NewUserDetailTableViewCell.swift */; };
 		13DDA96C216D06C300916139 /* NewUserDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DDA96A216D06C300916139 /* NewUserDetailTableViewCell.xib */; };
-		13E5DE20216FA78F007560C3 /* SportHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE1F216FA78F007560C3 /* SportHomeViewController.swift */; };
-		13E5DE22216FA7C6007560C3 /* SportClassifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE21216FA7C6007560C3 /* SportClassifyViewController.swift */; };
-		13E5DE24216FA7E2007560C3 /* SportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE23216FA7E2007560C3 /* SportDetailViewController.swift */; };
-		13E5DE26216FAE21007560C3 /* SportHomeHeadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE25216FAE21007560C3 /* SportHomeHeadTableViewCell.swift */; };
-		13E5DE28216FAE44007560C3 /* SportHomeHeadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE27216FAE44007560C3 /* SportHomeHeadCollectionViewCell.swift */; };
-		13E5DE2A216FAE85007560C3 /* SportHomeGridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE29216FAE85007560C3 /* SportHomeGridTableViewCell.swift */; };
-		13E5DE2C216FAEAA007560C3 /* SportHomeGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE2B216FAEAA007560C3 /* SportHomeGridCollectionViewCell.swift */; };
-		13E5DE2E216FAED5007560C3 /* SportHomeHeadBrowseAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE2D216FAED5007560C3 /* SportHomeHeadBrowseAllCell.swift */; };
-		13E5DE30216FAEF5007560C3 /* SportClassifyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE2F216FAEF5007560C3 /* SportClassifyTableViewCell.swift */; };
-		13E5DE32216FAF11007560C3 /* SportDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E5DE31216FAF11007560C3 /* SportDetailTableViewCell.swift */; };
 		13E5DE36216FFB51007560C3 /* system_discover_sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E5DE35216FFB51007560C3 /* system_discover_sports.png */; };
 		13E6740321F94F32005B4BB6 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E6740221F94F32005B4BB6 /* NotificationCenter.framework */; };
 		13E6740621F94F32005B4BB6 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6740521F94F32005B4BB6 /* TodayViewController.swift */; };
@@ -338,6 +347,7 @@
 		13117B7620F7454600E4CD66 /* testing_food_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_7.jpeg; sourceTree = "<group>"; };
 		13117B7720F7454600E4CD66 /* testing_food_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_4.jpg; sourceTree = "<group>"; };
 		1316FD91220144770036373B /* govs-connect-menu-tutorial.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "govs-connect-menu-tutorial.gif"; sourceTree = "<group>"; };
+		131AFCC6221477A800186C62 /* SportsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsPanelView.swift; sourceTree = "<group>"; };
 		1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_jzm.png; sourceTree = "<group>"; };
 		1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_dt.png; sourceTree = "<group>"; };
 		1327C1A720CE497A001A300A /* system_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_reply.png; sourceTree = "<group>"; };
@@ -370,6 +380,8 @@
 		133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		134C194421FA4CE700469E3C /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
 		134C194521FA4CE700469E3C /* NewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
+		134EA0FA221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchBrowseByDateViewController.swift; sourceTree = "<group>"; };
+		134EA0FB221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchBrowseByDateViewController.xib; sourceTree = "<group>"; };
 		13540E9621645ABE005204FC /* GCSportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSportType.swift; sourceTree = "<group>"; };
 		13540E98216673A3005204FC /* system_discover_links.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_links.png; sourceTree = "<group>"; };
 		13540E9A216673D6005204FC /* LinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewController.swift; sourceTree = "<group>"; };
@@ -396,6 +408,11 @@
 		135EB206214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		135EB207214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageNotificationTableViewCell.xib; sourceTree = "<group>"; };
 		13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_7.jpg; sourceTree = "<group>"; };
+		136E0C3522172338003F475D /* pingree_logo_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pingree_logo_test.jpg; sourceTree = "<group>"; };
+		136E0C372217248A003F475D /* hockey_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hockey_test.png; sourceTree = "<group>"; };
+		136E0C3922173EBF003F475D /* MatchNoDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchNoDataCollectionViewCell.swift; sourceTree = "<group>"; };
+		136E0C3A22173EBF003F475D /* MatchNoDataCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchNoDataCollectionViewCell.xib; sourceTree = "<group>"; };
+		136E0C3D221745FE003F475D /* system_cry_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_cry_face.png; sourceTree = "<group>"; };
 		1377AB69214EDA510015172C /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1377AB6A214EDA510015172C /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1377AB6D214F4AAA0015172C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -416,6 +433,12 @@
 		137EEBA120E7781100BA2575 /* testing_picture_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_4.jpg; sourceTree = "<group>"; };
 		137EEBA220E7781200BA2575 /* testing_picture_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_6.jpg; sourceTree = "<group>"; };
 		1381C0F5211BFD360013BCF3 /* AppIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIOManager.swift; sourceTree = "<group>"; };
+		138347F1221128C1005A3C67 /* SportsGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsGame.swift; sourceTree = "<group>"; };
+		138347F322112928005A3C67 /* SportsGameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsGameResult.swift; sourceTree = "<group>"; };
+		138347F522112D32005A3C67 /* SportsGameStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsGameStyle.swift; sourceTree = "<group>"; };
+		138347F7221131F8005A3C67 /* milton_logo_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = milton_logo_test.jpg; sourceTree = "<group>"; };
+		138347F92211326B005A3C67 /* GCSportsDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSportsDictionary.swift; sourceTree = "<group>"; };
+		138347FB2211398A005A3C67 /* baseball_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baseball_test.png; sourceTree = "<group>"; };
 		138D166A20D16D36005F3425 /* MultiMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiMediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		138D166B20D16D36005F3425 /* MultiMediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiMediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		138FEEDC20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseDescriptionTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/CourseDescriptionTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -498,6 +521,11 @@
 		139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateYourFoodViewController.xib; sourceTree = "<group>"; };
 		139EDF7820EC87A700778CFD /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		139EDF7920EC87A700778CFD /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
+		13A6BA8F221A0C8F00E6D28A /* system_sports_see_result.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_sports_see_result.png; sourceTree = "<group>"; };
+		13A6BA90221A0C8F00E6D28A /* system_sports_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_sports_video.png; sourceTree = "<group>"; };
+		13A6BA91221A0C8F00E6D28A /* system_sports_browse_by_category.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_sports_browse_by_category.png; sourceTree = "<group>"; };
+		13A6BA92221A0C9000E6D28A /* system_sports_select_date.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_sports_select_date.png; sourceTree = "<group>"; };
+		13A6BA99221A12CD00E6D28A /* GCCenteredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCCenteredButton.swift; sourceTree = "<group>"; };
 		13A7801220EF690E00926139 /* GCOptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCOptionsTableView.swift; sourceTree = "<group>"; };
 		13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "govs-connect-widget-tutorial.gif"; sourceTree = "<group>"; };
 		13ADC69D20F32A4300AECFFA /* GovsConnect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GovsConnect.entitlements; sourceTree = "<group>"; };
@@ -557,16 +585,6 @@
 		13DDA967216D054A00916139 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		13DDA969216D06C300916139 /* NewUserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserDetailTableViewCell.swift; sourceTree = "<group>"; };
 		13DDA96A216D06C300916139 /* NewUserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewUserDetailTableViewCell.xib; sourceTree = "<group>"; };
-		13E5DE1F216FA78F007560C3 /* SportHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportHomeViewController.swift; sourceTree = "<group>"; };
-		13E5DE21216FA7C6007560C3 /* SportClassifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportClassifyViewController.swift; sourceTree = "<group>"; };
-		13E5DE23216FA7E2007560C3 /* SportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportDetailViewController.swift; sourceTree = "<group>"; };
-		13E5DE25216FAE21007560C3 /* SportHomeHeadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportHomeHeadTableViewCell.swift; sourceTree = "<group>"; };
-		13E5DE27216FAE44007560C3 /* SportHomeHeadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportHomeHeadCollectionViewCell.swift; sourceTree = "<group>"; };
-		13E5DE29216FAE85007560C3 /* SportHomeGridTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportHomeGridTableViewCell.swift; sourceTree = "<group>"; };
-		13E5DE2B216FAEAA007560C3 /* SportHomeGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportHomeGridCollectionViewCell.swift; sourceTree = "<group>"; };
-		13E5DE2D216FAED5007560C3 /* SportHomeHeadBrowseAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportHomeHeadBrowseAllCell.swift; sourceTree = "<group>"; };
-		13E5DE2F216FAEF5007560C3 /* SportClassifyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportClassifyTableViewCell.swift; sourceTree = "<group>"; };
-		13E5DE31216FAF11007560C3 /* SportDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportDetailTableViewCell.swift; sourceTree = "<group>"; };
 		13E5DE35216FFB51007560C3 /* system_discover_sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_sports.png; sourceTree = "<group>"; };
 		13E6740121F94F32005B4BB6 /* ScheduleWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScheduleWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E6740221F94F32005B4BB6 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -645,13 +663,6 @@
 				13540E9F21667524005204FC /* LinksCollectionViewCell.xib */,
 				13CD9F202166935600EAFE3D /* LinksTableViewCell.swift */,
 				13CD9F212166935600EAFE3D /* LinksTableViewCell.xib */,
-				13E5DE25216FAE21007560C3 /* SportHomeHeadTableViewCell.swift */,
-				13E5DE27216FAE44007560C3 /* SportHomeHeadCollectionViewCell.swift */,
-				13E5DE29216FAE85007560C3 /* SportHomeGridTableViewCell.swift */,
-				13E5DE2B216FAEAA007560C3 /* SportHomeGridCollectionViewCell.swift */,
-				13E5DE2D216FAED5007560C3 /* SportHomeHeadBrowseAllCell.swift */,
-				13E5DE2F216FAEF5007560C3 /* SportClassifyTableViewCell.swift */,
-				13E5DE31216FAF11007560C3 /* SportDetailTableViewCell.swift */,
 				1355B8AA217E930D006E103D /* NewFoodTableViewCell.swift */,
 				1355B8AB217E930D006E103D /* NewFoodTableViewCell.xib */,
 			);
@@ -736,6 +747,10 @@
 		132F819420C90DC1005D3905 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				136E0C372217248A003F475D /* hockey_test.png */,
+				136E0C3522172338003F475D /* pingree_logo_test.jpg */,
+				138347FB2211398A005A3C67 /* baseball_test.png */,
+				138347F7221131F8005A3C67 /* milton_logo_test.jpg */,
 				130694BA220E40E200D88A90 /* governor_logo_test.jpg */,
 				130694B8220E27EF00D88A90 /* tennis_test.png */,
 				1316FD91220144770036373B /* govs-connect-menu-tutorial.gif */,
@@ -796,6 +811,9 @@
 		138FC0D12204ED4200429B70 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				138347F1221128C1005A3C67 /* SportsGame.swift */,
+				138347F322112928005A3C67 /* SportsGameResult.swift */,
+				138347F522112D32005A3C67 /* SportsGameStyle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -811,6 +829,11 @@
 				137BD1D42210C11C008A501D /* MatchLocationTableViewCell.xib */,
 				137BD1DF2210EF03008A501D /* MatchDirectionTableViewCell.swift */,
 				137BD1E02210EF03008A501D /* MatchDirectionTableViewCell.xib */,
+				131AFCC6221477A800186C62 /* SportsPanelView.swift */,
+				136E0C3922173EBF003F475D /* MatchNoDataCollectionViewCell.swift */,
+				136E0C3A22173EBF003F475D /* MatchNoDataCollectionViewCell.xib */,
+				134EA0FA221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.swift */,
+				134EA0FB221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -827,6 +850,11 @@
 		13961E0C20CA772F004FFF4B /* System */ = {
 			isa = PBXGroup;
 			children = (
+				13A6BA91221A0C8F00E6D28A /* system_sports_browse_by_category.png */,
+				13A6BA8F221A0C8F00E6D28A /* system_sports_see_result.png */,
+				13A6BA92221A0C9000E6D28A /* system_sports_select_date.png */,
+				13A6BA90221A0C8F00E6D28A /* system_sports_video.png */,
+				136E0C3D221745FE003F475D /* system_cry_face.png */,
 				13BA25EB220BBF50003502E1 /* system_youtube_icon.png */,
 				1355B8AF217E9F29006E103D /* system_discover_food_dislike.png */,
 				1355B8AE217E9F28006E103D /* system_discover_food_like.png */,
@@ -998,6 +1026,8 @@
 				137BD1D72210CBD5008A501D /* GCArtwork.swift */,
 				137BD1D92210CFFF008A501D /* GCAnimatedCell.swift */,
 				137BD1DB2210E2FB008A501D /* GCColor.swift */,
+				138347F92211326B005A3C67 /* GCSportsDictionary.swift */,
+				13A6BA99221A12CD00E6D28A /* GCCenteredButton.swift */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -1216,9 +1246,6 @@
 				139EDF7920EC87A700778CFD /* EventDetailViewController.xib */,
 				13540E9A216673D6005204FC /* LinksViewController.swift */,
 				13540E9B216673D6005204FC /* LinksViewController.xib */,
-				13E5DE1F216FA78F007560C3 /* SportHomeViewController.swift */,
-				13E5DE21216FA7C6007560C3 /* SportClassifyViewController.swift */,
-				13E5DE23216FA7E2007560C3 /* SportDetailViewController.swift */,
 				1355B8A6217E92ED006E103D /* NewFoodViewController.swift */,
 				1355B8A7217E92ED006E103D /* NewFoodViewController.xib */,
 				135E830721F77090009DCCA1 /* ModifiedScheduleViewController.swift */,
@@ -1377,6 +1404,7 @@
 				1399FC17217A0CD1009F926F /* red_O.png in Resources */,
 				1399FC0F217A0CD1009F926F /* blue_Q.png in Resources */,
 				13540E9D216673D6005204FC /* LinksViewController.xib in Resources */,
+				134EA0FD221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.xib in Resources */,
 				1399FC3D217A0CD1009F926F /* blue_P.png in Resources */,
 				1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */,
 				13117B7820F7454600E4CD66 /* testing_food_6.jpeg in Resources */,
@@ -1387,6 +1415,7 @@
 				139A0BF02207920500557DCC /* SportsViewController.xib in Resources */,
 				13961E1420CA7766004FFF4B /* system_liked.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
+				138347F8221131F8005A3C67 /* milton_logo_test.jpg in Resources */,
 				139EDF7B20EC87A700778CFD /* EventDetailViewController.xib in Resources */,
 				132F817520C8C77C005D3905 /* LaunchScreen.storyboard in Resources */,
 				1399FC2F217A0CD1009F926F /* blue_C.png in Resources */,
@@ -1400,6 +1429,7 @@
 				13321FBE20CFDB7F000B6C41 /* testing_picture_3.jpg in Resources */,
 				13961E1820CA7766004FFF4B /* system_share.png in Resources */,
 				1327C1A820CE497A001A300A /* system_reply.png in Resources */,
+				136E0C382217248A003F475D /* hockey_test.png in Resources */,
 				1399FC21217A0CD1009F926F /* red_H.png in Resources */,
 				1399FC2E217A0CD1009F926F /* blue_R.png in Resources */,
 				13ABADDC21FABF3000885398 /* govs-connect-widget-tutorial.gif in Resources */,
@@ -1411,8 +1441,10 @@
 				1399FC3C217A0CD1009F926F /* red_F.png in Resources */,
 				13C5EA0A20F8A143000DC504 /* PersonTableViewCell.xib in Resources */,
 				13CD9F3F2166B82500EAFE3D /* govs_connect_app_logo_76@2x.png in Resources */,
+				136E0C3E221745FE003F475D /* system_cry_face.png in Resources */,
 				1399FC11217A0CD1009F926F /* red_N.png in Resources */,
 				13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */,
+				13A6BA96221A0C9000E6D28A /* system_sports_select_date.png in Resources */,
 				137EEBA520E7781200BA2575 /* testing_picture_6.jpg in Resources */,
 				133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */,
 				139EDF7720EC7FA400778CFD /* RateYourFoodViewController.xib in Resources */,
@@ -1447,6 +1479,7 @@
 				13CD9F4A2166B82500EAFE3D /* govs_connect_app_logo_29@3x.png in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
 				137BD1E22210EF03008A501D /* MatchDirectionTableViewCell.xib in Resources */,
+				138347FC2211398A005A3C67 /* baseball_test.png in Resources */,
 				13EED9DC2136EA1D00427E5E /* GCLoginViewController.xib in Resources */,
 				13F4094A20CCE03700645880 /* PostsDetailReplyTableViewCell.xib in Resources */,
 				13CD9F462166B82500EAFE3D /* govs_connect_app_logo_1024@1x.png in Resources */,
@@ -1454,6 +1487,7 @@
 				1399FC14217A0CD1009F926F /* blue_S.png in Resources */,
 				1355B8B1217E9F29006E103D /* system_discover_food_dislike.png in Resources */,
 				13F4094C20CCF2A200645880 /* system_send.png in Resources */,
+				136E0C3C22173EBF003F475D /* MatchNoDataCollectionViewCell.xib in Resources */,
 				1399FC23217A0CD1009F926F /* blue_O.png in Resources */,
 				137BD1D62210C11C008A501D /* MatchLocationTableViewCell.xib in Resources */,
 				1399FC1F217A0CD1009F926F /* blue_T.png in Resources */,
@@ -1480,6 +1514,7 @@
 				1399FC0D217A0CD1009F926F /* red_M.png in Resources */,
 				132F819E20C90DD0005D3905 /* numberthree.png in Resources */,
 				1399FC1B217A0CD1009F926F /* red_U.png in Resources */,
+				136E0C3622172338003F475D /* pingree_logo_test.jpg in Resources */,
 				13961E1720CA7766004FFF4B /* system_view.png in Resources */,
 				13CD9F4C2166B82500EAFE3D /* govs_connect_app_logo_20@1x.png in Resources */,
 				132F819B20C90DD0005D3905 /* numberone.png in Resources */,
@@ -1514,6 +1549,7 @@
 				BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */,
 				1399FC27217A0CD1009F926F /* red_P.png in Resources */,
 				1399FC0C217A0CD1009F926F /* blue_N.png in Resources */,
+				13A6BA93221A0C9000E6D28A /* system_sports_see_result.png in Resources */,
 				13CFAE5121F7F2FD006C790C /* testing_picture_10.png in Resources */,
 				138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */,
 				1399FC31217A0CD1009F926F /* blue_F.png in Resources */,
@@ -1541,6 +1577,8 @@
 				1399FC1A217A0CD1009F926F /* blue_J.png in Resources */,
 				13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */,
 				1399FC15217A0CD1009F926F /* red_I.png in Resources */,
+				13A6BA95221A0C9000E6D28A /* system_sports_browse_by_category.png in Resources */,
+				13A6BA94221A0C9000E6D28A /* system_sports_video.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1565,10 +1603,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
+				"${BUILT_PRODUCTS_DIR}/CalendarDateRangePickerViewController/CalendarDateRangePickerViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PinterestSegment/PinterestSegment.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
@@ -1580,10 +1620,12 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CalendarDateRangePickerViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinterestSegment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
@@ -1662,11 +1704,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				137BD1DC2210E2FB008A501D /* GCColor.swift in Sources */,
+				136E0C3B22173EBF003F475D /* MatchNoDataCollectionViewCell.swift in Sources */,
 				137BD1DA2210CFFF008A501D /* GCAnimatedCell.swift in Sources */,
 				13C25663214C6BFC00EFCBCF /* Setting+CoreDataProperties.swift in Sources */,
 				1381C0F6211BFD360013BCF3 /* AppIOManager.swift in Sources */,
-				13E5DE26216FAE21007560C3 /* SportHomeHeadTableViewCell.swift in Sources */,
-				13E5DE24216FA7E2007560C3 /* SportDetailViewController.swift in Sources */,
 				13CD9F2C2166B37700EAFE3D /* AboutGovsConnectViewController.swift in Sources */,
 				13C2565B214C653F00EFCBCF /* GovsConnect.xcdatamodeld in Sources */,
 				13F805C8213B469C00AE93F0 /* NewEditProfileViewController.swift in Sources */,
@@ -1676,14 +1717,12 @@
 				13EED9D52136121B00427E5E /* GCLoginRequireViewController.swift in Sources */,
 				13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */,
 				13C2566E214C8BE500EFCBCF /* ProfileImageData+CoreDataProperties.swift in Sources */,
-				13E5DE28216FAE44007560C3 /* SportHomeHeadCollectionViewCell.swift in Sources */,
 				13C2565D214C68F700EFCBCF /* AppPersistenceManager.swift in Sources */,
 				13F02C8E2162DB4500660E95 /* GCGoogleLoginViewController.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
 				13540EA021667524005204FC /* LinksCollectionViewCell.swift in Sources */,
 				132F818720C8DAB2005D3905 /* PostsViewController.swift in Sources */,
 				13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */,
-				13E5DE2A216FAE85007560C3 /* SportHomeGridTableViewCell.swift in Sources */,
 				130E677920F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift in Sources */,
 				1356C4DC210599D7000C3BF5 /* EditProfileViewController.swift in Sources */,
 				13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */,
@@ -1691,6 +1730,7 @@
 				13C25673214DE2AC00EFCBCF /* Comment+CoreDataClass.swift in Sources */,
 				13C2567A214E0F5F00EFCBCF /* Post+CoreDataProperties.swift in Sources */,
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
+				134EA0FC221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.swift in Sources */,
 				13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */,
 				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
 				1355B8AC217E930D006E103D /* NewFoodTableViewCell.swift in Sources */,
@@ -1698,18 +1738,20 @@
 				133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */,
 				13D389E220FDD62000330CDD /* UserDetailTableViewCell.swift in Sources */,
 				13540EA321667720005204FC /* GCLinkType.swift in Sources */,
-				13E5DE2E216FAED5007560C3 /* SportHomeHeadBrowseAllCell.swift in Sources */,
 				132F817E20C8C952005D3905 /* WelcomeViewController.swift in Sources */,
 				13C5EA0920F8A143000DC504 /* PersonTableViewCell.swift in Sources */,
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
 				132F81A620C91FB9005D3905 /* PostsTableViewCell.swift in Sources */,
 				13F02C9221630F1500660E95 /* IsThisYouViewController.swift in Sources */,
 				1377AB6F214F4AAA0015172C /* SettingViewController.swift in Sources */,
+				131AFCC7221477A800186C62 /* SportsPanelView.swift in Sources */,
 				13CF4ECB20F7C27E00DEE71A /* NotificationViewController.swift in Sources */,
+				138347F2221128C1005A3C67 /* SportsGame.swift in Sources */,
+				138347FA2211326B005A3C67 /* GCSportsDictionary.swift in Sources */,
+				138347F622112D32005A3C67 /* SportsGameStyle.swift in Sources */,
 				137BD1E12210EF03008A501D /* MatchDirectionTableViewCell.swift in Sources */,
 				1377AB6C214EDA510015172C /* Event+CoreDataProperties.swift in Sources */,
 				130087A120E9DEF800FD9E18 /* WeekendDetailViewController.swift in Sources */,
-				13E5DE30216FAEF5007560C3 /* SportClassifyTableViewCell.swift in Sources */,
 				BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */,
 				1390DA8F21681686004D1A50 /* ConnectClubTableViewCell.swift in Sources */,
 				130694C0220E788400D88A90 /* MatchDetailTableViewCell.swift in Sources */,
@@ -1718,13 +1760,13 @@
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
 				139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */,
+				13A6BA9A221A12CD00E6D28A /* GCCenteredButton.swift in Sources */,
 				13007BB9216C189900ECB59F /* BottomActionTableViewCell.swift in Sources */,
 				139A0BEF2207920500557DCC /* SportsViewController.swift in Sources */,
 				1377AB73214F4CE20015172C /* GCButtonTableViewCell.swift in Sources */,
 				13C25664214C6BFC00EFCBCF /* Setting+CoreDataClass.swift in Sources */,
 				BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */,
 				1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */,
-				13E5DE20216FA78F007560C3 /* SportHomeViewController.swift in Sources */,
 				13961E2020CAB151004FFF4B /* defines.swift in Sources */,
 				13EED9DB2136EA1D00427E5E /* GCLoginViewController.swift in Sources */,
 				139A0BF32207927000557DCC /* MatchCardCollectionViewCell.swift in Sources */,
@@ -1742,9 +1784,8 @@
 				138FEEDE20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.swift in Sources */,
 				135EB208214B07C0005F8BD9 /* MessageNotificationTableViewCell.swift in Sources */,
 				139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */,
-				13E5DE2C216FAEAA007560C3 /* SportHomeGridCollectionViewCell.swift in Sources */,
 				BC1490EC20DA240100373BBF /* GCNavigationViewController.swift in Sources */,
-				13E5DE32216FAF11007560C3 /* SportDetailTableViewCell.swift in Sources */,
+				138347F422112928005A3C67 /* SportsGameResult.swift in Sources */,
 				1377AB6B214EDA510015172C /* Event+CoreDataClass.swift in Sources */,
 				13C25679214E0F5F00EFCBCF /* Post+CoreDataClass.swift in Sources */,
 				137BD1D82210CBD5008A501D /* GCArtwork.swift in Sources */,
@@ -1754,7 +1795,6 @@
 				13540E9721645ABE005204FC /* GCSportType.swift in Sources */,
 				13C2566C214C8BE500EFCBCF /* ImageData+CoreDataProperties.swift in Sources */,
 				13C2566D214C8BE500EFCBCF /* ProfileImageData+CoreDataClass.swift in Sources */,
-				13E5DE22216FA7C6007560C3 /* SportClassifyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
