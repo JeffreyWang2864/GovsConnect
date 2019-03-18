@@ -23,7 +23,7 @@ let APP_BACKGROUND_ULTRA_GREY = UIColorFromRGB(rgbValue: 0xFAF9FF, alpha: 1.0)
 
 let APP_SERVER_URL_STR = "https://govs.app"
 
-let APP_CURRENT_VERSION = "1.2.5"
+let APP_CURRENT_VERSION = "1.3.0"
 
 let PREDICATE_NAME_CONTAIN = "name contains[c] %@"
 
