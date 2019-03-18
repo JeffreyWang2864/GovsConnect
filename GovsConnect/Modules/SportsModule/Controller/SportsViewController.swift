@@ -191,9 +191,9 @@ extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         var factor: CGFloat = 0.5
         if velocity.x < 0 {
             factor = -factor
-            print("right")
+            //print("right")
         } else {
-            print("left")
+            //print("left")
         }
         
         let a:CGFloat = scrollView.contentOffset.x/pageWidth
@@ -204,23 +204,33 @@ extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if index > AppDataManager.shared.sportsGameData[self.dateSegmentView!.selectIndex].count - 1 {
             index = AppDataManager.shared.sportsGameData[self.dateSegmentView!.selectIndex].count - 1
         }
-        let indexPath = IndexPath(row: index, section: 0)
-        self.collectionViewCurrentSelection = index
-        collectionView?.scrollToItem(at: indexPath, at: .left, animated: true)
-        let dragSignViewColor = SPORTS_TYPE_COLOR[AppDataManager.shared.sportsGameData[self.dateSegmentView!.selectIndex][index].catagory]!
-        UIView.animate(withDuration: 0.3){
-            self.dragSignView.backgroundColor = dragSignViewColor
+        if self.collectionViewCurrentSelection != index{
+            print("new page")
+            let oldIndexPath = IndexPath(row: self.collectionViewCurrentSelection, section: 0)
+            let newIndexPath = IndexPath(row: index, section: 0)
+            let oldCell = self.collectionView.cellForItem(at: oldIndexPath) as! GCAnimatedCell
+            let newCell = self.collectionView.cellForItem(at: newIndexPath) as! GCAnimatedCell
+            self.collectionViewCurrentSelection = index
+            collectionView!.scrollToItem(at: newIndexPath, at: .left, animated: true)
+            let dragSignViewColor = SPORTS_TYPE_COLOR[AppDataManager.shared.sportsGameData[self.dateSegmentView!.selectIndex][index].catagory]!
+            UIView.animate(withDuration: 0.3){
+                self.dragSignView.backgroundColor = dragSignViewColor
+            }
+            oldCell.endLive()
+            newCell.becomeLive()
+        }else{
+            collectionView!.scrollToItem(at: IndexPath.init(item: index, section: 0), at: .left, animated: true)
         }
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        let targetCell = self.collectionView.cellForItem(at: IndexPath.init(row: self.collectionViewCurrentSelection, section: 0)) as! GCAnimatedCell
-        targetCell.endLive()
+//        let targetCell = self.collectionView.cellForItem(at: IndexPath.init(row: self.collectionViewCurrentSelection, section: 0)) as! GCAnimatedCell
+//        targetCell.endLive()
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let targetCell = self.collectionView.cellForItem(at: IndexPath.init(row: self.collectionViewCurrentSelection, section: 0)) as! GCAnimatedCell
-        targetCell.becomeLive()
+//        let targetCell = self.collectionView.cellForItem(at: IndexPath.init(row: self.collectionViewCurrentSelection, section: 0)) as! GCAnimatedCell
+//        targetCell.becomeLive()
     }
 }
 

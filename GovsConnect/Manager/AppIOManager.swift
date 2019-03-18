@@ -569,8 +569,8 @@ class AppIOManager{
             case .success(let json):
                 var index = 0
                 let jsonDict = JSON(json)
-                AppDataManager.shared.discoverMenuData[0] = []
-                AppDataManager.shared.discoverMenuData[1] = []
+                AppDataManager.shared.oldDiscoverMenuData[0] = []
+                AppDataManager.shared.oldDiscoverMenuData[1] = []
                 while jsonDict["\(index)"] != JSON.null{
                     let data = jsonDict["\(index)"]
                     let foodName = data["name"].stringValue
@@ -581,7 +581,7 @@ class AppIOManager{
 //                    self.loadImage(with: imgStr, { (data) in
 //                        AppDataManager.shared.imageData[imgStr] = data
 //                    })
-                    AppDataManager.shared.discoverMenuData[btoi(!is_lunch)].append(foodData)
+                    AppDataManager.shared.oldDiscoverMenuData[btoi(!is_lunch)].append(foodData)
                     index += 1
                 }
                 completionHandler(true)
@@ -599,6 +599,42 @@ class AppIOManager{
                 completionHandler(true)
             case .failure(let error):
                 makeMessageViaAlert(title: "error when like/dislike food", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func loadFoodDataThisWeek(_ completionHandler: @escaping ReceiveResponseBlock, _ errorHandler: @escaping (String) -> ()){
+        let urlStr = APP_SERVER_URL_STR + "/discover/food_this_week"
+        request(urlStr).responseJSON { (response) in
+            switch response.result{
+            case .success(let json):
+                let jsonDict = JSON(json)
+                let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+                AppDataManager.shared.discoverMenuData = []
+                AppDataManager.shared.discoverMenuTitle = []
+                for day in days{
+                    let dayJsonDict = jsonDict[day]
+                    var dayArr = Array<DiscoverFoodDataContainer>()
+                    var index = 0
+                    while dayJsonDict["\(index)"] != JSON.null{
+                        let data = dayJsonDict["\(index)"]
+                        let foodName = data["name"].stringValue
+                        let is_lunch = data["is_lunch"].boolValue
+                        let id = data["id"].intValue
+                        let is_everyday = data["is_everyday"].boolValue
+                        let is_special = !is_everyday
+                        let like_count = data["like_count"].intValue
+                        let foodData = DiscoverFoodDataContainer.init(id, foodName, is_lunch, is_special, like_count)
+                        dayArr.append(foodData)
+                        index += 1
+                    }
+                    AppDataManager.shared.discoverMenuData.append(dayArr)
+                    let dayTitle = jsonDict["discover_food_title_" + day].stringValue
+                    AppDataManager.shared.discoverMenuTitle.append(dayTitle)
+                }
+                completionHandler(true)
+            case .failure(let error):
+                errorHandler(error.localizedDescription)
             }
         }
     }

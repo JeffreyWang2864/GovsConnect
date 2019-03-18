@@ -76,16 +76,35 @@ class DiscoverViewController: UIViewController {
             }
         case 2:
             //rate your food
-            guard AppIOManager.shared.connectionStatus != .none else{
-                let alert = UIAlertController(title: "Sorry, you cannot rate foods on offline mode:(", message: "Your device is not connecting to the Internet.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                self.navigationController!.present(alert, animated: true, completion: nil)
-                return
-            }
-//            let vc = RateYourFoodViewController.init(nibName: "RateYourFoodViewController", bundle: Bundle.main)
+//            guard AppIOManager.shared.connectionStatus != .none else{
+//                let alert = UIAlertController(title: "Sorry, you cannot rate foods on offline mode:(", message: "Your device is not connecting to the Internet.", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+//                self.navigationController!.present(alert, animated: true, completion: nil)
+//                return
+//            }
+//            let vc = NewFoodViewController.init(nibName: "NewFoodViewController", bundle: Bundle.main)
 //            self.navigationController!.pushViewController(vc, animated: true)
-            let vc = NewFoodViewController.init(nibName: "NewFoodViewController", bundle: Bundle.main)
-            self.navigationController!.pushViewController(vc, animated: true)
+            
+            
+            
+            let alert = UIAlertController(title: nil, message: "Loading...", preferredStyle: .alert)
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            loadingIndicator.startAnimating();
+            alert.view.addSubview(loadingIndicator)
+            self.present(alert, animated: true, completion: nil)
+            AppIOManager.shared.loadFoodDataThisWeek({ (isSucceed) in
+                alert.dismiss(animated: true){
+                    let vc = DiningHallMenuViewController.init(nibName: "DiningHallMenuViewController", bundle: Bundle.main)
+                    self.navigationController!.pushViewController(vc, animated: true)
+                }
+            }) { (errStr) in
+                alert.dismiss(animated: true){
+                    makeMessageViaAlert(title: "Failed when loading food data", message: errStr)
+                }
+            }
+
         case 3:
             //links
             let alert = UIAlertController(title: nil, message: "Loading...", preferredStyle: .alert)

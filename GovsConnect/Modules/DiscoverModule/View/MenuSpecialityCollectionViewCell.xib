@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MENU_SPECIALITY_COLLECTIONVIEW_CELL_ID" id="gTV-IL-0wX" customClass="MenuSpecialityCollectionViewCell" customModule="GovsConnect" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="257" height="157"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="257" height="157"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0T-8r-nnn">
+                        <rect key="frame" x="5" y="5" width="247" height="121"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5b-Di-u8S">
+                        <rect key="frame" x="205" y="131" width="23" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="2kO-qr-9qc"/>
+                            <constraint firstAttribute="width" constant="23" id="kKz-9H-zgE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClX-nH-1zA" customClass="LoveButton" customModule="GovsConnect" customModuleProvider="target">
+                        <rect key="frame" x="231" y="131" width="23" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="JXK-jT-LBE"/>
+                            <constraint firstAttribute="width" constant="23" id="XWU-0h-QIG"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="loveColor">
+                                <color key="value" red="0.70196078429999997" green="0.28235294119999998" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unLoveColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="image" keyPath="loveImage" value="love_heart_icon"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="unLoveImage" value="unlove_heart_icon"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfHearts">
+                                <integer key="value" value="200"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="O0T-8r-nnn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="2Lb-bK-94q"/>
+                <constraint firstItem="ClX-nH-1zA" firstAttribute="leading" secondItem="e5b-Di-u8S" secondAttribute="trailing" constant="3" id="6fA-ar-PNg"/>
+                <constraint firstItem="e5b-Di-u8S" firstAttribute="top" secondItem="O0T-8r-nnn" secondAttribute="bottom" constant="5" id="8Ve-9W-oyi"/>
+                <constraint firstAttribute="bottom" secondItem="e5b-Di-u8S" secondAttribute="bottom" constant="3" id="Qcn-fD-JWw"/>
+                <constraint firstAttribute="trailing" secondItem="ClX-nH-1zA" secondAttribute="trailing" constant="3" id="QzR-3l-oUU"/>
+                <constraint firstAttribute="bottom" secondItem="ClX-nH-1zA" secondAttribute="bottom" constant="3" id="ex4-Rb-8iD"/>
+                <constraint firstAttribute="trailing" secondItem="O0T-8r-nnn" secondAttribute="trailing" constant="5" id="ju4-K7-20H"/>
+                <constraint firstItem="O0T-8r-nnn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="z9o-YC-hrz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="257" height="157"/>
+            <connections>
+                <outlet property="foodLabel" destination="O0T-8r-nnn" id="meT-La-w2q"/>
+                <outlet property="likeButton" destination="ClX-nH-1zA" id="60O-O4-OU9"/>
+                <outlet property="likeCount" destination="e5b-Di-u8S" id="hZ6-Ra-E9m"/>
+            </connections>
+            <point key="canvasLocation" x="303.19999999999999" y="201.94902548725639"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="love_heart_icon" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="unlove_heart_icon" width="128" height="128"/>
+    </resources>
+</document>

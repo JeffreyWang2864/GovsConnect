@@ -130,7 +130,7 @@ extension NewFoodViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppDataManager.shared.discoverMenuData[self.menuIndex].count
+        return AppDataManager.shared.oldDiscoverMenuData[self.menuIndex].count
     }
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -139,7 +139,7 @@ extension NewFoodViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NEW_FOOD_TABLEVIEW_CELL_ID", for: indexPath) as! NewFoodTableViewCell
-        let data = AppDataManager.shared.discoverMenuData[self.menuIndex][indexPath.item]
+        let data = AppDataManager.shared.oldDiscoverMenuData[self.menuIndex][indexPath.item]
         cell.data = data
         return cell
     }

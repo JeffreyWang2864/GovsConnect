@@ -31,10 +31,13 @@ class ModifiedScheduleViewController: UIViewController {
         switch PHONE_TYPE{
         case .iphone5:
             self.notifyMeButton.titleLabel!.font = UIFont.systemFont(ofSize: 11)
+            self.titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         case .iphone6, .iphonex, .iphonexr:
             self.notifyMeButton.titleLabel!.font = UIFont.systemFont(ofSize: 13)
+            self.titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         default:
             self.notifyMeButton.titleLabel!.font = UIFont.systemFont(ofSize: 15)
+            self.titleLabel.font = UIFont.systemFont(ofSize: 19, weight: .semibold)
         }
         self.navigationItem.title = "Modified Schedule"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "system_reload"), style: .plain, target: self, action: #selector(self.didClickOnReload))

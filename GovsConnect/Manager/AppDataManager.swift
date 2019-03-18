@@ -17,7 +17,9 @@ class AppDataManager{
     var discoverWeekendEventData = Array<Array<EventDataContainer>>()
     var discoverModifiedScheduleData = Array<EventDataContainer>()
     var discoverModifiedScheduleTitle = String()
-    var discoverMenuData = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
+    var oldDiscoverMenuData = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
+    var discoverMenuData = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
+    var discoverMenuTitle = ["", "", "", "", "", "", ""]
     var discoverLinksData = Array<DiscoverLinksDataCountainer>()
     var users = Dictionary<String, UserDataContainer>()
     var sportsGameData = Array<Array<SportsGame>>()
@@ -169,13 +171,13 @@ class AppDataManager{
 //        self.discoverLinksData.append(DiscoverLinksDataCountainer(.snapchat, "Govs Event", "Know about what's going on at Govs.", "https://www.snapchat.com/add/govsevents"))
 //        self.discoverLinksData.append(DiscoverLinksDataCountainer(.instagram, "Govs Trade", "A student organized trading platform which applies to all graders.", "instagram://user?username=govstrade"))
         
-        let eventsData = AppPersistenceManager.shared.fetchObject(with: .event) as! Array<Event>
-        for d in eventsData{
-            let event = EventDataContainer(d.startTime! as Date, d.endTime! as Date, d.title!, d.detail!)
-            event.notificationState = Int(d.notificationState)
-            let whichDay = whichDayOfWeekend(event.startTime)
-            AppDataManager.shared.discoverWeekendEventData[whichDay].append(event)
-        }
+//        let eventsData = AppPersistenceManager.shared.fetchObject(with: .event) as! Array<Event>
+//        for d in eventsData{
+//            let event = EventDataContainer(d.startTime! as Date, d.endTime! as Date, d.title!, d.detail!)
+//            event.notificationState = Int(d.notificationState)
+//            let whichDay = whichDayOfWeekend(event.startTime)
+//            AppDataManager.shared.discoverWeekendEventData[whichDay].append(event)
+//        }
         
         //fake game data
         for _ in (0..<5){
@@ -473,11 +475,24 @@ class DiscoverFoodDataContainer{
     var likeCount: Int
     var dislikeCount: Int
     var _id = -1
+    var isLunch: Bool
+    var isSpecial: Bool
     init(_ title: String, _ imageName: String, _ likeCount: Int = 0, _ dislikeCount: Int = 0){
         self.title = title
         self.imageName = imageName
         self.likeCount = likeCount
         self.dislikeCount = dislikeCount
+        self.isLunch = true
+        self.isSpecial = true
+    }
+    init(_ id: Int, _ title: String, _ isLunch: Bool, _ isSpecial: Bool, _ likeCount: Int = 0){
+        self._id = id
+        self.title = title
+        self.imageName = ""
+        self.likeCount = likeCount
+        self.dislikeCount = -1
+        self.isLunch = isLunch
+        self.isSpecial = isSpecial
     }
 }
 
