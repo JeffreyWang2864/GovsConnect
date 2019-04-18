@@ -129,6 +129,12 @@ class MatchCardCollectionViewCell: UICollectionViewCell, GCAnimatedCell {
 
 extension MatchCardCollectionViewCell: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
+        if self.data == nil{
+            return 3
+        }
+        if self.data!.location.coordinate.latitude == -1 && self.data!.location.coordinate.longitude == -1{
+            return 1
+        }
         return 3
     }
     

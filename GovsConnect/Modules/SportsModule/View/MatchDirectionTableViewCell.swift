@@ -13,22 +13,10 @@ class MatchDirectionTableViewCell: UITableViewCell, GCAnimatedCell {
     
     var data: SportsGame?{
         didSet{
-            let firstLabel = UILabel()
-            firstLabel.backgroundColor = UIColorFromRGB(rgbValue: 0x006FFF, alpha: 1.0)
-            firstLabel.text = "Directions"
-            firstLabel.textColor = UIColor.white
-            firstLabel.textAlignment = .center
-            firstLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
-            firstLabel.frame = CGRect(x: 0, y: 0, width: self.width, height: self.directionButton.height * 0.55)
-            self.directionButton.addSubview(firstLabel)
-            let secondLabel = UILabel()
-            secondLabel.backgroundColor = UIColorFromRGB(rgbValue: 0x006FFF, alpha: 1.0)
-            secondLabel.textColor = UIColor.white
-            secondLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-            secondLabel.text = "estimate driving time: 40 minutes"
-            secondLabel.textAlignment = .center
-            secondLabel.frame = CGRect(x: 0, y: self.directionButton.height * 0.50, width:  self.width, height: self.directionButton.height * 0.4)
-            self.directionButton.addSubview(secondLabel)
+            self.directionButton.setTitle("Open Location on Map", for: .normal)
+            self.directionButton.setTitleColor(.white, for: .normal)
+            self.directionButton.titleLabel!.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+            self.directionButton.backgroundColor = UIColor.init(red: 0.0, green: 0.4784, blue: 1.0, alpha: 1.0)
         }
     }
 
@@ -41,12 +29,20 @@ class MatchDirectionTableViewCell: UITableViewCell, GCAnimatedCell {
         self.directionButton.setTitleColor(UIColor.white, for: .normal)
         self.directionButton.backgroundColor = UIColorFromRGB(rgbValue: 0x006FFF, alpha: 1.0)
         self.directionButton.setTitle("", for: .normal)
+        self.directionButton.addTarget(self, action: #selector(self.didClickOnOpenInMap(_:)), for: .touchDown)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @objc func didClickOnOpenInMap(_ button: UIButton){
+        if self.data == nil{
+            return
+        }
+        openCoordinateInMapApp(self.data!.location.coordinate, with: self.data!.homeTeam)
     }
     
     func becomeLive() {

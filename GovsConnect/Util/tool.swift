@@ -8,6 +8,7 @@
 
 import UIKit
 import EventKit
+import MapKit
 
 func prettyTimeSince(_ timeInterval: TimeInterval) -> String{
     let tisn = abs(NSInteger(timeInterval))
@@ -177,6 +178,18 @@ func getScheduleBlockColor(with title: String, alpha: CGFloat) -> UIColor{
         return UIColorFromRGB(rgbValue: 0x37B1F6, alpha: alpha)
     }
     return UIColorFromRGB(rgbValue: 0x6F49E4, alpha: alpha)
+}
+
+func openCoordinateInMapApp(_ coord: CLLocationCoordinate2D, with name: String){
+    let regionSpan = MKCoordinateRegionMakeWithDistance(coord, 1000, 1000)
+    let options = [
+        MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+        MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+    ]
+    let placemark = MKPlacemark(coordinate: coord, addressDictionary: nil)
+    let mapItem = MKMapItem(placemark: placemark)
+    mapItem.name = name
+    mapItem.openInMaps(launchOptions: options)
 }
 
 //屏幕的宽高

@@ -19,8 +19,8 @@ class MatchDetailTableViewCell: UITableViewCell, GCAnimatedCell {
     
     var data: SportsGame?{
         didSet{
-            self.homeTeamIcon.image = UIImage.init(named: SPORTS_TEAM_ICON[self.data!.homeTeam]!)!
-            self.awayTeamIcon.image = UIImage.init(named: SPORTS_TEAM_ICON[self.data!.awayTeam]!)!
+            self.homeTeamIcon.image = UIImage.init(named: SPORTS_TEAM_ICON[self.data!.homeTeam] ?? "default-opponent.png") ?? UIImage.init(named: "default-opponent.png")!
+            self.awayTeamIcon.image = UIImage.init(named: SPORTS_TEAM_ICON[self.data!.awayTeam] ?? "default-opponent.png") ?? UIImage.init(named: "default-opponent.png")!
             self.homeTeamLabel.text = self.data!.homeTeam
             self.awayTeamLabel.text = self.data!.awayTeam
             self.homeTeamScore.text = self.data!.homeScore == -1 ? "-" : "\(self.data!.homeScore)"

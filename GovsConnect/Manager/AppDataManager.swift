@@ -183,9 +183,6 @@ class AppDataManager{
         for _ in (0..<5){
             self.sportsGameData.append(Array<SportsGame>())
         }
-        self.sportsGameData[0].append(SportsGame.init(0, .hockey, .hockeyBV, Date.init(timeIntervalSinceNow: -200000), "The Governor's Academy", "Pingree School", 16, 3))
-        self.sportsGameData[1].append(SportsGame.init(1, .tennis, .tennisBV, Date.init(timeIntervalSinceNow: -100000), "The Governor's Academy", "Tabor Academy", 8, 7))
-        self.sportsGameData[1].append(SportsGame.init(2, .baseballSoftball, .baseballBV, Date.init(timeIntervalSinceNow: -50000), "Milton Academy", "The Governor's Academy", 16, 3))
     }
     
     private func loadCourseData(){
@@ -295,6 +292,17 @@ class AppDataManager{
 //                //code here
 //            }
 //        }
+    }
+    
+    func loadSportsDataFromServer(){
+        let startDate = Date.yesterday.startOfTheDay
+        let endDate = Calendar.current.date(byAdding: .day, value: 4, to: startDate)!.endOfTheDay
+        AppIOManager.shared.getGameDataByRange(startDate: startDate, endDate: endDate, {
+            //
+        }) { (errStr) in
+            makeMessageViaAlert(title: "Failed when loading Sports Data", message: errStr)
+        }
+        
     }
 
     func posts(by uid: String) -> (datas: [PostsDataContainer], index: [Int]){

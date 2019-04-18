@@ -15,7 +15,8 @@ class SportsViewController: UIViewController {
     var panelView = SportsPanelView()
     var dragSignView = UIView()
     var dateSegmentView: PinterestSegment?
-    var quickActionStackView = UIStackView()
+    //var quickActionStackView = UIStackView()
+    var quickActionStackView = UILabel()
     var browseByDateSelector: UINavigationController?
     var collectionViewCurrentSelection: Int = 0
     var dragGestureRecongnizer: UIPanGestureRecognizer?
@@ -65,40 +66,57 @@ class SportsViewController: UIViewController {
         dataSegmentStyle.titleFont = UIFont.boldSystemFont(ofSize: 15)
         dataSegmentStyle.selectedTitleColor = UIColor.darkGray
         dataSegmentStyle.normalTitleColor = UIColor.lightGray
-        self.dateSegmentView = PinterestSegment(frame: CGRect.init(x: 0, y: 70, width: self.panelView.width, height: 45), segmentStyle: dataSegmentStyle, titles: ["yesterday", "today", "tomorrow", "2/14/2019", "2/15/2019"])
+        
+        //setup title for days
+        var todayDate = Date().dayAfter.dayAfter
+        var titles = ["yesterday", "today", "tomorrow"]
+        let df = DateFormatter()
+        df.dateFormat = "M/d/yyyy"
+        for _ in (0..<2){
+            titles.append(df.string(from: todayDate))
+            todayDate = todayDate.dayAfter
+        }
+        
+        self.dateSegmentView = PinterestSegment(frame: CGRect.init(x: 0, y: 70, width: self.panelView.width, height: 45), segmentStyle: dataSegmentStyle, titles: titles)
         self.panelView.addSubview(self.dateSegmentView!)
         self.dateSegmentView!.setSelectIndex(index: 1, animated: false)
         self.dateSegmentView!.valueChange = self.dateSegmentViewDidChange
         
         //quick action stack view
-        self.quickActionStackView.removeFromSuperview()
-        self.quickActionStackView = UIStackView(frame: CGRect(x: 0, y: 0, width: self.panelView.width, height: 65))
-        self.quickActionStackView.backgroundColor = UIColor.clear
-        self.quickActionStackView.distribution = .fillEqually
-        self.quickActionStackView.axis = .horizontal
-        self.quickActionStackView.contentMode = .center
-        self.quickActionStackView.spacing = (self.quickActionStackView.width - (65 * 4)) / 4
-        let labelTexts = ["browse by dates", "browse by catagory", "lastest results", "sport videos"]
-        let imageNames = ["system_sports_select_date.png", "system_sports_browse_by_category.png", "system_sports_see_result.png", "system_sports_video.png"]
-        for i in (0..<4){
-            let v = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
-            let imgV = UIImageView(frame: CGRect(x: 15, y: 2, width: 32, height: 32))
-            imgV.image = UIImage.init(named: imageNames[i])
-            imgV.contentMode = .scaleAspectFit
-            let l = UILabel(frame: CGRect(x: 0, y: 34, width: 65, height: 27))
-            l.font = UIFont.systemFont(ofSize: 11, weight: .semibold)
-            l.textAlignment = .center
-            l.numberOfLines = 2
-            l.textColor = UIColor.darkGray
-            l.text = labelTexts[i]
-            v.addSubview(imgV)
-            v.addSubview(l)
-            let tgr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnTopAction(_:)))
-            tgr.numberOfTapsRequired = 1
-            v.addGestureRecognizer(tgr)
-            v.tag = i
-            self.quickActionStackView.addArrangedSubview(v)
-        }
+//        self.quickActionStackView.removeFromSuperview()
+//        self.quickActionStackView = UIStackView(frame: CGRect(x: 0, y: 0, width: self.panelView.width, height: 65))
+//        self.quickActionStackView.backgroundColor = UIColor.clear
+//        self.quickActionStackView.distribution = .fillEqually
+//        self.quickActionStackView.axis = .horizontal
+//        self.quickActionStackView.contentMode = .center
+//        self.quickActionStackView.spacing = (self.quickActionStackView.width - (65 * 4)) / 4
+//        let labelTexts = ["browse by dates", "browse by catagory", "lastest results", "sport videos"]
+//        let imageNames = ["system_sports_select_date.png", "system_sports_browse_by_category.png", "system_sports_see_result.png", "system_sports_video.png"]
+//        for i in (0..<4){
+//            let v = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
+//            let imgV = UIImageView(frame: CGRect(x: 15, y: 2, width: 32, height: 32))
+//            imgV.image = UIImage.init(named: imageNames[i])
+//            imgV.contentMode = .scaleAspectFit
+//            let l = UILabel(frame: CGRect(x: 0, y: 34, width: 65, height: 27))
+//            l.font = UIFont.systemFont(ofSize: 11, weight: .semibold)
+//            l.textAlignment = .center
+//            l.numberOfLines = 2
+//            l.textColor = UIColor.darkGray
+//            l.text = labelTexts[i]
+//            v.addSubview(imgV)
+//            v.addSubview(l)
+//            let tgr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnTopAction(_:)))
+//            tgr.numberOfTapsRequired = 1
+//            v.addGestureRecognizer(tgr)
+//            v.tag = i
+//            self.quickActionStackView.addArrangedSubview(v)
+//        }
+        
+        self.quickActionStackView = UILabel(frame: CGRect(x: 0, y: 0, width: self.panelView.width, height: 65))
+        self.quickActionStackView.text = "more function coming soon..."
+        self.quickActionStackView.textColor = .gray
+        self.quickActionStackView.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        self.quickActionStackView.textAlignment = .center
         self.panelView.addSubview(self.quickActionStackView)
     }
     
@@ -115,33 +133,33 @@ class SportsViewController: UIViewController {
         generator.impactOccurred()
     }
     
-    @objc func didClickOnTopAction(_ sender: UITapGestureRecognizer){
-        let tag = sender.view!.tag
-        switch tag {
-        case 0:
-            //browse by date
-            let dateRangePickerViewController = CalendarDateRangePickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
-            dateRangePickerViewController.delegate = self
-            dateRangePickerViewController.minimumDate = Date.init(timeIntervalSinceNow: -90 * 60 * 24 * 60)
-            dateRangePickerViewController.maximumDate = Date.init(timeIntervalSinceNow: 60 * 60 * 24 * 7)
-            self.browseByDateSelector = UINavigationController(rootViewController: dateRangePickerViewController)
-            self.navigationController?.present(self.browseByDateSelector!, animated: true){
-                UIApplication.shared.statusBarStyle = .default
-            }
-            break
-        case 1:
-            //browse by catagory
-            break
-        case 2:
-            //results
-            break
-        case 3:
-            //video
-            break
-        default:
-            fatalError()
-        }
-    }
+//    @objc func didClickOnTopAction(_ sender: UITapGestureRecognizer){
+//        let tag = sender.view!.tag
+//        switch tag {
+//        case 0:
+//            //browse by date
+//            let dateRangePickerViewController = CalendarDateRangePickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
+//            dateRangePickerViewController.delegate = self
+//            dateRangePickerViewController.minimumDate = Date.init(timeIntervalSinceNow: -90 * 60 * 24 * 60)
+//            dateRangePickerViewController.maximumDate = Date.init(timeIntervalSinceNow: 60 * 60 * 24 * 7)
+//            self.browseByDateSelector = UINavigationController(rootViewController: dateRangePickerViewController)
+//            self.navigationController?.present(self.browseByDateSelector!, animated: true){
+//                UIApplication.shared.statusBarStyle = .default
+//            }
+//            break
+//        case 1:
+//            //browse by catagory
+//            break
+//        case 2:
+//            //results
+//            break
+//        case 3:
+//            //video
+//            break
+//        default:
+//            fatalError()
+//        }
+//    }
 }
 
 extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

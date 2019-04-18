@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MapKit
 
 class SportsGame{
-    let _uid: Int
+    let _uid: String
     let catagory: GCSportType
     let team: GCSportTeamType
     let startTime: Date
@@ -22,6 +23,7 @@ class SportsGame{
     let awayTeam: String
     var homeScore: Int
     var awayScore: Int
+    let location: CLLocation
     var result: SportsGameResult{
         get{
             if self.homeScore == -1{
@@ -46,8 +48,9 @@ class SportsGame{
             return .defeat
         }
     }
-    init(_ _uid: Int, _ catagory: GCSportType, _ team: GCSportTeamType, _ startTime
-        : Date, _ homeTeam: String, _ awayTeam: String, _ homeScore: Int, _ awayScore: Int){
+    
+    init(_ _uid: String, _ catagory: GCSportType, _ team: GCSportTeamType, _ startTime
+        : Date, _ homeTeam: String, _ awayTeam: String, _ homeScore: Int, _ awayScore: Int, _ latitude: Double, _ longitude: Double){
         self._uid = _uid
         self.catagory = catagory
         self.team = team
@@ -56,6 +59,7 @@ class SportsGame{
         self.awayTeam = awayTeam
         self.homeScore = homeScore
         self.awayScore = awayScore
+        self.location = CLLocation.init(latitude: latitude, longitude: longitude)
     }
 }
 

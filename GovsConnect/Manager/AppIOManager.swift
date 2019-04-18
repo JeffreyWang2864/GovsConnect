@@ -34,6 +34,8 @@ class AppIOManager{
             if self.isFirstTimeConnnected{
                 self.isFirstTimeConnnected = false
                 AppDataManager.shared.loadDiscoverDataFromServerAndUpdateLocalData()
+                AppDataManager.shared.loadSportsDataFromServer()
+                
             }
             if self.isLogedIn{
                 AppIOManager.shared.loginSuccessful(target_uid: AppDataManager.shared.currentPersonID, {(isAgreeToTerms: Bool) in
@@ -882,6 +884,65 @@ class AppIOManager{
             case .success(let json):
                 completionHandler()
             case .failure(let error):
+                errorHandler(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getGameDataByRange(startDate: Date, endDate: Date, _ completionHandler: @escaping () -> (), _ errorHandler: @escaping (String) -> ()){
+        //let urlStr = APP_SERVER_URL_STR + "/sport/game-by-range"
+        let urlStr = APP_SERVER_URL_STR + "/sport/game-by-range"
+        let postData = [
+            "START_TIMESTAMP": startDate.timeIntervalSince1970,
+            "END_TIMESTAMP": endDate.timeIntervalSince1970,
+        ]
+        request(urlStr, method: .post, parameters: postData as [String: AnyObject], encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+//            if let data = response.data {
+//                let json = String(data: data, encoding: String.Encoding.utf8)
+//                print("Failure Response: \(json)")
+//            }
+            switch response.result{
+            case .success(let json):
+                let jsonDict = JSON(json)
+                var index = 0
+                let dayCatagory: Array<Date> = [
+                    startDate.noon,
+                    startDate.dayAfter.noon,
+                    startDate.dayAfter.dayAfter.noon,
+                    startDate.dayAfter.dayAfter.dayAfter.noon,
+                    startDate.dayAfter.dayAfter.dayAfter.dayAfter.noon,
+                ]
+                //clear all previous records
+                for i in stride(from: 0, to: AppDataManager.shared.sportsGameData.count, by: 1){
+                    AppDataManager.shared.sportsGameData[i] = []
+                }
+                while(jsonDict["\(index)"] != JSON.null){
+                    let curData = jsonDict["\(index)"]
+                    let uid = curData["uid"].stringValue
+                    let team = GCSportTeamType.init(rawValue: curData["team"].stringValue) ?? GCSportTeamType.default
+                    let team_catagory = GCSportType.init(rawValue: curData["team_category"].stringValue) ?? GCSportType.default
+                    let start_time = Date.init(timeIntervalSince1970: curData["start_time"].doubleValue - Double(secondsFromGMT))
+                    let home_team = curData["home_team"].stringValue
+                    let away_team = curData["away_team"].stringValue
+                    let latitude = curData["latitude"].doubleValue
+                    let longitude = curData["longitude"].doubleValue
+                    let home_score = curData["home_score"].intValue
+                    let away_score = curData["away_score"].intValue
+                    //decide which day is it, and base on the i value, insert the game in the correct place
+                    for i in stride(from: 0, to: dayCatagory.count, by: 1){
+                        if Calendar.current.isDate(start_time, inSameDayAs: dayCatagory[i]){
+                            //in same day
+                            let game_obj = SportsGame.init(uid, team_catagory, team, start_time, home_team, away_team, home_score, away_score, latitude, longitude)
+                            AppDataManager.shared.sportsGameData[i].append(game_obj)
+                            break
+                        }
+                    }
+                    index += 1
+                }
+                let ggg = AppDataManager.shared
+                completionHandler()
+            case .failure(let error):
+                print(error)
                 errorHandler(error.localizedDescription)
             }
         }

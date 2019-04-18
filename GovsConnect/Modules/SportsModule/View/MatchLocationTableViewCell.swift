@@ -16,7 +16,7 @@ class MatchLocationTableViewCell: UITableViewCell, GCAnimatedCell {
     
     var data: SportsGame?{
         didSet{
-            let location = SPORTS_LOCATION[self.data!.homeTeam]!
+            let location = self.data!.location
             let coordRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
             self.mapView.setRegion(coordRegion, animated: false)
             self.artwork = GCArtwork.init(self.data!.homeTeam, "school", location.coordinate)

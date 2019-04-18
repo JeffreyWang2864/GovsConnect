@@ -11,9 +11,8 @@ import Foundation
 enum SportsGameResult: String{
     case yetToBeStarted = "match not started yet"
     case inProgress = "match in progress"
-    case heartbreakingDefeat = "heatbreaking defeat"
     case defeat = "defeat"
-    case chokedDefeat = "choked defeat"
+    case chokedDefeat = "heartbreaking defeat"
     case draw = "draw"
     case hardFoughtVictory = "hard fought victory"
     case victory = "victory"
