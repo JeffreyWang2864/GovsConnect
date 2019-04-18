@@ -12,6 +12,7 @@ import CalendarDateRangePickerViewController
 
 class SportsViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
+    public static let reloadNotificationName = Notification.Name.init(rawValue: "SportsViewController.reloadNotificationName")
     var panelView = SportsPanelView()
     var dragSignView = UIView()
     var dateSegmentView: PinterestSegment?
@@ -22,6 +23,7 @@ class SportsViewController: UIViewController {
     var dragGestureRecongnizer: UIPanGestureRecognizer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.shouldReloadData(_:)), name: SportsViewController.reloadNotificationName, object: nil)
         self.collectionView.register(UINib.init(nibName: "MatchCardCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "SPORTS_MATCH_CARD_COLLECTIONVIEW_CELL_ID")
         self.collectionView.register(UINib.init(nibName: "MatchNoDataCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MATCH_NO_DATA_COLLECTIONVIEW_CELL_ID")
         let flowLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -160,6 +162,12 @@ class SportsViewController: UIViewController {
 //            fatalError()
 //        }
 //    }
+    
+    @objc func shouldReloadData(_ notification: Notification){
+        self.collectionView.reloadData()
+        self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        self.collectionViewCurrentSelection = 0
+    }
 }
 
 extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

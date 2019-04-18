@@ -139,6 +139,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         if AppIOManager.shared.deviceToken != nil && AppIOManager.shared.deviceToken! != ""{
             AppIOManager.shared.createSession(with: AppIOManager.shared.deviceToken!)
         }
+        AppDataManager.shared.loadSportsDataFromServer(true)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

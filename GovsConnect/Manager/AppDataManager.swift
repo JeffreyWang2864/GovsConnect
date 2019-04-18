@@ -294,11 +294,13 @@ class AppDataManager{
 //        }
     }
     
-    func loadSportsDataFromServer(){
+    func loadSportsDataFromServer(_ reloadOnUI: Bool = false){
         let startDate = Date.yesterday.startOfTheDay
         let endDate = Calendar.current.date(byAdding: .day, value: 4, to: startDate)!.endOfTheDay
         AppIOManager.shared.getGameDataByRange(startDate: startDate, endDate: endDate, {
-            //
+            if reloadOnUI{
+                NotificationCenter.default.post(Notification.init(name: SportsViewController.reloadNotificationName))
+            }
         }) { (errStr) in
             makeMessageViaAlert(title: "Failed when loading Sports Data", message: errStr)
         }

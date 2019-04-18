@@ -21,15 +21,15 @@ class GCTabBarViewController: UITabBarController {
         let disVc = DiscoverViewController()
         self.addChildController(childVc: disVc, title: "Discover", normalImg: #imageLiteral(resourceName: "system_normal_discover"), selectedImg: #imageLiteral(resourceName: "system_selected_discover"))
         
-        let postVc = PostsViewController(nibName: "PostsViewController", bundle: nil)
-        NotificationCenter.default.addObserver(postVc, selector: #selector(postVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
-        self.addChildController(childVc: postVc, title: "Posts", normalImg: #imageLiteral(resourceName: "system_normal_post"), selectedImg: #imageLiteral(resourceName: "system_selected_post"))
+//        let postVc = PostsViewController(nibName: "PostsViewController", bundle: nil)
+//        NotificationCenter.default.addObserver(postVc, selector: #selector(postVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
+//        self.addChildController(childVc: postVc, title: "Posts", normalImg: #imageLiteral(resourceName: "system_normal_post"), selectedImg: #imageLiteral(resourceName: "system_selected_post"))
         
         
         //sports
         let sportsVc = SportsViewController(nibName: "SportsViewController", bundle: nil)
         NotificationCenter.default.addObserver(sportsVc, selector: #selector(sportsVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
-        self.addChildController(childVc: sportsVc, title: "Sports", normalImg: #imageLiteral(resourceName: "system_normal_post"), selectedImg: #imageLiteral(resourceName: "system_selected_post"))
+        self.addChildController(childVc: sportsVc, title: "Sports", normalImg: UIImage.init(named: "system_normal_sport")!, selectedImg: UIImage.init(named: "system_selected_sport")!)
         
         
         //lookUp
