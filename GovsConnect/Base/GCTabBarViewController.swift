@@ -29,7 +29,7 @@ class GCTabBarViewController: UITabBarController {
         //sports
         let sportsVc = SportsViewController(nibName: "SportsViewController", bundle: nil)
         NotificationCenter.default.addObserver(sportsVc, selector: #selector(sportsVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
-        self.addChildController(childVc: sportsVc, title: "Sports", normalImg: UIImage.init(named: "system_normal_sport")!, selectedImg: UIImage.init(named: "system_selected_sport")!)
+        self.addChildController(childVc: sportsVc, title: "Games", normalImg: UIImage.init(named: "system_normal_sport")!, selectedImg: UIImage.init(named: "system_selected_sport")!)
         
         
         //lookUp

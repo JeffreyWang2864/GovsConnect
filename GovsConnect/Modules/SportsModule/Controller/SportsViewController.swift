@@ -23,6 +23,11 @@ class SportsViewController: UIViewController {
     var dragGestureRecongnizer: UIPanGestureRecognizer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let barButton1 = UIBarButtonItem.init(barButtonSystemItem: .refresh, target: self, action: #selector(self.didClickOnReload))
+        let infoButton = UIButton(type: .infoLight)
+        infoButton.addTarget(self, action: #selector(self.didClickOnInfoButton), for: .touchUpInside)
+        let barButton2 = UIBarButtonItem.init(customView: infoButton)
+        self.navigationItem.setRightBarButtonItems([barButton1, barButton2], animated: false)
         NotificationCenter.default.addObserver(self, selector: #selector(self.shouldReloadData(_:)), name: SportsViewController.reloadNotificationName, object: nil)
         self.collectionView.register(UINib.init(nibName: "MatchCardCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "SPORTS_MATCH_CARD_COLLECTIONVIEW_CELL_ID")
         self.collectionView.register(UINib.init(nibName: "MatchNoDataCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MATCH_NO_DATA_COLLECTIONVIEW_CELL_ID")
@@ -163,10 +168,18 @@ class SportsViewController: UIViewController {
 //        }
 //    }
     
+    @objc func didClickOnReload(){
+        AppDataManager.shared.loadSportsDataFromServer(true)
+    }
+    
     @objc func shouldReloadData(_ notification: Notification){
         self.collectionView.reloadData()
         self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
         self.collectionViewCurrentSelection = 0
+    }
+    
+    @objc func didClickOnInfoButton(){
+        makeMessageViaAlert(title: "Disclaimer", message: "The game section of Govs Connect is just a reference to the game schedule. All game information displays here is from Veracross. Please don't 100% trust this because Veracross sometimes makes mistakes. If you are playing in a match, please listen to whatever your coach says (about postponing, canceling and etc.). Govs Connect is not responsible for any tardies and absences.")
     }
 }
 
