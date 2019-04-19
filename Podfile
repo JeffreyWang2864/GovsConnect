@@ -13,7 +13,7 @@ target 'GovsConnect' do
   pod 'CSV.swift'
   pod 'SwiftyGif'
   pod 'PinterestSegment'
-  pod 'CalendarDateRangePickerViewController'
+  pod 'Instructions'
 end
 
 target 'ScheduleWidget' do

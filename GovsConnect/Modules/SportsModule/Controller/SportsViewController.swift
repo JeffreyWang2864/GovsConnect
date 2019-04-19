@@ -8,7 +8,7 @@
 
 import UIKit
 import PinterestSegment
-import CalendarDateRangePickerViewController
+import Instructions
 
 class SportsViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
@@ -21,6 +21,7 @@ class SportsViewController: UIViewController {
     var browseByDateSelector: UINavigationController?
     var collectionViewCurrentSelection: Int = 0
     var dragGestureRecongnizer: UIPanGestureRecognizer?
+    var walkthroughViewController: CoachMarksController?
     override func viewDidLoad() {
         super.viewDidLoad()
         let barButton1 = UIBarButtonItem.init(barButtonSystemItem: .refresh, target: self, action: #selector(self.didClickOnReload))
@@ -46,6 +47,21 @@ class SportsViewController: UIViewController {
         self.panelView = SportsPanelView(frame: CGRect(x: 0, y: -60, width: screenWidth, height: 130))
         self.view.addSubview(self.panelView)
         self.setupPanelView()
+        
+        //should show tutorial
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            let predicate = NSPredicate(format: "key == %@", "sports section tutorial")
+            let res = AppPersistenceManager.shared.filterObject(of: .setting, with: predicate) as! Array<Setting>
+            if res.count == 0{
+                //dining hall menu tutorial not created yet
+                self.showTutorial()
+                AppPersistenceManager.shared.saveObject(to: .setting, with: ["sports section tutorial", "true"])
+            }else if res[0].value! == "false"{
+                //dining hall menu tutorial created, but didn't see
+                self.showTutorial()
+                AppPersistenceManager.shared.updateObject(of: .setting, with: predicate, newVal: "true", forKey: "value")
+            }
+        }
     }
     
     @objc func loginAction(_ notification: Notification){
@@ -181,6 +197,14 @@ class SportsViewController: UIViewController {
     @objc func didClickOnInfoButton(){
         makeMessageViaAlert(title: "Disclaimer", message: "The game section of Govs Connect is just a reference to the game schedule. All game information displays here is from Veracross. Please don't 100% trust this because Veracross sometimes makes mistakes. If you are playing in a match, please listen to whatever your coach says (about postponing, canceling and etc.). Govs Connect is not responsible for any tardies and absences.")
     }
+    
+    private func showTutorial(){
+        if self.walkthroughViewController == nil{
+            self.walkthroughViewController = CoachMarksController()
+        }
+        self.walkthroughViewController!.dataSource = self
+        self.walkthroughViewController!.start(on: self)
+    }
 }
 
 extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -273,16 +297,63 @@ extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 }
 
-extension SportsViewController: CalendarDateRangePickerViewControllerDelegate{
-    func didTapCancel() {
-        self.browseByDateSelector!.dismiss(animated: true){
-            UIApplication.shared.statusBarStyle = .lightContent
-        }
+//extension SportsViewController: CalendarDateRangePickerViewControllerDelegate{
+//    func didTapCancel() {
+//        self.browseByDateSelector!.dismiss(animated: true){
+//            UIApplication.shared.statusBarStyle = .lightContent
+//        }
+//    }
+//
+//    func didTapDoneWithDateRange(startDate: Date!, endDate: Date!) {
+//        self.browseByDateSelector!.dismiss(animated: true){
+//            UIApplication.shared.statusBarStyle = .lightContent
+//        }
+//    }
+//}
+
+extension SportsViewController: CoachMarksControllerDelegate, CoachMarksControllerDataSource{
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
+        return 3
     }
     
-    func didTapDoneWithDateRange(startDate: Date!, endDate: Date!) {
-        self.browseByDateSelector!.dismiss(animated: true){
-            UIApplication.shared.statusBarStyle = .lightContent
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
+        var pointOfInterest = UIView.init()
+        var noLiuhaiOffset: CGFloat = 0.0
+        switch PHONE_TYPE{
+        case .iphone5, .iphone6, .iphone6plus:
+            noLiuhaiOffset = -22.0
+        default:
+            break
         }
+        switch index{
+        case 0:
+            pointOfInterest = UIView(frame: CGRect.init(x: 0.0, y: 100.0 + noLiuhaiOffset, width: self.panelView.width, height: 40.0))
+        case 1:
+            pointOfInterest = UIView(frame: CGRect.init(x: 0.0, y: 170 + noLiuhaiOffset, width: self.panelView.width, height: 200.0))
+        case 2:
+            pointOfInterest = UIView(frame: CGRect.init(x: 0.0, y: 170.0 + noLiuhaiOffset, width: self.panelView.width, height: 200.0))
+        default:
+            break
+        }
+        return coachMarksController.helper.makeCoachMark(for: pointOfInterest)
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?) {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
+        switch index{
+        case 0:
+            coachViews.bodyView.hintLabel.text = "navigate between days"
+            coachViews.bodyView.nextLabel.text = "next"
+        case 1:
+            coachViews.bodyView.hintLabel.text = "swipe horizontally to navigate between matches"
+            coachViews.bodyView.nextLabel.text = "next"
+        case 2:
+            coachViews.bodyView.hintLabel.text = "swipe vertically to view match detail"
+            coachViews.bodyView.nextLabel.text = "done"
+        default:
+            coachViews.bodyView.hintLabel.text = ""
+            coachViews.bodyView.nextLabel.text = ""
+        }
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
     }
 }

@@ -80,10 +80,10 @@ class AppDataManager{
                 for org_str in organizationStr.split(separator: "/"){
                     AppDataManager.shared.currentUserConnections.append("\(org_str)")
                 }
-            case "did see widget", "dining hall menu tutorial":
+            case "did see widget", "dining hall menu tutorial", "sports section tutorial":
                 break
             default:
-                fatalError()
+                break;
             }
         }
         if AppDataManager.shared.currentPersonID == ""{
