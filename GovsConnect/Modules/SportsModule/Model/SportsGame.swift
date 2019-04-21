@@ -24,6 +24,7 @@ class SportsGame{
     var homeScore: Int
     var awayScore: Int
     let location: CLLocation
+    var stat = SportsTeamStat()
     var result: SportsGameResult{
         get{
             if self.homeScore == -1{

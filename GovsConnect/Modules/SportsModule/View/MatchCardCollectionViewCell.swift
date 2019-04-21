@@ -72,7 +72,7 @@ class MatchCardCollectionViewCell: UICollectionViewCell, GCAnimatedCell {
         self.resultLabel.numberOfLines = 1
         
         //tableView
-        self.tableView.frame = CGRect(x: 2, y: 235 + 80, width: screenWidth - 30 - 4, height: 480)
+        self.tableView.frame = CGRect(x: 2, y: 235 + 80, width: screenWidth - 30 - 4, height: 700)
         self.tableView.alpha = 0
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -84,6 +84,7 @@ class MatchCardCollectionViewCell: UICollectionViewCell, GCAnimatedCell {
         self.tableView.register(UINib.init(nibName: "MatchDetailTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "MATCH_DETAIL_TABLEVIEW_CELL_ID")
         self.tableView.register(UINib.init(nibName: "MatchLocationTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "MATCH_LOCATION_TABLEVIEW_CELL_ID")
         self.tableView.register(UINib.init(nibName: "MatchDirectionTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "MATCH_DIRECTION_TABLEVIEW_CELL_ID")
+        self.tableView.register(UINib.init(nibName: "MatchStatTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "MATCH_STAT_TABLEVIEW_CELL_ID")
         self.scrollView.addSubview(self.tableView)
         self.scrollView.contentSize = CGSize(width: screenWidth - 30 - 4, height: self.cardView.height + self.tableView.height + 60 + 80)
         self.scrollView.showsVerticalScrollIndicator = false
@@ -130,12 +131,12 @@ class MatchCardCollectionViewCell: UICollectionViewCell, GCAnimatedCell {
 extension MatchCardCollectionViewCell: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         if self.data == nil{
-            return 3
+            return 4
         }
         if self.data!.location.coordinate.latitude == -1 && self.data!.location.coordinate.longitude == -1{
-            return 1
+            return 2
         }
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -146,6 +147,8 @@ extension MatchCardCollectionViewCell: UITableViewDelegate, UITableViewDataSourc
         if indexPath.section == 0{
             return 170
         }else if indexPath.section == 1{
+            return 215
+        }else if indexPath.section == 2{
             return 200
         }
         return 50
@@ -157,6 +160,10 @@ extension MatchCardCollectionViewCell: UITableViewDelegate, UITableViewDataSourc
             cell.data = self.data!
             return cell
         }else if indexPath.section == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MATCH_STAT_TABLEVIEW_CELL_ID", for: indexPath) as! MatchStatTableViewCell
+            cell.data = self.data!
+            return cell
+        }else if indexPath.section == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: "MATCH_LOCATION_TABLEVIEW_CELL_ID", for: indexPath) as! MatchLocationTableViewCell
             cell.data = self.data!
             return cell

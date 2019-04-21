@@ -23,10 +23,11 @@ enum GCSportType : String{
     case golf = "Golf"
     case fieldHockey = "Field Hockey"
     case crossCountry = "Cross Country"
+    case alphineSkiing = "Alphine Skiing"
     case `default` = "__default__"
 }
 //
-enum GCSportTeamType : String{
+enum GCSportTeamType : String, CaseIterable{
     case crossCountryBV = "Varsity Boys Cross Country"
     case crossCountryBJV = "JV Boys Cross Country"
     case crossCountryGV = "Varsity Girls Cross Country"
@@ -46,8 +47,10 @@ enum GCSportTeamType : String{
     case volleyballGV = "Varsity Girls Volleyball"
     case volleyballGJV = "JV Girls Volleyball"
     case volleyballGT = "Third Girls Volleyball"
-    case alphineSkiingBV = "Alphine Skiing Boys Varsity"
-    case alphineSkiingGV = "Alphine Skiing Girls Varsity"
+    case alphineSkiingBV = "Varsity Boys Alpine Ski Racing"
+    case alphineSkiingBJV = "JV Boys Alpine Ski Racing"
+    case alphineSkiingGV = "Varsity Girls Alpine Ski Racing"
+    case alphineSkiingGJV = "JV Girls Alpine Ski Racing"
     case basketballBV = "Varsity Boys Basketball"
     case basketballBJV = "JV Boys Basketball"
     case basketballBT = "Third Boys Basketball"

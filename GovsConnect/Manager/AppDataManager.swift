@@ -23,6 +23,7 @@ class AppDataManager{
     var discoverLinksData = Array<DiscoverLinksDataCountainer>()
     var users = Dictionary<String, UserDataContainer>()
     var sportsGameData = Array<Array<SportsGame>>()
+    var sportsBrowseByCategoryData = Array<SportsGame>()
     var newPostDraft: (String, String, Array<UIImage>)? = nil
     var currentPersonID = ""{
         didSet{
@@ -295,7 +296,7 @@ class AppDataManager{
     }
     
     func loadSportsDataFromServer(_ reloadOnUI: Bool = false){
-        let startDate = Date.yesterday.startOfTheDay
+        let startDate = Date.yesterday.dayBefore.startOfTheDay
         let endDate = Calendar.current.date(byAdding: .day, value: 4, to: startDate)!.endOfTheDay
         AppIOManager.shared.getGameDataByRange(startDate: startDate, endDate: endDate, {
             if reloadOnUI{

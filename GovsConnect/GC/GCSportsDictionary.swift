@@ -87,6 +87,7 @@ let SPORTS_TYPE_COLOR: Dictionary<GCSportType, UIColor> = [
     .golf: UIColorFromRGB(rgbValue: 0xFF9663, alpha: 0.8),
     .fieldHockey: UIColorFromRGB(rgbValue: 0x6FB4FF, alpha: 0.8),
     .crossCountry: UIColorFromRGB(rgbValue: 0xFF9663, alpha: 0.8),
+    .alphineSkiing: UIColorFromRGB(rgbValue: 0xFF9663, alpha: 0.8),
     .default: UIColor.darkGray
 ]
 
@@ -105,6 +106,7 @@ let SPORTS_TYPE_BACKGROUND_IMAGE: Dictionary<GCSportType, String> = [
     .golf: "golf_test.png",
     .fieldHockey: "fieldhockey_test.png",
     .crossCountry: "crosscountry_test.png",
+    .alphineSkiing: "skiing_test.png",
     .default: "default-opponent.png",
 ]
 

@@ -53,8 +53,6 @@
 		133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */; };
 		133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */; };
 		134C194621FA4CE700469E3C /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C194421FA4CE700469E3C /* NewTableViewCell.swift */; };
-		134EA0FC221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134EA0FA221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.swift */; };
-		134EA0FD221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134EA0FB221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.xib */; };
 		13540E9721645ABE005204FC /* GCSportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9621645ABE005204FC /* GCSportType.swift */; };
 		13540E99216673A3005204FC /* system_discover_links.png in Resources */ = {isa = PBXBuildFile; fileRef = 13540E98216673A3005204FC /* system_discover_links.png */; };
 		13540E9C216673D6005204FC /* LinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9A216673D6005204FC /* LinksViewController.swift */; };
@@ -196,6 +194,17 @@
 		138FEEDF20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138FEEDD20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib */; };
 		1390DA8F21681686004D1A50 /* ConnectClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1390DA8D21681686004D1A50 /* ConnectClubTableViewCell.swift */; };
 		1390DA9021681686004D1A50 /* ConnectClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1390DA8E21681686004D1A50 /* ConnectClubTableViewCell.xib */; };
+		13921F62226AA20600646A7F /* SportsBrowseByCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13921F60226AA20600646A7F /* SportsBrowseByCategoryViewController.swift */; };
+		13921F63226AA20600646A7F /* SportsBrowseByCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13921F61226AA20600646A7F /* SportsBrowseByCategoryViewController.xib */; };
+		13921F69226B98F000646A7F /* skiing_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 13921F68226B98F000646A7F /* skiing_test.png */; };
+		13921F6C226B99C300646A7F /* SportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13921F6A226B99C300646A7F /* SportsListViewController.swift */; };
+		13921F6D226B99C300646A7F /* SportsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13921F6B226B99C300646A7F /* SportsListViewController.xib */; };
+		13921F74226BA63200646A7F /* SportsListViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13921F72226BA63200646A7F /* SportsListViewTableViewCell.swift */; };
+		13921F75226BA63200646A7F /* SportsListViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13921F73226BA63200646A7F /* SportsListViewTableViewCell.xib */; };
+		13921F77226C125E00646A7F /* SportsTeamStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13921F76226C125E00646A7F /* SportsTeamStat.swift */; };
+		13921F7A226C16B600646A7F /* MatchStatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13921F78226C16B600646A7F /* MatchStatTableViewCell.swift */; };
+		13921F7B226C16B600646A7F /* MatchStatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13921F79226C16B600646A7F /* MatchStatTableViewCell.xib */; };
+		13921F7D226C1BAA00646A7F /* GCStackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13921F7C226C1BAA00646A7F /* GCStackBar.swift */; };
 		1396070E20F7E3210079CBC4 /* LookupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1396070C20F7E3210079CBC4 /* LookupViewController.swift */; };
 		1396070F20F7E3210079CBC4 /* LookupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1396070D20F7E3210079CBC4 /* LookupViewController.xib */; };
 		13961E1320CA7766004FFF4B /* system_viewed.png in Resources */ = {isa = PBXBuildFile; fileRef = 13961E0D20CA7766004FFF4B /* system_viewed.png */; };
@@ -453,8 +462,6 @@
 		133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		134C194421FA4CE700469E3C /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
 		134C194521FA4CE700469E3C /* NewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
-		134EA0FA221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchBrowseByDateViewController.swift; sourceTree = "<group>"; };
-		134EA0FB221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchBrowseByDateViewController.xib; sourceTree = "<group>"; };
 		13540E9621645ABE005204FC /* GCSportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSportType.swift; sourceTree = "<group>"; };
 		13540E98216673A3005204FC /* system_discover_links.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_links.png; sourceTree = "<group>"; };
 		13540E9A216673D6005204FC /* LinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewController.swift; sourceTree = "<group>"; };
@@ -596,6 +603,17 @@
 		138FEEDD20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CourseDescriptionTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/CourseDescriptionTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		1390DA8D21681686004D1A50 /* ConnectClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectClubTableViewCell.swift; sourceTree = "<group>"; };
 		1390DA8E21681686004D1A50 /* ConnectClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectClubTableViewCell.xib; sourceTree = "<group>"; };
+		13921F60226AA20600646A7F /* SportsBrowseByCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsBrowseByCategoryViewController.swift; sourceTree = "<group>"; };
+		13921F61226AA20600646A7F /* SportsBrowseByCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsBrowseByCategoryViewController.xib; sourceTree = "<group>"; };
+		13921F68226B98F000646A7F /* skiing_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skiing_test.png; sourceTree = "<group>"; };
+		13921F6A226B99C300646A7F /* SportsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsListViewController.swift; sourceTree = "<group>"; };
+		13921F6B226B99C300646A7F /* SportsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsListViewController.xib; sourceTree = "<group>"; };
+		13921F72226BA63200646A7F /* SportsListViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsListViewTableViewCell.swift; sourceTree = "<group>"; };
+		13921F73226BA63200646A7F /* SportsListViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsListViewTableViewCell.xib; sourceTree = "<group>"; };
+		13921F76226C125E00646A7F /* SportsTeamStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsTeamStat.swift; sourceTree = "<group>"; };
+		13921F78226C16B600646A7F /* MatchStatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatTableViewCell.swift; sourceTree = "<group>"; };
+		13921F79226C16B600646A7F /* MatchStatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchStatTableViewCell.xib; sourceTree = "<group>"; };
+		13921F7C226C1BAA00646A7F /* GCStackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCStackBar.swift; sourceTree = "<group>"; };
 		1396070C20F7E3210079CBC4 /* LookupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupViewController.swift; sourceTree = "<group>"; };
 		1396070D20F7E3210079CBC4 /* LookupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookupViewController.xib; sourceTree = "<group>"; };
 		13961E0D20CA7766004FFF4B /* system_viewed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_viewed.png; sourceTree = "<group>"; };
@@ -904,6 +922,7 @@
 		132F819420C90DC1005D3905 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				13921F68226B98F000646A7F /* skiing_test.png */,
 				137534292268050A00AB02B7 /* crosscountry_test.png */,
 				137534262268050A00AB02B7 /* fieldhockey_test.png */,
 				137534272268050A00AB02B7 /* golf_test.png */,
@@ -1044,6 +1063,7 @@
 				138347F1221128C1005A3C67 /* SportsGame.swift */,
 				138347F322112928005A3C67 /* SportsGameResult.swift */,
 				138347F522112D32005A3C67 /* SportsGameStyle.swift */,
+				13921F76226C125E00646A7F /* SportsTeamStat.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1062,8 +1082,10 @@
 				131AFCC6221477A800186C62 /* SportsPanelView.swift */,
 				136E0C3922173EBF003F475D /* MatchNoDataCollectionViewCell.swift */,
 				136E0C3A22173EBF003F475D /* MatchNoDataCollectionViewCell.xib */,
-				134EA0FA221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.swift */,
-				134EA0FB221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.xib */,
+				13921F72226BA63200646A7F /* SportsListViewTableViewCell.swift */,
+				13921F73226BA63200646A7F /* SportsListViewTableViewCell.xib */,
+				13921F78226C16B600646A7F /* MatchStatTableViewCell.swift */,
+				13921F79226C16B600646A7F /* MatchStatTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1073,6 +1095,10 @@
 			children = (
 				139A0BED2207920500557DCC /* SportsViewController.swift */,
 				139A0BEE2207920500557DCC /* SportsViewController.xib */,
+				13921F60226AA20600646A7F /* SportsBrowseByCategoryViewController.swift */,
+				13921F61226AA20600646A7F /* SportsBrowseByCategoryViewController.xib */,
+				13921F6A226B99C300646A7F /* SportsListViewController.swift */,
+				13921F6B226B99C300646A7F /* SportsListViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1262,6 +1288,7 @@
 				13A6BA99221A12CD00E6D28A /* GCCenteredButton.swift */,
 				13FE084C223E7D6E00F926E5 /* LoveButton.swift */,
 				13639B9A22677D6000F9DE8B /* GCFuckShit.swift */,
+				13921F7C226C1BAA00646A7F /* GCStackBar.swift */,
 			);
 			path = GC;
 			sourceTree = "<group>";
@@ -1633,12 +1660,14 @@
 				1375350A2268357800AB02B7 /* the-gunnery-school.png in Resources */,
 				1375350E2268357800AB02B7 /* st-sebastians-school.png in Resources */,
 				1399FC3B217A0CD1009F926F /* red_Q.png in Resources */,
+				13921F75226BA63200646A7F /* SportsListViewTableViewCell.xib in Resources */,
 				13D99EE521729B45007CFBFE /* system_like_white.png in Resources */,
 				1375350D2268357800AB02B7 /* traip-academy.png in Resources */,
 				13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */,
 				1375350C2268357800AB02B7 /* bbn.png in Resources */,
 				13DDA96C216D06C300916139 /* NewUserDetailTableViewCell.xib in Resources */,
 				137535042268357800AB02B7 /* worcester-academy.png in Resources */,
+				13921F7B226C16B600646A7F /* MatchStatTableViewCell.xib in Resources */,
 				13CD9F2D2166B37700EAFE3D /* AboutGovsConnectViewController.xib in Resources */,
 				137535022268357800AB02B7 /* kents-hill-school.png in Resources */,
 				13CD9F492166B82500EAFE3D /* govs_connect_app_logo_60@2x.png in Resources */,
@@ -1651,7 +1680,6 @@
 				13661A3E2233725600EF79B6 /* MenuSpecialityCollectionViewCell.xib in Resources */,
 				137534F52268357800AB02B7 /* landmark-school.png in Resources */,
 				13540E9D216673D6005204FC /* LinksViewController.xib in Resources */,
-				134EA0FD221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.xib in Resources */,
 				1399FC3D217A0CD1009F926F /* blue_P.png in Resources */,
 				1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */,
 				13639BAC2267888800F9DE8B /* baseball_test.png in Resources */,
@@ -1715,6 +1743,7 @@
 				130694C1220E788400D88A90 /* MatchDetailTableViewCell.xib in Resources */,
 				13CD9F4B2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png in Resources */,
 				1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */,
+				13921F6D226B99C300646A7F /* SportsListViewController.xib in Resources */,
 				130E677720F61765009D3599 /* testing_food_3.jpg in Resources */,
 				137534F42268357800AB02B7 /* lawrence-academy.png in Resources */,
 				13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */,
@@ -1732,6 +1761,7 @@
 				13117B7920F7454600E4CD66 /* testing_food_5.jpeg in Resources */,
 				13661A422233729300EF79B6 /* MenuEverydayCollectionViewCell.xib in Resources */,
 				13007BBA216C189900ECB59F /* BottomActionTableViewCell.xib in Resources */,
+				13921F63226AA20600646A7F /* SportsBrowseByCategoryViewController.xib in Resources */,
 				1356C4DD210599D7000C3BF5 /* EditProfileViewController.xib in Resources */,
 				139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */,
 				1399FC19217A0CD1009F926F /* red_L.png in Resources */,
@@ -1844,6 +1874,7 @@
 				13CD9F3E2166B82500EAFE3D /* govs_connect_app_logo_76@1x.png in Resources */,
 				137535072268357800AB02B7 /* dana-hall-school.png in Resources */,
 				137535152268357800AB02B7 /* marianapolis-preparatory-school.png in Resources */,
+				13921F69226B98F000646A7F /* skiing_test.png in Resources */,
 				BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */,
 				1399FC27217A0CD1009F926F /* red_P.png in Resources */,
 				1399FC0C217A0CD1009F926F /* blue_N.png in Resources */,
@@ -2011,6 +2042,7 @@
 			files = (
 				137BD1DC2210E2FB008A501D /* GCColor.swift in Sources */,
 				13661A412233729300EF79B6 /* MenuEverydayCollectionViewCell.swift in Sources */,
+				13921F7D226C1BAA00646A7F /* GCStackBar.swift in Sources */,
 				136E0C3B22173EBF003F475D /* MatchNoDataCollectionViewCell.swift in Sources */,
 				137BD1DA2210CFFF008A501D /* GCAnimatedCell.swift in Sources */,
 				13C25663214C6BFC00EFCBCF /* Setting+CoreDataProperties.swift in Sources */,
@@ -2028,6 +2060,7 @@
 				13EED9D52136121B00427E5E /* GCLoginRequireViewController.swift in Sources */,
 				13961E1D20CAA9B0004FFF4B /* AppDataManager.swift in Sources */,
 				13C2566E214C8BE500EFCBCF /* ProfileImageData+CoreDataProperties.swift in Sources */,
+				13921F74226BA63200646A7F /* SportsListViewTableViewCell.swift in Sources */,
 				13C2565D214C68F700EFCBCF /* AppPersistenceManager.swift in Sources */,
 				13F02C8E2162DB4500660E95 /* GCGoogleLoginViewController.swift in Sources */,
 				13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */,
@@ -2041,7 +2074,6 @@
 				13C25673214DE2AC00EFCBCF /* Comment+CoreDataClass.swift in Sources */,
 				13C2567A214E0F5F00EFCBCF /* Post+CoreDataProperties.swift in Sources */,
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
-				134EA0FC221A8DDB00FFC8E9 /* MatchBrowseByDateViewController.swift in Sources */,
 				13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */,
 				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
 				1355B8AC217E930D006E103D /* NewFoodTableViewCell.swift in Sources */,
@@ -2049,6 +2081,7 @@
 				133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */,
 				13D389E220FDD62000330CDD /* UserDetailTableViewCell.swift in Sources */,
 				13540EA321667720005204FC /* GCLinkType.swift in Sources */,
+				13921F62226AA20600646A7F /* SportsBrowseByCategoryViewController.swift in Sources */,
 				132F817E20C8C952005D3905 /* WelcomeViewController.swift in Sources */,
 				13C5EA0920F8A143000DC504 /* PersonTableViewCell.swift in Sources */,
 				BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */,
@@ -2067,10 +2100,12 @@
 				1390DA8F21681686004D1A50 /* ConnectClubTableViewCell.swift in Sources */,
 				130694C0220E788400D88A90 /* MatchDetailTableViewCell.swift in Sources */,
 				13DDA968216D054A00916139 /* String+Ext.swift in Sources */,
+				13921F77226C125E00646A7F /* SportsTeamStat.swift in Sources */,
 				13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */,
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
 				139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */,
+				13921F6C226B99C300646A7F /* SportsListViewController.swift in Sources */,
 				13A6BA9A221A12CD00E6D28A /* GCCenteredButton.swift in Sources */,
 				13007BB9216C189900ECB59F /* BottomActionTableViewCell.swift in Sources */,
 				139A0BEF2207920500557DCC /* SportsViewController.swift in Sources */,
@@ -2097,6 +2132,7 @@
 				139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */,
 				BC1490EC20DA240100373BBF /* GCNavigationViewController.swift in Sources */,
 				138347F422112928005A3C67 /* SportsGameResult.swift in Sources */,
+				13921F7A226C16B600646A7F /* MatchStatTableViewCell.swift in Sources */,
 				1377AB6B214EDA510015172C /* Event+CoreDataClass.swift in Sources */,
 				13C25679214E0F5F00EFCBCF /* Post+CoreDataClass.swift in Sources */,
 				137BD1D82210CBD5008A501D /* GCArtwork.swift in Sources */,

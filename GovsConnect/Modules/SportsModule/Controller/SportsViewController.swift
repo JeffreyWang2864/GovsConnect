@@ -16,12 +16,14 @@ class SportsViewController: UIViewController {
     var panelView = SportsPanelView()
     var dragSignView = UIView()
     var dateSegmentView: PinterestSegment?
-    //var quickActionStackView = UIStackView()
-    var quickActionStackView = UILabel()
+    var quickActionStackView = UIStackView()
+    //var quickActionStackView = UILabel()
     var browseByDateSelector: UINavigationController?
     var collectionViewCurrentSelection: Int = 0
     var dragGestureRecongnizer: UIPanGestureRecognizer?
     var walkthroughViewController: CoachMarksController?
+    var browseByCategoryViewController: SportsBrowseByCategoryViewController?
+    var sportsListViewController = SportsListViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         let barButton1 = UIBarButtonItem.init(barButtonSystemItem: .refresh, target: self, action: #selector(self.didClickOnReload))
@@ -91,55 +93,64 @@ class SportsViewController: UIViewController {
         dataSegmentStyle.normalTitleColor = UIColor.lightGray
         
         //setup title for days
-        var todayDate = Date().dayAfter.dayAfter
-        var titles = ["yesterday", "today", "tomorrow"]
+        var startDayDate = Date().dayBefore.dayBefore
+        var titles = Array<String>()
         let df = DateFormatter()
         df.dateFormat = "M/d/yyyy"
-        for _ in (0..<2){
-            titles.append(df.string(from: todayDate))
-            todayDate = todayDate.dayAfter
+        for _ in (0..<5){
+            titles.append(df.string(from: startDayDate))
+            startDayDate = startDayDate.dayAfter
         }
-        
+        titles[1] = "yesterday"
+        titles[2] = "today"
+        titles[3] = "tomorrow"
         self.dateSegmentView = PinterestSegment(frame: CGRect.init(x: 0, y: 70, width: self.panelView.width, height: 45), segmentStyle: dataSegmentStyle, titles: titles)
         self.panelView.addSubview(self.dateSegmentView!)
-        self.dateSegmentView!.setSelectIndex(index: 1, animated: false)
+        self.dateSegmentView!.setSelectIndex(index: 2, animated: false)
         self.dateSegmentView!.valueChange = self.dateSegmentViewDidChange
         
         //quick action stack view
-//        self.quickActionStackView.removeFromSuperview()
-//        self.quickActionStackView = UIStackView(frame: CGRect(x: 0, y: 0, width: self.panelView.width, height: 65))
-//        self.quickActionStackView.backgroundColor = UIColor.clear
-//        self.quickActionStackView.distribution = .fillEqually
-//        self.quickActionStackView.axis = .horizontal
-//        self.quickActionStackView.contentMode = .center
-//        self.quickActionStackView.spacing = (self.quickActionStackView.width - (65 * 4)) / 4
-//        let labelTexts = ["browse by dates", "browse by catagory", "lastest results", "sport videos"]
-//        let imageNames = ["system_sports_select_date.png", "system_sports_browse_by_category.png", "system_sports_see_result.png", "system_sports_video.png"]
-//        for i in (0..<4){
-//            let v = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
-//            let imgV = UIImageView(frame: CGRect(x: 15, y: 2, width: 32, height: 32))
-//            imgV.image = UIImage.init(named: imageNames[i])
-//            imgV.contentMode = .scaleAspectFit
-//            let l = UILabel(frame: CGRect(x: 0, y: 34, width: 65, height: 27))
-//            l.font = UIFont.systemFont(ofSize: 11, weight: .semibold)
-//            l.textAlignment = .center
-//            l.numberOfLines = 2
-//            l.textColor = UIColor.darkGray
-//            l.text = labelTexts[i]
-//            v.addSubview(imgV)
-//            v.addSubview(l)
-//            let tgr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnTopAction(_:)))
-//            tgr.numberOfTapsRequired = 1
-//            v.addGestureRecognizer(tgr)
-//            v.tag = i
-//            self.quickActionStackView.addArrangedSubview(v)
-//        }
+        self.quickActionStackView.removeFromSuperview()
+        self.quickActionStackView = UIStackView(frame: CGRect(x: 10, y: 10, width: self.panelView.width - 20, height: 50))
+        self.quickActionStackView.backgroundColor = UIColor.clear
+        self.quickActionStackView.distribution = .fillEqually
+        self.quickActionStackView.axis = .horizontal
+        self.quickActionStackView.contentMode = .center
+        if PHONE_TYPE == .iphone5{
+            self.quickActionStackView.spacing = (self.quickActionStackView.width - (130 * 2)) / 2
+        }else{
+            self.quickActionStackView.spacing = (self.quickActionStackView.width - (170 * 2)) / 2
+        }
+        let labelTexts = ["browse by team", "lastest results"]
+        let imageNames = ["system_sports_browse_by_category.png", "system_sports_see_result.png"]
+        for i in (0..<2){
+            let v = UIView(frame: CGRect(x: 0, y: 0, width: PHONE_TYPE == .iphone5 ? 130 : 170, height: 50))
+            let imgV = UIImageView(frame: CGRect(x: 15, y: 5, width: 40, height: 40))
+            imgV.image = UIImage.init(named: imageNames[i])
+            imgV.contentMode = .scaleAspectFit
+            let l = UILabel(frame: CGRect(x: 52, y: 0, width: PHONE_TYPE == .iphone5 ? 78 : 118, height: 50))
+            l.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+            l.textAlignment = .center
+            l.numberOfLines = 2
+            l.textColor = UIColor.darkGray
+            l.text = labelTexts[i]
+            v.addSubview(imgV)
+            v.addSubview(l)
+            let tgr = UITapGestureRecognizer(target: self, action: #selector(self.didClickOnTopAction(_:)))
+            tgr.numberOfTapsRequired = 1
+            v.addGestureRecognizer(tgr)
+            v.tag = i
+            v.clipsToBounds = true
+            v.layer.cornerRadius = 10
+            v.backgroundColor = APP_BACKGROUND_GREY
+            self.quickActionStackView.addArrangedSubview(v)
+        }
         
-        self.quickActionStackView = UILabel(frame: CGRect(x: 0, y: 0, width: self.panelView.width, height: 65))
-        self.quickActionStackView.text = "more function coming soon..."
-        self.quickActionStackView.textColor = .gray
-        self.quickActionStackView.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        self.quickActionStackView.textAlignment = .center
+//        self.quickActionStackView = UILabel(frame: CGRect(x: 0, y: 0, width: self.panelView.width, height: 65))
+//        self.quickActionStackView.text = "more function coming soon..."
+//        self.quickActionStackView.textColor = .gray
+//        self.quickActionStackView.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+//        self.quickActionStackView.textAlignment = .center
         self.panelView.addSubview(self.quickActionStackView)
     }
     
@@ -154,35 +165,60 @@ class SportsViewController: UIViewController {
         self.collectionViewCurrentSelection = 0
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
+        self.collectionView.scrollToItem(at: IndexPath.init(item: 0, section: 0), at: .left, animated: false)
     }
     
-//    @objc func didClickOnTopAction(_ sender: UITapGestureRecognizer){
-//        let tag = sender.view!.tag
-//        switch tag {
-//        case 0:
-//            //browse by date
-//            let dateRangePickerViewController = CalendarDateRangePickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
-//            dateRangePickerViewController.delegate = self
-//            dateRangePickerViewController.minimumDate = Date.init(timeIntervalSinceNow: -90 * 60 * 24 * 60)
-//            dateRangePickerViewController.maximumDate = Date.init(timeIntervalSinceNow: 60 * 60 * 24 * 7)
-//            self.browseByDateSelector = UINavigationController(rootViewController: dateRangePickerViewController)
-//            self.navigationController?.present(self.browseByDateSelector!, animated: true){
-//                UIApplication.shared.statusBarStyle = .default
-//            }
-//            break
-//        case 1:
-//            //browse by catagory
-//            break
-//        case 2:
-//            //results
-//            break
-//        case 3:
-//            //video
-//            break
-//        default:
-//            fatalError()
-//        }
-//    }
+    @objc func didClickOnTopAction(_ sender: UITapGestureRecognizer){
+        let tag = sender.view!.tag
+        switch tag {
+        case 0:
+            //browse by catagory
+            if self.browseByCategoryViewController == nil{
+                self.browseByCategoryViewController = SportsBrowseByCategoryViewController()
+                self.browseByCategoryViewController!.view.frame = self.view.bounds
+                self.browseByCategoryViewController!.thingsTodoAfterDismiss = {
+                    self.browseByCategoryViewController!.view.removeFromSuperview()
+                    self.browseByCategoryViewController = nil
+                    if AppDataManager.shared.sportsBrowseByCategoryData.count > 0{
+                        let title = AppDataManager.shared.sportsBrowseByCategoryData[0].team.rawValue
+                        self.summonListViewController(title)
+                    }
+                }
+            }
+            self.present(self.browseByCategoryViewController!, animated: true) {
+                UIApplication.shared.statusBarStyle = .default
+                //completion handler
+            }
+        case 1:
+            //results
+            let alert = UIAlertController(title: nil, message: "Loading...", preferredStyle: .alert)
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            loadingIndicator.startAnimating();
+            alert.view.addSubview(loadingIndicator)
+            self.present(alert, animated: true, completion: nil)
+            AppIOManager.shared.getGameDataByResult({
+                alert.dismiss(animated: true){
+                    self.summonListViewController("Latest Results")
+                }
+            }) { (errStr) in
+                alert.dismiss(animated: true){
+                    let alert = UIAlertController(title: "Failed when loading game result", message: errStr, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        default:
+            break;
+        }
+    }
+    func summonListViewController(_ title: String){
+        self.sportsListViewController.view.frame = self.view.bounds
+        self.sportsListViewController.navigationItem.title = title
+        self.navigationController!.pushViewController(self.sportsListViewController, animated: true)
+        self.sportsListViewController.becomeActive()
+    }
     
     @objc func didClickOnReload(){
         AppDataManager.shared.loadSportsDataFromServer(true)
@@ -313,7 +349,7 @@ extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
 extension SportsViewController: CoachMarksControllerDelegate, CoachMarksControllerDataSource{
     func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
-        return 3
+        return 4
     }
     
     func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
@@ -329,8 +365,10 @@ extension SportsViewController: CoachMarksControllerDelegate, CoachMarksControll
         case 0:
             pointOfInterest = UIView(frame: CGRect.init(x: 0.0, y: 100.0 + noLiuhaiOffset, width: self.panelView.width, height: 40.0))
         case 1:
-            pointOfInterest = UIView(frame: CGRect.init(x: 0.0, y: 170 + noLiuhaiOffset, width: self.panelView.width, height: 200.0))
+            pointOfInterest = UIView(frame: CGRect.init(x: self.dragSignView.x, y: self.dragSignView.y + noLiuhaiOffset + 30, width: self.dragSignView.width, height: self.dragSignView.height))
         case 2:
+            pointOfInterest = UIView(frame: CGRect.init(x: 0.0, y: 170 + noLiuhaiOffset, width: self.panelView.width, height: 200.0))
+        case 3:
             pointOfInterest = UIView(frame: CGRect.init(x: 0.0, y: 170.0 + noLiuhaiOffset, width: self.panelView.width, height: 200.0))
         default:
             break
@@ -345,9 +383,12 @@ extension SportsViewController: CoachMarksControllerDelegate, CoachMarksControll
             coachViews.bodyView.hintLabel.text = "navigate between days"
             coachViews.bodyView.nextLabel.text = "next"
         case 1:
-            coachViews.bodyView.hintLabel.text = "swipe horizontally to navigate between matches"
+            coachViews.bodyView.hintLabel.text = "drag down for fast actions"
             coachViews.bodyView.nextLabel.text = "next"
         case 2:
+            coachViews.bodyView.hintLabel.text = "swipe horizontally to navigate between matches"
+            coachViews.bodyView.nextLabel.text = "next"
+        case 3:
             coachViews.bodyView.hintLabel.text = "swipe vertically to view match detail"
             coachViews.bodyView.nextLabel.text = "done"
         default:
