@@ -72,7 +72,11 @@ class MatchCardCollectionViewCell: UICollectionViewCell, GCAnimatedCell {
         self.resultLabel.numberOfLines = 1
         
         //tableView
-        self.tableView.frame = CGRect(x: 2, y: 235 + 80, width: screenWidth - 30 - 4, height: 700)
+        if self.data != nil && self.data!.location.coordinate.latitude == -1 && self.data!.location.coordinate.longitude == -1{
+                self.tableView.frame = CGRect(x: 2, y: 235 + 80, width: screenWidth - 30 - 4, height: 420)
+        }else{
+            self.tableView.frame = CGRect(x: 2, y: 235 + 80, width: screenWidth - 30 - 4, height: 700)
+        }
         self.tableView.alpha = 0
         self.tableView.delegate = self
         self.tableView.dataSource = self

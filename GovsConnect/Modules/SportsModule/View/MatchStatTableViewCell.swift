@@ -33,10 +33,10 @@ class MatchStatTableViewCell: UITableViewCell, GCAnimatedCell {
                 self.drawLabel.text = "draw: \(self.data!.stat.numberOfDraw)"
             }
             self.loseLabel.text = "loss: \(self.data!.stat.numberOfLose)"
-            if self.data!.stat.winRate == -1{
+            if self.data!.stat.winLossRatio == -1{
                 self.winLoseRatioLabel.text = "win/loss ratio: undefeated"
             }else{
-                self.winLoseRatioLabel.text = "win/loss ratio: " + String.init(format: "%.1f", self.data!.stat.winRate)
+                self.winLoseRatioLabel.text = "win/loss ratio: " + String.init(format: "%.1f", self.data!.stat.winLossRatio)
             }
             self.gfLabel.text = "goal for(score) this season: \(self.data!.stat.goalScore)"
             self.gaLabel.text = "goal against this season: \(self.data!.stat.goalAgainst)"

@@ -14,14 +14,11 @@ class SportsTeamStat{
     var numberOfLose: Int
     var goalScore: Int
     var goalAgainst: Int
-    var totalMatch: Int{
-        return self.numberOfWin + self.numberOfDraw + self.numberOfLose
-    }
-    var winRate: Double{
+    var winLossRatio: Double{
         if self.numberOfLose == 0{
             return -1.0
         }
-        return Double(self.numberOfWin) / Double(self.totalMatch)
+        return Double(self.numberOfWin) / Double(self.numberOfLose)
     }
     var scoreAgainstRatio: Double{
         if self.goalAgainst == 0{
