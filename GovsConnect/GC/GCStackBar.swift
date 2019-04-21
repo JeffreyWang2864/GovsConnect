@@ -17,6 +17,13 @@ class GCStackBar: UIView {
     var stackViews = Array<UIView>()
     var stackData = Array<Int>(){
         didSet{
+            if self.stackData.reduce(0, +) == 0{
+                let v = UIView(frame: CGRect(x: 0.0, y: 0.0, width: self.width, height: self.height));
+                v.backgroundColor = .lightGray
+                self.addSubview(v)
+                self.stackViews.append(v)
+                return
+            }
             for view in self.stackViews{
                 view.removeFromSuperview()
             }

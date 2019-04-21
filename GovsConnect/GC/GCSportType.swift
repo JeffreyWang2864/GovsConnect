@@ -83,6 +83,7 @@ enum GCSportTeamType : String, CaseIterable{
     case lacrosseBT = "Third Boys Lacrosse"
     case lacrosseGV = "Varsity Girls Lacrosse"
     case lacrosseGJV = "JV Girls Lacrosse"
+    case lacrosseGT = "Third Girls Lacrosse"
     case tennisBV = "Varsity Boys Tennis"
     case tennisBJV = "JV Boys Tennis"
     case tennisGV = "Varsity Girls Tennis"

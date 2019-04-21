@@ -13,7 +13,7 @@ let SPORTS_TEAM_ICON: Dictionary<String, String> = [
     "Worcester Academy": "worcester-academy.png",
     "Winsor School": "winsor-school.png",
     "Wilbraham Monson Academy": "wilbraham-monson-academy.png",
-    "Triton High School": "triton-high-school.png",
+    "Triton Regional High School": "triton-high-school.png",
     "Traip Academy": "traip-academy.png",
     "Tilton School": "tilton-school.png",
     "The Rivers School": "the-rivers-school.png",

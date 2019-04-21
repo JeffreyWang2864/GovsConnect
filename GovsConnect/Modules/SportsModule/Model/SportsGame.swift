@@ -37,6 +37,20 @@ class SportsGame{
                 return .inProgress
             }
             //there's score
+            
+            //if it's golf
+            if self.catagory == .golf && self.homeScore > 20 && self.awayScore > 20{
+                if self.homeScore == self.awayScore{
+                    return .draw
+                }
+                if (self.homeScore > self.awayScore && self.isHome) || (self.awayScore > self.homeScore && !self.isHome){
+                    //govs lost
+                    return .defeat
+                }
+                //govs won
+                return .victory
+            }
+            
             if self.homeScore == self.awayScore{
                 //draw
                 return .draw
