@@ -70,6 +70,7 @@ let SPORTS_TEAM_ICON: Dictionary<String, String> = [
     "Bancroft School": "bancroft-school.png",
     "BB&N": "bbn.png",
     "Avon Old Farms": "avon-old-farms.png",
+    "Berwick Academy": "berwick-academy.png",
 ]
 
 let SPORTS_TYPE_COLOR: Dictionary<GCSportType, UIColor> = [

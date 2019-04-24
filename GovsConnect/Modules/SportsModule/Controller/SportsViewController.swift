@@ -231,7 +231,7 @@ class SportsViewController: UIViewController {
     }
     
     @objc func didClickOnInfoButton(){
-        makeMessageViaAlert(title: "Disclaimer", message: "The game section of Govs Connect is just a reference to the game schedule. All game information displays here is from Veracross. Please don't 100% trust this because Veracross sometimes makes mistakes. If you are playing in a match, please listen to whatever your coach says (about postponing, canceling and etc.). Govs Connect is not responsible for any tardies and absences.")
+        makeMessageViaAlert(title: "Disclaimer", message: "The game section of Govs Connect is just a reference to the game schedule. All game information displays here is from Veracross and is subject to change. If you are playing in a match, please listen to whatever your coach says (about postponing, canceling, etc.). Govs Connect is not responsible for any tardies and absences.")
     }
     
     private func showTutorial(){
@@ -383,13 +383,13 @@ extension SportsViewController: CoachMarksControllerDelegate, CoachMarksControll
             coachViews.bodyView.hintLabel.text = "navigate between days"
             coachViews.bodyView.nextLabel.text = "next"
         case 1:
-            coachViews.bodyView.hintLabel.text = "drag down for fast actions"
+            coachViews.bodyView.hintLabel.text = "drag down for quick actions"
             coachViews.bodyView.nextLabel.text = "next"
         case 2:
-            coachViews.bodyView.hintLabel.text = "swipe horizontally to navigate between matches"
+            coachViews.bodyView.hintLabel.text = "swipe left or right for today's games"
             coachViews.bodyView.nextLabel.text = "next"
         case 3:
-            coachViews.bodyView.hintLabel.text = "swipe vertically to view match detail"
+            coachViews.bodyView.hintLabel.text = "swipe up or down for details"
             coachViews.bodyView.nextLabel.text = "done"
         default:
             coachViews.bodyView.hintLabel.text = ""

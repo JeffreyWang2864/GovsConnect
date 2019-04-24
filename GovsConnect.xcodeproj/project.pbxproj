@@ -52,6 +52,7 @@
 		133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */; };
 		133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */; };
 		133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */; };
+		1348E51A2270AC0D004EEBCD /* berwick-academy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1348E5192270AC0D004EEBCD /* berwick-academy.png */; };
 		134C194621FA4CE700469E3C /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C194421FA4CE700469E3C /* NewTableViewCell.swift */; };
 		13540E9721645ABE005204FC /* GCSportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9621645ABE005204FC /* GCSportType.swift */; };
 		13540E99216673A3005204FC /* system_discover_links.png in Resources */ = {isa = PBXBuildFile; fileRef = 13540E98216673A3005204FC /* system_discover_links.png */; };
@@ -460,6 +461,7 @@
 		133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_drop_down_arrow.png; sourceTree = "<group>"; };
 		133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
+		1348E5192270AC0D004EEBCD /* berwick-academy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "berwick-academy.png"; sourceTree = "<group>"; };
 		134C194421FA4CE700469E3C /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
 		134C194521FA4CE700469E3C /* NewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
 		13540E9621645ABE005204FC /* GCSportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSportType.swift; sourceTree = "<group>"; };
@@ -983,6 +985,7 @@
 		13639B1F22675F1300F9DE8B /* SportOpponentLogo */ = {
 			isa = PBXGroup;
 			children = (
+				1348E5192270AC0D004EEBCD /* berwick-academy.png */,
 				137534D42268357700AB02B7 /* avon-old-farms.png */,
 				137534E22268357800AB02B7 /* bancroft-school.png */,
 				137534D02268357700AB02B7 /* bbn.png */,
@@ -1715,6 +1718,7 @@
 				1399FC2E217A0CD1009F926F /* blue_R.png in Resources */,
 				13ABADDC21FABF3000885398 /* govs-connect-widget-tutorial.gif in Resources */,
 				137534F82268357800AB02B7 /* hebron-academy.png in Resources */,
+				1348E51A2270AC0D004EEBCD /* berwick-academy.png in Resources */,
 				137534F02268357800AB02B7 /* portsmouth-high-school.png in Resources */,
 				137534EF2268357800AB02B7 /* chapel-hill-chauncy-hall.png in Resources */,
 				1399FC1E217A0CD1009F926F /* red_Z.png in Resources */,

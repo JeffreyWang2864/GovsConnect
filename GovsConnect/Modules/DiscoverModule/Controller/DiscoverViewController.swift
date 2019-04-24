@@ -25,6 +25,11 @@ class DiscoverViewController: UIViewController {
         }
         self.mainView.arrangeCells()
         // Do any additional setup after loading the view.
+        
+        //am pm showing preference
+        if let ans = AppDataManager.shared.deviceSetting["did_ask_prefer_question"], ans != "yes"{
+            self.askTimePreference()
+        }
     }
     
     @objc func didClickOnDiscoverFunction(_ sender: UITapGestureRecognizer){
@@ -195,6 +200,28 @@ class DiscoverViewController: UIViewController {
             self.navigationController!.pushViewController(vc, animated: true)
         default:
             NSLog("\(sender.view!.tag)")
+        }
+    }
+    
+    private func askTimePreference(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
+            let predicate = NSPredicate(format: "key == %@", "time_display_preference")
+            let res = AppPersistenceManager.shared.filterObject(of: .setting, with: predicate) as! Array<Setting>
+            if res.count == 0{
+                //am pm not decided yet
+                let perferenceAlertController = UIAlertController(title: "I prefer", message: nil, preferredStyle: .alert)
+                perferenceAlertController.addAction(UIAlertAction(title: "14:00", style: .default, handler: { (alert) in
+                    AppPersistenceManager.shared.saveObject(to: .setting, with: ["time_display_preference", "international"])
+                    AppDataManager.shared.deviceSetting["time_display_preference"] = "international"
+                    AppDataManager.shared.deviceSetting["did_ask_prefer_question"] = "yes"
+                }))
+                perferenceAlertController.addAction(UIAlertAction(title: "2:00 PM", style: .default, handler: { (alert) in
+                    AppPersistenceManager.shared.saveObject(to: .setting, with: ["time_display_preference", "us"])
+                    AppDataManager.shared.deviceSetting["time_display_preference"] = "us"
+                    AppDataManager.shared.deviceSetting["did_ask_prefer_question"] = "yes"
+                }))
+                self.present(perferenceAlertController, animated: true, completion: nil)
+            }
         }
     }
 }

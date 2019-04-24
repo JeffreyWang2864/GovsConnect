@@ -38,6 +38,10 @@ class AppDataManager{
     var profileImageData = Dictionary<String, Data>()
     var remoteNotificationData = Array<RemoteNotificationContainer>()
     var currentUserSetting = Dictionary<String, Bool>()
+    var deviceSetting: Dictionary<String, String> = [
+        "time_display_preference": "us",
+        "did_ask_prefer_question": "no"
+    ]
     var currentUserConnections = Array<String>()
     func isFirstTimeRunningApplication() -> Bool{
         let r = AppPersistenceManager.shared.fetchObject(with: .setting)
@@ -81,6 +85,8 @@ class AppDataManager{
                 for org_str in organizationStr.split(separator: "/"){
                     AppDataManager.shared.currentUserConnections.append("\(org_str)")
                 }
+            case "time_display_preference":
+                AppDataManager.shared.deviceSetting["time_display_preference"] = String(d.value!)
             case "did see widget", "dining hall menu tutorial", "sports section tutorial":
                 break
             default:

@@ -159,11 +159,21 @@ class ModifiedScheduleViewController: UIViewController {
         self.timeStrokeView.frame = CGRect(x: 57, y: yStart, width: UIScreen.main.bounds.size.width - 57, height: 15)
         let redStrokeView = UIView(frame: CGRect(x: 0, y: 0, width: self.timeStrokeView.frame.size.width, height: 1))
         redStrokeView.backgroundColor = UIColor(red: 1.000, green: 0.000, blue: 0.000, alpha: 1)
-        self.timeLabel = UILabel(frame: CGRect(x: self.timeStrokeView.frame.size.width - 40, y: 3, width: 40, height: 11))
+        self.timeLabel = UILabel(frame: CGRect(x: self.timeStrokeView.frame.size.width - 83, y: 3, width: 80, height: 11))
         self.timeLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         self.timeLabel.textColor = UIColor(red: 1.000, green: 0.000, blue: 0.000, alpha: 1)
-        self.timeLabel.textAlignment = .left
-        self.timeLabel.text = "\(currentTime.hour):\(currentTime.minute < 10 ? "0\(currentTime.minute)" : "\(currentTime.minute)")"
+        self.timeLabel.textAlignment = .right
+        if let s = AppDataManager.shared.deviceSetting["time_display_preference"], s == "us"{
+            var hour = currentTime.hour
+            var modifier = "AM"
+            if hour > 12{
+                hour -= 12
+                modifier = "PM"
+            }
+            self.timeLabel.text = "\(hour):\(currentTime.minute < 10 ? "0\(currentTime.minute)" : "\(currentTime.minute)") \(modifier)"
+        }else{
+            self.timeLabel.text = "\(currentTime.hour):\(currentTime.minute < 10 ? "0\(currentTime.minute)" : "\(currentTime.minute)")"
+        }
         self.timeStrokeView.addSubview(redStrokeView)
         self.timeStrokeView.addSubview(self.timeLabel)
         self.tableView.addSubview(self.timeStrokeView)
@@ -175,7 +185,17 @@ class ModifiedScheduleViewController: UIViewController {
             return
         }
         self.lastCurrentMinute = currentTime.minute
-        self.timeLabel.text = "\(currentTime.hour):\(currentTime.minute < 10 ? "0\(currentTime.minute)" : "\(currentTime.minute)")"
+        if let s = AppDataManager.shared.deviceSetting["time_display_preference"], s == "us"{
+            var hour = currentTime.hour
+            var modifier = "AM"
+            if hour > 12{
+                hour -= 12
+                modifier = "PM"
+            }
+            self.timeLabel.text = "\(hour):\(currentTime.minute < 10 ? "0\(currentTime.minute)" : "\(currentTime.minute)") \(modifier)"
+        }else{
+            self.timeLabel.text = "\(currentTime.hour):\(currentTime.minute < 10 ? "0\(currentTime.minute)" : "\(currentTime.minute)")"
+        }
         let heightUnit = self.getHeightUnit(hour: currentTime.hour, minute: currentTime.minute)
         let yStart = self.startingYBound + heightUnit * 72.5
         UIView.animate(withDuration: 0.3){
@@ -199,9 +219,31 @@ class ModifiedScheduleViewController: UIViewController {
             v.layer.borderColor =  UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 0.5).cgColor
             let startTimeLabel = UILabel(frame: CGRect(x: 5, y: 5, width:v.frame.size.width - 10, height: 13))
             startTimeLabel.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-            var timeString = "@ \(startTime.hour!):\(startTime.minute! < 10 ? "0\(startTime.minute!)" : "\(startTime.minute!)")"
-            timeString += " - "
-            timeString += "\(endTime.hour!):\(endTime.minute! < 10 ? "0\(endTime.minute!)" : "\(endTime.minute!)")"
+            
+            var timeString = ""
+            
+            if let s = AppDataManager.shared.deviceSetting["time_display_preference"], s == "us"{
+                var hour = startTime.hour!
+                var modifier = "AM"
+                if hour > 12{
+                    hour -= 12
+                    modifier = "PM"
+                }
+                timeString += "@ \(hour):\(startTime.minute! < 10 ? "0\(startTime.minute!)" : "\(startTime.minute!)") \(modifier)"
+                timeString += " - "
+                var hour2 = endTime.hour!
+                var modifier2 = "AM"
+                if hour2 > 12{
+                    hour2 -= 12
+                    modifier2 = "PM"
+                }
+                timeString += "\(hour2):\(endTime.minute! < 10 ? "0\(endTime.minute!)" : "\(endTime.minute!)") \(modifier2)"
+            }else{
+                timeString += "@ \(startTime.hour!):\(startTime.minute! < 10 ? "0\(startTime.minute!)" : "\(startTime.minute!)")"
+                timeString += " - "
+                timeString += "\(endTime.hour!):\(endTime.minute! < 10 ? "0\(endTime.minute!)" : "\(endTime.minute!)")"
+            }
+            
             startTimeLabel.text = timeString
             startTimeLabel.textColor = UIColor.init(red: 0.216, green: 0.282, blue: 0.675, alpha: 1.0)
             let titleLabel = UILabel(frame: CGRect(x: 5, y: 17, width: v.frame.size.width - 10, height: 15))

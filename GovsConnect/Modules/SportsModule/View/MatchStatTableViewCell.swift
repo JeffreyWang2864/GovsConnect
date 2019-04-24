@@ -25,7 +25,7 @@ class MatchStatTableViewCell: UITableViewCell, GCAnimatedCell {
                 self.data!.stat.numberOfDraw,
                 self.data!.stat.numberOfLose
             ]
-            self.statTitle.text = self.data!.team.rawValue + "'s stats:"
+            self.statTitle.text = self.data!.team.rawValue + " stats:"
             self.winLabel.text = "win: \(self.data!.stat.numberOfWin)"
             if self.data!.stat.numberOfDraw == 0{
                 self.drawLabel.text = ""
@@ -38,10 +38,10 @@ class MatchStatTableViewCell: UITableViewCell, GCAnimatedCell {
             }else{
                 self.winLoseRatioLabel.text = "win/loss ratio: " + String.init(format: "%.1f", self.data!.stat.winLossRatio)
             }
-            self.gfLabel.text = "goal for(score) this season: \(self.data!.stat.goalScore)"
-            self.gaLabel.text = "goal against this season: \(self.data!.stat.goalAgainst)"
+            self.gfLabel.text = "total goal this season (GF): \(self.data!.stat.goalScore)"
+            self.gaLabel.text = "total goal conceded (GA): \(self.data!.stat.goalAgainst)"
             if self.data!.stat.scoreAgainstRatio == -1{
-                self.gfgaRatioLabel.text = "GF GA ratio: infinity"
+                self.gfgaRatioLabel.text = "GF GA ratio: 0"
             }else{
                 self.gfgaRatioLabel.text = "GF GA ratio: " + String.init(format: "%.1f", self.data!.stat.scoreAgainstRatio)
             }

@@ -61,7 +61,11 @@ func prettyTime(to intervalSinceNow: TimeInterval) -> String{
 
 func timeStringFormat(_ date: Date,  withWeek: Bool) -> String{
     let formatter = DateFormatter()
-    formatter.dateFormat = "HH:mm, M/d/yyyy"
+    if let s = AppDataManager.shared.deviceSetting["time_display_preference"], s == "international"{
+        formatter.dateFormat = "HH:mm, M/d/yyyy"
+    }else{
+        formatter.dateFormat = "h:mm a, M/d/yyyy"
+    }
     var formattedString = formatter.string(from: date as Date)
     if withWeek{
         let weekString = ["Sun. ", "Mon. ", "Tue. ", "Wed. ", "Thu. ", "Fri. ", "Sat. "]
