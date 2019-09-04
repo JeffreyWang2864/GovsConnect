@@ -31,20 +31,20 @@ class GCTabBarViewController: UITabBarController {
         NotificationCenter.default.addObserver(sportsVc, selector: #selector(sportsVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
         self.addChildController(childVc: sportsVc, title: "Games", normalImg: UIImage.init(named: "system_normal_sport")!, selectedImg: UIImage.init(named: "system_selected_sport")!)
         
-        
-        //lookUp
-        let lookUpVc = LookupViewController()
-        NotificationCenter.default.addObserver(lookUpVc, selector: #selector(lookUpVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
-        self.addChildController(childVc: lookUpVc, title: "Look up", normalImg: #imageLiteral(resourceName: "system_normal_lookup"), selectedImg: #imageLiteral(resourceName: "system_selected_lookup"))
+//
+//        //lookUp
+//        let lookUpVc = LookupViewController()
+//        NotificationCenter.default.addObserver(lookUpVc, selector: #selector(lookUpVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
+//        self.addChildController(childVc: lookUpVc, title: "Look up", normalImg: #imageLiteral(resourceName: "system_normal_lookup"), selectedImg: #imageLiteral(resourceName: "system_selected_lookup"))
         
         //notification
 //        let notificationVC = NotificationViewController()
 //        self.addChildController(childVc: notificationVC, title: "Notification", imageName: "", selImage: "")
         
-        //You
-        let youVc = YouViewController()
-        NotificationCenter.default.addObserver(youVc, selector: #selector(youVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
-        self.addChildController(childVc: youVc, title: "You", normalImg: #imageLiteral(resourceName: "system_normal_you"), selectedImg: #imageLiteral(resourceName: "system_selected_you"))
+//        //You
+//        let youVc = YouViewController()
+//        NotificationCenter.default.addObserver(youVc, selector: #selector(youVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
+//        self.addChildController(childVc: youVc, title: "You", normalImg: #imageLiteral(resourceName: "system_normal_you"), selectedImg: #imageLiteral(resourceName: "system_selected_you"))
     }
 
     func addChildController(childVc: UIViewController, title: String, normalImg: UIImage, selectedImg: UIImage) -> Void {
