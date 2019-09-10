@@ -95,7 +95,7 @@ let SPORTS_TYPE_COLOR: Dictionary<GCSportType, UIColor> = [
 let SPORTS_TYPE_BACKGROUND_IMAGE: Dictionary<GCSportType, String> = [
     .football: "football_test.png",
     .soccer: "soccer_test.png",
-    .volleyball: "volleyball_test.png",
+    .volleyball: "vollyball_test.png",
     .basketball: "basketball_test.png",
     .hockey: "hockey_test.png",
     .lacrosse: "lacrosse_test.png",

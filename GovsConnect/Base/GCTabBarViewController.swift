@@ -31,13 +31,13 @@ class GCTabBarViewController: UITabBarController {
         NotificationCenter.default.addObserver(sportsVc, selector: #selector(sportsVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
         self.addChildController(childVc: sportsVc, title: "Games", normalImg: UIImage.init(named: "system_normal_sport")!, selectedImg: UIImage.init(named: "system_selected_sport")!)
         
-//
+
 //        //lookUp
 //        let lookUpVc = LookupViewController()
 //        NotificationCenter.default.addObserver(lookUpVc, selector: #selector(lookUpVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
 //        self.addChildController(childVc: lookUpVc, title: "Look up", normalImg: #imageLiteral(resourceName: "system_normal_lookup"), selectedImg: #imageLiteral(resourceName: "system_selected_lookup"))
         
-        //notification
+//        //notification
 //        let notificationVC = NotificationViewController()
 //        self.addChildController(childVc: notificationVC, title: "Notification", imageName: "", selImage: "")
         
