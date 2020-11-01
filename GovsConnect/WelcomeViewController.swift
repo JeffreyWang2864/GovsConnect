@@ -14,20 +14,18 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var appImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-        //self.welcomeLabel.alpha = 0
-        self.welcomeLabel.textColor = APP_THEME_COLOR
-        let c = welcomeImageView.constraints[0]
-        c.constant = screenWidth / 12 * 16
         self.appImageView.layer.cornerRadius = 10
-        self.welcomeImageView.layer.cornerRadius = 20
-//        UIView.animate(withDuration: 0.5, animations: {
-//            self.welcomeLabel.alpha = 1
-//            }, completion: { (returnFlag) in
-//                UIView.animate(withDuration: 1.5){
-//                    self.welcomeLabel.alpha = 0
-//                }
-//        })
+        switch PHONE_TYPE {
+        case .iphone8, .iphone8plus, .ipodtouch:
+            let c = welcomeImageView.constraints[0]
+            c.constant = screenWidth / 11 * 13
+        default:
+            let c = welcomeImageView.constraints[0]
+            c.constant = screenWidth / 11 * 14
+            let d = self.view.constraints[5]
+            d.constant = 60
+        }
+        
         
         // Do any additional setup after loading the view.
     }

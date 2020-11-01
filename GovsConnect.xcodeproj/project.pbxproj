@@ -289,6 +289,7 @@
 		230F2A6B254F64CC00507C73 /* welcome_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 230F2A6A254F64CC00507C73 /* welcome_img.png */; };
 		231D1B6A254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D1B68254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.swift */; };
 		231D1B6B254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 231D1B69254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.xib */; };
+		232D80DD254F7BDC00CB8C91 /* powered_by_eagersoft.png in Resources */ = {isa = PBXBuildFile; fileRef = 232D80DC254F7BDC00CB8C91 /* powered_by_eagersoft.png */; };
 		2354FCEA254EB51B00B0E6D2 /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357D18520EB7639004CD2EB /* NewTableViewCell.xib */; };
 		23DC760A254E954D00AEBADC /* MenuSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DC7608254E954D00AEBADC /* MenuSectionCollectionViewCell.swift */; };
 		23DC760B254E954D00AEBADC /* MenuSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23DC7609254E954D00AEBADC /* MenuSectionCollectionViewCell.xib */; };
@@ -603,6 +604,7 @@
 		230F2A6A254F64CC00507C73 /* welcome_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome_img.png; sourceTree = "<group>"; };
 		231D1B68254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		231D1B69254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuEmptyCollectionViewCell.xib; sourceTree = "<group>"; };
+		232D80DC254F7BDC00CB8C91 /* powered_by_eagersoft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powered_by_eagersoft.png; sourceTree = "<group>"; };
 		23DC7608254E954D00AEBADC /* MenuSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		23DC7609254E954D00AEBADC /* MenuSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		8F9D974B7CD4FABCEEEF381C /* Pods-GovsConnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GovsConnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.release.xcconfig"; sourceTree = "<group>"; };
@@ -892,6 +894,7 @@
 		13961E0C20CA772F004FFF4B /* System */ = {
 			isa = PBXGroup;
 			children = (
+				232D80DC254F7BDC00CB8C91 /* powered_by_eagersoft.png */,
 				230F2A6A254F64CC00507C73 /* welcome_img.png */,
 				13639B9C2267864700F9DE8B /* default-opponent.png */,
 				13A6BA91221A0C8F00E6D28A /* system_sports_browse_by_category.png */,
@@ -1425,6 +1428,7 @@
 				137534EC2268357800AB02B7 /* belmont-hill-school.png in Resources */,
 				13639BAB2267888800F9DE8B /* soccer_test.png in Resources */,
 				137535142268357800AB02B7 /* the-governors-academy.png in Resources */,
+				232D80DD254F7BDC00CB8C91 /* powered_by_eagersoft.png in Resources */,
 				137535012268357800AB02B7 /* pingree-school.png in Resources */,
 				13CD9F2921669B0A00EAFE3D /* system_snapchat_icon.png in Resources */,
 				137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */,
@@ -1857,7 +1861,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GovsConnect/GovsConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = SWNM35NBHT;
 				INFOPLIST_FILE = GovsConnect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1877,7 +1881,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GovsConnect/GovsConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = SWNM35NBHT;
 				INFOPLIST_FILE = GovsConnect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
