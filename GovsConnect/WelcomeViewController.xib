@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="GovsConnect" customModuleProvider="target">
             <connections>
+                <outlet property="appImageView" destination="dSw-o1-iE6" id="SZf-z2-rJR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="welcomeImageView" destination="6n1-me-Aql" id="IwB-kS-VTY"/>
                 <outlet property="welcomeLabel" destination="v5h-ZP-Vwk" id="jKb-E0-ZaA"/>
             </connections>
         </placeholder>
@@ -21,36 +22,73 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Govs Connect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABD-OF-WUy">
-                    <rect key="frame" x="73" y="178" width="229.5" height="65"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome_img.png" translatesAutoresizingMaskIntoConstraints="NO" id="6n1-me-Aql">
+                    <rect key="frame" x="25" y="0.0" width="325" height="300"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="65" id="Ny6-dk-kld"/>
-                        <constraint firstAttribute="width" constant="229.5" id="TNj-Ce-Tv4"/>
+                        <constraint firstAttribute="height" constant="300" id="Vni-IG-Gtq"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Governor's Academy App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5h-ZP-Vwk">
-                    <rect key="frame" x="78" y="335" width="219" height="27"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pK-fC-XSW">
+                    <rect key="frame" x="22.5" y="310" width="330" height="90"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Governor's Academy App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5h-ZP-Vwk">
+                            <rect key="frame" x="104" y="48" width="200" height="23"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="23" id="lhv-Oa-CTZ"/>
+                                <constraint firstAttribute="width" constant="200" id="tNS-rQ-8oW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Govs Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABD-OF-WUy">
+                            <rect key="frame" x="108" y="15" width="192" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="192" id="4QP-EC-Q4V"/>
+                                <constraint firstAttribute="height" constant="33" id="Lgw-vw-NfA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="27"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="govs_connect_app_logo_83.5.png" translatesAutoresizingMaskIntoConstraints="NO" id="dSw-o1-iE6">
+                            <rect key="frame" x="30" y="15" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="Nlo-Wi-Gb1"/>
+                                <constraint firstAttribute="height" constant="60" id="pt7-bF-I5C"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="219" id="VLW-yk-2Dh"/>
-                        <constraint firstAttribute="height" constant="27" id="nch-Qi-QnH"/>
+                        <constraint firstAttribute="height" constant="90" id="0Py-ca-oos"/>
+                        <constraint firstAttribute="width" constant="330" id="Dtv-4G-EQY"/>
+                        <constraint firstItem="v5h-ZP-Vwk" firstAttribute="top" secondItem="ABD-OF-WUy" secondAttribute="bottom" id="Hbr-nF-dhN"/>
+                        <constraint firstAttribute="trailing" secondItem="ABD-OF-WUy" secondAttribute="trailing" constant="30" id="I3e-eo-fom"/>
+                        <constraint firstItem="v5h-ZP-Vwk" firstAttribute="centerX" secondItem="ABD-OF-WUy" secondAttribute="centerX" id="Mb8-Pf-Nog"/>
+                        <constraint firstItem="ABD-OF-WUy" firstAttribute="top" secondItem="6pK-fC-XSW" secondAttribute="top" constant="15" id="NEW-Ls-jYR"/>
+                        <constraint firstItem="dSw-o1-iE6" firstAttribute="centerY" secondItem="6pK-fC-XSW" secondAttribute="centerY" id="UP2-jD-1sB"/>
+                        <constraint firstItem="dSw-o1-iE6" firstAttribute="leading" secondItem="6pK-fC-XSW" secondAttribute="leading" constant="30" id="cOh-KR-Xkh"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="0.7508573587694316" green="0.24221037880215093" blue="0.31417497326765847" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-            <constraints>
-                <constraint firstItem="ABD-OF-WUy" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="AEs-ln-ejd"/>
-                <constraint firstItem="ABD-OF-WUy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="158" id="Cng-Sy-Toa"/>
-                <constraint firstItem="v5h-ZP-Vwk" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="d9T-NL-TO3"/>
-                <constraint firstItem="v5h-ZP-Vwk" firstAttribute="top" secondItem="ABD-OF-WUy" secondAttribute="bottom" constant="92" id="i0O-xe-dGn"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="33.5" y="54.5"/>
+            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="6n1-me-Aql" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Cmb-Vm-yad"/>
+                <constraint firstItem="6pK-fC-XSW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ave-il-rRn"/>
+                <constraint firstItem="6pK-fC-XSW" firstAttribute="top" secondItem="6n1-me-Aql" secondAttribute="bottom" constant="10" id="cGk-V6-vmH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6n1-me-Aql" secondAttribute="trailing" constant="25" id="mww-Tn-YcA"/>
+                <constraint firstItem="6n1-me-Aql" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vSA-q5-MAt"/>
+            </constraints>
+            <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
         </view>
     </objects>
+    <resources>
+        <image name="govs_connect_app_logo_83.5.png" width="83.5" height="83.5"/>
+        <image name="welcome_img.png" width="835" height="1152"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

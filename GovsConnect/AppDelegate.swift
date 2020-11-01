@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let welcomeVC = WelcomeViewController()
         self.window!.rootViewController!.view.addSubview(welcomeVC.view)
         welcomeVC.view.frame = UIScreen.main.bounds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 100){
             UIView.animate(withDuration: 0.5, animations: {
                 welcomeVC.view.alpha = 0
             }) { (completion) in

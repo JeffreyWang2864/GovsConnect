@@ -196,58 +196,6 @@
 		13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13961E2920CAC1F3004FFF4B /* tool.swift */; };
 		13961E2D20CB5A74004FFF4B /* PostsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13961E2B20CB5A74004FFF4B /* PostsDetailViewController.swift */; };
 		13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13961E2C20CB5A74004FFF4B /* PostsDetailViewController.xib */; };
-		1399FC0C217A0CD1009F926F /* blue_N.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBD8217A0CCE009F926F /* blue_N.png */; };
-		1399FC0D217A0CD1009F926F /* red_M.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBD9217A0CCE009F926F /* red_M.png */; };
-		1399FC0E217A0CD1009F926F /* blue_A.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBDA217A0CCE009F926F /* blue_A.png */; };
-		1399FC0F217A0CD1009F926F /* blue_Q.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBDB217A0CCE009F926F /* blue_Q.png */; };
-		1399FC10217A0CD1009F926F /* red_A.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBDC217A0CCE009F926F /* red_A.png */; };
-		1399FC11217A0CD1009F926F /* red_N.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBDD217A0CCE009F926F /* red_N.png */; };
-		1399FC12217A0CD1009F926F /* blue_W.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBDE217A0CCE009F926F /* blue_W.png */; };
-		1399FC13217A0CD1009F926F /* blue_B.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBDF217A0CCE009F926F /* blue_B.png */; };
-		1399FC14217A0CD1009F926F /* blue_S.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBE0217A0CCE009F926F /* blue_S.png */; };
-		1399FC15217A0CD1009F926F /* red_I.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBE1217A0CCE009F926F /* red_I.png */; };
-		1399FC16217A0CD1009F926F /* blue_X.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBE2217A0CCE009F926F /* blue_X.png */; };
-		1399FC17217A0CD1009F926F /* red_O.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBE3217A0CCE009F926F /* red_O.png */; };
-		1399FC18217A0CD1009F926F /* red_S.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBE4217A0CCE009F926F /* red_S.png */; };
-		1399FC19217A0CD1009F926F /* red_L.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBE5217A0CCE009F926F /* red_L.png */; };
-		1399FC1A217A0CD1009F926F /* blue_J.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBE6217A0CCE009F926F /* blue_J.png */; };
-		1399FC1B217A0CD1009F926F /* red_U.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBE7217A0CCE009F926F /* red_U.png */; };
-		1399FC1C217A0CD1009F926F /* red_B.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBE8217A0CCE009F926F /* red_B.png */; };
-		1399FC1D217A0CD1009F926F /* red_W.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBE9217A0CCF009F926F /* red_W.png */; };
-		1399FC1E217A0CD1009F926F /* red_Z.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBEA217A0CCF009F926F /* red_Z.png */; };
-		1399FC1F217A0CD1009F926F /* blue_T.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBEB217A0CCF009F926F /* blue_T.png */; };
-		1399FC20217A0CD1009F926F /* blue_U.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBEC217A0CCF009F926F /* blue_U.png */; };
-		1399FC21217A0CD1009F926F /* red_H.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBED217A0CCF009F926F /* red_H.png */; };
-		1399FC22217A0CD1009F926F /* blue_I.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBEE217A0CCF009F926F /* blue_I.png */; };
-		1399FC23217A0CD1009F926F /* blue_O.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBEF217A0CCF009F926F /* blue_O.png */; };
-		1399FC24217A0CD1009F926F /* blue_V.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBF0217A0CCF009F926F /* blue_V.png */; };
-		1399FC25217A0CD1009F926F /* red_E.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBF1217A0CCF009F926F /* red_E.png */; };
-		1399FC26217A0CD1009F926F /* blue_H.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBF2217A0CCF009F926F /* blue_H.png */; };
-		1399FC27217A0CD1009F926F /* red_P.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBF3217A0CCF009F926F /* red_P.png */; };
-		1399FC28217A0CD1009F926F /* red_Y.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBF4217A0CCF009F926F /* red_Y.png */; };
-		1399FC29217A0CD1009F926F /* blue_D.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBF5217A0CCF009F926F /* blue_D.png */; };
-		1399FC2A217A0CD1009F926F /* blue_K.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBF6217A0CCF009F926F /* blue_K.png */; };
-		1399FC2B217A0CD1009F926F /* blue_Y.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBF7217A0CCF009F926F /* blue_Y.png */; };
-		1399FC2C217A0CD1009F926F /* red_D.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBF8217A0CD0009F926F /* red_D.png */; };
-		1399FC2D217A0CD1009F926F /* red_X.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBF9217A0CD0009F926F /* red_X.png */; };
-		1399FC2E217A0CD1009F926F /* blue_R.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBFA217A0CD0009F926F /* blue_R.png */; };
-		1399FC2F217A0CD1009F926F /* blue_C.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBFB217A0CD0009F926F /* blue_C.png */; };
-		1399FC30217A0CD1009F926F /* red_K.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBFC217A0CD0009F926F /* red_K.png */; };
-		1399FC31217A0CD1009F926F /* blue_F.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBFD217A0CD0009F926F /* blue_F.png */; };
-		1399FC32217A0CD1009F926F /* red_T.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBFE217A0CD0009F926F /* red_T.png */; };
-		1399FC33217A0CD1009F926F /* red_R.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FBFF217A0CD0009F926F /* red_R.png */; };
-		1399FC34217A0CD1009F926F /* blue_Z.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC00217A0CD0009F926F /* blue_Z.png */; };
-		1399FC35217A0CD1009F926F /* red_J.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC01217A0CD0009F926F /* red_J.png */; };
-		1399FC36217A0CD1009F926F /* blue_G.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC02217A0CD0009F926F /* blue_G.png */; };
-		1399FC37217A0CD1009F926F /* red_C.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC03217A0CD0009F926F /* red_C.png */; };
-		1399FC38217A0CD1009F926F /* red_V.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC04217A0CD0009F926F /* red_V.png */; };
-		1399FC39217A0CD1009F926F /* blue_M.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC05217A0CD0009F926F /* blue_M.png */; };
-		1399FC3A217A0CD1009F926F /* blue_L.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC06217A0CD0009F926F /* blue_L.png */; };
-		1399FC3B217A0CD1009F926F /* red_Q.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC07217A0CD1009F926F /* red_Q.png */; };
-		1399FC3C217A0CD1009F926F /* red_F.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC08217A0CD1009F926F /* red_F.png */; };
-		1399FC3D217A0CD1009F926F /* blue_P.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC09217A0CD1009F926F /* blue_P.png */; };
-		1399FC3E217A0CD1009F926F /* blue_E.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC0A217A0CD1009F926F /* blue_E.png */; };
-		1399FC3F217A0CD1009F926F /* red_G.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC0B217A0CD1009F926F /* red_G.png */; };
 		1399FC42217A34F3009F926F /* courseData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1399FC41217A34F3009F926F /* courseData.csv */; };
 		139A0BEF2207920500557DCC /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139A0BED2207920500557DCC /* SportsViewController.swift */; };
 		139A0BF02207920500557DCC /* SportsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139A0BEE2207920500557DCC /* SportsViewController.xib */; };
@@ -338,6 +286,7 @@
 		13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */; };
 		13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FC0E6D2105CC2B001FA925 /* GCEditableTableViewCell.xib */; };
 		13FE084D223E7D6E00F926E5 /* LoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FE084C223E7D6E00F926E5 /* LoveButton.swift */; };
+		230F2A6B254F64CC00507C73 /* welcome_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 230F2A6A254F64CC00507C73 /* welcome_img.png */; };
 		231D1B6A254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D1B68254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.swift */; };
 		231D1B6B254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 231D1B69254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.xib */; };
 		2354FCEA254EB51B00B0E6D2 /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357D18520EB7639004CD2EB /* NewTableViewCell.xib */; };
@@ -558,58 +507,6 @@
 		13961E2920CAC1F3004FFF4B /* tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tool.swift; sourceTree = "<group>"; };
 		13961E2B20CB5A74004FFF4B /* PostsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailViewController.swift; sourceTree = "<group>"; };
 		13961E2C20CB5A74004FFF4B /* PostsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailViewController.xib; sourceTree = "<group>"; };
-		1399FBD8217A0CCE009F926F /* blue_N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_N.png; path = GovsConnect/Resources/avatars/blue_N.png; sourceTree = SOURCE_ROOT; };
-		1399FBD9217A0CCE009F926F /* red_M.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_M.png; path = GovsConnect/Resources/avatars/red_M.png; sourceTree = SOURCE_ROOT; };
-		1399FBDA217A0CCE009F926F /* blue_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_A.png; path = GovsConnect/Resources/avatars/blue_A.png; sourceTree = SOURCE_ROOT; };
-		1399FBDB217A0CCE009F926F /* blue_Q.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_Q.png; path = GovsConnect/Resources/avatars/blue_Q.png; sourceTree = SOURCE_ROOT; };
-		1399FBDC217A0CCE009F926F /* red_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_A.png; path = GovsConnect/Resources/avatars/red_A.png; sourceTree = SOURCE_ROOT; };
-		1399FBDD217A0CCE009F926F /* red_N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_N.png; path = GovsConnect/Resources/avatars/red_N.png; sourceTree = SOURCE_ROOT; };
-		1399FBDE217A0CCE009F926F /* blue_W.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_W.png; path = GovsConnect/Resources/avatars/blue_W.png; sourceTree = SOURCE_ROOT; };
-		1399FBDF217A0CCE009F926F /* blue_B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_B.png; path = GovsConnect/Resources/avatars/blue_B.png; sourceTree = SOURCE_ROOT; };
-		1399FBE0217A0CCE009F926F /* blue_S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_S.png; path = GovsConnect/Resources/avatars/blue_S.png; sourceTree = SOURCE_ROOT; };
-		1399FBE1217A0CCE009F926F /* red_I.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_I.png; path = GovsConnect/Resources/avatars/red_I.png; sourceTree = SOURCE_ROOT; };
-		1399FBE2217A0CCE009F926F /* blue_X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_X.png; path = GovsConnect/Resources/avatars/blue_X.png; sourceTree = SOURCE_ROOT; };
-		1399FBE3217A0CCE009F926F /* red_O.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_O.png; path = GovsConnect/Resources/avatars/red_O.png; sourceTree = SOURCE_ROOT; };
-		1399FBE4217A0CCE009F926F /* red_S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_S.png; path = GovsConnect/Resources/avatars/red_S.png; sourceTree = SOURCE_ROOT; };
-		1399FBE5217A0CCE009F926F /* red_L.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_L.png; path = GovsConnect/Resources/avatars/red_L.png; sourceTree = SOURCE_ROOT; };
-		1399FBE6217A0CCE009F926F /* blue_J.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_J.png; path = GovsConnect/Resources/avatars/blue_J.png; sourceTree = SOURCE_ROOT; };
-		1399FBE7217A0CCE009F926F /* red_U.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_U.png; path = GovsConnect/Resources/avatars/red_U.png; sourceTree = SOURCE_ROOT; };
-		1399FBE8217A0CCE009F926F /* red_B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_B.png; path = GovsConnect/Resources/avatars/red_B.png; sourceTree = SOURCE_ROOT; };
-		1399FBE9217A0CCF009F926F /* red_W.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_W.png; path = GovsConnect/Resources/avatars/red_W.png; sourceTree = SOURCE_ROOT; };
-		1399FBEA217A0CCF009F926F /* red_Z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_Z.png; path = GovsConnect/Resources/avatars/red_Z.png; sourceTree = SOURCE_ROOT; };
-		1399FBEB217A0CCF009F926F /* blue_T.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_T.png; path = GovsConnect/Resources/avatars/blue_T.png; sourceTree = SOURCE_ROOT; };
-		1399FBEC217A0CCF009F926F /* blue_U.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_U.png; path = GovsConnect/Resources/avatars/blue_U.png; sourceTree = SOURCE_ROOT; };
-		1399FBED217A0CCF009F926F /* red_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_H.png; path = GovsConnect/Resources/avatars/red_H.png; sourceTree = SOURCE_ROOT; };
-		1399FBEE217A0CCF009F926F /* blue_I.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_I.png; path = GovsConnect/Resources/avatars/blue_I.png; sourceTree = SOURCE_ROOT; };
-		1399FBEF217A0CCF009F926F /* blue_O.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_O.png; path = GovsConnect/Resources/avatars/blue_O.png; sourceTree = SOURCE_ROOT; };
-		1399FBF0217A0CCF009F926F /* blue_V.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_V.png; path = GovsConnect/Resources/avatars/blue_V.png; sourceTree = SOURCE_ROOT; };
-		1399FBF1217A0CCF009F926F /* red_E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_E.png; path = GovsConnect/Resources/avatars/red_E.png; sourceTree = SOURCE_ROOT; };
-		1399FBF2217A0CCF009F926F /* blue_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_H.png; path = GovsConnect/Resources/avatars/blue_H.png; sourceTree = SOURCE_ROOT; };
-		1399FBF3217A0CCF009F926F /* red_P.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_P.png; path = GovsConnect/Resources/avatars/red_P.png; sourceTree = SOURCE_ROOT; };
-		1399FBF4217A0CCF009F926F /* red_Y.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_Y.png; path = GovsConnect/Resources/avatars/red_Y.png; sourceTree = SOURCE_ROOT; };
-		1399FBF5217A0CCF009F926F /* blue_D.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_D.png; path = GovsConnect/Resources/avatars/blue_D.png; sourceTree = SOURCE_ROOT; };
-		1399FBF6217A0CCF009F926F /* blue_K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_K.png; path = GovsConnect/Resources/avatars/blue_K.png; sourceTree = SOURCE_ROOT; };
-		1399FBF7217A0CCF009F926F /* blue_Y.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_Y.png; path = GovsConnect/Resources/avatars/blue_Y.png; sourceTree = SOURCE_ROOT; };
-		1399FBF8217A0CD0009F926F /* red_D.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_D.png; path = GovsConnect/Resources/avatars/red_D.png; sourceTree = SOURCE_ROOT; };
-		1399FBF9217A0CD0009F926F /* red_X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_X.png; path = GovsConnect/Resources/avatars/red_X.png; sourceTree = SOURCE_ROOT; };
-		1399FBFA217A0CD0009F926F /* blue_R.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_R.png; path = GovsConnect/Resources/avatars/blue_R.png; sourceTree = SOURCE_ROOT; };
-		1399FBFB217A0CD0009F926F /* blue_C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_C.png; path = GovsConnect/Resources/avatars/blue_C.png; sourceTree = SOURCE_ROOT; };
-		1399FBFC217A0CD0009F926F /* red_K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_K.png; path = GovsConnect/Resources/avatars/red_K.png; sourceTree = SOURCE_ROOT; };
-		1399FBFD217A0CD0009F926F /* blue_F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_F.png; path = GovsConnect/Resources/avatars/blue_F.png; sourceTree = SOURCE_ROOT; };
-		1399FBFE217A0CD0009F926F /* red_T.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_T.png; path = GovsConnect/Resources/avatars/red_T.png; sourceTree = SOURCE_ROOT; };
-		1399FBFF217A0CD0009F926F /* red_R.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_R.png; path = GovsConnect/Resources/avatars/red_R.png; sourceTree = SOURCE_ROOT; };
-		1399FC00217A0CD0009F926F /* blue_Z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_Z.png; path = GovsConnect/Resources/avatars/blue_Z.png; sourceTree = SOURCE_ROOT; };
-		1399FC01217A0CD0009F926F /* red_J.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_J.png; path = GovsConnect/Resources/avatars/red_J.png; sourceTree = SOURCE_ROOT; };
-		1399FC02217A0CD0009F926F /* blue_G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_G.png; path = GovsConnect/Resources/avatars/blue_G.png; sourceTree = SOURCE_ROOT; };
-		1399FC03217A0CD0009F926F /* red_C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_C.png; path = GovsConnect/Resources/avatars/red_C.png; sourceTree = SOURCE_ROOT; };
-		1399FC04217A0CD0009F926F /* red_V.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_V.png; path = GovsConnect/Resources/avatars/red_V.png; sourceTree = SOURCE_ROOT; };
-		1399FC05217A0CD0009F926F /* blue_M.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_M.png; path = GovsConnect/Resources/avatars/blue_M.png; sourceTree = SOURCE_ROOT; };
-		1399FC06217A0CD0009F926F /* blue_L.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_L.png; path = GovsConnect/Resources/avatars/blue_L.png; sourceTree = SOURCE_ROOT; };
-		1399FC07217A0CD1009F926F /* red_Q.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_Q.png; path = GovsConnect/Resources/avatars/red_Q.png; sourceTree = SOURCE_ROOT; };
-		1399FC08217A0CD1009F926F /* red_F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_F.png; path = GovsConnect/Resources/avatars/red_F.png; sourceTree = SOURCE_ROOT; };
-		1399FC09217A0CD1009F926F /* blue_P.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_P.png; path = GovsConnect/Resources/avatars/blue_P.png; sourceTree = SOURCE_ROOT; };
-		1399FC0A217A0CD1009F926F /* blue_E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_E.png; path = GovsConnect/Resources/avatars/blue_E.png; sourceTree = SOURCE_ROOT; };
-		1399FC0B217A0CD1009F926F /* red_G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_G.png; path = GovsConnect/Resources/avatars/red_G.png; sourceTree = SOURCE_ROOT; };
 		1399FC41217A34F3009F926F /* courseData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = courseData.csv; sourceTree = "<group>"; };
 		139A0BED2207920500557DCC /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
 		139A0BEE2207920500557DCC /* SportsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsViewController.xib; sourceTree = "<group>"; };
@@ -703,6 +600,7 @@
 		13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCEditableTableViewCell.swift; sourceTree = "<group>"; };
 		13FC0E6D2105CC2B001FA925 /* GCEditableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCEditableTableViewCell.xib; sourceTree = "<group>"; };
 		13FE084C223E7D6E00F926E5 /* LoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveButton.swift; sourceTree = "<group>"; };
+		230F2A6A254F64CC00507C73 /* welcome_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome_img.png; sourceTree = "<group>"; };
 		231D1B68254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		231D1B69254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuEmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		23DC7608254E954D00AEBADC /* MenuSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -994,6 +892,7 @@
 		13961E0C20CA772F004FFF4B /* System */ = {
 			isa = PBXGroup;
 			children = (
+				230F2A6A254F64CC00507C73 /* welcome_img.png */,
 				13639B9C2267864700F9DE8B /* default-opponent.png */,
 				13A6BA91221A0C8F00E6D28A /* system_sports_browse_by_category.png */,
 				13A6BA8F221A0C8F00E6D28A /* system_sports_see_result.png */,
@@ -1052,58 +951,6 @@
 		1399FBD7217A0CB1009F926F /* avatars */ = {
 			isa = PBXGroup;
 			children = (
-				1399FBDA217A0CCE009F926F /* blue_A.png */,
-				1399FBDF217A0CCE009F926F /* blue_B.png */,
-				1399FBFB217A0CD0009F926F /* blue_C.png */,
-				1399FBF5217A0CCF009F926F /* blue_D.png */,
-				1399FC0A217A0CD1009F926F /* blue_E.png */,
-				1399FBFD217A0CD0009F926F /* blue_F.png */,
-				1399FC02217A0CD0009F926F /* blue_G.png */,
-				1399FBF2217A0CCF009F926F /* blue_H.png */,
-				1399FBEE217A0CCF009F926F /* blue_I.png */,
-				1399FBE6217A0CCE009F926F /* blue_J.png */,
-				1399FBF6217A0CCF009F926F /* blue_K.png */,
-				1399FC06217A0CD0009F926F /* blue_L.png */,
-				1399FC05217A0CD0009F926F /* blue_M.png */,
-				1399FBD8217A0CCE009F926F /* blue_N.png */,
-				1399FBEF217A0CCF009F926F /* blue_O.png */,
-				1399FC09217A0CD1009F926F /* blue_P.png */,
-				1399FBDB217A0CCE009F926F /* blue_Q.png */,
-				1399FBFA217A0CD0009F926F /* blue_R.png */,
-				1399FBE0217A0CCE009F926F /* blue_S.png */,
-				1399FBEB217A0CCF009F926F /* blue_T.png */,
-				1399FBEC217A0CCF009F926F /* blue_U.png */,
-				1399FBF0217A0CCF009F926F /* blue_V.png */,
-				1399FBDE217A0CCE009F926F /* blue_W.png */,
-				1399FBE2217A0CCE009F926F /* blue_X.png */,
-				1399FBF7217A0CCF009F926F /* blue_Y.png */,
-				1399FC00217A0CD0009F926F /* blue_Z.png */,
-				1399FBDC217A0CCE009F926F /* red_A.png */,
-				1399FBE8217A0CCE009F926F /* red_B.png */,
-				1399FC03217A0CD0009F926F /* red_C.png */,
-				1399FBF8217A0CD0009F926F /* red_D.png */,
-				1399FBF1217A0CCF009F926F /* red_E.png */,
-				1399FC08217A0CD1009F926F /* red_F.png */,
-				1399FC0B217A0CD1009F926F /* red_G.png */,
-				1399FBED217A0CCF009F926F /* red_H.png */,
-				1399FBE1217A0CCE009F926F /* red_I.png */,
-				1399FC01217A0CD0009F926F /* red_J.png */,
-				1399FBFC217A0CD0009F926F /* red_K.png */,
-				1399FBE5217A0CCE009F926F /* red_L.png */,
-				1399FBD9217A0CCE009F926F /* red_M.png */,
-				1399FBDD217A0CCE009F926F /* red_N.png */,
-				1399FBE3217A0CCE009F926F /* red_O.png */,
-				1399FBF3217A0CCF009F926F /* red_P.png */,
-				1399FC07217A0CD1009F926F /* red_Q.png */,
-				1399FBFF217A0CD0009F926F /* red_R.png */,
-				1399FBE4217A0CCE009F926F /* red_S.png */,
-				1399FBFE217A0CD0009F926F /* red_T.png */,
-				1399FBE7217A0CCE009F926F /* red_U.png */,
-				1399FC04217A0CD0009F926F /* red_V.png */,
-				1399FBE9217A0CCF009F926F /* red_W.png */,
-				1399FBF9217A0CD0009F926F /* red_X.png */,
-				1399FBF4217A0CCF009F926F /* red_Y.png */,
-				1399FBEA217A0CCF009F926F /* red_Z.png */,
 			);
 			name = avatars;
 			path = "New Group";
@@ -1492,7 +1339,6 @@
 				137534E72268357800AB02B7 /* shore-country-day-school.png in Resources */,
 				1375350A2268357800AB02B7 /* the-gunnery-school.png in Resources */,
 				1375350E2268357800AB02B7 /* st-sebastians-school.png in Resources */,
-				1399FC3B217A0CD1009F926F /* red_Q.png in Resources */,
 				13921F75226BA63200646A7F /* SportsListViewTableViewCell.xib in Resources */,
 				13D99EE521729B45007CFBFE /* system_like_white.png in Resources */,
 				1375350D2268357800AB02B7 /* traip-academy.png in Resources */,
@@ -1506,17 +1352,12 @@
 				13CD9F492166B82500EAFE3D /* govs_connect_app_logo_60@2x.png in Resources */,
 				13CD9F422166B82500EAFE3D /* govs_connect_app_logo_20@3x.png in Resources */,
 				1375350B2268357800AB02B7 /* the-rivers-school.png in Resources */,
-				1399FC18217A0CD1009F926F /* red_S.png in Resources */,
-				1399FC17217A0CD1009F926F /* red_O.png in Resources */,
 				137535182268357800AB02B7 /* northfield-mt-herman.png in Resources */,
-				1399FC0F217A0CD1009F926F /* blue_Q.png in Resources */,
 				137534F52268357800AB02B7 /* landmark-school.png in Resources */,
 				13540E9D216673D6005204FC /* LinksViewController.xib in Resources */,
-				1399FC3D217A0CD1009F926F /* blue_P.png in Resources */,
 				1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */,
 				13639BAC2267888800F9DE8B /* baseball_test.png in Resources */,
 				13F805C9213B469C00AE93F0 /* NewEditProfileViewController.xib in Resources */,
-				1399FC33217A0CD1009F926F /* red_R.png in Resources */,
 				137534F12268357800AB02B7 /* eagle-hill-school.png in Resources */,
 				13F52D4621801DCB00D5A424 /* allFaculty.csv in Resources */,
 				13EED9D821362F3200427E5E /* system_login_require.png in Resources */,
@@ -1527,45 +1368,35 @@
 				137535102268357800AB02B7 /* avon-old-farms.png in Resources */,
 				13961E2E20CB5A74004FFF4B /* PostsDetailViewController.xib in Resources */,
 				139EDF7B20EC87A700778CFD /* EventDetailViewController.xib in Resources */,
+				230F2A6B254F64CC00507C73 /* welcome_img.png in Resources */,
 				132F817520C8C77C005D3905 /* LaunchScreen.storyboard in Resources */,
 				137534E92268357800AB02B7 /* milton-academy.png in Resources */,
-				1399FC2F217A0CD1009F926F /* blue_C.png in Resources */,
 				13CFAE5221F7F2FD006C790C /* testing_picture_9.png in Resources */,
 				1355B8A3217CC925006E103D /* allStudents.csv in Resources */,
-				1399FC0E217A0CD1009F926F /* blue_A.png in Resources */,
 				13CD9F442166B82500EAFE3D /* govs_connect_app_logo_60@3x.png in Resources */,
-				1399FC22217A0CD1009F926F /* blue_I.png in Resources */,
 				137534F22268357800AB02B7 /* north-andover-middle-school.png in Resources */,
 				13961E1820CA7766004FFF4B /* system_share.png in Resources */,
 				1327C1A820CE497A001A300A /* system_reply.png in Resources */,
-				1399FC21217A0CD1009F926F /* red_H.png in Resources */,
 				137534E52268357800AB02B7 /* pomfret-school.png in Resources */,
-				1399FC2E217A0CD1009F926F /* blue_R.png in Resources */,
 				13ABADDC21FABF3000885398 /* govs-connect-widget-tutorial.gif in Resources */,
 				137534F82268357800AB02B7 /* hebron-academy.png in Resources */,
 				1348E51A2270AC0D004EEBCD /* berwick-academy.png in Resources */,
 				137534F02268357800AB02B7 /* portsmouth-high-school.png in Resources */,
 				137534EF2268357800AB02B7 /* chapel-hill-chauncy-hall.png in Resources */,
-				1399FC1E217A0CD1009F926F /* red_Z.png in Resources */,
 				137535122268357800AB02B7 /* the-hill-academy.png in Resources */,
 				13961E1A20CA9FB1004FFF4B /* system_commented.png in Resources */,
-				1399FC20217A0CD1009F926F /* blue_U.png in Resources */,
-				1399FC1C217A0CD1009F926F /* red_B.png in Resources */,
 				137534E42268357800AB02B7 /* newburyport-high-school.png in Resources */,
 				13CF4ECC20F7C27E00DEE71A /* NotificationViewController.xib in Resources */,
-				1399FC3C217A0CD1009F926F /* red_F.png in Resources */,
 				13C5EA0A20F8A143000DC504 /* PersonTableViewCell.xib in Resources */,
 				13CD9F3F2166B82500EAFE3D /* govs_connect_app_logo_76@2x.png in Resources */,
 				137534FB2268357800AB02B7 /* tilton-school.png in Resources */,
 				136E0C3E221745FE003F475D /* system_cry_face.png in Resources */,
-				1399FC11217A0CD1009F926F /* red_N.png in Resources */,
 				137534F72268357800AB02B7 /* st-pauls-school.png in Resources */,
 				13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */,
 				13A6BA96221A0C9000E6D28A /* system_sports_select_date.png in Resources */,
 				137534FF2268357800AB02B7 /* st-marks-school.png in Resources */,
 				137EEBA520E7781200BA2575 /* testing_picture_6.jpg in Resources */,
 				133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */,
-				1399FC37217A0CD1009F926F /* red_C.png in Resources */,
 				13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */,
 				130694C1220E788400D88A90 /* MatchDetailTableViewCell.xib in Resources */,
 				13CD9F4B2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png in Resources */,
@@ -1577,7 +1408,6 @@
 				137534FA2268357800AB02B7 /* middlesex-school.png in Resources */,
 				137534F62268357800AB02B7 /* canterbury-school.png in Resources */,
 				137534E62268357800AB02B7 /* portsmouth-abbey-school.png in Resources */,
-				1399FC2D217A0CD1009F926F /* red_X.png in Resources */,
 				13D389D720FC8E9F00330CDD /* UserDetailViewController.xib in Resources */,
 				135EB209214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib in Resources */,
 				1399FC42217A34F3009F926F /* courseData.csv in Resources */,
@@ -1588,19 +1418,16 @@
 				1356C4DD210599D7000C3BF5 /* EditProfileViewController.xib in Resources */,
 				23DC760B254E954D00AEBADC /* MenuSectionCollectionViewCell.xib in Resources */,
 				139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */,
-				1399FC19217A0CD1009F926F /* red_L.png in Resources */,
 				13961E1620CA7766004FFF4B /* system_like.png in Resources */,
 				13639BA82267888800F9DE8B /* basketball_test.png in Resources */,
 				137534EA2268357800AB02B7 /* roxbury-latin-school.png in Resources */,
 				137534FD2268357800AB02B7 /* noble-greenough-school.png in Resources */,
 				137534EC2268357800AB02B7 /* belmont-hill-school.png in Resources */,
 				13639BAB2267888800F9DE8B /* soccer_test.png in Resources */,
-				1399FC30217A0CD1009F926F /* red_K.png in Resources */,
 				137535142268357800AB02B7 /* the-governors-academy.png in Resources */,
 				137535012268357800AB02B7 /* pingree-school.png in Resources */,
 				13CD9F2921669B0A00EAFE3D /* system_snapchat_icon.png in Resources */,
 				137EEBA320E7781200BA2575 /* testing_picture_5.jpg in Resources */,
-				1399FC35217A0CD1009F926F /* red_J.png in Resources */,
 				13CD9F4A2166B82500EAFE3D /* govs_connect_app_logo_29@3x.png in Resources */,
 				132F819C20C90DD0005D3905 /* numberfour.png in Resources */,
 				137535082268357800AB02B7 /* new-hampton-school.png in Resources */,
@@ -1610,7 +1437,6 @@
 				13CD9F462166B82500EAFE3D /* govs_connect_app_logo_1024@1x.png in Resources */,
 				13CD9F232166935600EAFE3D /* LinksTableViewCell.xib in Resources */,
 				13639BAD2267888800F9DE8B /* tennis_test.png in Resources */,
-				1399FC14217A0CD1009F926F /* blue_S.png in Resources */,
 				1355B8B1217E9F29006E103D /* system_discover_food_dislike.png in Resources */,
 				13639BA72267888800F9DE8B /* lacrosse_test.png in Resources */,
 				137534F32268357800AB02B7 /* Brookwood_School_logo.png in Resources */,
@@ -1618,17 +1444,13 @@
 				1375342E2268050B00AB02B7 /* crosscountry_test.png in Resources */,
 				136E0C3C22173EBF003F475D /* MatchNoDataCollectionViewCell.xib in Resources */,
 				1375351B2268357800AB02B7 /* st-georges-school.png in Resources */,
-				1399FC23217A0CD1009F926F /* blue_O.png in Resources */,
 				137BD1D62210C11C008A501D /* MatchLocationTableViewCell.xib in Resources */,
 				13639B9D2267864700F9DE8B /* default-opponent.png in Resources */,
-				1399FC1F217A0CD1009F926F /* blue_T.png in Resources */,
 				1396070F20F7E3210079CBC4 /* LookupViewController.xib in Resources */,
 				137534FE2268357800AB02B7 /* north-yarmouth-academy.png in Resources */,
-				1399FC39217A0CD1009F926F /* blue_M.png in Resources */,
 				13E5DE36216FFB51007560C3 /* system_discover_sports.png in Resources */,
 				13661A3A2233625900EF79B6 /* DiningHallMenuViewController.xib in Resources */,
 				137535002268357800AB02B7 /* wilbraham-monson-academy.png in Resources */,
-				1399FC16217A0CD1009F926F /* blue_X.png in Resources */,
 				135E830A21F77090009DCCA1 /* ModifiedScheduleViewController.xib in Resources */,
 				13CD9F2821669B0A00EAFE3D /* system_website_icon.png in Resources */,
 				13540EA121667524005204FC /* LinksCollectionViewCell.xib in Resources */,
@@ -1640,18 +1462,14 @@
 				1355B8A5217D1BD0006E103D /* allClubs.csv in Resources */,
 				231D1B6B254EBFF3004ECF2C /* MenuEmptyCollectionViewCell.xib in Resources */,
 				132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */,
-				1399FC3F217A0CD1009F926F /* red_G.png in Resources */,
 				13639BA62267888800F9DE8B /* vollyball_test.png in Resources */,
 				1355B8B0217E9F29006E103D /* system_discover_food_like.png in Resources */,
 				13F02C8B2162CCA600660E95 /* GoogleService-Info.plist in Resources */,
 				13CD9F412166B82500EAFE3D /* govs_connect_app_logo_40@1x.png in Resources */,
 				13EED9D62136121B00427E5E /* GCLoginRequireViewController.xib in Resources */,
 				132F818820C8DAB2005D3905 /* PostsViewController.xib in Resources */,
-				1399FC2C217A0CD1009F926F /* red_D.png in Resources */,
-				1399FC0D217A0CD1009F926F /* red_M.png in Resources */,
 				132F819E20C90DD0005D3905 /* numberthree.png in Resources */,
 				13639BAA2267888800F9DE8B /* football_test.png in Resources */,
-				1399FC1B217A0CD1009F926F /* red_U.png in Resources */,
 				13961E1720CA7766004FFF4B /* system_view.png in Resources */,
 				13CD9F4C2166B82500EAFE3D /* govs_connect_app_logo_20@1x.png in Resources */,
 				132F819B20C90DD0005D3905 /* numberone.png in Resources */,
@@ -1660,15 +1478,11 @@
 				13CD9F2721669B0A00EAFE3D /* system_instagram_icon.png in Resources */,
 				139A0BF42207927000557DCC /* MatchCardCollectionViewCell.xib in Resources */,
 				1375342A2268050B00AB02B7 /* wrestling_test.png in Resources */,
-				1399FC25217A0CD1009F926F /* red_E.png in Resources */,
-				1399FC38217A0CD1009F926F /* red_V.png in Resources */,
-				1399FC26217A0CD1009F926F /* blue_H.png in Resources */,
 				1316FD92220144770036373B /* govs-connect-menu-tutorial.gif in Resources */,
 				138FEEDF20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib in Resources */,
 				137535162268357800AB02B7 /* dexter-southfield-school.png in Resources */,
 				132F819A20C90DD0005D3905 /* numberfive.png in Resources */,
 				137535112268357800AB02B7 /* brooks-school.png in Resources */,
-				1399FC3A217A0CD1009F926F /* blue_L.png in Resources */,
 				1375342D2268050B00AB02B7 /* trackfield_test.png in Resources */,
 				1375351E2268357800AB02B7 /* bancroft-school.png in Resources */,
 				137534EE2268357800AB02B7 /* esperanza-academy.png in Resources */,
@@ -1676,18 +1490,13 @@
 				1377AB70214F4AAA0015172C /* SettingViewController.xib in Resources */,
 				137535132268357800AB02B7 /* methuen-high-school.png in Resources */,
 				132B8C0D20E6813300A80F5B /* DiscoverViewController.xib in Resources */,
-				1399FC2B217A0CD1009F926F /* blue_Y.png in Resources */,
-				1399FC2A217A0CD1009F926F /* blue_K.png in Resources */,
 				13321FBA20CF7B04000B6C41 /* NewPostViewController.xib in Resources */,
 				137535062268357800AB02B7 /* triton-high-school.png in Resources */,
-				1399FC3E217A0CD1009F926F /* blue_E.png in Resources */,
 				132F819D20C90DD0005D3905 /* numbertwo.png in Resources */,
-				1399FC34217A0CD1009F926F /* blue_Z.png in Resources */,
 				13CD9F432166B82500EAFE3D /* govs_connect_app_logo_29@2x.png in Resources */,
 				13639BA92267888800F9DE8B /* hockey_test.png in Resources */,
 				13961E1520CA7766004FFF4B /* system_comment.png in Resources */,
 				1375342B2268050B00AB02B7 /* fieldhockey_test.png in Resources */,
-				1399FC24217A0CD1009F926F /* blue_V.png in Resources */,
 				130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */,
 				137535092268357800AB02B7 /* dover-high-school.png in Resources */,
 				13CD9F3E2166B82500EAFE3D /* govs_connect_app_logo_76@1x.png in Resources */,
@@ -1695,37 +1504,24 @@
 				137535152268357800AB02B7 /* marianapolis-preparatory-school.png in Resources */,
 				13921F69226B98F000646A7F /* skiing_test.png in Resources */,
 				2354FCEA254EB51B00B0E6D2 /* NewTableViewCell.xib in Resources */,
-				1399FC27217A0CD1009F926F /* red_P.png in Resources */,
-				1399FC0C217A0CD1009F926F /* blue_N.png in Resources */,
 				137535052268357800AB02B7 /* beaver-country-day-school.png in Resources */,
 				13A6BA93221A0C9000E6D28A /* system_sports_see_result.png in Resources */,
 				13CFAE5121F7F2FD006C790C /* testing_picture_10.png in Resources */,
 				138D166D20D16D36005F3425 /* MultiMediaCollectionViewCell.xib in Resources */,
-				1399FC31217A0CD1009F926F /* blue_F.png in Resources */,
-				1399FC12217A0CD1009F926F /* blue_W.png in Resources */,
 				13540E99216673A3005204FC /* system_discover_links.png in Resources */,
-				1399FC10217A0CD1009F926F /* red_A.png in Resources */,
 				13CD9F452166B82500EAFE3D /* govs_connect_app_logo_20@2x.png in Resources */,
 				1375351C2268357800AB02B7 /* phillips-academy-andover.png in Resources */,
 				13961E1320CA7766004FFF4B /* system_viewed.png in Resources */,
 				1375350F2268357800AB02B7 /* thayer-academy.png in Resources */,
-				1399FC32217A0CD1009F926F /* red_T.png in Resources */,
-				1399FC36217A0CD1009F926F /* blue_G.png in Resources */,
 				1390DA9021681686004D1A50 /* ConnectClubTableViewCell.xib in Resources */,
 				1377AB74214F4CE20015172C /* GCButtonTableViewCell.xib in Resources */,
-				1399FC1D217A0CD1009F926F /* red_W.png in Resources */,
 				137535192268357800AB02B7 /* cushing-academy.png in Resources */,
-				1399FC29217A0CD1009F926F /* blue_D.png in Resources */,
-				1399FC28217A0CD1009F926F /* red_Y.png in Resources */,
 				13F02C8F2162DB4500660E95 /* GCGoogleLoginViewController.xib in Resources */,
 				132F817220C8C77C005D3905 /* Assets.xcassets in Resources */,
 				132F817020C8C77C005D3905 /* Main.storyboard in Resources */,
 				13BA25EC220BBF51003502E1 /* system_youtube_icon.png in Resources */,
-				1399FC13217A0CD1009F926F /* blue_B.png in Resources */,
-				1399FC1A217A0CD1009F926F /* blue_J.png in Resources */,
 				137535172268357800AB02B7 /* millbrook.png in Resources */,
 				137534E32268357800AB02B7 /* tabor-academy.png in Resources */,
-				1399FC15217A0CD1009F926F /* red_I.png in Resources */,
 				137534FC2268357800AB02B7 /* groton-school.png in Resources */,
 				13A6BA95221A0C9000E6D28A /* system_sports_browse_by_category.png in Resources */,
 				13A6BA94221A0C9000E6D28A /* system_sports_video.png in Resources */,
@@ -2064,7 +1860,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SWNM35NBHT;
 				INFOPLIST_FILE = GovsConnect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect;
@@ -2084,7 +1880,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SWNM35NBHT;
 				INFOPLIST_FILE = GovsConnect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect;

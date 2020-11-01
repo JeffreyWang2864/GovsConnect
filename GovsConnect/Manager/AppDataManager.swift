@@ -144,7 +144,7 @@ class AppDataManager{
                 continue
             }
             let imgName = "red_" + "\(uid.uppercased()[1])" + ".png"
-            let data = UIImagePNGRepresentation(UIImage.init(named: imgName)!)!
+            let data = UIImagePNGRepresentation(UIImage())
             AppDataManager.shared.profileImageData[uid] = data
         }
         
