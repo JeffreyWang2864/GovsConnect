@@ -14,18 +14,9 @@
 		130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */; };
 		130694C0220E788400D88A90 /* MatchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130694BE220E788400D88A90 /* MatchDetailTableViewCell.swift */; };
 		130694C1220E788400D88A90 /* MatchDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130694BF220E788400D88A90 /* MatchDetailTableViewCell.xib */; };
-		130E677320F61756009D3599 /* testing_food_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130E677220F61756009D3599 /* testing_food_1.jpg */; };
-		130E677520F6175E009D3599 /* testing_food_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130E677420F6175E009D3599 /* testing_food_2.jpg */; };
-		130E677720F61765009D3599 /* testing_food_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130E677620F61765009D3599 /* testing_food_3.jpg */; };
 		130E677920F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130E677820F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift */; };
-		13117B7820F7454600E4CD66 /* testing_food_6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 13117B7420F7454600E4CD66 /* testing_food_6.jpeg */; };
-		13117B7920F7454600E4CD66 /* testing_food_5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 13117B7520F7454600E4CD66 /* testing_food_5.jpeg */; };
-		13117B7A20F7454600E4CD66 /* testing_food_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 13117B7620F7454600E4CD66 /* testing_food_7.jpeg */; };
-		13117B7B20F7454600E4CD66 /* testing_food_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13117B7720F7454600E4CD66 /* testing_food_4.jpg */; };
 		1316FD92220144770036373B /* govs-connect-menu-tutorial.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1316FD91220144770036373B /* govs-connect-menu-tutorial.gif */; };
 		131AFCC7221477A800186C62 /* SportsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131AFCC6221477A800186C62 /* SportsPanelView.swift */; };
-		1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */; };
-		1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */; };
 		1327C1A820CE497A001A300A /* system_reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 1327C1A720CE497A001A300A /* system_reply.png */; };
 		132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B8C0A20E6813300A80F5B /* DiscoverViewController.swift */; };
 		132B8C0D20E6813300A80F5B /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */; };
@@ -46,9 +37,6 @@
 		132F81A720C91FB9005D3905 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132F81A520C91FB9005D3905 /* PostsTableViewCell.xib */; };
 		13321FB920CF7B04000B6C41 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13321FB720CF7B04000B6C41 /* NewPostViewController.swift */; };
 		13321FBA20CF7B04000B6C41 /* NewPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13321FB820CF7B04000B6C41 /* NewPostViewController.xib */; };
-		13321FBE20CFDB7F000B6C41 /* testing_picture_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */; };
-		13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */; };
-		13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */; };
 		133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */; };
 		1348E51A2270AC0D004EEBCD /* berwick-academy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1348E5192270AC0D004EEBCD /* berwick-academy.png */; };
 		13540E9721645ABE005204FC /* GCSportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9621645ABE005204FC /* GCSportType.swift */; };
@@ -322,7 +310,6 @@
 		13CFAE5221F7F2FD006C790C /* testing_picture_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CFAE5021F7F2FD006C790C /* testing_picture_9.png */; };
 		13D389D620FC8E9F00330CDD /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D389D420FC8E9F00330CDD /* UserDetailViewController.swift */; };
 		13D389D720FC8E9F00330CDD /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D389D520FC8E9F00330CDD /* UserDetailViewController.xib */; };
-		13D389DF20FDB0EC00330CDD /* testing_profile_picture_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */; };
 		13D389E220FDD62000330CDD /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */; };
 		13D389E320FDD62000330CDD /* UserDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */; };
 		13D99EE521729B45007CFBFE /* system_like_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D99EE421729B45007CFBFE /* system_like_white.png */; };
@@ -331,7 +318,6 @@
 		13DDA96C216D06C300916139 /* NewUserDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DDA96A216D06C300916139 /* NewUserDetailTableViewCell.xib */; };
 		13E5DE36216FFB51007560C3 /* system_discover_sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E5DE35216FFB51007560C3 /* system_discover_sports.png */; };
 		13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E73705210960C4008BE215 /* ManagePostsViewController.swift */; };
-		13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EBE00620CA616000A911DE /* testing_profile_picture_1.png */; };
 		13EED9D52136121B00427E5E /* GCLoginRequireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */; };
 		13EED9D62136121B00427E5E /* GCLoginRequireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EED9D42136121B00427E5E /* GCLoginRequireViewController.xib */; };
 		13EED9D821362F3200427E5E /* system_login_require.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EED9D721362F3100427E5E /* system_login_require.png */; };
@@ -363,8 +349,6 @@
 		BC1490EA20DA239300373BBF /* GCTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490E920DA239300373BBF /* GCTabBarViewController.swift */; };
 		BC1490EC20DA240100373BBF /* GCNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490EB20DA240100373BBF /* GCNavigationViewController.swift */; };
 		BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490ED20DA550A00373BBF /* UIView+Ext.swift */; };
-		BC14910620DA657D00373BBF /* testing_profile_picture_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BC14910320DA657C00373BBF /* testing_profile_picture_4.png */; };
-		BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC14910420DA657D00373BBF /* testing_profile_picture_2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -389,18 +373,9 @@
 		130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekendDetailViewController.xib; sourceTree = "<group>"; };
 		130694BE220E788400D88A90 /* MatchDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailTableViewCell.swift; sourceTree = "<group>"; };
 		130694BF220E788400D88A90 /* MatchDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchDetailTableViewCell.xib; sourceTree = "<group>"; };
-		130E677220F61756009D3599 /* testing_food_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_1.jpg; sourceTree = "<group>"; };
-		130E677420F6175E009D3599 /* testing_food_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_2.jpg; sourceTree = "<group>"; };
-		130E677620F61765009D3599 /* testing_food_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_3.jpg; sourceTree = "<group>"; };
 		130E677820F647F4009D3599 /* GCDirectionPanGestureRecongnizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDirectionPanGestureRecongnizer.swift; sourceTree = "<group>"; };
-		13117B7420F7454600E4CD66 /* testing_food_6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_6.jpeg; sourceTree = "<group>"; };
-		13117B7520F7454600E4CD66 /* testing_food_5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_5.jpeg; sourceTree = "<group>"; };
-		13117B7620F7454600E4CD66 /* testing_food_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_7.jpeg; sourceTree = "<group>"; };
-		13117B7720F7454600E4CD66 /* testing_food_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_food_4.jpg; sourceTree = "<group>"; };
 		1316FD91220144770036373B /* govs-connect-menu-tutorial.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "govs-connect-menu-tutorial.gif"; sourceTree = "<group>"; };
 		131AFCC6221477A800186C62 /* SportsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsPanelView.swift; sourceTree = "<group>"; };
-		1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_jzm.png; sourceTree = "<group>"; };
-		1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_dt.png; sourceTree = "<group>"; };
 		1327C1A720CE497A001A300A /* system_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_reply.png; sourceTree = "<group>"; };
 		132B8C0A20E6813300A80F5B /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverViewController.xib; sourceTree = "<group>"; };
@@ -423,9 +398,6 @@
 		132F81A520C91FB9005D3905 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
 		13321FB720CF7B04000B6C41 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		13321FB820CF7B04000B6C41 /* NewPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewPostViewController.xib; sourceTree = "<group>"; };
-		13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_3.jpg; sourceTree = "<group>"; };
-		13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_1.jpg; sourceTree = "<group>"; };
-		13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_2.jpg; sourceTree = "<group>"; };
 		133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_drop_down_arrow.png; sourceTree = "<group>"; };
 		1348E5192270AC0D004EEBCD /* berwick-academy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "berwick-academy.png"; sourceTree = "<group>"; };
 		13540E9621645ABE005204FC /* GCSportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSportType.swift; sourceTree = "<group>"; };
@@ -701,7 +673,6 @@
 		13CFAE5021F7F2FD006C790C /* testing_picture_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_picture_9.png; sourceTree = "<group>"; };
 		13D389D420FC8E9F00330CDD /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		13D389D520FC8E9F00330CDD /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
-		13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_3.png; sourceTree = "<group>"; };
 		13D389E020FDD62000330CDD /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDetailTableViewCell.swift; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		13D389E120FDD62000330CDD /* UserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserDetailTableViewCell.xib; path = GovsConnect/Modules/LookUpModule/View/UserDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		13D918E46A6263F09EF102D7 /* Pods-ScheduleWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleWidget/Pods-ScheduleWidget.release.xcconfig"; sourceTree = "<group>"; };
@@ -712,7 +683,6 @@
 		13E5DE35216FFB51007560C3 /* system_discover_sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_sports.png; sourceTree = "<group>"; };
 		13E6740221F94F32005B4BB6 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		13E73705210960C4008BE215 /* ManagePostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostsViewController.swift; sourceTree = "<group>"; };
-		13EBE00620CA616000A911DE /* testing_profile_picture_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_1.png; sourceTree = "<group>"; };
 		13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLoginRequireViewController.swift; sourceTree = "<group>"; };
 		13EED9D42136121B00427E5E /* GCLoginRequireViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCLoginRequireViewController.xib; sourceTree = "<group>"; };
 		13EED9D721362F3100427E5E /* system_login_require.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_login_require.png; sourceTree = "<group>"; };
@@ -743,8 +713,6 @@
 		BC1490E920DA239300373BBF /* GCTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCTabBarViewController.swift; sourceTree = "<group>"; };
 		BC1490EB20DA240100373BBF /* GCNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCNavigationViewController.swift; sourceTree = "<group>"; };
 		BC1490ED20DA550A00373BBF /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
-		BC14910320DA657C00373BBF /* testing_profile_picture_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_4.png; sourceTree = "<group>"; };
-		BC14910420DA657D00373BBF /* testing_profile_picture_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_2.png; sourceTree = "<group>"; };
 		ECBB3E294D88AAB305B5375C /* Pods-ScheduleWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleWidget/Pods-ScheduleWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		ED8EE475E74E116933FCBAB4 /* Pods_ScheduleWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GovsConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -873,14 +841,6 @@
 				13639B9E2267888600F9DE8B /* vollyball_test.png */,
 				1316FD91220144770036373B /* govs-connect-menu-tutorial.gif */,
 				13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */,
-				13D389DE20FDB0EC00330CDD /* testing_profile_picture_3.png */,
-				13117B7720F7454600E4CD66 /* testing_food_4.jpg */,
-				13117B7520F7454600E4CD66 /* testing_food_5.jpeg */,
-				13117B7420F7454600E4CD66 /* testing_food_6.jpeg */,
-				13117B7620F7454600E4CD66 /* testing_food_7.jpeg */,
-				130E677620F61765009D3599 /* testing_food_3.jpg */,
-				130E677420F6175E009D3599 /* testing_food_2.jpg */,
-				130E677220F61756009D3599 /* testing_food_1.jpg */,
 				139EDF7220EC7E3F00778CFD /* testing_picture_8.jpg */,
 				137EEBA120E7781100BA2575 /* testing_picture_4.jpg */,
 				137EEBA020E7781100BA2575 /* testing_picture_5.jpg */,
@@ -888,14 +848,6 @@
 				13CFAE5021F7F2FD006C790C /* testing_picture_9.png */,
 				13CFAE4F21F7F2FD006C790C /* testing_picture_10.png */,
 				13620BFC20EBDA5E00A229D8 /* testing_picture_7.jpg */,
-				BC14910420DA657D00373BBF /* testing_profile_picture_2.png */,
-				BC14910320DA657C00373BBF /* testing_profile_picture_4.png */,
-				13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */,
-				13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */,
-				13321FBB20CFDB7F000B6C41 /* testing_picture_3.jpg */,
-				1327C1A220CE2C15001A300A /* testing_profile_picture_dt.png */,
-				1327C1A120CE2C15001A300A /* testing_profile_picture_jzm.png */,
-				13EBE00620CA616000A911DE /* testing_profile_picture_1.png */,
 				132F819520C90DCF005D3905 /* numberfive.png */,
 				132F819720C90DD0005D3905 /* numberfour.png */,
 				132F819620C90DD0005D3905 /* numberone.png */,
@@ -1563,7 +1515,6 @@
 				1399FC3D217A0CD1009F926F /* blue_P.png in Resources */,
 				1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */,
 				13639BAC2267888800F9DE8B /* baseball_test.png in Resources */,
-				13117B7820F7454600E4CD66 /* testing_food_6.jpeg in Resources */,
 				13F805C9213B469C00AE93F0 /* NewEditProfileViewController.xib in Resources */,
 				1399FC33217A0CD1009F926F /* red_R.png in Resources */,
 				137534F12268357800AB02B7 /* eagle-hill-school.png in Resources */,
@@ -1579,15 +1530,12 @@
 				132F817520C8C77C005D3905 /* LaunchScreen.storyboard in Resources */,
 				137534E92268357800AB02B7 /* milton-academy.png in Resources */,
 				1399FC2F217A0CD1009F926F /* blue_C.png in Resources */,
-				1327C1A420CE2C15001A300A /* testing_profile_picture_dt.png in Resources */,
 				13CFAE5221F7F2FD006C790C /* testing_picture_9.png in Resources */,
 				1355B8A3217CC925006E103D /* allStudents.csv in Resources */,
-				13117B7A20F7454600E4CD66 /* testing_food_7.jpeg in Resources */,
 				1399FC0E217A0CD1009F926F /* blue_A.png in Resources */,
 				13CD9F442166B82500EAFE3D /* govs_connect_app_logo_60@3x.png in Resources */,
 				1399FC22217A0CD1009F926F /* blue_I.png in Resources */,
 				137534F22268357800AB02B7 /* north-andover-middle-school.png in Resources */,
-				13321FBE20CFDB7F000B6C41 /* testing_picture_3.jpg in Resources */,
 				13961E1820CA7766004FFF4B /* system_share.png in Resources */,
 				1327C1A820CE497A001A300A /* system_reply.png in Resources */,
 				1399FC21217A0CD1009F926F /* red_H.png in Resources */,
@@ -1623,7 +1571,6 @@
 				13CD9F4B2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png in Resources */,
 				1300879E20E9D22600FD9E18 /* system_more_full_image.png in Resources */,
 				13921F6D226B99C300646A7F /* SportsListViewController.xib in Resources */,
-				130E677720F61765009D3599 /* testing_food_3.jpg in Resources */,
 				137534F42268357800AB02B7 /* lawrence-academy.png in Resources */,
 				13620BFD20EBDA5E00A229D8 /* testing_picture_7.jpg in Resources */,
 				13CD9F402166B82500EAFE3D /* govs_connect_app_logo_40@3x.png in Resources */,
@@ -1632,12 +1579,10 @@
 				137534E62268357800AB02B7 /* portsmouth-abbey-school.png in Resources */,
 				1399FC2D217A0CD1009F926F /* red_X.png in Resources */,
 				13D389D720FC8E9F00330CDD /* UserDetailViewController.xib in Resources */,
-				13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */,
 				135EB209214B07C0005F8BD9 /* MessageNotificationTableViewCell.xib in Resources */,
 				1399FC42217A34F3009F926F /* courseData.csv in Resources */,
 				13CD9F472166B82500EAFE3D /* govs_connect_app_logo_40@2x.png in Resources */,
 				13CD9F482166B82500EAFE3D /* govs_connect_app_logo_83.5@2x.png in Resources */,
-				13117B7920F7454600E4CD66 /* testing_food_5.jpeg in Resources */,
 				13007BBA216C189900ECB59F /* BottomActionTableViewCell.xib in Resources */,
 				13921F63226AA20600646A7F /* SportsBrowseByCategoryViewController.xib in Resources */,
 				1356C4DD210599D7000C3BF5 /* EditProfileViewController.xib in Resources */,
@@ -1713,15 +1658,12 @@
 				137534F92268357800AB02B7 /* concord-academy.png in Resources */,
 				1375351D2268357800AB02B7 /* phillips-exeter-academy.png in Resources */,
 				13CD9F2721669B0A00EAFE3D /* system_instagram_icon.png in Resources */,
-				130E677520F6175E009D3599 /* testing_food_2.jpg in Resources */,
 				139A0BF42207927000557DCC /* MatchCardCollectionViewCell.xib in Resources */,
 				1375342A2268050B00AB02B7 /* wrestling_test.png in Resources */,
-				13117B7B20F7454600E4CD66 /* testing_food_4.jpg in Resources */,
 				1399FC25217A0CD1009F926F /* red_E.png in Resources */,
 				1399FC38217A0CD1009F926F /* red_V.png in Resources */,
 				1399FC26217A0CD1009F926F /* blue_H.png in Resources */,
 				1316FD92220144770036373B /* govs-connect-menu-tutorial.gif in Resources */,
-				1327C1A320CE2C15001A300A /* testing_profile_picture_jzm.png in Resources */,
 				138FEEDF20FFFDDF004D0F23 /* CourseDescriptionTableViewCell.xib in Resources */,
 				137535162268357800AB02B7 /* dexter-southfield-school.png in Resources */,
 				132F819A20C90DD0005D3905 /* numberfive.png in Resources */,
@@ -1748,12 +1690,10 @@
 				1399FC24217A0CD1009F926F /* blue_V.png in Resources */,
 				130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */,
 				137535092268357800AB02B7 /* dover-high-school.png in Resources */,
-				130E677320F61756009D3599 /* testing_food_1.jpg in Resources */,
 				13CD9F3E2166B82500EAFE3D /* govs_connect_app_logo_76@1x.png in Resources */,
 				137535072268357800AB02B7 /* dana-hall-school.png in Resources */,
 				137535152268357800AB02B7 /* marianapolis-preparatory-school.png in Resources */,
 				13921F69226B98F000646A7F /* skiing_test.png in Resources */,
-				BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */,
 				2354FCEA254EB51B00B0E6D2 /* NewTableViewCell.xib in Resources */,
 				1399FC27217A0CD1009F926F /* red_P.png in Resources */,
 				1399FC0C217A0CD1009F926F /* blue_N.png in Resources */,
@@ -1772,21 +1712,17 @@
 				1399FC32217A0CD1009F926F /* red_T.png in Resources */,
 				1399FC36217A0CD1009F926F /* blue_G.png in Resources */,
 				1390DA9021681686004D1A50 /* ConnectClubTableViewCell.xib in Resources */,
-				13D389DF20FDB0EC00330CDD /* testing_profile_picture_3.png in Resources */,
 				1377AB74214F4CE20015172C /* GCButtonTableViewCell.xib in Resources */,
 				1399FC1D217A0CD1009F926F /* red_W.png in Resources */,
 				137535192268357800AB02B7 /* cushing-academy.png in Resources */,
 				1399FC29217A0CD1009F926F /* blue_D.png in Resources */,
-				BC14910620DA657D00373BBF /* testing_profile_picture_4.png in Resources */,
 				1399FC28217A0CD1009F926F /* red_Y.png in Resources */,
 				13F02C8F2162DB4500660E95 /* GCGoogleLoginViewController.xib in Resources */,
 				132F817220C8C77C005D3905 /* Assets.xcassets in Resources */,
 				132F817020C8C77C005D3905 /* Main.storyboard in Resources */,
-				13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */,
 				13BA25EC220BBF51003502E1 /* system_youtube_icon.png in Resources */,
 				1399FC13217A0CD1009F926F /* blue_B.png in Resources */,
 				1399FC1A217A0CD1009F926F /* blue_J.png in Resources */,
-				13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */,
 				137535172268357800AB02B7 /* millbrook.png in Resources */,
 				137534E32268357800AB02B7 /* tabor-academy.png in Resources */,
 				1399FC15217A0CD1009F926F /* red_I.png in Resources */,
@@ -2128,7 +2064,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SWNM35NBHT;
 				INFOPLIST_FILE = GovsConnect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect;
@@ -2148,7 +2084,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SWNM35NBHT;
 				INFOPLIST_FILE = GovsConnect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect;

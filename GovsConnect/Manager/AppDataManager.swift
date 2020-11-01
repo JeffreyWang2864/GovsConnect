@@ -302,7 +302,7 @@ class AppDataManager{
     }
     
     func loadSportsDataFromServer(_ reloadOnUI: Bool = false){
-        let startDate = Date.yesterday.dayBefore.startOfTheDay
+        let startDate = Date.init(timeIntervalSince1970: 1555459200).dayBefore.startOfTheDay
         let endDate = Calendar.current.date(byAdding: .day, value: 4, to: startDate)!.endOfTheDay
         AppIOManager.shared.getGameDataByRange(startDate: startDate, endDate: endDate, {
             if reloadOnUI{

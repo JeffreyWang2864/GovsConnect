@@ -30,6 +30,7 @@ class GCWaterfallScrollView: UIScrollView {
         let blockingView = DiscoverBasicCellView()
         blockingView.frame = CGRect(x: rightSpaceX, y: lastRightHeight, width: self.cellWidth, height: self.intercellOffset)
         blockingView.setUpViews()
+        self.addLastUpdateWarning(to: blockingView)
         self.addSubview(blockingView)
         lastRightHeight += (self.intercellOffset + self.interCellSpace)
         for i in stride(from: 1, to: self.cells.count, by: 1){
@@ -55,5 +56,30 @@ class GCWaterfallScrollView: UIScrollView {
         endBlockingView.setUpViews()
         self.addSubview(endBlockingView)
         self.contentSize = CGSize(width: UIScreen.main.bounds.width, height: lastLeftHeight)
+    }
+    
+    private func addLastUpdateWarning(to view: UIView){
+        let warningImageView = UIImageView(frame: CGRect(x: 10, y: 14, width: 30 / 1.25, height: 25 / 1.25))
+        if #available(iOS 13.0, *) {
+            warningImageView.image = UIImage(systemName: "exclamationmark.triangle.fill")!
+        } else {
+            // Fallback on earlier versions
+        }
+        warningImageView.tintColor = UIColorFromRGB(rgbValue: 0xFFAE34, alpha: 1.0)
+        let warningLabel = UILabel(frame: CGRect(x: 40, y: 0, width: 120, height: 50))
+        warningLabel.text = "important update from the developer"
+        warningLabel.numberOfLines = 2
+        warningLabel.lineBreakMode = .byTruncatingTail
+        warningLabel.textColor = UIColorFromRGB(rgbValue: 0xFFAE34, alpha: 1.0)
+        warningLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        view.addSubview(warningImageView)
+        view.addSubview(warningLabel)
+        
+        let tgr = UITapGestureRecognizer(target: self, action: #selector(self.showLastUpdateWarning(_:)))
+        view.addGestureRecognizer(tgr)
+    }
+    
+    @objc private func showLastUpdateWarning(_ sender: UITapGestureRecognizer){
+        makeMessageViaAlert(title: "Govs Connect Final Update?", message: "The information on this app is no longer accurate. I apologize for my lack of effort in putting into this project, especially in my senior year. I will probably make updates in the future, but for now please don't trust the info on this app.")
     }
 }

@@ -18,7 +18,25 @@ class MenuSectionCollectionViewCell: UICollectionViewCell {
         didSet{
             self.sectionTitle.text = self.data!.0
             self.detailLabel.text = self.data!.1
-            self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+            
+            switch self.sectionTitle.text {
+            case _ where self.sectionTitle.text!.contains("Bakery"):
+                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+            case _ where self.sectionTitle.text!.contains("Grill"):
+                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+            case _ where self.sectionTitle.text!.contains("Home"):
+                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+            case _ where self.sectionTitle.text!.contains("Pasta"):
+                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+            case _ where self.sectionTitle.text!.contains("Pizza"):
+                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+            case _ where self.sectionTitle.text!.contains("Salad"):
+                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+            case _ where self.sectionTitle.text!.contains("International"):
+                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+            default:
+                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+            }
         }
     }
     
