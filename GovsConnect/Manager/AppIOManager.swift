@@ -564,35 +564,6 @@ class AppIOManager{
         }
     }
     
-    func loadFoodData(_ completionHandler: @escaping ReceiveResponseBlock, _ errorHandler: @escaping (String) -> ()){
-        let urlStr = APP_SERVER_URL_STR + "/discover/food"
-        request(urlStr).responseJSON { (response) in
-            switch response.result{
-            case .success(let json):
-                var index = 0
-                let jsonDict = JSON(json)
-                AppDataManager.shared.oldDiscoverMenuData[0] = []
-                AppDataManager.shared.oldDiscoverMenuData[1] = []
-                while jsonDict["\(index)"] != JSON.null{
-                    let data = jsonDict["\(index)"]
-                    let foodName = data["name"].stringValue
-                    let is_lunch = data["is_lunch"].boolValue
-                    let id = data["id"].intValue
-                    let foodData = DiscoverFoodDataContainer(foodName, "")
-                    foodData._id = id
-//                    self.loadImage(with: imgStr, { (data) in
-//                        AppDataManager.shared.imageData[imgStr] = data
-//                    })
-                    AppDataManager.shared.oldDiscoverMenuData[btoi(!is_lunch)].append(foodData)
-                    index += 1
-                }
-                completionHandler(true)
-            case .failure(let error):
-                errorHandler(error.localizedDescription)
-            }
-        }
-    }
-    
     func foodDataAction(food_id: Int, method: String, _ completionHandler: @escaping ReceiveResponseBlock){
         let urlStr = APP_SERVER_URL_STR + "/discover/food/id=\(food_id)_method=" + method
         request(urlStr).responseJSON { (response) in
@@ -606,33 +577,53 @@ class AppIOManager{
     }
     
     func loadFoodDataThisWeek(_ completionHandler: @escaping ReceiveResponseBlock, _ errorHandler: @escaping (String) -> ()){
-        let urlStr = APP_SERVER_URL_STR + "/discover/food_this_week"
+        let urlStr = APP_SERVER_URL_STR + "/discover/food_this_week/"
         request(urlStr).responseJSON { (response) in
             switch response.result{
             case .success(let json):
                 let jsonDict = JSON(json)
-                let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-                AppDataManager.shared.discoverMenuData = []
+                AppDataManager.shared.discoverMenuData = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
                 AppDataManager.shared.discoverMenuTitle = []
-                for day in days{
-                    let dayJsonDict = jsonDict[day]
-                    var dayArr = Array<DiscoverFoodDataContainer>()
-                    var index = 0
-                    while dayJsonDict["\(index)"] != JSON.null{
-                        let data = dayJsonDict["\(index)"]
-                        let foodName = data["name"].stringValue
-                        let is_lunch = data["is_lunch"].boolValue
-                        let id = data["id"].intValue
-                        let is_everyday = data["is_everyday"].boolValue
-                        let is_special = !is_everyday
-                        let like_count = data["like_count"].intValue
-                        let foodData = DiscoverFoodDataContainer.init(id, foodName, is_lunch, is_special, like_count)
-                        dayArr.append(foodData)
-                        index += 1
+                var index = 0
+                while jsonDict["\(index)"] != JSON.null{
+                    let data = jsonDict["\(index)"]
+                    let foodName = data["name"].stringValue
+                    let menuName = data["menu"].stringValue
+                    let sectionName = data["section"].stringValue.replacingOccurrences(of: "  ", with: " ")
+                    let dateName = data["date"].stringValue
+                    let menuInt = { () -> Int in
+                        switch menuName {
+                        case "Breakfast":
+                            return 0
+                        case "Lunch":
+                            return 1
+                        case "Dinner":
+                            return 2
+                        default:
+                            return 3
+                        }
+                    }()
+                    let foodData = DiscoverFoodDataContainer(foodName, menuInt, sectionName, dateName)
+                    
+                    switch dateName {
+                    case _ where dateName.contains("Sunday"):
+                        AppDataManager.shared.discoverMenuData[0].append(foodData)
+                    case _ where dateName.contains("Monday"):
+                        AppDataManager.shared.discoverMenuData[1].append(foodData)
+                    case _ where dateName.contains("Tuesday"):
+                        AppDataManager.shared.discoverMenuData[2].append(foodData)
+                    case _ where dateName.contains("Wednesday"):
+                        AppDataManager.shared.discoverMenuData[3].append(foodData)
+                    case _ where dateName.contains("Thursday"):
+                        AppDataManager.shared.discoverMenuData[4].append(foodData)
+                    case _ where dateName.contains("Friday"):
+                        AppDataManager.shared.discoverMenuData[5].append(foodData)
+                    case _ where dateName.contains("Saturday"):
+                        AppDataManager.shared.discoverMenuData[6].append(foodData)
+                    default:
+                        break
                     }
-                    AppDataManager.shared.discoverMenuData.append(dayArr)
-                    let dayTitle = jsonDict["discover_food_title_" + day].stringValue
-                    AppDataManager.shared.discoverMenuTitle.append(dayTitle)
+                    index += 1
                 }
                 completionHandler(true)
             case .failure(let error):

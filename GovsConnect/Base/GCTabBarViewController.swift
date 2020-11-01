@@ -20,7 +20,7 @@ class GCTabBarViewController: UITabBarController {
         //发现控制器
         let disVc = DiscoverViewController()
         self.addChildController(childVc: disVc, title: "Discover", normalImg: #imageLiteral(resourceName: "system_normal_discover"), selectedImg: #imageLiteral(resourceName: "system_selected_discover"))
-        
+//
 //        let postVc = PostsViewController(nibName: "PostsViewController", bundle: nil)
 //        NotificationCenter.default.addObserver(postVc, selector: #selector(postVc.loginAction(_:)), name: AppIOManager.loginActionNotificationName, object: nil)
 //        self.addChildController(childVc: postVc, title: "Posts", normalImg: #imageLiteral(resourceName: "system_normal_post"), selectedImg: #imageLiteral(resourceName: "system_selected_post"))

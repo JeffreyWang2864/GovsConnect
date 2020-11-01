@@ -50,10 +50,7 @@
 		13321FBF20CFDB7F000B6C41 /* testing_picture_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */; };
 		13321FC020CFDB7F000B6C41 /* testing_picture_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */; };
 		133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */; };
-		133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */; };
-		133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */; };
 		1348E51A2270AC0D004EEBCD /* berwick-academy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1348E5192270AC0D004EEBCD /* berwick-academy.png */; };
-		134C194621FA4CE700469E3C /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C194421FA4CE700469E3C /* NewTableViewCell.swift */; };
 		13540E9721645ABE005204FC /* GCSportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9621645ABE005204FC /* GCSportType.swift */; };
 		13540E99216673A3005204FC /* system_discover_links.png in Resources */ = {isa = PBXBuildFile; fileRef = 13540E98216673A3005204FC /* system_discover_links.png */; };
 		13540E9C216673D6005204FC /* LinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540E9A216673D6005204FC /* LinksViewController.swift */; };
@@ -63,17 +60,12 @@
 		13540EA321667720005204FC /* GCLinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540EA221667720005204FC /* GCLinkType.swift */; };
 		1355B8A3217CC925006E103D /* allStudents.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8A2217CC925006E103D /* allStudents.csv */; };
 		1355B8A5217D1BD0006E103D /* allClubs.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8A4217D1BD0006E103D /* allClubs.csv */; };
-		1355B8A8217E92ED006E103D /* NewFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1355B8A6217E92ED006E103D /* NewFoodViewController.swift */; };
-		1355B8A9217E92ED006E103D /* NewFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8A7217E92ED006E103D /* NewFoodViewController.xib */; };
-		1355B8AC217E930D006E103D /* NewFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1355B8AA217E930D006E103D /* NewFoodTableViewCell.swift */; };
-		1355B8AD217E930D006E103D /* NewFoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8AB217E930D006E103D /* NewFoodTableViewCell.xib */; };
 		1355B8B0217E9F29006E103D /* system_discover_food_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8AE217E9F28006E103D /* system_discover_food_like.png */; };
 		1355B8B1217E9F29006E103D /* system_discover_food_dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = 1355B8AF217E9F29006E103D /* system_discover_food_dislike.png */; };
 		1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4D62101E2CD000C3BF5 /* YouViewController.swift */; };
 		1356C4D92101E2CD000C3BF5 /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1356C4D72101E2CD000C3BF5 /* YouViewController.xib */; };
 		1356C4DC210599D7000C3BF5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356C4DA210599D7000C3BF5 /* EditProfileViewController.swift */; };
 		1356C4DD210599D7000C3BF5 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1356C4DB210599D7000C3BF5 /* EditProfileViewController.xib */; };
-		1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357D18520EB7639004CD2EB /* NewTableViewCell.xib */; };
 		1357D18820EB7639004CD2EB /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357D18620EB7639004CD2EB /* NewTableViewCell.swift */; };
 		135E830921F77090009DCCA1 /* ModifiedScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E830721F77090009DCCA1 /* ModifiedScheduleViewController.swift */; };
 		135E830A21F77090009DCCA1 /* ModifiedScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135E830821F77090009DCCA1 /* ModifiedScheduleViewController.xib */; };
@@ -278,8 +270,6 @@
 		139A0BF32207927000557DCC /* MatchCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139A0BF12207927000557DCC /* MatchCardCollectionViewCell.swift */; };
 		139A0BF42207927000557DCC /* MatchCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139A0BF22207927000557DCC /* MatchCardCollectionViewCell.xib */; };
 		139EDF7320EC7E3F00778CFD /* testing_picture_8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7220EC7E3F00778CFD /* testing_picture_8.jpg */; };
-		139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EDF7420EC7FA400778CFD /* RateYourFoodViewController.swift */; };
-		139EDF7720EC7FA400778CFD /* RateYourFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */; };
 		139EDF7A20EC87A700778CFD /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EDF7820EC87A700778CFD /* EventDetailViewController.swift */; };
 		139EDF7B20EC87A700778CFD /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139EDF7920EC87A700778CFD /* EventDetailViewController.xib */; };
 		13A6BA93221A0C9000E6D28A /* system_sports_see_result.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A6BA8F221A0C8F00E6D28A /* system_sports_see_result.png */; };
@@ -288,9 +278,7 @@
 		13A6BA96221A0C9000E6D28A /* system_sports_select_date.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A6BA92221A0C9000E6D28A /* system_sports_select_date.png */; };
 		13A6BA9A221A12CD00E6D28A /* GCCenteredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A6BA99221A12CD00E6D28A /* GCCenteredButton.swift */; };
 		13A7801320EF690E00926139 /* GCOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7801220EF690E00926139 /* GCOptionsTableView.swift */; };
-		13ABADDA21FA520A00885398 /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 134C194521FA4CE700469E3C /* NewTableViewCell.xib */; };
 		13ABADDC21FABF3000885398 /* govs-connect-widget-tutorial.gif in Resources */ = {isa = PBXBuildFile; fileRef = 13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */; };
-		13B6C8FF21F9F914004EC5C0 /* GCPhoneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6C8FE21F9F914004EC5C0 /* GCPhoneType.swift */; };
 		13BA25EC220BBF51003502E1 /* system_youtube_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13BA25EB220BBF50003502E1 /* system_youtube_icon.png */; };
 		13BFE54C20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */; };
 		13BFE54D20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */; };
@@ -346,15 +334,6 @@
 		13DDA96B216D06C300916139 /* NewUserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DDA969216D06C300916139 /* NewUserDetailTableViewCell.swift */; };
 		13DDA96C216D06C300916139 /* NewUserDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DDA96A216D06C300916139 /* NewUserDetailTableViewCell.xib */; };
 		13E5DE36216FFB51007560C3 /* system_discover_sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E5DE35216FFB51007560C3 /* system_discover_sports.png */; };
-		13E6740321F94F32005B4BB6 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E6740221F94F32005B4BB6 /* NotificationCenter.framework */; };
-		13E6740621F94F32005B4BB6 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6740521F94F32005B4BB6 /* TodayViewController.swift */; };
-		13E6740D21F94F32005B4BB6 /* ScheduleWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13E6740121F94F32005B4BB6 /* ScheduleWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		13E6741321F94FAD005B4BB6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E6740721F94F32005B4BB6 /* MainInterface.storyboard */; };
-		13E6741A21F956A1005B4BB6 /* ScheduleWidgetIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6741921F956A1005B4BB6 /* ScheduleWidgetIOManager.swift */; };
-		13E6741D21F95796005B4BB6 /* defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6741C21F95796005B4BB6 /* defines.swift */; };
-		13E6741F21F957D4005B4BB6 /* tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6741E21F957D4005B4BB6 /* tool.swift */; };
-		13E6742121F95831005B4BB6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6742021F95831005B4BB6 /* UIView+Ext.swift */; };
-		13E6742321F9588A005B4BB6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E6742221F9588A005B4BB6 /* String+Ext.swift */; };
 		13E73706210960C4008BE215 /* ManagePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E73705210960C4008BE215 /* ManagePostsViewController.swift */; };
 		13EBE00720CA616000A911DE /* testing_profile_picture_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EBE00620CA616000A911DE /* testing_profile_picture_1.png */; };
 		13EED9D52136121B00427E5E /* GCLoginRequireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */; };
@@ -377,7 +356,6 @@
 		13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC0E6C2105CC2B001FA925 /* GCEditableTableViewCell.swift */; };
 		13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FC0E6D2105CC2B001FA925 /* GCEditableTableViewCell.xib */; };
 		13FE084D223E7D6E00F926E5 /* LoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FE084C223E7D6E00F926E5 /* LoveButton.swift */; };
-		A30C606D9C14CEEF14C6B579 /* Pods_ScheduleWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8EE475E74E116933FCBAB4 /* Pods_ScheduleWidget.framework */; };
 		B8C2EC8E928B34CB0A8CC938 /* Pods_GovsConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA081885A40C1BCE935048F /* Pods_GovsConnect.framework */; };
 		BC1490E620DA22FC00373BBF /* GCBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490E520DA22FC00373BBF /* GCBaseTableViewCell.swift */; };
 		BC1490E820DA235B00373BBF /* GCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1490E720DA235B00373BBF /* GCBaseViewController.swift */; };
@@ -388,16 +366,6 @@
 		BC14910720DA657D00373BBF /* testing_profile_picture_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC14910420DA657D00373BBF /* testing_profile_picture_2.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		13E6740B21F94F32005B4BB6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 132F815F20C8C77C005D3905 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 13E6740021F94F32005B4BB6;
-			remoteInfo = ScheduleWidget;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		13E6741121F94F33005B4BB6 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -405,7 +373,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				13E6740D21F94F32005B4BB6 /* ScheduleWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,11 +426,7 @@
 		13321FBC20CFDB7F000B6C41 /* testing_picture_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_1.jpg; sourceTree = "<group>"; };
 		13321FBD20CFDB7F000B6C41 /* testing_picture_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_2.jpg; sourceTree = "<group>"; };
 		133FF6B520F600F7001F97DC /* system_drop_down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_drop_down_arrow.png; sourceTree = "<group>"; };
-		133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
-		133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		1348E5192270AC0D004EEBCD /* berwick-academy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "berwick-academy.png"; sourceTree = "<group>"; };
-		134C194421FA4CE700469E3C /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
-		134C194521FA4CE700469E3C /* NewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
 		13540E9621645ABE005204FC /* GCSportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSportType.swift; sourceTree = "<group>"; };
 		13540E98216673A3005204FC /* system_discover_links.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_links.png; sourceTree = "<group>"; };
 		13540E9A216673D6005204FC /* LinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewController.swift; sourceTree = "<group>"; };
@@ -473,10 +436,6 @@
 		13540EA221667720005204FC /* GCLinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLinkType.swift; sourceTree = "<group>"; };
 		1355B8A2217CC925006E103D /* allStudents.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allStudents.csv; sourceTree = "<group>"; };
 		1355B8A4217D1BD0006E103D /* allClubs.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allClubs.csv; sourceTree = "<group>"; };
-		1355B8A6217E92ED006E103D /* NewFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFoodViewController.swift; sourceTree = "<group>"; };
-		1355B8A7217E92ED006E103D /* NewFoodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewFoodViewController.xib; sourceTree = "<group>"; };
-		1355B8AA217E930D006E103D /* NewFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFoodTableViewCell.swift; sourceTree = "<group>"; };
-		1355B8AB217E930D006E103D /* NewFoodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewFoodTableViewCell.xib; sourceTree = "<group>"; };
 		1355B8AE217E9F28006E103D /* system_discover_food_like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_food_like.png; sourceTree = "<group>"; };
 		1355B8AF217E9F29006E103D /* system_discover_food_dislike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_food_dislike.png; sourceTree = "<group>"; };
 		1356C4D62101E2CD000C3BF5 /* YouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouViewController.swift; sourceTree = "<group>"; };
@@ -688,8 +647,6 @@
 		139A0BF12207927000557DCC /* MatchCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		139A0BF22207927000557DCC /* MatchCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		139EDF7220EC7E3F00778CFD /* testing_picture_8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testing_picture_8.jpg; sourceTree = "<group>"; };
-		139EDF7420EC7FA400778CFD /* RateYourFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateYourFoodViewController.swift; sourceTree = "<group>"; };
-		139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateYourFoodViewController.xib; sourceTree = "<group>"; };
 		139EDF7820EC87A700778CFD /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		139EDF7920EC87A700778CFD /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		13A6BA8F221A0C8F00E6D28A /* system_sports_see_result.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_sports_see_result.png; sourceTree = "<group>"; };
@@ -700,7 +657,6 @@
 		13A7801220EF690E00926139 /* GCOptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCOptionsTableView.swift; sourceTree = "<group>"; };
 		13ABADDB21FABF3000885398 /* govs-connect-widget-tutorial.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "govs-connect-widget-tutorial.gif"; sourceTree = "<group>"; };
 		13ADC69D20F32A4300AECFFA /* GovsConnect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GovsConnect.entitlements; sourceTree = "<group>"; };
-		13B6C8FE21F9F914004EC5C0 /* GCPhoneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCPhoneType.swift; sourceTree = "<group>"; };
 		13BA25EB220BBF50003502E1 /* system_youtube_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_youtube_icon.png; sourceTree = "<group>"; };
 		13BFE54A20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailBodyTableViewCell.swift; sourceTree = "<group>"; };
 		13BFE54B20CBE9F2003F8276 /* PostsDetailBodyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsDetailBodyTableViewCell.xib; sourceTree = "<group>"; };
@@ -757,16 +713,7 @@
 		13DDA969216D06C300916139 /* NewUserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserDetailTableViewCell.swift; sourceTree = "<group>"; };
 		13DDA96A216D06C300916139 /* NewUserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewUserDetailTableViewCell.xib; sourceTree = "<group>"; };
 		13E5DE35216FFB51007560C3 /* system_discover_sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_discover_sports.png; sourceTree = "<group>"; };
-		13E6740121F94F32005B4BB6 /* ScheduleWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScheduleWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E6740221F94F32005B4BB6 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		13E6740521F94F32005B4BB6 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = /Users/Excited/Desktop/GovsConnect/ScheduleWidget/TodayViewController.swift; sourceTree = "<absolute>"; };
-		13E6740821F94F32005B4BB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		13E6740A21F94F32005B4BB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		13E6741921F956A1005B4BB6 /* ScheduleWidgetIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleWidgetIOManager.swift; path = ../ScheduleWidgetIOManager.swift; sourceTree = "<group>"; };
-		13E6741C21F95796005B4BB6 /* defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defines.swift; sourceTree = "<group>"; };
-		13E6741E21F957D4005B4BB6 /* tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tool.swift; sourceTree = "<group>"; };
-		13E6742021F95831005B4BB6 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
-		13E6742221F9588A005B4BB6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		13E73705210960C4008BE215 /* ManagePostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostsViewController.swift; sourceTree = "<group>"; };
 		13EBE00620CA616000A911DE /* testing_profile_picture_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testing_profile_picture_1.png; sourceTree = "<group>"; };
 		13EED9D32136121B00427E5E /* GCLoginRequireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCLoginRequireViewController.swift; sourceTree = "<group>"; };
@@ -811,15 +758,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		13E673FE21F94F32005B4BB6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				13E6740321F94F32005B4BB6 /* NotificationCenter.framework in Frameworks */,
-				A30C606D9C14CEEF14C6B579 /* Pods_ScheduleWidget.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -829,14 +767,10 @@
 				1357D18620EB7639004CD2EB /* NewTableViewCell.swift */,
 				1357D18520EB7639004CD2EB /* NewTableViewCell.xib */,
 				137D562E20E7BA080088AB30 /* DiscoverBasicCellView.swift */,
-				133FF6B720F60D56001F97DC /* FoodCollectionViewCell.swift */,
-				133FF6B820F60D56001F97DC /* FoodCollectionViewCell.xib */,
 				13540E9E21667524005204FC /* LinksCollectionViewCell.swift */,
 				13540E9F21667524005204FC /* LinksCollectionViewCell.xib */,
 				13CD9F202166935600EAFE3D /* LinksTableViewCell.swift */,
 				13CD9F212166935600EAFE3D /* LinksTableViewCell.xib */,
-				1355B8AA217E930D006E103D /* NewFoodTableViewCell.swift */,
-				1355B8AB217E930D006E103D /* NewFoodTableViewCell.xib */,
 				13661A3B2233725600EF79B6 /* MenuSpecialityCollectionViewCell.swift */,
 				13661A3C2233725600EF79B6 /* MenuSpecialityCollectionViewCell.xib */,
 				13661A3F2233729300EF79B6 /* MenuEverydayCollectionViewCell.swift */,
@@ -856,7 +790,6 @@
 			isa = PBXGroup;
 			children = (
 				132F816920C8C77C005D3905 /* GovsConnect */,
-				13E6740421F94F32005B4BB6 /* ScheduleWidget */,
 				132F816820C8C77C005D3905 /* Products */,
 				F73684DB68754775AA398023 /* Pods */,
 				E69AA26B779572AEDB876F1E /* Frameworks */,
@@ -867,7 +800,6 @@
 			isa = PBXGroup;
 			children = (
 				132F816720C8C77C005D3905 /* GovsConnect.app */,
-				13E6740121F94F32005B4BB6 /* ScheduleWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1353,33 +1285,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		13E6740421F94F32005B4BB6 /* ScheduleWidget */ = {
-			isa = PBXGroup;
-			children = (
-				134C194421FA4CE700469E3C /* NewTableViewCell.swift */,
-				134C194521FA4CE700469E3C /* NewTableViewCell.xib */,
-				13E6741B21F9578C005B4BB6 /* Utils */,
-				13E6740521F94F32005B4BB6 /* TodayViewController.swift */,
-				13E6740721F94F32005B4BB6 /* MainInterface.storyboard */,
-				13E6740A21F94F32005B4BB6 /* Info.plist */,
-			);
-			name = ScheduleWidget;
-			path = /Users/Excited/Desktop/GovsConnect/ScheduleWidget;
-			sourceTree = "<absolute>";
-		};
-		13E6741B21F9578C005B4BB6 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				13E6741921F956A1005B4BB6 /* ScheduleWidgetIOManager.swift */,
-				13E6741C21F95796005B4BB6 /* defines.swift */,
-				13E6741E21F957D4005B4BB6 /* tool.swift */,
-				13E6742021F95831005B4BB6 /* UIView+Ext.swift */,
-				13E6742221F9588A005B4BB6 /* String+Ext.swift */,
-				13B6C8FE21F9F914004EC5C0 /* GCPhoneType.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		13E73707210960CF008BE215 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1504,14 +1409,10 @@
 				132B8C0B20E6813300A80F5B /* DiscoverViewController.xib */,
 				1300879F20E9DEF800FD9E18 /* WeekendDetailViewController.swift */,
 				130087A020E9DEF800FD9E18 /* WeekendDetailViewController.xib */,
-				139EDF7420EC7FA400778CFD /* RateYourFoodViewController.swift */,
-				139EDF7520EC7FA400778CFD /* RateYourFoodViewController.xib */,
 				139EDF7820EC87A700778CFD /* EventDetailViewController.swift */,
 				139EDF7920EC87A700778CFD /* EventDetailViewController.xib */,
 				13540E9A216673D6005204FC /* LinksViewController.swift */,
 				13540E9B216673D6005204FC /* LinksViewController.xib */,
-				1355B8A6217E92ED006E103D /* NewFoodViewController.swift */,
-				1355B8A7217E92ED006E103D /* NewFoodViewController.xib */,
 				135E830721F77090009DCCA1 /* ModifiedScheduleViewController.swift */,
 				135E830821F77090009DCCA1 /* ModifiedScheduleViewController.xib */,
 				13661A372233625900EF79B6 /* DiningHallMenuViewController.swift */,
@@ -1580,30 +1481,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				13E6740C21F94F32005B4BB6 /* PBXTargetDependency */,
 			);
 			name = GovsConnect;
 			productName = GovsConnect;
 			productReference = 132F816720C8C77C005D3905 /* GovsConnect.app */;
 			productType = "com.apple.product-type.application";
-		};
-		13E6740021F94F32005B4BB6 /* ScheduleWidget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 13E6741021F94F32005B4BB6 /* Build configuration list for PBXNativeTarget "ScheduleWidget" */;
-			buildPhases = (
-				B0395409136765043E0DDB50 /* [CP] Check Pods Manifest.lock */,
-				13E673FD21F94F32005B4BB6 /* Sources */,
-				13E673FE21F94F32005B4BB6 /* Frameworks */,
-				13E673FF21F94F32005B4BB6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ScheduleWidget;
-			productName = ScheduleWidget;
-			productReference = 13E6740121F94F32005B4BB6 /* ScheduleWidget.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -1628,10 +1510,6 @@
 							};
 						};
 					};
-					13E6740021F94F32005B4BB6 = {
-						CreatedOnToolsVersion = 10.1;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 132F816220C8C77C005D3905 /* Build configuration list for PBXProject "GovsConnect" */;
@@ -1648,7 +1526,6 @@
 			projectRoot = "";
 			targets = (
 				132F816620C8C77C005D3905 /* GovsConnect */,
-				13E6740021F94F32005B4BB6 /* ScheduleWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -1740,9 +1617,7 @@
 				137534FF2268357800AB02B7 /* st-marks-school.png in Resources */,
 				137EEBA520E7781200BA2575 /* testing_picture_6.jpg in Resources */,
 				133FF6B620F600F7001F97DC /* system_drop_down_arrow.png in Resources */,
-				139EDF7720EC7FA400778CFD /* RateYourFoodViewController.xib in Resources */,
 				1399FC37217A0CD1009F926F /* red_C.png in Resources */,
-				1355B8AD217E930D006E103D /* NewFoodTableViewCell.xib in Resources */,
 				13CD443120E490CB001FB934 /* GCImageViewController.xib in Resources */,
 				130694C1220E788400D88A90 /* MatchDetailTableViewCell.xib in Resources */,
 				13CD9F4B2166B82500EAFE3D /* govs_connect_app_logo_29@1x.png in Resources */,
@@ -1815,7 +1690,6 @@
 				13F02C9321630F1500660E95 /* IsThisYouViewController.xib in Resources */,
 				137535032268357800AB02B7 /* kimball-union-academy.png in Resources */,
 				1375351A2268357800AB02B7 /* newton-country-day-school.png in Resources */,
-				1357D18720EB7639004CD2EB /* NewTableViewCell.xib in Resources */,
 				13FC0E6F2105CC2B001FA925 /* GCEditableTableViewCell.xib in Resources */,
 				137534ED2268357800AB02B7 /* winsor-school.png in Resources */,
 				1355B8A5217D1BD0006E103D /* allClubs.csv in Resources */,
@@ -1873,7 +1747,6 @@
 				1399FC24217A0CD1009F926F /* blue_V.png in Resources */,
 				130087A220E9DEF800FD9E18 /* WeekendDetailViewController.xib in Resources */,
 				137535092268357800AB02B7 /* dover-high-school.png in Resources */,
-				1355B8A9217E92ED006E103D /* NewFoodViewController.xib in Resources */,
 				130E677320F61756009D3599 /* testing_food_1.jpg in Resources */,
 				13CD9F3E2166B82500EAFE3D /* govs_connect_app_logo_76@1x.png in Resources */,
 				137535072268357800AB02B7 /* dana-hall-school.png in Resources */,
@@ -1902,7 +1775,6 @@
 				1399FC1D217A0CD1009F926F /* red_W.png in Resources */,
 				137535192268357800AB02B7 /* cushing-academy.png in Resources */,
 				1399FC29217A0CD1009F926F /* blue_D.png in Resources */,
-				133FF6BA20F60D56001F97DC /* FoodCollectionViewCell.xib in Resources */,
 				BC14910620DA657D00373BBF /* testing_profile_picture_4.png in Resources */,
 				1399FC28217A0CD1009F926F /* red_Y.png in Resources */,
 				13F02C8F2162DB4500660E95 /* GCGoogleLoginViewController.xib in Resources */,
@@ -1920,15 +1792,6 @@
 				13A6BA95221A0C9000E6D28A /* system_sports_browse_by_category.png in Resources */,
 				13A6BA94221A0C9000E6D28A /* system_sports_video.png in Resources */,
 				1375342C2268050B00AB02B7 /* golf_test.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		13E673FF21F94F32005B4BB6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				13ABADDA21FA520A00885398 /* NewTableViewCell.xib in Resources */,
-				13E6741321F94FAD005B4BB6 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1997,28 +1860,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B0395409136765043E0DDB50 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ScheduleWidget-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B2695E944C899B1A2E1BC854 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2080,9 +1921,7 @@
 				BC1490EE20DA550A00373BBF /* UIView+Ext.swift in Sources */,
 				13FC0E6E2105CC2B001FA925 /* GCEditableTableViewCell.swift in Sources */,
 				13CD443020E490CB001FB934 /* GCImageViewController.swift in Sources */,
-				1355B8AC217E930D006E103D /* NewFoodTableViewCell.swift in Sources */,
 				137D563120E8A3B80088AB30 /* GCWaterfallScrollView.swift in Sources */,
-				133FF6B920F60D56001F97DC /* FoodCollectionViewCell.swift in Sources */,
 				13D389E220FDD62000330CDD /* UserDetailTableViewCell.swift in Sources */,
 				13540EA321667720005204FC /* GCLinkType.swift in Sources */,
 				13921F62226AA20600646A7F /* SportsBrowseByCategoryViewController.swift in Sources */,
@@ -2108,7 +1947,6 @@
 				13961E2A20CAC1F3004FFF4B /* tool.swift in Sources */,
 				13F4094920CCE03700645880 /* PostsDetailReplyTableViewCell.swift in Sources */,
 				132B8C0C20E6813300A80F5B /* DiscoverViewController.swift in Sources */,
-				139EDF7620EC7FA400778CFD /* RateYourFoodViewController.swift in Sources */,
 				13921F6C226B99C300646A7F /* SportsListViewController.swift in Sources */,
 				13A6BA9A221A12CD00E6D28A /* GCCenteredButton.swift in Sources */,
 				13007BB9216C189900ECB59F /* BottomActionTableViewCell.swift in Sources */,
@@ -2124,7 +1962,6 @@
 				138D166C20D16D36005F3425 /* MultiMediaCollectionViewCell.swift in Sources */,
 				1377AB76214F7BB80015172C /* GCPhoneType.swift in Sources */,
 				135E830921F77090009DCCA1 /* ModifiedScheduleViewController.swift in Sources */,
-				1355B8A8217E92ED006E103D /* NewFoodViewController.swift in Sources */,
 				1356C4D82101E2CD000C3BF5 /* YouViewController.swift in Sources */,
 				132F816B20C8C77C005D3905 /* AppDelegate.swift in Sources */,
 				13C2566B214C8BE500EFCBCF /* ImageData+CoreDataClass.swift in Sources */,
@@ -2150,30 +1987,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		13E673FD21F94F32005B4BB6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				13E6741F21F957D4005B4BB6 /* tool.swift in Sources */,
-				13E6742321F9588A005B4BB6 /* String+Ext.swift in Sources */,
-				13E6741A21F956A1005B4BB6 /* ScheduleWidgetIOManager.swift in Sources */,
-				13E6742121F95831005B4BB6 /* UIView+Ext.swift in Sources */,
-				13E6740621F94F32005B4BB6 /* TodayViewController.swift in Sources */,
-				13E6741D21F95796005B4BB6 /* defines.swift in Sources */,
-				134C194621FA4CE700469E3C /* NewTableViewCell.swift in Sources */,
-				13B6C8FF21F9F914004EC5C0 /* GCPhoneType.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		13E6740C21F94F32005B4BB6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 13E6740021F94F32005B4BB6 /* ScheduleWidget */;
-			targetProxy = 13E6740B21F94F32005B4BB6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		132F816E20C8C77C005D3905 /* Main.storyboard */ = {
@@ -2191,15 +2005,6 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
-		};
-		13E6740721F94F32005B4BB6 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13E6740821F94F32005B4BB6 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			path = /Users/Excited/Desktop/GovsConnect/ScheduleWidget;
-			sourceTree = "<absolute>";
 		};
 /* End PBXVariantGroup section */
 
@@ -2315,14 +2120,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E2B5E8DAACCCA68B7312709 /* Pods-GovsConnect.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GovsConnect/GovsConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SWNM35NBHT;
 				INFOPLIST_FILE = GovsConnect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2334,62 +2140,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F9D974B7CD4FABCEEEF381C /* Pods-GovsConnect.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GovsConnect/GovsConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SWNM35NBHT;
 				INFOPLIST_FILE = GovsConnect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		13E6740E21F94F32005B4BB6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECBB3E294D88AAB305B5375C /* Pods-ScheduleWidget.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SWNM35NBHT;
-				INFOPLIST_FILE = ScheduleWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect.ScheduleWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		13E6740F21F94F32005B4BB6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13D918E46A6263F09EF102D7 /* Pods-ScheduleWidget.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SWNM35NBHT;
-				INFOPLIST_FILE = ScheduleWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = net.eagersoft.GovsConnect.ScheduleWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -2410,15 +2174,6 @@
 			buildConfigurations = (
 				132F817A20C8C77C005D3905 /* Debug */,
 				132F817B20C8C77C005D3905 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		13E6741021F94F32005B4BB6 /* Build configuration list for PBXNativeTarget "ScheduleWidget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				13E6740E21F94F32005B4BB6 /* Debug */,
-				13E6740F21F94F32005B4BB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

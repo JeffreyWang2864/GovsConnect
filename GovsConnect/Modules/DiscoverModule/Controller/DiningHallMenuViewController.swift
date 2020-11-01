@@ -55,41 +55,8 @@ class DiningHallMenuViewController: UIViewController {
         self.fixedLunchData = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
         self.fixedDinnerData = [Array<DiscoverFoodDataContainer>(), Array<DiscoverFoodDataContainer>()]
         let todayFoods = AppDataManager.shared.discoverMenuData[self.menuIndex]
-        for food in todayFoods{
-            if food.isLunch{
-                //put in lunch
-                self.fixedLunchData[btoi(!food.isSpecial)].append(food)
-            }else{
-                //put in dinner
-                self.fixedDinnerData[btoi(!food.isSpecial)].append(food)
-            }
-        }
-        self.fixedLunchData[0].sort { (a, b) -> Bool in
-            return a.likeCount > b.likeCount
-        }
-        self.fixedDinnerData[0].sort { (a, b) -> Bool in
-            return a.likeCount > b.likeCount
-        }
+        
     }
-    
-//    private func setupFakeData(){
-//        var arr1 = Array<DiscoverFoodDataContainer>()
-//        arr1.append(DiscoverFoodDataContainer.init(1, "Pot Stickers", true, true, 3))
-//        arr1.append(DiscoverFoodDataContainer.init(2, "Teriyaki Chicken Wings", true, true, 1))
-//        arr1.append(DiscoverFoodDataContainer.init(3, "Shake & Bake Pork Chop", false, true, 2))
-//        arr1.append(DiscoverFoodDataContainer.init(4, "BBQ Black Eyed Peas and Kale", false, true, 0))
-//        arr1.append(DiscoverFoodDataContainer.init(-1, "Marinara Sauce", true, false))
-//        arr1.append(DiscoverFoodDataContainer.init(-1, "Meat Sauce", true, false))
-//        arr1.append(DiscoverFoodDataContainer.init(-1, "Pasta", false, false))
-//        arr1.append(DiscoverFoodDataContainer.init(-1, "Sticky Rice", false, false))
-//        AppDataManager.shared.discoverMenuData.append(arr1)
-//        var arr2 = Array<DiscoverFoodDataContainer>()
-//        arr2.append(DiscoverFoodDataContainer.init(5, "Chicken Tamales", true, true, 3))
-//        arr2.append(DiscoverFoodDataContainer.init(6, "Arroz Amarillo Jalapeno Pinto Beans", false, true, 1))
-//        arr2.append(DiscoverFoodDataContainer.init(-1, "Cookies", true, false))
-//        arr2.append(DiscoverFoodDataContainer.init(-1, "Root Beer Floats Ice Cream", false, false))
-//        AppDataManager.shared.discoverMenuData.append(arr2)
-//    }
     
     private func displayDidSeeWidget(){
         let askWidgetAlertController = UIAlertController(title: "Tutorial", message: "You can double tap to like a food", preferredStyle: .alert)

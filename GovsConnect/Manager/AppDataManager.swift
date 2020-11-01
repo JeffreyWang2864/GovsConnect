@@ -488,28 +488,15 @@ class EventDataContainer{
 
 class DiscoverFoodDataContainer{
     var title: String
-    var imageName: String
-    var likeCount: Int
-    var dislikeCount: Int
+    var menu: Int //0 is breakfast, 1 is lunch, 2 is dinner
+    var section: String
+    var dateString: String
     var _id = -1
-    var isLunch: Bool
-    var isSpecial: Bool
-    init(_ title: String, _ imageName: String, _ likeCount: Int = 0, _ dislikeCount: Int = 0){
+    init(_ title: String, _ menu: Int, _ section: String, _ dateString: String){
         self.title = title
-        self.imageName = imageName
-        self.likeCount = likeCount
-        self.dislikeCount = dislikeCount
-        self.isLunch = true
-        self.isSpecial = true
-    }
-    init(_ id: Int, _ title: String, _ isLunch: Bool, _ isSpecial: Bool, _ likeCount: Int = 0){
-        self._id = id
-        self.title = title
-        self.imageName = ""
-        self.likeCount = likeCount
-        self.dislikeCount = -1
-        self.isLunch = isLunch
-        self.isSpecial = isSpecial
+        self.menu = menu
+        self.section = section
+        self.dateString = dateString
     }
 }
 

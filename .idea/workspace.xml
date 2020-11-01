@@ -2,34 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ae1d010-3fd6-4408-93d6-bb6cda17913c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GovsConnect/Manager/AppIOManager.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/GovsConnect.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect.xcodeproj/xcuserdata/Excited.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/GovsConnect.xcodeproj/xcuserdata/Excited.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect.xcworkspace/xcuserdata/Excited.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/GovsConnect.xcworkspace/xcuserdata/Excited.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/AppDelegate.swift" afterPath="$PROJECT_DIR$/GovsConnect/AppDelegate.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Manager/AppDataManager.swift" afterPath="$PROJECT_DIR$/GovsConnect/Manager/AppDataManager.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/PostsModule/Controller/PostsDetailViewController.swift" afterPath="$PROJECT_DIR$/GovsConnect/Modules/PostsModule/Controller/PostsDetailViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/PostsModule/Controller/PostsDetailViewController.xib" afterPath="$PROJECT_DIR$/GovsConnect/Modules/PostsModule/Controller/PostsDetailViewController.xib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/PostsModule/Controller/PostsViewController.swift" afterPath="$PROJECT_DIR$/GovsConnect/Modules/PostsModule/Controller/PostsViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/PostsModule/View/PostsDetailBodyTableViewCell.swift" afterPath="$PROJECT_DIR$/GovsConnect/Modules/PostsModule/View/PostsDetailBodyTableViewCell.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/PostsModule/View/PostsTableViewCell.swift" afterPath="$PROJECT_DIR$/GovsConnect/Modules/PostsModule/View/PostsTableViewCell.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/YouModule/Controller/EditProfileViewController.swift" afterPath="$PROJECT_DIR$/GovsConnect/Modules/YouModule/Controller/EditProfileViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Util/UIView+Ext.swift" afterPath="$PROJECT_DIR$/GovsConnect/Util/UIView+Ext.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Util/defines.swift" afterPath="$PROJECT_DIR$/GovsConnect/Util/defines.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Util/tool.swift" afterPath="$PROJECT_DIR$/GovsConnect/Util/tool.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/Pods-GovsConnect.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/Pods-GovsConnect.xcscheme" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/TBDropdownMenu.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/TBDropdownMenu.xcscheme" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/TwicketSegmentedControl.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/TwicketSegmentedControl.xcscheme" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/Excited.xcuserdatad/xcschemes/xcschememanagement.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-acknowledgements.markdown" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-acknowledgements.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-acknowledgements.plist" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-acknowledgements.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect-frameworks.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.debug.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-GovsConnect/Pods-GovsConnect.release.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GovsConnect/Modules/SportsModule/View/MatchCardCollectionViewCell.xib" afterPath="$PROJECT_DIR$/GovsConnect/Modules/SportsModule/View/MatchCardCollectionViewCell.xib" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +12,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_F8971391-1CC6-4CEB-BEF1-DB9D72E66A4A" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_0D73CDA8-77A5-47D3-ACE8-E4E051B38F82" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="DiscoverViewController.swift" pinned="false" current-in-tab="false">
@@ -66,9 +40,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="494">
               <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-              <folding>
-                <marker date="1531383448768" expanded="true" signature="243:455" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,16 +48,9 @@
       <file leaf-file-name="AppDataManager.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GovsConnect/Manager/AppDataManager.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
+            <state relative-caret-position="646">
               <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-              <folding>
-                <marker date="1534669371333" expanded="true" signature="179:3898" ph="{...}" />
-                <marker date="1534669371333" expanded="true" signature="848:3898" ph="{...}" />
-                <marker date="1534669371333" expanded="true" signature="13849:14145" ph="{...}" />
-                <marker date="1534669371333" expanded="true" signature="13970:14143" ph="{...}" />
-                <marker date="1534669371333" expanded="true" signature="14178:14386" ph="{...}" />
-                <marker date="1534669371333" expanded="true" signature="14295:14384" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,19 +60,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2470">
               <caret line="130" column="5" lean-forward="false" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
-              <folding>
-                <marker date="1532567273723" expanded="true" signature="219:3550" ph="{...}" />
-                <marker date="1532567273723" expanded="true" signature="1872:1882" ph="{...}" />
-                <marker date="1532567273723" expanded="true" signature="2076:2224" ph="{...}" />
-                <marker date="1532567273723" expanded="true" signature="2297:3033" ph="{...}" />
-                <marker date="1532567273723" expanded="true" signature="3117:3548" ph="{...}" />
-                <marker date="1532567273723" expanded="true" signature="3630:6427" ph="{...}" />
-                <marker date="1532567273723" expanded="true" signature="3692:4225" ph="{...}" />
-                <marker date="1532567273723" expanded="true" signature="4319:4343" ph="{...}" />
-                <marker date="1532567273723" expanded="true" signature="4442:4567" ph="{...}" />
-                <marker date="1532567273723" expanded="true" signature="4672:6264" ph="{...}" />
-                <marker date="1532567273723" expanded="true" signature="6352:6425" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,11 +68,9 @@
       <file leaf-file-name="YouViewController.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/YouModule/Controller/YouViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1577">
+            <state relative-caret-position="1539">
               <caret line="83" column="15" lean-forward="false" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="15" />
-              <folding>
-                <marker date="1532584052109" expanded="true" signature="205:394" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,11 +78,9 @@
       <file leaf-file-name="EditProfileViewController.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/YouModule/Controller/EditProfileViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
+            <state relative-caret-position="342">
               <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding>
-                <marker date="1533794697638" expanded="true" signature="6410:6418" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,7 +98,7 @@
       <file leaf-file-name="tool.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GovsConnect/Util/tool.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1501">
+            <state relative-caret-position="1463">
               <caret line="79" column="1" lean-forward="false" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
               <folding />
             </state>
@@ -191,7 +140,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -214,6 +163,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -309,7 +259,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,20 +303,22 @@
       <workItem from="1532227472748" duration="256000" />
       <workItem from="1532329658977" duration="53000" />
       <workItem from="1534681431463" duration="170000" />
+      <workItem from="1570390152063" duration="5000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4072000" />
+    <option name="totallyTimeSpent" value="4077000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3106599" sideWeight="0.5138889" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.310559" sideWeight="0.5138889" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -415,9 +366,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="22" column="23" lean-forward="false" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding>
-            <marker date="1533794697638" expanded="true" signature="6410:6418" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -441,9 +390,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding>
-            <marker date="1531383448768" expanded="true" signature="243:455" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -451,19 +398,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2622">
           <caret line="138" column="5" lean-forward="false" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
-          <folding>
-            <marker date="1532567273723" expanded="true" signature="219:3550" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="1872:1882" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="2076:2224" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="2297:3033" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="3117:3548" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="3630:6427" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="3692:4225" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="4319:4343" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="4442:4567" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="4672:6264" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="6352:6425" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -471,14 +406,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
           <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-          <folding>
-            <marker date="1534669371333" expanded="true" signature="179:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="848:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13849:14145" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13970:14143" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14178:14386" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14295:14384" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -502,9 +430,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
-          <folding>
-            <marker date="1532584052109" expanded="true" signature="205:394" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -528,9 +454,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding>
-            <marker date="1531383448768" expanded="true" signature="243:455" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -538,14 +462,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
           <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-          <folding>
-            <marker date="1534669371333" expanded="true" signature="179:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="848:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13849:14145" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13970:14143" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14178:14386" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14295:14384" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -570,19 +487,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1596">
           <caret line="84" column="22" lean-forward="false" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
-          <folding>
-            <marker date="1532567273723" expanded="true" signature="219:3550" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="1872:1882" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="2076:2224" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="2297:3033" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="3117:3548" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="3630:6427" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="3692:4225" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="4319:4343" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="4442:4567" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="4672:6264" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="6352:6425" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -606,9 +511,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding>
-            <marker date="1531383448768" expanded="true" signature="243:455" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -625,14 +528,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="31" column="749" lean-forward="false" selection-start-line="31" selection-start-column="749" selection-end-line="31" selection-end-column="749" />
-          <folding>
-            <marker date="1534669371333" expanded="true" signature="179:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="848:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13849:14145" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13970:14143" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14178:14386" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14295:14384" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -656,9 +552,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding>
-            <marker date="1531383448768" expanded="true" signature="243:455" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -666,14 +560,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1596">
           <caret line="84" column="30" lean-forward="false" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
-          <folding>
-            <marker date="1534669371333" expanded="true" signature="179:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="848:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13849:14145" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13970:14143" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14178:14386" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14295:14384" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -706,9 +593,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-          <folding>
-            <marker date="1531383448768" expanded="true" signature="243:455" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -724,14 +609,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1178">
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding>
-            <marker date="1534669371333" expanded="true" signature="179:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="848:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13849:14145" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13970:14143" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14178:14386" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14295:14384" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -795,31 +673,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding>
-            <marker date="1531383448768" expanded="true" signature="243:455" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GovsConnect/GC/PersonTableViewCell.swift" />
     <entry file="file://$PROJECT_DIR$/GovsConnect/Manager/AppDataManager.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
+        <state relative-caret-position="646">
           <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-          <folding>
-            <marker date="1534669371333" expanded="true" signature="179:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="848:3898" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13849:14145" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="13970:14143" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14178:14386" ph="{...}" />
-            <marker date="1534669371333" expanded="true" signature="14295:14384" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GovsConnect/Util/tool.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1501">
+        <state relative-caret-position="1463">
           <caret line="79" column="1" lean-forward="false" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
           <folding />
         </state>
@@ -829,39 +698,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2470">
           <caret line="130" column="5" lean-forward="false" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
-          <folding>
-            <marker date="1532567273723" expanded="true" signature="219:3550" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="1872:1882" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="2076:2224" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="2297:3033" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="3117:3548" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="3630:6427" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="3692:4225" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="4319:4343" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="4442:4567" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="4672:6264" ph="{...}" />
-            <marker date="1532567273723" expanded="true" signature="6352:6425" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/YouModule/Controller/YouViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1577">
+        <state relative-caret-position="1539">
           <caret line="83" column="15" lean-forward="false" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="15" />
-          <folding>
-            <marker date="1532584052109" expanded="true" signature="205:394" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GovsConnect/Modules/YouModule/Controller/EditProfileViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
+        <state relative-caret-position="342">
           <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <marker date="1533794697638" expanded="true" signature="6410:6418" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>

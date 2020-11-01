@@ -42,8 +42,7 @@ class GCLoginRequireViewController: UIViewController {
         self.present(self.loginView!, animated: true) {
             //code here
         }
-    }
-    
+    }   
     @objc func presentIsThisYouView(_ sender: Notification){
         let uid = sender.userInfo!["uid"] as! String
         if self.isThatYouView == nil{
