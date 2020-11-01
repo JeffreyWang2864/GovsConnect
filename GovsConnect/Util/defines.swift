@@ -23,7 +23,7 @@ let APP_BACKGROUND_ULTRA_GREY = UIColorFromRGB(rgbValue: 0xFAF9FF, alpha: 1.0)
 
 let APP_SERVER_URL_STR = "https://govs.app"
 
-let APP_CURRENT_VERSION = "2.0.6"
+let APP_CURRENT_VERSION = "3.0.0"
 
 let PREDICATE_NAME_CONTAIN = "name contains[c] %@"
 
@@ -31,20 +31,24 @@ let PHONE_TYPE: GCPhoneType = {
     assert(UIDevice().userInterfaceIdiom == .phone)
     NSLog("\(UIScreen.main.nativeBounds.height)")
     switch UIScreen.main.nativeBounds.height {
-    case 1136:
-        return .iphone5
     case 1334:
-        return .iphone6
+        return .iphone8
+    case 1136:
+        return .ipodtouch
     case 1920, 2208:
-        return .iphone6plus
+        return .iphone8plus
     case 1792:
-        return .iphonexr
+        return .iphone11
     case 2436:
-        return .iphonex
+        return .iphone11pro
     case 2688:
-        return .iphonexsmax
+        return .iphone11promax
+    case 2532:
+        return .iphone12
+    case 2778:
+        return .iphone12promax
     default:
-        fatalError()
+        return .iphone12
     }
 }()
 

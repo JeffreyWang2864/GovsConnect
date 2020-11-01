@@ -116,7 +116,7 @@ class SportsViewController: UIViewController {
         self.quickActionStackView.distribution = .fillEqually
         self.quickActionStackView.axis = .horizontal
         self.quickActionStackView.contentMode = .center
-        if PHONE_TYPE == .iphone5{
+        if PHONE_TYPE == .ipodtouch{
             self.quickActionStackView.spacing = (self.quickActionStackView.width - (130 * 2)) / 2
         }else{
             self.quickActionStackView.spacing = (self.quickActionStackView.width - (170 * 2)) / 2
@@ -124,11 +124,11 @@ class SportsViewController: UIViewController {
         let labelTexts = ["browse by team", "lastest results"]
         let imageNames = ["system_sports_browse_by_category.png", "system_sports_see_result.png"]
         for i in (0..<2){
-            let v = UIView(frame: CGRect(x: 0, y: 0, width: PHONE_TYPE == .iphone5 ? 130 : 170, height: 50))
+            let v = UIView(frame: CGRect(x: 0, y: 0, width: PHONE_TYPE == .ipodtouch ? 130 : 170, height: 50))
             let imgV = UIImageView(frame: CGRect(x: 15, y: 5, width: 40, height: 40))
             imgV.image = UIImage.init(named: imageNames[i])
             imgV.contentMode = .scaleAspectFit
-            let l = UILabel(frame: CGRect(x: 52, y: 0, width: PHONE_TYPE == .iphone5 ? 78 : 118, height: 50))
+            let l = UILabel(frame: CGRect(x: 52, y: 0, width: PHONE_TYPE == .ipodtouch ? 78 : 118, height: 50))
             l.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
             l.textAlignment = .center
             l.numberOfLines = 2
@@ -356,7 +356,7 @@ extension SportsViewController: CoachMarksControllerDelegate, CoachMarksControll
         var pointOfInterest = UIView.init()
         var noLiuhaiOffset: CGFloat = 0.0
         switch PHONE_TYPE{
-        case .iphone5, .iphone6, .iphone6plus:
+        case .ipodtouch, .iphone8, .iphone8plus:
             noLiuhaiOffset = -22.0
         default:
             break

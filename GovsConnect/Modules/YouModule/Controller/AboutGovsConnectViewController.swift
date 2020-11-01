@@ -29,7 +29,7 @@ class AboutGovsConnectViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         switch PHONE_TYPE{
-        case .iphone5:
+        case .ipodtouch:
             self.view.constraints[2].constant = 30
         default:
             self.view.constraints[2].constant = 100

@@ -13,8 +13,8 @@ class GCTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColorFromRGB(rgbValue: 0xBABABA, alpha: 1)], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:APP_THEME_COLOR], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:APP_THEME_COLOR], for: .normal)
+        //UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:APP_THEME_COLOR], for: .selected)
         //给标签栏控制器添加子控制器
         
         //发现控制器

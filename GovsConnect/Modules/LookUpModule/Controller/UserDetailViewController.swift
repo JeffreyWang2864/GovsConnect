@@ -42,7 +42,7 @@ class UserDetailViewController: UIViewController {
         super.viewDidLoad()
         self.tableView.backgroundColor = APP_BACKGROUND_LIGHT_GREY
         self.tableView.separatorStyle = .none
-        if PHONE_TYPE == .iphone5{
+        if PHONE_TYPE == .ipodtouch{
             self.backgroundView.constraints[0].constant = 150
             self.backgroundView.height = 150
             self.view.constraints[4].constant = 95

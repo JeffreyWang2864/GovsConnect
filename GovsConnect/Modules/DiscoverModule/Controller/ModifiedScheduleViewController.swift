@@ -29,10 +29,10 @@ class ModifiedScheduleViewController: UIViewController {
         self.notifyMeButton.backgroundColor = UIColor.white
         self.notifyMeButton.setTitleColor(APP_THEME_COLOR, for: .normal)
         switch PHONE_TYPE{
-        case .iphone5:
+        case .ipodtouch:
             self.notifyMeButton.titleLabel!.font = UIFont.systemFont(ofSize: 11)
             self.titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        case .iphone6, .iphonex, .iphonexr:
+        case .iphone8, .iphone11pro, .iphone11:
             self.notifyMeButton.titleLabel!.font = UIFont.systemFont(ofSize: 13)
             self.titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         default:

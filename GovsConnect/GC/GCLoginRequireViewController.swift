@@ -18,14 +18,14 @@ class GCLoginRequireViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.presentIsThisYouView(_:)), name: GCLoginRequireViewController.displayIsThatYouNotificationName, object: nil)
         let c = self.view.constraints[0]
-        if PHONE_TYPE == .iphone5{
+        if PHONE_TYPE == .ipodtouch{
             c.constant = 40
             self.imageView.constraints[0].constant = 92
             self.imageView.constraints[1].constant = 92
             self.imageView.layer.cornerRadius = 92 / 2
         }
         self.view.backgroundColor = APP_BACKGROUND_GREY
-        if PHONE_TYPE != .iphone5{
+        if PHONE_TYPE != .ipodtouch{
             self.imageView.layer.cornerRadius = self.imageView.frame.width / 2
         }
         self.imageView.clipsToBounds = true

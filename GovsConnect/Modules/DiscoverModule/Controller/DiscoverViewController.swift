@@ -139,43 +139,29 @@ class DiscoverViewController: UIViewController {
             
             let cardBackgroundWidthOffset: CGFloat = {
                 switch PHONE_TYPE{
-                case .iphone5:
+                case .ipodtouch:
                     return 60
-                case .iphone6:
+                case .iphone8:
                     return 60
-                case .iphone6plus, .iphonexr:
-                    return 50
-                case .iphonex:
-                    return 50
-                case .iphonexsmax:
+                default:
                     return 50
                 }
             }()
             let cardBackgroundHeightOffset: CGFloat = {
                 switch PHONE_TYPE{
-                case .iphone5:
+                case .ipodtouch:
                     return 45
-                case .iphone6:
-                    return 95
-                case .iphone6plus, .iphonexr:
-                    return 95
-                case .iphonex:
-                    return 95
-                case .iphonexsmax:
+                default:
                     return 95
                 }
             }()
             let cardBackgroundFontSize: CGFloat = {
                 switch PHONE_TYPE{
-                case .iphone5:
+                case .ipodtouch:
                     return 14
-                case .iphone6:
+                case .iphone8:
                     return 16
-                case .iphone6plus, .iphonexr:
-                    return 18
-                case .iphonex:
-                    return 18
-                case .iphonexsmax:
+                default:
                     return 18
                 }
             }()

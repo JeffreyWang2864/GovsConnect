@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,17 +21,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4n1-kU-zu6">
-                    <rect key="frame" x="16" y="25" width="343" height="26"/>
+                    <rect key="frame" x="16" y="10" width="343" height="36"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="7gB-QA-6hB"/>
+                        <constraint firstAttribute="height" constant="35" id="7gB-QA-6hB"/>
                     </constraints>
                     <segments>
-                        <segment title="lunch/brunch"/>
+                        <segment title="breakfast"/>
+                        <segment title="lunch"/>
                         <segment title="dinner"/>
                     </segments>
                 </segmentedControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9FB-mr-qAk">
-                    <rect key="frame" x="5" y="60" width="365" height="607"/>
+                    <rect key="frame" x="0.0" y="55" width="375" height="612"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a0r-RJ-a0J">
                         <size key="itemSize" width="50" height="50"/>
@@ -43,17 +42,17 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9FB-mr-qAk" secondAttribute="bottom" id="Gku-sh-yKh"/>
-                <constraint firstItem="9FB-mr-qAk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="Gqc-FT-fnn"/>
+                <constraint firstItem="9FB-mr-qAk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Gqc-FT-fnn"/>
                 <constraint firstItem="4n1-kU-zu6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="KLt-xd-roa"/>
                 <constraint firstItem="9FB-mr-qAk" firstAttribute="top" secondItem="4n1-kU-zu6" secondAttribute="bottom" constant="10" id="SKA-VC-mK8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4n1-kU-zu6" secondAttribute="trailing" constant="16" id="UZd-wa-LZe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9FB-mr-qAk" secondAttribute="trailing" constant="5" id="pmq-bc-nyx"/>
-                <constraint firstItem="4n1-kU-zu6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="zfU-U0-4BL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9FB-mr-qAk" secondAttribute="trailing" id="pmq-bc-nyx"/>
+                <constraint firstItem="4n1-kU-zu6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="zfU-U0-4BL"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
     </objects>
