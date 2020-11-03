@@ -21,19 +21,19 @@ class MenuSectionCollectionViewCell: UICollectionViewCell {
             
             switch self.sectionTitle.text {
             case _ where self.sectionTitle.text!.contains("Bakery"):
-                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+                self.sectionImage.image = UIImage.init(named: "menu_bakery_section")!
             case _ where self.sectionTitle.text!.contains("Grill"):
-                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+                self.sectionImage.image = UIImage.init(named: "menu_grill_section")!
             case _ where self.sectionTitle.text!.contains("Home"):
-                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+                self.sectionImage.image = UIImage.init(named: "menu_homecooking_section")!
             case _ where self.sectionTitle.text!.contains("Pasta"):
-                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+                self.sectionImage.image = UIImage.init(named: "menu_pasta_section")!
             case _ where self.sectionTitle.text!.contains("Pizza"):
-                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+                self.sectionImage.image = UIImage.init(named: "menu_pizza_section")!
             case _ where self.sectionTitle.text!.contains("Salad"):
-                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+                self.sectionImage.image = UIImage.init(named: "menu_salad_section")!
             case _ where self.sectionTitle.text!.contains("International"):
-                self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
+                self.sectionImage.image = UIImage.init(named: "menu_international_section")!
             default:
                 self.sectionImage.image = UIImage.init(named: "test_menu_section_icon")!
             }

@@ -30,7 +30,7 @@ class GCWaterfallScrollView: UIScrollView {
         let blockingView = DiscoverBasicCellView()
         blockingView.frame = CGRect(x: rightSpaceX, y: lastRightHeight, width: self.cellWidth, height: self.intercellOffset)
         blockingView.setUpViews()
-        self.addLastUpdateWarning(to: blockingView)
+        //self.addLastUpdateWarning(to: blockingView)
         self.addSubview(blockingView)
         lastRightHeight += (self.intercellOffset + self.interCellSpace)
         for i in stride(from: 1, to: self.cells.count, by: 1){

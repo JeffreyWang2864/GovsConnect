@@ -26,7 +26,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_menu_section_icon" translatesAutoresizingMaskIntoConstraints="NO" id="HDy-aY-6KB">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_empty_section" translatesAutoresizingMaskIntoConstraints="NO" id="HDy-aY-6KB">
                         <rect key="frame" x="139.5" y="50" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="JQf-cy-eWu"/>
@@ -48,6 +48,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="test_menu_section_icon" width="30" height="30"/>
+        <image name="menu_empty_section" width="90" height="90"/>
     </resources>
 </document>

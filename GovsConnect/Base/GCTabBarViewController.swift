@@ -2,9 +2,9 @@
 //  GCTabBarViewController.swift
 //  GovsConnect
 //
-//  Created by Spring on 2018/6/20.
-//  Copyright © 2018年 Eagersoft. All rights reserved.
-//  项目的标签栏控制器
+//  Created by Jeffery Wang on 2018/6/20.
+//  Copyright © 2018 Eagersoft. All rights reserved.
+
 
 import UIKit
 
@@ -12,12 +12,11 @@ class GCTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColorFromRGB(rgbValue: 0xBABABA, alpha: 1)], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: APP_THEME_COLOR], for: .selected)
-        //给标签栏控制器添加子控制器
+        self.tabBar.unselectedItemTintColor = UIColorFromRGB(rgbValue: 0xBABABA, alpha: 1)
+
         
-        //发现控制器
+
         let disVc = DiscoverViewController()
         self.addChildController(childVc: disVc, title: "Discover", normalImg: #imageLiteral(resourceName: "system_normal_discover"), selectedImg: #imageLiteral(resourceName: "system_selected_discover"))
 //

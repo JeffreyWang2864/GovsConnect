@@ -28,7 +28,7 @@ let APP_CURRENT_VERSION = "3.0.0"
 let PREDICATE_NAME_CONTAIN = "name contains[c] %@"
 
 let PHONE_TYPE: GCPhoneType = {
-    assert(UIDevice().userInterfaceIdiom == .phone)
+    //assert(UIDevice().userInterfaceIdiom == .phone)
     NSLog("\(UIScreen.main.nativeBounds.height)")
     switch UIScreen.main.nativeBounds.height {
     case 1334:
