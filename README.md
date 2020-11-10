@@ -10,8 +10,8 @@ Released to the public in 2018, Govs Connect has continually helped teachers and
 
 ## Screenshots
 
-![](https://github.com/jeffreywangcf/Govs-Connect/blob/master/screenshots/1.png)
-![](https://github.com/jeffreywangcf/Govs-Connect/blob/master/screenshots/2.png)
-![](https://github.com/jeffreywangcf/Govs-Connect/blob/master/screenshots/3.png)
-![](https://github.com/jeffreywangcf/Govs-Connect/blob/master/screenshots/4.png)
-![](https://github.com/jeffreywangcf/Govs-Connect/blob/master/screenshots/5.png)
+<img src="https://github.com/jeffreywangcf/Govs-Connect/blob/master/screenshots/1.png" width="400" height="866" />
+<img src="https://github.com/jeffreywangcf/Govs-Connect/blob/master/screenshots/2.png" width="400" height="866" />
+<img src="https://github.com/jeffreywangcf/Govs-Connect/blob/master/screenshots/3.png" width="400" height="866" />
+<img src="https://github.com/jeffreywangcf/Govs-Connect/blob/master/screenshots/4.png" width="400" height="866" />
+<img src="https://github.com/jeffreywangcf/Govs-Connect/blob/master/screenshots/5.png" width="400" height="866" />
