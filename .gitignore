@@ -1,0 +1,4 @@
+.DS_Store
+.plist
+*.lock
+GoogleService-Info.plist
