@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -71,21 +71,12 @@
                         <constraint firstItem="dSw-o1-iE6" firstAttribute="leading" secondItem="6pK-fC-XSW" secondAttribute="leading" constant="30" id="cOh-KR-Xkh"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered_by_eagersoft.png" translatesAutoresizingMaskIntoConstraints="NO" id="kA6-ZL-uEh">
-                    <rect key="frame" x="127.5" y="617" width="120" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="2m9-Zg-Ndm"/>
-                        <constraint firstAttribute="height" constant="40" id="3QI-ma-QlO"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
             <constraints>
                 <constraint firstItem="6n1-me-Aql" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Cmb-Vm-yad"/>
                 <constraint firstItem="6n1-me-Aql" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PMU-YI-Wrv"/>
-                <constraint firstItem="kA6-ZL-uEh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TSp-KO-eUZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kA6-ZL-uEh" secondAttribute="bottom" constant="10" id="XrO-bJ-faM"/>
                 <constraint firstItem="6pK-fC-XSW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ave-il-rRn"/>
                 <constraint firstItem="6pK-fC-XSW" firstAttribute="top" secondItem="6n1-me-Aql" secondAttribute="bottom" constant="40" id="cGk-V6-vmH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6n1-me-Aql" secondAttribute="trailing" id="mww-Tn-YcA"/>
@@ -95,7 +86,6 @@
     </objects>
     <resources>
         <image name="govs_connect_app_logo_83.5.png" width="83.5" height="83.5"/>
-        <image name="powered_by_eagersoft.png" width="300" height="100"/>
         <image name="welcome_img.png" width="835" height="987"/>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

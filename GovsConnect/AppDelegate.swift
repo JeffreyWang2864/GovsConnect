@@ -32,6 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         IQKeyboardManager.sharedManager().enable = true
         
+        //ios 15 navigation bar
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.backgroundColor = APP_THEME_COLOR
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
+        
         //launch screen animation
         let welcomeVC = WelcomeViewController()
         self.window!.rootViewController!.view.addSubview(welcomeVC.view)
@@ -179,7 +189,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 makeMessageViaAlert(title: "Email not found", message: "\(email) does not appear in our database. Please contact the developer")
                 return
             }
-            NotificationCenter.default.post(name: GCLoginRequireViewController.displayIsThatYouNotificationName, object: nil, userInfo: ["uid": uid!])
+            //NotificationCenter.default.post(name: GCLoginRequireViewController.displayIsThatYouNotificationName, object: nil, userInfo: ["uid": uid!])
         }
     }
     

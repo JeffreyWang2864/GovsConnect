@@ -265,13 +265,13 @@ class AppDataManager{
             }
             AppDataManager.shared.insertPostByUid(c)
         }
-        NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRefreashCellNotificationName))
+        //NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRefreashCellNotificationName))
     }
     
     func loadPostDataFromServerAndUpdateLocalData(){
         assert(AppIOManager.shared.connectionStatus != .none)
         AppIOManager.shared.loadNewestPost({
-            NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRefreashCellNotificationName))
+            //NotificationCenter.default.post(Notification.init(name: PostsViewController.shouldRefreashCellNotificationName))
         }) { (errStr) in
             makeMessageViaAlert(title: "Error when fetching newest data", message: errStr)
         }

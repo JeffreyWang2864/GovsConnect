@@ -21,9 +21,9 @@ let APP_BACKGROUND_LIGHT_GREY = UIColor(red: 0.976, green: 0.976, blue: 0.976, a
 
 let APP_BACKGROUND_ULTRA_GREY = UIColorFromRGB(rgbValue: 0xFAF9FF, alpha: 1.0)
 
-let APP_SERVER_URL_STR = "https://govs.app"
+let APP_SERVER_URL_STR = "https://app.jeffreywang.net/gc"
 
-let APP_CURRENT_VERSION = "3.0.0"
+let APP_CURRENT_VERSION = "3.0.1"
 
 let PREDICATE_NAME_CONTAIN = "name contains[c] %@"
 
@@ -48,7 +48,7 @@ let PHONE_TYPE: GCPhoneType = {
     case 2778:
         return .iphone12promax
     default:
-        return .iphone12
+        return .iphone11promax
     }
 }()
 

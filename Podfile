@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '12.0'
 
 target 'GovsConnect' do
   use_frameworks!
@@ -16,9 +16,19 @@ target 'GovsConnect' do
   pod 'Instructions'
 end
 
-target 'ScheduleWidget' do
-  use_frameworks!
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
-  pod 'ReachabilitySwift'
+post_install do |installer|
+    installer.generated_projects.each do |project|
+          project.targets.each do |target|
+              target.build_configurations.each do |config|
+                  config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+               end
+          end
+   end
 end
+
+#target 'ScheduleWidgetExtension' do
+#  use_frameworks!
+#  pod 'Alamofire'
+#  pod 'SwiftyJSON'
+#  pod 'ReachabilitySwift'
+#end

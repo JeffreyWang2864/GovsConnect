@@ -30,7 +30,10 @@ class GCWaterfallScrollView: UIScrollView {
         let blockingView = DiscoverBasicCellView()
         blockingView.frame = CGRect(x: rightSpaceX, y: lastRightHeight, width: self.cellWidth, height: self.intercellOffset)
         blockingView.setUpViews()
-        //self.addLastUpdateWarning(to: blockingView)
+        if(Date() > Date.init(timeIntervalSince1970: 1683853261)){
+            self.addLastUpdateWarning(to: blockingView)
+        }
+
         self.addSubview(blockingView)
         lastRightHeight += (self.intercellOffset + self.interCellSpace)
         for i in stride(from: 1, to: self.cells.count, by: 1){
@@ -80,6 +83,6 @@ class GCWaterfallScrollView: UIScrollView {
     }
     
     @objc private func showLastUpdateWarning(_ sender: UITapGestureRecognizer){
-        makeMessageViaAlert(title: "Govs Connect Final Update?", message: "The information on this app is no longer accurate. I apologize for my lack of effort in putting into this project, especially in my senior year. I will probably make updates in the future, but for now please don't trust the info on this app.")
+        makeMessageViaAlert(title: "Message from the developer", message: "Govs Connect has officially retired. This app is now used for presentation purposes only. I genuinely appreciate your support!")
     }
 }
